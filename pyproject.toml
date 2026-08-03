@@ -1,0 +1,18 @@
+[project]
+name = "interlang"
+version = "0.1.0"
+description = "Designing an international auxiliary language by optimizing against data on all the world's languages"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pandas>=3.0.3",
+    "panphon>=0.22.2",
+    "requests>=2.34.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/interlang"]
