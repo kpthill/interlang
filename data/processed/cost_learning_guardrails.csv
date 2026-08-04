@@ -1,0 +1,6 @@
+guardrail,detail,value,passed
+"1 learned >= default, identical recipient-grouped CV",held-out AUC mean 0.9689 (sd 0.0381) vs default 0.9179 (sd 0.0631); learned wins on 3/3 recipients; mean paired delta +0.0510,0.050966137645555874,True
+2 /da/ sanity gradient ta > da-fric > ga > fa > ma > ia,learned ta=0.733 ða=0.802 ɡa=0.671 fa=0.160 ma=0.311 ia=0.687 | default ta=0.983 ða=0.914 ɡa=0.853 fa=0.819 ma=0.750 ia=0.414,0.5110670525608783,False
+3 /v/ projected onto a Japanese-like inventory -> /b/ not /z/,"learned top-3 [('b', 1.599), ('z', 2.469), ('ɛ', 2.753)] | default top-3 [('z', 1.125), ('b', 1.25), ('s', 1.375)] (inventory n=20)",1.5990666454119062,True
+4 sutoraiku vs strike (target 0.62 -> 0.9s),default 0.617 -> learned 0.659,0.6585661364103054,False
+5 contrast-study cross-check (non-loanword anchor),"n=23 single-segment contrasts. Spearman(cost, pct_l1_both): default -0.020 -> learned +0.403 (want positive, higher). Spearman(cost, merger_langs): default -0.407 -> learned -0.355 (want negative)",0.40269233924391284,True
