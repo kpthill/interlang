@@ -34,8 +34,9 @@ randomly chosen fake one: 0.5 is chance, 1.0 is perfect.
 | Cost models + aligner | `src/interlang/costs.py` | the R4 swappable-cost seam and a batched aligner |
 | The study | `scripts/cost_learning.py` | fit, cross-validate, guardrails |
 
-`src/interlang/metric.py` is **unchanged** by this study; see §8 for what
-adopting the learned costs would take and why it is not automatic.
+`src/interlang/metric.py` keeps v0 behaviour exactly; it only gains an optional
+`params=` argument so the learned costs can be used deliberately. See §8 for
+what adopting them as the default would take and why it is not automatic.
 
 ### Datasets
 
@@ -73,6 +74,19 @@ intermediate language) are excluded because the recorded donor string is not
 the form the recipient actually adapted. That is an a-priori linguistic
 criterion, not a fit to the outcome; the outcome merely confirms it (see the
 two AUC rows below).
+
+**Transliteration noise, with a worked example.** There is no per-donor
+romanisation table in WOLD, so one donor-agnostic mapping is applied to all 257
+donors. Row 2 of the output shows what that costs: Nepali `chaharo` becomes
+`khaharo` — because `c`→`k` is right for Latin/Spanish/Berber and no digraph
+expansion is attempted, `ch` silently becomes `kh`. The recipient side has
+`kjutsʰara`, so the fit sees a /k…h/ ↔ /k…tsʰ/ correspondence that is an
+artifact of our romanisation, not of Manange phonology. Adding `ch`→`tʃ` would
+help Spanish/English/Nepali and hurt German/Dutch (`ch`=/x/) and Italian
+(`ch`=/k/); it is a coin flip we did not want to call silently, so the rule is
+"no digraph expansion", documented, with this example as the honest cost. It is
+also the cheapest available improvement for a future run: a per-donor
+romanisation table for the top ~10 donors would cover 60% of pairs.
 
 That 13,595 is close to the recorded "13,779 clean pairs", which is good
 evidence the original conservative filter also restricted to `immediate`. The
@@ -127,8 +141,11 @@ The second model is the spec's explicit R2 **stretch goal**: a vowel inserted
 between two source consonants (cluster repair) or at a consonantal word edge
 (prothesis "schola"→"escuela", paragoge "strike"→"sutoraik-**u**") is priced
 separately from a vowel inserted anywhere else. The insertion-context classes
-for `s t ɹ a i k` come out `edge, cluster, cluster, other, other, other, edge`
-— exactly the su-**t**o-ra-i-**ku** pattern.
+for the seven insertion slots of `s t ɹ a i k` come out
+`edge, cluster, cluster, other, other, other, edge` — and the three vowels
+Japanese actually inserts, s-**ɯ**-t-**o**-ɾ-a-i-k-**ɯ**, land in slots 1, 2
+and 6: cluster, cluster, edge. The structure can express the case exactly;
+whether the objective *wants* to is the question §5 answers.
 
 Insertion and deletion are separately parameterized, which is where the
 source→recipient asymmetry lives. Substitution stays symmetric (a
@@ -225,6 +242,21 @@ near-zero prior is not a measurement.
 ---
 
 ## 4. R3 — the primary result: stability across held-out recipients
+
+**Full leave-one-recipient-out over all 41 recipients**, for both cost models.
+The spec's grouped-K-fold fallback was not needed: one fit takes ~25 s, so
+41 × 2 folds plus the λ sweep is under an hour. Pairs are never split within a
+recipient.
+
+Two things to read carefully before the numbers:
+
+- **`auc_default` does not vary with the fit.** panphon's weights are fixed, so
+  its per-recipient AUC is a property of the recipient, not of any training
+  run. Its spread is *between-recipient* variation — how much easier Takia is
+  than Manange — and it is the right denominator for exactly that reason: the
+  learned column has the same between-recipient variation in it.
+- **The paired delta is the statistic that matters**, not the difference of
+  means, because the two columns share that recipient-difficulty variation.
 
 RESULTS_PLACEHOLDER_R3
 
