@@ -149,7 +149,11 @@ RELATION = "immediate"
 CONTROL_SEED = 20260804
 TAU = 0.1
 N_OUTER = 3            # EM re-alignment rounds (the loss plateaus by round 2)
-NM_MAXITER = 4000      # Nelder-Mead iterations per inner optimization
+#: Nelder-Mead iterations per inner optimization. A compute-budget choice, not
+#: a convergence claim, but a measured one: at 26 parameters the simplex
+#: reaches surrogate loss 0.13557 by iteration 1500 and only 0.13484 by 4000
+#: (0.5% better for 2.8x the time), and a full run needs 87 fits.
+NM_MAXITER = 1500
 NM_RESTARTS = 2
 LAMBDA_GRID = [0.0, 0.01, 0.03, 0.1, 0.3]
 SWEEP_K = 5            # grouped folds used to pick LAMBDA
@@ -211,8 +215,19 @@ class Corpus:
         return phi_p, costs.normalizer_rows(self.pos, m), phi_n, costs.normalizer_rows(self.neg, m)
 
 
-def recipient_groups(recipients: np.ndarray, mask: np.ndarray) -> list[np.ndarray]:
-    return [np.where(mask & (recipients == r))[0] for r in pd.unique(recipients[mask])]
+def recipient_groups(recipients: np.ndarray, mask: np.ndarray):
+    """R5 rebalancing as a sparse averaging operator.
+
+    Returns (rows, weights) such that `np.bincount(rows, w*x, n_groups).mean()`
+    is the mean-over-recipients-of-mean-over-that-recipient's-pairs of x.
+    Written this way, not as a Python loop over 41 index arrays, because the
+    inner optimizer evaluates the objective tens of thousands of times per fit
+    and the loop was the whole cost.
+    """
+    idx = np.where(mask)[0]
+    codes, uniq = pd.factorize(recipients[idx])
+    counts = np.bincount(codes, minlength=len(uniq)).astype(float)
+    return idx, codes, 1.0 / counts[codes], len(uniq)
 
 
 # ---------------------------------------------------------------------------
@@ -239,7 +254,8 @@ def surrogate_loss(params, phi_p, psi_p, phi_n, psi_n, groups, lam,
     sp = costs.similarity_from(phi_p, psi_p, params, clamp=False)
     sn = costs.similarity_from(phi_n, psi_n, params, clamp=False)
     nll = np.logaddexp(0.0, -(sp - sn) / TAU)      # -log sigmoid, computed stably
-    base = float(np.mean([nll[g].mean() for g in groups]))
+    idx, codes, w, n_groups = groups
+    base = float(np.bincount(codes, weights=w * nll[idx], minlength=n_groups).mean())
     if lam <= 0:
         return base
     dev = np.log(np.maximum(params, 1e-9)) - log_prior
