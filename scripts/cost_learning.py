@@ -411,19 +411,27 @@ def contrast_crosscheck(params_learned: np.ndarray, model_name: str) -> dict:
                          cost_learned=costs.substitution_cost(
                              sa, sb, params_learned[:costs.N_FEATURES])))
     t = pd.DataFrame(rows)
-    rho_d = spearmanr(t.cost_default, t.pct_l1_both).statistic
-    rho_l = spearmanr(t.cost_learned, t.pct_l1_both).statistic
+    r_d = spearmanr(t.cost_default, t.pct_l1_both)
+    r_l = spearmanr(t.cost_learned, t.pct_l1_both)
+    rho_d, rho_l = r_d.statistic, r_l.statistic
     m_d = spearmanr(t.cost_default, t.merger).statistic
     m_l = spearmanr(t.cost_learned, t.merger).statistic
     t.insert(0, "model", model_name)
     CONTRAST_DETAIL.append(t)
+    # PASS CRITERION: the learned costs must show a rank correlation with
+    # contrast prevalence that is BOTH positive AND distinguishable from noise
+    # (p < 0.05 at n ~ 23). "rho went up a bit" is not convergence with an
+    # independent anchor, it is a coin landing the right way up; an earlier,
+    # looser criterion (rho_l > rho_d) scored a rho of +0.06 as a pass, which
+    # is exactly the kind of vacuous green tick this guardrail exists to avoid.
     return dict(
         guardrail="5 contrast-study cross-check (non-loanword anchor)",
         detail=(f"n={len(t)} single-segment contrasts. rho(cost, pct_l1_both): default "
-                f"{rho_d:+.3f} -> learned {rho_l:+.3f} (want positive and higher). "
+                f"{rho_d:+.3f} (p={r_d.pvalue:.2f}) -> learned {rho_l:+.3f} "
+                f"(p={r_l.pvalue:.2f}); want positive and significant. "
                 f"rho(cost, merger_langs): default {m_d:+.3f} -> learned {m_l:+.3f} "
                 f"(want negative and lower)"),
-        value=float(rho_l), passed=bool(rho_l > 0 and rho_l > rho_d))
+        value=float(rho_l), passed=bool(rho_l > 0 and r_l.pvalue < 0.05))
 
 
 def guardrails(params, model_cls, cv: pd.DataFrame) -> list[dict]:
@@ -504,11 +512,31 @@ def main() -> None:
     ap.add_argument("--models", default="feature,context")
     ap.add_argument("--major-mult", type=float, default=None,
                     help="override MAJOR_PRIOR_MULT (1 = uniform prior)")
+    ap.add_argument("--report-only", action="store_true",
+                    help="recompute the guardrails from the committed CSVs, no fitting")
     args = ap.parse_args()
     if args.major_mult is not None:
         global MAJOR_MULT_OVERRIDE
         MAJOR_MULT_OVERRIDE = args.major_mult
         print(f"major-class prior multiplier overridden to {args.major_mult}")
+
+    if args.report_only:
+        cv_all = pd.read_csv(PROC / "cost_learning_cv.csv")
+        pr = pd.read_csv(PROC / "learned_costs.csv")
+        rows = []
+        for name in args.models.split(","):
+            cls = costs.MODELS[name]
+            sub = pr[pr["model"] == cls.__name__]
+            p_full = sub.set_index("parameter").loc[cls.param_names(), "learned_full"].to_numpy()
+            rows.extend(guardrails(p_full, cls, cv_all[cv_all["model"] == cls.__name__]))
+        pd.DataFrame(rows).to_csv(PROC / "cost_learning_guardrails.csv", index=False)
+        if CONTRAST_DETAIL:
+            pd.concat(CONTRAST_DETAIL, ignore_index=True).to_csv(
+                PROC / "cost_learning_contrast_check.csv", index=False)
+        for r in rows:
+            print(f"  [{'PASS' if r['passed'] else 'FAIL'}] ({r['model']}) {r['guardrail']}")
+            print(f"          {r['detail']}")
+        return
 
     pairs = wp.load_pairs(PAIRS_CSV)
     pairs = pairs[pairs["source_relation"] == RELATION].reset_index(drop=True)

@@ -25,6 +25,43 @@ randomly chosen fake one: 0.5 is chance, 1.0 is perfect.
 
 ---
 
+## 0. Summary
+
+**What worked.** Costs learned from 13,595 attested WOLD loanword adaptations
+beat panphon's hand-guessed weights on held-out AUC for **41 out of 41**
+recipient languages under leave-one-recipient-out CV with within-recipient
+controls (0.957 vs 0.896; paired delta +0.061 ± 0.033). The learned weights are
+extremely stable across folds — relative sd of 1–8%, mostly 1–3%. The
+place-of-articulation problem the spec set out to fix is fixed and the fix is
+stable: labiality goes up **3.2×**, `/v/` projected onto a Japanese-like
+inventory now maps to `/b/` (by a factor of 1.9 over `/z/`, where the default
+had `/z/` ahead).
+
+**What did not.** Two of five guardrails fail.
+- **Epenthesis (guardrail 4)** moves the wrong way: sutoraiku/strike 0.617 →
+  0.577. The model *can* express the case (hand-set cluster-insertion costs give
+  0.904) but the discriminative objective does not want to, because cheap
+  insertion helps the negative control as much as the true pair. A
+  discriminative objective is structurally the wrong tool for learning repair
+  costs.
+- **The contrast-study cross-check (guardrail 5)** is null: ρ = +0.059
+  (p = 0.79) where panphon has −0.020. The learned costs get the vowel-quality
+  contrasts right and every *voicing* contrast wrong, and the two cancel.
+
+**The one number to distrust.** Voicing learns a weight 3.5× panphon's — the
+fit's single largest upward move. WOLD's orthographies record voicing
+faithfully on both sides, so voicing mismatches are rare *in the data*; the
+contrast study says voicing is among the **cheapest** contrasts perceptually
+(t/d audible to 75% of humanity, p/b to 73%). That is a production/orthography
+fact being learned as a perceptual one, and it is exactly what guardrail 5 was
+built to detect.
+
+**Disposition.** `metric.py` v0 stays the default. The learned costs ship in
+`data/processed/learned_costs.csv` and are opt-in via `params=`. §8 lists what
+would have to be true to promote them.
+
+---
+
 ## 1. What was actually built
 
 | Piece | Where | What it is |
@@ -228,11 +265,29 @@ place-of-articulation correction we came for. Reproduce with
 | 0.3 | 0.9445 | ✓ | 0.73 | 0.38 |
 | 1.0 | 0.9249 | ✓ | 0.84 | 0.29 |
 
-Reading the table: the ladder and the place correction are being traded against
-each other by a single knob, because that knob shrinks *everything*. Targeting
-the prior at exactly the three features the data cannot inform buys the sanity
-guarantee without spending the correction — see §5 for the numbers under the
-100× prior.
+And the same sweep with the 100× prior on `syl`/`son`/`cons`
+(`data/processed/cost_learning_lambda.csv`, the shipped configuration):
+
+| λ, 100× major prior | held-out AUC | /da/ ladder | sutoraiku |
+|---|---|---|---|
+| 0.0 *(= no prior at all)* | 0.9653 | ✗ | 0.632 |
+| **0.01 ← selected** | **0.9560** | ✓ | 0.578 |
+| 0.03 | 0.9525 | ✓ | 0.568 |
+| 0.1 | 0.9463 | ✓ | 0.556 |
+| 0.3 | 0.9363 | ✓ | 0.558 |
+
+Reading the two tables together:
+
+- **The /da/ gradient costs ~0.009 AUC**, either way you buy it (uniform λ=0.1:
+  0.9542; targeted λ=0.01: 0.9560, both against an unconstrained 0.965).
+  That is the price of a phonetically coherent metric, and it is small.
+- **Targeting is what preserves the place correction.** At its cheapest
+  ladder-preserving setting the uniform prior leaves `lab` at 0.60; the targeted
+  prior leaves it at **0.80**. Same AUC, same sanity guarantee, a third more of
+  the correction we came for.
+- **Selection rule** (in the script): highest held-out AUC *among λ that
+  preserve the /da/ gradient*. λ=0 is deliberately left in the grid rather than
+  quietly deleted, so the price of the constraint is on the page.
 
 One more thing the table shows: the *completely* unregularized fit (λ=0) is
 not merely wrong, it is **unstable** — `lab` lands at 0.43 there but at 0.84
@@ -258,13 +313,239 @@ Two things to read carefully before the numbers:
 - **The paired delta is the statistic that matters**, not the difference of
   means, because the two columns share that recipient-difficulty variation.
 
-RESULTS_PLACEHOLDER_R3
+### Held-out AUC, both models, λ = 0.01
+
+| | mean | sd | min | median | max |
+|---|---|---|---|---|---|
+| **default panphon — R1(b)** | 0.8961 | 0.0618 | 0.7200 | 0.9082 | 0.9852 |
+| learned, `feature` | **0.9569** | 0.0391 | 0.8023 | 0.9684 | 0.9949 |
+| learned, `context` | 0.9567 | 0.0387 | 0.8019 | 0.9688 | 0.9949 |
+| **paired delta, `feature`** | **+0.0607** | 0.0325 | +0.0082 | +0.0594 | +0.1621 |
+| paired delta, `context` | +0.0606 | 0.0331 | +0.0079 | +0.0585 | +0.1621 |
+
+**The learned costs beat panphon's defaults on 41 out of 41 held-out
+recipients**, for both models. There is no recipient for which the fitted costs
+are worse. Pair-weighted, 0.9038 → 0.9614. That is guardrail 1, decisively.
+
+Note what R1(b) does to the reference point: the honest default-weight baseline
+is **0.896**, not the legacy 0.923. Within-recipient controls and recipient
+grouping cost the default metric ~0.03 AUC, exactly as the spec anticipated.
+
+Where the metric is worst, and where it gains most, are the same places:
+
+| held-out recipient | n pairs | default | learned | delta |
+|---|---|---|---|---|
+| White Hmong | 281 | 0.7288 | 0.8023 | +0.0735 |
+| Japanese | 671 | 0.8045 | 0.8641 | +0.0596 |
+| Vietnamese | 34 | 0.7392 | 0.8802 | +0.1410 |
+| Mandarin Chinese | 21 | 0.7200 | 0.8821 | +0.1621 |
+| Malagasy | 271 | 0.8250 | 0.9224 | +0.0974 |
+| … | | | | |
+| Romanian | 867 | 0.9382 | 0.9846 | +0.0465 |
+| Kalina | 200 | 0.9493 | 0.9879 | +0.0386 |
+| Bezhta | 388 | 0.9852 | 0.9934 | +0.0082 |
+| Iraqw | 163 | 0.9594 | 0.9940 | +0.0346 |
+| Takia | 307 | 0.9793 | 0.9949 | +0.0156 |
+
+The five hardest recipients are the ones that restructure loans most heavily —
+Hmong, Japanese, Vietnamese, Mandarin, Malagasy: tone languages and strict-CV
+phonologies, where the recipient form barely resembles the donor string. That
+is the projection-distortion problem in miniature, and it is where a better
+cost model has the most room. It is also a warning: the metric is *least*
+reliable exactly for the phonologies most like the restrictive templates we are
+considering for our own language (§3.6).
+
+### The learned parameters (`feature` model, LORO mean ± sd over 41 folds)
+
+Feature weights renormalized so the 22 sum to panphon's 7.25, so the columns
+are directly comparable. Sorted by how far the fit moved them.
+
+| parameter | panphon | learned | LORO sd | × panphon | what it is |
+|---|---|---|---|---|---|
+| `voi` | 0.125 | 0.440 | 0.012 | **3.52** | voicing |
+| `lab` | 0.250 | 0.803 | 0.018 | **3.21** | labial place |
+| `nas` | 0.250 | 0.600 | 0.019 | **2.40** | nasality |
+| `back` | 0.250 | 0.484 | 0.013 | 1.94 | vowel backness |
+| `lo` | 0.250 | 0.448 | 0.021 | 1.79 | vowel lowness |
+| `round` | 0.250 | 0.242 | 0.019 | 0.97 | lip rounding |
+| `son` | 1.000 | 0.877 | 0.003 | 0.88 | sonorant *(priored)* |
+| `syl` | 1.000 | 0.846 | 0.004 | 0.85 | syllabic *(priored)* |
+| `cont` | 0.500 | 0.413 | 0.014 | 0.83 | continuant (manner) |
+| `cons` | 1.000 | 0.811 | 0.003 | 0.81 | consonantal *(priored)* |
+| `distr` | 0.125 | 0.094 | 0.002 | 0.75 | distributed |
+| `lat` | 0.250 | 0.185 | 0.007 | 0.74 | lateral |
+| `strid` | 0.125 | 0.089 | 0.002 | 0.71 | strident |
+| `cor` | 0.250 | 0.161 | 0.007 | 0.64 | coronal place |
+| `cg` | 0.125 | 0.073 | 0.001 | 0.59 | constricted glottis (ejective) |
+| `sg` | 0.125 | 0.069 | 0.001 | 0.55 | spread glottis (aspiration) |
+| `ant` | 0.250 | 0.122 | 0.004 | 0.49 | anterior |
+| `hi` | 0.250 | 0.117 | 0.003 | 0.47 | vowel height |
+| `tense` | 0.125 | 0.055 | 0.001 | 0.44 | tenseness |
+| `long` | 0.250 | 0.108 | 0.001 | 0.43 | length |
+| `velaric` | 0.250 | 0.107 | 0.001 | 0.43 | clicks |
+| `delrel` | 0.250 | 0.106 | 0.002 | 0.42 | delayed release (affricates) |
+| `del_C` | 7.250 | 3.365 | 0.059 | 0.46 | delete a consonant |
+| `del_V` | 7.250 | 2.181 | 0.036 | **0.30** | delete a vowel |
+| `ins_C` | 7.250 | 3.906 | 0.052 | 0.54 | insert a consonant |
+| `ins_V` | 7.250 | 2.509 | 0.049 | 0.35 | insert a vowel |
+
+**Stability (the actual R3 headline).** Every parameter's relative sd across the
+41 leave-one-recipient-out folds is **1–8%**, most of them 1–3%. The largest is
+`round` at 8%. No held-out recipient changes the picture. The place-vs-manner
+reweighting is not a fluke of one fold — it is the most stable thing in the
+table (`lab` = 0.803 ± 0.018, i.e. ±2%).
+
+**What actually moved, more precisely than the spec predicted.** The spec's
+hypothesis was "place is underweighted relative to manner". What the data says
+is narrower and more interesting:
+
+- **Labiality specifically goes up 3.2×**, and it is what flips the /v/→/b/
+  diagnostic. Labial place is perceptually robust — visible on the lips, strong
+  formant transitions — exactly the argument the spec made.
+- **Coronal place *detail* goes down**: `ant` 0.49×, `cor` 0.64×, `distr` 0.75×.
+  So it is not "place up" wholesale. It is *labial vs non-labial matters, where
+  within the coronal region matters less* — which is a real and well-attested
+  perceptual asymmetry, and not something panphon's flat 0.25-for-every-place-
+  feature scheme can express.
+- **Manner barely moves** (`cont` 0.83×). The spec framed this as place-vs-
+  manner; the data says it is labiality-vs-everything.
+- **Nasality up 2.4×** and **vowel backness/lowness up ~1.8–1.9×**, both
+  plausible for perception.
+- **Affricates, aspiration, ejectives, clicks, length, tenseness all go DOWN to
+  0.4–0.6×.** For `sg`, `cg` and `velaric` this is "no evidence" (§6: WOLD's
+  recipient set contains no breathy-voice or click phonology) and for `long` and
+  `delrel` it is partly our transliteration stripping them. Do not read these as
+  measurements.
+- **Voicing up 3.5× is the one to distrust** — see §7.
+
+**Indels (R2).** All four collapse from panphon's flat 7.25 to 2.2–3.9, i.e.
+insertion and deletion become 2–3× cheaper *relative to substitution*, and
+crucially they separate: **deleting a vowel (2.18) is the cheapest edit and
+inserting a consonant (3.91) the most expensive**, with a clean
+V-cheaper-than-C ordering on both sides. That ordering is the epenthesis
+machinery working. In the `context` model, `ins_V_cluster` (2.68) and
+`ins_V_edge` (2.44) are cheaper than `ins_V_other` (3.09) — the sign is right,
+cluster repair *is* cheaper than gratuitous insertion — but by 13–21%, not the
+several-fold discount the sutoraiku case needs. See guardrail 4.
 
 ---
 
 ## 5. Guardrails
 
-RESULTS_PLACEHOLDER_GUARDRAILS
+Both models were run through all five. **Three pass, two fail.** Numbers below
+are the `feature` model; `context` differs in the third decimal except where
+noted. Machine-readable: `data/processed/cost_learning_guardrails.csv`.
+Recompute without re-fitting: `uv run python scripts/cost_learning.py --report-only`.
+
+### 1. Learned ≥ default under identical honest CV — **PASS**
+
+Held-out AUC 0.9569 (sd 0.0391, min 0.8023) vs default 0.8961 (sd 0.0618, min
+0.7200); paired delta +0.0607 ± 0.0325; **learned wins on 41/41 recipients**.
+See §4. This is the strongest result in the study.
+
+### 2. /da/ sanity gradient — **PASS, but only because we forced it**
+
+| vs /da/ | ta | ða | ɡa | fa | ma | ia |
+|---|---|---|---|---|---|---|
+| default | 0.983 | 0.914 | 0.853 | 0.819 | 0.750 | 0.414 |
+| learned | 0.841 | 0.818 | 0.666 | 0.295 | 0.100 | 0.000 |
+
+Correctly ordered, and much better *separated* than the default (which crams
+everything into 0.75–0.98 — known-issue 3, the compressed dynamic range). But
+see §3: unregularized this ordering breaks badly, and the major-class prior is
+what restores it. Counting this as a pass is honest only alongside that
+disclosure.
+
+### 3. /v/ → Japanese-like inventory — **PASS**
+
+| | 1st | 2nd | 3rd |
+|---|---|---|---|
+| default | **z** (1.125) | b (1.250) | s (1.375) |
+| learned | **b** (1.001) | p (1.883) | z (2.025) |
+
+The diagnostic flips, and not narrowly: /b/ now wins by a factor of 1.9 over
+/z/, where the default had /z/ ahead by a single flip of the cheapest feature
+class. `lab` = 0.803 ± 0.018 across 41 folds, so this is stable. Inventory is
+PHOIBLE's Japanese (glottocode `nucl1643`, majority vote, n=20).
+
+### 4. sutoraiku vs strike — **FAIL, and it went the wrong way**
+
+Default 0.617 → learned **0.577** (`context` model: 0.568). Target was 0.9.
+
+This is the study's clearest negative result and it deserves a straight
+explanation rather than a shrug.
+
+The structure can express it: hand-setting `ins_V_cluster` and `ins_V_edge` to
+1.0 gives **0.904**. The fit does not choose to. The learned context costs
+(`ins_V_cluster` 2.68, `ins_V_edge` 2.44, `ins_V_other` 3.09) discount cluster
+repair by only 13–21%.
+
+**Why the objective resists cheap epenthesis.** The negative control shares the
+*same recipient word* as the attested pair, and differs only in the source. So
+cheap insertion helps the control almost exactly as much as it helps the
+attested pair, and the discriminative objective sees no gain — arguably a
+slight loss, because a mis-matched control benefits more from a free escape
+hatch than a genuine correspondence does. **A discriminative objective is
+structurally the wrong tool for learning repair costs.** This is a real tension
+inside the spec: R2 asks for the sutoraiku recovery as a *training-time* target
+while R6/agreed-call-2 makes the training objective purely discriminative.
+Those two pull against each other, and here the objective won.
+
+The fix is not more regularization or a richer insertion model — it is a
+*generative* term (score how well the costs predict the recipient form, not
+just how well they rank it against a decoy), or fitting the epenthesis prices
+only on recipients that actually do cluster repair instead of averaging the
+signal over 41 languages most of which never epenthesize.
+
+Consequence for §3.6: the permissive-coda bias is **reduced but not removed**,
+and by this measure not reduced at all on the canonical case. Run the
+projection-distortion experiment as a two-arm sensitivity analysis.
+
+### 5. Contrast-study cross-check — **FAIL (null result)**
+
+The spec called this the intellectual crux, so it gets the fullest treatment.
+
+Spearman rank correlation over the 23 contrasts in `contrast_costs.csv` that
+are single panphon segments on both sides:
+
+| | ρ(cost, % L1 who hear the contrast) | ρ(cost, merger languages) |
+|---|---|---|
+| default panphon | −0.020 (p = 0.93) | −0.407 |
+| **learned** | **+0.059 (p = 0.79)** | −0.407 |
+
+Wanted: positive and significant on the left (a contrast most of humanity can
+hear should be *expensive* to substitute), negative on the right (a contrast
+languages actively merge should be *cheap*). What we got is **no relationship
+at all** — and, notably, the merger correlation does not move by even one
+digit.
+
+An earlier, looser pass criterion (ρ_learned > ρ_default) scored +0.059 as a
+pass. It has been tightened to require p < 0.05, because "the coin landed the
+right way up" is exactly the vacuous green tick this guardrail exists to catch.
+
+**Why it is null, from the per-contrast table**
+(`data/processed/cost_learning_contrast_check.csv`) — the learned costs move in
+*both* directions and cancel:
+
+| moved the right way | | moved the wrong way | |
+|---|---|---|---|
+| `i/ɪ` 0.25 → 0.11 | 27% hear it, 143 mergers | `f/v` 0.25 → 0.88 | 34% hear it |
+| `e/ɛ` 0.25 → 0.11 | 41%, 126 mergers | `s/z` 0.25 → 0.88 | 49% |
+| `o/ɔ` 0.25 → 0.11 | 37%, 102 mergers | `u/ʊ` 0.75 → 1.72 | 26%, 87 mergers |
+| `m/n` 1.13 → 2.03 | 99% hear it | `t/d` 0.25 → 0.88 | 75% but perceptually cheap |
+| `u/o` 1.00 → 1.85 | 70% | `p/b` 0.25 → 0.88 | 73% |
+| `h/x` 2.50 → 1.99 | 11%, 41 mergers | `k/ɡ` 0.25 → 0.88 | 74% |
+
+The vowel-quality rows all go the right way — mid-vowel and lax/tense
+distinctions that most of the world merges get cheap, exactly as they should.
+Every row that goes the wrong way is **the same row**: a voicing contrast
+(`f/v`, `s/z`, `p/b`, `t/d`, `k/ɡ` — all driven by `voi` at 3.5× panphon).
+
+So the null is not noise. It is one systematic effect — the voicing artifact of
+§7 — cancelling a genuine perceptual signal the fit did find in the vowel
+space. **Divergence, as the spec put it, is a flag for overfitting to loanword
+idiosyncrasy, and it has flagged one specific, identifiable, fixable parameter.**
+That is more useful than a pass would have been.
 
 ---
 
@@ -344,8 +625,9 @@ Three concrete places where the fit shows it is learning the wrong concept:
    voicing is one of the *cheapest* contrasts perceptually. This is a
    production/orthography artifact being learned as a perceptual fact, and it
    is the clearest single example of the concept gap.
-   (With the major-class prior in place `voi` settles much lower — the two
-   were competing for the same probability mass.)
+   The major-class prior pulls `voi` down from ~7.7× to **3.5×**, but it does
+   not fix it — 3.5× is still the single largest upward move in the whole
+   parameter table, and it is what makes guardrail 5 come out null (§5).
 3. **Dead features.** `sg` (aspiration/breathiness), `cg` (ejective), `tense`,
    `long` and `velaric` (clicks) all go to ~0. Partly that is transliteration
    stripping them; partly, per §6, it is that WOLD's recipient set contains no
