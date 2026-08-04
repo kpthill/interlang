@@ -330,11 +330,12 @@ half did not, and guardrail 5 caught why we should care.**
   (null, ρ = +0.059, p = 0.79).
 
 **The amendment that earned its keep:** amendment 1 (the same-protocol
-baseline). Against the legacy 0.923 the learned costs would have looked like a
-*regression* (0.957 < ... no — against 0.923 they look like a modest +0.034
-win). Against the honest 0.896 baseline they are +0.061 on every single
-recipient. The apples-to-apples comparison changed the size *and* the
-confidence of the headline claim.
+baseline). Compared to the legacy 0.923, the learned costs' 0.957 is a modest
++0.034 with no way to tell whether it is real. Compared to the honest 0.896
+baseline measured under the *same* CV and the *same* controls, it is +0.061 —
+and, crucially, +0.061 that holds on **every one of the 41** held-out
+recipients. The apples-to-apples comparison changed both the size of the
+headline claim and how much we can believe it.
 
 **The requirement that should have been questioned:** R2 asks for the
 sutoraiku recovery as a training-time target while agreed-call 2 makes the
