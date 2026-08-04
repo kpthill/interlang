@@ -27,10 +27,25 @@ Everything joins on **Glottocode** (and usually ISO 639-3).
 ### WOLD (`data/raw/wold/cldf/`)
 - 64,289 words · 41 recipient languages · 21,624 borrowing records.
 - `Source_Form_ID` is empty; source words are strings
-  (`Source_word`, `Source_languoid`) in mixed orthography/transliteration
-  — usable after cleaning (13,779 pairs survive a conservative filter).
-- Role: validation set for the recognizability metric; later, evidence on
-  which adaptations/repairs languages actually perform.
+  (`Source_word`, `Source_languoid`) in mixed orthography/transliteration.
+- **Cleaning is now committed** (`scripts/wold_pipeline.py`, 2026-08-04):
+  **16,687 pairs** survive the structural filter, **13,595** of them with
+  `Source_relation == 'immediate'` (the set every study uses). The old
+  uncommitted "13,779" almost certainly used the same `immediate` restriction.
+  Full attrition table and every judgment call: the script's docstring and
+  [`cost-learning.md`](cost-learning.md) §2.
+- **Known noise, unavoidable:** there is no per-donor romanisation table, so
+  one donor-agnostic transliteration is applied to all 257 donors. `c→k` is
+  wrong for Romanian, `j→j` is wrong for Spanish/French, `x→x` is wrong for
+  Spanish/English. Donor-specific systematic mis-mappings are real and bound
+  how far any single learned substitution weight should be trusted.
+- **Recipient-set coverage** (`scripts/wold_coverage.py`): only 30 of the 41
+  recipients have a PHOIBLE inventory. Of segments present in ≥5% of the
+  world's languages, 95.1% appear in ≥1 recipient; weighted by L1 speakers,
+  91.7%. The hole is **Indo-Aryan**: retroflex /ɖ/ (25.7% of L1 speakers) and
+  the whole breathy-voiced series are absent from the recipient set.
+- Role: validation set for the recognizability metric; source of the learned
+  substitution/epenthesis costs ([`cost-learning.md`](cost-learning.md)).
 
 ### Glottolog CLDF (`data/raw/glottolog-cldf/`)
 - 27,177 languoids; family tree (`Family_ID`), macroarea, ISO mapping.

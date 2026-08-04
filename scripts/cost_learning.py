@@ -169,6 +169,7 @@ SWEEP_K = 5            # grouped folds used to pick LAMBDA
 #: measured and reported (notes/cost-learning.md §5, guardrail 2).
 MAJOR_CLASS = ("syl", "son", "cons")
 MAJOR_PRIOR_MULT = 100.0
+MAJOR_MULT_OVERRIDE: float | None = None   # set by --major-mult
 
 
 # ---------------------------------------------------------------------------
@@ -218,11 +219,18 @@ def recipient_groups(recipients: np.ndarray, mask: np.ndarray) -> list[np.ndarra
 # Objective + fit
 # ---------------------------------------------------------------------------
 
-def prior_weights(model_cls) -> np.ndarray:
-    """Per-parameter prior strength; see MAJOR_PRIOR_MULT."""
+def prior_weights(model_cls, mult: float | None = None) -> np.ndarray:
+    """Per-parameter prior strength; see MAJOR_PRIOR_MULT.
+
+    `--major-mult 1` makes the prior uniform, which reproduces the comparison
+    curve in notes/cost-learning.md §5 (uniform shrinkage restores the /da/
+    gradient too, but only at lambda >= 0.1, and by then it has also undone
+    most of the place-of-articulation correction we came for).
+    """
     w = np.ones(model_cls.n_params())
     for name in MAJOR_CLASS:
-        w[model_cls.param_names().index(name)] = MAJOR_PRIOR_MULT
+        w[model_cls.param_names().index(name)] = (
+            MAJOR_PRIOR_MULT if mult is None else mult)
     return w
 
 
@@ -249,7 +257,7 @@ def fit(corpus: Corpus, train_mask: np.ndarray, model_cls, lam: float,
     """EM-style outer loop; Nelder-Mead on log-params inside (spec R6)."""
     prior = model_cls.default_params()
     log_prior = np.log(prior)
-    pw = prior_weights(model_cls)
+    pw = prior_weights(model_cls, MAJOR_MULT_OVERRIDE)
     p = model_cls.normalize(prior)
     groups = recipient_groups(corpus.recipients, train_mask)
     history, best_p, best = [], p, np.inf
@@ -478,7 +486,13 @@ def main() -> None:
     ap.add_argument("--quick", action="store_true", help="3 folds, 2 outer, tiny sweep")
     ap.add_argument("--lam", type=float, default=None, help="skip the sweep, use this lambda")
     ap.add_argument("--models", default="feature,context")
+    ap.add_argument("--major-mult", type=float, default=None,
+                    help="override MAJOR_PRIOR_MULT (1 = uniform prior)")
     args = ap.parse_args()
+    if args.major_mult is not None:
+        global MAJOR_MULT_OVERRIDE
+        MAJOR_MULT_OVERRIDE = args.major_mult
+        print(f"major-class prior multiplier overridden to {args.major_mult}")
 
     pairs = wp.load_pairs(PAIRS_CSV)
     pairs = pairs[pairs["source_relation"] == RELATION].reset_index(drop=True)

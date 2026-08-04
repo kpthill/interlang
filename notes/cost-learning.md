@@ -196,6 +196,32 @@ recognizability metric under any theory, so the major-class weights are held
 near panphon's values and the remaining 19 features plus the indel prices are
 learned freely. The AUC price of doing this is measured, not assumed (§5).
 
+**Why the prior is targeted rather than uniform.** Uniform shrinkage also fixes
+the ladder — but only at λ ≥ 0.1, and by then it has undone most of the
+place-of-articulation correction we came for. Reproduce with
+`--major-mult 1` (grouped 5-fold, `feature` model):
+
+| uniform λ | held-out AUC | /da/ ladder | `syl` | `lab` (panphon 0.25) |
+|---|---|---|---|---|
+| 0.0 | 0.9638 | ✗ | 0.04 | 0.43 |
+| 0.003 | **0.9642** | ✗ | 0.19 | 0.84 |
+| 0.01 | 0.9641 | ✗ | 0.27 | 0.81 |
+| 0.03 | 0.9616 | ✗ | 0.42 | 0.73 |
+| 0.1 | 0.9542 | ✓ | 0.63 | 0.60 |
+| 0.3 | 0.9445 | ✓ | 0.73 | 0.38 |
+| 1.0 | 0.9249 | ✓ | 0.84 | 0.29 |
+
+Reading the table: the ladder and the place correction are being traded against
+each other by a single knob, because that knob shrinks *everything*. Targeting
+the prior at exactly the three features the data cannot inform buys the sanity
+guarantee without spending the correction — see §5 for the numbers under the
+100× prior.
+
+One more thing the table shows: the *completely* unregularized fit (λ=0) is
+not merely wrong, it is **unstable** — `lab` lands at 0.43 there but at 0.84
+with the barest shrinkage. A parameter that moves by 2× under a
+near-zero prior is not a measurement.
+
 ---
 
 ## 4. R3 — the primary result: stability across held-out recipients

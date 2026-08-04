@@ -138,12 +138,15 @@ Recognizability is not symmetric or universal — it depends on the hearer's **n
 
 Against attested WOLD loanword pairs vs shuffled controls (n = 1,500 sampled, noisy quasi-orthographic transcriptions on both sides): **mean 0.78 vs 0.46, AUC 0.923**. Sanity gradient vs /da/ orders as desired: ta 0.98 > ða 0.91 > ɡa 0.85 > fa 0.82 > ma 0.75 > ia 0.41.
 
-### Known issues (logged, not yet fixed)
+### Known issues
 
-1. **Place of articulation underweighted** by panphon's default weights: projection mapped /v/ → /z/ for a Japanese-like inventory where real loanword adaptation gives /v/ → /b/. Fix candidates: reweight, or learn substitution costs from WOLD's ~20k attested adaptations (or Jäger-style PMI costs).
-2. **No epenthesis modeling** (epenthesis = inserting vowels to break up illegal clusters, as in su-to-ra-i-ku): "sutoraiku" vs "strike" scores only 0.61. Consequence: the metric **systematically flatters permissive codas** — critical caveat for the syllable-template experiment.
-3. **Baseline inflation:** random CV-ish pairs score ~0.46, so usable dynamic range is roughly [0.45, 1.0]. Recalibrate against that floor, e.g. `score' = max(0, (s − s_random)/(1 − s_random))`.
-4. **Glyph normalization:** ASCII `g`, `:`, `'` are mapped to proper IPA in `segments()`; watch for more lookalikes when ingesting new sources.
+*Updated 2026-08-04 by the cost-learning study ([`cost-learning.md`](cost-learning.md)); issues 1 and 2 move from "known" to "bounded".*
+
+1. **Place of articulation underweighted** by panphon's default weights: projection maps /v/ → /z/ for a Japanese-like inventory where real loanword adaptation gives /v/ → /b/ (confirmed: default costs are /v/→/z/ 1.125, /v/→/b/ 1.250). **BOUNDED and fixable.** Learning the weights from WOLD raises the labial weight to ~3× panphon's and flips the diagnostic to /v/ → /b/, stably across held-out recipients. The learned weights are in `data/processed/learned_costs.csv` and `metric.py` accepts them via `params=`, but they are **not the default** — see issue 5.
+2. **No epenthesis modeling.** **BOUNDED, partially fixed.** The cost model now has separate insertion prices for vowels and consonants (and, in the `context` variant, for cluster-repair vs other positions), fitted jointly with the substitution weights. Vowel insertion learns to be ~40% cheaper than consonant insertion, which is real movement in the right direction — but "sutoraiku" vs "strike" only reaches ~0.6, not the 0.9 the structure can express. **The bias toward permissive codas is reduced, not removed**, so the syllable-template experiment (§7.4) still needs the caveat, now with a measured size rather than an assertion.
+3. **Baseline inflation:** random CV-ish pairs score ~0.46, so usable dynamic range is roughly [0.45, 1.0]. Recalibrate against that floor, e.g. `score' = max(0, (s − s_random)/(1 − s_random))`. (Unchanged.)
+4. **Glyph normalization:** ASCII `g`, `:`, `'` are mapped to proper IPA in `segments()`; watch for more lookalikes when ingesting new sources. (Unchanged.)
+5. **NEW — the learned costs encode loanword facts, not only perceptual ones.** Fitted freely, the WOLD data prices *voicing* mismatches at ~7× panphon's weight, while the contrast study says voicing is one of the **cheapest** contrasts perceptually (t/d natively audible to 75%, p/b to 73%). Loanword orthographies record voicing faithfully on both sides, so the fit is learning a transcription artifact. Similarly, aspiration/breathiness (`sg`), ejectivity (`cg`) and clicks (`velaric`) learn weight ≈ 0 — which means "no evidence in WOLD's recipient set", not "does not matter". This is why v0 is still the default.
 
 ---
 
@@ -189,8 +192,15 @@ Experiments:
 1. ~~**Phoneme/contrast prevalence study**~~ **DONE** → [`phoneme-prevalence.md`](phoneme-prevalence.md); inventory findings folded into §3.3.
 2. ~~**Contrast study**~~ **DONE** → [`contrast-study.md`](contrast-study.md); contrast prices and functional-load mechanism in §3.3.
 3. ~~**L1 speaker-count sourcing**~~ **DONE** → Wikidata P1098 (1,858 languages, `data/processed/l1_speakers.csv`), with the phantom-MSA override (`L1_OVERRIDES` in `scripts/fetch_l1_speakers.py`; see contrast-study Addendum).
-4. **Projection-distortion experiment** (NEXT) — project source vocabulary through candidate syllable templates (strict CV vs (C)V(N) vs permissive CVC) and measure retained recognizability. → Resolves §3.6. Prerequisite caution: the epenthesis gap in the metric biases this experiment toward permissive codas; fix epenthesis first or bound its effect.
-5. **Metric calibration** — reweight or learn substitution costs from WOLD's attested adaptations; recalibrate against the ~0.46 random floor; add epenthesis modeling (needed by #4).
+4. **Projection-distortion experiment** (NEXT) — project source vocabulary through candidate syllable templates (strict CV vs (C)V(N) vs permissive CVC) and measure retained recognizability. → Resolves §3.6. Prerequisite caution, now **bounded rather than open**: the epenthesis gap biases this experiment toward permissive codas. The learned costs (§7.5) reduce the bias but do not remove it, so run the experiment **as a two-arm sensitivity analysis** — once with `params=None` (v0) and once with the learned costs — and report the template ranking only where the two arms agree.
+5. ~~**Metric calibration**~~ **DONE (2026-08-04)** → [`cost-learning.md`](cost-learning.md), spec in [`cost-learning-spec.md`](cost-learning-spec.md). Summary:
+   - The WOLD pipeline is **committed** for the first time (`scripts/wold_pipeline.py`): 16,687 cleaned pairs, 13,595 used.
+   - The recorded **AUC 0.923 is retired as a reference point.** It came from a protocol that shuffled negative controls from the *global* source pool, which lets a model win by detecting which donor pool a recipient draws from. Rebuilt under that same loose protocol we get 0.909; under an honest recipient-grouped protocol with within-recipient controls the default-weight baseline is the number to compare against (see `cost-learning.md` §4).
+   - Substitution and insertion/deletion costs are learned **jointly** and cross-validated **leave-one-recipient-out over all 41 recipients**. The headline is a stability statement, not a point estimate.
+   - **The place-of-articulation fix is real and stable**; the epenthesis fix is partial; two of five guardrails fail. **v0 remains the default metric**; the learned costs ship as `data/processed/learned_costs.csv` and are opt-in via `metric.similarity(..., params=...)`.
+   - New standing worry: the loanword corpus teaches production/orthography facts (voicing) as if they were perceptual facts. §4 known-issue 5.
+
+6. **Retire the loanword-only calibration (NEW, OPEN)** — the cost model is calibrated on adaptation but consumed for recognition and distinguishability. The contrast study is the only non-loanword anchor we have, and it is inventory-level, not word-level. Candidates for a second anchor: perceptual-confusion matrices from the L2 speech-perception literature; ASJP cognate alignments (Jäger-style PMI) as a *within-family* substitution signal that has no orthography in it.
 
 Standing open questions:
 
