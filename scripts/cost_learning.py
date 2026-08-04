@@ -148,11 +148,27 @@ PHOIBLE = ROOT / "data" / "raw" / "phoible" / "cldf"
 RELATION = "immediate"
 CONTROL_SEED = 20260804
 TAU = 0.1
-N_OUTER = 4            # EM re-alignment rounds
+N_OUTER = 3            # EM re-alignment rounds (the loss plateaus by round 2)
 NM_MAXITER = 4000      # Nelder-Mead iterations per inner optimization
 NM_RESTARTS = 2
-LAMBDA_GRID = [0.0, 0.003, 0.01, 0.03, 0.1, 0.3, 1.0]
+LAMBDA_GRID = [0.0, 0.01, 0.03, 0.1, 0.3]
 SWEEP_K = 5            # grouped folds used to pick LAMBDA
+
+#: The prior is NOT uniform. syl/son/cons are panphon's MAJOR-CLASS features -
+#: they are what makes a vowel a vowel and a consonant a consonant. The
+#: unregularized fit drives all three to ~0.04 (see the module docstring), and
+#: no amount of uniform shrinkage fixes it at a tolerable AUC cost, because the
+#: data genuinely prefers cheap vowel/consonant interchange: WOLD source strings
+#: are orthographic, so vowels are routinely unwritten (Semitic transliteration)
+#: or inserted by convention, and vowel/consonant confusion is partly an
+#: artifact of the transcription rather than a fact about perception.
+#: A metric in which a listener may hear a vowel as a consonant for free is not
+#: a recognizability metric under any theory, so these three carry a prior
+#: MAJOR_PRIOR_MULT times stronger than the rest. This is a judgment call, it is
+#: the single most consequential one in this script, and its AUC cost is
+#: measured and reported (notes/cost-learning.md §5, guardrail 2).
+MAJOR_CLASS = ("syl", "son", "cons")
+MAJOR_PRIOR_MULT = 100.0
 
 
 # ---------------------------------------------------------------------------
@@ -202,7 +218,16 @@ def recipient_groups(recipients: np.ndarray, mask: np.ndarray) -> list[np.ndarra
 # Objective + fit
 # ---------------------------------------------------------------------------
 
-def surrogate_loss(params, phi_p, psi_p, phi_n, psi_n, groups, lam, log_prior) -> float:
+def prior_weights(model_cls) -> np.ndarray:
+    """Per-parameter prior strength; see MAJOR_PRIOR_MULT."""
+    w = np.ones(model_cls.n_params())
+    for name in MAJOR_CLASS:
+        w[model_cls.param_names().index(name)] = MAJOR_PRIOR_MULT
+    return w
+
+
+def surrogate_loss(params, phi_p, psi_p, phi_n, psi_n, groups, lam,
+                   log_prior, pw) -> float:
     sp = costs.similarity_from(phi_p, psi_p, params, clamp=False)
     sn = costs.similarity_from(phi_n, psi_n, params, clamp=False)
     nll = np.logaddexp(0.0, -(sp - sn) / TAU)      # -log sigmoid, computed stably
@@ -210,7 +235,7 @@ def surrogate_loss(params, phi_p, psi_p, phi_n, psi_n, groups, lam, log_prior) -
     if lam <= 0:
         return base
     dev = np.log(np.maximum(params, 1e-9)) - log_prior
-    return base + lam * float(np.mean(dev ** 2))
+    return base + lam * float(np.mean(pw * dev ** 2))
 
 
 def held_out_auc(params, phi_p, psi_p, phi_n, psi_n, idx) -> float:
@@ -224,12 +249,13 @@ def fit(corpus: Corpus, train_mask: np.ndarray, model_cls, lam: float,
     """EM-style outer loop; Nelder-Mead on log-params inside (spec R6)."""
     prior = model_cls.default_params()
     log_prior = np.log(prior)
+    pw = prior_weights(model_cls)
     p = model_cls.normalize(prior)
     groups = recipient_groups(corpus.recipients, train_mask)
     history, best_p, best = [], p, np.inf
     for outer in range(n_outer):
         al = corpus.align(p, model_cls)                 # re-align under current p
-        honest = surrogate_loss(p, *al, groups, lam, log_prior)
+        honest = surrogate_loss(p, *al, groups, lam, log_prior, pw)
         history.append(honest)
         if honest < best - 1e-9:
             best, best_p = honest, p
@@ -238,7 +264,7 @@ def fit(corpus: Corpus, train_mask: np.ndarray, model_cls, lam: float,
 
         def obj(theta):
             return surrogate_loss(model_cls.normalize(np.exp(theta)),
-                                  *al, groups, lam, log_prior)
+                                  *al, groups, lam, log_prior, pw)
 
         theta = np.log(np.maximum(p, 1e-4))
         res = None
@@ -479,8 +505,21 @@ def main() -> None:
             LAMBDA_GRID = [0.0, 0.03]
         sweep = lambda_sweep(corpus, primary, n_outer)
         sweep.to_csv(PROC / "cost_learning_lambda.csv", index=False)
-        lam = float(sweep.loc[sweep["auc_mean"].idxmax(), "lam"])
-        print(f"  -> LAMBDA = {lam}\n")
+        # SELECTION RULE: highest held-out AUC AMONG the lambdas that preserve
+        # the /da/ sanity gradient (guardrail 2). Unregularized always wins on
+        # raw AUC, and always produces a metric in which /d/->/i/ is cheaper
+        # than /d/->/f/. Trading a phonetically incoherent metric for a
+        # fraction of a point of AUC is not a trade this project wants, and
+        # making the rule explicit is better than quietly deleting lambda=0
+        # from the grid. The whole curve, lambda=0 included, is in the CSV so
+        # the price of the constraint is visible.
+        ok = sweep[sweep["da_ladder_ok"]]
+        if ok.empty:
+            lam = float(sweep.loc[sweep["auc_mean"].idxmax(), "lam"])
+            print("  !! no lambda preserves the /da/ gradient; falling back to max AUC")
+        else:
+            lam = float(ok.loc[ok["auc_mean"].idxmax(), "lam"])
+        print(f"  -> LAMBDA = {lam}  (best AUC among ladder-preserving lambdas)\n")
 
     # --- per-model LORO -----------------------------------------------------
     all_cv, all_params, all_guard = [], [], []

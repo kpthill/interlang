@@ -111,7 +111,90 @@ model faces. **This is what guardrail 1 is judged against.**
 
 ## 3. R2/R4/R6 — how the fit works
 
-RESULTS_PLACEHOLDER_METHOD
+### The parameter vector (R2: substitution and epenthesis fitted together)
+
+`src/interlang/costs.py` ships two cost models behind one interface:
+
+| model | parameters | insertion priced by |
+|---|---|---|
+| `FeatureWeightCosts` | 22 feature weights + `del_C del_V ins_C ins_V` | what is inserted |
+| `ContextEpenthesisCosts` | 22 + `del_C del_V ins_C ins_V_cluster ins_V_edge ins_V_other` | what **and where** |
+
+Both reproduce `metric.similarity` bit for bit at panphon's defaults (verified,
+max absolute difference 0.0), so "learned vs default" is a clean A/B.
+
+The second model is the spec's explicit R2 **stretch goal**: a vowel inserted
+between two source consonants (cluster repair) or at a consonantal word edge
+(prothesis "schola"→"escuela", paragoge "strike"→"sutoraik-**u**") is priced
+separately from a vowel inserted anywhere else. The insertion-context classes
+for `s t ɹ a i k` come out `edge, cluster, cluster, other, other, other, edge`
+— exactly the su-**t**o-ra-i-**ku** pattern.
+
+Insertion and deletion are separately parameterized, which is where the
+source→recipient asymmetry lives. Substitution stays symmetric (a
+feature-weight model cannot be otherwise); asymmetric substitution and a
+segment-pair matrix are the documented next models behind the seam (R4).
+
+**Scale.** Multiplying every parameter by a constant leaves the normalized
+similarity unchanged, so the objective has an exact flat direction. It is
+removed by rescaling so the 22 feature weights always sum to panphon's 7.25.
+Every learned weight below is therefore directly comparable to panphon's, unit
+for unit, and the indel prices are comparable to panphon's flat 7.25.
+
+### The objective (R6: never gradient-optimize AUC)
+
+Attested pair scores `s⁺`, its within-recipient control scores `s⁻`; minimize
+
+```
+L(p) = mean over recipients ( mean over that recipient's pairs
+         −log sigmoid((s⁺ − s⁻)/τ) )          τ = 0.1
+     + λ · mean_j  w_j (log p_j − log p_j^panphon)²
+```
+
+- The **outer mean over recipients is the R5 rebalancing** — each recipient
+  counts once regardless of pair count, so Berber (1,184), Romanian (1,114) and
+  Romani (1,024) cannot outvote Ket (107). Donor rebalancing was **not** done;
+  the Spanish/Latin/Arabic donor skew survives into the fit and is a live
+  caveat.
+- **AUC is never optimized**, only reported on held-out folds, on the clamped
+  metric-faithful similarity.
+
+**Optimizer route chosen: both sanctioned R6 routes, composed.** Derivative-free
+Nelder–Mead on log-parameters, inside an EM-style outer loop that re-aligns
+between inner optimizations. The reason this is cheap enough to do 41 times
+twice: *given a fixed alignment, the distance is exactly linear in the
+parameters* — `d = φ·p` where φ accumulates per-feature disagreement over
+substituted positions plus counts per indel class. So one batched DP pass
+(0.2 s over 13,595 pairs, vectorized across pairs of equal shape) buys an inner
+objective that is a single matmul, ~0.4 ms per evaluation. Nelder–Mead then
+runs thousands of evaluations in seconds. Between outer rounds we re-align
+under the new parameters, recompute the honest objective, and accept the step
+only if it improved — which is how R6's "alignment path can change
+discontinuously" hazard is handled rather than ignored.
+
+### The prior, and why it is not decoration
+
+λ shrinks toward panphon's hand-guessed values in log space, and the weights
+`w_j` are **not uniform**: `syl`, `son` and `cons` — panphon's *major-class*
+features, the ones that make a vowel a vowel — carry a prior 100× stronger than
+the rest.
+
+This is the single most consequential judgment call in the study, and it was
+forced by the data. Unregularized, the fit drives all three major-class weights
+from 1.0 to **~0.04**, and the resulting metric scores /d/→/i/ as *cheaper*
+than /d/→/f/ — guardrail 2 fails outright. Two things are going on:
+
+1. The model is using cheap vowel/consonant interchange as a crude substitute
+   for epenthesis machinery. (It does this even in the `context` model, so this
+   is not the whole story.)
+2. WOLD source strings are orthographic. Semitic transliterations routinely
+   omit vowels; other conventions insert them. Vowel-consonant confusion is
+   partly an artifact of the transcription, and the fit happily learns it.
+
+A metric in which a listener may hear a vowel as a consonant for free is not a
+recognizability metric under any theory, so the major-class weights are held
+near panphon's values and the remaining 19 features plus the indel prices are
+learned freely. The AUC price of doing this is measured, not assumed (§5).
 
 ---
 
@@ -178,12 +261,68 @@ we should hold onto:
 
 ---
 
-## 7. The loanword-vs-recognition caveat
+## 7. The loanword-vs-recognition caveat, with evidence
 
-RESULTS_PLACEHOLDER_CAVEAT
+The spec flagged this up front and the run put numbers on it. We calibrated on
+**loanword adaptation** — production-mediated, whole-word, top-down, the
+borrower already knew the word, and the record of it is orthographic. We want
+to *use* the result for **recognition** (naive listener, unknown word) and
+**distinguishability** (two of our own words, symmetric, no source). Three
+different concepts.
+
+Three concrete places where the fit shows it is learning the wrong concept:
+
+1. **Major-class collapse.** Left free, the fit prices vowel↔consonant
+   interchange at near zero. No theory of *perception* says that. It is a
+   plausible fact about *transcriptions* (unwritten Semitic vowels,
+   convention-inserted ones) and about alignment slack. We had to override it
+   with a prior (§3), which is an explicit admission that on this axis the
+   loanword data is not evidence about recognition.
+2. **Voicing.** Left free, `voi` goes to ~7.7× panphon's weight — the fit
+   decides voicing mismatches are among the most expensive things that can
+   happen. Loanword orthographies record voicing faithfully on both sides, so
+   voicing mismatches are rare *in the data*. But the contrast study says the
+   t/d contrast is natively audible to only 75% of humanity, and p/b to 73% —
+   voicing is one of the *cheapest* contrasts perceptually. This is a
+   production/orthography artifact being learned as a perceptual fact, and it
+   is the clearest single example of the concept gap.
+   (With the major-class prior in place `voi` settles much lower — the two
+   were competing for the same probability mass.)
+3. **Dead features.** `sg` (aspiration/breathiness), `cg` (ejective), `tense`,
+   `long` and `velaric` (clicks) all go to ~0. Partly that is transliteration
+   stripping them; partly, per §6, it is that WOLD's recipient set contains no
+   breathy-voiced or click phonology at all. A zero learned weight here means
+   "no evidence", not "does not matter", and must not be read as the latter.
+
+**What guardrail 5 buys us.** The contrast study is derived from PHOIBLE
+inventories and merger patterns — no loanwords anywhere in it — so agreement
+between it and the learned costs is evidence that the fit captured perceptual
+distinguishability rather than loanword idiosyncrasy. §5 reports it; the
+direction of the result is the reason to take the learned *place* weights
+seriously while distrusting the learned *voicing* weight.
 
 ---
 
-## 8. What changes, and what does not
+## 8. What changes, what does not, and what to do next
 
-RESULTS_PLACEHOLDER_ADOPT
+**`metric.py` v0 remains the default and the deployed metric.** It gains an
+optional `params=` argument (verified bit-identical when omitted), so the
+learned costs can be used deliberately — e.g. as a sensitivity arm in the
+projection-distortion experiment — without becoming the silent default. Given
+that two of five guardrails fail, promoting the learned costs to default now
+would be trading a metric with *characterized* failure modes for one with
+*different, less characterized* failure modes.
+
+**Conditions for promoting the learned costs to v1**, in the order that would
+retire the most risk:
+
+1. Fix guardrail 4 properly. The context-epenthesis model has the right
+   structure but the discriminative objective does not reward using it (§5).
+   Either add a *generative* term (predict the recipient form, not just rank
+   it), or fit the epenthesis prices on the subset of recipients where cluster
+   repair actually happens rather than averaging over 41.
+2. Re-derive the voicing weight from a non-loanword source, or pin it from the
+   contrast study the way the major-class weights are pinned from theory.
+3. Get an Indo-Aryan recipient (breathy voice, retroflexion) into the training
+   set — from a source other than WOLD if necessary — before trusting `sg`,
+   `ant` or `distr`.
