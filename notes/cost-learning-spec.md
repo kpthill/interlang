@@ -1,6 +1,8 @@
 # Study spec: learning substitution + epenthesis costs for the recognizability metric
 
-*Status: SPEC (not yet run). Written 2026-08-03. Companion to
+*Status: SPEC (not yet run). Written 2026-08-03; amended 2026-08-04 (R1 two
+baselines, R6 objective mechanics, R7 within-recipient controls, guardrail 1
+restated, environment/runtime notes — see "Amendments" at the end). Companion to
 [`principles.md`](principles.md) §4 and §7.5, [`data-audit.md`](data-audit.md)
 (metric known-issues 1 & 2). This document is the agreed plan; the eventual
 study script and its `notes/` write-up supersede it once the work is done.*
@@ -54,11 +56,14 @@ one optimization, not two (see Requirement R2).
    guessed up front.
 2. **Objective: discriminative** — optimize the weights so attested pairs
    outscore shuffled controls (the quantity the metric is actually consumed for:
-   ranking). EM-style alignment may *initialize* it. Reuse the validation
-   harness (AUC) as the objective.
+   ranking). EM-style alignment may *initialize* it. AUC is the *evaluation*
+   quantity; what actually gets optimized is a smooth surrogate or a
+   derivative-free search — see R6.
 3. **Epenthesis rides along as a REQUIREMENT**, not a stretch goal (R2).
-4. **Guardrails** (see Requirements): hold/beat AUC 0.923 on held-out
-   recipients; preserve the /da/ sanity gradient; flip the /v/→/b/ diagnostic;
+4. **Guardrails** (see Requirements): beat the default-weight baseline on
+   held-out recipients under identical CV (amended — see guardrail 1, which
+   supersedes the original "hold/beat AUC 0.923" wording); preserve the /da/
+   sanity gradient; flip the /v/→/b/ diagnostic;
    report sutoraiku/strike before-after; **cross-check learned costs against the
    contrast study** as a non-loanword anchor.
 5. **Per-recipient rebalancing** of the training objective so a few
@@ -113,6 +118,29 @@ cleaning and the AUC validation as a committed script under `scripts/`, per the
 baseline before changing anything. Document the cleaning filter's judgment calls
 in its docstring.
 
+R1 must produce **two** baselines, not one:
+
+- **(a) Legacy-protocol reproduction** — approximately recover AUC 0.923 under
+  the original loose protocol (sampled pairs, not recipient-grouped). This
+  exists only to confirm the pipeline reconstruction is faithful.
+- **(b) Honest-protocol default-weight baseline** — run **unmodified panphon
+  default weights** through the *same* recipient-grouped CV (R3) and the same
+  control-construction rule (R7) that the learned model will face.
+
+Rationale: 0.923 came from a possibly-leaky, non-recipient-grouped split.
+Comparing learned-weights-under-honest-CV against default-weights-under-legacy-
+protocol is apples to oranges. Guardrail 1 is judged on (b).
+
+The **working pair set is whatever the rebuilt cleaning filter yields**; the
+spec's ~20,615 (usable = non-empty `Source_word`) and the recorded 13,779
+(conservatively cleaned) bracket the plausible range. Report the actual number
+and the filter's judgment calls rather than targeting either figure.
+
+Also record the **WOLD commit hash** used (README pins `0df955a`) in the
+script's output/docstring. Results should not be sensitive to the dataset
+version — if they are, that is itself a finding worth flagging — but the version
+is recorded for posterity.
+
 **R2 — Joint substitution + epenthesis fit (hard requirement).** Insertion/
 deletion cost currently = `sum(weights)`, which *moves* when substitution
 weights are retrained; holding it stale contaminates the alignments and thus the
@@ -143,11 +171,61 @@ collapses everything onto Mandarin+English and discards the typological breadth
 that makes WOLD worth using). Optional: per-donor rebalancing to blunt the
 Spanish/Latin/Arabic skew; if not done, log it as a caveat.
 
+**R6 — Do not gradient-optimize AUC directly.** AUC is a pure ranking measure:
+as a function of the weights it is a **flat staircase** — zero derivative
+almost everywhere, discrete jumps of 1/(n₊·n₋) when a pair swaps order. A
+gradient optimizer reads that flatness as "already optimal" and stops. Two
+sanctioned routes (agent picks and documents; both are acceptable):
+
+- **Smooth pairwise surrogate.** For an attested pair scoring `s⁺` and its
+  matched control scoring `s⁻`, minimize `−log(sigmoid(s⁺ − s⁻))` (logistic) or
+  `max(0, m − (s⁺ − s⁻))` (margin/hinge), summed over pairs with R5
+  rebalancing. Nonzero gradient everywhere it matters.
+- **Derivative-free optimization** (Nelder–Mead, CMA-ES) on AUC or the
+  surrogate directly. Entirely feasible at ~23 parameters and it sidesteps the
+  alignment problem below. Mild default given the low dimension.
+
+**Alignment wrinkle:** similarity is the output of an edit-distance alignment,
+so `s⁺ − s⁻` is not a clean smooth function of the weights — the optimal
+alignment path can change discontinuously as weights move. This is the R2
+"epenthesis moves the alignments" problem in another guise. Derivative-free
+optimization avoids it; the gradient route must handle it EM-style (hold
+alignments fixed within a step, re-align, refit).
+
+**AUC is computed on held-out folds as the report card only** — never touched
+during fitting.
+
+**R7 — Negative controls must be shuffled WITHIN recipient.** Draw each
+control's source word from *the same recipient language's own source pool*,
+never from the global pool.
+
+Why this is load-bearing: with global shuffling, a Japanese output can be paired
+against an Arabic source that really belongs to Berber. The model then wins the
+discrimination task by learning a **recipient/donor-pool detector** ("Japanese
+output rarely comes from a pharyngeal-heavy source") rather than adaptation
+structure. Held-out AUC looks excellent and the learned weights are worthless
+for our purpose, because the exploited signal — which donor pool a recipient
+draws from — does not exist in the recognition task at all. Within-recipient
+shuffling makes the control's source equally plausible as a donor, so the only
+way to separate attested from control is to notice that the segments actually
+map (`strike`→`sutoraiku` does; `television`→`sutoraiku` does not).
+
+This is a cheap structural defense against the concept caveat below (fitting
+loanword-specific artifacts instead of perceptual substitution structure).
+Tightening further to within-donor-language shuffling is optional; the
+within-recipient rule is the requirement. **R1 should report whether the
+original 0.923 harness did this** — if it did not, that is further reason to
+treat the honest recipient-grouped number as the real reset point.
+
 ## Guardrails (must all be reported, pass/fail)
 
-1. Held-out AUC (R3 distribution) **≥ 0.923** baseline, or a documented reason
-   if the honest recipient-grouped number lands lower than the old
-   possibly-leaky figure.
+1. **Learned ≥ default under identical honest CV.** Held-out AUC (R3
+   distribution) for the learned costs must beat the R1(b) default-panphon-weight
+   baseline run through the *same* recipient-grouped CV and the same R7 controls.
+   Report both distributions, not just point estimates. The legacy 0.923 is a
+   reference point for the R1(a) reconstruction only — it is **not** the bar,
+   since it came from a looser protocol; the honest numbers may both land lower
+   and that is expected, not a failure.
 2. `/da/` sanity gradient preserved: ta > ða > ɡa > fa > ma > ia.
 3. **Diagnostic flip:** /v/ projected onto a Japanese-like inventory → /b/, not
    /z/.
@@ -188,8 +266,41 @@ model, validated against a non-loanword source before we trust it for (a)/(b).
 
 ## Sequencing for the agent
 
-1. R1: reconstruct + commit WOLD pipeline, reproduce baseline AUC.
-2. Joint cost-learning (R2) with the discriminative objective, feature-weight
-   model behind the R4 interface, R5 rebalancing.
+0. **Environment.** `data/raw/` is gitignored and absent in a fresh checkout —
+   re-fetch WOLD (and PHOIBLE, needed for the guardrail-3 listener inventory and
+   for R4/guardrail-5 work) per the README's clone commands, and install panphon.
+   Record dataset commit hashes.
+1. R1: reconstruct + commit WOLD pipeline; produce baseline (a) legacy-protocol
+   reproduction and (b) default-weight honest-CV baseline.
+2. Joint cost-learning (R2) with the discriminative objective (R6 surrogate or
+   derivative-free), R7 within-recipient controls, feature-weight model behind
+   the R4 interface, R5 rebalancing.
 3. R3 repeated recipient-level CV; collect weight + AUC distributions.
+   **Prefer full leave-one-recipient-out (all 41).** If runtime is prohibitive
+   — 41 optimization runs with alignment in the inner loop — fall back to
+   repeated grouped K-fold and *document the fallback and its reason*; do not
+   stall on this.
 4. Guardrails 1–5; write-up + notes/data-audit updates.
+
+## Amendments (2026-08-04, Patrick + Claude)
+
+Four changes agreed before handing the study to an agent. None changes the
+study's shape; each closes a "looks great, means nothing" trap.
+
+1. **Guardrail 1 needed a same-protocol baseline.** The original wording
+   compared learned-weights-under-honest-CV to the legacy 0.923, which was
+   measured under a looser protocol. R1 now produces a default-panphon-weight
+   baseline under the identical recipient-grouped CV, and guardrail 1 is judged
+   against *that*.
+2. **AUC is not differentiable** — added R6. Optimize a smooth pairwise
+   surrogate or use derivative-free search; AUC stays the evaluation quantity.
+   The edit-distance alignment makes the objective non-smooth regardless, which
+   is the same hazard R2 flags for epenthesis.
+3. **Controls must be shuffled within recipient** — added R7. Global shuffling
+   lets the model win by detecting donor pools instead of learning adaptation
+   structure.
+4. **Environment + runtime** — `data/raw/` must be re-fetched; dataset commit
+   hashes recorded for posterity (results should not be version-sensitive);
+   full LORO preferred with a documented K-fold fallback rather than stalling.
+   The working pair-set size is whatever the rebuilt filter yields (~13.8k–20.6k
+   bracket), reported rather than targeted.
