@@ -16,14 +16,21 @@ questions and next steps in §7.
 
 - **Recognizability metric v0** (`src/interlang/metric.py`) — panphon weighted feature
   edit distance with listener conditioning (project both words onto the listener's
-  PHOIBLE inventory first). Validated against WOLD loanword pairs: AUC 0.923.
-  Known issues (place-of-articulation weights, no epenthesis modeling, ~0.46 random
-  floor) are characterized in [`notes/data-audit.md`](notes/data-audit.md).
+  PHOIBLE inventory first). Still the default. Known issues are characterized in
+  [`notes/data-audit.md`](notes/data-audit.md); issues 1 and 2 are now *bounded* by
+  the cost-learning study rather than merely logged.
+  (The older "AUC 0.923" figure is **retired** — its negative controls were shuffled
+  globally, which makes the task easier than the one we care about. See
+  [`notes/cost-learning.md`](notes/cost-learning.md) §2.)
 - **Phoneme prevalence study** — done, [`notes/phoneme-prevalence.md`](notes/phoneme-prevalence.md).
 - **Contrast study** — done, [`notes/contrast-study.md`](notes/contrast-study.md).
-- **Next:** projection-distortion experiment across syllable templates (fix the
-  metric's epenthesis gap first — it flatters permissive codas), and metric
-  calibration from WOLD adaptations.
+- **Cost learning from WOLD** — done, [`notes/cost-learning.md`](notes/cost-learning.md).
+  Substitution + epenthesis costs fitted jointly to 13,595 attested loanword
+  adaptations, cross-validated leave-one-recipient-out over all 41 recipients.
+  Learned costs are opt-in (`metric.similarity(..., params=...)`), not the default.
+- **Next:** projection-distortion experiment across syllable templates, run as a
+  two-arm sensitivity analysis (v0 costs vs learned costs) because the
+  permissive-coda bias is reduced but not eliminated.
 
 ## Layout
 
