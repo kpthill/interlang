@@ -74,23 +74,49 @@ Everything joins on **Glottocode** (and usually ISO 639-3).
   phoneme inventory (nearest native category per segment) before scoring —
   contrasts the listener lacks become free (verified: /l/~/ɾ/ = 1.0 for a
   Japanese-like inventory).
-- **Validation vs WOLD**: attested loan pairs mean 0.78 vs random-control
-  mean 0.46, **AUC 0.923** (n=1,500 sampled pairs, noisy quasi-orthographic
-  transcriptions on both sides) — good separation for a v0.
+- **Validation vs WOLD (updated 2026-08-04)**: the recorded **AUC 0.923 is
+  retired**. Its controls were sampled from the *global* source pool, so a model
+  could win by detecting donor pools rather than adaptation structure. Rebuilt
+  under that same loose protocol the pipeline gives 0.909 (attested 0.757,
+  control 0.459 — the control mean reproduces exactly). Under the honest
+  protocol — leave-one-recipient-out over all 41 recipients, controls shuffled
+  *within* recipient — the default-weight metric scores **0.8961 ± 0.0618**.
+  That is the real baseline. See [`cost-learning.md`](cost-learning.md) §2/§4.
 - Sanity gradient (vs /da/): ta 0.98 > ða 0.91 > ɡa 0.85 > fa 0.82 >
   ma 0.75 > ia 0.41 — orders as desired (/d/→/t/ ≫ /d/→/f/).
 
 ### Known metric issues / calibration notes
 1. panphon default feature weights underweight place-of-articulation:
-   projection mapped /v/ → /z/ for a Japanese-like inventory where real
-   loanword adaptation gives /v/ → /b/. Consider reweighting or learning
-   substitution costs from WOLD adaptations (or Jäger-style PMI costs).
-2. No epenthesis modeling: "sutoraiku" vs "strike" scores 0.61 — attested
-   adaptations with heavy vowel epenthesis are punished; listener-side
-   projection is segment-wise only. Fine for ranking, revisit if it skews
-   phonotactic conclusions (it systematically favors permissive codas).
+   projection maps /v/ → /z/ (cost 1.125) ahead of /v/ → /b/ (1.250) for a
+   Japanese-like inventory, where real loanword adaptation gives /b/.
+   **BOUNDED 2026-08-04** — costs learned from WOLD raise the labial weight to
+   3.2× panphon's (0.803 ± 0.018 over 41 folds) and flip the diagnostic, /b/
+   now ahead of /z/ by 1.9×. It is labiality specifically: coronal place detail
+   goes *down*. Learned costs in `data/processed/learned_costs.csv`, opt-in via
+   `metric.similarity(..., params=...)`; not the default (see issue 5).
+2. No epenthesis modeling: "sutoraiku" vs "strike" scores 0.617.
+   **BOUNDED 2026-08-04, NOT fixed.** The cost model now prices insertion and
+   deletion separately by segment class and (optionally) by position, fitted
+   jointly with the substitution weights: indels drop from panphon's flat 7.25
+   to 2.2–3.9 and order correctly (vowel deletion cheapest at 2.18). But the
+   canonical case gets *worse*, 0.617 → 0.577, because a discriminative
+   objective will not buy cheap epenthesis — the negative control shares the
+   recipient word, so cheap insertion helps it equally. Hand-setting the
+   cluster-insertion prices gives 0.904, so the structure is right and the
+   objective is wrong. **The permissive-coda bias is characterized, not
+   removed**: run the syllable-template experiment as a two-arm sensitivity
+   analysis (v0 costs and learned costs) and trust only agreeing conclusions.
 3. Baseline inflation: random CV-ish word pairs score ~0.46, so the
    usable dynamic range is roughly [0.45, 1.0]. Consider recalibrating
    (e.g. score' = max(0, (s - s_random)/(1 - s_random))).
 4. ASCII `g`, `:` etc. are normalized to proper IPA in `segments()` —
    watch for more lookalike glyphs when ingesting new sources.
+5. **NEW: the learned costs encode orthography as perception.** Voicing learns
+   3.5× panphon's weight (7× unregularized) because loanword orthographies
+   record voicing faithfully on both sides — yet the contrast study prices
+   voicing as one of the *cheapest* contrasts perceptually (t/d audible to 75%
+   of humanity). This single effect makes the contrast-study cross-check come
+   out null (ρ = +0.059, p = 0.79). Aspiration (`sg`), ejectivity (`cg`),
+   clicks (`velaric`) and length all learn ≈ 0, which means "no evidence in
+   WOLD's recipient set", not "does not matter". These are the weights not to
+   trust; see [`cost-learning.md`](cost-learning.md) §7.

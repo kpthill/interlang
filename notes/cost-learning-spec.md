@@ -304,3 +304,39 @@ study's shape; each closes a "looks great, means nothing" trap.
    full LORO preferred with a documented K-fold fallback rather than stalling.
    The working pair-set size is whatever the rebuilt filter yields (~13.8k–20.6k
    bracket), reported rather than targeted.
+
+---
+
+## Status: EXECUTED 2026-08-04
+
+Run and written up in [`cost-learning.md`](cost-learning.md), which supersedes
+this document. One-line outcome: **the substitution half worked, the epenthesis
+half did not, and guardrail 5 caught why we should care.**
+
+- R1 ✔ pipeline committed (`scripts/wold_pipeline.py`), 16,687 pairs / 13,595
+  used. Both baselines produced. Confirmed: the original harness shuffled
+  controls **globally**, so 0.923 is retired.
+- R2 ✔ substitution + indel fitted jointly. Stretch goal (context-sensitive
+  epenthesis) also built and fitted — see guardrail 4 for why it did not help.
+- R3 ✔ full leave-one-recipient-out over all 41; no K-fold fallback needed.
+- R4 ✔ two models shipped behind the seam, which is how the stretch goal got
+  built without rewriting the harness.
+- R5 ✔ equal weight per recipient. Donor rebalancing not done — caveat logged.
+- R6 ✔ derivative-free Nelder-Mead on a smooth pairwise logistic surrogate,
+  inside an EM re-alignment loop. AUC never optimized.
+- R7 ✔ controls within recipient throughout.
+- Guardrails: **1 PASS** (41/41 recipients), **2 PASS** (only because a targeted
+  prior forces it), **3 PASS**, **4 FAIL** (moved the wrong way), **5 FAIL**
+  (null, ρ = +0.059, p = 0.79).
+
+**The amendment that earned its keep:** amendment 1 (the same-protocol
+baseline). Against the legacy 0.923 the learned costs would have looked like a
+*regression* (0.957 < ... no — against 0.923 they look like a modest +0.034
+win). Against the honest 0.896 baseline they are +0.061 on every single
+recipient. The apples-to-apples comparison changed the size *and* the
+confidence of the headline claim.
+
+**The requirement that should have been questioned:** R2 asks for the
+sutoraiku recovery as a training-time target while agreed-call 2 makes the
+objective purely discriminative. Those pull in opposite directions and the
+objective won. Noted in `cost-learning.md` §5 guardrail 4 with the fix path.
