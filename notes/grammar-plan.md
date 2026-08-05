@@ -173,9 +173,12 @@ in that Q8e represented is closed; only a passive or an agent-marking oblique wo
 it ·
 5. ~~whether core arguments are marked at all~~ **done, no case marking**.
 
-**Tier 2 — what every clause must carry.** Expanded 2026-08-05; suggested working order
-is 6 → 7 → 8+11 together → 9 → 10, because negation needs the TAM slot, and the article,
-demonstrative and numeral questions compete for the same real estate as NP order.
+**Tier 2 — what every clause must carry. COMPLETE, 2026-08-05.** Worked in the order
+6 → 11+7 → 9 → 8 → 10 (Patrick moved 11 ahead of 7 so adjectives and adverbs could be
+treated in parallel). **Total word bill: 10** — Q6 zero, Q7 zero, Q8 seven, Q9 one, Q10 two;
+**total grammar rules added: two** — modifiers precede their head (Q11), and a question
+begins with the question particle (Q10). Everything else was decided by *removing* a
+distinction rather than adding machinery. Next tier is 3.
 
 | # | question | sub-questions | evidence to hand |
 |---|---|---|---|
@@ -183,7 +186,7 @@ demonstrative and numeral questions compete for the same real estate as NP order
 | 7 | ~~**nominal categories**~~ **DONE** → [`grammar-tier2-np.md`](grammar-tier2-np.md): no articles, no classifiers, optional number | obligatory plural? articles — definite, indefinite, both, neither? classifiers/measure words? what a bare noun means by default | APiCS 28, 29, 9, 10, 31; Grambank GB020–023, GB042, GB044. Articles are Euro-coded → run the Rule 2 contrapositive |
 | 8 | ~~**pronoun system**~~ **DONE** → [`grammar-tier2-pronouns.md`](grammar-tier2-pronouns.md): **seven words** — 3 persons × 2 numbers + one invariant reflexive. No gender, clusivity, dual, politeness, case or special possessives; **the alignment question is now permanently closed** | person/number; clusivity; gender; politeness; **case forms of pronouns**; total form count | APiCS 13, 15, 18; Grambank GB071, GB090–094. Gender and clusivity already answered in the Tier 0 side-evidence; politeness is genuinely split |
 | 9 | ~~**negation**~~ **DONE** → [`grammar-tier2-negation.md`](grammar-tier2-negation.md): one preverbal negator for everything; scope is linear, leftmost widest | one negator or several? position rel. to verb and to TAM? double negation? negative concord? same negator for verbal, locational, existential and nominal predication? | APiCS 50; Grambank GB107, GB140 |
-| 10 | **question formation** | polar: particle, intonation, word order or tag? particle position? content: in-situ or fronted? | APiCS 12; Grambank GB260, GB262, GB285, GB286; WALS 92A, 93A |
+| 10 | ~~**question formation**~~ **DONE** → [`grammar-tier2-questions.md`](grammar-tier2-questions.md): one **clause-initial particle** on every question; content words **in situ**; one interrogative root **"what"** + compounding. Inversion rejected on Rule 2 LOST 8 / KEPT 0 | polar: particle, intonation, word order or tag? particle position? content: in-situ or fronted? | APiCS 12; Grambank GB260, GB262, GB285, GB286; WALS 92A, 93A |
 | **11a** | ~~**adverb placement**~~ **DONE** — answered by Q11's modifier rule: adverbs precede the verb | where adverbs sit relative to verb and object; whether TAM adverbs have a preferred position; scope when two or more stack | now load-bearing: with TAM fully lexical, adverb placement *is* the TAM syntax |
 | **11** | ~~**NP-internal order**~~ **DONE** → [`grammar-tier2-np.md`](grammar-tier2-np.md): modifiers precede, clauses follow | adjective, numeral, demonstrative, possessor — each relative to the noun | moved down from Tier 0: creoles split 8:7 three times, and the people-weighted world answer conflicts with the creole lean on demonstratives ([`grammar-tier0.md`](grammar-tier0.md) §1.2) |
 

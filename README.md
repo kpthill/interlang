@@ -99,7 +99,21 @@ questions and next steps in §7.
   case" also **closes the alignment question permanently**: pronoun case was the one route
   back in, and contact languages don't take it (9 of 9 restricted pidgins have no distinct
   subject/object forms).
-- **Next:** Q10 (question formation), the last item in Tier 2 of the grammar agenda. Phonology and phonotactics are closed (`notes/principles.md`
+- **Grammar Tier 2 Q10 (question formation)** — done,
+  [`notes/grammar-tier2-questions.md`](notes/grammar-tier2-questions.md). **One
+  clause-initial question particle on every question, polar and content alike; content
+  question words stay in place; one interrogative root "what" with the rest built by
+  compounding.** Inversion is rejected on the cleanest Rule 2 result in the project —
+  **LOST 8, KEPT 0**, no creole kept its lexifier's inversion — and it turns out 99% of
+  its speakers are European. The particle overrides a 9-of-9 pidgin preference for bare
+  intonation, on the grounds that pidgins aren't written and prosody is the least
+  transferable thing across L1s.
+- **Tier 2 of the grammar is complete.** Five questions, **10 grammatical words**, and
+  **two new rules** total: modifiers precede their head, and a question begins with the
+  question particle. Everything else was decided by removing a distinction rather than
+  adding machinery.
+- **Next:** Tier 3 — how clauses combine (relative, complement and adverbial clauses,
+  coordination, comparatives, copula/possession/existentials). Phonology and phonotactics are closed (`notes/principles.md`
   §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
   than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are
   ordinal rankings that must become numeric penalties before the lexicon optimizer runs.
@@ -191,6 +205,7 @@ uv run python scripts/grammar_tier2_tam.py     # -> data/processed/grammar_tier2
 uv run python scripts/grammar_tier2_np.py      # -> data/processed/grammar_tier2_np.csv
 uv run python scripts/grammar_tier2_negation.py  # -> data/processed/grammar_tier2_negation.csv
 uv run python scripts/grammar_tier2_pronouns.py  # -> data/processed/grammar_tier2_pronouns.csv
+uv run python scripts/grammar_tier2_questions.py # -> data/processed/grammar_tier2_questions.csv
 ```
 
 Each script's module docstring documents its inputs, outputs, and the judgment calls

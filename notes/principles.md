@@ -273,6 +273,59 @@ decision at lexicon construction, not a grammar decision.
 of the ~180 cluster-free monosyllables that avoid the discouraged onsets.
 **Grammar rules added: zero.**
 
+#### Question formation (**SOFT**, 2026-08-05 by Patrick)
+
+Evidence: [`grammar-tier2-questions.md`](grammar-tier2-questions.md).
+
+**One clause-initial question particle — "is it the case that…?" — on every question, polar
+and content alike. Content question words stay in place. One interrogative root, "what",
+with the rest built by compounding.**
+
+- **A particle, not intonation** — against **9 of 9 restricted pidgins**, and recorded as a
+  standing-rule-6 departure ([`grammar-plan.md`](grammar-plan.md) §5). Pidgins are not
+  written, and prosody is the least transferable thing across L1s: a language whose spoken
+  yes/no marking has no segmental content imposes an invisible requirement on every learner.
+  A particle is also the world's dominant strategy for once (66.4% of L1). **Intonation
+  stays available, never required** — as it is in the 77.4% of L1 that can use it alongside a
+  particle.
+- **Inversion rejected on the cleanest Rule 2 result in the project: LOST 8, KEPT 0.** Not
+  one creole kept its lexifier's inversion. It is 20.1% of world L1 on 1.4% of languages, and
+  every speaker of it but a million is European (Spanish, English, German, Dutch, Czech,
+  Swedish, Danish, Frisian) — the exact shape the Rule 2 contrapositive exists to catch. It
+  would also be the worst structural fit available, since word order is the only thing
+  marking argument roles.
+- **Clause-initial position follows §3.2's modifier rule and Q9's leftmost-widest scope rule
+  — and mildly contradicts the evidence.** Final leads among particle-having languages
+  (51% vs 40% of L1) and Rule 2 leans final (GAINED 5 / LOST 0, against initial's GAINED 2 /
+  LOST 2). Q9 was a test the modifier rule passed; **this is one where the rule and the data
+  pull apart and we followed the rule**, on an 11-point margin — the smallest gap this
+  project has overridden. The weakest call in the study.
+- **Content questions are in situ** — *you like what?* World majority on both counts (66.5%
+  of L1, WALS 93A), the expanded-pidgin lean, **Rule 2 GAINED 4 / KEPT 3 / LOST 0**, and it
+  costs *zero rules*: fronting is a movement rule, and English can only afford one because it
+  has the inversion we just rejected to disambiguate *who did you see* from *who saw you*.
+- **The particle appears on content questions too.** One rule instead of a conditional, and
+  it fixes in-situ's late-signal problem. Not double-marking: the particle means "this is a
+  question", the interrogative word means "this is the gap". **Not codable from any source we
+  have** — every Grambank feature is scoped to *polar* interrogation — so this is design
+  argument, informed by the in-situ-plus-particle languages (Japanese *ka*, Korean,
+  Malay/Indonesian *-kah*).
+- **Descriptive note, not a prescription:** many speakers will drop the particle when an
+  in-situ question word is present. **Tolerated, non-standard, not an error worth
+  correcting** — it loses nothing, since the question word already disambiguates, which is
+  why polar-only is the world's majority pattern. The standard form marks twice and casual
+  speech marks once. **The first descriptive rather than prescriptive statement in the
+  grammar.**
+- **Interrogatives are built, not listed.** Only 1 of 9 restricted pidgins has an all-simple
+  set. One root, *what*, general on its own as English uses it; *what-person*, *what-place*,
+  *what-time*, *what-reason*, *what-manner* by compounding. Count/mass in interrogative
+  quantifiers (GB325, 18.3% of languages but **59.1% of L1**) dissolves the same way —
+  *what-number* / *what-amount* available, never obligatory — and Rule 2 drops it 5:0.
+
+**Word bill: 2.** **Tier 2 closes at 10** (Q6 zero, Q7 zero, Q8 seven, Q9 one, Q10 two) —
+under 6% of the short-word space. **Grammar rules added: one** — *a question begins with the
+question particle*.
+
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 
 **The inventory is closed. 15 consonants + 5 vowels = 20 phonemes.**
