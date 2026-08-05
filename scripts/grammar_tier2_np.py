@@ -248,6 +248,45 @@ def main() -> None:
             rows.append(dict(part="q7", feature=label, source="wals", option=opt,
                              n=r.n, by_lang=r.by_lang, by_L1=r.by_L1, by_total=r.by_total))
 
+    # ---- Rule 2 on ADJECTIVE ORDER, the directional test --------------
+    # Asked by Patrick 2026-08-05: when contact languages change adjective order
+    # from their lexifier, which way do they go?  Lexifier values come from WALS
+    # 87A rather than by hand.  Bantu and the "Other" lexifiers have no clean
+    # WALS entry and are dropped rather than guessed.
+    LEX_WALS = {"English": "English", "French": "French", "Spanish": "Spanish",
+                "Portuguese": "Portuguese", "Dutch": "Dutch",
+                "Arabic": "Arabic (Egyptian)", "Malay": "Indonesian"}
+    wl, _wp, wv = load("wals")
+    wcm = dict(zip(*pd.read_csv(ROOT / "data/raw/wals/cldf/codes.csv")[["ID", "Name"]].values.T))
+    a = wv[wv.Parameter_ID == "87A"].copy()
+    a["lang"] = a.Language_ID.map(wl.set_index("ID")["Name"])
+    wals_adj = dict(zip(a.lang, a.Code_ID.map(wcm)))
+    va, _ct = apics_table("3", ap_v, ap_l, cmap)
+    va = va.join(ap_l.set_index("ID")[["Lexifier"]], on="Language_ID")
+    side = {"Modifying adjective precedes noun": "Adj-N",
+            "Modifying adjective follows noun": "N-Adj"}
+    lex_side = {"Adjective-Noun": "Adj-N", "Noun-Adjective": "N-Adj"}
+    va["creole_side"] = va.label.map(side)
+    va["lex_side"] = va.Lexifier.map(
+        lambda lx: lex_side.get(wals_adj.get(LEX_WALS.get(lx, ""), ""), None))
+    j = va.dropna(subset=["creole_side", "lex_side"])
+    j = j[j.ctype != "0 mixed (excluded)"]
+    j["verdict"] = ["SAME" if x == y else "CHANGED"
+                    for x, y in zip(j.creole_side, j.lex_side)]
+    print("\n--- Rule 2 DIRECTIONAL: when adjective order changes, which way? ---")
+    print(f"  {len(j)} contact languages pairable with a WALS-coded lexifier")
+    print(pd.crosstab(j.ctype, j.verdict).to_string())
+    print("\n  by the lexifier's own order:")
+    print("  " + pd.crosstab(j.lex_side, j.verdict).to_string().replace("\n", "\n  "))
+    moved = j[j.verdict == "CHANGED"]
+    print(f"\n  of the {len(moved)} that changed, direction of travel: "
+          + "; ".join(f"{k} {v}" for k, v in
+                      (moved.lex_side + " -> " + moved.creole_side).value_counts().items()))
+    for _i, r in j.iterrows():
+        rows.append(dict(part="rule2-adj", feature="adjective order", source="apics+wals",
+                         option=r.verdict, creole=r.Name, n=1,
+                         by_lang=None, by_L1=None))
+
     # ---- Rule 2 on articles, the Euro-coded feature here -------------
     print("\n--- Rule 2: articles, creole vs its own lexifier (identical features) ---")
     val = {(r.Language_ID, r.Parameter_ID): str(r.Value) for r in gb_v.itertuples()

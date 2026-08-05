@@ -5,7 +5,10 @@ output: `data/processed/grammar_tier2_np.csv` · agenda:
 [`grammar-plan.md`](grammar-plan.md) §4 Q11, Q7 · evidence policy: same file §5.*
 
 **Bottom line up front.** **Every single-word modifier precedes its head; clausal modifiers
-follow.** One rule, and by Patrick's parallel-modifier principle it settles **adverb
+follow.** Three independent lines agree: restricted pidgins put the modifier first on all
+four relations (§1), **every attested change in adjective order runs N-Adj → Adj-N, 14 to 0**
+(§1.1), and modifier-first is the harmonic pattern that 86% of the world's L1 mass already
+speaks (§2). One rule, and by Patrick's parallel-modifier principle it settles **adverb
 placement (Q11a) at the same time** — adverbs precede the verb. Tier 0's three coin flips
 were an artefact of pooling: stratified by contact type, **modifier-first wins in every
 stratum**, and it is what **86% of the world's L1 mass** already has. On Q7 the noun carries
@@ -33,6 +36,37 @@ which is the weakest of the four and the only one where the strata disagree.
 The by-language/by-people reversal Tier 0 flagged is confirmed and is large: N-Num leads by
 language count (52.7%) while Num-N leads by people (**89.5%**), a 37-point flip;
 demonstratives flip by 42 points. §2 of [`principles.md`](principles.md) says count people.
+
+### 1.1 Rule 2, directional: when adjective order changes, it changes one way
+
+Asked as a spot-check and it turned out to be the strongest single result in the study.
+Taking every contact language whose lexifier has a WALS 87A value (62 languages; Bantu and
+the "Other" lexifiers have no clean WALS entry and are dropped rather than guessed):
+
+| the lexifier's own order | CHANGED | SAME |
+|---|---|---|
+| **Adj-N** (English, Dutch) | **0** | 29 |
+| **N-Adj** (French, Portuguese, Spanish, Malay, Arabic) | **14** | 19 |
+
+**All 14 changes are N-Adj → Adj-N. Not one goes the other way.** No contact language with an
+Adj-N lexifier has ever moved off it; 42% of those with an N-Adj lexifier moved to Adj-N.
+The movers: Palenquero, Louisiana Creole, Reunion Creole, Tayo, Cape Verdean (Santiago),
+Casamancese, Korlai, Diu Indo-Portuguese, Sri Lanka Portuguese, Sri Lankan Malay, Singapore
+Bazaar Malay, and all three Chabacano varieties.
+
+**Caveats, and they matter.** Several of these have **Adj-N substrates** — the South Asian
+Portuguese creoles (Tamil, Sinhala, Gujarati, Marathi) and Sri Lankan/Bazaar Malay — so
+substrate transfer explains part of the drift rather than any general adult preference. But
+not all of it: **Palenquero, Louisiana Creole, Reunion Creole, Cape Verdean and Casamancese
+moved to Adj-N with substrates that are themselves N-Adj** (Kikongo, West African, Malagasy).
+Those are the cases where the change cannot be inheritance from either side. Also note French
+has a prenominal adjective subclass, so French-lexifier creoles may be generalising a pattern
+that was already partly there.
+
+Even discounted for substrate, a 14:0 directional asymmetry is a real signal, and it is
+independent evidence for the same conclusion the harmony test reaches below.
+
+---
 
 ## 2. The harmony test — is "one modifier rule" natural or invented?
 

@@ -145,6 +145,12 @@ Evidence: [`grammar-tier2-np.md`](grammar-tier2-np.md).
   constituents after, the standard processing pattern;
 - and therefore **adverbs precede the verb**, which answers Q11a without a separate study.
 
+A third line of evidence, directional: of 62 contact languages whose lexifier has a WALS
+adjective-order value, **every one of the 14 that changed moved N-Adj → Adj-N, and none moved
+the other way** — 0 of 29 Adj-N-lexifier languages ever left Adj-N. Part of that drift is
+substrate transfer (the South Asian Portuguese creoles), but Palenquero, Louisiana, Reunion,
+Cape Verdean and Casamancese moved with N-Adj substrates too.
+
 Tier 0 reported these as coin flips; that was a pooling artefact. Stratified by contact type,
 **restricted pidgins put the modifier first on all four**, and the harmony test settles the
 uniform treatment: **67% of 1,297 languages put adjective, numeral and demonstrative on the
