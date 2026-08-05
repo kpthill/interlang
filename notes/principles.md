@@ -134,6 +134,53 @@ vocabulary optimizer, not a rule. Monosyllabic space is not a constraint: ~180 c
 (C)V(N) forms avoiding /r h l/, so this is ~8% of it. A **recommended default usage** should
 ship with the lexicon so the permissive grammar does not fragment in practice.
 
+#### Noun phrase and modifier order (**SOFT**, 2026-08-05)
+
+Evidence: [`grammar-tier2-np.md`](grammar-tier2-np.md).
+
+**One rule: single-word modifiers precede their head, clausal modifiers follow it.**
+
+- adjective, numeral, demonstrative and possessor all **precede the noun**;
+- the relative clause **follows** it (Tier 0, unchanged) — short modifiers before, heavy
+  constituents after, the standard processing pattern;
+- and therefore **adverbs precede the verb**, which answers Q11a without a separate study.
+
+Tier 0 reported these as coin flips; that was a pooling artefact. Stratified by contact type,
+**restricted pidgins put the modifier first on all four**, and the harmony test settles the
+uniform treatment: **67% of 1,297 languages put adjective, numeral and demonstrative on the
+same side, and those languages are 91% of the L1 mass**. Of the two harmonic options,
+modifier-first is a minority by language count (23.8% vs 43.1%) and **86.1% by people** — the
+largest by-language/by-people divergence anywhere in the project.
+
+*Consequence worth noting:* §3.2's TAM decision declined a preverbal particle slot, and the
+modifier rule puts TAM adverbs there anyway — *I in-the-past continuously run*. It also
+weakens that decision's "no cue for where the predicate begins" cost, since a run of
+preverbal modifiers is itself the cue.
+
+*Weakest link:* the possessor. Expanded pidgins and creoles prefer head-first; only
+restricted pidgins and a slim world majority support possessor-first. Adopted for uniformity.
+
+#### Nominal categories (**SOFT**, 2026-08-05)
+
+**The noun carries almost nothing.**
+
+- **No articles.** Definiteness uses the **demonstrative**, indefiniteness uses **'one'** —
+  both words exist anyway, so this costs zero vocabulary. No restricted pidgin has a
+  dedicated article of either kind; 5 of 9 use a demonstrative and 4 of 4 use 'one'. Rule 2
+  splits informatively: definite articles are KEPT 8 / LOST 1 (retained when inherited, never
+  invented), indefinite articles LOST 9 / KEPT 1 (actively shed — the strongest Rule 2 signal
+  in the study).
+- **Number is optional.** A bare noun is number-neutral; a plural *word* is available when
+  the count matters. No restricted pidgin marks plural obligatorily. Note the strategy
+  constraint: the world's dominant plural marker is a **suffix** (84.7% of L1), which Tier 0
+  rules out for us; a plural word is 5.2% of L1.
+- **No numeral classifiers.** 68 of 72 contact languages have none, including 9 of 9 expanded
+  pidgins. **This is a deliberate vote against a large constituency** — classifiers are
+  native to ~36% of the world's L1 mass — and must be surfaced in the final bias audit
+  ([`grammar-plan.md`](grammar-plan.md) §1) rather than buried.
+
+**Particle bill: still 0.** Grammar rules added by Q11 + Q7: **one.**
+
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 
 **The inventory is closed. 15 consonants + 5 vowels = 20 phonemes.**

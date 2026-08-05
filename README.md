@@ -73,6 +73,15 @@ questions and next steps in §7.
   — adults, no shared language, no native speakers. TAM elaboration grows monotonically along
   that gradient, which ranks the categories by necessity: imperfective, then past, then
   nothing else.
+- **Grammar Tier 2 Q11 + Q7 (noun phrase)** — done,
+  [`notes/grammar-tier2-np.md`](notes/grammar-tier2-np.md). **One rule: single-word
+  modifiers precede their head, clausal modifiers follow** — which also settles adverb
+  placement, since modifiers behave the same way whatever they modify. Tier 0's three
+  "coin flips" were a pooling artefact: stratified, restricted pidgins put the modifier
+  first on all four, and the new harmony test finds 67% of 1,297 languages put adjective,
+  numeral and demonstrative on the same side — **91% of the L1 mass**. The noun itself
+  carries almost nothing: no articles (demonstrative and 'one' do the work), optional
+  number, no classifiers.
 - **Next:** the rest of Tier 2 of the grammar agenda. Phonology and phonotactics are closed (`notes/principles.md`
   §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
   than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are

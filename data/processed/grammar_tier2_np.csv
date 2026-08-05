@@ -1,0 +1,135 @@
+part,feature,source,option,restricted,expanded,creole,n,by_lang,by_L1,by_total
+order,adjective & noun,apics,Modifying adjective follows noun,1.0,3.0,18,,,,
+order,adjective & noun,apics,Modifying adjective precedes noun,8.0,6.0,36,,,,
+order,adjective & noun,wals,Noun-Adjective,,,,863.0,64.6,33.8,32.5
+order,adjective & noun,wals,Adjective-Noun,,,,361.0,27.0,65.3,67.2
+order,adjective & noun,wals,No dominant order,,,,108.0,8.1,0.9,0.3
+order,adjective & noun,wals,Only internally-headed relative clauses,,,,4.0,0.3,0.0,0.0
+order,numeral & noun,apics,Numeral follows noun,2.0,3.0,3,,,,
+order,numeral & noun,apics,Numeral precedes noun,7.0,6.0,51,,,,
+order,numeral & noun,wals,Noun-Numeral,,,,596.0,52.7,7.1,7.3
+order,numeral & noun,wals,Numeral-Noun,,,,469.0,41.5,89.5,90.3
+order,numeral & noun,wals,No dominant order,,,,64.0,5.7,3.4,2.4
+order,numeral & noun,wals,Numeral only modifies verb,,,,2.0,0.2,0.0,0.0
+order,demonstrative & noun,apics,Demonstrative simultaneously before and after noun,0.0,0.0,4,,,,
+order,demonstrative & noun,apics,Demonstrative word follows noun,2.0,5.0,19,,,,
+order,demonstrative & noun,apics,Demonstrative word precedes noun,6.0,5.0,34,,,,
+order,demonstrative & noun,wals,Noun-Demonstrative,,,,551.0,46.0,9.8,10.4
+order,demonstrative & noun,wals,Demonstrative-Noun,,,,531.0,44.3,86.1,86.8
+order,demonstrative & noun,wals,Mixed,,,,64.0,5.3,3.4,2.0
+order,demonstrative & noun,wals,Demonstrative suffix,,,,28.0,2.3,0.6,0.4
+order,demonstrative & noun,wals,Demonstrative before and after Noun,,,,16.0,1.3,0.0,0.3
+order,demonstrative & noun,wals,Demonstrative prefix,,,,9.0,0.8,0.0,0.0
+order,possessor & noun,apics,Possessor-possessum,7.0,3.0,23,,,,
+order,possessor & noun,apics,Possessum-possessor,2.0,6.0,32,,,,
+order,possessor & noun,wals,Genitive-Noun,,,,669.0,54.6,50.0,41.6
+order,possessor & noun,wals,Noun-Genitive,,,,461.0,37.6,41.2,37.7
+order,possessor & noun,wals,No dominant order,,,,95.0,7.8,8.9,20.7
+harmony,Adj/Num/Dem pattern,grambank,N-Mod / N-Mod / N-Mod,,,,559.0,43.1,4.5,
+harmony,Adj/Num/Dem pattern,grambank,Mod-N / Mod-N / Mod-N,,,,309.0,23.8,86.1,
+harmony,Adj/Num/Dem pattern,grambank,N-Mod / Mod-N / N-Mod,,,,132.0,10.2,3.3,
+harmony,Adj/Num/Dem pattern,grambank,N-Mod / N-Mod / Mod-N,,,,128.0,9.9,0.2,
+harmony,Adj/Num/Dem pattern,grambank,N-Mod / Mod-N / Mod-N,,,,88.0,6.8,3.3,
+harmony,Adj/Num/Dem pattern,grambank,Mod-N / N-Mod / N-Mod,,,,37.0,2.9,0.2,
+harmony,Adj/Num/Dem pattern,grambank,Mod-N / N-Mod / Mod-N,,,,24.0,1.9,2.5,
+harmony,Adj/Num/Dem pattern,grambank,Mod-N / Mod-N / N-Mod,,,,20.0,1.5,0.0,
+harmony,adjective vs numeral,grambank,agree,,,,,78.3,,
+harmony,adjective vs demonstrative,grambank,agree,,,,,79.0,,
+harmony,numeral vs demonstrative,grambank,agree,,,,,76.6,,
+q7,occurrence of nominal plural markers,apics,Invariant plural marking,0.0,4.0,10,,,,
+q7,occurrence of nominal plural markers,apics,No plural marking,4.0,0.0,1,,,,
+q7,occurrence of nominal plural markers,apics,Variable plural marking of human nouns,3.0,0.0,2,,,,
+q7,occurrence of nominal plural markers,apics,Variable plural marking of human or inanimate nouns,2.0,5.0,44,,,,
+q7,definite articles,apics,Definite article distinct from demonstratives,0.0,4.0,33,,,,
+q7,definite articles,apics,Definite article identical to a demonstrative,5.0,0.0,16,,,,
+q7,definite articles,apics,Neither definite nor indefinite article,4.0,3.0,1,,,,
+q7,definite articles,apics,"No definite article, but indefinite article",0.0,2.0,7,,,,
+q7,indefinite articles,apics,Indefinite article distinct from numeral ‘one’,0.0,2.0,17,,,,
+q7,indefinite articles,apics,Indefinite article identical to numeral ‘one’,4.0,4.0,36,,,,
+q7,indefinite articles,apics,Neither indefinite nor definite article,4.0,3.0,1,,,,
+q7,indefinite articles,apics,"No indefinite article, but definite article",1.0,0.0,0,,,,
+q7,sortal numeral classifiers,apics,The language has no numeral classifiers,8.0,9.0,51,,,,
+q7,sortal numeral classifiers,apics,The language has numeral classifiers,1.0,0.0,3,,,,
+q7,position of the definite article,apics,Definite article is postposed,0.0,1.0,8,,,,
+q7,position of the definite article,apics,Definite article is preposed,4.0,3.0,41,,,,
+q7,position of the definite article,apics,The language has no definite article,4.0,5.0,8,,,,
+q7,definite/specific articles,grambank,yes,,,,2130.0,38.0,36.1,48.4
+q7,indefinite articles,grambank,yes,,,,2153.0,13.8,24.0,40.9
+q7,prenominal articles,grambank,yes,,,,2139.0,25.8,36.1,48.2
+q7,postnominal articles,grambank,yes,,,,2137.0,24.0,7.2,10.1
+q7,productive plural marking on nouns,grambank,yes,,,,2234.0,55.9,61.1,69.2
+q7,numeral classifiers,grambank,yes,,,,2110.0,23.6,36.4,28.4
+q7,possessive classifiers,grambank,yes,,,,2165.0,9.8,5.0,3.9
+q7,coding of nominal plurality,wals,Plural suffix,,,,506.0,48.1,84.7,85.1
+q7,coding of nominal plurality,wals,Plural word,,,,168.0,16.0,5.2,2.8
+q7,coding of nominal plurality,wals,Plural prefix,,,,125.0,11.9,2.0,3.9
+q7,coding of nominal plurality,wals,No plural,,,,97.0,9.2,2.0,2.6
+q7,coding of nominal plurality,wals,Plural clitic,,,,80.0,7.6,0.2,0.2
+q7,coding of nominal plurality,wals,Mixed morphological plural,,,,58.0,5.5,4.2,2.8
+q7,coding of nominal plurality,wals,Plural complete reduplication,,,,8.0,0.8,1.6,2.7
+q7,coding of nominal plurality,wals,Plural stem change,,,,5.0,0.5,0.0,0.0
+q7,coding of nominal plurality,wals,Plural tone,,,,4.0,0.4,0.0,0.0
+q7,definite articles,wals,Definite word distinct from demonstrative,,,,213.0,34.9,46.4,50.0
+q7,definite articles,wals,No definite or indefinite article,,,,196.0,32.1,31.5,25.7
+q7,definite articles,wals,Definite affix,,,,90.0,14.8,7.4,9.9
+q7,definite articles,wals,Demonstrative word used as definite article,,,,67.0,11.0,2.6,6.1
+q7,definite articles,wals,"No definite, but indefinite article",,,,44.0,7.2,12.1,8.2
+q7,indefinite articles,wals,No definite or indefinite article,,,,196.0,37.3,32.7,28.8
+q7,indefinite articles,wals,Indefinite word same as 'one',,,,109.0,20.8,38.8,29.1
+q7,indefinite articles,wals,Indefinite word distinct from 'one',,,,100.0,19.0,20.8,34.5
+q7,indefinite articles,wals,"No indefinite, but definite article",,,,96.0,18.3,6.3,6.8
+q7,indefinite articles,wals,Indefinite affix,,,,24.0,4.6,1.4,0.8
+q7,numeral classifiers,wals,Absent,,,,259.0,65.7,44.5,58.6
+q7,numeral classifiers,wals,Obligatory,,,,75.0,19.0,46.8,33.4
+q7,numeral classifiers,wals,Optional,,,,60.0,15.2,8.8,8.0
+rule2,definite/specific articles,grambank,KEPT,,,San Andres Creole English,,,,
+rule2,indefinite articles,grambank,LOST,,,San Andres Creole English,,,,
+rule2,productive plural marking on nouns,grambank,LOST,,,San Andres Creole English,,,,
+rule2,numeral classifiers,grambank,ABSENT,,,San Andres Creole English,,,,
+rule2,definite/specific articles,grambank,KEPT,,,Bahamas Creole English,,,,
+rule2,indefinite articles,grambank,LOST,,,Bahamas Creole English,,,,
+rule2,productive plural marking on nouns,grambank,KEPT,,,Bahamas Creole English,,,,
+rule2,indefinite articles,grambank,LOST,,,Tok Pisin,,,,
+rule2,productive plural marking on nouns,grambank,LOST,,,Tok Pisin,,,,
+rule2,numeral classifiers,grambank,ABSENT,,,Tok Pisin,,,,
+rule2,definite/specific articles,grambank,KEPT,,,Bislama,,,,
+rule2,indefinite articles,grambank,LOST,,,Bislama,,,,
+rule2,productive plural marking on nouns,grambank,LOST,,,Bislama,,,,
+rule2,numeral classifiers,grambank,ABSENT,,,Bislama,,,,
+rule2,definite/specific articles,grambank,KEPT,,,Saramaccan,,,,
+rule2,indefinite articles,grambank,LOST,,,Saramaccan,,,,
+rule2,productive plural marking on nouns,grambank,LOST,,,Saramaccan,,,,
+rule2,numeral classifiers,grambank,ABSENT,,,Saramaccan,,,,
+rule2,definite/specific articles,grambank,KEPT,,,Jamaican Creole English,,,,
+rule2,indefinite articles,grambank,LOST,,,Jamaican Creole English,,,,
+rule2,productive plural marking on nouns,grambank,LOST,,,Jamaican Creole English,,,,
+rule2,numeral classifiers,grambank,ABSENT,,,Jamaican Creole English,,,,
+rule2,definite/specific articles,grambank,KEPT,,,Haitian,,,,
+rule2,indefinite articles,grambank,KEPT,,,Haitian,,,,
+rule2,productive plural marking on nouns,grambank,KEPT,,,Haitian,,,,
+rule2,numeral classifiers,grambank,ABSENT,,,Haitian,,,,
+rule2,definite/specific articles,grambank,KEPT,,,Berbice Creole Dutch,,,,
+rule2,indefinite articles,grambank,LOST,,,Berbice Creole Dutch,,,,
+rule2,productive plural marking on nouns,grambank,KEPT,,,Berbice Creole Dutch,,,,
+rule2,numeral classifiers,grambank,ABSENT,,,Berbice Creole Dutch,,,,
+rule2,definite/specific articles,grambank,ABSENT,,,Kinshasa Lingala,,,,
+rule2,indefinite articles,grambank,ABSENT,,,Kinshasa Lingala,,,,
+rule2,productive plural marking on nouns,grambank,KEPT,,,Kinshasa Lingala,,,,
+rule2,numeral classifiers,grambank,ABSENT,,,Kinshasa Lingala,,,,
+rule2,definite/specific articles,grambank,KEPT,,,Nubi,,,,
+rule2,indefinite articles,grambank,LOST,,,Nubi,,,,
+rule2,productive plural marking on nouns,grambank,KEPT,,,Nubi,,,,
+rule2,numeral classifiers,grambank,ABSENT,,,Nubi,,,,
+rule2,definite/specific articles,grambank,LOST,,,South Sudanese Creole Arabic,,,,
+rule2,indefinite articles,grambank,LOST,,,South Sudanese Creole Arabic,,,,
+rule2,productive plural marking on nouns,grambank,KEPT,,,South Sudanese Creole Arabic,,,,
+rule2,numeral classifiers,grambank,ABSENT,,,South Sudanese Creole Arabic,,,,
+rule2,indefinite articles,grambank,GAINED,,,Sri Lanka Malay,,,,
+rule2,productive plural marking on nouns,grambank,ABSENT,,,Sri Lanka Malay,,,,
+rule2,numeral classifiers,grambank,LOST,,,Sri Lanka Malay,,,,
+rule2,indefinite articles,grambank,ABSENT,,,Baba Malay,,,,
+rule2,productive plural marking on nouns,grambank,ABSENT,,,Baba Malay,,,,
+rule2,numeral classifiers,grambank,KEPT,,,Baba Malay,,,,
+rule2,indefinite articles,grambank,ABSENT,,,Ambonese Malay,,,,
+rule2,productive plural marking on nouns,grambank,ABSENT,,,Ambonese Malay,,,,
+rule2,numeral classifiers,grambank,KEPT,,,Ambonese Malay,,,,
