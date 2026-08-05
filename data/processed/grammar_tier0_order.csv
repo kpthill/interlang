@@ -1,0 +1,81 @@
+part,feature,source,option,n,by_lang_pct,by_l1_pct,by_total_pct
+order,subject/object/verb,wals,SOV,551.0,40.9,35.6,28.5
+order,subject/object/verb,wals,SVO,482.0,35.8,59.2,63.1
+order,subject/object/verb,wals,No dominant order,184.0,13.7,3.6,3.1
+order,subject/object/verb,wals,VSO,90.0,6.7,1.5,4.9
+order,subject/object/verb,wals,VOS,24.0,1.8,0.1,0.3
+order,subject/object/verb,wals,OVS,11.0,0.8,0.0,0.0
+order,subject/object/verb,wals,OSV,4.0,0.3,0.0,0.0
+order,subject/object/verb,apics:non-european,Subject-verb-object (SVO),13.0,,,
+order,subject/object/verb,apics:non-european,Subject-object-verb (SOV),2.0,,,
+order,subject/object/verb,apics:non-european,Object-subject-verb (OSV),1.0,,,
+order,subject/object/verb,apics:european,Subject-verb-object (SVO),50.0,,,
+order,subject/object/verb,apics:european,Subject-object-verb (SOV),6.0,,,
+order,subject/object/verb,apics:european,Verb-subject-object (VSO),3.0,,,
+order,subject/object/verb,apics:european,Object-subject-verb (OSV),1.0,,,
+order,subject/object/verb,apics:mixed,Subject-verb-object (SVO),2.0,,,
+order,adposition & NP,wals,Postpositions,565.0,48.6,30.1,24.3
+order,adposition & NP,wals,Prepositions,503.0,43.3,48.8,58.0
+order,adposition & NP,wals,No dominant order,56.0,4.8,21.1,17.7
+order,adposition & NP,wals,No adpositions,30.0,2.6,0.0,0.0
+order,adposition & NP,wals,Inpositions,8.0,0.7,0.0,0.0
+order,adposition & NP,apics:non-european,Prepositions,11.0,,,
+order,adposition & NP,apics:non-european,Postpositions,4.0,,,
+order,adposition & NP,apics:european,Prepositions,55.0,,,
+order,adposition & NP,apics:european,Postpositions,4.0,,,
+order,adposition & NP,apics:european,Circumpositions,1.0,,,
+order,adposition & NP,apics:mixed,Prepositions,2.0,,,
+order,possessor & possessum,wals,Genitive-Noun,669.0,54.6,50.0,41.6
+order,possessor & possessum,wals,Noun-Genitive,461.0,37.6,41.2,37.7
+order,possessor & possessum,wals,No dominant order,95.0,7.8,8.9,20.7
+order,possessor & possessum,apics:non-european,Possessum-possessor,8.0,,,
+order,possessor & possessum,apics:non-european,Possessor-possessum,7.0,,,
+order,possessor & possessum,apics:european,Possessum-possessor,33.0,,,
+order,possessor & possessum,apics:european,Possessor-possessum,27.0,,,
+order,possessor & possessum,apics:mixed,Possessor-possessum,2.0,,,
+order,adjective & noun,wals,Noun-Adjective,863.0,64.6,33.8,32.5
+order,adjective & noun,wals,Adjective-Noun,361.0,27.0,65.3,67.2
+order,adjective & noun,wals,No dominant order,108.0,8.1,0.9,0.3
+order,adjective & noun,wals,Only internally-headed relative clauses,4.0,0.3,0.0,0.0
+order,adjective & noun,apics:non-european,Modifying adjective precedes noun,8.0,,,
+order,adjective & noun,apics:non-european,Modifying adjective follows noun,7.0,,,
+order,adjective & noun,apics:european,Modifying adjective precedes noun,43.0,,,
+order,adjective & noun,apics:european,Modifying adjective follows noun,16.0,,,
+order,adjective & noun,apics:mixed,Modifying adjective precedes noun,1.0,,,
+order,adjective & noun,apics:mixed,Modifying adjective follows noun,1.0,,,
+order,demonstrative & noun,wals,Noun-Demonstrative,551.0,46.0,9.8,10.4
+order,demonstrative & noun,wals,Demonstrative-Noun,531.0,44.3,86.1,86.8
+order,demonstrative & noun,wals,Mixed,64.0,5.3,3.4,2.0
+order,demonstrative & noun,wals,Demonstrative suffix,28.0,2.3,0.6,0.4
+order,demonstrative & noun,wals,Demonstrative before and after Noun,16.0,1.3,0.0,0.3
+order,demonstrative & noun,wals,Demonstrative prefix,9.0,0.8,0.0,0.0
+order,demonstrative & noun,apics:non-european,Demonstrative word follows noun,9.0,,,
+order,demonstrative & noun,apics:non-european,Demonstrative word precedes noun,5.0,,,
+order,demonstrative & noun,apics:european,Demonstrative word precedes noun,41.0,,,
+order,demonstrative & noun,apics:european,Demonstrative word follows noun,18.0,,,
+order,demonstrative & noun,apics:european,Demonstrative simultaneously before and after noun,4.0,,,
+order,demonstrative & noun,apics:mixed,Demonstrative word precedes noun,2.0,,,
+order,numeral & noun,wals,Noun-Numeral,596.0,52.7,7.1,7.3
+order,numeral & noun,wals,Numeral-Noun,469.0,41.5,89.5,90.3
+order,numeral & noun,wals,No dominant order,64.0,5.7,3.4,2.4
+order,numeral & noun,wals,Numeral only modifies verb,2.0,0.2,0.0,0.0
+order,numeral & noun,apics:non-european,Numeral follows noun,8.0,,,
+order,numeral & noun,apics:non-european,Numeral precedes noun,7.0,,,
+order,numeral & noun,apics:european,Numeral precedes noun,58.0,,,
+order,numeral & noun,apics:european,Numeral follows noun,1.0,,,
+order,numeral & noun,apics:mixed,Numeral precedes noun,2.0,,,
+order,relative clause & noun,wals,Noun-Relative clause,570.0,70.4,50.4,56.9
+order,relative clause & noun,wals,Relative clause-Noun,138.0,17.0,35.3,27.5
+order,relative clause & noun,wals,Mixed,63.0,7.8,5.2,4.0
+order,relative clause & noun,wals,Internally headed,23.0,2.8,0.0,0.0
+order,relative clause & noun,wals,Adjoined,8.0,1.0,0.0,0.0
+order,relative clause & noun,wals,Correlative,7.0,0.9,9.2,11.5
+order,relative clause & noun,wals,Doubly headed,1.0,0.1,0.0,0.0
+order,relative clause & noun,apics:non-european,Relative clause follows noun,12.0,,,
+order,relative clause & noun,apics:non-european,Relative clause precedes noun,2.0,,,
+order,relative clause & noun,apics:non-european,Correlative relative clause,1.0,,,
+order,relative clause & noun,apics:european,Relative clause follows noun,55.0,,,
+order,relative clause & noun,apics:european,Correlative relative clause,2.0,,,
+order,relative clause & noun,apics:european,Relative clause precedes noun,1.0,,,
+order,relative clause & noun,apics:european,Adjoined relative clause,1.0,,,
+order,relative clause & noun,apics:mixed,Relative clause follows noun,2.0,,,

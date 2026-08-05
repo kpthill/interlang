@@ -1,6 +1,6 @@
 # Interlang: principles, decisions, and findings
 
-*Last updated 2026-08-05 (§3.3 inventory FIRM; §3.5 stress decided; **§3.6 phonotactics now FIRM — syllable template, compounding, hiatus**; §3.7 orthography, punctuation, case and solid compounds all FIRM). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
+*Last updated 2026-08-05 (§3.2 grammar Tier 0 decided: SVO, prepositions, no case; §3.3 inventory FIRM; §3.5 stress decided; **§3.6 phonotactics now FIRM — syllable template, compounding, hiatus**; §3.7 orthography, punctuation, case and solid compounds all FIRM). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
 
 Each decision below is tagged:
 
@@ -64,6 +64,41 @@ Grammar mostly can't be optimized from dictionaries — there is no database of 
 - Transparent, regular derivation of new words.
 
 Grammar's main coupling to phonology: an isolating language needs a stock of **short, mutually distinct particles**, which argues for reserving short-word space in the phonotactics/lexicon design.
+
+#### Tier 0 decided (**FIRM**, 2026-08-05 by Patrick)
+
+Evidence: [`grammar-tier0.md`](grammar-tier0.md), creole convergence under the Rule 1/Rule 2
+policy of [`grammar-plan.md`](grammar-plan.md) §2.
+
+- **SVO.** Converges in creoles across lexifier families (13 of 16 non-European-lexifier), and
+  three creoles *moved to* SVO from a non-SVO lexifier (Pidgin Hindustani from SOV Hindi,
+  Pidgin Hawaiian from VSO Hawaiian, Chinuk Wawa from Chinookan). SOV leads the world by
+  language count (40.9%) but SVO leads by people (59.2% of L1, 63.1% of total speakers), and
+  §2 counts people.
+- **Prepositions**, not postpositions. Creole lean 11 of 15; head-initial, consistent with SVO.
+- **No case marking on core arguments.** Argument roles are carried by position alone.
+
+**Head-directionality is not one parameter, and the agenda was wrong to assume it was.**
+Creoles converge above the noun phrase — constituent order, relative-clause position, and
+more weakly adpositions — and split 8:7, 8:7, 8:7 on adjective, numeral and demonstrative
+order. **NP-internal order therefore has no creole answer and is deferred to Tier 2** as its
+own question (§7).
+
+#### Morphological type (**SOFT**, 2026-08-05 — recommendation on the table)
+
+The creole record says adults **do not invent derivational affixation**: 3 gains against 35
+losses over 14 creole/lexifier pairs scored on identical Grambank features. What they add
+instead is **compounding and reduplication** (13 gained, 2 lost). Working position:
+
+- **No derivational affixes**; word-formation is compounding (already FIRM, §3.6).
+- **Reduplication is a candidate morphological device** — the single most-gained feature in
+  the study — and costs nothing under §3.6's template.
+- **Any affix ever adopted must be a suffix**: 84.4% of L1 speakers have a strongly
+  suffixing native language, the largest margin in the study.
+
+Held SOFT because the *loss* half of the finding does not survive the Rule 1 lexifier split
+(European-lexifier creoles 27:8, non-European 8:11); only the *no-gain* half does. See
+[`grammar-tier0.md`](grammar-tier0.md) §2.3.
 
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 
@@ -506,6 +541,8 @@ Standing open questions:
 - **Solid compounds: check back in on the two costs (OPEN, new, deferred by Patrick 2026-08-05).** The decision is made (§3.7) and the costs are accepted, but both are worth re-examining once there is a lexicon and a grammar to look at: (a) **segmentation ambiguity** — measure the real rate at which a solid compound admits more than one parse into attested roots, and see whether the geminate and hiatus boundary signals cover enough of it, or whether the lexicon chooser needs an explicit anti-ambiguity term; (b) **the prosodic seam** — §3.5 gives a compound one initial stress, making it prosodically identical to a simple root of the same shape, which is fine on paper and may or may not be fine in speech. Neither is measurable before the lexicon exists.
 - **Loan-mapping homophony (OPEN, deferred to the vocabulary stage by Patrick 2026-08-05):** the adaptation ruleset merges 5 international spellings into /s/, 6 into /k/ and 3 into /f/. Zero collisions over 52 words, but that is far too small a sample to see the birthday-problem effect. The full merge table and the four things to check are recorded with the rule in §3.6; **raise this again when the lexicon exists**. The reversible knob is v→f, which /b/ ties on the metric.
 - ~~**Compounding: keep or drop**~~ **DECIDED 2026-08-05: keep** (§3.6). Compounds are plain concatenation with no seam repair — geminates and hiatus are both legal results. Consequences that are now live rather than hypothetical: **how compounds are written** (solid / hyphen / space) is still open under §3.7, and compounding is one of the two things §3.2's derivation strategy can be built from.
+- **Noun-phrase-internal order (OPEN, new 2026-08-05):** adjective, numeral, demonstrative and possessor order relative to the noun. Tier 0 expected these to fall out of head-directionality; they do not — creoles split 8:7 three times over, so there is no creole answer. Worse, the people-weighted world preference (Dem-N 86.1%, Num-N 89.5%, Adj-N 65.3% of L1) is the *opposite* of the by-language majority in each case, and for demonstratives it also contradicts the weak creole lean (N-Dem, 9 of 14). Decide in Tier 2 on separate grounds. → [`grammar-tier0.md`](grammar-tier0.md) §1.2.
+- **Reduplication: adopt as a morphological device? (OPEN, new 2026-08-05):** the most-gained feature in the Tier 0 study (verbs 7 gained / 0 lost across creole-lexifier pairs) and free under §3.6's template. Candidate functions: plurality, intensity, iterativity. Bears on §3.2's derivation strategy and on the lexicon's word-shape budget.
 - **Loss shape details (SOFT):** AE + MSE combination is a proposal, not validated.
 - ~~**/tʃ/ orthography**~~ **MOOT** — the §3.3 inventory has no /tʃ/; the ASCII orthography is free (§3.7).
 

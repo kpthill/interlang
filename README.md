@@ -58,7 +58,13 @@ questions and next steps in §7.
   misses; APiCS is 80% Western-European-lexifier, leaving 14 independent
   non-European-lexifier languages as the real sample behind any creole universal.
   Carries the grammar agenda and the two creole evidence rules.
-- **Next:** grammar. Phonology and phonotactics are closed (`notes/principles.md`
+- **Grammar Tier 0** — done, [`notes/grammar-tier0.md`](notes/grammar-tier0.md).
+  Head-directionality and morphological type, from creole convergence (Rule 1) and
+  creole-vs-lexifier divergence (Rule 2). **SVO, prepositions, no case marking** are
+  FIRM. Two findings worth the click: head-directionality is *not* one parameter —
+  creoles converge above the noun phrase and split 8:7 inside it — and creoles lose
+  derivational affixes 35:3 while *gaining* compounding and reduplication 13:2.
+- **Next:** Tier 1–2 of the grammar agenda. Phonology and phonotactics are closed (`notes/principles.md`
   §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
   than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are
   ordinal rankings that must become numeric penalties before the lexicon optimizer runs.
@@ -144,6 +150,8 @@ uv run python scripts/international_vocab.py   # -> data/processed/international
                                                #    run; --offline reuses the cache)
 uv run python scripts/grammar_sources.py       # -> data/processed/grammar_source_coverage.csv
                                                #    + apics_lexifiers.csv
+uv run python scripts/grammar_tier0.py         # -> data/processed/grammar_tier0_order.csv
+                                               #    + grammar_tier0_morphology.csv
 ```
 
 Each script's module docstring documents its inputs, outputs, and the judgment calls

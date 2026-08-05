@@ -1,0 +1,309 @@
+block,feature_id,feature,creole,creole_gc,lexifier,lexifier_group,creole_value,lexifier_value,verdict,note
+derivation,GB047,action/state noun from verb (nominalisation),San Andres Creole English,sana1297,English,european,0,1,LOST,
+derivation,GB048,agent noun from verb,San Andres Creole English,sana1297,English,european,0,1,LOST,
+derivation,GB049,object noun from verb,San Andres Creole English,sana1297,English,european,0,1,LOST,
+derivation,GB187,diminutive on the noun,San Andres Creole English,sana1297,English,european,0,1,LOST,
+derivation,GB188,augmentative on the noun,San Andres Creole English,sana1297,English,european,0,1,LOST,
+derivation,GB155,causative by affix/clitic on the verb,San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+derivation,GB113,transitivising affix/clitic,San Andres Creole English,sana1297,English,european,0,1,LOST,
+inflection,GB044,productive plural marking on nouns,San Andres Creole English,sana1297,English,european,0,1,LOST,
+inflection,GB070,morphological case on core arguments,San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+inflection,GB072,morphological case on obliques,San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),San Andres Creole English,sana1297,English,european,0,1,LOST,
+inflection,GB082,present-tense marking on the verb,San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+inflection,GB083,past-tense marking on the verb,San Andres Creole English,sana1297,English,european,0,1,LOST,
+inflection,GB084,future-tense marking on the verb,San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+inflection,GB086,perfective/imperfective on the verb,San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+inflection,GB089,S indexed by suffix on the verb (agreement),San Andres Creole English,sana1297,English,european,0,1,LOST,
+inflection,GB092,A indexed by prefix on the verb (agreement),San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+inflection,GB147,morphological passive on the lexical verb,San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+periphrasis,GB122,verb compounding is a regular process,San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+periphrasis,GB158,verbs are reduplicated,San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+periphrasis,GB159,nouns are reduplicated,San Andres Creole English,sana1297,English,european,0,0,ABSENT,
+derivation,GB047,action/state noun from verb (nominalisation),Bahamas Creole English,baha1260,English,european,?,1,unknown,
+derivation,GB048,agent noun from verb,Bahamas Creole English,baha1260,English,european,?,1,unknown,
+derivation,GB049,object noun from verb,Bahamas Creole English,baha1260,English,european,?,1,unknown,
+derivation,GB187,diminutive on the noun,Bahamas Creole English,baha1260,English,european,?,1,unknown,
+derivation,GB188,augmentative on the noun,Bahamas Creole English,baha1260,English,european,?,1,unknown,
+derivation,GB155,causative by affix/clitic on the verb,Bahamas Creole English,baha1260,English,european,?,0,unknown,
+derivation,GB113,transitivising affix/clitic,Bahamas Creole English,baha1260,English,european,?,1,unknown,
+inflection,GB044,productive plural marking on nouns,Bahamas Creole English,baha1260,English,european,1,1,KEPT,
+inflection,GB070,morphological case on core arguments,Bahamas Creole English,baha1260,English,european,0,0,ABSENT,
+inflection,GB072,morphological case on obliques,Bahamas Creole English,baha1260,English,european,0,0,ABSENT,
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Bahamas Creole English,baha1260,English,european,?,0,unknown,
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Bahamas Creole English,baha1260,English,european,?,1,unknown,
+inflection,GB082,present-tense marking on the verb,Bahamas Creole English,baha1260,English,european,0,0,ABSENT,
+inflection,GB083,past-tense marking on the verb,Bahamas Creole English,baha1260,English,european,?,1,unknown,
+inflection,GB084,future-tense marking on the verb,Bahamas Creole English,baha1260,English,european,0,0,ABSENT,
+inflection,GB086,perfective/imperfective on the verb,Bahamas Creole English,baha1260,English,european,1,0,GAINED,
+inflection,GB089,S indexed by suffix on the verb (agreement),Bahamas Creole English,baha1260,English,european,0,1,LOST,
+inflection,GB092,A indexed by prefix on the verb (agreement),Bahamas Creole English,baha1260,English,european,0,0,ABSENT,
+inflection,GB147,morphological passive on the lexical verb,Bahamas Creole English,baha1260,English,european,0,0,ABSENT,
+periphrasis,GB122,verb compounding is a regular process,Bahamas Creole English,baha1260,English,european,?,0,unknown,
+periphrasis,GB158,verbs are reduplicated,Bahamas Creole English,baha1260,English,european,?,0,unknown,
+periphrasis,GB159,nouns are reduplicated,Bahamas Creole English,baha1260,English,european,?,0,unknown,
+derivation,GB047,action/state noun from verb (nominalisation),Tok Pisin,tokp1240,English,european,0,1,LOST,
+derivation,GB048,agent noun from verb,Tok Pisin,tokp1240,English,european,?,1,unknown,
+derivation,GB049,object noun from verb,Tok Pisin,tokp1240,English,european,0,1,LOST,
+derivation,GB187,diminutive on the noun,Tok Pisin,tokp1240,English,european,0,1,LOST,
+derivation,GB188,augmentative on the noun,Tok Pisin,tokp1240,English,european,0,1,LOST,
+derivation,GB155,causative by affix/clitic on the verb,Tok Pisin,tokp1240,English,european,1,0,GAINED,
+derivation,GB113,transitivising affix/clitic,Tok Pisin,tokp1240,English,european,1,1,KEPT,
+inflection,GB044,productive plural marking on nouns,Tok Pisin,tokp1240,English,european,0,1,LOST,
+inflection,GB070,morphological case on core arguments,Tok Pisin,tokp1240,English,european,0,0,ABSENT,
+inflection,GB072,morphological case on obliques,Tok Pisin,tokp1240,English,european,0,0,ABSENT,
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Tok Pisin,tokp1240,English,european,0,0,ABSENT,
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Tok Pisin,tokp1240,English,european,1,1,KEPT,
+inflection,GB082,present-tense marking on the verb,Tok Pisin,tokp1240,English,european,0,0,ABSENT,
+inflection,GB083,past-tense marking on the verb,Tok Pisin,tokp1240,English,european,0,1,LOST,
+inflection,GB084,future-tense marking on the verb,Tok Pisin,tokp1240,English,european,0,0,ABSENT,
+inflection,GB086,perfective/imperfective on the verb,Tok Pisin,tokp1240,English,european,0,0,ABSENT,
+inflection,GB089,S indexed by suffix on the verb (agreement),Tok Pisin,tokp1240,English,european,0,1,LOST,
+inflection,GB092,A indexed by prefix on the verb (agreement),Tok Pisin,tokp1240,English,european,0,0,ABSENT,
+inflection,GB147,morphological passive on the lexical verb,Tok Pisin,tokp1240,English,european,0,0,ABSENT,
+periphrasis,GB122,verb compounding is a regular process,Tok Pisin,tokp1240,English,european,0,0,ABSENT,
+periphrasis,GB158,verbs are reduplicated,Tok Pisin,tokp1240,English,european,1,0,GAINED,
+periphrasis,GB159,nouns are reduplicated,Tok Pisin,tokp1240,English,european,0,0,ABSENT,
+derivation,GB047,action/state noun from verb (nominalisation),Bislama,bisl1239,English,european,0,1,LOST,
+derivation,GB048,agent noun from verb,Bislama,bisl1239,English,european,0,1,LOST,
+derivation,GB049,object noun from verb,Bislama,bisl1239,English,european,0,1,LOST,
+derivation,GB187,diminutive on the noun,Bislama,bisl1239,English,european,0,1,LOST,
+derivation,GB188,augmentative on the noun,Bislama,bisl1239,English,european,0,1,LOST,
+derivation,GB155,causative by affix/clitic on the verb,Bislama,bisl1239,English,european,0,0,ABSENT,
+derivation,GB113,transitivising affix/clitic,Bislama,bisl1239,English,european,1,1,KEPT,
+inflection,GB044,productive plural marking on nouns,Bislama,bisl1239,English,european,0,1,LOST,
+inflection,GB070,morphological case on core arguments,Bislama,bisl1239,English,european,0,0,ABSENT,
+inflection,GB072,morphological case on obliques,Bislama,bisl1239,English,european,?,0,unknown,
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Bislama,bisl1239,English,european,0,0,ABSENT,
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Bislama,bisl1239,English,european,1,1,KEPT,
+inflection,GB082,present-tense marking on the verb,Bislama,bisl1239,English,european,0,0,ABSENT,
+inflection,GB083,past-tense marking on the verb,Bislama,bisl1239,English,european,0,1,LOST,
+inflection,GB084,future-tense marking on the verb,Bislama,bisl1239,English,european,0,0,ABSENT,
+inflection,GB086,perfective/imperfective on the verb,Bislama,bisl1239,English,european,0,0,ABSENT,
+inflection,GB089,S indexed by suffix on the verb (agreement),Bislama,bisl1239,English,european,0,1,LOST,
+inflection,GB092,A indexed by prefix on the verb (agreement),Bislama,bisl1239,English,european,0,0,ABSENT,
+inflection,GB147,morphological passive on the lexical verb,Bislama,bisl1239,English,european,0,0,ABSENT,
+periphrasis,GB122,verb compounding is a regular process,Bislama,bisl1239,English,european,0,0,ABSENT,
+periphrasis,GB158,verbs are reduplicated,Bislama,bisl1239,English,european,1,0,GAINED,
+periphrasis,GB159,nouns are reduplicated,Bislama,bisl1239,English,european,0,0,ABSENT,
+derivation,GB047,action/state noun from verb (nominalisation),Saramaccan,sara1340,English,european,1,1,KEPT,Portuguese-influenced maroon creole
+derivation,GB048,agent noun from verb,Saramaccan,sara1340,English,european,1,1,KEPT,Portuguese-influenced maroon creole
+derivation,GB049,object noun from verb,Saramaccan,sara1340,English,european,1,1,KEPT,Portuguese-influenced maroon creole
+derivation,GB187,diminutive on the noun,Saramaccan,sara1340,English,european,0,1,LOST,Portuguese-influenced maroon creole
+derivation,GB188,augmentative on the noun,Saramaccan,sara1340,English,european,0,1,LOST,Portuguese-influenced maroon creole
+derivation,GB155,causative by affix/clitic on the verb,Saramaccan,sara1340,English,european,0,0,ABSENT,Portuguese-influenced maroon creole
+derivation,GB113,transitivising affix/clitic,Saramaccan,sara1340,English,european,0,1,LOST,Portuguese-influenced maroon creole
+inflection,GB044,productive plural marking on nouns,Saramaccan,sara1340,English,european,0,1,LOST,Portuguese-influenced maroon creole
+inflection,GB070,morphological case on core arguments,Saramaccan,sara1340,English,european,0,0,ABSENT,Portuguese-influenced maroon creole
+inflection,GB072,morphological case on obliques,Saramaccan,sara1340,English,european,0,0,ABSENT,Portuguese-influenced maroon creole
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Saramaccan,sara1340,English,european,0,0,ABSENT,Portuguese-influenced maroon creole
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Saramaccan,sara1340,English,european,0,1,LOST,Portuguese-influenced maroon creole
+inflection,GB082,present-tense marking on the verb,Saramaccan,sara1340,English,european,0,0,ABSENT,Portuguese-influenced maroon creole
+inflection,GB083,past-tense marking on the verb,Saramaccan,sara1340,English,european,0,1,LOST,Portuguese-influenced maroon creole
+inflection,GB084,future-tense marking on the verb,Saramaccan,sara1340,English,european,0,0,ABSENT,Portuguese-influenced maroon creole
+inflection,GB086,perfective/imperfective on the verb,Saramaccan,sara1340,English,european,1,0,GAINED,Portuguese-influenced maroon creole
+inflection,GB089,S indexed by suffix on the verb (agreement),Saramaccan,sara1340,English,european,0,1,LOST,Portuguese-influenced maroon creole
+inflection,GB092,A indexed by prefix on the verb (agreement),Saramaccan,sara1340,English,european,0,0,ABSENT,Portuguese-influenced maroon creole
+inflection,GB147,morphological passive on the lexical verb,Saramaccan,sara1340,English,european,0,0,ABSENT,Portuguese-influenced maroon creole
+periphrasis,GB122,verb compounding is a regular process,Saramaccan,sara1340,English,european,0,0,ABSENT,Portuguese-influenced maroon creole
+periphrasis,GB158,verbs are reduplicated,Saramaccan,sara1340,English,european,1,0,GAINED,Portuguese-influenced maroon creole
+periphrasis,GB159,nouns are reduplicated,Saramaccan,sara1340,English,european,1,0,GAINED,Portuguese-influenced maroon creole
+derivation,GB047,action/state noun from verb (nominalisation),Jamaican Creole English,jama1262,English,european,0,1,LOST,
+derivation,GB048,agent noun from verb,Jamaican Creole English,jama1262,English,european,1,1,KEPT,
+derivation,GB049,object noun from verb,Jamaican Creole English,jama1262,English,european,0,1,LOST,
+derivation,GB187,diminutive on the noun,Jamaican Creole English,jama1262,English,european,1,1,KEPT,
+derivation,GB188,augmentative on the noun,Jamaican Creole English,jama1262,English,european,0,1,LOST,
+derivation,GB155,causative by affix/clitic on the verb,Jamaican Creole English,jama1262,English,european,?,0,unknown,
+derivation,GB113,transitivising affix/clitic,Jamaican Creole English,jama1262,English,european,0,1,LOST,
+inflection,GB044,productive plural marking on nouns,Jamaican Creole English,jama1262,English,european,0,1,LOST,
+inflection,GB070,morphological case on core arguments,Jamaican Creole English,jama1262,English,european,0,0,ABSENT,
+inflection,GB072,morphological case on obliques,Jamaican Creole English,jama1262,English,european,0,0,ABSENT,
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Jamaican Creole English,jama1262,English,european,0,0,ABSENT,
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Jamaican Creole English,jama1262,English,european,1,1,KEPT,
+inflection,GB082,present-tense marking on the verb,Jamaican Creole English,jama1262,English,european,0,0,ABSENT,
+inflection,GB083,past-tense marking on the verb,Jamaican Creole English,jama1262,English,european,0,1,LOST,
+inflection,GB084,future-tense marking on the verb,Jamaican Creole English,jama1262,English,european,0,0,ABSENT,
+inflection,GB086,perfective/imperfective on the verb,Jamaican Creole English,jama1262,English,european,0,0,ABSENT,
+inflection,GB089,S indexed by suffix on the verb (agreement),Jamaican Creole English,jama1262,English,european,0,1,LOST,
+inflection,GB092,A indexed by prefix on the verb (agreement),Jamaican Creole English,jama1262,English,european,0,0,ABSENT,
+inflection,GB147,morphological passive on the lexical verb,Jamaican Creole English,jama1262,English,european,0,0,ABSENT,
+periphrasis,GB122,verb compounding is a regular process,Jamaican Creole English,jama1262,English,european,0,0,ABSENT,
+periphrasis,GB158,verbs are reduplicated,Jamaican Creole English,jama1262,English,european,1,0,GAINED,
+periphrasis,GB159,nouns are reduplicated,Jamaican Creole English,jama1262,English,european,1,0,GAINED,
+derivation,GB047,action/state noun from verb (nominalisation),Haitian,hait1244,French,european,0,1,LOST,
+derivation,GB048,agent noun from verb,Haitian,hait1244,French,european,?,1,unknown,
+derivation,GB049,object noun from verb,Haitian,hait1244,French,european,?,1,unknown,
+derivation,GB187,diminutive on the noun,Haitian,hait1244,French,european,1,1,KEPT,
+derivation,GB188,augmentative on the noun,Haitian,hait1244,French,european,0,0,ABSENT,
+derivation,GB155,causative by affix/clitic on the verb,Haitian,hait1244,French,european,0,0,ABSENT,
+derivation,GB113,transitivising affix/clitic,Haitian,hait1244,French,european,0,0,ABSENT,
+inflection,GB044,productive plural marking on nouns,Haitian,hait1244,French,european,1,1,KEPT,
+inflection,GB070,morphological case on core arguments,Haitian,hait1244,French,european,0,0,ABSENT,
+inflection,GB072,morphological case on obliques,Haitian,hait1244,French,european,0,0,ABSENT,
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Haitian,hait1244,French,european,0,0,ABSENT,
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Haitian,hait1244,French,european,0,1,LOST,
+inflection,GB082,present-tense marking on the verb,Haitian,hait1244,French,european,0,1,LOST,
+inflection,GB083,past-tense marking on the verb,Haitian,hait1244,French,european,0,1,LOST,
+inflection,GB084,future-tense marking on the verb,Haitian,hait1244,French,european,0,1,LOST,
+inflection,GB086,perfective/imperfective on the verb,Haitian,hait1244,French,european,0,1,LOST,
+inflection,GB089,S indexed by suffix on the verb (agreement),Haitian,hait1244,French,european,0,1,LOST,
+inflection,GB092,A indexed by prefix on the verb (agreement),Haitian,hait1244,French,european,0,0,ABSENT,
+inflection,GB147,morphological passive on the lexical verb,Haitian,hait1244,French,european,0,1,LOST,
+periphrasis,GB122,verb compounding is a regular process,Haitian,hait1244,French,european,0,0,ABSENT,
+periphrasis,GB158,verbs are reduplicated,Haitian,hait1244,French,european,0,0,ABSENT,
+periphrasis,GB159,nouns are reduplicated,Haitian,hait1244,French,european,0,0,ABSENT,
+derivation,GB047,action/state noun from verb (nominalisation),Berbice Creole Dutch,berb1259,Dutch,european,0,1,LOST,Eastern Ijo substrate absent from Grambank
+derivation,GB048,agent noun from verb,Berbice Creole Dutch,berb1259,Dutch,european,0,1,LOST,Eastern Ijo substrate absent from Grambank
+derivation,GB049,object noun from verb,Berbice Creole Dutch,berb1259,Dutch,european,0,1,LOST,Eastern Ijo substrate absent from Grambank
+derivation,GB187,diminutive on the noun,Berbice Creole Dutch,berb1259,Dutch,european,0,1,LOST,Eastern Ijo substrate absent from Grambank
+derivation,GB188,augmentative on the noun,Berbice Creole Dutch,berb1259,Dutch,european,0,0,ABSENT,Eastern Ijo substrate absent from Grambank
+derivation,GB155,causative by affix/clitic on the verb,Berbice Creole Dutch,berb1259,Dutch,european,0,0,ABSENT,Eastern Ijo substrate absent from Grambank
+derivation,GB113,transitivising affix/clitic,Berbice Creole Dutch,berb1259,Dutch,european,0,0,ABSENT,Eastern Ijo substrate absent from Grambank
+inflection,GB044,productive plural marking on nouns,Berbice Creole Dutch,berb1259,Dutch,european,1,1,KEPT,Eastern Ijo substrate absent from Grambank
+inflection,GB070,morphological case on core arguments,Berbice Creole Dutch,berb1259,Dutch,european,0,0,ABSENT,Eastern Ijo substrate absent from Grambank
+inflection,GB072,morphological case on obliques,Berbice Creole Dutch,berb1259,Dutch,european,0,0,ABSENT,Eastern Ijo substrate absent from Grambank
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Berbice Creole Dutch,berb1259,Dutch,european,0,1,LOST,Eastern Ijo substrate absent from Grambank
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Berbice Creole Dutch,berb1259,Dutch,european,1,1,KEPT,Eastern Ijo substrate absent from Grambank
+inflection,GB082,present-tense marking on the verb,Berbice Creole Dutch,berb1259,Dutch,european,0,1,LOST,Eastern Ijo substrate absent from Grambank
+inflection,GB083,past-tense marking on the verb,Berbice Creole Dutch,berb1259,Dutch,european,0,1,LOST,Eastern Ijo substrate absent from Grambank
+inflection,GB084,future-tense marking on the verb,Berbice Creole Dutch,berb1259,Dutch,european,0,0,ABSENT,Eastern Ijo substrate absent from Grambank
+inflection,GB086,perfective/imperfective on the verb,Berbice Creole Dutch,berb1259,Dutch,european,1,0,GAINED,Eastern Ijo substrate absent from Grambank
+inflection,GB089,S indexed by suffix on the verb (agreement),Berbice Creole Dutch,berb1259,Dutch,european,0,1,LOST,Eastern Ijo substrate absent from Grambank
+inflection,GB092,A indexed by prefix on the verb (agreement),Berbice Creole Dutch,berb1259,Dutch,european,0,0,ABSENT,Eastern Ijo substrate absent from Grambank
+inflection,GB147,morphological passive on the lexical verb,Berbice Creole Dutch,berb1259,Dutch,european,0,1,LOST,Eastern Ijo substrate absent from Grambank
+periphrasis,GB122,verb compounding is a regular process,Berbice Creole Dutch,berb1259,Dutch,european,0,0,ABSENT,Eastern Ijo substrate absent from Grambank
+periphrasis,GB158,verbs are reduplicated,Berbice Creole Dutch,berb1259,Dutch,european,1,?,unknown,Eastern Ijo substrate absent from Grambank
+periphrasis,GB159,nouns are reduplicated,Berbice Creole Dutch,berb1259,Dutch,european,0,?,unknown,Eastern Ijo substrate absent from Grambank
+derivation,GB047,action/state noun from verb (nominalisation),Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+derivation,GB048,agent noun from verb,Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+derivation,GB049,object noun from verb,Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+derivation,GB187,diminutive on the noun,Kinshasa Lingala,ling1263,Bobangi,non-european,?,0,unknown,non-European lexifier
+derivation,GB188,augmentative on the noun,Kinshasa Lingala,ling1263,Bobangi,non-european,?,0,unknown,non-European lexifier
+derivation,GB155,causative by affix/clitic on the verb,Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+derivation,GB113,transitivising affix/clitic,Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+inflection,GB044,productive plural marking on nouns,Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+inflection,GB070,morphological case on core arguments,Kinshasa Lingala,ling1263,Bobangi,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB072,morphological case on obliques,Kinshasa Lingala,ling1263,Bobangi,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Kinshasa Lingala,ling1263,Bobangi,non-european,1,?,unknown,non-European lexifier
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+inflection,GB082,present-tense marking on the verb,Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+inflection,GB083,past-tense marking on the verb,Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+inflection,GB084,future-tense marking on the verb,Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+inflection,GB086,perfective/imperfective on the verb,Kinshasa Lingala,ling1263,Bobangi,non-european,1,?,unknown,non-European lexifier
+inflection,GB089,S indexed by suffix on the verb (agreement),Kinshasa Lingala,ling1263,Bobangi,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB092,A indexed by prefix on the verb (agreement),Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+inflection,GB147,morphological passive on the lexical verb,Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+periphrasis,GB122,verb compounding is a regular process,Kinshasa Lingala,ling1263,Bobangi,non-european,?,0,unknown,non-European lexifier
+periphrasis,GB158,verbs are reduplicated,Kinshasa Lingala,ling1263,Bobangi,non-european,1,1,KEPT,non-European lexifier
+periphrasis,GB159,nouns are reduplicated,Kinshasa Lingala,ling1263,Bobangi,non-european,0,1,LOST,non-European lexifier
+derivation,GB047,action/state noun from verb (nominalisation),Nubi,nubi1253,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB048,agent noun from verb,Nubi,nubi1253,Standard Arabic,non-european,?,1,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB049,object noun from verb,Nubi,nubi1253,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB187,diminutive on the noun,Nubi,nubi1253,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB188,augmentative on the noun,Nubi,nubi1253,Standard Arabic,non-european,0,0,ABSENT,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB155,causative by affix/clitic on the verb,Nubi,nubi1253,Standard Arabic,non-european,?,0,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB113,transitivising affix/clitic,Nubi,nubi1253,Standard Arabic,non-european,?,0,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB044,productive plural marking on nouns,Nubi,nubi1253,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB070,morphological case on core arguments,Nubi,nubi1253,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB072,morphological case on obliques,Nubi,nubi1253,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Nubi,nubi1253,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Nubi,nubi1253,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB082,present-tense marking on the verb,Nubi,nubi1253,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB083,past-tense marking on the verb,Nubi,nubi1253,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB084,future-tense marking on the verb,Nubi,nubi1253,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB086,perfective/imperfective on the verb,Nubi,nubi1253,Standard Arabic,non-european,1,?,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB089,S indexed by suffix on the verb (agreement),Nubi,nubi1253,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB092,A indexed by prefix on the verb (agreement),Nubi,nubi1253,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB147,morphological passive on the lexical verb,Nubi,nubi1253,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+periphrasis,GB122,verb compounding is a regular process,Nubi,nubi1253,Standard Arabic,non-european,0,0,ABSENT,Sudanese Arabic absent from Grambank; non-European lexifier
+periphrasis,GB158,verbs are reduplicated,Nubi,nubi1253,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+periphrasis,GB159,nouns are reduplicated,Nubi,nubi1253,Standard Arabic,non-european,1,0,GAINED,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB047,action/state noun from verb (nominalisation),South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,?,1,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB048,agent noun from verb,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,?,1,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB049,object noun from verb,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,?,1,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB187,diminutive on the noun,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,?,1,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB188,augmentative on the noun,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,?,0,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB155,causative by affix/clitic on the verb,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,0,0,ABSENT,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB113,transitivising affix/clitic,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,?,0,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB044,productive plural marking on nouns,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB070,morphological case on core arguments,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB072,morphological case on obliques,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB082,present-tense marking on the verb,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB083,past-tense marking on the verb,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB084,future-tense marking on the verb,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB086,perfective/imperfective on the verb,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,1,?,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB089,S indexed by suffix on the verb (agreement),South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB092,A indexed by prefix on the verb (agreement),South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,0,1,LOST,Sudanese Arabic absent from Grambank; non-European lexifier
+inflection,GB147,morphological passive on the lexical verb,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+periphrasis,GB122,verb compounding is a regular process,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,?,0,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+periphrasis,GB158,verbs are reduplicated,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,1,1,KEPT,Sudanese Arabic absent from Grambank; non-European lexifier
+periphrasis,GB159,nouns are reduplicated,South Sudanese Creole Arabic,suda1237,Standard Arabic,non-european,?,0,unknown,Sudanese Arabic absent from Grambank; non-European lexifier
+derivation,GB047,action/state noun from verb (nominalisation),Sri Lanka Malay,sril1245,Standard Malay,non-european,1,1,KEPT,non-European lexifier
+derivation,GB048,agent noun from verb,Sri Lanka Malay,sril1245,Standard Malay,non-european,?,1,unknown,non-European lexifier
+derivation,GB049,object noun from verb,Sri Lanka Malay,sril1245,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+derivation,GB187,diminutive on the noun,Sri Lanka Malay,sril1245,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+derivation,GB188,augmentative on the noun,Sri Lanka Malay,sril1245,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+derivation,GB155,causative by affix/clitic on the verb,Sri Lanka Malay,sril1245,Standard Malay,non-european,1,1,KEPT,non-European lexifier
+derivation,GB113,transitivising affix/clitic,Sri Lanka Malay,sril1245,Standard Malay,non-european,1,1,KEPT,non-European lexifier
+inflection,GB044,productive plural marking on nouns,Sri Lanka Malay,sril1245,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB070,morphological case on core arguments,Sri Lanka Malay,sril1245,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+inflection,GB072,morphological case on obliques,Sri Lanka Malay,sril1245,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Sri Lanka Malay,sril1245,Standard Malay,non-european,1,1,KEPT,non-European lexifier
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Sri Lanka Malay,sril1245,Standard Malay,non-european,1,1,KEPT,non-European lexifier
+inflection,GB082,present-tense marking on the verb,Sri Lanka Malay,sril1245,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+inflection,GB083,past-tense marking on the verb,Sri Lanka Malay,sril1245,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+inflection,GB084,future-tense marking on the verb,Sri Lanka Malay,sril1245,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB086,perfective/imperfective on the verb,Sri Lanka Malay,sril1245,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB089,S indexed by suffix on the verb (agreement),Sri Lanka Malay,sril1245,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB092,A indexed by prefix on the verb (agreement),Sri Lanka Malay,sril1245,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB147,morphological passive on the lexical verb,Sri Lanka Malay,sril1245,Standard Malay,non-european,0,1,LOST,non-European lexifier
+periphrasis,GB122,verb compounding is a regular process,Sri Lanka Malay,sril1245,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+periphrasis,GB158,verbs are reduplicated,Sri Lanka Malay,sril1245,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+periphrasis,GB159,nouns are reduplicated,Sri Lanka Malay,sril1245,Standard Malay,non-european,0,1,LOST,non-European lexifier
+derivation,GB047,action/state noun from verb (nominalisation),Baba Malay,baba1267,Standard Malay,non-european,0,1,LOST,non-European lexifier
+derivation,GB048,agent noun from verb,Baba Malay,baba1267,Standard Malay,non-european,0,1,LOST,non-European lexifier
+derivation,GB049,object noun from verb,Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+derivation,GB187,diminutive on the noun,Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+derivation,GB188,augmentative on the noun,Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+derivation,GB155,causative by affix/clitic on the verb,Baba Malay,baba1267,Standard Malay,non-european,0,1,LOST,non-European lexifier
+derivation,GB113,transitivising affix/clitic,Baba Malay,baba1267,Standard Malay,non-european,1,1,KEPT,non-European lexifier
+inflection,GB044,productive plural marking on nouns,Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB070,morphological case on core arguments,Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB072,morphological case on obliques,Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Baba Malay,baba1267,Standard Malay,non-european,1,1,KEPT,non-European lexifier
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Baba Malay,baba1267,Standard Malay,non-european,1,1,KEPT,non-European lexifier
+inflection,GB082,present-tense marking on the verb,Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB083,past-tense marking on the verb,Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB084,future-tense marking on the verb,Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB086,perfective/imperfective on the verb,Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB089,S indexed by suffix on the verb (agreement),Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB092,A indexed by prefix on the verb (agreement),Baba Malay,baba1267,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB147,morphological passive on the lexical verb,Baba Malay,baba1267,Standard Malay,non-european,0,1,LOST,non-European lexifier
+periphrasis,GB122,verb compounding is a regular process,Baba Malay,baba1267,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+periphrasis,GB158,verbs are reduplicated,Baba Malay,baba1267,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+periphrasis,GB159,nouns are reduplicated,Baba Malay,baba1267,Standard Malay,non-european,1,1,KEPT,non-European lexifier
+derivation,GB047,action/state noun from verb (nominalisation),Ambonese Malay,ambo1250,Standard Malay,non-european,0,1,LOST,non-European lexifier
+derivation,GB048,agent noun from verb,Ambonese Malay,ambo1250,Standard Malay,non-european,0,1,LOST,non-European lexifier
+derivation,GB049,object noun from verb,Ambonese Malay,ambo1250,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+derivation,GB187,diminutive on the noun,Ambonese Malay,ambo1250,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+derivation,GB188,augmentative on the noun,Ambonese Malay,ambo1250,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+derivation,GB155,causative by affix/clitic on the verb,Ambonese Malay,ambo1250,Standard Malay,non-european,0,1,LOST,non-European lexifier
+derivation,GB113,transitivising affix/clitic,Ambonese Malay,ambo1250,Standard Malay,non-european,0,1,LOST,non-European lexifier
+inflection,GB044,productive plural marking on nouns,Ambonese Malay,ambo1250,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB070,morphological case on core arguments,Ambonese Malay,ambo1250,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB072,morphological case on obliques,Ambonese Malay,ambo1250,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB079,verb prefixes/proclitics (beyond argument marking),Ambonese Malay,ambo1250,Standard Malay,non-european,1,1,KEPT,non-European lexifier
+inflection,GB080,verb suffixes/enclitics (beyond argument marking),Ambonese Malay,ambo1250,Standard Malay,non-european,1,1,KEPT,non-European lexifier
+inflection,GB082,present-tense marking on the verb,Ambonese Malay,ambo1250,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB083,past-tense marking on the verb,Ambonese Malay,ambo1250,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB084,future-tense marking on the verb,Ambonese Malay,ambo1250,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB086,perfective/imperfective on the verb,Ambonese Malay,ambo1250,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB089,S indexed by suffix on the verb (agreement),Ambonese Malay,ambo1250,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB092,A indexed by prefix on the verb (agreement),Ambonese Malay,ambo1250,Standard Malay,non-european,0,0,ABSENT,non-European lexifier
+inflection,GB147,morphological passive on the lexical verb,Ambonese Malay,ambo1250,Standard Malay,non-european,0,1,LOST,non-European lexifier
+periphrasis,GB122,verb compounding is a regular process,Ambonese Malay,ambo1250,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+periphrasis,GB158,verbs are reduplicated,Ambonese Malay,ambo1250,Standard Malay,non-european,1,0,GAINED,non-European lexifier
+periphrasis,GB159,nouns are reduplicated,Ambonese Malay,ambo1250,Standard Malay,non-european,1,1,KEPT,non-European lexifier

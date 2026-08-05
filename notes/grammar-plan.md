@@ -153,7 +153,11 @@ scheme shared with dozens of published reference grammars. But it is a *document
 instrument, ordered for completeness, so we work it in the order below and use it only to
 check that nothing was left undecided.
 
-**Tier 0 — decided together, first. Everything downstream inherits these.**
+**Tier 0 — DONE 2026-08-05** → [`grammar-tier0.md`](grammar-tier0.md). SVO, prepositions and
+no case marking are FIRM; morphological type is SOFT (no derivational affixes, compounding
+and possibly reduplication instead). One structural surprise: **head-directionality is not a
+single parameter** — creoles converge above the noun phrase and split evenly inside it — so
+NP-internal order moves to Tier 2 rather than falling out here.
 1. **How much morphology at all.** §3.2's "isolating" is a package: unwrap it into
    morphemes-per-word, presence of inflection, and presence of agreement, and decide each.
    Compounding is already FIRM (§3.6), so we are not strictly isolating.
@@ -161,12 +165,14 @@ check that nothing was left undecided.
    position, comparative and auxiliary order stop being separate decisions. Consistency is
    itself a learnability asset.
 
-**Tier 1 — the clause skeleton.** 3. basic constituent order · 4. alignment ·
-5. whether core arguments are marked at all.
+**Tier 1 — the clause skeleton.** 3. ~~basic constituent order~~ **done, SVO** ·
+4. alignment · 5. ~~whether core arguments are marked at all~~ **done, no case marking**.
 
 **Tier 2 — what every clause must carry.** 6. TAM (including whether tense exists at
 all) · 7. nominal categories: number, definiteness, classifiers · 8. the pronoun system ·
-9. negation · 10. question formation.
+9. negation · 10. question formation · **11. NP-internal order (moved down from Tier 0 —
+adjective, numeral, demonstrative, possessor; no creole signal, and the people-weighted
+answer conflicts with the creole lean on demonstratives)**.
 
 **Tier 3 — combination.** relative clauses · complement clauses · adverbial clauses ·
 coordination · comparatives · copula, possession and existentials.
