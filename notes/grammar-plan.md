@@ -166,13 +166,30 @@ NP-internal order moves to Tier 2 rather than falling out here.
    itself a learnability asset.
 
 **Tier 1 — the clause skeleton.** 3. ~~basic constituent order~~ **done, SVO** ·
-4. alignment · 5. ~~whether core arguments are marked at all~~ **done, no case marking**.
+4. ~~alignment~~ **deferred indefinitely** (Patrick, 2026-08-05): with no case marking and
+no verbal agreement there is no morphology left to carry an alignment contrast, so the
+question is moot until something is adopted that makes it relevant — a passive, an
+agent-marking oblique, or case forms of pronouns (Tier 2 Q9e is the live route back in) ·
+5. ~~whether core arguments are marked at all~~ **done, no case marking**.
 
-**Tier 2 — what every clause must carry.** 6. TAM (including whether tense exists at
-all) · 7. nominal categories: number, definiteness, classifiers · 8. the pronoun system ·
-9. negation · 10. question formation · **11. NP-internal order (moved down from Tier 0 —
-adjective, numeral, demonstrative, possessor; no creole signal, and the people-weighted
-answer conflicts with the creole lean on demonstratives)**.
+**Tier 2 — what every clause must carry.** Expanded 2026-08-05; suggested working order
+is 6 → 7 → 8+11 together → 9 → 10, because negation needs the TAM slot, and the article,
+demonstrative and numeral questions compete for the same real estate as NP order.
+
+| # | question | sub-questions | evidence to hand |
+|---|---|---|---|
+| **6** | **TAM** | tense at all? which distinctions? aspect set? mood/irrealis? obligatory or optional? pre- or postverbal? fixed order among multiple markers? | APiCS 43 (position rel. to verb), 44 (internal order), 49 (TA systems), 50 (interaction with negation); Grambank GB082–086, GB312 |
+| 7 | **nominal categories** | obligatory plural? articles — definite, indefinite, both, neither? classifiers/measure words? what a bare noun means by default | APiCS 28, 29, 9, 10, 31; Grambank GB020–023, GB042, GB044. Articles are Euro-coded → run the Rule 2 contrapositive |
+| 8 | **pronoun system** | person/number; clusivity; gender; politeness; **case forms of pronouns**; total form count | APiCS 13, 15, 18; Grambank GB071, GB090–094. Gender and clusivity already answered in the Tier 0 side-evidence; politeness is genuinely split |
+| 9 | **negation** | one negator or several? position rel. to verb and to TAM? double negation? negative concord? same negator for verbal, locational, existential and nominal predication? | APiCS 50; Grambank GB107, GB140 |
+| 10 | **question formation** | polar: particle, intonation, word order or tag? particle position? content: in-situ or fronted? | APiCS 12; Grambank GB260, GB262, GB285, GB286; WALS 92A, 93A |
+| **11** | **NP-internal order** | adjective, numeral, demonstrative, possessor — each relative to the noun | moved down from Tier 0: creoles split 8:7 three times, and the people-weighted world answer conflicts with the creole lean on demonstratives ([`grammar-tier0.md`](grammar-tier0.md) §1.2) |
+
+**Tier 2 is where the particle inventory gets sized, even though it is chosen in Tier 4.**
+Every answer of the form "mark it with a particle" adds a short, high-frequency word that
+Tier 4 has to find phonological room for, under §3.3's segment discouragement and §3.6's
+cluster cost. Each Tier 2 write-up should therefore end with a running count: *how many
+particles does this decision cost?*
 
 **Tier 3 — combination.** relative clauses · complement clauses · adverbial clauses ·
 coordination · comparatives · copula, possession and existentials.
