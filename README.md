@@ -89,7 +89,17 @@ questions and next steps in §7.
   modifier rule *predicted* it and the prediction held (68.7% of world L1, and every
   contact stratum). Pays the scope debt Q6 created — **scope is linear order, leftmost
   modifier widest** — which turns the ambiguity into an expressible distinction.
-- **Next:** the rest of Tier 2 of the grammar agenda. Phonology and phonotactics are closed (`notes/principles.md`
+- **Grammar Tier 2 Q8 (pronouns)** — done,
+  [`notes/grammar-tier2-pronouns.md`](notes/grammar-tier2-pronouns.md). **Seven words:
+  three persons × two numbers, plus one invariant reflexive.** No gender, no clusivity, no
+  dual, no politeness distinction, no case forms, no special possessives. Dropping the
+  politeness distinction is **the largest single vote against a population majority in the
+  project** — 85% of world L1 has one — taken because an obligatory social judgment on
+  every utterance is the worst thing to impose on strangers with no shared culture. "No
+  case" also **closes the alignment question permanently**: pronoun case was the one route
+  back in, and contact languages don't take it (9 of 9 restricted pidgins have no distinct
+  subject/object forms).
+- **Next:** Q10 (question formation), the last item in Tier 2 of the grammar agenda. Phonology and phonotactics are closed (`notes/principles.md`
   §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
   than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are
   ordinal rankings that must become numeric penalties before the lexicon optimizer runs.
@@ -180,6 +190,7 @@ uv run python scripts/grammar_tier0.py         # -> data/processed/grammar_tier0
 uv run python scripts/grammar_tier2_tam.py     # -> data/processed/grammar_tier2_tam.csv
 uv run python scripts/grammar_tier2_np.py      # -> data/processed/grammar_tier2_np.csv
 uv run python scripts/grammar_tier2_negation.py  # -> data/processed/grammar_tier2_negation.csv
+uv run python scripts/grammar_tier2_pronouns.py  # -> data/processed/grammar_tier2_pronouns.csv
 ```
 
 Each script's module docstring documents its inputs, outputs, and the judgment calls

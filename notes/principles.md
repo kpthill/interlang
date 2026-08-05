@@ -221,6 +221,58 @@ finding** — no source codes the relative order of negation and TAM adverbs.
 **Word bill: 1** — the first grammatical word the grammar has required; Q6 and Q7 cost zero.
 **Grammar rules added: zero.**
 
+#### Pronouns (**SOFT**, 2026-08-05)
+
+Evidence: [`grammar-tier2-pronouns.md`](grammar-tier2-pronouns.md).
+
+**Seven words: three persons × two numbers, plus one invariant reflexive.** No gender, no
+clusivity, no dual, no politeness distinction, no case forms, no special possessives, no
+logophorics.
+
+- **The shape is the least controversial thing in Tier 2.** All three persons distinct in 9
+  of 9 restricted pidgins; no dual in 7 of 9 (duals are 26.3% of languages but **1.4% of
+  world L1**, the cheapest rejection in the project); no clusivity in 9 of 9 (a majority by
+  language count at 52.6%, a minority by people at 37.3%).
+- **No gender**, against ~78% of world L1 (WALS 44A). Rule 2 is emphatic — gender in
+  3rd-person pronouns is LOST 9 / KEPT 2 / GAINED 1, adults dropping a category that was
+  available in the input. The argument that settles it is **directional**: a speaker of a
+  gendered system meeting a genderless one has nothing to learn and one nuance to give up;
+  a speaker of a genderless system meeting a gendered one acquires an obligatory judgment
+  they have never had to make.
+- **No politeness distinction — the largest single vote against a population majority in the
+  project.** 85% of world L1 has one (WALS 45A); 7 of 9 restricted pidgins do not. Rejected
+  because it is an **obligatory social judgment on every utterance addressed to a person**,
+  with the highest frequency and the highest cost of error of any obligatory category — for
+  a language meant for strangers with no shared culture, that is close to a design fault. It
+  stays **expressible lexically** (titles, honorific vocabulary), which is what 8 creoles in
+  the sample do. **Goes in the final bias audit** ([`grammar-plan.md`](grammar-plan.md) §1)
+  alongside the classifier rejection.
+- **No case forms — pronouns are invariant.** *I see he*, not *I see him*. The gradient is
+  the clearest in the study: 9 of 9 restricted pidgins have no distinct subject/object forms,
+  neutral alignment leads 5:4 in restricted and 6:3 in expanded pidgins, and accusative wins
+  only once nativisation sets in (43 of 54 creoles). Rule 2: case on pronominal core
+  arguments LOST 7 / KEPT 3 / GAINED 1.
+- **One invariant reflexive** (*self*, all persons and numbers): GB305 is 89.7% of L1, the
+  highest population figure in the study, and Rule 2 keeps it 7:3.
+- **No special possessives** — §3.2's modifier rule puts the possessor before the noun, so
+  the plain pronoun in that slot already *is* the possessive. Redundant rather than rejected.
+- **3rd person is not the demonstrative.** The data mildly favours merging them, but Q7
+  already gave the demonstrative article duty; three jobs on one form costs more ambiguity
+  than the one word it saves.
+
+**This closes the alignment question permanently.** §7 deferred alignment with one route
+back — *an isolating language can still have I/me* — and that route is now shut: no case on
+nouns (Tier 0), no verbal agreement, no case on pronouns. There is no morphology anywhere
+that could carry an alignment contrast.
+
+*Left to the lexicon:* 13 creoles use one form for both "they" and the plural word. Since Q7
+made the plural word optional vocabulary, whether the two are identical is an economy
+decision at lexicon construction, not a grammar decision.
+
+**Word bill: 7.** Running Tier 2 total **8** (Q6 zero, Q7 zero, Q9 one, Q8 seven) — under 5%
+of the ~180 cluster-free monosyllables that avoid the discouraged onsets.
+**Grammar rules added: zero.**
+
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 
 **The inventory is closed. 15 consonants + 5 vowels = 20 phonemes.**
@@ -662,8 +714,9 @@ Standing open questions:
 - **Solid compounds: check back in on the two costs (OPEN, new, deferred by Patrick 2026-08-05).** The decision is made (§3.7) and the costs are accepted, but both are worth re-examining once there is a lexicon and a grammar to look at: (a) **segmentation ambiguity** — measure the real rate at which a solid compound admits more than one parse into attested roots, and see whether the geminate and hiatus boundary signals cover enough of it, or whether the lexicon chooser needs an explicit anti-ambiguity term; (b) **the prosodic seam** — §3.5 gives a compound one initial stress, making it prosodically identical to a simple root of the same shape, which is fine on paper and may or may not be fine in speech. Neither is measurable before the lexicon exists.
 - **Loan-mapping homophony (OPEN, deferred to the vocabulary stage by Patrick 2026-08-05):** the adaptation ruleset merges 5 international spellings into /s/, 6 into /k/ and 3 into /f/. Zero collisions over 52 words, but that is far too small a sample to see the birthday-problem effect. The full merge table and the four things to check are recorded with the rule in §3.6; **raise this again when the lexicon exists**. The reversible knob is v→f, which /b/ ties on the metric.
 - ~~**Compounding: keep or drop**~~ **DECIDED 2026-08-05: keep** (§3.6). Compounds are plain concatenation with no seam repair — geminates and hiatus are both legal results. Consequences that are now live rather than hypothetical: **how compounds are written** (solid / hyphen / space) is still open under §3.7, and compounding is one of the two things §3.2's derivation strategy can be built from.
-- **Alignment (DEFERRED INDEFINITELY, 2026-08-05 by Patrick):** nominative-accusative vs ergative vs neutral. With no case marking on core arguments and no verbal agreement, no morphology remains to carry the contrast, so the question does not arise. **Revisit only if something is adopted that makes it relevant** — a passive, an oblique that marks agents, or case forms of pronouns (an isolating language can still have *I/me*; English does). Flagged in the Tier 2 pronoun question as the live route back in.
-- **Noun-phrase-internal order (OPEN, new 2026-08-05):** adjective, numeral, demonstrative and possessor order relative to the noun. Tier 0 expected these to fall out of head-directionality; they do not — creoles split 8:7 three times over, so there is no creole answer. Worse, the people-weighted world preference (Dem-N 86.1%, Num-N 89.5%, Adj-N 65.3% of L1) is the *opposite* of the by-language majority in each case, and for demonstratives it also contradicts the weak creole lean (N-Dem, 9 of 14). Decide in Tier 2 on separate grounds. → [`grammar-tier0.md`](grammar-tier0.md) §1.2.
+- ~~**Alignment**~~ **CLOSED 2026-08-05** — deferred indefinitely, and the one route back is now shut. The deferral was conditional on pronouns: an isolating language can still have *I/me*, and English does. Tier 2 Q8 answered no (§3.2, [`grammar-tier2-pronouns.md`](grammar-tier2-pronouns.md) §4), so with no case on nouns, no verbal agreement and no case on pronouns there is no morphology anywhere that could carry the contrast. **Reopen only if a passive or an agent-marking oblique is adopted.**
+- ~~**Noun-phrase-internal order**~~ **DECIDED 2026-08-05: modifier-first** (§3.2). Tier 0's 8:7 creole splits were a pooling artefact; stratified by contact type, restricted pidgins put adjective, numeral, demonstrative and possessor all before the noun, and the harmony test made the uniform treatment the right shape. → [`grammar-tier2-np.md`](grammar-tier2-np.md).
+- **Pronoun "they" = the plural word? (OPEN, new 2026-08-05, deferred to lexicon construction):** 13 creoles use a single form for the 3rd-person-plural pronoun and the nominal plural word (Tok Pisin *ol*), with 9 more partially overlapping. Q7 made the plural word optional vocabulary and Q8 fixed the pronoun set at seven, so whether the two are the *same* word is a lexicon economy question, not a grammar one. Costs to weigh then: one fewer form to learn against ambiguity in NPs where a bare plural word could be read as a pronoun.
 - **Reduplication: adopt as a morphological device? (OPEN, new 2026-08-05):** the most-gained feature in the Tier 0 study (verbs 7 gained / 0 lost across creole-lexifier pairs) and free under §3.6's template. Candidate functions: plurality, intensity, iterativity. Bears on §3.2's derivation strategy and on the lexicon's word-shape budget.
 - **Loss shape details (SOFT):** AE + MSE combination is a proposal, not validated.
 - ~~**/tʃ/ orthography**~~ **MOOT** — the §3.3 inventory has no /tʃ/; the ASCII orthography is free (§3.7).
