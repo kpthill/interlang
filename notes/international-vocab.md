@@ -1,6 +1,7 @@
 # International vocabulary under candidate syllable templates
 
-*Study run 2026-08-05. Script: [`../scripts/international_vocab.py`](../scripts/international_vocab.py) ·
+*Study run 2026-08-05, **re-run 2026-08-05 after a repair-rule fix and the v → f
+decision** (§4.4). Script: [`../scripts/international_vocab.py`](../scripts/international_vocab.py) ·
 ruleset: [`../src/interlang/translit.py`](../src/interlang/translit.py) ·
 outputs: `data/processed/international_vocab.csv` (52 words × 6 variants × 2 coda
 policies = 624 rows) and `data/processed/international_vocab_forms.csv` (828 attested
@@ -335,14 +336,14 @@ Ordered; each rule sees the output of the previous one.
 | g | g | always hard — **decision point**, §7 |
 | y | j | before a vowel |
 | y | i | elsewhere |
-| v | w | **decision point**, §7 — b and f are the rivals |
+| v | f | **decided 2026-08-05** (§4.4); b was tied, w is 0.015 worse |
 | z | s | no /z/ in the inventory |
 | q | k | |
 | j | j | Latin/IPA value ("y" of *yes*), not English |
 | p t k b d m n f s h l r w | themselves | |
 
 **A4/A5. Degemination.** Doubled consonants and doubled vowels collapse: there is no
-length contrast (§3.5). *million → milion*, *vaccin → wakisin* (via c→k, c→s).
+length contrast (§3.5). *million → milion*, *vaccin → fakisin* (via c→k, c→s).
 
 ### 4.2 Stage 2 — phonotactic repair (`repair`)
 
@@ -350,22 +351,33 @@ Applied left to right; `is_legal()` validates the output.
 
 - **B1 Onset.** Each syllable takes the largest legal onset: one consonant, or two if the
   pair is a permitted onset cluster of the variant.
-- **B2 Coda.** One consonant may be left over before the next onset. If it is in the
-  variant's coda set it becomes a coda; if the variant has a nasal merger for it (V2:
-  /m/ → /n/, because a (C)V(n) language has nowhere else to put /m/) it merges;
-  otherwise B4.
+- **B2 Coda.** A consonant takes the coda slot as soon as one is available — reading left
+  to right, the material so far must end in a vowel (two codas cannot sit together) and
+  something syllable-initial must follow. If it is in the variant's coda set it becomes a
+  coda; if the variant has a nasal merger for it (V2: /m/ → /n/, because a (C)V(n)
+  language has nowhere else to put /m/) it merges; otherwise B4.
 - **B3 Word-final.** An illegal word-final consonant is either **deleted** (trailing
   consonants stripped until the word ends in a vowel or a legal coda) or given a
   **support vowel**. This is a policy, priced in §6.3.
 - **B4 Epenthesis.** Any consonant that can be neither onset nor coda takes a support
   vowel after it and becomes the onset of a new syllable — the Japanese pattern: the
-  segment survives, the syllable count grows. **Epenthesis is never applied
-  word-internally as deletion**: material inside the word is never destroyed, only the
-  final edge is, and only under one policy. Deleting internally would break the mapping
-  in the middle of the stem, where the recognizability payload lives.
+  segment survives, the syllable count grows. Where the variant permits onset clusters,
+  such a consonant takes the next one with it if the pair is a permitted onset, so one
+  support vowel carries two consonants (V3C: /-ktr-/ → *ki·tri*, not *ki·ti·ri*).
+  **Epenthesis is never applied word-internally as deletion**: material inside the word
+  is never destroyed, only the final edge is, and only under one policy. Deleting
+  internally would break the mapping in the middle of the stem, where the recognizability
+  payload lives.
+
+**The repair is minimal.** B2-before-B4, left to right, inserts the fewest support vowels
+any legal form of the word could have. Verified by brute force: over 19,404 fuzzed
+phoneme strings × 6 variants, `repair()` never inserts more vowels than an exhaustive
+search over insertion points needs, and under the epenthesis policy it never loses a
+segment except by a declared coda merge. See §4.4 — this was **not** true of the first
+run.
 
 The support vowel is **/i/** by default. The metric is indifferent between /i/, /u/ and
-an echo of the following vowel (0.7962 / 0.7958 / 0.7964 — a range of 0.0006, i.e.
+an echo of the following vowel (0.8109 / 0.8105 / 0.8110 — a range of 0.0005, i.e.
 nothing), so the choice is made on learnability: a single fixed vowel is one rule instead
 of a conditional one, /i/ is the epenthetic vowel of Swahili (*virusi, filimu, hoteli,
 sukari*) and of Arabic, and it is one of the three maximally prevalent vowels.
@@ -379,10 +391,10 @@ epenthesis), computed by the code, not by hand:
 | ending | example | result | note |
 |---|---|---|---|
 | -um | album | ali·**bum** | survives intact — /m/ coda |
-| -us | virus | wiru·**si** | -us → -usi; under the deletion policy → *wiru* |
+| -us | virus | firu·**si** | -us → -usi; under the deletion policy → *firu* |
 | -on | proton | pro·**ton** | survives intact — /n/ coda |
 | -in | insulin | insu·**lin** | survives intact |
-| -ine | vaccine | wakisi·**ne** | final -e is pronounced under Latin reading |
+| -ine | vaccine | fakisi·**ne** | final -e is pronounced under Latin reading |
 | -ol | alcohol | alikoho·**li** | |
 | -al | hospital | hosipita·**li** | |
 | -ic | plastic | plasiti·**ki** | |
@@ -399,6 +411,54 @@ anything is **-us** (and -s generally), plus the consonant-final adjectival endi
 -al, -ol. That is a genuinely favourable fit and it is not a coincidence: the nasal coda
 is exactly the coda Latin morphology uses.
 
+### 4.4 Corrections applied on 2026-08-05 (every number below is from the re-run)
+
+Two changes to the ruleset since the first run. Both are recorded here rather than
+silently folded in, because the first run's numbers are already quoted elsewhere.
+
+**1. The coda slot was offered only to the last consonant of a cluster — a bug.**
+Patrick asked why *bank* came out **baniki** under (C)V(N) rather than *banki*, since
+/n/ is a legal coda. It was not a policy: B2 checked coda-legality only for the final
+consonant of a consonant run, so in /bank/ it asked about /k/ (illegal, epenthesise),
+never about /n/ — even though epenthesising the /k/ is exactly what creates the *ki*
+syllable that a preceding coda needs. B2 is now coda-first and left to right, and a
+second, narrower case found by fuzzing was fixed with it: under V3C a consonant that
+must be epenthesised now takes the next one with it when the pair is a permitted onset
+(*-ktr-* → *ki·tri*). The repair is now minimal against brute-force search (§4.2).
+
+Effect: **14 of 624 renderings**, of which 4 words. Under the **deletion** policy only
+one form changes (*elekitron* → *elektiron* under V5, a tie at 4 syllables), so the
+first run's headline ranking was not affected. Under the **epenthesis** policy the fix
+lands on the coda-restricted variants:
+
+| word | variant | was | now |
+|---|---|---|---|
+| bank | V2, V3, V4, V3C | *baniki* (3 syl) | **banki** (2) |
+| bank | V5 | *banik* | **banki** |
+| president | V2, V3, V4 | *piresideniti* (6) | **piresidenti** (5) |
+| president | V3C | *presideniti* (5) | **presidenti** (4) |
+| president | V5 | *piresidenit* | **piresidenti** |
+| film | V4, V5 | *filim* | **filmi** |
+| electron | V5 | *elekitron* | **elektiron** |
+
+The two that shorten also move a long way on the metric — *bank* 0.756 → **0.896**,
+*president* 0.787 → **0.851** — because the fixed forms are what the recipients actually
+produce (Hausa/Icelandic/Swahili *banki*, Hindi *bɛnk*, Indonesian/Russian *bank*).
+So the first run **understated the epenthesis policy**, and understated it worst on the
+candidate variants. §6.3's recommendation was right for a slightly wrong reason.
+
+*filim* → *filmi* and *elekitron* → *elektiron* are ties in syllable count; the
+left-to-right rule breaks ties toward the **earlier** coda, which keeps the stem-initial
+consonant sequence contiguous (*elekt-*, *film-*). That is a judgment call, not a
+measurement — flagged here so it is not mistaken for a result.
+
+**2. /v/ → f is now the default**, replacing the previous placeholder v → w. This was
+decision point #2 in §7.1, priced in §6.4 (f 0.811, b 0.810, w 0.796 — f and b tied,
+w clearly worse) and recommended in §8; Patrick took f on 2026-08-05. Six words change:
+*firusi, fitamin, fakisin, telefision, fideo, uniferisitati*. Because it is a
+segment-level substitution it shifts every similarity mean by about +0.013 uniformly and
+changes no ranking.
+
 ---
 
 ## 5. Per-word renderings
@@ -413,22 +473,22 @@ no attested set (§2).
 |---|---|---|---|---|---|---|---|---|---|
 | atom | atom | **atom** | atom | atom | atom | 2 → 2 | 0.93 | 0.93 | 0.93 |
 | proton | proton | **piroton** | piroton | proton | piroton | 2 → 3 | 0.82 | 0.82 | 0.96 |
-| electron | electron | **elekitiron** | elekitiron | elekitron | elekitron | 3 → 5 | 0.77 | 0.85 | 0.96 |
+| electron | electron | **elekitiron** | elekitiron | elekitron | elektiron | 3 → 5 | 0.77 | 0.85 | 0.96 |
 | molecule | molecula | **molekula** | molekula | molekula | molekula | 4 → 4 | 0.93 | 0.93 | 0.93 |
 | oxygen | oxygen | **okisigen** | okisigen | okisigen | oksigen | 3 → 4 | 0.78 | 0.90 | 0.90 |
 | hydrogen | hydrogen | **hidirogen** | hidirogen | hidrogen | hidrogen | 3 → 4 | 0.77 | 0.85 | 0.85 |
 | carbon | carbon | **karibon** | karibon | karibon | karbon | 2 → 3 | 0.78 | 0.84 | 0.84 |
 | energy | energia | **enerigia** | enerigia | enerigia | energia | 4 → 5 | 0.82 | 0.90 | 0.90 |
 | plastic | plastic | **pilasitiki** | pilasiti | plasitiki | pilastik | 2 → 5 | 0.68 | 0.74 | 0.81 |
-| virus | virus | **wirusi** | wiru | wirusi | wirus | 2 → 3 | 0.71 | 0.71 | 0.83 |
+| virus | virus | **firusi** | firu | firusi | firus | 2 → 3 | 0.82 | 0.83 | 0.83 |
 | bacteria | bacteria | **bakiteria** | bakiteria | bakiteria | bakteria | 4 → 5 | 0.78 | 0.88 | 0.88 |
 | antibiotic | antibiotic | **antibiotiki** | antibioti | antibiotiki | antibiotik | 5 → 6 | 0.91 | 0.88 | 0.88 |
-| vitamin | vitamin | **witamin** | witamin | witamin | witamin | 3 → 3 | 0.83 | 0.83 | 0.95 |
+| vitamin | vitamin | **fitamin** | fitamin | fitamin | fitamin | 3 → 3 | 0.94 | 0.94 | 0.95 |
 | protein | protein | **pirotein** | pirotein | protein | pirotein | 3 → 4 | 0.77 | 0.77 | 0.85 |
 | hormone | hormon | **horimon** | horimon | horimon | hormon | 2 → 3 | 0.81 | 0.89 | 0.89 |
 | malaria | malaria | **malaria** | malaria | malaria | malaria | 4 → 4 | 0.94 | 0.94 | 0.94 |
 | insulin | insulin | **insulin** | insulin | insulin | insulin | 3 → 3 | 0.95 | 0.95 | 0.95 |
-| vaccine | vaccin | **wakisin** | wakisin | wakisin | waksin | 2 → 3 | 0.69 | 0.72 | 0.81 |
+| vaccine | vaccin | **fakisin** | fakisin | fakisin | faksin | 2 → 3 | 0.77 | 0.81 | 0.81 |
 | mathematics | mathematica | **matematika** | matematika | matematika | matematika | 5 → 5 | 0.95 | 0.95 | 0.93 |
 | algebra | algebra | **aligebira** | aligebira | aligebra | algebra | 3 → 5 | 0.76 | 0.94 | 0.94 |
 | geometry | geometria | **geometiria** | geometiria | geometria | geometria | 5 → 6 | 0.83 | 0.93 | 0.93 |
@@ -440,18 +500,18 @@ no attested set (§2).
 | computer | computer | **komputeri** | kompute | komputeri | komputer | 3 → 4 | 0.77 | 0.81 | 0.81 |
 | radio | radio | **radio** | radio | radio | radio | 3 → 3 | 0.80 | 0.80 | 0.80 |
 | internet | internet | **interineti** | interine | interineti | internet | 3 → 5 | 0.77 | 0.90 | 0.90 |
-| television | television | **telewision** | telewision | telewision | telewision | 5 → 5 | 0.75 | 0.75 | 0.83 |
-| video | video | **wideo** | wideo | wideo | wideo | 3 → 3 | 0.79 | 0.79 | 0.96 |
+| television | television | **telefision** | telefision | telefision | telefision | 5 → 5 | 0.83 | 0.83 | 0.83 |
+| video | video | **fideo** | fideo | fideo | fideo | 3 → 3 | 0.95 | 0.95 | 0.96 |
 | machine | machina | **makina** | makina | makina | makina | 3 → 3 | 0.91 | 0.91 | 0.80 |
 | motor | motor | **motori** | moto | motori | motor | 2 → 3 | – | – | – |
-| film | film | **filim** | filim | filim | filim | 1 → 2 | 0.74 | 0.74 | 0.85 |
+| film | film | **filim** | filim | filim | filmi | 1 → 2 | 0.74 | 0.74 | 0.85 |
 | robot | robot | **roboti** | robo | roboti | robot | 2 → 3 | 0.85 | 0.94 | 0.94 |
 | democracy | democratia | **demokiratia** | demokiratia | demokratia | demokratia | 5 → 6 | 0.84 | 0.91 | 0.91 |
 | police | policia | **polisia** | polisia | polisia | polisia | 4 → 4 | 0.81 | 0.81 | 0.81 |
-| university | universitat | **uniwerisitati** | uniwerisita | uniwerisitati | uniwersitat | 5 → 7 | 0.74 | 0.87 | 0.95 |
-| president | president | **piresideniti** | piresiden | presideniti | piresidenit | 3 → 6 | 0.79 | 0.75 | 0.86 |
+| university | universitat | **uniferisitati** | uniferisita | uniferisitati | unifersitat | 5 → 7 | 0.80 | 0.95 | 0.95 |
+| president | president | **piresidenti** | piresiden | presidenti | piresidenti | 3 → 5 | 0.85 | 0.85 | 0.86 |
 | hospital | hospital | **hosipitali** | hosipita | hosipitali | hospital | 3 → 5 | 0.76 | 0.78 | 0.78 |
-| bank | bank | **baniki** | ban | baniki | banik | 1 → 3 | 0.76 | 0.66 | 0.84 |
+| bank | bank | **banki** | ban | banki | banki | 1 → 2 | 0.90 | 0.90 | 0.84 |
 | system | system | **sisitem** | sisitem | sisitem | sistem | 2 → 3 | 0.83 | 0.90 | 0.90 |
 | program | program | **pirogiram** | pirogiram | program | pirogram | 2 → 4 | – | – | – |
 | coffee | cafe | **kafe** | kafe | kafe | kafe | 2 → 2 | 0.87 | 0.87 | 0.87 |
@@ -465,13 +525,14 @@ no attested set (§2).
 | theory | theoria | **teoria** | teoria | teoria | teoria | 4 → 4 | 0.92 | 0.92 | 0.89 |
 
 **Reading it.** 20 of the 52 words come out of (C)V(N) with **no change in syllable
-count at all**, and 23 of 52 are *identical* under V3 and V5 — for nearly half the set,
+count at all**, and 24 of 52 are *identical* under V3 and V5 — for nearly half the set,
 the template question is moot. The damage is concentrated: *elekitiron*, *pilasitiki*,
-*aligebira*, *uniwerisitati*, *piresideniti*, *interineti*, *geometiria*.
+*aligebira*, *uniferisitati*, *interineti*, *geometiria*, *piresidenti*.
 
 Note also the words where our form **beats** the international reference: *matematika*,
-*teoria*, *makina*, *antibiotiki*. th→t and ch→k are not losses — the recipient
-languages mostly did the same thing.
+*teoria*, *makina*, *antibiotiki*, *banki*. th→t and ch→k are not losses — the recipient
+languages mostly did the same thing (and *banki* is Hausa, Icelandic and Swahili
+verbatim).
 
 ---
 
@@ -485,24 +546,24 @@ metric column is biased in favour of the permissive variants (§3.6).
 
 | policy | variant | syl before → after | **syl_infl** | epenth. | deleted | sim v0 | sim learned | retention |
 |---|---|---|---|---|---|---|---|---|
-| delete | V1 (C)V | 2.92 → 3.50 | **1.211** | 0.58 | 0.67 | 0.744 | 0.647 | 0.849 |
-| delete | V2 (C)V(n) | 2.92 → 3.44 | **1.207** | 0.52 | 0.27 | 0.796 | 0.718 | 0.908 |
-| delete | **V3 (C)V(N)** | 2.92 → 3.44 | **1.207** | 0.52 | 0.27 | 0.798 | 0.729 | 0.910 |
-| delete | V4 (C)V(N,l,r) | 2.92 → 3.33 | **1.166** | 0.40 | 0.15 | 0.815 | 0.751 | 0.929 |
-| delete | V5 (C)V(C) | 2.92 → 3.10 | **1.093** | 0.17 | 0.00 | 0.849 | 0.792 | 0.967 |
-| delete | **V3C** V3+Cr/Cl | 2.92 → 3.21 | **1.122** | 0.29 | 0.27 | **0.815** | 0.743 | 0.929 |
-| epen | V1 | 2.92 → 4.17 | 1.524 | 1.25 | 0 | 0.795 | 0.743 | 0.907 |
-| epen | V2 | 2.92 → 3.75 | 1.353 | 0.83 | 0 | 0.811 | 0.750 | 0.925 |
-| epen | **V3** | 2.92 → 3.75 | 1.353 | 0.83 | 0 | 0.813 | 0.761 | 0.928 |
-| epen | V4 | 2.92 → 3.52 | 1.261 | 0.60 | 0 | 0.827 | 0.772 | 0.943 |
-| epen | V5 | 2.92 → 3.10 | 1.093 | 0.17 | 0 | 0.849 | 0.792 | 0.967 |
-| epen | **V3C** | 2.92 → 3.52 | 1.268 | 0.60 | 0 | **0.829** | 0.774 | 0.945 |
+| delete | V1 (C)V | 2.92 → 3.50 | **1.211** | 0.58 | 0.67 | 0.757 | 0.674 | 0.864 |
+| delete | V2 (C)V(n) | 2.92 → 3.44 | **1.207** | 0.52 | 0.27 | 0.809 | 0.745 | 0.922 |
+| delete | **V3 (C)V(N)** | 2.92 → 3.44 | **1.207** | 0.52 | 0.27 | 0.811 | 0.756 | 0.925 |
+| delete | V4 (C)V(N,l,r) | 2.92 → 3.33 | **1.166** | 0.40 | 0.15 | 0.828 | 0.778 | 0.944 |
+| delete | V5 (C)V(C) | 2.92 → 3.10 | **1.093** | 0.17 | 0.00 | 0.862 | 0.818 | 0.982 |
+| delete | **V3C** V3+Cr/Cl | 2.92 → 3.21 | **1.122** | 0.29 | 0.27 | **0.828** | 0.770 | 0.943 |
+| epen | V1 | 2.92 → 4.17 | 1.524 | 1.25 | 0 | 0.806 | 0.768 | 0.920 |
+| epen | V2 | 2.92 → 3.71 | 1.327 | 0.79 | 0 | 0.828 | 0.779 | 0.944 |
+| epen | **V3** | 2.92 → 3.71 | 1.327 | 0.79 | 0 | 0.830 | 0.790 | 0.947 |
+| epen | V4 | 2.92 → 3.48 | 1.235 | 0.56 | 0 | 0.843 | 0.801 | 0.962 |
+| epen | V5 | 2.92 → 3.10 | 1.093 | 0.17 | 0 | 0.869 | 0.823 | 0.990 |
+| epen | **V3C** | 2.92 → 3.48 | 1.242 | 0.56 | 0 | **0.846** | 0.804 | 0.965 |
 
 Reference points, same scale: the **international form itself** scores **0.878** against
 the attested set, and the attested adaptations score **0.821** against *each other*.
 That second number is the one to hold on to — **it is how far apart two real languages'
-adaptations of the same word are**, and it is the natural target. V3 (0.798–0.813) lands
-just below the natural spread of real adaptations; V1 (0.744) falls clearly outside it.
+adaptations of the same word are**, and it is the natural target. V3 (0.811–0.830) sits
+*inside* the natural spread of real adaptations; V1 (0.757) falls clearly outside it.
 
 Four things fall out:
 
@@ -510,16 +571,17 @@ Four things fall out:
    single largest step in the table. Going from "no codas" to "one nasal coda" is worth
    more than everything after it put together. Strict CV is not a live option.
 2. **V3's extra /m/ over V2 is nearly worthless *on average* and free.** +0.002
-   similarity, zero syllable cost. Its value is concentrated in five words where V2
+   similarity, zero syllable cost. Its value is concentrated in six words where V2
    produces a visibly wrong form: **atom → aton**, film → filin, system → sisiten,
-   kilogram → kilogiran, program → pirogiran. Keep /m/: it costs nothing and *aton* for
-   *atom* would be a permanent visible defect in the flagship word of the whole domain.
+   kilogram → kilogiran, program → pirogiran, computer → konpute. Keep /m/: it costs
+   nothing and *aton* for *atom* would be a permanent visible defect in the flagship word
+   of the whole domain.
 3. **Onset clusters strictly dominate liquid codas.** V3C and V4 score *identically*
-   (0.815 / 0.815 delete, 0.829 / 0.827 epenthesis) while V3C inflates less
-   (1.122 vs 1.166 delete, 1.268 vs 1.261 epenthesis — a tie there). Under the deletion
-   policy V3C is better on both axes at once. It also renders 26 of 52 words identically
-   to the unrestricted V5, against 23 for V3.
-4. **V5 is the ceiling and it is not far above V3C** — 0.849 vs 0.829 — and see §6.2
+   (0.828 / 0.828 delete, 0.846 / 0.843 epenthesis) while V3C inflates less
+   (1.122 vs 1.166 delete, 1.242 vs 1.235 epenthesis — a tie there). Under the deletion
+   policy V3C is better on both axes at once. It also renders 25 of 52 words identically
+   to the unrestricted V5, against 23–24 for V3.
+4. **V5 is the ceiling and it is not far above V3C** — 0.869 vs 0.846 — and see §6.2
    before believing even that gap.
 
 The learned-cost arm (`sim learned`) gives the same ordering everywhere:
@@ -531,21 +593,31 @@ V1 < V2 < V3 < V4 ≈ V3C < V5. **The two arms agree**, which is the condition
 Scoring the same forms separately against recipients that must themselves repair
 clusters (ja, ko, sw, ta, ha, vi) versus recipients that need not (the rest):
 
-| variant (epenthesis policy) | vs cluster-**repairing** recipients | vs cluster-**tolerant** recipients |
-|---|---|---|
-| V1 | 0.807 | 0.790 |
-| V2 | 0.811 | 0.807 |
-| **V3** | **0.814** | 0.810 |
-| V4 | 0.809 | 0.829 |
-| V5 | 0.808 | **0.861** |
-| **V3C** | **0.821** | 0.830 |
+| variant (epenthesis policy) | vs cluster-**repairing** recipients | vs cluster-**tolerant** recipients | swing |
+|---|---|---|---|
+| V1 | 0.816 | 0.803 | −0.014 |
+| V2 | 0.826 | 0.825 | −0.002 |
+| **V3** | 0.829 | 0.827 | −0.002 |
+| V4 | 0.824 | 0.846 | +0.022 |
+| V5 | 0.831 | **0.880** | **+0.050** |
+| **V3C** | **0.836** | 0.847 | +0.011 |
 
-**Against the languages that adapt the way we would have to, V5's advantage vanishes
-entirely** — it comes *last but one*, and V3C comes first. The whole permissive
-advantage in the pooled numbers of §6.1 is contributed by the European Latin-script
-recipients, which keep the clusters because they can. This is the strongest available
-evidence that the metric's known pro-permissive bias (§3.6) is inflating the pooled
-result, and it is non-metric in origin: it is a fact about which recipients you weight.
+**Against the languages that adapt the way we would have to, V5's advantage very nearly
+vanishes** — the 0.038 lead it holds in the pooled numbers shrinks to 0.005 *behind*
+V3C, which comes first. The permissive advantage in §6.1 is contributed almost entirely
+by the European Latin-script recipients, which keep the clusters because they can: V5's
+score swings **0.050** depending on whom you ask, V3C's swings 0.011. That sensitivity —
+not the level — is the finding. It is the strongest available evidence that the metric's
+known pro-permissive bias (§3.6) is inflating the pooled result, and it is non-metric in
+origin: it is a fact about which recipients you weight.
+
+*(Changed in the re-run: with the repair bug in place, V5 scored 0.808 against the
+cluster-repairing group and came second-to-last. The fix lifts every variant against that
+group but lifts V5 most — the old *banik*, *piresidenit*, *elekitron* were forms no
+recipient produces. V5 is now second, not next-to-last. **V3C still comes first, and the
+swing asymmetry is unchanged**, so the conclusion holds; the margin behind it is smaller
+than first reported and the honest statement is "V5's edge is an artifact of whom you
+score against", not "V5 is bad".)*
 
 Given [`principles.md`](principles.md) §2 — ease weighted by total speakers,
 representation weighted by L1 speakers — the cluster-repairing group is not a minority
@@ -555,37 +627,43 @@ much more widespread than that list.
 
 ### 6.3 Delete or epenthesise the final consonant?
 
-| | mean sim | syl inflation |
+| (V3) | mean sim | syl inflation |
 |---|---|---|
-| delete | 0.796 | 1.207 |
-| epenthesise | 0.813 | 1.353 |
+| delete | 0.811 | 1.207 |
+| epenthesise | 0.830 | 1.327 |
 
-Epenthesis wins on the metric **by +0.017 despite the metric charging near-full price for
+Epenthesis wins on the metric **by +0.019 despite the metric charging near-full price for
 the inserted vowel** — i.e. its true advantage is larger than measured, because the bias
-runs against it here. It costs +0.146 in syllable inflation.
+runs against it here. It costs +0.120 in syllable inflation. (Both halves of that
+sentence moved in epenthesis's favour in the re-run: the win was +0.017 at +0.146 before
+the repair fix, which was spending vowels it did not need.)
 
 The per-word evidence is more decisive than the mean. Deletion produces
-**virus → wiru, bank → ban, hotel → hote, sugar → suka, robot → robo, motor → moto,
-physics → fisi** — it eats short words, precisely the Wanderwörter with the widest reach,
-and the deleted material is unrecoverable. Epenthesis produces *wirusi, baniki, hoteli,
-sukari, roboti, motori* — which is, almost segment for segment, what **Swahili** actually
-did (*virusi, benki, hoteli, sukari*). Recommendation: **epenthesise**.
+**virus → firu, bank → ban, hotel → hote, sugar → suka, robot → robo, motor → moto,
+computer → kompute** — it eats short words, precisely the Wanderwörter with the widest
+reach, and the deleted material is unrecoverable. Epenthesis produces *firusi, banki,
+hoteli, sukari, roboti, motori* — which is, almost segment for segment, what **Swahili**
+actually did (*virusi, benki, hoteli, sukari*). Recommendation: **epenthesise**.
 
 ### 6.4 The other decision points, priced
 
+Priced one arm at a time at V3 + deletion, all other parameters at their defaults. The
+`/v/` rows are what settled decision point #2; the rest are unchanged by the re-run
+except for the +0.013 baseline shift that v → f itself contributes.
+
 | decision | option | mean sim | note |
 |---|---|---|---|
-| /v/ → | **f** | **0.811** | best, marginally |
-| | b | 0.810 | statistically the same |
-| | w | 0.796 | 0.015 worse |
-| th → | **t** | 0.7962 | |
-| | s | 0.7956 | a tie |
-| epenthetic vowel | i / u / echo | 0.7962 / 0.7958 / 0.7964 | a tie |
-| `<g>` | **hard always** | 0.796 | |
-| | soft before e/i/y | 0.790 | worse |
-| hiatus | **keep** | 0.796 | §6.5 |
-| | glide after any vowel | 0.781 | |
-| | glide after /i u/ only | 0.787 | |
+| /v/ → | **f** | **0.8109** | best, marginally — **adopted 2026-08-05** |
+| | b | 0.8099 | statistically the same |
+| | w | 0.7962 | 0.015 worse; was the placeholder in the first run |
+| th → | **t** | 0.8109 | |
+| | s | 0.8103 | a tie |
+| epenthetic vowel | i / u / echo | 0.8109 / 0.8105 / 0.8110 | a tie |
+| `<g>` | **hard always** | 0.8109 | |
+| | soft before e/i/y | 0.8050 | worse |
+| hiatus | **keep** | 0.8109 | §6.5 |
+| | glide after any vowel | 0.7952 | |
+| | glide after /i u/ only | 0.8019 | |
 
 ### 6.5 Interaction with the new §3.6 hiatus rule (added after the run)
 
@@ -599,9 +677,9 @@ Scored on the recommended ruleset (V3C, epenthesis, v→f), the same 52 words:
 
 | hiatus policy | mean sim | words changed | examples |
 |---|---|---|---|
-| **keep hiatus** | **0.843** | – | radio, bakteria, geometria, protein |
-| glide after every vowel | 0.826 | 13 | radijo, bakterija, **gejometrija**, **tejorija**, **protejin** |
-| glide after high vowels only | 0.833 | 11 | radijo, bakterija, geometria, protein |
+| **keep hiatus** | **0.846** | – | radio, bakteria, geometria, protein |
+| glide after every vowel | 0.828 | 13 | bakiterija, malarija, **gejometrija**, **tejorija**, **protejin** |
+| glide after high vowels only | 0.835 | 11 | bakiterija, malarija, milijon, geometria, protein |
 
 **Glide insertion costs recognizability, and the general rule costs twice what the
 restricted one does.** The damage is systematic, not random: it lands on the **e_o, e_i
@@ -621,10 +699,10 @@ under the restricted rule it does not arise.
 | domain | n | syl inflation | sim | ceiling |
 |---|---|---|---|---|
 | wanderwort | 9 | **1.056** | 0.805 | 0.866 |
-| technology | 10 | 1.133 | 0.797 | 0.860 |
+| technology | 10 | 1.133 | 0.824 | 0.860 |
 | math/units | 7 | 1.171 | 0.835 | 0.897 |
-| bio/med | 9 | 1.176 | 0.794 | 0.888 |
-| institutions | 8 | 1.321 | 0.763 | 0.865 |
+| bio/med | 9 | 1.176 | 0.828 | 0.888 |
+| institutions | 8 | 1.321 | 0.773 | 0.865 |
 | chem/phys | 9 | **1.398** | 0.805 | 0.898 |
 
 The non-technical Wanderwörter are almost free (1.06) — they travelled through
@@ -651,8 +729,8 @@ That is the good half. The full ledger:
 | # | decision point | resolvable by rule? | rule chosen | cost / precedent |
 |---|---|---|---|---|
 | 1 | **Which international shape to start from** (*computer* or *komputer*? *coffee* or *kahve*? *universitas* or *university*?) | **No — lexical** | pick the shape shared by the most recipient languages | This is the one genuinely unresolvable point. The learner must know the international *stem*, not their own language's word. Precedent: every IAL has this problem; Interlingua's "prototype" procedure is the same judgment made by hand. |
-| 2 | **/v/ → f, b or w** | Yes, arbitrary but fixable | **f** (0.811) or **b** (0.810); w is 0.015 worse | Genuine three-way split in the wild: Arabic → f (*fīrūs*), Japanese/Korean/Spanish → b (*bitamin, 바이러스, vacuna*), Mandarin → w (维 *wéi*). No convention is universal. |
-| 3 | **`<th>` → t or s** | Yes | **t** | Dead tie on the metric (0.7962 vs 0.7956). Precedent: t is the majority reflex worldwide (*matematika, teoria*); s is the Greek-modern/French-learned one. Pick t and never revisit. |
+| 2 | **/v/ → f, b or w** | Yes, arbitrary but fixable | **f** — decided 2026-08-05 (0.8109, against b 0.8099 and w 0.7962) | Genuine three-way split in the wild: Arabic → f (*fīrūs*), Japanese/Korean/Spanish → b (*bitamin, 바이러스, vacuna*), Mandarin → w (维 *wéi*). No convention is universal; f keeps /w/ free for `<w>` and is the more distinctive of the two tied options against the inventory's /b/. |
+| 3 | **`<th>` → t or s** | Yes | **t** | Dead tie on the metric (0.8109 vs 0.8103). Precedent: t is the majority reflex worldwide (*matematika, teoria*); s is the Greek-modern/French-learned one. Pick t and never revisit. |
 | 4 | **`<ch>` → k or s** | Yes, at a cost | **k** (Latin value, rule A0) | Right for Greek chi (*chemistry, technology, archive*), wrong for the Romance layer (*chocolate → kokolate*). Fires twice in 52 words. |
 | 5 | **`<c>` → k or s** | **Yes, fully** | s before e/i/y, k elsewhere | Not arbitrary at all: this is the Romance rule that all Latin-script recipients already apply. Fires 14 times, always predictably. |
 | 6 | **`<g>` soft before front vowels?** | Yes | **no, always hard** | Hard g is 0.006 better and one rule simpler. Precedent: Latin, German, Slavic, Indonesian, Turkish (*geometri, energi*). |
@@ -672,11 +750,11 @@ optimizer choosing a citation form per concept anyway.
 
 Backward is **not** deterministic, and cannot be made so:
 
-- **Merges.** Over the 52-word set the lossy segment rules fire: c→k 12×, v→w 6×,
+- **Merges.** Over the 52-word set the lossy segment rules fire: c→k 12×, v→f 6×,
   c→s 2×, th→t 2×, ch→k 2×, z→s 1×, ph→f 1×, degemination 1×. **55% of the phonemes in
   the rendered forms (198 of 358) could have come from more than one international
   grapheme.** A learner reading *sisitem* cannot know whether the s's were `s`, `c`, `z`,
-  `sh` or `th`; reading *witamin* cannot know whether the w was `v` or `w`.
+  `sh` or `th`; reading *fitamin* cannot know whether the f was `f`, `ph` or `v`.
 - **Deletion is worse than ambiguity.** Under the deletion policy 14 of 52 words lose a
   segment outright; that information is gone, not merely ambiguous. Under the epenthesis
   policy: **zero**. This is an independent argument for §6.3's recommendation — the
@@ -687,13 +765,13 @@ Backward is **not** deterministic, and cannot be made so:
 
 The realistic claim is therefore: **the forward direction is a rule; the backward
 direction is recognition, not derivation.** A learner who meets *telefon*, *matematika*,
-*demokratia*, *sisitem*, *witamin* recognises them instantly; a learner asked to produce
-the English spelling from *witamin* will guess `w` before `v` and be wrong. That is the
+*demokratia*, *sisitem*, *fitamin* recognises them instantly; a learner asked to produce
+the English spelling from *fitamin* will guess `f` before `v` and be wrong. That is the
 correct division of labour — recognition is the objective in
 [`principles.md`](principles.md) §2, production of the English spelling is not.
 
 One caveat that will grow with the lexicon: with 52 words there are no collisions, but
-z→s, v→w and th→t all merge into the two most frequent consonants in the inventory. At
+z→s, v→f and th→t all merge into the two most frequent consonants in the inventory. At
 lexicon scale this raises the homophony pressure that §3.3's minimal-pair bans already
 manage. Worth re-measuring when the vocabulary optimizer runs.
 
@@ -702,9 +780,9 @@ manage. Worth re-measuring when the vocabulary optimizer runs.
 ## 8. Bottom line and recommendation
 
 **Is (C)V(N) adequate for the goal?** Yes — it is a workable answer, and it is not close
-to the disaster that strict CV would be. It retains 91% of the achievable
-recognizability (0.798 against a 0.878 ceiling), lands just below the spread that
-separates real languages' adaptations of the same word from each other (0.821), leaves
+to the disaster that strict CV would be. It retains 92% of the achievable
+recognizability (0.811 against a 0.878 ceiling), lands *within* the spread that separates
+real languages' adaptations of the same word from each other (0.821), leaves
 20 of 52 words with their syllable count untouched, and — the pleasant surprise — fits
 the Latin/Greek **ending inventory** almost perfectly, because -on, -in, -um, -ia, -ion,
 -ate and -ide are all already legal under it.
@@ -713,8 +791,8 @@ the Latin/Greek **ending inventory** almost perfectly, because -on, -in, -um, -i
 
 - **Add the Cr/Cl onset clusters** (pr tr kr pl kl br dr gr fr fl). This is the
   recommendation. **It dominates plain V3 on both axes at once**: +0.017 similarity AND
-  −0.085 syllable inflation (delete policy 0.798 → 0.815 at 1.207 → 1.122; epenthesis
-  policy 0.813 → 0.829 at 1.353 → 1.268). Permitting the cluster removes the very
+  −0.085 syllable inflation (delete policy 0.811 → 0.828 at 1.207 → 1.122; epenthesis
+  policy 0.830 → 0.846 at 1.327 → 1.242). Permitting the cluster removes the very
   epenthetic vowel that was inflating the syllable count, so nothing is traded away. It is the **best of all six variants when scored
   against the recipients that themselves repair clusters** (§6.2), better even than
   unrestricted (C)V(C). It targets exactly the domain that (C)V(N) hurts most,
@@ -725,29 +803,30 @@ the Latin/Greek **ending inventory** almost perfectly, because -on, -in, -um, -i
   the two segments §3.3 already discourages, in the position where they are hardest to
   hear.
 - **Keep /m/ alongside /n/.** Free, and it saves *atom*, *film*, *system*, *kilogram*,
-  *program* from visible mangling. V2's forced m→n merger is a defect for zero saving.
+  *program*, *computer* from visible mangling. V2's forced m→n merger is a defect for
+  zero saving.
 - **Repair word-final illegal consonants with a support vowel /i/, not by deletion.**
   Better on the metric even though the metric is biased against it, lossless at the
   segment level, and it reproduces Swahili's actual behaviour.
-- **Segment rules:** v → f (or b — they are tied; f is more distinctive against /b/ in
-  the inventory and keeps /w/ free for `<w>`), th → t, ch → k, c → k/s by the Romance
-  rule, g always hard, y → i, x → ks, z → s.
+- **Segment rules:** **v → f** (decided 2026-08-05; b was tied, but f is more distinctive
+  against /b/ in the inventory and keeps /w/ free for `<w>`), th → t, ch → k, c → k/s by
+  the Romance rule, g always hard, y → i, x → ks, z → s.
 
 Under that recommendation the flagship words read:
 *atom, proton, elekitron, molekula, okisigen, hidrogen, telefon, komputeri, radio,
 interineti, demokratia, uniferisitati, matematika, bakiteria, antibiotiki, fitamin,
-firusi, plasitiki, telefision, fideo, sisitem, filim, baniki, kafe, sukari, hoteli,
+firusi, plasitiki, telefision, fideo, sisitem, filim, banki, kafe, sukari, hoteli,
 takisi, banana*.
 
-(That list is under **v → f**. Under the tied **v → b** they read *bitamin, birusi,
-telebision, bideo, unibersitati* — the Japanese/Spanish/Korean convention rather than the
-Arabic one. §3.3's mild discouragement of /b d ɡ/ is the tiebreaker for f.)
+(Under the tied **v → b** they would read *bitamin, birusi, telebision, bideo,
+unibersitati* — the Japanese/Spanish/Korean convention rather than the Arabic one.
+§3.3's mild discouragement of /b d ɡ/ is the tiebreaker for f.)
 
 **What would talk me out of it.** If the vocabulary optimizer finds that onset clusters
 create pressure on the particle inventory (§3.2 wants short, mutually distinct
 particles), or if a production study shows Cr/Cl onsets are harder for the
 cluster-repairing group than the syllable-count saving is worth, V3 plain remains a
-perfectly defensible fallback — it is 0.017 behind, not 0.17.
+perfectly defensible fallback — it is 0.016 behind, not 0.16.
 
 **The honest residual risk in this study**: the similarity numbers rest on rough
 hand-written romanisations (§3.3) and on a metric with a known, unfixed epenthesis gap
@@ -775,12 +854,13 @@ were.
 > outperforms even unrestricted (C)V(C).
 >
 > Still open: whether onset clusters conflict with the short-particle inventory §3.2
-> needs; whether /v/ maps to f or b (tied at 0.810–0.811).
+> needs. (/v/ → **f** was settled on 2026-08-05; b was tied on the metric at 0.810 vs
+> 0.811 and lost on inventory grounds.)
 >
-> The hiatus rule interacts: glide insertion costs 0.017 similarity on international
+> The hiatus rule interacts: glide insertion costs 0.018 similarity on international
 > vocabulary and mangles Greek compounds (*geometria* → *gejometrija*). Either take the
 > loanword fallback the rule already allows, or restrict glide insertion to the high
-> vowels /i u/ (cost 0.010, and *radijo / bakterija / demokratija* are attested shapes).
+> vowels /i u/ (cost 0.011, and *radijo / bakterija / demokratija* are attested shapes).
 > That restriction also disposes of the logged open question about the glide after /a/.
 
 And §7 could record a new finding:

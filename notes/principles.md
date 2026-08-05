@@ -152,6 +152,23 @@ Known metric bias affecting this decision: the metric lacks a working epenthesis
 - **Hiatus is avoided by glide insertion**, written into the spelling: `oa` → `owa`. Hiatus is **permitted as a fallback for loanwords** where neither /j/ nor /w/ is the natural glide. *Open sub-case: the exact glide-selection rule, especially after /a/. See §7.*
 - **No sandhi, no alternations, no deviation from "pronounce what is written."** This is a strong constraint and it has a consequence: every repair above is **orthographic**, applied when the word is formed, not a pronunciation rule layered on top. There is never a gap between spelling and speech. (Interacts with §3.7: the ASCII orthography is one letter per phoneme, so "what is written" is unambiguous.)
 
+#### Loanword adaptation: `<v>` → /f/ (**SOFT** — decided 2026-08-05 by Patrick)
+
+International vocabulary is projected into the inventory by the ruleset in
+[`../src/interlang/translit.py`](../src/interlang/translit.py). Its one genuinely
+arbitrary segment mapping — what to do with `<v>`, which §3.3's inventory does not have —
+is settled: **`<v>` → /f/** (*virus* → *firusi*, *vitamin* → *fitamin*, *television* →
+*telefision*). /b/ was tied with it on recognizability (0.810 vs 0.811 over 52
+international words); /w/, the earlier placeholder, is 0.015 worse. The tiebreak is
+inventory-internal, not metric: /f/ keeps /w/ free to render `<w>`, and §3.3 mildly
+discourages /b d ɡ/. Evidence and the full ruleset:
+[`international-vocab.md`](international-vocab.md) §4.1, §6.4, §7.1.
+
+SOFT rather than FIRM because the rest of the adaptation ruleset is still pending §3.6's
+template decision, and because z→s, th→t and now v→f all pile onto the same two
+consonants — homophony pressure the vocabulary optimizer may want re-priced at lexicon
+scale.
+
 #### Deferred
 
 - **Root shape bounds** (min/max syllables) — deferred until after grammar. Patrick is leaning **analytic**, in which case there may be no root-vs-inflected-word distinction to bound separately.

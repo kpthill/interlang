@@ -41,7 +41,7 @@ Policies that are genuinely open (each is a decision point in the
 predictability audit, notes/international-vocab.md 6) are parameters, so the
 study can price each arm instead of asserting one:
 
-  v_target      'w' | 'b' | 'f'          what /v/ becomes
+  v_target      'f' | 'b' | 'w'          what /v/ becomes (default f, §6.4)
   th_target     't' | 's'                what <th> becomes
   epen          'i' | 'u' | 'echo'       the epenthetic (repair) vowel
   final_policy  'delete' | 'epenthesize' what happens to an illegal word-final
@@ -126,7 +126,7 @@ def _strip(s: str) -> str:
     return "".join(c for c in s if c.isalpha())
 
 
-def to_phonemes(intl: str, *, v_target: str = "w", th_target: str = "t",
+def to_phonemes(intl: str, *, v_target: str = "f", th_target: str = "t",
                 g_soft: bool = False) -> tuple[str, list[str]]:
     """STAGE 1.  International spelling -> interlang phoneme string.
 
@@ -259,9 +259,11 @@ def repair(ph: str, variant: Variant, *, epen: str = "i",
 
       B1 ONSET.  Each syllable takes the largest legal onset: 1 consonant, or 2
          if the pair is a permitted onset cluster of the variant.
-      B2 CODA.   One consonant may be left over before an onset; if it is in the
-         variant's coda set it becomes a coda, if the variant has a nasal
-         merger for it (V2: m->n) it merges, otherwise B4 applies.
+      B2 CODA.   A consonant takes the coda slot as soon as one is available:
+         the output so far must end in a vowel (no two codas in a row) and
+         something syllable-initial must follow it.  If it is in the variant's
+         coda set it becomes a coda; if the variant has a nasal merger for it
+         (V2: m->n) it merges; otherwise B4 applies.
       B3 WORD-FINAL.  The final consonant, if not a legal coda, is either
          DELETED (final_policy='delete', trailing consonants are stripped until
          the word ends in a vowel or a legal coda) or given a support vowel
@@ -275,6 +277,15 @@ def repair(ph: str, variant: Variant, *, epen: str = "i",
     the word-final edge is, and only under one policy.  Deleting internally
     would make the mapping non-invertible in the middle of the stem, where the
     recognizability payload lives.
+
+    B2 is CODA-FIRST and applied LEFT TO RIGHT, which is what makes the repair
+    minimal.  Every consonant of a cluster begins a syllable in the output
+    (either as the real onset or as an epenthesised C+V), so the consonant in
+    front of it can be a coda whether or not it is the last of the cluster:
+    /bank/ under (C)V(N) is ban.ki, not ba.ni.ki - epenthesising the illegal
+    /k/ is what creates the onset that lets the legal /n/ stay a coda.  Fixed
+    2026-08-05; the previous rule offered the coda slot only to the LAST
+    consonant of a cluster and spent a syllable it did not have to.
     """
     trace: list[str] = []
     c0, runs, cn = _split(ph)
@@ -286,18 +297,62 @@ def repair(ph: str, variant: Variant, *, epen: str = "i",
             return 2
         return 1 if cs else 0
 
+    def ends_in_vowel() -> bool:
+        for chunk in reversed(out):
+            if chunk:
+                return chunk[-1] in VOWELS
+        return False
+
+    def place(cluster: str, prev_v: str, next_v: str, tail: str,
+              where: str) -> None:
+        """Resolve a consonant run that cannot be swallowed by the next onset.
+
+        `tail` says what follows the run in the output, which decides whether
+        its LAST consonant may take a coda slot:
+          'onset'    a real onset, so a vowel follows it   -> coda allowed
+          'wordend'  nothing at all                        -> coda allowed
+          'coda'     a word-final coda (deletion policy)   -> coda NOT allowed,
+                     because two codas cannot sit together
+        Consonants before the last always have something syllable-initial after
+        them, so for them only the no-two-codas rule bites.
+
+        Where the variant has onset clusters, a consonant that must be
+        epenthesised takes the NEXT one with it if the pair is a permitted
+        onset (V3C: /-ktr/ -> ki.tri, not ki.ti.ri).  One support vowel then
+        carries two consonants, which is the whole point of the cluster set.
+        """
+        j = 0
+        while j < len(cluster):
+            c = cluster[j]
+            can_coda = ends_in_vowel() and (j < len(cluster) - 1
+                                            or tail in ("onset", "wordend"))
+            pair = cluster[j:j + 2]
+            if can_coda and c in variant.codas:
+                out.append(c)                      # B2 coda
+                j += 1
+            elif can_coda and c in variant.coda_merge:
+                out.append(variant.coda_merge[c])  # B2 nasal merger
+                trace.append(f"LOSSY:B2 coda merge {c}->{variant.coda_merge[c]}")
+                j += 1
+            elif len(pair) == 2 and pair in variant.onset_clusters:
+                nv = _epen_vowel(epen, prev_v, next_v)
+                out.append(pair + nv)              # B4 with a cluster onset
+                trace.append(f"B4 epenthesis ({where}) {pair}->{pair}{nv}")
+                j += 2
+            else:
+                nv = _epen_vowel(epen, prev_v, next_v)
+                out.append(c + nv)
+                trace.append(f"B4 epenthesis ({where}) {c}->{c}{nv}")
+                j += 1
+
     # --- word-initial cluster ------------------------------------------------
     if runs:
+        # echo policy has no preceding vowel word-initially, so it copies the
+        # first vowel of the word (Japanese sutoraiku-style spreading)
         first_v = runs[0][1]
         k = legal_onset(c0)
-        excess, onset = c0[:len(c0) - k], c0[len(c0) - k:]
-        for c in excess:
-            # echo policy has no preceding vowel word-initially, so it copies
-            # the first vowel of the word (Japanese sutoraiku-style spreading)
-            nv = _epen_vowel(epen, "", first_v)
-            out.append(c + nv)
-            trace.append(f"B4 epenthesis (initial cluster) {c}->{c}{nv}")
-        out.append(onset)
+        place(c0[:len(c0) - k], "", first_v, "onset", "initial cluster")
+        out.append(c0[len(c0) - k:])
     else:
         out.append(c0)
 
@@ -308,20 +363,8 @@ def repair(ph: str, variant: Variant, *, epen: str = "i",
             continue
         prev_v = runs[idx - 1][1]
         k = legal_onset(cs)
-        pre, onset = cs[:len(cs) - k], cs[len(cs) - k:]
-        # everything in `pre` except possibly the last is epenthesised
-        for j, c in enumerate(pre):
-            last = (j == len(pre) - 1)
-            if last and c in variant.codas:
-                out.append(c)                      # B2 coda
-            elif last and c in variant.coda_merge:
-                out.append(variant.coda_merge[c])  # B2 nasal merger
-                trace.append(f"LOSSY:B2 coda merge {c}->{variant.coda_merge[c]}")
-            else:
-                nv = _epen_vowel(epen, prev_v, v)
-                out.append(c + nv)
-                trace.append(f"B4 epenthesis (medial cluster) {c}->{c}{nv}")
-        out.append(onset)
+        place(cs[:len(cs) - k], prev_v, v, "onset", "medial cluster")
+        out.append(cs[len(cs) - k:])
         out.append(v)
 
     # --- word-final cluster --------------------------------------------------
@@ -333,29 +376,15 @@ def repair(ph: str, variant: Variant, *, epen: str = "i",
                 trace.append(f"LOSSY:B3 final deletion -{cs[-1]}")
                 cs = cs[:-1]
             if cs:
+                place(cs[:-1], last_v, last_v, "coda", "final cluster")
                 tail = cs[-1]
-                head = cs[:-1]
-                for c in head:
-                    nv = _epen_vowel(epen, last_v, last_v)
-                    out.append(c + nv)
-                    trace.append(f"B4 epenthesis (final cluster) {c}->{c}{nv}")
                 if tail in variant.codas:
                     out.append(tail)
                 else:
                     out.append(variant.coda_merge[tail])
                     trace.append(f"LOSSY:B2 coda merge {tail}->{variant.coda_merge[tail]}")
         else:  # epenthesize
-            for j, c in enumerate(cs):
-                last = (j == len(cs) - 1)
-                if last and c in variant.codas:
-                    out.append(c)
-                elif last and c in variant.coda_merge:
-                    out.append(variant.coda_merge[c])
-                    trace.append(f"LOSSY:B2 coda merge {c}->{variant.coda_merge[c]}")
-                else:
-                    nv = _epen_vowel(epen, last_v, last_v)
-                    out.append(c + nv)
-                    trace.append(f"B4 epenthesis (final) {c}->{c}{nv}")
+            place(cs, last_v, last_v, "wordend", "final")
 
     form = "".join(out)
     assert is_legal(form, variant), f"repair produced an illegal form: {ph} -> {form}"
@@ -426,7 +455,7 @@ def syllables(form: str) -> int:
     return sum(1 for c in form if c in VOWELS)
 
 
-def render(intl: str, variant: str | Variant, *, v_target: str = "w",
+def render(intl: str, variant: str | Variant, *, v_target: str = "f",
            th_target: str = "t", epen: str = "i", final_policy: str = "delete",
            g_soft: bool = False, hiatus: str = "keep") -> dict:
     """Full pipeline: international spelling -> interlang word under a variant.

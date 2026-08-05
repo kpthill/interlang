@@ -89,6 +89,17 @@ Everything joins on **Glottocode** (and usually ISO 639-3).
   not** — PHOIBLE languages lacking an ISO code will have picked up Min Nan's
   weight there. Effect is small (those languages are few and the weight is 0.7%
   of the L1 mass) but it should be fixed the next time that script is touched.
+- **~~The phonotactic repair spent syllables it did not need~~ — FIXED 2026-08-05.**
+  `translit.repair()` offered the coda slot only to the *last* consonant of a cluster, so
+  /bank/ came out *ba.ni.ki* under (C)V(N) instead of *ban.ki*: the /n/ was never
+  considered, even though epenthesising the illegal /k/ is what creates the syllable a
+  coda needs. B2 is now coda-first and left to right, and epenthesis under V3C takes a
+  permitted onset cluster with it (*-ktr-* → *ki.tri*). The rule is now checked against
+  brute-force search in a fuzz test (19,404 strings × 6 variants, zero non-minimal
+  repairs). Affected 14 of 624 renderings in `international_vocab.csv`, all but one under
+  the epenthesis policy, so the committed variant ranking did not move; the epenthesis
+  *policy* was understated. Detail and before/after table in
+  [`international-vocab.md`](international-vocab.md) §4.4.
 - **`cldr_totals()` is duplicated.** The canonical copy is
   `src/interlang/populations.py`; `scripts/phoneme_prevalence.py` still has an
   older inline one, left in place so a finished study keeps producing
