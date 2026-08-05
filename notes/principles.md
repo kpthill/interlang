@@ -1,6 +1,6 @@
 # Interlang: principles, decisions, and findings
 
-*Last updated 2026-08-05 (§3.3 inventory closed FIRM; §3.7 orthography resolved). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
+*Last updated 2026-08-05 (§3.3 inventory closed FIRM; §3.6 phonotactics partly decided; §3.7 orthography resolved). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
 
 Each decision below is tagged:
 
@@ -127,17 +127,31 @@ Recognizability is scored against the **best** realization in the set. This is e
 
 No tone, no contrastive vowel length, no contrastive stress. Each of these is a distinction that large populations cannot produce or hear reliably, and none is needed if the segmental inventory and phonotactics leave enough word space.
 
-### 3.6 Syllable template (OPEN)
+### 3.6 Phonotactics (partly decided 2026-08-05)
 
-Notation: C = consonant, V = vowel, N = nasal consonant; parentheses mean optional. The **coda** is the consonant material at the *end* of a syllable (the /n/ in "san").
+Notation: C = consonant, V = vowel, N = nasal consonant; parentheses mean optional. The **coda** is the consonant material at the *end* of a syllable (the /n/ in "san"); the **onset** is the consonant material at the start.
 
-Candidates:
+#### Syllable template (SOFT — baseline chosen, two extensions pending a study)
 
-- **Strict CV** (every syllable = consonant + vowel): maximally pronounceable, but causes word-length blowup and destroys source words ("strike" → something like "sutoraiku").
-- **(C)V(N)** — optional onset, optional nasal coda: the likely sweet spot.
-- **Permissive CVC**: keeps source words intact but exports coda clusters many speakers can't handle.
+**Baseline: (C)V(N)** — optional onset, optional nasal coda. Chosen over strict CV (word-length blowup) and permissive CVC (exports coda clusters many speakers can't produce).
 
-To be decided empirically by the **projection-distortion experiment** (§7). Note a known metric bias here: the current metric lacks epenthesis modeling and systematically flatters permissive codas (see §4).
+Two extensions are live and **pending the international-vocabulary study** (§7), which prices them against the goal that internationally-shared scientific vocabulary stay near-instantly recognizable:
+
+- **Liquid codas** — (C)V(N,l,r). Latin/Greek international vocabulary has disproportionately many /r l s k t/ codas, not nasal ones (`elektron`, `alkohol`, `molekul`).
+- **Onset clusters** — Cr/Cl types (pr tr kr pl kl br dr ɡr fr fl). `proton` survives intact with them and becomes *po-ro-ton* without. **If adopted, the permitted set must be enumerated exhaustively** — no productive cluster rule.
+
+Known metric bias affecting this decision: the metric lacks a working epenthesis model and systematically **flatters permissive codas** (§4, cost-learning guardrail 4). Syllable-count inflation must be read alongside any metric score, not instead of it.
+
+#### Decided rules (**FIRM**, 2026-08-05)
+
+- **No geminates within a word.** No doubled consonants (`*kanna`). *Open sub-case: what happens when compounding joins a nasal coda to an identical onset — degeminate, or block the compound? See §7.*
+- **Hiatus is avoided by glide insertion**, written into the spelling: `oa` → `owa`. Hiatus is **permitted as a fallback for loanwords** where neither /j/ nor /w/ is the natural glide. *Open sub-case: the exact glide-selection rule, especially after /a/. See §7.*
+- **No sandhi, no alternations, no deviation from "pronounce what is written."** This is a strong constraint and it has a consequence: every repair above is **orthographic**, applied when the word is formed, not a pronunciation rule layered on top. There is never a gap between spelling and speech. (Interacts with §3.7: the ASCII orthography is one letter per phoneme, so "what is written" is unambiguous.)
+
+#### Deferred
+
+- **Root shape bounds** (min/max syllables) — deferred until after grammar. Patrick is leaning **analytic**, in which case there may be no root-vs-inflected-word distinction to bound separately.
+- **Functional-load policy** (numeric contrast penalties) — deferred; blocks only the lexicon chooser (§7). The two hard minimal-pair bans (l/r, h/r) are already FIRM in §3.3 and are sufficient for hand-designing the grammatical particles.
 
 ### 3.7 Orthography (**resolved** by the §3.3 inventory decision, 2026-08-05)
 
@@ -275,6 +289,9 @@ Standing open questions:
 - **PHOIBLE multi-inventory policy (decided SOFT):** majority vote across a language's inventories (≥50%), chosen in the prevalence study; union and intersection rejected (judgment calls documented there).
 - **Diphthong-mediated contrasts (OPEN, new):** binary "has the phoneme" checks under-credit listeners whose inventories carry a vowel quality only inside diphthongs/allophones (Mandarin 918M, Wu 81M — see contrast-study Addendum). The listener-conditioned metric handles this at the word level; decide whether inventory-level analyses need a correction, or whether all downstream decisions should use the word-level metric.
 - ~~**Second stop series**~~ **DECIDED 2026-08-05: taken** (§3.3), on the people-weighted reading of §2. The ~61%-of-languages figure is the accepted cost.
+- **Glide-selection rule for hiatus (OPEN, new, small):** §3.6 fixes *that* hiatus is repaired by glide insertion but not *which* glide. Patrick's example `oa`→`owa` implies the **preceding** vowel selects it (o is round → w). The unresolved case is /a/, which is neither front nor round and is our most common vowel: `ai ao au ae` have no preceding-vowel answer. Candidate rule: pick the glide from whichever vowel of the pair is high/peripheral (j if either is i/e, w if either is u/o, preceding wins ties), leaving only `aa` unresolved.
+- **Compound geminates (OPEN, new, small):** §3.6 bans geminates within a word, but transparent compounding will produce them (`kan` + `nomi`). Degeminate, insert a vowel, or forbid the pairing? Must be resolved orthographically, per the no-sandhi rule.
+- **Onset-cluster inventory (OPEN, conditional):** if the international-vocabulary study says onset clusters pay for themselves, the permitted set must be enumerated exhaustively rather than left to a productive rule.
 - **Segment discouragement weights (OPEN, new):** §3.3 ranks /r/ /h/ > /l/ > /b d ɡ/ as segments to avoid where the lexicon has a choice. This is currently an ordinal ranking and must become a numeric penalty before the lexicon optimizer runs.
 - **Stress rule (OPEN, study running):** non-contrastive (§3.5), but a default placement rule is still needed. Study in flight: stress-rule prevalence weighted by L1 speakers; pick the most common rule, or flat/no-stress as the compromise if there is no clear winner.
 - **Loss shape details (SOFT):** AE + MSE combination is a proposal, not validated.
