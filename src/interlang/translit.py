@@ -383,6 +383,44 @@ def is_legal(form: str, variant: Variant) -> bool:
     return True
 
 
+def glide_hiatus(form: str, policy: str = "glide") -> tuple[str, list[str]]:
+    """Repair vowel-vowel sequences by inserting a glide (principles.md 3.6).
+
+    3.6 (FIRM, 2026-08-05) says hiatus is avoided by glide insertion written
+    into the spelling (oa -> owa), with hiatus PERMITTED as a loanword
+    fallback.  International vocabulary is loanword material, so this is off by
+    default in `render`; the study measures both arms.
+
+    `policy='glide'`: the glide is chosen by the FIRST vowel - /j/ after the
+    front vowels i, e; /w/ after the round vowels u, o.  After /a/ (3.6's
+    logged open question) the SECOND vowel decides: /j/ before i, e and /w/
+    before u, o.
+
+    `policy='glide_high'`: insert only after the HIGH vowels i and u, where the
+    glide is the vowel's own approximant and the result is attested
+    (radio -> radijo, bacteria -> bakterija, exactly the Slavic reflexes).
+    Leaves e_o, e_i and a_V alone, which is where the general rule mangles
+    Greek compounds (geo-, theo-, -ein).  Measured in
+    notes/international-vocab.md 6.6.
+    """
+    out, trace = [], []
+    for i, ch in enumerate(form):
+        out.append(ch)
+        nxt = form[i + 1] if i + 1 < len(form) else ""
+        if ch in VOWELS and nxt in VOWELS:
+            if policy == "glide_high" and ch not in "iu":
+                continue
+            if ch in "ie":
+                g = "j"
+            elif ch in "uo":
+                g = "w"
+            else:                       # after /a/: decided by what follows
+                g = "j" if nxt in "ie" else "w"
+            out.append(g)
+            trace.append(f"B5 glide insertion {ch}_{nxt} -> {ch}{g}{nxt}")
+    return "".join(out), trace
+
+
 def syllables(form: str) -> int:
     """Syllable count = number of vowels (no diphthongs in the inventory, 3.3)."""
     return sum(1 for c in form if c in VOWELS)
@@ -390,7 +428,7 @@ def syllables(form: str) -> int:
 
 def render(intl: str, variant: str | Variant, *, v_target: str = "w",
            th_target: str = "t", epen: str = "i", final_policy: str = "delete",
-           g_soft: bool = False) -> dict:
+           g_soft: bool = False, hiatus: str = "keep") -> dict:
     """Full pipeline: international spelling -> interlang word under a variant.
 
     Returns a dict with the form, both stage outputs, the syllable counts
@@ -399,7 +437,10 @@ def render(intl: str, variant: str | Variant, *, v_target: str = "w",
     var = VARIANTS[variant] if isinstance(variant, str) else variant
     ph, t1 = to_phonemes(intl, v_target=v_target, th_target=th_target, g_soft=g_soft)
     form, t2 = repair(ph, var, epen=epen, final_policy=final_policy)
-    trace = t1 + t2
+    t3: list[str] = []
+    if hiatus in ("glide", "glide_high"):
+        form, t3 = glide_hiatus(form, hiatus)
+    trace = t1 + t2 + t3
     return {
         "variant": var.name,
         "intl": intl,

@@ -583,8 +583,40 @@ did (*virusi, benki, hoteli, sukari*). Recommendation: **epenthesise**.
 | epenthetic vowel | i / u / echo | 0.7962 / 0.7958 / 0.7964 | a tie |
 | `<g>` | **hard always** | 0.796 | |
 | | soft before e/i/y | 0.790 | worse |
+| hiatus | **keep** | 0.796 | §6.5 |
+| | glide after any vowel | 0.781 | |
+| | glide after /i u/ only | 0.787 | |
 
-### 6.5 By domain (V3, delete)
+### 6.5 Interaction with the new §3.6 hiatus rule (added after the run)
+
+While this study was running, another thread recorded §3.6's FIRM decision that **hiatus
+is repaired by glide insertion, written into the spelling** (`oa` → `owa`), with hiatus
+*permitted as a fallback for loanwords*. International vocabulary is exactly loanword
+material, and it is full of hiatus — the Greek and Latin combining forms are vowel-final
+(`geo-`, `theo-`, `bio-`, `radio-`, `-ia`, `-ion`). So the interaction had to be measured.
+
+Scored on the recommended ruleset (V3C, epenthesis, v→f), the same 52 words:
+
+| hiatus policy | mean sim | words changed | examples |
+|---|---|---|---|
+| **keep hiatus** | **0.843** | – | radio, bakteria, geometria, protein |
+| glide after every vowel | 0.826 | 13 | radijo, bakterija, **gejometrija**, **tejorija**, **protejin** |
+| glide after high vowels only | 0.833 | 11 | radijo, bakterija, geometria, protein |
+
+**Glide insertion costs recognizability, and the general rule costs twice what the
+restricted one does.** The damage is systematic, not random: it lands on the **e_o, e_i
+and a_V** sequences, which is precisely where Greek compounding lives (*geo-*, *theo-*,
+*-ein*). No recipient language produces *gejometrija*. By contrast the i_V cases the
+restricted rule keeps — *radijo, bakterija, malarija, milijon, demokratija, polisija* —
+are exactly the attested Slavic reflexes, so they cost nothing.
+
+Recommendation to feed back to §3.6: **take the loanword fallback**, i.e. let
+international vocabulary keep its hiatus; or, if a uniform rule is wanted, **restrict
+glide insertion to the high vowels /i u/**, where the glide is the vowel's own
+approximant. This also answers §3.6's logged open question about the glide after /a/:
+under the restricted rule it does not arise.
+
+### 6.6 By domain (V3, delete)
 
 | domain | n | syl inflation | sim | ceiling |
 |---|---|---|---|---|
@@ -744,6 +776,12 @@ were.
 >
 > Still open: whether onset clusters conflict with the short-particle inventory §3.2
 > needs; whether /v/ maps to f or b (tied at 0.810–0.811).
+>
+> The hiatus rule interacts: glide insertion costs 0.017 similarity on international
+> vocabulary and mangles Greek compounds (*geometria* → *gejometrija*). Either take the
+> loanword fallback the rule already allows, or restrict glide insertion to the high
+> vowels /i u/ (cost 0.010, and *radijo / bakterija / demokratija* are attested shapes).
+> That restriction also disposes of the logged open question about the glide after /a/.
 
 And §7 could record a new finding:
 

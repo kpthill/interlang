@@ -18,11 +18,16 @@ Pipeline
 3. Each attested form is classified LOAN vs NATIVE/CALQUE by similarity to the
    international form (metric v0), which is the evidence for the premise check
    ("does every language except Chinese adapt the Latin/Greek root?").
-4. interlang.translit renders each word under six phonotactic variants.
+4. interlang.translit renders each word under six phonotactic variants and both
+   word-final coda policies (delete / support vowel).
 5. Every rendering is scored against the attested LOAN forms with metric v0,
-   alongside syllable counts and length inflation.
+   alongside syllable counts and length inflation, and separately against the
+   recipients that themselves repair clusters vs those that do not.
+6. `sensitivity()` prices every open policy in the ruleset one arm at a time
+   (v -> f/b/w, th -> t/s, epenthetic vowel, final-coda policy, soft g, hiatus).
 
-Output: data/processed/international_vocab.csv, one row per word x variant.
+Output: data/processed/international_vocab.csv, one row per
+        word x variant x final-coda policy (52 x 6 x 2 = 624).
 
 DATA PROVENANCE - READ THIS
 ---------------------------
@@ -916,7 +921,8 @@ def sensitivity(forms: pd.DataFrame) -> pd.DataFrame:
                          ("th_target", ["t", "s"]),
                          ("epen", ["i", "u", "echo"]),
                          ("final_policy", ["delete", "epenthesize"]),
-                         ("g_soft", [False, True])]:
+                         ("g_soft", [False, True]),
+                         ("hiatus", ["keep", "glide", "glide_high"])]:
         for opt in options:
             kw = dict(DEFAULTS)
             kw[key] = opt
