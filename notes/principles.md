@@ -100,29 +100,39 @@ Held SOFT because the *loss* half of the finding does not survive the Rule 1 lex
 (European-lexifier creoles 27:8, non-European 8:11); only the *no-gain* half does. See
 [`grammar-tier0.md`](grammar-tier0.md) §2.3.
 
-#### TAM (**SOFT**, 2026-08-05 — recommendation on the table)
+#### TAM: no TAM grammar at all (**SOFT**, 2026-08-05 by Patrick — a taste-based choice)
 
-Evidence: [`grammar-tier2-tam.md`](grammar-tier2-tam.md). **Optional preverbal particles**,
-no ordering rule, invariant under negation. A bare verb is unmarked and reads from context:
-stative → present, dynamic → past/perfective, which is the contact-language default (7 of 8
-expanded pidgins) and is what keeps the inventory small.
+**Tense, aspect and mood are ordinary open-class adverbs**, omitted whenever context supplies
+them: *I run {continuously} {in-the-past}*. No particles, no fixed slot, no closed class, no
+ordering rule, nothing to combine. **Particle bill: 0.**
 
-| | particle | status |
-|---|---|---|
-| 1 | **imperfective** (progressive *and* habitual in one marker) | strongly supported — 100% of expanded pidgins and creoles |
-| 2 | **past / anterior** | supported — 6 of 9 expanded pidgins, 87% of creoles, 63.9–67.6% of world L1 |
-| 3 | *irrealis (future + conditional)* | **judgment call, not a finding** — mood is the world's most particle-friendly category (51.1% of L1) but future is the weakest tense category (39.5% of L1) and contact languages often express it lexically |
+**This decision overrides its own study and is recorded as taste, not evidence.** The
+evidence in [`grammar-tier2-tam.md`](grammar-tier2-tam.md) supports **two aspect particles in
+a fixed preverbal slot with tense and mood lexical**: an overt imperfective marker is present
+in 100% of expanded pidgins and 100% of creoles, 7 of 9 expanded pidgins place markers
+immediately preverbally, and of the three categories aspect and mood are the ones the world
+puts on free words (31.9% and 51.1% of L1) while tense is the rarest strategy in the study
+(9.3%). That design was declined because singling out **aspect** for structural treatment,
+when tense and mood are handled lexically, is an asymmetry a learner cannot see the reason
+for. Uniformity was preferred.
 
-Rejected, each with its number: a **perfect** (the possessive-derived kind is 3.2% of
-languages but 36.6% of total speakers — the most Eurocentric number in the study); a
-**separate habitual** (dedicated habitual marker: 0 of 9 outside the European-lexifier
-group, 21 of 59 inside it); **remoteness grades** (0.9% of L1); a dedicated **present**
-marker (redundant given the unmarked default). **No T-M-A ordering rule**: stacking three
-markers is unattested in pidgins of either kind (0 of 18) and is a creole development.
+Accepted costs, all live: we are outside the contact-language sample entirely; there is no
+positional cue for where the predicate begins, in a language where position already carries
+all the argument-role work (§3.2 Tier 0); and **negation scope becomes an open problem** —
+*I not run in-the-past* is structurally ambiguous in a way a fixed TAM slot would have
+prevented. That lands on Tier 2 Q9.
 
-**Particle bill: 2, or 3 with irrealis.** Tier 2 sizes the particle inventory that Tier 4
-must fit into the phonology; every Tier 2 answer that costs a particle is counted as it is
-made.
+What it buys: an optional *grammatical* marker makes its own omission meaningful (with a past
+particle, not using it invites "not past"); **adverbs do not**, so the implicature problem
+disappears. There is no TAM chapter in the grammar. And the open class gives unlimited
+gradation — *briefly, repeatedly, finally, almost* — with no new machinery.
+
+**Handoff to the lexicon stage:** ~10–14 high-frequency TAM concepts are flagged for **short
+forms** (past, future, now, already, still, again, used-to, maybe, must, if, yesterday,
+tomorrow, soon, long-ago). Same shape as §3.3's segment discouragement — a nudge on the
+vocabulary optimizer, not a rule. Monosyllabic space is not a constraint: ~180 cluster-free
+(C)V(N) forms avoiding /r h l/, so this is ~8% of it. A **recommended default usage** should
+ship with the lexicon so the permissive grammar does not fragment in practice.
 
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 

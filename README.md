@@ -65,14 +65,14 @@ questions and next steps in §7.
   creoles converge above the noun phrase and split 8:7 inside it — and creoles lose
   derivational affixes 35:3 while *gaining* compounding and reduplication 13:2.
 - **Grammar Tier 2 Q6 (TAM)** — done, [`notes/grammar-tier2-tam.md`](notes/grammar-tier2-tam.md).
-  Optional preverbal particles: an imperfective (strongly supported) and a past (supported),
-  with irrealis flagged as a judgment call rather than a finding. No ordering rule — stacking
-  three markers is unattested in pidgins. The method changed mid-study: **pidgins, not
-  creoles, are the closest analogue to an auxiliary language** (adults, no shared language,
-  no native speakers), so contact evidence is now stratified restricted pidgin / expanded
-  pidgin / creole and the pidgin columns are read first. TAM elaboration turns out to grow
-  monotonically along that gradient, which ranks the categories by necessity: imperfective,
-  then past, then nothing else.
+  **Decision: there is no TAM grammar** — tense, aspect and mood are open-class adverbs, and
+  this is flagged as a **taste-based choice that overrides the study's own finding** (the
+  evidence supports two aspect particles in a preverbal slot). The study itself is the more
+  reusable part: contact evidence is now stratified **restricted pidgin / expanded pidgin /
+  creole**, because *pidgins*, not creoles, are the closest analogue to an auxiliary language
+  — adults, no shared language, no native speakers. TAM elaboration grows monotonically along
+  that gradient, which ranks the categories by necessity: imperfective, then past, then
+  nothing else.
 - **Next:** the rest of Tier 2 of the grammar agenda. Phonology and phonotactics are closed (`notes/principles.md`
   §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
   than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are

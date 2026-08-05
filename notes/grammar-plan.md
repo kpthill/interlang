@@ -178,11 +178,12 @@ demonstrative and numeral questions compete for the same real estate as NP order
 
 | # | question | sub-questions | evidence to hand |
 |---|---|---|---|
-| **6** | ~~**TAM**~~ **DONE** → [`grammar-tier2-tam.md`](grammar-tier2-tam.md): two optional preverbal particles (imperfective, past), irrealis a judgment call; no ordering rule; invariant under negation | tense at all? which distinctions? aspect set? mood/irrealis? obligatory or optional? pre- or postverbal? fixed order among multiple markers? | APiCS 43 (position rel. to verb), 44 (internal order), 49 (TA systems), 50 (interaction with negation); Grambank GB082–086, GB312 |
+| **6** | ~~**TAM**~~ **DONE** → [`grammar-tier2-tam.md`](grammar-tier2-tam.md): **no TAM grammar** — tense, aspect and mood are open-class adverbs. A taste-based choice that overrides the study; particle bill 0 | tense at all? which distinctions? aspect set? mood/irrealis? obligatory or optional? pre- or postverbal? fixed order among multiple markers? | APiCS 43 (position rel. to verb), 44 (internal order), 49 (TA systems), 50 (interaction with negation); Grambank GB082–086, GB312 |
 | 7 | **nominal categories** | obligatory plural? articles — definite, indefinite, both, neither? classifiers/measure words? what a bare noun means by default | APiCS 28, 29, 9, 10, 31; Grambank GB020–023, GB042, GB044. Articles are Euro-coded → run the Rule 2 contrapositive |
 | 8 | **pronoun system** | person/number; clusivity; gender; politeness; **case forms of pronouns**; total form count | APiCS 13, 15, 18; Grambank GB071, GB090–094. Gender and clusivity already answered in the Tier 0 side-evidence; politeness is genuinely split |
 | 9 | **negation** | one negator or several? position rel. to verb and to TAM? double negation? negative concord? same negator for verbal, locational, existential and nominal predication? | APiCS 50; Grambank GB107, GB140 |
 | 10 | **question formation** | polar: particle, intonation, word order or tag? particle position? content: in-situ or fronted? | APiCS 12; Grambank GB260, GB262, GB285, GB286; WALS 92A, 93A |
+| **11a** | **adverb placement** — *promoted from Tier 3 by the Q6 decision* | where adverbs sit relative to verb and object; whether TAM adverbs have a preferred position; scope when two or more stack | now load-bearing: with TAM fully lexical, adverb placement *is* the TAM syntax |
 | **11** | **NP-internal order** | adjective, numeral, demonstrative, possessor — each relative to the noun | moved down from Tier 0: creoles split 8:7 three times, and the people-weighted world answer conflicts with the creole lean on demonstratives ([`grammar-tier0.md`](grammar-tier0.md) §1.2) |
 
 **Tier 2 is where the particle inventory gets sized, even though it is chosen in Tier 4.**
@@ -224,3 +225,10 @@ space cannot be reserved until we know how many short words the grammar demands.
    is tagged FIRM.
 5. **Hand-supplied lexifier values are flagged**, like `model-recall` in the vocabulary
    study, and never enter a headline number unflagged.
+6. **The contact record is evidence about what EMERGES, not about what is LEARNABLE when
+   taught** (added 2026-08-05, when the Q6 decision first leaned on the distinction). Those
+   coincide for most features and come apart for *optional* ones: an obligatory category has
+   to justify itself against "would adults build this?", but an optional, explicitly taught
+   one need not — Esperanto carries categories no creole ever built and is demonstrably
+   learnable. **This is a licence to depart from the creole/pidgin record, not to ignore it:
+   any departure gets recorded as a taste-based choice with its costs listed**, as Q6 is.

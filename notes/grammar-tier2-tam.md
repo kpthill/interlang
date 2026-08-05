@@ -4,11 +4,13 @@
 Script: [`../scripts/grammar_tier2_tam.py`](../scripts/grammar_tier2_tam.py) · output:
 `data/processed/grammar_tier2_tam.csv` · agenda: [`grammar-plan.md`](grammar-plan.md) §4 Q6.*
 
-**Bottom line up front.** TAM goes on **free preverbal particles**, marking is **optional**,
-and the categories arrive in a strict order of necessity: **imperfective first, past second,
-everything else optional or rejected**. Contact languages **never stack three markers** —
-0 of 18 pidgins of either kind. Recommended: **two particles, with a third (irrealis) as a
-judgment call rather than a finding.**
+**Bottom line up front.** **Decision: there is no TAM grammar — tense, aspect and mood are
+open-class adverbs** (§4). This is a **taste-based choice that overrides the study's own
+finding**, taken on grounds of uniformity: the evidence supports two aspect particles in a
+fixed preverbal slot with tense and mood lexical, and singling out aspect for special
+treatment was judged awkward. Everything the evidence *did* say is below, because it is what
+the decision is departing from — and §4.1 records the departure and its costs, the sharpest
+of which is that **negation scope is now an open problem for Q9**.
 
 ---
 
@@ -157,40 +159,84 @@ limitation as Tier 0 — it is demonstrated where the lexifier had morphology to
 
 ---
 
-## 4. Recommendation (revised)
+## 4. Decision: all TAM is open-class adverbs (**taste-based**, 2026-08-05 by Patrick)
 
-**Two particles, with a third as an open judgment call.**
+**There is no TAM grammar.** No particles, no slot, no closed class. Tense, aspect and mood
+are expressed by ordinary **open-class adverbs**, exactly like *quickly* or *here*, and are
+omitted whenever context supplies them: *I run {continuously} {in-the-past}*.
 
-| | particle | status |
-|---|---|---|
-| 1 | **imperfective** — progressive *and* habitual in one marker | **strongly supported.** 100% of expanded pidgins and creoles; the one category no contact language does without. The habitual conflation is the non-European pattern (dedicated habitual: 0 of 9 outside Europe, 21 of 59 inside) |
-| 2 | **past / anterior** | **supported.** 6 of 9 expanded pidgins, 87% of creoles, 63.9–67.6% of world L1 |
-| 3 | *irrealis (future + conditional)* | **judgment call, not a finding.** Mood-by-particle is the world's most common particle strategy (51.1% of L1, 58.1% of total speakers) — but future is the weakest of the three tense categories (39.5% of L1 have an inflectional future), and contact languages commonly express it lexically with a 'go' or 'want' verb rather than a particle |
+**Grammar bill: 0 particles.** The Tier 2 running total for the particle inventory stays at
+zero, and TAM adds nothing for Tier 4 to fit into the phonology.
 
-Supporting decisions, all evidenced above:
+### 4.1 This is a taste-based choice and goes against the evidence above
 
-- **Preverbal**, immediately before the verb.
-- **Optional**, not obligatory. A bare verb is stative-present / dynamic-past-perfective by
-  default (§2.3), which is what keeps the inventory this small.
-- **No ordering rule** — stacking all three is unattested in pidgins of either kind (§3).
-- **Negation changes nothing.**
-- **Rejected, each with its number:** a **perfect** (the possessive-derived kind is 3.2% of
-  languages and 36.6% of total speakers — the most Eurocentric number in the study); a
-  **separate habitual** (0 of 9 outside Europe); **remoteness grades** (0.9% of L1 in WALS's
-  past-tense chapter); a dedicated **present** marker (48.2% of L1, and redundant given the
-  unmarked default).
+Flagged at Patrick's request, and it should stay flagged — this is the first decision in the
+project that overrides its own study.
 
-**Particle bill: 2, or 3 if irrealis is adopted.** (Tier 2 running total — Tier 4 has to fit
-all of them into the phonology under §3.3's segment discouragement and §3.6's cluster cost.)
+**What the evidence said.** An aspect marker is the one piece of TAM machinery no contact
+language does without: **100% of expanded pidgins and 100% of creoles** have an overt
+progressive/imperfective marker (§2.1), 7 of 9 expanded pidgins put their markers in a fixed
+preverbal slot (§3), and 32% of the world's L1 mass marks aspect with a free word. The
+evidence-following design was **two aspect particles in a fixed preverbal slot, with tense
+and mood lexical** — a split that matches Mandarin and that the particle-strategy numbers
+support directly (aspect-by-particle 31.9% of L1, mood 51.1%, tense only 9.3%).
 
-**What changed from the first version of this study, and why.** The first pass recommended
-three particles including a fixed T-M-A ordering rule, on the strength of the creole record
-with pidgins removed. Reading the pidgin strata first: the ordering rule is unsupported (0 of
-18 pidgins stack three markers), the third particle drops from "recommended" to "judgment
-call", and the case for optionality gets much stronger. The direction of the correction is
-consistent — **weighting pidgins up makes the system smaller.**
+**Why we did not take it.** Singling out aspect for special grammatical treatment is
+*awkward* — it makes one of three parallel semantic categories structurally different for
+reasons a learner cannot see from the inside. Uniformity of treatment was preferred over
+matching the contact-language record. That is an aesthetic judgment about the design, not a
+finding, and it is recorded as one.
 
----
+**What we are accepting as the cost:**
+
+1. **Departure from the evidence base.** No attested pidgin or creole has a fully lexical
+   TAM system; they all have small preverbal inventories. We are outside the sample.
+2. **No verb-phrase positional cue.** With no fixed preverbal slot, nothing marks where the
+   predicate begins — in a language where position already carries all the argument-role
+   work (Tier 0: no case marking).
+3. **Scope ambiguity, which is now Q9's problem.** Free adverb position plus a negator
+   creates real ambiguity: *I not run in-the-past* can be "it is not the case that I ran"
+   or "it was in the past that I did not run". With a fixed TAM slot the scope was
+   structural. **This is the concrete risk this decision creates, and negation is where it
+   lands.**
+4. **Verbosity in the common case**, mitigated but not eliminated by 4.2.
+
+### 4.2 What this buys, and it is not nothing
+
+- **The implicature problem disappears.** An optional *grammatical* marker makes its own
+  omission meaningful — with a past particle, not using it invites "not past". Adverbs do
+  not do this: *I run* implicates nothing about time, any more than it implicates anything
+  about place. This was the strongest argument against the rich-particle design and it is
+  fully collected here.
+- **There is no TAM chapter in the grammar at all.** The rule is "use adverbs", which is a
+  rule the learner needs for *quickly* and *here* regardless. Marginal grammatical cost of
+  TAM: zero.
+- **Unlimited expressiveness with no new machinery.** *briefly, repeatedly, finally, almost,
+  suddenly, once* and every gradation between them are available immediately, because the
+  class is open. A closed particle set cannot be extended without a committee.
+- **No ordering rule, no combination table, no contradictions to define.**
+
+### 4.3 Handoff to the lexicon stage
+
+The decision converts a grammar problem into a vocabulary problem, so the vocabulary
+optimizer inherits a constraint: **these high-frequency TAM concepts should get short
+forms.** Zipf's argument, and the same shape as §3.3's segment discouragement — a nudge on
+the optimizer, not a rule of the language.
+
+| | concepts |
+|---|---|
+| tense | past · future · now |
+| aspect | already/finished · still/ongoing · again · used-to |
+| mood | maybe · must · if-hypothetical |
+| deixis | yesterday · tomorrow · soon · long-ago |
+
+Roughly ten to fourteen items. Monosyllabic space is not a constraint — the cluster-free
+(C)V(N) inventory avoiding the discouraged onsets /r h l/ holds about **180** forms, so this
+is ~8% of it.
+
+**A recommended default usage should be documented with the lexicon**, even though the
+grammar permits any adverb anywhere: without one, speaker A's *already* becomes speaker B's
+*past* and the system fragments. Permissive grammar, conventional usage.
 
 ## 5. Honest limits
 
