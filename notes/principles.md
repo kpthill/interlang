@@ -1,6 +1,6 @@
 # Interlang: principles, decisions, and findings
 
-*Last updated 2026-08-05 (§3.3 inventory closed FIRM; §3.6 phonotactics partly decided; §3.7 orthography resolved). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
+*Last updated 2026-08-05 (§3.3 inventory FIRM; §3.5 stress decided; §3.6 phonotactics; §3.7 orthography). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
 
 Each decision below is tagged:
 
@@ -127,6 +127,10 @@ Recognizability is scored against the **best** realization in the set. This is e
 
 No tone, no contrastive vowel length, no contrastive stress. Each of these is a distinction that large populations cannot produce or hear reliably, and none is needed if the segmental inventory and phonotactics leave enough word space.
 
+**Stress placement: always the first syllable** (decided 2026-08-05). Stress carries no meaning — this rule exists only to give every word a single citation pronunciation.
+
+Why initial rather than penultimate, given the study ([`stress-prevalence.md`](stress-prevalence.md)) headlined penultimate at 50.4% of covered L1 speakers: that headline collapses weight-sensitive systems onto penult via a trochaic default. Read faithfully, penultimate is a **3.4%** rule and **initial (7.5%) is twice as common** among languages with a genuinely fixed rule. The two also **coincide on one- and two-syllable words**, so they only differ on longer forms. Initial wins on simplicity — "stress the first syllable" is the shortest statable rule, and it never moves under compounding or affixation. Chosen deliberately over the more familiar Esperanto-style penultimate.
+
 ### 3.6 Phonotactics (partly decided 2026-08-05)
 
 Notation: C = consonant, V = vowel, N = nasal consonant; parentheses mean optional. The **coda** is the consonant material at the *end* of a syllable (the /n/ in "san"); the **onset** is the consonant material at the start.
@@ -144,7 +148,7 @@ Known metric bias affecting this decision: the metric lacks a working epenthesis
 
 #### Decided rules (**FIRM**, 2026-08-05)
 
-- **No geminates within a word.** No doubled consonants (`*kanna`). *Open sub-case: what happens when compounding joins a nasal coda to an identical onset — degeminate, or block the compound? See §7.*
+- **No geminates within a morpheme**, but **geminates are allowed across a compound boundary** (`kan` + `nomi` → `kannomi`, revised 2026-08-05). This preserves compound transparency, which matters more than the marginal pronunciation cost: degemination would destroy the visible seam and risk collisions with real words. Possibly moot — compounding may be dropped entirely (§7).
 - **Hiatus is avoided by glide insertion**, written into the spelling: `oa` → `owa`. Hiatus is **permitted as a fallback for loanwords** where neither /j/ nor /w/ is the natural glide. *Open sub-case: the exact glide-selection rule, especially after /a/. See §7.*
 - **No sandhi, no alternations, no deviation from "pronounce what is written."** This is a strong constraint and it has a consequence: every repair above is **orthographic**, applied when the word is formed, not a pronunciation rule layered on top. There is never a gap between spelling and speech. (Interacts with §3.7: the ASCII orthography is one letter per phoneme, so "what is written" is unambiguous.)
 
@@ -155,7 +159,18 @@ Known metric bias affecting this decision: the metric lacks a working epenthesis
 
 ### 3.7 Orthography (**resolved** by the §3.3 inventory decision, 2026-08-05)
 
-**The ASCII orthography is now free, with zero casualties.** The closed inventory maps
+**Decided (2026-08-05): the orthography is diacritic-free IPA restricted to ASCII.** One
+character per phoneme, one phoneme per character, with **each character standing for the
+phoneme's whole realization class** (§3.4 wide phonemes) rather than a single sound — `h`
+means the whole h~[x~χ~ħ] set, `r` any rhotic, `p` fortis [p~pʰ]. IPA values, not English
+ones: **`j` is the "y" of *yes*, never English "j".** No digraphs, no diacritics, no silent
+letters, and — with §3.6's no-sandhi rule — no gap whatsoever between spelling and speech.
+
+Punctuation and capitalization are **pending a survey** (§7): the policy is "whatever is
+most common among the world's languages weighted by total speakers, with English-style as
+the default."
+
+**The ASCII orthography is free, with zero casualties.** The closed inventory maps
 one-to-one onto 20 ASCII letters:
 
 ```
@@ -290,10 +305,11 @@ Standing open questions:
 - **Diphthong-mediated contrasts (OPEN, new):** binary "has the phoneme" checks under-credit listeners whose inventories carry a vowel quality only inside diphthongs/allophones (Mandarin 918M, Wu 81M — see contrast-study Addendum). The listener-conditioned metric handles this at the word level; decide whether inventory-level analyses need a correction, or whether all downstream decisions should use the word-level metric.
 - ~~**Second stop series**~~ **DECIDED 2026-08-05: taken** (§3.3), on the people-weighted reading of §2. The ~61%-of-languages figure is the accepted cost.
 - **Glide-selection rule for hiatus (OPEN, new, small):** §3.6 fixes *that* hiatus is repaired by glide insertion but not *which* glide. Patrick's example `oa`→`owa` implies the **preceding** vowel selects it (o is round → w). The unresolved case is /a/, which is neither front nor round and is our most common vowel: `ai ao au ae` have no preceding-vowel answer. Candidate rule: pick the glide from whichever vowel of the pair is high/peripheral (j if either is i/e, w if either is u/o, preceding wins ties), leaving only `aa` unresolved.
-- **Compound geminates (OPEN, new, small):** §3.6 bans geminates within a word, but transparent compounding will produce them (`kan` + `nomi`). Degeminate, insert a vowel, or forbid the pairing? Must be resolved orthographically, per the no-sandhi rule.
 - **Onset-cluster inventory (OPEN, conditional):** if the international-vocabulary study says onset clusters pay for themselves, the permitted set must be enumerated exhaustively rather than left to a productive rule.
 - **Segment discouragement weights (OPEN, new):** §3.3 ranks /r/ /h/ > /l/ > /b d ɡ/ as segments to avoid where the lexicon has a choice. This is currently an ordinal ranking and must become a numeric penalty before the lexicon optimizer runs.
-- **Stress rule (OPEN, study running):** non-contrastive (§3.5), but a default placement rule is still needed. Study in flight: stress-rule prevalence weighted by L1 speakers; pick the most common rule, or flat/no-stress as the compromise if there is no clear winner.
+- ~~**Stress rule**~~ **DECIDED 2026-08-05: first syllable** (§3.5). See [`stress-prevalence.md`](stress-prevalence.md); initial was chosen over the headline penultimate on simplicity, and because the penultimate lead depends on collapsing weight-sensitive systems.
+- **Punctuation & capitalization (OPEN, survey running):** policy is "most common among the world's languages, weighted by total speakers; English-style as default." Note a majority of humanity writes in a **caseless** script, so "capital letters at all?" is a real question.
+- **Compounding: keep or drop (OPEN, new):** §3.6 now permits geminates across compound boundaries to protect compound transparency, but Patrick may eschew compounding entirely, which would moot it. Bears on derivation (§3.2) and on root-shape bounds.
 - **Loss shape details (SOFT):** AE + MSE combination is a proposal, not validated.
 - ~~**/tʃ/ orthography**~~ **MOOT** — the §3.3 inventory has no /tʃ/; the ASCII orthography is free (§3.7).
 
