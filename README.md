@@ -50,7 +50,14 @@ questions and next steps in §7.
   (v0 costs and learned costs agree on the ranking), with syllable inflation reported
   alongside as the non-metric counterweight.
   **Resolved §3.6:** the syllable template is FIRM as (C)V(N) plus the ten Cr/Cl onset
-  clusters, with a support vowel /i/ for illegal word-final consonants.
+  clusters, with a support vowel for illegal word-final consonants (/u/ after a
+  labial, /i/ elsewhere).
+- **Grammar sources audited** — done, [`notes/grammar-plan.md`](notes/grammar-plan.md).
+  WALS, Grambank and APiCS checked for coverage and bias before any of them is
+  quoted. Grambank is 4.7x denser than WALS and covers the big languages WALS
+  misses; APiCS is 80% Western-European-lexifier, leaving 14 independent
+  non-European-lexifier languages as the real sample behind any creole universal.
+  Carries the grammar agenda and the two creole evidence rules.
 - **Next:** grammar. Phonology and phonotactics are closed (`notes/principles.md`
   §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
   than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are
@@ -92,6 +99,8 @@ studies were run 2026-07-14 against the versions noted below). Everything joins 
 | `cldr/` | [unicode-org/cldr](https://github.com/unicode-org/cldr) | `main` (`9fcd511`), fetched 2026-08-05 | `git clone --depth 1 --filter=blob:none --sparse https://github.com/unicode-org/cldr data/raw/cldr && git -C data/raw/cldr sparse-checkout set common/main` |
 | `wikidata_l1/p1098_raw.json`, `iso639/iso-639-3.tab` | Wikidata SPARQL (P1098), SIL | fetched 2026-07-14 | `uv run python scripts/fetch_l1_speakers.py` (downloads both) |
 | `wikipedia_langlinks/*.json` | [en.wikipedia.org langlinks API](https://en.wikipedia.org/w/api.php) — one file per concept, giving that article's title in every language | fetched 2026-08-05 | `uv run python scripts/international_vocab.py` (fetches on first run; `--offline` reuses the cache) |
+| `grambank/` | [grambank/grambank](https://github.com/grambank/grambank) | `main`, fetched 2026-08-05 | `git clone --depth 1 https://github.com/grambank/grambank data/raw/grambank` |
+| `apics/` | [cldf-datasets/apics](https://github.com/cldf-datasets/apics) | `main`, fetched 2026-08-05 | `git clone --depth 1 https://github.com/cldf-datasets/apics data/raw/apics` |
 | `iso639/language-codes-full.csv` | [datasets/language-codes](https://github.com/datasets/language-codes) | `main`, fetched 2026-08-05 | `curl -sSL --create-dirs -o data/raw/iso639/language-codes-full.csv https://raw.githubusercontent.com/datasets/language-codes/main/data/language-codes-full.csv` |
 
 `language-codes-full.csv` is only a **fallback** for the ISO 639-1 ↔ 639-3 map that
@@ -133,6 +142,8 @@ uv run python scripts/international_vocab.py   # -> data/processed/international
                                                #    + international_vocab_forms.csv
                                                #    (fetches Wikipedia langlinks on first
                                                #    run; --offline reuses the cache)
+uv run python scripts/grammar_sources.py       # -> data/processed/grammar_source_coverage.csv
+                                               #    + apics_lexifiers.csv
 ```
 
 Each script's module docstring documents its inputs, outputs, and the judgment calls

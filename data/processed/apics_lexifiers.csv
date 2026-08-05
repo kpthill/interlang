@@ -1,0 +1,105 @@
+ID,Name,Glottocode,Lexifier,lexifier_group,Region
+1,Early Sranan,sran1240,English,european,Caribbean
+10,San Andres Creole English,sana1297,English,european,Caribbean
+1021,Sranan (Dutch-influenced),,English,european,
+1071,Vincentian Creole (Mesolectal variety),,English,european,
+1081,Jamaican (Jamaican Mesolect),,English,european,
+11,Nicaraguan Creole English,nica1251,English,european,Caribbean
+1161,Ghanaian Pidgin English (Student Pidgin),,English,european,
+1162,Ghanaian Pidgin English (Acrolectal Ghanaian Pidgin English),,English,european,
+12,Bahamian Creole,baha1260,English,european,North America
+1201,Chinese Pidgin English (European),,English,european,
+1251,Kriol (Roper River Lect),,English,european,
+13,Gullah,gull1241,English,european,North America
+1301,Cape Verdean Creole of Santiago (acrolect (close to Portuguese)),,Portuguese,european,
+1331,Guinea-Bissau Kriyol (older generation),,Portuguese,european,
+1332,Guinea-Bissau Kriyol (acrolect),,Portuguese,european,
+1333,Guinea-Bissau Kriyol (basilect),,Portuguese,european,
+1371,Principense (younger generation),,Portuguese,european,
+1391,Diu Indo-Portuguese (older lect),,Portuguese,european,
+14,African American English,afri1269,English,european,North America
+1431,Batavia Creole (Tugu),,Portuguese,european,
+15,Krio,krio1253,English,european,West Africa
+1501,Guadeloupean Creole (older generation),,French,european,
+1521,Guyanais (costal),,French,european,
+1531,Louisiana Creole (old texts),,French,european,
+1532,Louisiana Creole (geographical (Pointe Coupee)),,French,european,
+1551,Mauritian Creole (Bhojpuri-influenced Mauritian Creole),,French,european,
+1561,Seychelles Creole (older generation),,French,european,
+1562,Seychelles Creole (French-influenced),,French,european,
+1563,Seychelles Creole (written),,French,european,
+1591,Sango (written),,Other,non-european,
+16,Ghanaian Pidgin English,ghan1244,English,european,West Africa
+1641,Juba Arabic (Arabic interference),,Arabic,non-european,
+1642,Juba Arabic (basilectal),,Arabic,non-european,
+1651,Chinese Pidgin Russian (depidginized),,Other,european,
+17,Nigerian Pidgin,nige1257,English,european,West Africa
+1731,Media Lengua (Imbabura Media Lengua (data Gómez Rendón)),,Spanish,european,
+1741,Chinuk Wawa (Grand Ronde CW),,Other,non-european,
+18,Cameroon Pidgin English,came1254,English,european,West Africa
+19,Pichi,fern1234,English,european,West Africa
+2,Sranan,sran1240,English,european,Caribbean
+20,Chinese Pidgin English,chin1253,English,european,East Asia
+21,Singlish,sing1262,English,european,Southeast Asia
+22,Tok Pisin,tokp1240,English,european,Pacific
+23,Bislama,bisl1239,English,european,Pacific
+24,Norf'k,norf1243,English,european,Pacific
+25,Kriol,krio1252,English,european,Australia
+26,Hawai‘i Creole,hawa1247,English,european,Pacific
+27,Negerhollands,nege1244,Dutch,european,Caribbean
+28,Berbice Dutch,berb1259,Dutch,european,Caribbean
+29,Afrikaans,afri1274,Dutch,european,Southern Africa
+3,Saramaccan,sara1340,English,european,Caribbean
+30,Cape Verdean Creole of Santiago,kabu1256,Portuguese,european,West Africa
+31,Cape Verdean Creole of Brava,kabu1256,Portuguese,european,West Africa
+32,Cape Verdean Creole of São Vicente,kabu1256,Portuguese,european,West Africa
+33,Guinea-Bissau Kriyol,uppe1455,Portuguese,european,West Africa
+34,Casamancese Creole,uppe1455,Portuguese,european,West Africa
+35,Santome,saot1239,Portuguese,european,West Africa
+36,Angolar,ango1258,Portuguese,european,West Africa
+37,Principense,prin1242,Portuguese,european,West Africa
+38,Fa d’Ambô,fada1250,Portuguese,european,West Africa
+39,Diu Indo-Portuguese,dama1278,Portuguese,european,South Asia
+4,Nengee,neng1239,English,european,Caribbean
+40,Korlai,korl1238,Portuguese,european,South Asia
+41,Sri Lanka Portuguese,mala1544,Portuguese,european,South Asia
+42,Papiá Kristang,mala1533,Portuguese,european,Southeast Asia
+43,Batavia Creole,mala1533,Portuguese,european,Southeast Asia
+44,Ternate Chabacano,tern1248,Spanish,european,Southeast Asia
+45,Cavite Chabacano,chav1241,Spanish,european,Southeast Asia
+46,Zamboanga Chabacano,chav1241,Spanish,european,Southeast Asia
+47,Papiamentu,papi1253,Spanish,european,Caribbean
+48,Palenquero,pale1260,Spanish,european,Caribbean
+49,Haitian Creole,hait1244,French,european,Caribbean
+5,Creolese,creo1235,English,european,Caribbean
+50,Guadeloupean Creole,guad1242,French,european,Caribbean
+51,Martinican Creole,guad1242,French,european,Caribbean
+52,Guyanais,guia1246,French,european,Caribbean
+53,Louisiana Creole,loui1240,French,european,North America
+54,Reunion Creole,reun1238,French,european,Indian Ocean
+55,Mauritian Creole,mori1278,French,european,Indian Ocean
+56,Seychelles Creole,sese1246,French,european,Indian Ocean
+57,Tayo,tayo1238,French,european,Pacific
+58,Kikongo-Kituba,kitu1246,Bantu,non-european,Central and East Africa
+59,Sango,sang1328,Other,non-european,Central and East Africa
+6,Trinidad English Creole,trin1276,English,european,Caribbean
+60,Lingala,ling1263,Bantu,non-european,Central and East Africa
+61,Fanakalo,fana1235,Bantu,non-european,Southern Africa
+62,Mixed Ma’a/Mbugu,mbug1240,Other,non-european,Central and East Africa
+63,Kinubi,nubi1253,Arabic,non-european,Central and East Africa
+64,Juba Arabic,suda1237,Arabic,non-european,Central and East Africa
+65,Chinese Pidgin Russian,kjac1234,Other,european,East Asia
+66,Sri Lankan Malay,sril1245,Malay,non-european,South Asia
+67,Singapore Bazaar Malay,baba1267,Malay,non-european,Southeast Asia
+68,Ambon Malay,ambo1250,Malay,non-european,Southeast Asia
+69,Yimas-Arafundi Pidgin,yima1244,Other,non-european,Pacific
+7,Vincentian Creole,vinc1243,English,european,Caribbean
+70,Pidgin Hindustani,,Other,non-european,Pacific
+71,Pidgin Hawaiian,pidg1249,Other,non-european,Pacific
+72,Gurindji Kriol,guri1249,Other,mixed,Australia
+73,Media Lengua,medi1245,Spanish,european,South America
+74,Chinuk Wawa,chin1272,Other,non-european,North America
+75,Michif,mich1243,Other,mixed,North America
+76,Eskimo Pidgin,eski1266,Other,non-european,North America
+8,Jamaican,jama1262,English,european,Caribbean
+9,Belizean Creole,beli1259,English,european,Caribbean

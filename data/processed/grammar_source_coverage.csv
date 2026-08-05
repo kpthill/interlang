@@ -1,0 +1,724 @@
+feature_id,n_languages,l1_covered,total_covered,l1_share,total_share,dataset,feature
+100A,377,3550987303.0,6415818124.167,51.8,59.0,wals,Alignment of Verbal Person Marking
+101A,705,3929519165.0,6697168432.42003,57.3,61.6,wals,Expression of Pronominal Subjects
+102A,375,3549392603.0,6415818124.167,51.7,59.0,wals,Verbal Person Marking
+103A,377,3550987303.0,6415818124.167,51.8,59.0,wals,Third Person Zero of Verbal Person Marking
+104A,376,3550986183.0,6415818124.167,51.8,59.0,wals,Order of Person Markers on the Verb
+105A,373,3909895019.0,6850332571.9912,57.0,63.0,wals,Ditransitive Constructions: The Verb 'Give'
+106A,174,3466466457.0,6396575588.1142,50.5,58.9,wals,Reciprocal Constructions
+107A,370,3550947823.0,6415818124.167,51.8,59.0,wals,Passive Constructions
+108A,193,3595792201.0,6506978248.9788,52.4,59.9,wals,Antipassive Constructions
+108B,185,3595167201.0,6505371791.378799,52.4,59.9,wals,Productivity of the Antipassive Construction
+109A,182,3589937381.0,6509281019.3068,52.3,59.9,wals,Applicative Constructions
+109B,182,3589937381.0,6509281019.3068,52.3,59.9,wals,Other Roles of Applied Objects
+10A,243,3354615677.0,6172354977.8977995,48.9,56.8,wals,Vowel Nasalization
+10B,40,19895349.0,17022201.345,0.3,0.2,wals,Nasal Vowels in West Africa
+110A,117,2357806441.0,4564060138.0252,34.4,42.0,wals,Periphrastic Causative Constructions
+111A,309,3948078302.0,6970284498.8442,57.6,64.1,wals,Nonperiphrastic Causative Constructions
+112A,1133,5047307129.0,8153840950.49493,73.6,75.0,wals,Negative Morphemes
+113A,295,3571085814.0,6498206061.6888,52.1,59.8,wals,Symmetric and Asymmetric Standard Negation
+114A,295,3571085814.0,6498206061.6888,52.1,59.8,wals,Subtypes of Asymmetric Standard Negation
+115A,204,4096244863.0,7053487919.42873,59.7,64.9,wals,Negative Indefinite Pronouns and Predicate Negation
+116A,941,4922366729.0,8670994704.04983,71.8,79.8,wals,Polar Questions
+117A,239,3809561232.0,6427168225.1449995,55.5,59.1,wals,Predicative Possession
+118A,382,4128096773.0,7044180565.7812,60.2,64.8,wals,Predicative Adjectives
+119A,382,4128096773.0,7044180565.7812,60.2,64.8,wals,Nominal and Locational Predication
+11A,554,4292711474.0,7294330961.2226,62.6,67.1,wals,Front Rounded Vowels
+120A,382,4128096773.0,7044180565.7812,60.2,64.8,wals,Zero Copula for Predicate Nominals
+121A,164,3522965690.0,6610612691.5504,51.4,60.8,wals,Comparative Constructions
+122A,165,3409548632.0,6230347829.605,49.7,57.3,wals,Relativization on Subjects
+123A,111,3259654513.0,6061909519.4682,47.5,55.8,wals,Relativization on Obliques
+124A,279,3893619681.0,6595542253.9748,56.8,60.7,wals,'Want' Complement Subjects
+125A,170,3247485646.0,5786342323.023999,47.3,53.2,wals,Purpose Clauses
+126A,174,3554378205.0,6328710191.2932,51.8,58.2,wals,'When' Clauses
+127A,169,3588457300.0,6368370561.2318,52.3,58.6,wals,Reason Clauses
+128A,142,3446792814.0,6301141177.584399,50.2,58.0,wals,Utterance Complement Clauses
+129A,608,3803448910.0,6666646136.65518,55.4,61.3,wals,Hand and Arm
+12A,479,4050645676.0,6974810688.1216,59.0,64.2,wals,Syllable Structure
+130A,586,3783832298.0,6645749265.366679,55.2,61.2,wals,Finger and Hand
+130B,69,482358.0,307491.9176,0.0,0.0,wals,Cultural Categories of Languages with Identity of 'Finger' and 'Hand'
+131A,192,3448942934.0,6314694383.1564,50.3,58.1,wals,Numeral Bases
+132A,119,2325030696.0,4500294674.8057995,33.9,41.4,wals,Number of Non-Derived Basic Colour Categories
+133A,119,2325030696.0,4500294674.8057995,33.9,41.4,wals,Number of Basic Colour Categories
+134A,120,2325030702.0,4500294674.8057995,33.9,41.4,wals,Green and Blue
+135A,120,2325030702.0,4500294674.8057995,33.9,41.4,wals,Red and Yellow
+136A,229,3285714186.0,6083956600.9062,47.9,56.0,wals,M-T Pronouns
+136B,229,3285723711.0,6083956600.9062,47.9,56.0,wals,M in First Person Singular
+137A,229,3285714186.0,6083956600.9062,47.9,56.0,wals,N-M Pronouns
+137B,229,3285723711.0,6083956600.9062,47.9,56.0,wals,M in Second Person Singular
+138A,225,5002798087.0,8202659273.01303,72.9,75.5,wals,Tea
+139A,35,4347200.0,0.0,0.1,0.0,wals,Irregular Negatives in Sign Languages
+13A,519,4285320824.0,7286644808.5402,62.5,67.0,wals,Tone
+140A,38,4347275.0,0.0,0.1,0.0,wals,Question Particles in Sign Languages
+141A,6,57625.0,258163.271,0.0,0.0,wals,Writing Systems
+142A,139,2930456573.0,5235694644.6782,42.7,48.2,wals,Para-Linguistic Usages of Clicks
+143A,1298,5373515146.0,9103804715.72473,78.3,83.8,wals,Order of Negative Morpheme and Verb
+143B,117,131850334.0,169449140.9393,1.9,1.6,wals,Obligatory Double Negation
+143C,81,211481817.0,491236411.35580003,3.1,4.5,wals,Optional Double Negation
+143D,6,18000.0,1731045.0,0.0,0.0,wals,Optional Triple Negation
+143E,1298,5373515146.0,9103804715.72473,78.3,83.8,wals,Preverbal Negative Morphemes
+143F,1298,5373515146.0,9103804715.72473,78.3,83.8,wals,Postverbal Negative Morphemes
+143G,1298,5373515146.0,9103804715.72473,78.3,83.8,wals,Minor morphological means of signaling negation
+144A,1168,5309394862.0,9041178609.22983,77.4,83.2,wals,"Position of Negative Word With Respect to Subject, Object, and Verb"
+144B,600,4388732554.0,7792504825.59843,64.0,71.7,wals,Position of negative words relative to beginning and end of clause and with respect to adjacency to verb
+144C,27,13740219.0,15700665.2679,0.2,0.1,wals,Languages with different word order in negative clauses
+144D,458,3326733940.0,5983937126.47093,48.5,55.1,wals,The Position of Negative Morphemes in SVO Languages
+144E,48,173501253.0,279679677.0652,2.5,2.6,wals,Multiple Negative Constructions in SVO Languages
+144F,55,32883650.0,39954642.7866,0.5,0.4,wals,Obligatory Double Negation in SVO languages
+144G,35,203292896.0,480171430.349,3.0,4.4,wals,Optional Double Negation in SVO languages
+144H,415,3308220480.0,5968219702.63433,48.2,54.9,wals,NegSVO Order
+144I,416,3308220480.0,5968219702.63433,48.2,54.9,wals,SNegVO Order
+144J,441,3323905401.0,5979966714.42093,48.5,55.0,wals,SVNegO Order
+144K,441,3323905401.0,5979966714.42093,48.5,55.0,wals,SVONeg Order
+144L,560,2014084286.0,2771731313.8762,29.4,25.5,wals,The Position of Negative Morphemes in SOV Languages
+144M,54,114044402.0,191548448.179,1.7,1.8,wals,Multiple Negative Constructions in SOV Languages
+144N,44,63344843.0,89554318.1104,0.9,0.8,wals,Obligatory Double Negation in SOV languages
+144O,31,765713.0,456781.80000000005,0.0,0.0,wals,Optional Double Negation in SOV languages
+144P,399,1963834036.0,2724337952.6622,28.6,25.1,wals,NegSOV Order
+144Q,399,1963834036.0,2724337952.6622,28.6,25.1,wals,SNegOV Order
+144R,402,1965237276.0,2724337952.6622,28.6,25.1,wals,SONegV Order
+144S,478,1972846739.0,2746169968.6422,28.8,25.3,wals,SOVNeg Order
+144T,148,118775556.0,523043911.7927,1.7,4.8,wals,The Position of Negative Morphemes in Verb-Initial Languages
+144U,17,35505708.0,39961173.22,0.5,0.4,wals,Double negation in verb-initial languages
+144V,148,118775556.0,523043911.7927,1.7,4.8,wals,Verb-Initial with Preverbal Negative
+144W,147,118775556.0,523043911.7927,1.7,4.8,wals,Verb-Initial with Negative that is Immediately Postverbal or between Subject and Object
+144X,147,118775556.0,523043911.7927,1.7,4.8,wals,Verb-Initial with Clause-Final Negative
+144Y,16,33619.0,9973.05,0.0,0.0,wals,The Position of Negative Morphemes in Object-Initial Languages
+14A,485,4089245421.0,6967937413.822172,59.6,64.1,wals,Fixed Stress Locations
+15A,483,4089076052.0,6967766432.322172,59.6,64.1,wals,Weight-Sensitive Stress
+16A,483,4089076052.0,6967766432.322172,59.6,64.1,wals,Weight Factors in Weight-Sensitive Stress Systems
+17A,310,2270789954.0,4216290473.6412,33.1,38.8,wals,Rhythm Types
+18A,559,4292711474.0,7294330961.2226,62.6,67.1,wals,Absence of Common Consonants
+19A,559,4292711474.0,7294330961.2226,62.6,67.1,wals,Presence of Uncommon Consonants
+1A,555,4284709824.0,7287825518.822599,62.5,67.1,wals,Consonant Inventories
+20A,164,3268652046.0,6094546317.1092,47.6,56.1,wals,Fusion of Selected Inflectional Formatives
+21A,161,3268449925.0,6094375335.6092,47.6,56.1,wals,Exponence of Selected Inflectional Formatives
+21B,159,3268449919.0,6094375335.6092,47.6,56.1,wals,Exponence of Tense-Aspect-Mood Inflection
+22A,144,3278957542.0,6100230804.4012,47.8,56.1,wals,Inflectional Synthesis of the Verb
+23A,235,3317889824.0,6143518571.327,48.4,56.5,wals,Locus of Marking in the Clause
+24A,235,3317889824.0,6143518571.327,48.4,56.5,wals,Locus of Marking in Possessive Noun Phrases
+25A,235,3317889824.0,6143518571.327,48.4,56.5,wals,Locus of Marking: Whole-language Typology
+25B,234,3317890424.0,6143518571.327,48.4,56.5,wals,Zero Marking of A and P Arguments
+26A,958,4799356274.0,8515423392.98623,70.0,78.4,wals,Prefixing vs. Suffixing in Inflectional Morphology
+27A,364,4169945318.0,7160220368.89963,60.8,65.9,wals,Reduplication
+28A,197,3339558057.0,6165195161.9744,48.7,56.7,wals,Case Syncretism
+29A,197,3339558112.0,6165195161.9744,48.7,56.7,wals,Syncretism in Verbal Person/Number Marking
+2A,556,4292711474.0,7294330961.2226,62.6,67.1,wals,Vowel Quality Inventories
+30A,257,3624823170.0,6681202297.9634,52.8,61.5,wals,Number of Genders
+31A,257,3624823170.0,6681202297.9634,52.8,61.5,wals,Sex-based and Non-sex-based Gender Systems
+32A,257,3624823170.0,6681202297.9634,52.8,61.5,wals,Systems of Gender Assignment
+33A,1051,4764541205.0,8074866043.10993,69.5,74.3,wals,Coding of Nominal Plurality
+34A,289,3910605270.0,6832576191.15543,57.0,62.9,wals,Occurrence of Nominal Plurality
+35A,260,3629324176.0,6582013362.5294,52.9,60.6,wals,Plurality in Independent Personal Pronouns
+36A,232,4310221304.0,7360478293.43713,62.8,67.7,wals,The Associative Plural
+37A,610,3463197120.0,6789603625.93393,50.5,62.5,wals,Definite Articles
+38A,525,3331341771.0,6049263411.34013,48.6,55.7,wals,Indefinite Articles
+39A,199,3339559307.0,6165195161.9744,48.7,56.7,wals,Inclusive/Exclusive Distinction in Independent Pronouns
+39B,68,9161.0,2489.4797999999996,0.0,0.0,wals,Inclusive/Exclusive Forms in Pama-Nyungan
+3A,556,4292711474.0,7294330961.2226,62.6,67.1,wals,Consonant-Vowel Ratio
+40A,199,3339559307.0,6165195161.9744,48.7,56.7,wals,Inclusive/Exclusive Distinction in Verbal Inflection
+41A,233,3512128393.0,6532014341.5238,51.2,60.1,wals,Distance Contrasts in Demonstratives
+42A,201,3388288841.0,6394145134.7038,49.4,58.8,wals,Pronominal and Adnominal Demonstratives
+43A,224,3449415607.0,6212248627.702,50.3,57.2,wals,Third Person Pronouns and Demonstratives
+44A,375,3550987303.0,6415818124.167,51.8,59.0,wals,Gender Distinctions in Independent Personal Pronouns
+45A,205,4213173500.0,7456594379.839129,61.4,68.6,wals,Politeness Distinctions in Pronouns
+46A,324,4285982125.0,7319608232.31713,62.5,67.4,wals,Indefinite Pronouns
+47A,168,4579986526.0,7688464014.76363,66.8,70.7,wals,Intensifiers and Reflexive Pronouns
+48A,375,3550988908.0,6415818124.167,51.8,59.0,wals,Person Marking on Adpositions
+49A,259,3614222961.0,6582587433.09,52.7,60.6,wals,Number of Cases
+4A,559,4292711474.0,7294330961.2226,62.6,67.1,wals,Voicing in Plosives and Fricatives
+50A,259,3614222961.0,6582587433.09,52.7,60.6,wals,Asymmetrical Case-Marking
+51A,1017,5111549417.0,8815114154.159029,74.5,81.1,wals,Position of Case Affixes
+52A,318,3515035744.0,6622307101.2043295,51.2,60.9,wals,Comitatives and Instrumentals
+53A,317,4610009005.0,7670830329.13133,67.2,70.6,wals,Ordinal Numerals
+54A,234,4221862605.0,7220201303.2906,61.5,66.4,wals,Distributive Numerals
+55A,394,3520858584.0,6479159428.9922,51.3,59.6,wals,Numeral Classifiers
+56A,114,2918816285.0,5683944690.793,42.5,52.3,wals,Conjunctions and Universal Quantifiers
+57A,891,3455264287.0,6522863907.4056,50.4,60.0,wals,Position of Pronominal Possessive Affixes
+58A,243,3313775393.0,6151161890.36,48.3,56.6,wals,Obligatory Possessive Inflection
+58B,242,3313775393.0,6151050533.64,48.3,56.6,wals,Number of Possessive Nouns
+59A,242,3313771893.0,6151161890.36,48.3,56.6,wals,Possessive Classification
+5A,559,4292711474.0,7294330961.2226,62.6,67.1,wals,Voicing and Gaps in Plosive Systems
+60A,136,2744060591.0,5420319440.463,40.0,49.9,wals,"Genitives, Adjectives and Relative Clauses"
+61A,122,3163108443.0,6028477577.7422,46.1,55.5,wals,Adjectives without Nouns
+62A,167,3633283566.0,6683544790.617,53.0,61.5,wals,Action Nominal Constructions
+63A,232,3561340734.0,6414153073.988,51.9,59.0,wals,Noun Phrase Conjunction
+64A,299,3764370520.0,6539285819.838,54.9,60.2,wals,Nominal and Verbal Conjunction
+65A,220,4449900250.0,7497840469.804029,64.9,69.0,wals,Perfective/Imperfective Aspect
+66A,220,4449900250.0,7497840469.804029,64.9,69.0,wals,The Past Tense
+67A,220,4449900250.0,7497840469.804029,64.9,69.0,wals,The Future Tense
+68A,220,4449900250.0,7497840469.804029,64.9,69.0,wals,The Perfect
+69A,1116,4969276973.0,8347968076.47343,72.4,76.8,wals,Position of Tense-Aspect Affixes
+6A,559,4292711474.0,7294330961.2226,62.6,67.1,wals,Uvular Consonants
+70A,544,4618811948.0,7718370564.09783,67.3,71.0,wals,The Morphological Imperative
+71A,492,4504927817.0,7597427704.51923,65.7,69.9,wals,The Prohibitive
+72A,371,4172027317.0,7167026511.49253,60.8,65.9,wals,Imperative-Hortative Systems
+73A,315,4045482924.0,7304395599.0596,59.0,67.2,wals,The Optative
+74A,232,4389251200.0,7472266986.12653,64.0,68.8,wals,Situational Possibility
+75A,237,4359169741.0,7452049307.54453,63.5,68.6,wals,Epistemic Possibility
+76A,205,4349405074.0,7440531264.94453,63.4,68.5,wals,Overlap between Situational and Epistemic Modal Marking
+77A,412,3568457194.0,6525696197.715199,52.0,60.0,wals,Semantic Distinctions of Evidentiality
+78A,412,3568457194.0,6525696197.715199,52.0,60.0,wals,Coding of Evidentiality
+79A,192,3898277045.0,6781307960.9095,56.8,62.4,wals,Suppletion According to Tense and Aspect
+79B,192,3898277045.0,6781307960.9095,56.8,62.4,wals,Suppletion in Imperatives and Hortatives
+7A,559,4292711474.0,7294330961.2226,62.6,67.1,wals,Glottalized Consonants
+80A,192,3898277045.0,6781307960.9095,56.8,62.4,wals,Verbal Number and Suppletion
+81A,1346,5409913607.0,9136281657.44003,78.9,84.1,wals,"Order of Subject, Object and Verb"
+81B,66,166020903.0,252074211.74479997,2.4,2.3,wals,"Languages with two Dominant Orders of Subject, Object, and Verb"
+82A,1464,5503352821.0,9226893872.94903,80.2,84.9,wals,Order of Subject and Verb
+83A,1484,5496653809.0,9226076139.02803,80.1,84.9,wals,Order of Object and Verb
+84A,496,3244414152.0,6007705514.0522,47.3,55.3,wals,"Order of Object, Oblique, and Verb"
+85A,1162,4945879911.0,8752540322.68343,72.1,80.5,wals,Order of Adposition and Noun Phrase
+86A,1225,4892185870.0,8653181405.59553,71.3,79.6,wals,Order of Genitive and Noun
+87A,1336,5052554216.0,8816218638.99043,73.7,81.1,wals,Order of Adjective and Noun
+88A,1199,5014669380.0,8797903076.248829,73.1,81.0,wals,Order of Demonstrative and Noun
+89A,1131,4761926598.0,8520311227.1612,69.4,78.4,wals,Order of Numeral and Noun
+8A,559,4292711474.0,7294330961.2226,62.6,67.1,wals,Lateral Consonants
+90A,810,4896268360.0,8245437703.66893,71.4,75.9,wals,Order of Relative Clause and Noun
+90B,187,1941277563.0,2572421494.1584,28.3,23.7,wals,Prenominal relative clauses
+90C,612,2543812131.0,4744656522.60173,37.1,43.7,wals,Postnominal relative clauses
+90D,62,358432103.0,420194224.703,5.2,3.9,wals,Internally-headed relative clauses
+90E,23,542277979.0,1044013038.615,7.9,9.6,wals,Correlative relative clauses
+90F,10,3947.0,222395.4798,0.0,0.0,wals,Adjoined relative clauses
+90G,5,21000.0,0.0,0.0,0.0,wals,Double-headed relative clauses
+91A,470,4366375827.0,7850294405.1130295,63.6,72.2,wals,Order of Degree Word and Adjective
+92A,870,4758683781.0,8384853474.41973,69.4,77.2,wals,Position of Polar Question Particles
+93A,891,4577198631.0,7931379505.1761,66.7,73.0,wals,Position of Interrogative Phrases in Content Questions
+94A,650,3600446775.0,6931452913.9291,52.5,63.8,wals,Order of Adverbial Subordinator and Clause
+95A,1121,4952114491.0,8760959370.57203,72.2,80.6,wals,Relationship between the Order of Object and Verb and the Order of Adposition and Noun Phrase
+96A,864,4910296936.0,8274019667.07473,71.6,76.1,wals,Relationship between the Order of Object and Verb and the Order of Relative Clause and Noun
+97A,1288,5045243253.0,8803474377.76523,73.5,81.0,wals,Relationship between the Order of Object and Verb and the Order of Adjective and Noun
+98A,189,3421051840.0,6261100880.8664,49.9,57.6,wals,Alignment of Case Marking of Full Noun Phrases
+99A,171,3420375625.0,6260479822.2736,49.9,57.6,wals,Alignment of Case Marking of Pronouns
+9A,450,3636420495.0,6557051401.6182995,53.0,60.3,wals,The Velar Nasal
+GB020,2130,4676249601.0,8085446114.933972,68.2,74.4,grambank,Are there definite or specific articles?
+GB021,2153,4555487368.0,7948027313.7219715,66.4,73.1,grambank,Do indefinite nominals commonly have indefinite articles?
+GB022,2139,4526827477.0,7938503757.739972,66.0,73.0,grambank,Are there prenominal articles?
+GB023,2137,4678225679.0,8088369040.473972,68.2,74.4,grambank,Are there postnominal articles?
+GB024,2131,4632314573.0,8049341596.233972,67.5,74.1,grambank,What is the order of numeral and noun in the NP?
+GB025,2200,4648740150.0,8045932724.645172,67.8,74.0,grambank,What is the order of adnominal demonstrative and noun?
+GB026,1720,3838010497.0,6762838210.3181715,55.9,62.2,grambank,Can adnominal property words occur discontinuously?
+GB027,1725,4272496563.0,7588758155.5021715,62.3,69.8,grambank,Are nominal conjunction and comitative expressed by different elements?
+GB028,2289,4659497590.0,8042572801.275971,67.9,74.0,grambank,Is there a distinction between inclusive and exclusive?
+GB030,2306,4677158928.0,8094323010.825171,68.2,74.5,grambank,Is there a gender distinction in independent 3rd person pronouns?
+GB031,2264,4674421129.0,8089417642.913972,68.1,74.4,grambank,Is there a dual or unit augmented form (in addition to plural or augmented) for all person categories in the pronoun system?
+GB035,2119,4592744444.0,7924552272.240171,66.9,72.9,grambank,Are there three or more distance contrasts in demonstratives?
+GB036,2117,4664364473.0,8083044867.093572,68.0,74.4,grambank,Do demonstratives show an elevation distinction?
+GB037,2080,4635049378.0,7869154157.994972,67.6,72.4,grambank,Do demonstratives show a visible-nonvisible distinction?
+GB038,2136,4515037790.0,7898399469.164971,65.8,72.7,grambank,Are there demonstrative classifiers?
+GB039,2080,4296927750.0,7439743807.176772,62.6,68.5,grambank,Is there nonphonological allomorphy of noun number markers?
+GB041,1690,3888216528.0,7000042326.029972,56.7,64.4,grambank,Are there several nouns (more than three) which are suppletive for number?
+GB042,2280,4667285202.0,8091954910.975972,68.0,74.5,grambank,Is there productive overt morphological singular marking on nouns?
+GB043,2234,4678038913.0,8095632614.613972,68.2,74.5,grambank,Is there productive morphological dual marking on nouns?
+GB044,2234,4663605631.0,8085735776.803972,68.0,74.4,grambank,Is there productive morphological plural marking on nouns?
+GB046,1432,3990946145.0,7007184211.1004715,58.2,64.5,grambank,Is there an associative plural marker for nouns?
+GB047,1611,4422847239.0,7835602069.078772,64.5,72.1,grambank,Is there a productive morphological pattern for deriving an action/state noun from a verb?
+GB048,1611,4246781680.0,7532188634.962771,61.9,69.3,grambank,Is there a productive morphological pattern for deriving an agent noun from a verb?
+GB049,1538,4149146835.0,7501967878.359172,60.5,69.0,grambank,Is there a productive morphological pattern for deriving an object noun from a verb?
+GB051,2139,4477737524.0,7731352092.264172,65.3,71.1,grambank,Is there a gender/noun class system where sex is a factor in class assignment?
+GB052,2160,4486363364.0,7748519608.132172,65.4,71.3,grambank,Is there a gender/noun class system where shape is a factor in class assignment?
+GB053,2113,4431270188.0,7653145241.618172,64.6,70.4,grambank,Is there a gender/noun class system where animacy is a factor in class assignment?
+GB054,2123,4461784472.0,7719737641.307172,65.0,71.0,grambank,Is there a gender/noun class system where plant status is a factor in class assignment?
+GB057,2110,4490626254.0,7825547093.917972,65.5,72.0,grambank,Are there numeral classifiers?
+GB058,2165,4488329195.0,7869783629.589972,65.4,72.4,grambank,Are there possessive classifiers?
+GB059,1965,4400539561.0,7786272823.147972,64.1,71.6,grambank,Is the adnominal possessive construction different for alienable and inalienable nouns?
+GB065,2253,4676475389.0,8095523430.191972,68.2,74.5,grambank,What is the pragmatically unmarked order of adnominal possessor noun and possessed noun?
+GB068,1892,4381636324.0,7384264979.102631,63.9,67.9,grambank,"Do core adjectives (defined semantically as property concepts such as value, shape, age, dimension) act like verbs in predicative position?"
+GB069,1806,4323891370.0,7691398550.81403,63.0,70.8,grambank,"Do core adjectives (defined semantically as property concepts; value, shape, age, dimension) used attributively require the same morphological treatment as verbs?"
+GB070,2200,4570238073.0,7901510758.548172,66.6,72.7,grambank,Are there morphological cases for non-pronominal core arguments (i.e. S/A/P)?
+GB071,2173,4637971198.0,8044661534.888172,67.6,74.0,grambank,Are there morphological cases for pronominal core arguments (i.e. S/A/P)?
+GB072,2162,4595141662.0,8011614257.041172,67.0,73.7,grambank,Are there morphological cases for oblique non-pronominal NPs (i.e. not S/A/P)?
+GB073,2042,4559608207.0,7581866789.486172,66.5,69.8,grambank,Are there morphological cases for independent oblique personal pronominal arguments (i.e. not S/A/P)?
+GB074,2196,4583078339.0,7992689099.628972,66.8,73.5,grambank,Are there prepositions?
+GB075,2090,4610231928.0,8044374750.030972,67.2,74.0,grambank,Are there postpositions?
+GB079,2104,4074078248.0,7209273253.059172,59.4,66.3,grambank,"Do verbs have prefixes/proclitics, other than those that only mark A, S or P (do include portmanteau: A & S + TAM)?"
+GB080,2196,4524954309.0,7924085860.828772,66.0,72.9,grambank,"Do verbs have suffixes/enclitics, other than those that only mark A, S or P (do include portmanteau: A & S + TAM)?"
+GB081,2080,4516531522.0,7911062726.821972,65.8,72.8,grambank,Is there productive infixation in verbs?
+GB082,2189,4604688419.0,7847291981.972772,67.1,72.2,grambank,Is there overt morphological marking of present tense on verbs?
+GB083,2199,4624610144.0,8041493152.643972,67.4,74.0,grambank,Is there overt morphological marking on the verb dedicated to past tense?
+GB084,2204,4625494433.0,8043084600.923972,67.4,74.0,grambank,Is there overt morphological marking on the verb dedicated to future tense?
+GB086,2064,4631526437.0,7653573984.243972,67.5,70.4,grambank,Is a morphological distinction between perfective and imperfective aspect available on verbs?
+GB089,2247,4631970809.0,8048404285.923972,67.5,74.1,grambank,Can the S argument be indexed by a suffix/enclitic on the verb in the simple main clause?
+GB090,2254,4552597280.0,7948594559.631972,66.4,73.1,grambank,Can the S argument be indexed by a prefix/proclitic on the verb in the simple main clause?
+GB091,2241,4632075258.0,8048807425.083972,67.5,74.1,grambank,Can the A argument be indexed by a suffix/enclitic on the verb in the simple main clause?
+GB092,2256,4534190369.0,7928740979.443972,66.1,73.0,grambank,Can the A argument be indexed by a prefix/proclitic on the verb in the simple main clause?
+GB093,2237,4579847877.0,7974220085.533972,66.8,73.4,grambank,Can the P argument be indexed by a suffix/enclitic on the verb in the simple main clause?
+GB094,2234,4575633875.0,7974222452.989972,66.7,73.4,grambank,Can the P argument be indexed by a prefix/proclitic on the verb in the simple main clause?
+GB095,1976,4494059833.0,7897671362.864972,65.5,72.7,grambank,Are variations in marking strategies of core participants based on TAM distinctions?
+GB096,1981,4494461233.0,7900479648.604972,65.5,72.7,grambank,Are variations in marking strategies of core participants based on verb classes?
+GB098,1992,4460636822.0,7872434822.017172,65.0,72.4,grambank,Are variations in marking strategies of core participants based on person distinctions?
+GB099,1883,4313566362.0,7732164551.812372,62.9,71.1,grambank,Can verb stems alter according to the person of a core participant?
+GB103,1982,4505209077.0,7894049500.803372,65.7,72.6,grambank,Is there a benefactive applicative marker on the verb (including indexing)?
+GB104,1923,4430436292.0,7782714430.293372,64.6,71.6,grambank,Is there an instrumental applicative marker on the verb (including indexing)?
+GB105,1830,4358142782.0,7326953772.2549715,63.5,67.4,grambank,Can the recipient in a ditransitive construction be marked like the monotransitive patient?
+GB107,2235,4589526741.0,8017886380.543972,66.9,73.8,grambank,"Can standard negation be marked by an affix, clitic or modification of the verb?"
+GB108,2039,4422445322.0,7818086871.422972,64.5,71.9,grambank,Is there directional or locative morphological marking on verbs?
+GB109,1831,4306708819.0,7715658589.258371,62.8,71.0,grambank,Is there verb suppletion for participant number?
+GB110,1829,4305246144.0,7709561312.797772,62.8,70.9,grambank,Is there verb suppletion for tense or aspect?
+GB111,2041,4373951722.0,7740009389.951972,63.8,71.2,grambank,Are there conjugation classes?
+GB113,1816,4373369714.0,7755134041.46703,63.8,71.4,grambank,Are there verbal affixes or clitics that turn intransitive verbs into transitive ones?
+GB114,1909,4455040286.0,7863022114.929972,64.9,72.4,grambank,Is there a phonologically bound reflexive marker on the verb?
+GB115,1901,4396608524.0,7813488300.499971,64.1,71.9,grambank,Is there a phonologically bound reciprocal marker on the verb?
+GB116,1876,4420538142.0,7749125284.5365715,64.4,71.3,grambank,"Do verbs classify the shape, size or consistency of absolutive arguments by means of incorporated nouns, verbal affixes or suppletive verb stems?"
+GB117,1971,4509853069.0,7490375147.484172,65.7,68.9,grambank,Is there a copula for predicate nominals?
+GB118,1543,4116658015.0,7376141170.927629,60.0,67.9,grambank,Are there serial verb constructions?
+GB119,1833,4381713438.0,7374317171.94703,63.9,67.9,grambank,"Can mood be marked by an inflecting word (""auxiliary verb"")?"
+GB120,1870,4265723472.0,7175260723.36663,62.2,66.0,grambank,"Can aspect be marked by an inflecting word (""auxiliary verb"")?"
+GB121,1896,4329041618.0,7307832917.71503,63.1,67.2,grambank,"Can tense be marked by an inflecting word (""auxiliary verb"")?"
+GB122,1569,4289804823.0,7663525135.916972,62.5,70.5,grambank,Is verb compounding a regular process?
+GB123,1211,3875240128.0,7139518834.942272,56.5,65.7,grambank,Are there verb-adjunct (aka light-verb) constructions?
+GB124,1607,4276987140.0,7633479061.006971,62.3,70.2,grambank,Is incorporation of nouns into verbs a productive intransitivizing process?
+GB126,1733,4496632959.0,7763785717.624971,65.5,71.4,grambank,Is there an existential verb?
+GB127,1280,3538807575.0,6480845044.467972,51.6,59.6,grambank,Are different posture verbs used obligatorily depending on an inanimate locatum's shape or position (e.g. 'to lie' vs. 'to stand')?
+GB129,2040,4128721681.0,7308279687.326272,60.2,67.2,grambank,"Is there a notably small number, i.e. about 100 or less, of verb roots in the language?"
+GB130,2251,4674663276.0,8090669122.095972,68.1,74.4,grambank,What is the pragmatically unmarked order of S and V in intransitive clauses?
+GB131,2278,4635052368.0,8051694237.711972,67.6,74.1,grambank,Is a pragmatically unmarked constituent order verb-initial for transitive clauses?
+GB132,2257,4619706491.0,8033766992.627972,67.3,73.9,grambank,Is a pragmatically unmarked constituent order verb-medial for transitive clauses?
+GB133,2266,4621548866.0,8034514483.251972,67.4,73.9,grambank,Is a pragmatically unmarked constituent order verb-final for transitive clauses?
+GB134,1697,4398313856.0,7765462416.02963,64.1,71.5,grambank,Is the order of constituents the same in main and subordinate clauses?
+GB135,1553,4289120453.0,7655795809.4782295,62.5,70.4,grambank,Do clausal objects usually occur in the same position as nominal objects?
+GB136,1969,4448285148.0,7852075253.2479725,64.8,72.3,grambank,Is the order of core argument (i.e. S/A/P) constituents fixed?
+GB137,2154,4503858559.0,7894880365.069372,65.7,72.6,grambank,Can standard negation be marked clause-finally?
+GB138,2145,4390363149.0,7450644297.952172,64.0,68.6,grambank,Can standard negation be marked clause-initially?
+GB139,1974,4482104920.0,7920932367.058172,65.3,72.9,grambank,Is there a difference between imperative (prohibitive) and declarative negation constructions?
+GB140,1531,4217051690.0,7617441222.761772,61.5,70.1,grambank,"Is verbal predication marked by the same negator as all of the following types of predication: locational, existential and nominal?"
+GB146,1327,4133868042.0,7450366864.959372,60.3,68.6,grambank,Is there a morpho-syntactic distinction between predicates expressing controlled versus uncontrolled events or states?
+GB147,1874,4560051896.0,7983521913.312972,66.5,73.5,grambank,Is there a morphological passive marked on the lexical verb?
+GB148,1754,4393662544.0,7776325464.744371,64.0,71.6,grambank,Is there a morphological antipassive marked on the lexical verb?
+GB149,1904,4401179090.0,7795059966.238972,64.2,71.7,grambank,Is there a morphologically marked inverse on verbs?
+GB150,1468,4121161380.0,7499655299.470972,60.1,69.0,grambank,Is there clause chaining?
+GB151,1737,4106272200.0,7386632991.875372,59.9,68.0,grambank,"Is there an overt verb marker dedicated to signalling coreference or noncoreference between the subject of one clause and an argument of an adjacent clause (""switch reference"")?"
+GB152,1663,4325948599.0,7685496367.874972,63.1,70.7,grambank,Is there a morphologically marked distinction between simultaneous and sequential clauses?
+GB155,1993,4561595638.0,7965416370.538772,66.5,73.3,grambank,Are causatives formed by affixes or clitics on verbs?
+GB156,1746,4415807767.0,7768321241.182772,64.4,71.5,grambank,Is there a causative construction involving an element that is unmistakably grammaticalized from a verb for 'to say'?
+GB158,1837,4207874230.0,7591764488.306,61.3,69.9,grambank,Are verbs reduplicated?
+GB159,1657,4051179629.0,7418409877.961342,59.1,68.3,grambank,Are nouns reduplicated?
+GB160,1666,4315192380.0,7689492528.696372,62.9,70.8,grambank,Are elements apart from verbs or nouns reduplicated?
+GB165,2071,4421983973.0,7658332848.428172,64.5,70.5,grambank,Is there productive morphological trial marking on nouns?
+GB166,2062,4421936473.0,7658332848.428172,64.5,70.5,grambank,Is there productive morphological paucal marking on nouns?
+GB167,1541,4283993264.0,7505392145.57383,62.4,69.1,grambank,Is there a logophoric pronoun?
+GB170,2073,4365479749.0,7572801519.338172,63.6,69.7,grambank,Can an adnominal property word agree with the noun in gender/noun class?
+GB171,2075,4427179281.0,7663458772.199371,64.5,70.5,grambank,Can an adnominal demonstrative agree with the noun in gender/noun class?
+GB172,2056,4410837904.0,7642231786.741172,64.3,70.3,grambank,Can an article agree with the noun in gender/noun class?
+GB177,1821,4225552952.0,7420734104.485172,61.6,68.3,grambank,"Can the verb carry a marker of animacy of argument, unrelated to any gender/noun class of the argument visible in the NP domain?"
+GB184,1874,4282059705.0,7476626982.132172,62.4,68.8,grambank,Can an adnominal property word agree with the noun in number?
+GB185,1907,4168496515.0,7313469278.589372,60.8,67.3,grambank,Can an adnominal demonstrative agree with the noun in number?
+GB186,1925,4269528557.0,7441181395.477172,62.2,68.5,grambank,Can an article agree with the noun in number?
+GB187,1427,4028876317.0,7276681509.087172,58.7,67.0,grambank,Is there any productive diminutive marking on the noun (exclude marking by system of nominal classification only)?
+GB188,1284,3449124400.0,6419788409.92543,50.3,59.1,grambank,Is there any productive augmentative marking on the noun (exclude marking by system of nominal classification only)?
+GB192,2028,4402732894.0,7633433751.320171,64.2,70.2,grambank,Is there a gender system where a noun's phonological properties are a factor in class assignment?
+GB193,2062,4354199593.0,7586631393.098172,63.5,69.8,grambank,What is the order of adnominal property word and noun?
+GB196,2112,4421982309.0,7657553792.771372,64.5,70.5,grambank,Is there a male/female distinction in 2nd person independent pronouns?
+GB197,2117,4422024309.0,7657553792.771372,64.5,70.5,grambank,Is there a male/female distinction in 1st person independent pronouns?
+GB198,1998,4251798086.0,7381704953.166172,62.0,67.9,grambank,Can an adnominal numeral agree with the noun in gender/noun class?
+GB203,1519,4200255510.0,7240887476.48143,61.2,66.6,grambank,What is the order of the adnominal collective universal quantifier ('all') and the noun?
+GB204,1094,4087480731.0,7147327907.75243,59.6,65.8,grambank,Do collective ('all') and distributive ('every') universal quantifiers differ in their forms or their syntactic positions?
+GB250,1462,4167060868.0,7260582905.035972,60.7,66.8,grambank,Can predicative possession be expressed with a transitive 'habeo' verb?
+GB252,1316,4052090332.0,7318006827.963772,59.1,67.3,grambank,Can predicative possession be expressed with an S-like possessum and a locative-coded possessor?
+GB253,1308,4045369221.0,7299911595.327772,59.0,67.2,grambank,Can predicative possession be expressed with an S-like possessum and a dative-coded possessor?
+GB254,1366,3938304608.0,7176137902.7177725,57.4,66.0,grambank,Can predicative possession be expressed with an S-like possessum and a possessor that is coded like an adnominal possessor?
+GB256,1322,3948697354.0,6994629459.057972,57.6,64.4,grambank,Can predicative possession be expressed with an S-like possessor and a possessum that is coded like a comitative argument?
+GB257,1581,4159201661.0,7428077878.49023,60.6,68.3,grambank,Can polar interrogation be marked by intonation only?
+GB260,1704,4236621328.0,7466507592.45183,61.8,68.7,grambank,Can polar interrogation be indicated by a special word order?
+GB262,1720,4268830015.0,7339740300.842629,62.2,67.5,grambank,Is there a clause-initial polar interrogative particle?
+GB263,1708,4261682635.0,7505117292.84383,62.1,69.1,grambank,Is there a clause-final polar interrogative particle?
+GB264,1708,4224008943.0,7465704318.922629,61.6,68.7,grambank,Is there a polar interrogative particle that most commonly occurs neither clause-initially nor clause-finally?
+GB265,1241,4284392746.0,7495058070.761572,62.5,69.0,grambank,"Is there a comparative construction that includes a form that elsewhere means 'surpass, exceed'?"
+GB266,1210,4274762601.0,7475937221.271372,62.3,68.8,grambank,Is there a comparative construction that employs a marker of the standard which elsewhere has a locational meaning?
+GB270,1177,4248614616.0,7450570866.295571,61.9,68.6,grambank,Can comparatives be expressed using two conjoined clauses?
+GB273,1199,4260033350.0,7476663087.861572,62.1,68.8,grambank,Is there a comparative construction with a standard marker that elsewhere has neither a locational meaning nor a 'surpass/exceed' meaning?
+GB275,1286,4347934692.0,7576513877.143372,63.4,69.7,grambank,Is there a bound comparative degree marker on the property word in a comparative construction?
+GB276,1258,4319541974.0,7547290788.8223715,63.0,69.4,grambank,Is there a non-bound comparative degree marker modifying the property word in a comparative construction?
+GB285,1667,4096856610.0,7239523565.392631,59.7,66.6,grambank,Can polar interrogation be marked by a question particle and verbal morphology?
+GB286,1718,4209033280.0,7415980365.04863,61.4,68.2,grambank,Can polar interrogation be indicated by overt verbal morphology only?
+GB291,1661,4203777700.0,7441294436.52583,61.3,68.5,grambank,Can polar interrogation be marked by tone?
+GB296,937,2944232479.0,5440689795.2898,42.9,50.1,grambank,Is there a phonologically or morphosyntactically definable class of ideophones that includes ideophones depicting imagery beyond sound?
+GB297,1574,4091631227.0,7285634065.75783,59.6,67.0,grambank,Can polar interrogation be indicated by a V-not-V construction?
+GB298,1982,4259332081.0,7445997961.363172,62.1,68.5,grambank,"Can standard negation be marked by an inflecting word (""auxiliary verb"")?"
+GB299,1998,4272108069.0,7471089552.056172,62.3,68.7,grambank,"Can standard negation be marked by a non-inflecting word (""auxiliary particle"")?"
+GB300,1251,4023050683.0,7229697332.189772,58.6,66.5,grambank,Does the verb for 'give' have suppletive verb forms?
+GB301,1092,3847256424.0,6621629566.95863,56.1,60.9,grambank,Is there an inclusory construction?
+GB302,1557,4054300631.0,7267834666.327171,59.1,66.9,grambank,"Is there a phonologically free passive marker (""particle"" or ""auxiliary"")?"
+GB303,1480,4173046288.0,7393177752.633772,60.8,68.0,grambank,"Is there a phonologically free antipassive marker (""particle"" or ""auxiliary"")?"
+GB304,1293,4109578838.0,7314875713.20053,59.9,67.3,grambank,Can the agent be expressed overtly in a passive clause?
+GB305,1657,4208224630.0,7425487861.645172,61.3,68.3,grambank,Is there a phonologically independent reflexive pronoun?
+GB306,1493,3989609347.0,7232667431.40063,58.2,66.6,grambank,Is there a phonologically independent non-bipartite reciprocal pronoun?
+GB309,1867,4223459940.0,7422927898.31763,61.6,68.3,grambank,"Are there multiple past or multiple future tenses, distinguishing distance from Time of Reference?"
+GB312,1865,4286617452.0,7471800411.738172,62.5,68.8,grambank,Is there overt morphological marking on the verb dedicated to mood?
+GB313,1876,4170043476.0,7347173378.662572,60.8,67.6,grambank,Are there special adnominal possessive pronouns that are not formed by an otherwise regular process?
+GB314,1751,3943967863.0,7128354293.74443,57.5,65.6,grambank,Can augmentative meaning be expressed productively by a shift of gender/noun class?
+GB315,1789,4120176411.0,7320521589.981372,60.1,67.4,grambank,Can diminutive meaning be expressed productively by a shift of gender/noun class?
+GB316,1958,4194633394.0,7358980824.882172,61.1,67.7,grambank,Is singular number regularly marked in the noun phrase by a dedicated phonologically free element?
+GB317,1949,4206379668.0,7378991493.182172,61.3,67.9,grambank,Is dual number regularly marked in the noun phrase by a dedicated phonologically free element?
+GB318,1986,4212381597.0,7387494297.558171,61.4,68.0,grambank,Is plural number regularly marked in the noun phrase by a dedicated phonologically free element?
+GB319,1968,4206595397.0,7378991493.182172,61.3,67.9,grambank,Is trial number regularly marked in the noun phrase by a dedicated phonologically free element?
+GB320,1954,4209894797.0,7384059609.182172,61.4,67.9,grambank,Is paucal number regularly marked in the noun phrase by a dedicated phonologically free element?
+GB321,1900,4278103065.0,7484209029.830172,62.4,68.9,grambank,Is there a large class of nouns whose gender/noun class is not phonologically or semantically predictable?
+GB322,1377,4116039326.0,7257114905.05203,60.0,66.8,grambank,Is there grammatical marking of direct evidence (perceived with the senses)?
+GB323,1384,4117893650.0,7282794686.9880295,60.0,67.0,grambank,"Is there grammatical marking of indirect evidence (hearsay, inference, etc.)?"
+GB324,1776,4256271296.0,7461805261.415372,62.0,68.7,grambank,"Is there an interrogative verb for content interrogatives (who?, what?, etc.)?"
+GB325,1296,4046677321.0,7038958342.343329,59.0,64.8,grambank,Is there a count/mass distinction in interrogative quantifiers?
+GB326,1698,4156744666.0,7339424753.323372,60.6,67.5,grambank,Do (nominal) content interrogatives normally or frequently occur in situ?
+GB327,1682,4055423046.0,7240311767.602172,59.1,66.6,grambank,Can the relative clause follow the noun?
+GB328,1541,4145877422.0,7347272603.108771,60.4,67.6,grambank,Can the relative clause precede the noun?
+GB329,1378,3713447521.0,6580094096.78503,54.1,60.5,grambank,Are there internally-headed relative clauses?
+GB330,1355,3961126013.0,6934185883.88043,57.7,63.8,grambank,Are there correlative relative clauses?
+GB331,1361,3892020210.0,6833795476.85223,56.7,62.9,grambank,Are there non-adjacent relative clauses?
+GB333,1688,4210762771.0,7424018213.785372,61.4,68.3,grambank,Is there a decimal numeral system?
+GB334,1724,4217012045.0,7420939985.370372,61.5,68.3,grambank,Is there synchronic evidence for any element of a quinary numeral system?
+GB335,1619,4213113357.0,7418828598.827372,61.4,68.3,grambank,Is there synchronic evidence for any element of a vigesimal numeral system?
+GB336,1640,4045279814.0,7218868159.599372,59.0,66.4,grambank,Is there a body-part tallying system?
+GB400,1461,3865988464.0,6630490092.58663,56.4,61.0,grambank,"Are all person categories neutralized in some voice, tense, aspect, mood and/or negation?"
+GB401,817,2814437791.0,5190714983.921929,41.0,47.8,grambank,Is there a class of patient-labile verbs?
+GB402,1095,3741227712.0,6524710024.87443,54.5,60.0,grambank,Does the verb for 'see' have suppletive verb forms?
+GB403,1124,3773469089.0,6558755239.11983,55.0,60.4,grambank,Does the verb for 'come' have suppletive verb forms?
+GB408,1726,4078477210.0,6868086438.65483,59.5,63.2,grambank,Is there any accusative alignment of flagging?
+GB409,1722,3881176695.0,6640279672.25383,56.6,61.1,grambank,Is there any ergative alignment of flagging?
+GB410,1696,4072687158.0,6863157469.68683,59.4,63.2,grambank,Is there any neutral alignment of flagging?
+GB415,1694,4059581218.0,6852135157.06483,59.2,63.0,grambank,Is there a politeness distinction in 2nd person forms?
+GB421,1076,3714037107.0,6470158658.88203,54.1,59.5,grambank,Is there a preposed complementizer in complements of verbs of thinking and/or knowing?
+GB422,1085,3815106657.0,6586487559.17103,55.6,60.6,grambank,Is there a postposed complementizer in complements of verbs of thinking and/or knowing?
+GB430,1805,4087181081.0,6878095772.36483,59.6,63.3,grambank,Can adnominal possession be marked by a prefix on the possessor?
+GB431,1817,4078514831.0,6869207851.12683,59.5,63.2,grambank,Can adnominal possession be marked by a prefix on the possessed noun?
+GB432,1804,4083411061.0,6874516766.76483,59.5,63.3,grambank,Can adnominal possession be marked by a suffix on the possessor?
+GB433,1824,4000973100.0,6771630462.49383,58.3,62.3,grambank,Can adnominal possession be marked by a suffix on the possessed noun?
+GB519,1553,3956178688.0,6730241943.888229,57.7,61.9,grambank,"Can mood be marked by a non-inflecting word (""auxiliary particle"")?"
+GB520,1615,4016886563.0,6566363791.09363,58.6,60.4,grambank,"Can aspect be marked by a non-inflecting word (""auxiliary particle"")?"
+GB521,1649,4041419051.0,6774905314.12083,58.9,62.3,grambank,"Can tense be marked by a non-inflecting word (""auxiliary particle"")?"
+GB522,1492,3927213104.0,6716683990.93343,57.2,61.8,grambank,"Can the S or A argument be omitted from a pragmatically unmarked clause when the referent is inferrable from context (""pro-drop"" or ""null anaphora"")?"
+0,68,57166876.0,98034844.1472,0.8,0.9,apics,Lexifier language for atlas map
+1,68,57166876.0,98034844.1472,0.8,0.9,apics,"Order of subject, object, and verb"
+2,68,57166876.0,98034844.1472,0.8,0.9,apics,Order of possessor and possessum
+3,68,57166876.0,98034844.1472,0.8,0.9,apics,Order of adjective and noun
+4,68,57166876.0,98034844.1472,0.8,0.9,apics,Order of adposition and noun phrase
+5,67,57166876.0,98034844.1472,0.8,0.9,apics,Order of demonstrative and noun
+6,68,57166876.0,98034844.1472,0.8,0.9,apics,Order of cardinal numeral and noun
+7,67,57166876.0,98034844.1472,0.8,0.9,apics,Order of relative clause and noun
+8,67,57166876.0,98034844.1472,0.8,0.9,apics,Order of degree word and adjective
+9,67,57166876.0,98034844.1472,0.8,0.9,apics,Position of definite article in the noun phrase
+10,68,57166876.0,98034844.1472,0.8,0.9,apics,Position of indefinite article in the noun phrase
+11,63,57158676.0,98034844.1472,0.8,0.9,apics,"Order of frequency adverb, verb, and object"
+12,68,57166876.0,98034844.1472,0.8,0.9,apics,Position of interrogative phrases in content questions
+13,68,57166876.0,98034844.1472,0.8,0.9,apics,Gender distinctions in personal pronouns
+14,68,57166876.0,98034844.1472,0.8,0.9,apics,Dual in independent personal pronouns
+15,68,57166876.0,98034844.1472,0.8,0.9,apics,Inclusive/exclusive distinction in independent personal pronouns
+16,68,57166876.0,98034844.1472,0.8,0.9,apics,Person syncretism in independent personal pronouns
+17,68,57166876.0,98034844.1472,0.8,0.9,apics,Special dependent person forms for subject and object
+18,67,57146876.0,98034844.1472,0.8,0.9,apics,Politeness distinctions in second-person pronouns
+19,66,57166876.0,98034844.1472,0.8,0.9,apics,Interrogative pronouns
+20,62,57161276.0,98034844.1472,0.8,0.9,apics,Pronoun conjunction
+21,66,57164276.0,98034844.1472,0.8,0.9,apics,Indefinite pronouns
+22,68,57166876.0,98034844.1472,0.8,0.9,apics,Occurrence of nominal plural markers
+23,68,57166876.0,98034844.1472,0.8,0.9,apics,Expression of nominal plural meaning
+24,64,57166876.0,98034844.1472,0.8,0.9,apics,The associative plural
+25,68,57166876.0,98034844.1472,0.8,0.9,apics,Nominal plural marker and third-person-plural pronoun
+26,68,57166876.0,98034844.1472,0.8,0.9,apics,Functions of reduplication
+27,67,57166876.0,98034844.1472,0.8,0.9,apics,Antidual of paired body-part terms
+28,68,57166876.0,98034844.1472,0.8,0.9,apics,Definite articles
+29,68,57166876.0,98034844.1472,0.8,0.9,apics,Indefinite articles
+30,67,57166876.0,98034844.1472,0.8,0.9,apics,Generic noun phrases in subject function
+31,68,57166876.0,98034844.1472,0.8,0.9,apics,Co-occurrence of demonstrative and definite article
+32,67,57166876.0,98034844.1472,0.8,0.9,apics,Pronominal and adnominal demonstratives
+33,67,57166876.0,98034844.1472,0.8,0.9,apics,Distance contrasts in demonstratives
+34,64,57166876.0,98034844.1472,0.8,0.9,apics,Adnominal distributive numerals
+35,61,57164275.0,98034844.1472,0.8,0.9,apics,Ordinal numerals
+36,68,57166876.0,98034844.1472,0.8,0.9,apics,Sortal numeral classifiers
+37,68,57166876.0,98034844.1472,0.8,0.9,apics,Marking of pronominal possessors
+38,68,57166876.0,98034844.1472,0.8,0.9,apics,Marking of possessor noun phrases
+39,64,57166875.0,98034844.1472,0.8,0.9,apics,Independent pronominal possessors
+40,67,57166876.0,98034844.1472,0.8,0.9,apics,Gender agreement of adnominal adjectives
+41,66,57166876.0,98034844.1472,0.8,0.9,apics,Comparative adjective marking
+42,65,57166876.0,98034844.1472,0.8,0.9,apics,Comparative standard marking
+43,68,57166876.0,98034844.1472,0.8,0.9,apics,"Position of tense, aspect, and mood markers in relation to the verb"
+44,65,57161276.0,98034844.1472,0.8,0.9,apics,"Internal order of tense, aspect, and mood markers"
+45,67,57166876.0,98034844.1472,0.8,0.9,apics,Tightness of the link between the past marker and the verb
+46,67,57166876.0,98034844.1472,0.8,0.9,apics,Tightness of the link between the progressive marker and the verb
+47,68,57166876.0,98034844.1472,0.8,0.9,apics,Uses of the progressive marker
+48,68,57166876.0,98034844.1472,0.8,0.9,apics,Uses of the habitual marker
+49,67,57166876.0,98034844.1472,0.8,0.9,apics,Tense-aspect systems
+50,63,57164088.0,98034844.1472,0.8,0.9,apics,"Negation and tense, aspect, and mood marking"
+51,67,57166876.0,98034844.1472,0.8,0.9,apics,Present reference of stative verbs and past perfective reference of dynamic verbs
+52,65,57166876.0,98034844.1472,0.8,0.9,apics,Aspect markers and inchoative meaning
+53,60,57119276.0,98034844.1472,0.8,0.9,apics,Aspect change in verb chains
+54,68,57166876.0,98034844.1472,0.8,0.9,apics,Suppletion according to tense and aspect
+55,67,57166876.0,98034844.1472,0.8,0.9,apics,Ability verb and epistemic possibility
+56,67,57166876.0,98034844.1472,0.8,0.9,apics,The prohibitive
+57,68,57166876.0,98034844.1472,0.8,0.9,apics,Marking of patient noun phrases
+58,68,57166876.0,98034844.1472,0.8,0.9,apics,Alignment of case marking of full noun phrases
+59,68,57166876.0,98034844.1472,0.8,0.9,apics,Alignment of case marking of personal pronouns
+60,68,57166876.0,98034844.1472,0.8,0.9,apics,Ditransitive constructions with ‘give’
+61,67,57166876.0,98034844.1472,0.8,0.9,apics,Order of recipient and theme in ditransitive constructions
+62,68,57166876.0,98034844.1472,0.8,0.9,apics,Expression of pronominal subjects
+63,63,57166876.0,98034844.1472,0.8,0.9,apics,Expletive subject in ‘seem’ constructions
+64,67,57166876.0,98034844.1472,0.8,0.9,apics,Expletive subject of existential verb
+65,66,57166876.0,98034844.1472,0.8,0.9,apics,Raining constructions
+66,65,57122276.0,98034844.1472,0.8,0.9,apics,Experiencer constructions with ‘headache’
+67,66,57166876.0,98034844.1472,0.8,0.9,apics,Experiencer constructions with ‘like’
+68,64,57158676.0,98034844.1472,0.8,0.9,apics,Experiencer constructions with ‘fear’
+69,67,57166876.0,98034844.1472,0.8,0.9,apics,Instrumental expressions
+70,66,57166876.0,98034844.1472,0.8,0.9,apics,Comitatives and instrumentals
+71,65,57166876.0,98034844.1472,0.8,0.9,apics,Noun phrase conjunction and comitative
+72,67,57166876.0,98034844.1472,0.8,0.9,apics,Nominal and verbal conjunction
+73,68,57166876.0,98034844.1472,0.8,0.9,apics,Predicative noun phrases
+74,68,57166876.0,98034844.1472,0.8,0.9,apics,Predicative adjectives
+75,68,57166876.0,98034844.1472,0.8,0.9,apics,Predicative locative phrases
+76,68,57166876.0,98034844.1472,0.8,0.9,apics,Predicative noun phrases and predicative locative phrases
+77,67,57166876.0,98034844.1472,0.8,0.9,apics,Predicative possession
+78,67,57166876.0,98034844.1472,0.8,0.9,apics,Existential verb and transitive possession verb
+79,68,57166876.0,98034844.1472,0.8,0.9,apics,Going to named places
+80,67,57166876.0,98034844.1472,0.8,0.9,apics,Coming from named places
+81,67,57166876.0,98034844.1472,0.8,0.9,apics,Motion-to and motion-from
+82,59,57099476.0,98034844.1472,0.8,0.9,apics,Transitive motion verbs: ‘push’
+83,59,57164268.0,98034844.1472,0.8,0.9,apics,Transitive motion verbs: ‘pull’
+84,68,57166876.0,98034844.1472,0.8,0.9,apics,Directional serial verb constructions with 'come' and 'go'
+85,68,57166876.0,98034844.1472,0.8,0.9,apics,‘Take’ serial verb constructions
+86,67,57166876.0,98034844.1472,0.8,0.9,apics,'Give' serial verb constructions
+87,64,57066868.0,98034844.1472,0.8,0.9,apics,Reflexive constructions
+88,64,56567868.0,95265873.7472,0.8,0.9,apics,Intensifiers and reflexive pronouns
+89,62,57166867.0,98034844.1472,0.8,0.9,apics,Reciprocal constructions
+90,68,57166876.0,98034844.1472,0.8,0.9,apics,Passive constructions
+91,68,57166876.0,98034844.1472,0.8,0.9,apics,Applicative constructions
+92,66,57166876.0,98034844.1472,0.8,0.9,apics,Subject relative clauses
+93,65,57166876.0,98034844.1472,0.8,0.9,apics,Object relative clauses
+94,58,57119268.0,98034844.1472,0.8,0.9,apics,Instrument relative clauses
+95,68,57166876.0,98034844.1472,0.8,0.9,apics,Complementizer with verbs of speaking
+96,65,57166876.0,98034844.1472,0.8,0.9,apics,Complementizer with verbs of knowing
+97,65,56374876.0,89369846.6472,0.8,0.8,apics,‘Want’ complement subjects
+98,66,57166876.0,98034844.1472,0.8,0.9,apics,Complements of 'think' and 'want'
+99,67,57161276.0,98034844.1472,0.8,0.9,apics,Verb doubling in temporal clauses
+100,68,57166876.0,98034844.1472,0.8,0.9,apics,Negative morpheme types
+101,68,57166876.0,98034844.1472,0.8,0.9,apics,Position of standard negation
+102,66,57166876.0,98034844.1472,0.8,0.9,apics,Negation and indefinite pronouns
+103,68,57166876.0,98034844.1472,0.8,0.9,apics,Polar questions
+104,62,57066875.0,98034844.1472,0.8,0.9,apics,Focusing of the noun phrase
+105,65,57161276.0,98034844.1472,0.8,0.9,apics,Verb doubling and focus
+106,66,57120876.0,98034844.1472,0.8,0.9,apics,Focus particle ‘also’
+107,63,56561276.0,97475659.5072,0.8,0.9,apics,Vocative markers
+108,58,57151176.0,98034844.1472,0.8,0.9,apics,Para-linguistic usages of clicks
+109,68,57166876.0,98034844.1472,0.8,0.9,apics,Pequenino
+110,68,57166876.0,98034844.1472,0.8,0.9,apics,Savvy
+111,60,57164276.0,98034844.1472,0.8,0.9,apics,'Tears'
+112,67,57166876.0,98034844.1472,0.8,0.9,apics,'Hand' and 'arm'
+113,60,57122268.0,98034844.1472,0.8,0.9,apics,'Finger' and 'toe'
+114,62,57164276.0,98034844.1472,0.8,0.9,apics,'Body hair' and 'feather'
+115,67,57166876.0,98034844.1472,0.8,0.9,apics,'Hear' and 'smell'
+116,65,57166876.0,98034844.1472,0.8,0.9,apics,'Green' and 'blue'
+117,64,57166868.0,98034844.1472,0.8,0.9,apics,Female and male animals
+118,68,57166876.0,98034844.1472,0.8,0.9,apics,Syllable onsets
+119,67,57076876.0,98034844.1472,0.8,0.9,apics,Syllable codas
+120,68,57166876.0,98034844.1472,0.8,0.9,apics,Tone
+121,68,57166876.0,98034844.1472,0.8,0.9,apics,Vowel height distinctions
+122,68,57166876.0,98034844.1472,0.8,0.9,apics,Nasal vowels
+123,68,57166876.0,98034844.1472,0.8,0.9,apics,The schwa vowel
+124,68,57166876.0,98034844.1472,0.8,0.9,apics,Labiodental fricatives
+125,68,57166876.0,98034844.1472,0.8,0.9,apics,Palato-alveolar sibilants
+126,68,57166876.0,98034844.1472,0.8,0.9,apics,The voiced sibilant [z]
+127,68,57166876.0,98034844.1472,0.8,0.9,apics,Interdental fricatives
+128,68,57166876.0,98034844.1472,0.8,0.9,apics,The palatal nasal
+129,68,57166876.0,98034844.1472,0.8,0.9,apics,Prenasalized consonants
+130,68,57166876.0,98034844.1472,0.8,0.9,apics,The segment [h]
+131,68,57166876.0,98034844.1472,0.8,0.9,apics,p - voiceless bilabial plosive
+132,68,57166876.0,98034844.1472,0.8,0.9,apics,b - voiced bilabial plosive
+133,68,57166876.0,98034844.1472,0.8,0.9,apics,t - voiceless dental/alveolar plosive
+134,68,57166876.0,98034844.1472,0.8,0.9,apics,d - voiced dental/alveolar plosive
+135,1,0.0,0.0,0.0,0.0,apics,t̪ - voiceless interdental plosive
+136,1,0.0,0.0,0.0,0.0,apics,d̪ - voiced interdental plosive
+137,68,57166876.0,98034844.1472,0.8,0.9,apics,t͡s - voiceless dental/alveolar sibilant affricate
+138,68,57166876.0,98034844.1472,0.8,0.9,apics,d͡z - voiced dental/alveolar sibilant affricate
+139,68,57166876.0,98034844.1472,0.8,0.9,apics,t͡ʃ - voiceless palato-alveolar sibilant affricate
+140,68,57166876.0,98034844.1472,0.8,0.9,apics,d͡ʒ - voiced palato-alveolar sibilant affricate
+141,1,5000000.0,0.0,0.1,0.0,apics,ʨ - voiceless alveolo-palatal affricate
+142,1,5000000.0,0.0,0.1,0.0,apics,ʥ - voiced alveolo-palatal affricate
+143,68,57166876.0,98034844.1472,0.8,0.9,apics,ʈ - voiceless retroflex plosive
+144,68,57166876.0,98034844.1472,0.8,0.9,apics,ɖ - voiced retroflex plosive
+145,68,57166876.0,98034844.1472,0.8,0.9,apics,c - voiceless palatal plosive
+146,68,57166876.0,98034844.1472,0.8,0.9,apics,ɟ - voiced palatal plosive
+147,68,57166876.0,98034844.1472,0.8,0.9,apics,k - voiceless velar plosive
+148,68,57166876.0,98034844.1472,0.8,0.9,apics,kʷ - labialized voiceless velar plosive
+149,68,57166876.0,98034844.1472,0.8,0.9,apics,g - voiced velar plosive
+150,1,90000.0,0.0,0.0,0.0,apics,gʷ - labialized voiced velar plosive
+151,68,57166876.0,98034844.1472,0.8,0.9,apics,k͡p - voiceless labial-velar plosive
+152,68,57166876.0,98034844.1472,0.8,0.9,apics,g͡b - voiced labial-velar plosive
+153,68,57166876.0,98034844.1472,0.8,0.9,apics,q - voiceless uvular plosive
+154,1,1.0,0.0,0.0,0.0,apics,qʷ - labialized voiceless uvular plosive
+155,68,57166876.0,98034844.1472,0.8,0.9,apics,ʔ - glottal plosive
+156,68,57166876.0,98034844.1472,0.8,0.9,apics,pʰ - voiceless aspirated bilabial plosive
+157,1,800.0,0.0,0.0,0.0,apics,bʰ - voiced aspirated bilabial plosive
+158,68,57166876.0,98034844.1472,0.8,0.9,apics,tʰ - voiceless aspirated dental/alveolar plosive
+159,68,57166876.0,98034844.1472,0.8,0.9,apics,dʰ - voiced aspirated dental/alveolar plosive
+160,68,57166876.0,98034844.1472,0.8,0.9,apics,t͡sʰ - voiceless aspirated dental/alveolar sibilant affricate
+161,68,57166876.0,98034844.1472,0.8,0.9,apics,t͡ʃʰ - voiceless aspirated palato-alveolar sibilant affricate
+162,1,800.0,0.0,0.0,0.0,apics,ʈʰ - voiceless aspirated retroflex plosive
+163,68,57166876.0,98034844.1472,0.8,0.9,apics,kʰ - voiceless aspirated velar plosive
+164,1,1.0,0.0,0.0,0.0,apics,kʰʷ - labialized voiceless aspirated velar plosive
+165,1,800.0,0.0,0.0,0.0,apics,gʰ - voiced aspirated velar plosive
+166,1,1.0,0.0,0.0,0.0,apics,qʰ - voiceless aspirated uvular plosive
+167,1,1.0,0.0,0.0,0.0,apics,qʰʷ - labialized voiceless aspirated uvular plosive
+168,68,57166876.0,98034844.1472,0.8,0.9,apics,pʼ - voiceless bilabial ejective plosive
+169,68,57166876.0,98034844.1472,0.8,0.9,apics,tʼ - voiceless dental/alveolar ejective plosive
+170,68,57166876.0,98034844.1472,0.8,0.9,apics,t͡sʼ - voiceless dental/alveolar sibilant ejective affricate
+171,68,57166876.0,98034844.1472,0.8,0.9,apics,t͡ʃʼ - voiceless palato-alveolar sibilant ejective affricate
+172,68,57166876.0,98034844.1472,0.8,0.9,apics,kʼ - voiceless velar ejective plosive
+173,68,57166876.0,98034844.1472,0.8,0.9,apics,kʼʷ - labialized voiceless velar ejective plosive
+174,68,57166876.0,98034844.1472,0.8,0.9,apics,qʼ - voiceless uvular ejective plosive
+175,1,1.0,0.0,0.0,0.0,apics,qʼʷ - labialized voiceless uvular ejective plosive
+176,68,57166876.0,98034844.1472,0.8,0.9,apics,ɓ - voiced bilabial implosive plosive
+177,3,159999.0,0.0,0.0,0.0,apics,ɗ - voiced dental/alveolar implosive plosive
+178,68,57166876.0,98034844.1472,0.8,0.9,apics,m - voiced bilabial nasal
+179,68,57166876.0,98034844.1472,0.8,0.9,apics,n - voiced dental/alveolar nasal
+180,68,57166876.0,98034844.1472,0.8,0.9,apics,ɳ - voiced retroflex nasal
+181,68,57166876.0,98034844.1472,0.8,0.9,apics,ɲ - voiced palatal nasal
+182,68,57166876.0,98034844.1472,0.8,0.9,apics,ŋ - voiced velar nasal
+183,68,57166876.0,98034844.1472,0.8,0.9,apics,r - voiced dental/alveolar trill
+184,68,57166876.0,98034844.1472,0.8,0.9,apics,ɾ - voiced dental/alveolar flap
+185,6,8200550.0,2682524.5,0.1,0.0,apics,ɹ - voiced dental/alveolar approximant
+186,1,0.0,0.0,0.0,0.0,apics,ɻ - voiced retroflex approximant
+187,68,57166876.0,98034844.1472,0.8,0.9,apics,ɸ - voiceless bilabial fricative
+188,68,57166876.0,98034844.1472,0.8,0.9,apics,β - voiced bilabial fricative
+189,68,57166876.0,98034844.1472,0.8,0.9,apics,f - voiceless labio-dental fricative
+190,68,57166876.0,98034844.1472,0.8,0.9,apics,v - voiced labio-dental fricative
+191,68,57166876.0,98034844.1472,0.8,0.9,apics,θ - voiceless dental fricative
+192,68,57166876.0,98034844.1472,0.8,0.9,apics,ð - voiced dental fricative
+193,68,57166876.0,98034844.1472,0.8,0.9,apics,s - voiceless dental/alveolar sibilant fricative
+194,68,57166876.0,98034844.1472,0.8,0.9,apics,z - voiced dental/alveolar sibilant fricative
+195,68,57166876.0,98034844.1472,0.8,0.9,apics,ʃ - voiceless palato-alveolar sibilant fricative
+196,68,57166876.0,98034844.1472,0.8,0.9,apics,ʒ - voiced palato-alveolar sibilant fricative
+197,1,5000000.0,0.0,0.1,0.0,apics,ɕ - voiceless alveolo-palatal fricative
+198,1,7200000.0,9966164.608,0.1,0.1,apics,ç - voiceless palatal fricative
+199,68,57166876.0,98034844.1472,0.8,0.9,apics,x - voiceless velar fricative
+200,68,57166876.0,98034844.1472,0.8,0.9,apics,xʷ - labialized voiceless velar fricative
+201,68,57166876.0,98034844.1472,0.8,0.9,apics,ɣ - voiced velar fricative
+202,68,57166876.0,98034844.1472,0.8,0.9,apics,χ - voiceless uvular fricative
+203,1,1.0,0.0,0.0,0.0,apics,χʷ - labialized voiceless uvular fricative
+204,3,648000.0,559184.64,0.0,0.0,apics,ʁ - voiced uvular fricative
+205,68,57166876.0,98034844.1472,0.8,0.9,apics,h - voiceless glottal fricative
+206,1,90000.0,0.0,0.0,0.0,apics,hʷ - labialized voiceless glottal fricative
+207,1,42000.0,0.0,0.0,0.0,apics,ħ - voiceless pharyngeal fricative
+208,1,42000.0,0.0,0.0,0.0,apics,ʕ - voiced pharyngeal fricative
+209,68,57166876.0,98034844.1472,0.8,0.9,apics,l - voiced dental/alveolar lateral approximant
+210,1,2788.0,0.0,0.0,0.0,apics,lː - geminate voiced lateral approximant
+211,1,0.0,0.0,0.0,0.0,apics,lʲ - palatalized voiced lateral approximant
+212,68,57166876.0,98034844.1472,0.8,0.9,apics,ɬ - voiceless dental/alveolar lateral fricative
+213,1,1.0,0.0,0.0,0.0,apics,tɬ - voiceless lateral affricate
+214,1,1.0,0.0,0.0,0.0,apics,tɬʼ - voiceless lateral ejective affricate
+215,7,1875399.0,556022.74,0.0,0.0,apics,ʎ - voiced palatal lateral approximant
+216,1,100000.0,0.0,0.0,0.0,apics,ɮ - voiced lateral fricative
+217,68,57166876.0,98034844.1472,0.8,0.9,apics,ɭ - voiced retroflex lateral approximant
+218,68,57166876.0,98034844.1472,0.8,0.9,apics,j - voiced palatal glide
+219,5,10006400.0,9833534.78,0.1,0.1,apics,ȷ̃ - nasalized voiced palatal glide
+220,3,10200000.0,10079843.64,0.1,0.1,apics,ɥ - voiced labiopalatal glide
+221,68,57166876.0,98034844.1472,0.8,0.9,apics,w - voiced labial-velar glide
+222,4,808.0,0.0,0.0,0.0,apics,ʋ - voiced labio-dental approximant
+223,1,2788.0,0.0,0.0,0.0,apics,pː - geminate voiceless bilabial plosive
+224,1,2788.0,0.0,0.0,0.0,apics,bː - geminate voiced bilabial plosive
+225,1,2788.0,0.0,0.0,0.0,apics,tː - geminate voiceless dental/alveolar plosive
+226,1,2788.0,0.0,0.0,0.0,apics,dː - geminate voiced dental/alveolar plosive
+227,1,2788.0,0.0,0.0,0.0,apics,kː - geminate voiceless velar plosive
+228,1,2788.0,0.0,0.0,0.0,apics,gː - geminate voiced velar plosive
+229,1,2788.0,0.0,0.0,0.0,apics,mː - geminate voiced bilabial nasal
+230,1,2788.0,0.0,0.0,0.0,apics,n: - geminate dental/alveolar nasal
+231,68,57166876.0,98034844.1472,0.8,0.9,apics,<sup>m</sup>b - prenasalized voiced bilabial plosive
+232,8,20578287.0,3986653.454,0.3,0.0,apics,ⁿd - prenasalized voiced dental/alveolar plosive
+233,2,0.0,0.0,0.0,0.0,apics,ⁿd͡ʒ - prenasalized voiced palato-alveolar sibilant affricate
+234,1,500000.0,0.0,0.0,0.0,apics,<sup>ɲ</sup>ɟ - prenasalized voiced palatal plosive
+235,9,20578287.0,3986653.454,0.3,0.0,apics,<sup>ŋ</sup>g - prenasalized voiced velar plosive
+236,4,569899.0,0.0,0.0,0.0,apics,<sup>m</sup>p - prenasalized voiceless bilabial plosive
+237,4,575499.0,0.0,0.0,0.0,apics,ⁿt - prenasalized voiceless dental/alveolar plosive
+238,1,500000.0,0.0,0.0,0.0,apics,<sup>ɲ</sup>c - prenasalized voiceless palatal plosive
+239,4,569899.0,0.0,0.0,0.0,apics,<sup>ŋ</sup>k - prenasalized voiceless velar plosive
+240,2,69899.0,0.0,0.0,0.0,apics,ⁿf - prenasalized voiceless labiodental fricative
+241,1,42000.0,0.0,0.0,0.0,apics,<sup>m</sup>v - prenasalized voiced labiodental fricative
+242,1,0.0,0.0,0.0,0.0,apics,ⁿs - prenasalized voiceless dental/alveolar sibilant fricative
+243,2,20069899.0,3986653.454,0.3,0.0,apics,ⁿz - prenasalized voiced dental/alveolar sibilant fricative
+244,1,69899.0,0.0,0.0,0.0,apics,ⁿʒ - prenasalized voiced palato-alveolar fricative
+245,1,0.0,0.0,0.0,0.0,apics,<sup>ŋ</sup>x - prenasalized voiceless velar fricative
+246,1,42000.0,0.0,0.0,0.0,apics,<sup>m</sup>w - prenasalized voiced labial-velar glide
+247,1,730.0,1900.9451999999999,0.0,0.0,apics,ʰp - voiceless preaspirated bilabilal plosive
+248,1,730.0,1900.9451999999999,0.0,0.0,apics,ʰt - voiceless preaspirated dental/alveolar plosive
+249,1,730.0,1900.9451999999999,0.0,0.0,apics,ʰtʃ - voiceless preaspirated palato-alveolar sibilant affricate
+250,1,730.0,1900.9451999999999,0.0,0.0,apics,ʰk - voiceless preaspirated velar plosive
+251,1,800.0,0.0,0.0,0.0,apics,ʰr - pre-breathy voice rhotic
+252,68,57166876.0,98034844.1472,0.8,0.9,apics,i - high front unrounded vowel
+253,68,57166876.0,98034844.1472,0.8,0.9,apics,e - higher mid front unrounded vowel
+254,68,57166876.0,98034844.1472,0.8,0.9,apics,ɛ - lower mid front unrounded vowel
+255,68,57166876.0,98034844.1472,0.8,0.9,apics,æ - raised low front unrounded vowel
+256,68,57166876.0,98034844.1472,0.8,0.9,apics,a - low central unrounded vowel
+257,68,57166876.0,98034844.1472,0.8,0.9,apics,u - high back rounded vowel
+258,68,57166876.0,98034844.1472,0.8,0.9,apics,o - higher mid back rounded vowel
+259,68,57166876.0,98034844.1472,0.8,0.9,apics,ɔ - lower mid back rounded vowel
+260,68,57166876.0,98034844.1472,0.8,0.9,apics,ɑ - low back unrounded vowel
+261,68,57166876.0,98034844.1472,0.8,0.9,apics,y - high front rounded vowel
+262,1,550.0,0.0,0.0,0.0,apics,ɒ - low back rounded vowel
+263,68,57166876.0,98034844.1472,0.8,0.9,apics,ɪ - lowered high front unrounded vowel
+264,1,0.0,0.0,0.0,0.0,apics,ʏ - lowered high front rounded vowel
+265,4,931300.0,775837.16,0.0,0.0,apics,ø - higher mid front rounded oral vowel
+266,4,610730.0,561085.5852,0.0,0.0,apics,œ - lower mid front rounded oral vowel
+267,68,57166876.0,98034844.1472,0.8,0.9,apics,ɨ - high central unrounded vowel
+268,68,57166876.0,98034844.1472,0.8,0.9,apics,ə - mid central unrounded vowel
+269,1,0.0,0.0,0.0,0.0,apics,ɜ - lower mid central unrounded vowel
+270,1,550.0,0.0,0.0,0.0,apics,ʌ - lower central unrounded vowel
+271,2,500008.0,0.0,0.0,0.0,apics,ɐ - near-open central vowel
+272,68,57166876.0,98034844.1472,0.8,0.9,apics,ɯ - high back unrounded vowel
+273,68,57166876.0,98034844.1472,0.8,0.9,apics,ʊ - lowered high back rounded vowel
+274,68,57166876.0,98034844.1472,0.8,0.9,apics,iː - long high front unrounded vowel
+275,68,57166876.0,98034844.1472,0.8,0.9,apics,eː - long higher mid front unrounded vowel
+276,68,57166876.0,98034844.1472,0.8,0.9,apics,ɛː - long lower mid front unrounded vowel
+277,68,57166876.0,98034844.1472,0.8,0.9,apics,æː - long raised low front unrounded vowel
+278,68,57166876.0,98034844.1472,0.8,0.9,apics,aː - long low central unrounded vowel
+279,68,57166876.0,98034844.1472,0.8,0.9,apics,uː - long high back rounded vowel
+280,68,57166876.0,98034844.1472,0.8,0.9,apics,oː - long higher mid back rounded vowel
+281,68,57166876.0,98034844.1472,0.8,0.9,apics,ɔː - long lower mid back rounded vowel
+282,68,57166876.0,98034844.1472,0.8,0.9,apics,ɑː - long low back unrounded vowel
+283,1,0.0,0.0,0.0,0.0,apics,əː - long mid central unrounded vowel
+284,68,57166876.0,98034844.1472,0.8,0.9,apics,yː - long high front rounded vowel
+285,68,57166876.0,98034844.1472,0.8,0.9,apics,ĩ - nasalized high front unrounded vowel
+286,68,57166876.0,98034844.1472,0.8,0.9,apics,ẽ - nasalized higher mid front unrounded vowel
+287,67,47566876.0,88514185.1472,0.7,0.8,apics,ɛ̃ - nasalized lower mid front unrounded vowel
+288,68,57166876.0,98034844.1472,0.8,0.9,apics,ã - nasalized low central unrounded vowel
+289,68,57166876.0,98034844.1472,0.8,0.9,apics,ũ - nasalized high back rounded vowel
+290,68,57166876.0,98034844.1472,0.8,0.9,apics,õ - nasalized higher mid back rounded vowel
+291,68,57166876.0,98034844.1472,0.8,0.9,apics,ɔ̃ - nasalized lower mid back rounded vowel
+292,1,600000.0,1179450.0,0.0,0.0,apics,ɑ̃ - nasalized low back unrounded vowel
+293,1,871000.0,556022.74,0.0,0.0,apics,ə̃ - nasalized mid central unrounded vowel
+294,2,600000.0,559184.64,0.0,0.0,apics,œ̃ - nasalized lower mid front rounded vowel
+295,2,415700.0,439795.44,0.0,0.0,apics,ai - diphthong falling from low central unrounded vowel to high front unrounded vowel
+296,1,415700.0,439795.44,0.0,0.0,apics,ei - diphthong falling from higher mid front unrounded vowel to high front unrounded vowel
+297,1,415700.0,439795.44,0.0,0.0,apics,oi - diphthong falling from higher mid back rounded vowel to high front unrounded vowel
+298,1,0.0,0.0,0.0,0.0,apics,ɔi - diphthong falling from lower mid back rounded vowel to high front unrounded vowel
+299,1,415700.0,439795.44,0.0,0.0,apics,ui - diphthong going from high back rounded vowel to high front unrounded vowel
+300,1,7200000.0,9966164.608,0.1,0.1,apics,ǝi - diphthong falling from mid central unrounded vowel to high front unrounded vowel
+301,2,415700.0,439795.44,0.0,0.0,apics,au - diphthong falling from low central unrounded vowel to to high back rounded vowel
+302,1,7200000.0,9966164.608,0.1,0.1,apics,ɔu - diphthong falling from lower mid back rounded vowel to high back rounded vowel
+303,2,415700.0,439795.44,0.0,0.0,apics,ou - diphthong falling from higher mid back rounded vowel to high back rounded vowel
+304,1,7200000.0,9966164.608,0.1,0.1,apics,œy - diphthong falling from lower mid front rounded vowel to high front rounded vowel
+305,1,600000.0,1179450.0,0.0,0.0,apics,ɛə - diphthong with lower mid front unrounded vowel and nonsyllabic mid central unrounded vowel
+306,1,600000.0,1179450.0,0.0,0.0,apics,iə - diphthong with high front unrounded vowel and nonsyllabic mid central unrounded vowel
+307,1,600000.0,1179450.0,0.0,0.0,apics,uə - diphthong with high back rounded vowel and nonsyllabic mid central unrounded vowel
+308,68,57166876.0,98034844.1472,0.8,0.9,apics,Lexifier language
+309,68,57166876.0,98034844.1472,0.8,0.9,apics,Proportion of native speakers
+310,68,57166876.0,98034844.1472,0.8,0.9,apics,Ongoing creolization of pidgins
+311,64,49645576.0,87852027.0192,0.7,0.8,apics,Increasing use
+312,68,57166876.0,98034844.1472,0.8,0.9,apics,Language abandonment
+313,68,57166876.0,98034844.1472,0.8,0.9,apics,Size of speaker community
+314,68,57166876.0,98034844.1472,0.8,0.9,apics,Gender-related use
+315,68,57166876.0,98034844.1472,0.8,0.9,apics,Domains of use: radio and TV news
+316,67,57166876.0,98034844.1472,0.8,0.9,apics,Domains of use: radio and TV call-ins/discussions
+317,68,57166876.0,98034844.1472,0.8,0.9,apics,Domains of use: music
+318,68,57166876.0,98034844.1472,0.8,0.9,apics,Domains of use: literature
+319,68,57166876.0,98034844.1472,0.8,0.9,apics,Domains of use: newspaper editorials
+320,68,57166876.0,98034844.1472,0.8,0.9,apics,Domains of use: other newspaper items
+321,67,57166876.0,98034844.1472,0.8,0.9,apics,Domains of use: public contexts
+322,67,57166876.0,98034844.1472,0.8,0.9,apics,Domains of use: court
+323,67,57166876.0,98034844.1472,0.8,0.9,apics,Domains of use: parliament
+324,68,57166876.0,98034844.1472,0.8,0.9,apics,Domains of use: school
+325,65,57166876.0,98034844.1472,0.8,0.9,apics,Domains of use: electronic media
+326,67,57166876.0,98034844.1472,0.8,0.9,apics,Contact with other languages
+327,65,57166876.0,98034844.1472,0.8,0.9,apics,Geographic variation: phonology
+328,64,57166876.0,98034844.1472,0.8,0.9,apics,Geographic variation: morphosyntax
+329,63,49966876.0,88068679.5392,0.7,0.8,apics,Geographic variation: lexicon
+330,64,57166326.0,98034844.1472,0.8,0.9,apics,Urban/rural variation: phonology
+331,62,49966326.0,88068679.5392,0.7,0.8,apics,Urban/rural variation: morphosyntax
+332,61,49966326.0,88068679.5392,0.7,0.8,apics,Urban/rural variation: lexicon
+333,62,49876876.0,88068679.5392,0.7,0.8,apics,Social variation: phonology
+334,62,49876876.0,88068679.5392,0.7,0.8,apics,Social variation: morphosyntax
+335,61,57071488.0,98034844.1472,0.8,0.9,apics,Social variation: lexicon

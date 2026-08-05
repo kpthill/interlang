@@ -76,6 +76,32 @@ Everything joins on **Glottocode** (and usually ISO 639-3).
   Russian. Callers must apply an explicit tone policy; `stress_prevalence.py`
   emits three and the write-up quantifies the difference (22 points).
 
+### Grambank (`data/raw/grambank/cldf/`, added 2026-08-05)
+- 428,872 values · 2,393 languages (dialects and family-level entries dropped) ·
+  195 binary morphosyntactic features. **Density 0.75** against WALS's 0.16.
+- **No ISO 639-3 codes at all** — Glottocode-only. Joining to CLDR total-speaker
+  counts (keyed by ISO) silently yields zero unless a Glottocode→ISO bridge is
+  built first from `l1_speakers.csv`; `scripts/grammar_sources.py` does this and
+  anything else touching Grambank must too.
+- `?` is a frequent value and means "unknown", not "no". 77,715 of the values are
+  `?`; counting them as coverage overstates everything.
+- Median feature covers 62.4% of world L1. 16 of the 20 largest languages carry
+  every Tier-0/1 feature (WALS: 6 of 20).
+
+### APiCS (`data/raw/apics/cldf/`, added 2026-08-05)
+- 24,123 values · 104 contact lects (69 unique Glottocodes) · 336 features.
+- **80% Western-European lexifier.** Deduplicated, only **14 independent
+  non-European-lexifier languages** remain — that is the real sample size behind
+  any "creole universal" claim, and write-ups must quote it rather than the 104.
+- Multivalued by design: a language may carry several values per feature with a
+  `Frequency` column. `grammar_sources.py` takes the highest-frequency value per
+  (language, feature); any other policy must be stated where it is used.
+- Only **48 of 336** parameters carry a `WALS_ID`, and `WALS_Representation` is a
+  count of WALS languages, **not** a value mapping — comparing a creole to its
+  lexifier needs hand-supplied lexifier values, flagged as such.
+- Population weighting is meaningless here (0.8% of world L1) and that is not a
+  defect: creoles are evidence about learning, not about how many people we please.
+
 ### Known problems in constructed data
 
 - **ISO 639-3 `nan` (Min Nan Chinese, 50.1M L1) is eaten by pandas.**
