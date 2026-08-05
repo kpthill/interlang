@@ -59,12 +59,56 @@ Everything joins on **Glottocode** (and usually ISO 639-3).
   the *representation* term (candidates: Wikipedia native-speaker lists,
   Ethnologue-derived tables). Codes are BCP-47 → need mapping to ISO 639-3.
 
+### WALS (`data/raw/wals/cldf/`, added 2026-08-05)
+- 76,475 values · 3,573 languages · 192 features, one row per (language, feature).
+- Used so far: 13A Tone, 14A Fixed Stress Locations, 15A Weight-Sensitive Stress,
+  16A Weight Factors, 17A Rhythm Types — see
+  [`stress-prevalence.md`](stress-prevalence.md).
+- **Doculect-level, not language-level:** 11 Basque varieties, 10 Arabic
+  varieties, 6 German. Any population weighting must deduplicate on the join key
+  first or it double-counts.
+- **Sparse per feature.** 14A covers 502 languages = **59.6% of world L1**; 13A
+  covers 526. Big languages with a WALS entry but *no* 14A value include
+  Japanese, Korean, Vietnamese, Cantonese, Wu, Tamil, Telugu, Marathi, Panjabi,
+  Urdu, Yoruba, Igbo, Hausa, Burmese, Thai, Ukrainian, Amharic.
+- **No "no word stress" value exists** in chapter 14 or 15. Mandarin is filed as
+  "no fixed stress / not predictable / lexical stress", i.e. as if it were
+  Russian. Callers must apply an explicit tone policy; `stress_prevalence.py`
+  emits three and the write-up quantifies the difference (22 points).
+
+### Known problems in constructed data
+
+- **ISO 639-3 `nan` (Min Nan Chinese, 50.1M L1) is eaten by pandas.**
+  `data/processed/l1_speakers.csv` row 29 has `iso639_3 = nan` with an empty
+  glottocode and name; with default NA handling pandas turns the code into a
+  float `NaN`. A `dict(zip(iso639_3, l1_speakers))` therefore acquires a
+  **NaN key holding 50.1M speakers**, which `dict.get(iso, ...)` then silently
+  matches for *any* language whose ISO code is missing. Fix: read the file via
+  `interlang.populations.read_l1_speakers` (`keep_default_na=False`), as
+  `scripts/stress_prevalence.py` does. **`scripts/phoneme_prevalence.py` does
+  not** — PHOIBLE languages lacking an ISO code will have picked up Min Nan's
+  weight there. Effect is small (those languages are few and the weight is 0.7%
+  of the L1 mass) but it should be fixed the next time that script is touched.
+- **`cldr_totals()` is duplicated.** The canonical copy is
+  `src/interlang/populations.py`; `scripts/phoneme_prevalence.py` still has an
+  older inline one, left in place so a finished study keeps producing
+  byte-identical output. Migrate on next touch.
+
 ## Not yet pulled (known, deferred)
 - **Concepticon / CLICS** — concept list + colexification; needed at the
   vocabulary stage, not for phonology.
 - **Lexibank / IDS / NorthEuraLex** — deeper wordlists (hundreds–1,300
   concepts) for actual lexicon sourcing; ASJP's 100 concepts are too few
   for the real lexicon but right for phonology experiments.
+- **StressTyp2** — the specialist word-stress database, ~750 languages vs WALS's
+  502, and the natural cross-check on the stress prevalence study. **Wanted and
+  not obtainable:** it has no CLDF release (no `cldf-datasets/stresstyp2`,
+  `clld/stresstyp2` or `lexibank/stresstyp2` repo), and its own host
+  `st2.ullet.net` — which serves a SQL dump, `st2-v1-archive-0415.tar.gz` — is
+  outside this environment's network allowlist. Fix path: allowlist that host,
+  load the dump, join on ISO 639-3, re-run `scripts/stress_prevalence.py` with
+  ST2 as a second backbone and report disagreements rather than preferring
+  either source.
 - **L1 speaker counts** — see above.
 
 ## Recognizability metric v0 (`src/interlang/metric.py`)

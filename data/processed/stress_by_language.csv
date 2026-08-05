@@ -1,0 +1,564 @@
+wals_code,wals_name,iso639_3,glottocode,family,macroarea,13A,14A,15A,16A,17A,wals_rule,nearest_fixed,l1_speakers,total_speakers,l1_joined,n_doculects
+mnd,Mandarin,cmn,mand1415,Sino-Tibetan,Eurasia,Complex tone system,No fixed stress,Not predictable,Lexical stress,,no lexical stress,no lexical stress,918000000.0,1324618658.695,True,1
+spa,Spanish,spa,stan1288,Indo-European,Eurasia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Combined,Trochaic,weight-sensitive,penultimate,485000000.0,512398768.36599994,True,1
+eng,English,eng,stan1293,Indo-European,Eurasia,No tones,No fixed stress,Right-oriented: One of the last three,Long vowel or coda consonant,Trochaic,weight-sensitive,penultimate,379007140.0,1733041002.014,True,1
+hin,Hindi,hin,hind1269,Indo-European,Eurasia,No tones,No fixed stress,Right-oriented: One of the last three,Long vowel or coda consonant,,weight-sensitive,penultimate,341000000.0,581727613.455,True,1
+ben,Bengali,ben,beng1280,Indo-European,Eurasia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,initial,initial,300000000.0,279972074.276,True,1
+por,Portuguese,por,port1283,Indo-European,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Lexical stress,,lexically unpredictable,penultimate,254300000.0,249463918.78782997,True,1
+rus,Russian,rus,russ1263,Indo-European,Eurasia,No tones,No fixed stress,Unbounded: Stress can be anywhere,Lexical stress,No rhythmic stress,lexically unpredictable,no default (unpredictable),154000000.0,208192518.697,True,1
+tur,Turkish,tur,nucl1301,Altaic,Eurasia,No tones,No fixed stress,Unbounded: Stress can be anywhere,Lexical stress,No rhythmic stress,lexically unpredictable,no default (unpredictable),82231620.0,82419542.4,True,1
+wuc,Wu,wuu,wuch1236,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,81400000.0,84962400.0,True,1
+fre,French,fra,stan1290,Indo-European,Eurasia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,Undetermined,weight-sensitive,penultimate,77200000.0,332956350.85,True,1
+ger,German,deu,stan1295,Indo-European,Eurasia,No tones,No fixed stress,Right-oriented: One of the last three,Coda consonant,Trochaic,weight-sensitive,penultimate,76540740.0,142985682.53,True,1
+vie,Vietnamese,vie,viet1252,Austro-Asiatic,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,76000000.0,92370781.12,True,1
+cnt,Cantonese,yue,yuec1235,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,73100000.0,155292898.02,True,1
+jav,Javanese,jav,java1254,Austronesian,Papunesia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,Undetermined,weight-sensitive,penultimate,68300000.0,96236284.5,True,1
+ita,Italian,ita,ital1282,Indo-European,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Lexical stress,Undetermined,lexically unpredictable,penultimate,64800000.0,70475318.56099999,True,1
+aeg,Arabic (Egyptian),arz,egyp1253,Afro-Asiatic,Africa,No tones,No fixed stress,Right-oriented: One of the last three,Combined,Trochaic,weight-sensitive,penultimate,64600000.0,71198080.0,True,1
+guj,Gujarati,guj,guja1252,Indo-European,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,,weight-sensitive,penultimate,56400000.0,65626182.9304,True,1
+prs,Persian,pes,west2369,Indo-European,Eurasia,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,52800000.0,89208445.64600001,True,1
+bho,Bhojpuri,bho,bhoj1244,Indo-European,Eurasia,,No fixed stress,Right-oriented: One of the last three,Combined,Undetermined,weight-sensitive,penultimate,52200000.0,34639016.199999996,True,1
+hok,Min (Southern),nan,minn1241,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,50100000.0,40727575.442,True,1
+hak,Hakka,hak,hakk1236,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,48200000.0,35423626.78,True,1
+ind,Indonesian,ind,stin1234,Austronesian,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,43627550.0,180640152.39999998,True,1
+pol,Polish,pol,poli1260,Indo-European,Eurasia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,39700000.0,41500500.655,True,1
+yor,Yoruba,yor,yoru1245,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,37800000.0,31761815.7,True,1
+mym,Malayalam,mal,mala1464,Dravidian,Eurasia,,No fixed stress,Left-edge: First or second,Long vowel,Undetermined,weight-sensitive,initial,37100000.0,45936454.86200001,True,1
+mai,Maithili,mai,mait1250,Indo-European,Eurasia,,No fixed stress,Right-oriented: One of the last three,Long vowel,Trochaic,weight-sensitive,penultimate,33900000.0,20333024.0,True,1
+brm,Burmese,mya,nucl1310,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,32900000.0,37171607.7,True,1
+sun,Sundanese,sun,sund1252,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,,weight-sensitive,penultimate,32400000.0,33787440.0,True,1
+uzn,Uzbek (Northern),uzn,nort2690,Altaic,Eurasia,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,final,final,25100000.0,39170367.428,True,1
+sdh,Sindhi,snd,sind1272,Indo-European,Eurasia,No tones,No fixed stress,Combined: Right-edge and unbounded,No weight,,weight-sensitive,no default (unpredictable),24600000.0,43491120.0,True,1
+abe,Arabic (Beirut),apc,nort3139,Afro-Asiatic,Eurasia,,No fixed stress,Right-oriented: One of the last three,Long vowel or coda consonant,Trochaic,weight-sensitive,penultimate,24600000.0,43682528.1,True,3
+rom,Romanian,ron,roma1327,Indo-European,Eurasia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Lexical stress,,lexically unpredictable,penultimate,24300000.0,20043506.695,True,1
+tag,Tagalog,tgl,taga1270,Austronesian,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),Lexical stress,Trochaic,penultimate,penultimate,23600000.0,23600000.0,True,1
+dut,Dutch,nld,dutc1256,Indo-European,Eurasia,,No fixed stress,Right-oriented: One of the last three,Coda consonant,Trochaic,weight-sensitive,penultimate,23100000.0,32854898.119999997,True,1
+awd,Awadhi,awa,awad1243,Indo-European,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel or coda consonant,No rhythmic stress,weight-sensitive,penultimate,22000000.0,27458162.8,True,1
+tha,Thai,tha,thai1261,Tai-Kadai,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,20700000.0,55978999.22,True,1
+bma,Berber (Middle Atlas),tzm,cent2194,Afro-Asiatic,Africa,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,17000000.0,3663984.8,True,1
+khm,Khmer,khm,cent1989,Austro-Asiatic,Eurasia,No tones,Ultimate,Fixed stress (no weight-sensitivity),Prominence,Undetermined,final,final,16600000.0,15186693.0,True,1
+swa,Swahili,swh,swah1253,Niger-Congo,Africa,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,16010110.0,194102079.1512,True,1
+ceb,Cebuano,ceb,cebu1242,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel or coda consonant,Iambic,weight-sensitive,final,15900000.0,28386480.0,True,1
+grk,Greek (Modern),ell,mode1248,Indo-European,Eurasia,No tones,Antepenultimate,Fixed stress (no weight-sensitivity),Lexical stress,Trochaic,antepenultimate,antepenultimate,15000000.0,12249401.746999998,True,1
+arh,Arabic (Hijazi),acw,hija1235,Afro-Asiatic,Eurasia,,No fixed stress,Right-oriented: One of the last three,Long vowel or coda consonant,,weight-sensitive,penultimate,14500000.0,14500000.0,True,1
+taj,Tajik,tgk,taji1245,Indo-European,Eurasia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,14000000.0,11452214.8,True,1
+hun,Hungarian,hun,hung1274,Uralic,Eurasia,No tones,Initial,Fixed stress (no weight-sensitivity),Long vowel,Trochaic,initial,initial,12600000.0,12313191.743999999,True,1
+zul,Zulu,zul,zulu1248,Niger-Congo,Africa,Simple tone system,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,12100000.0,14969090.964,True,1
+apa,Arabic (Palestinian),ajp,sout3123,Afro-Asiatic,Eurasia,,No fixed stress,Right-oriented: One of the last three,Combined,Trochaic,weight-sensitive,penultimate,11600000.0,11600000.0,True,2
+cze,Czech,ces,czec1258,Indo-European,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10700000.0,13236057.5,True,1
+fuz,Fuzhou,cdo,mind1253,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,10300000.0,54256.14,True,1
+dri,Dari,prs,dari1249,Indo-European,Eurasia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,final,final,9600000.0,9600000.0,True,1
+swe,Swedish,swe,swed1254,Indo-European,Eurasia,,No fixed stress,Right-oriented: One of the last three,Long vowel or coda consonant,No rhythmic stress,weight-sensitive,penultimate,9244250.0,13338376.6,True,1
+tas,Tashlhiyt,shi,tach1250,Afro-Asiatic,Africa,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,final,final,8000000.0,6505442.4,True,1
+arm,Armenian (Eastern),hye,nucl1235,Indo-European,Eurasia,No tones,No fixed stress,Unbounded: Stress can be anywhere,Prominence,Undetermined,weight-sensitive,no default (unpredictable),6700000.0,5443504.653,True,1
+psh,Pashto,pst,cent1973,Indo-European,Eurasia,No tones,No fixed stress,Not predictable,No weight,No rhythmic stress,lexically unpredictable,no default (unpredictable),6520000.0,6520000.0,True,1
+svk,Slovak,slk,slov1269,Indo-European,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,6000000.0,6809719.685,True,1
+dsh,Danish,dan,dani1285,Indo-European,Eurasia,,No fixed stress,Combined: Right-edge and unbounded,Long vowel or coda consonant,,weight-sensitive,no default (unpredictable),5621380.0,7247744.3632,True,1
+min,Minangkabau,min,mina1268,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,5530000.0,8446860.0,True,1
+fin,Finnish,fin,finn1318,Uralic,Eurasia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,5413380.0,5786579.0,True,1
+heb,Hebrew (Modern),heb,hebr1245,Afro-Asiatic,Eurasia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,final,final,5353950.0,9402620.0,True,1
+bug,Bugis,bug,bugi1244,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,5017800.0,4532298.192,True,1
+meb,Melayu Betawi,bew,beta1252,other,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,,weight-sensitive,penultimate,5000000.0,5912802.0,True,1
+ctl,Catalan,cat,stan1289,Indo-European,Eurasia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Lexical stress,No rhythmic stress,lexically unpredictable,penultimate,4873396.0,8218781.235,True,1
+gua,Guaraní,gug,para1311,Tupian,South America,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,4850000.0,5268050.868,True,1
+ael,Arabic (Eastern Libyan),ayl,liby1240,Afro-Asiatic,Africa,,No fixed stress,Right-oriented: One of the last three,Combined,Iambic,weight-sensitive,final,4320500.0,4320500.0,True,1
+lit,Lithuanian,lit,lith1251,Indo-European,Eurasia,,No fixed stress,Unbounded: Stress can be anywhere,Lexical stress,Undetermined,lexically unpredictable,no default (unpredictable),4000000.0,2405298.3230000003,True,1
+ksg,Karen (Sgaw),ksw,sgaw1245,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,4000000.0,4000000.0,True,1
+ahs,Arabic (Bani-Hassan),mey,hass1238,Afro-Asiatic,Africa,,No fixed stress,Unbounded: Stress can be anywhere,Combined,,weight-sensitive,no default (unpredictable),3763900.0,9251611.474542001,True,1
+geo,Georgian,kat,nucl1302,Kartvelian,Eurasia,No tones,Antepenultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,antepenultimate,antepenultimate,3700000.0,4409179.818999999,True,1
+ace,Acehnese,ace,achi1257,Austronesian,Eurasia,,Ultimate,Fixed stress (no weight-sensitivity),Prominence,Trochaic,final,final,3500032.0,3941868.0,True,1
+bal,Balinese,ban,bali1278,Austronesian,Papunesia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,3300000.0,5068116.0,True,1
+sha,Shan,shn,shan1277,Tai-Kadai,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,3000000.0,3748858.56,True,1
+kha,Khalkha,khk,halh1238,Altaic,Eurasia,No tones,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,No rhythmic stress,weight-sensitive,no default (unpredictable),2704030.0,6738313.493000001,True,1
+bkl,Bikol,bcl,cent2087,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Lexical stress,Trochaic,lexically unpredictable,penultimate,2500000.0,3548310.0,True,1
+slo,Slovene,slv,slov1268,Indo-European,Eurasia,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,No rhythmic stress,weight-sensitive,no default (unpredictable),2400000.0,1967012.5885,True,1
+lan,Lango,laj,lang1324,Eastern Sudanic,Africa,Simple tone system,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,2100000.0,1872754.0,True,1
+bto,Batak (Toba),bbc,bata1289,Austronesian,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,2000000.0,2590370.4,True,1
+yay,Yay,pcc,bouy1240,Tai-Kadai,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,2000000.0,2000000.0,True,1
+qch,Quiché,quc,kich1262,Mayan,North America,,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,2000000.0,1569947.2,True,1
+mcd,Macedonian,mkd,mace1250,Indo-European,Eurasia,,Antepenultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,antepenultimate,antepenultimate,2000000.0,1612846.3699999999,True,1
+mks,Makassar,mak,maka1311,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,1600000.0,2055402.6,True,1
+don,Dong (Southern),kmc,sout2741,Tai-Kadai,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,1500000.0,1500000.0,True,1
+mun,Mundari,unr,mund1320,Austro-Asiatic,Eurasia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Coda consonant,,weight-sensitive,penultimate,1500000.0,1330184.2319999998,True,1
+bsk,Bashkir,bak,bash1264,Altaic,Eurasia,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,final,final,1200000.0,1126568.0,True,1
+tib,Tibetan (Standard Spoken),bod,tibe1272,Sino-Tibetan,Eurasia,Simple tone system,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,,weight-sensitive,no default (unpredictable),1200000.0,3061778.0599999996,True,1
+bej,Beja,bej,beja1238,Afro-Asiatic,Africa,Simple tone system,No fixed stress,Right-oriented: One of the last three,No weight,,weight-sensitive,penultimate,1178000.0,2725234.2,True,1
+est,Estonian,ekk,esto1258,Uralic,Eurasia,,Initial,Fixed stress (no weight-sensitivity),Long vowel,Trochaic,initial,initial,1164770.0,853779.951,True,1
+jng,Jingpho,kac,kach1280,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,940000.0,977960.7,True,1
+qay,Quechua (Ayacucho),quy,ayac1239,Quechuan,South America,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,918200.0,918200.0,True,1
+mng,Manggarai,mqy,mang1405,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,,weight-sensitive,penultimate,900000.0,900000.0,True,1
+olm,Oloh Mangtangai,nij,ngaj1237,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,890000.0,1041779.4,True,2
+nun,Nung (in Vietnam),nut,nung1283,Tai-Kadai,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,850000.0,850000.0,True,1
+khs,Khasi,kha,khas1269,Austro-Asiatic,Eurasia,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,843000.0,1127304.0,True,1
+nia,Nias,nia,nias1242,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,825768.0,825768.0,True,1
+mie,Mien,ium,iumi1238,Hmong-Mien,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,820000.0,820000.0,True,1
+ava,Avar,ava,avar1256,Nakh-Daghestanian,Eurasia,No tones,No fixed stress,Left-edge: First or second,Combined,No rhythmic stress,weight-sensitive,initial,766500.0,675940.8,True,1
+bqb,Basque (Bidasoa Valley),eus,basq1248,Basque,Eurasia,,Second,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,lexically unpredictable,penultimate,750000.0,1034494.98,True,11
+ga,Gã,gaa,gaaa1244,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,745000.0,968494.8,True,1
+chv,Chuvash,chv,chuv1255,Altaic,Eurasia,No tones,No fixed stress,Unbounded: Stress can be anywhere,Prominence,No rhythmic stress,weight-sensitive,no default (unpredictable),738070.0,1830673.0,True,1
+wel,Welsh,cym,wels1247,Indo-European,Eurasia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,724000.0,920984.604,True,1
+lu,Lü,khb,luuu1242,Tai-Kadai,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,700000.0,269047.6,True,1
+lez,Lezgian,lez,lezg1247,Nakh-Daghestanian,Eurasia,No tones,No fixed stress,Left-edge: First or second,Coda consonant,,weight-sensitive,initial,633610.0,295724.1,True,1
+bkr,Batak (Karo),btx,bata1293,Austronesian,Papunesia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Combined,,weight-sensitive,penultimate,600000.0,600000.0,True,1
+ewo,Ewondo,ewo,ewon1239,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,578000.0,959949.1,True,1
+mlt,Maltese,mlt,malt1254,Afro-Asiatic,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Combined,Undetermined,weight-sensitive,penultimate,570000.0,469730.0,True,1
+trd,Toraja,sda,tora1261,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,500000.0,500000.0,True,1
+mme,Mari (Meadow),mhr,east2328,Uralic,Eurasia,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,No rhythmic stress,weight-sensitive,no default (unpredictable),482000.0,482000.0,True,1
+kmu,Khmu',kjg,khmu1256,Austro-Asiatic,Eurasia,Simple tone system,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,480000.0,461306.48,True,1
+irq,Iraqw,irk,iraq1241,Afro-Asiatic,Africa,Simple tone system,No fixed stress,Combined: Right-edge and unbounded,Combined,No rhythmic stress,weight-sensitive,no default (unpredictable),460000.0,460000.0,True,1
+lah,Lahu,lhu,lahu1253,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,450000.0,450000.0,True,1
+dio,Diola-Fogny,dyo,jola1263,Niger-Congo,Africa,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,410000.0,490035.0,True,1
+anc,Angas,anc,ngas1240,Afro-Asiatic,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,400000.0,400000.0,True,1
+ice,Icelandic,isl,icel1247,Indo-European,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,358000.0,364036.0,True,1
+tzo,Tzotzil,tzo,tzot1259,Mayan,North America,,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,350000.0,350000.0,True,1
+fij,Fijian,fij,fiji1243,Austronesian,Papunesia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,Trochaic,weight-sensitive,penultimate,341270.0,371128.29,True,1
+ing,Ingush,inh,ingu1240,Nakh-Daghestanian,Eurasia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,322900.0,352052.5,True,1
+nax,Naxi,nxq,naxi1245,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,310000.0,339849.6,True,1
+map,Mapudungun,arn,mapu1245,Araucanian,South America,No tones,Second,Fixed stress (no weight-sensitivity),No weight,Iambic,second,second,300000.0,279970.5,True,1
+sui,Sui,swi,suii1243,Tai-Kadai,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,300000.0,300000.0,True,1
+mna,Muna,mnb,muna1247,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,300000.0,300000.0,True,1
+sao,Saho,ssy,saho1246,Afro-Asiatic,Africa,,No fixed stress,Not predictable,Lexical stress,,lexically unpredictable,no default (unpredictable),271180.0,228382.56,True,1
+ao,Ao,njo,aona1235,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,261000.0,324099.9,True,1
+kho,Nama,naq,nama1264,Khoe-Kwadi,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,250000.0,308402.6,True,1
+kam,Kambera,xbr,kamb1299,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,240000.0,240000.0,True,1
+nsy,Neo-Aramaic (Assyrian),aii,assy1241,Afro-Asiatic,Eurasia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,232300.0,232300.0,True,1
+mao,Maori,mri,maor1246,Austronesian,Papunesia,No tones,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,,weight-sensitive,no default (unpredictable),213849.0,144513.88,True,1
+abk,Abkhaz,abk,abkh1244,Northwest Caucasian,Eurasia,No tones,No fixed stress,Not predictable,Lexical stress,,lexically unpredictable,no default (unpredictable),190110.0,111858.856,True,1
+tng,Tongan,ton,tong1325,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,Trochaic,weight-sensitive,penultimate,186010.0,99644.55,True,1
+mis,Miskito,miq,misk1235,Misumalpan,North America,,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,180000.0,180000.0,True,1
+lmh,Lamaholot,slp,lama1277,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,,weight-sensitive,penultimate,180000.0,180000.0,True,1
+pur,Purépecha,tsz,pure1242,Tarascan,North America,No tones,Initial,Fixed stress (no weight-sensitivity),Lexical stress,,initial,initial,175000.0,175000.0,True,1
+nav,Navajo,nav,nava1243,Na-Dene,North America,Simple tone system,No fixed stress,,,,unclassified,no default (unpredictable),169369.0,170981.5,True,1
+yzv,Yazva,kpv,komi1268,Uralic,Eurasia,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,No rhythmic stress,weight-sensitive,no default (unpredictable),156000.0,156000.0,True,1
+myn,Ma'anyan,mhy,maan1238,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,150000.0,150000.0,True,1
+htc,Huastec,hus,huas1242,Mayan,North America,No tones,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,No rhythmic stress,weight-sensitive,no default (unpredictable),150000.0,150000.0,True,1
+iri,Irish,gle,iris1253,Indo-European,Eurasia,,Initial,Fixed stress (no weight-sensitivity),Long vowel,Undetermined,initial,initial,141000.0,1254049.8499999999,True,2
+pna,Pamona,pmf,pamo1252,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,137000.0,137000.0,True,1
+eja,Ejagham,etu,ejag1239,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,116700.0,116700.0,True,1
+svc,Slovincian,csb,kash1274,Indo-European,Eurasia,,No fixed stress,Unbounded: Stress can be anywhere,Combined,,weight-sensitive,no default (unpredictable),108000.0,50370.19,True,1
+bre,Breton,bre,bret1244,Indo-European,Eurasia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,107000.0,567509.18,True,1
+nti,Ngiti,niy,ngit1239,Central Sudanic,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,100000.0,100000.0,True,1
+pai,Paiwan,pwn,paiw1248,Austronesian,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,96000.0,96000.0,True,1
+far,Faroese,fao,faro1244,Indo-European,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,Undetermined,initial,initial,69150.0,72984.282,True,1
+tah,Tahitian,tah,tahi1242,Austronesian,Papunesia,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,No rhythmic stress,weight-sensitive,no default (unpredictable),68000.0,94097.4,True,1
+wlo,Wolio,wlo,woli1241,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,,weight-sensitive,penultimate,65000.0,65000.0,True,1
+cha,Chamorro,cha,cham1312,Austronesian,Papunesia,No tones,No fixed stress,Right-oriented: One of the last three,Coda consonant,Undetermined,weight-sensitive,penultimate,64300.0,46498.28,True,1
+kop,Komi-Permyak,koi,komi1269,Uralic,Eurasia,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,No rhythmic stress,weight-sensitive,no default (unpredictable),63100.0,43654.51,True,1
+tic,Ticuna,tca,ticu1245,Ticuna,South America,Complex tone system,,,,,no lexical stress,no lexical stress,61000.0,61000.0,True,1
+tla,Tolai,ksd,kuan1248,Austronesian,Papunesia,,Second,Fixed stress (no weight-sensitivity),No weight,,second,second,61000.0,61000.0,True,1
+gae,Gaelic (Scots),gla,scot1245,Indo-European,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,Undetermined,initial,initial,60130.0,75305.01,True,1
+ngd,Ngad'a,nxg,ngad1261,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,,weight-sensitive,penultimate,60000.0,60000.0,True,1
+grw,Greenlandic (West),kal,kala1399,Eskimo-Aleut,Eurasia,No tones,Ultimate,Fixed stress (no weight-sensitivity),Long vowel or coda consonant,Undetermined,final,final,56200.0,55678.60799999999,True,1
+bur,Burushaski,bsk,buru1296,Burushaski,Eurasia,No tones,No fixed stress,Not predictable,Lexical stress,Trochaic,lexically unpredictable,no default (unpredictable),55000.0,55000.0,True,1
+try,Tiruray,tiy,tiru1241,Austronesian,Papunesia,No tones,Antepenultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,antepenultimate,antepenultimate,50000.0,50000.0,True,1
+kuz,Kulamanen,mbt,mati1250,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,,weight-sensitive,penultimate,50000.0,50000.0,True,1
+rnr,Romani (North Russian),rml,balt1257,Indo-European,Eurasia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,50000.0,50000.0,True,1
+bag,Bagirmi,bmi,bagi1246,Central Sudanic,Africa,Complex tone system,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,44800.0,44800.0,True,1
+rsm,Romansch (Surmeiran),roh,roma1326,Indo-European,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Combined,,weight-sensitive,penultimate,40039.0,44302.85,True,1
+cpn,Chepang,cdm,chep1245,Sino-Tibetan,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,36807.0,36807.0,True,1
+krl,Karelian,krl,kare1335,Uralic,Eurasia,,Initial,Fixed stress (no weight-sensitivity),Long vowel or coda consonant,Trochaic,initial,initial,35600.0,14082.1,True,1
+shk,Shipibo-Konibo,shp,ship1254,Pano-Tacanan,South America,No tones,No fixed stress,Left-edge: First or second,Coda consonant,,weight-sensitive,initial,34152.0,34152.0,True,1
+cre,Cree (Plains),crk,plai1258,Algic,North America,No tones,Antepenultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,antepenultimate,antepenultimate,34000.0,12802.284000000001,True,1
+juh,Ju|'hoan,ktz,juho1239,Kxa,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,33600.0,33600.0,True,1
+jak,Jakaltek,jac,,Mayan,North America,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,33000.0,56591.12,True,1
+iga,Inga,inb,inga1252,Quechuan,South America,,No fixed stress,Right-edge: Ultimate or penultimate,Combined,Trochaic,weight-sensitive,penultimate,33000.0,33000.0,True,1
+buu,Buru,mhs,buru1303,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,32980.0,32980.0,True,1
+blk,Balantak,blz,bala1315,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,30000.0,30000.0,True,1
+mah,Mari (Hill),mrj,west2392,Uralic,Eurasia,,No fixed stress,Combined: Right-edge and unbounded,Long vowel,No rhythmic stress,weight-sensitive,no default (unpredictable),30000.0,15490.31,True,1
+occ,Occitan,oci,occi1239,Indo-European,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Combined,,weight-sensitive,penultimate,30000.0,2055966.04,True,1
+wra,Warao,wba,wara1303,Warao,South America,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,28100.0,28100.0,True,1
+tlo,Tobelo,tlb,tobe1252,North Halmaheran,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,,weight-sensitive,penultimate,27720.0,27720.0,True,1
+haw,Hawaiian,haw,hawa1245,Austronesian,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),Long vowel,Trochaic,penultimate,penultimate,26205.0,30434.707000000002,True,1
+sno,Saami (Northern),sme,nort2671,Uralic,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,25700.0,52950.0646,True,1
+tsa,Tsakhur,tkr,tsak1249,Nakh-Daghestanian,Eurasia,,Ultimate,Fixed stress (no weight-sensitivity),Prominence,No rhythmic stress,final,final,23000.0,17040.32,True,1
+ntu,Nenets,yrk,nene1249,Uralic,Eurasia,No tones,Initial,Fixed stress (no weight-sensitivity),Coda consonant,Trochaic,initial,initial,21926.0,21926.0,True,1
+tab,Taba,mky,east2440,Austronesian,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,20000.0,20000.0,True,1
+dak,Dakota,dak,dako1258,Siouan,North America,,Second,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,second,second,20000.0,21688.8142,True,1
+kom,Komo,xom,komo1258,Koman,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,18530.0,18530.0,True,1
+doy,Doyayo,dow,doya1240,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,18000.0,18000.0,True,1
+aln,Alune,alp,alun1238,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,17000.0,17000.0,True,1
+ych,Yup'ik (Chevak),esu,cent2127,Eskimo-Aleut,North America,,No fixed stress,Left-edge: First or second,Combined,Iambic,weight-sensitive,second,16900.0,21543.668999999998,True,3
+dre,Drehu,dhv,dehu1237,Austronesian,Papunesia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,15949.0,15949.0,True,1
+eve,Evenki,evn,even1259,Altaic,Eurasia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,Iambic,weight-sensitive,final,15800.0,15800.0,True,1
+tbr,Tabaru,tby,taba1263,North Halmaheran,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,15000.0,15000.0,True,1
+tua,Tuamotuan,pmt,tuam1242,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,15000.0,15000.0,True,1
+yul,Yulu,yul,nucl1427,Central Sudanic,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,13000.0,13000.0,True,1
+swi,Sawai,szw,sawa1247,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,No rhythmic stress,weight-sensitive,penultimate,12000.0,12000.0,True,1
+atb,Aralle-Tabulahan,atq,aral1243,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,12000.0,12000.0,True,1
+agu,Aguacatec,agu,agua1252,Mayan,North America,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,No rhythmic stress,weight-sensitive,no default (unpredictable),10100.0,47463.52,True,1
+rit,Ritharngu,rit,rita1239,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,initial,initial,10000.0,10000.0,False,1
+que,Quechan,yum,quec1382,Hokan,North America,,Ultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,final,final,10000.0,10000.0,False,1
+qim,Quechua (Imbabura),qvi,imba1240,Quechuan,South America,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+sed,Sedang,sed,seda1262,Austro-Asiatic,Eurasia,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,final,final,10000.0,10000.0,False,1
+sea,Southeast Ambrym,tvk,sout2859,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,No rhythmic stress,weight-sensitive,penultimate,10000.0,10000.0,False,1
+scr,Serbian-Croatian,hbs,sout1528,Indo-European,Eurasia,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,No rhythmic stress,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+sak,Sakao,sku,saka1289,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,,weight-sensitive,penultimate,10000.0,10000.0,False,1
+sgr,Sangir,sxn,sang1336,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,259037.04,False,1
+ror,Roro,rro,waim1251,Austronesian,Papunesia,No tones,No fixed stress,Left-edge: First or second,Long vowel,,weight-sensitive,initial,10000.0,10000.0,False,1
+rti,Roti,twu,term1237,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+gor,Gorowa,gow,goro1270,Afro-Asiatic,Africa,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel or coda consonant,No rhythmic stress,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+grb,Grebo,grj,sout2826,Niger-Congo,Africa,Complex tone system,No fixed stress,Not predictable,Lexical stress,No rhythmic stress,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+grr,Garrwa,wrk,gara1269,Garrwan,Australia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+ppi,Pitta Pitta,pit,pitt1247,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+pul,Puluwat,puw,pulu1242,Austronesian,Papunesia,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,Undetermined,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+put,Paiute (Southern),ute,sout2969,Uto-Aztecan,North America,,Second,Fixed stress (no weight-sensitivity),No weight,Iambic,second,second,10000.0,10000.0,False,1
+thp,Thaypan,typ,thay1248,Pama-Nyungan,Australia,,Second,Fixed stress (no weight-sensitivity),No weight,,second,second,10000.0,10000.0,False,1
+tld,Talaud,tld,tala1285,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+tmc,Timucua,tjm,timu1245,Timucua,North America,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+tno,Tondano,tdn,tond1251,Austronesian,Papunesia,,No fixed stress,Right-oriented: One of the last three,Combined,,weight-sensitive,penultimate,10000.0,10000.0,False,1
+tns,Tanna (Southwest),nwi,sout2869,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel or coda consonant,Trochaic,weight-sensitive,penultimate,10000.0,10000.0,False,1
+taw,Tawala,tbo,tawa1275,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+sbg,Sama (Balangingi),sse,bala1311,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+dou,Doutai,tds,dout1240,Lakes Plain,Papunesia,,Initial,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,initial,initial,10000.0,10000.0,False,1
+dni,Dani (Lower Grand Valley),dni,lowe1415,Trans-New Guinea,Papunesia,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,final,final,10000.0,10000.0,False,1
+djr,Djaru,ddj,jaru1254,Pama-Nyungan,Australia,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,No rhythmic stress,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+dji,Djingili,jig,djin1251,Mirndi,Australia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+diy,Diyari,dif,dier1241,Pama-Nyungan,Australia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+die,Diegueño (Mesa Grande),dih,kumi1248,Hokan,North America,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Combined,Undetermined,weight-sensitive,penultimate,10000.0,10000.0,False,1
+pag,Pagu,pgu,pagu1249,North Halmaheran,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+tor,Toratán,rth,rata1244,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+oss,Ossetic,oss,osse1243,Indo-European,Eurasia,,No fixed stress,Left-edge: First or second,Long vowel,No rhythmic stress,weight-sensitive,initial,10000.0,473955.72,False,1
+ono,Ono,ons,onoo1246,Trans-New Guinea,Papunesia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+pme,Pomo (Eastern),peb,east2545,Hokan,North America,,Second,Fixed stress (no weight-sensitivity),No weight,Iambic,second,second,10000.0,10000.0,False,1
+plh,Paulohi,plh,paul1238,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+pkm,Pokomchí,poh,poqo1254,Mayan,North America,,Ultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,final,final,10000.0,219062.4,False,1
+pin,Pintupi,piu,pint1250,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+eno,Enggano,eno,engg1245,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+emc,Embera Chami,cmi,embe1262,Choco,South America,,No fixed stress,Right-edge: Ultimate or penultimate,Combined,,weight-sensitive,penultimate,10000.0,10000.0,False,1
+pad,Padoe,pdo,pado1242,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+slp,Selepet,spl,sele1250,Trans-New Guinea,Papunesia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+sla,Slave,den,slav1253,Na-Dene,North America,Simple tone system,No fixed stress,Not predictable,Lexical stress,No rhythmic stress,lexically unpredictable,no default (unpredictable),10000.0,2327.688,False,1
+skr,Sikaritai,tty,sika1263,Lakes Plain,Papunesia,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,No rhythmic stress,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+skl,Sikule,skh,siku1242,Austronesian,Papunesia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,10000.0,10000.0,False,1
+sio,Sio,xsi,sioo1240,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,No rhythmic stress,weight-sensitive,penultimate,10000.0,10000.0,False,1
+shi,Shiriana,shb,nina1238,Yanomam,South America,No tones,Ultimate,Fixed stress (no weight-sensitivity),Prominence,Iambic,final,final,10000.0,10000.0,False,1
+cnl,Canela,ram,ramk1239,Macro-Ge,South America,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,10000.0,10000.0,False,1
+cya,Chatino (Yaitepec),ctp,west2644,Oto-Manguean,North America,,Ultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,final,final,10000.0,10000.0,False,2
+tps,Tepehuan (Southeastern),stp,sout2976,Uto-Aztecan,North America,,No fixed stress,Left-edge: First or second,Long vowel or coda consonant,Trochaic,weight-sensitive,initial,10000.0,10000.0,False,1
+tbb,Tübatulabal,tub,tuba1278,Uto-Aztecan,North America,,Ultimate,Fixed stress (no weight-sensitivity),Long vowel,Trochaic,final,final,10000.0,10000.0,False,1
+tnt,Tontemboan,tnt,tont1239,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Combined,,weight-sensitive,penultimate,10000.0,10000.0,False,1
+cup,Cupeño,cup,cupe1243,Uto-Aztecan,North America,,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,10000.0,10000.0,False,1
+coo,Coos (Hanis),csz,coos1249,Oregon Coast,North America,No tones,No fixed stress,Right-edge: Ultimate or penultimate,No weight,No rhythmic stress,weight-sensitive,penultimate,10000.0,10000.0,False,1
+dhw,Dharawal,tbh,thur1254,Pama-Nyungan,Australia,,No fixed stress,Left-edge: First or second,Long vowel,No rhythmic stress,weight-sensitive,initial,10000.0,10000.0,False,1
+dhu,Dhurga,dhu,dhur1239,Pama-Nyungan,Australia,,No fixed stress,Left-edge: First or second,Long vowel,No rhythmic stress,weight-sensitive,initial,10000.0,10000.0,False,1
+daa,Da'a,kzf,daak1235,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+cle,Chinantec (Lealao),cle,leal1235,Oto-Manguean,North America,Complex tone system,No fixed stress,Not predictable,No weight,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+yuw,Yuwaalaraay,kld,gami1243,Pama-Nyungan,Australia,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,Dual: both trochaic and iambic,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+bnt,Bantik,bnq,bant1286,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,10000.0,10000.0,False,1
+bnl,Banggarla,bjb,bang1339,Pama-Nyungan,Australia,,Antepenultimate,Fixed stress (no weight-sensitivity),No weight,,antepenultimate,antepenultimate,10000.0,10000.0,False,1
+bim,Bima,bhp,bima1247,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+sps,Salish (Southern Puget Sound),slh,sout2965,Salishan,North America,,No fixed stress,Not predictable,Lexical stress,,lexically unpredictable,no default (unpredictable),10000.0,10000.0,False,1
+asm,Asmat,cns,cent2117,Asmat-Kamrau Bay,Papunesia,No tones,Ultimate,Fixed stress (no weight-sensitivity),Lexical stress,Iambic,final,final,10000.0,10000.0,False,1
+arp,Arapesh (Mountain),ape,buki1249,Torricelli,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+sto,Stoney,sto,ston1242,Siouan,North America,,Second,Fixed stress (no weight-sensitivity),Coda consonant,No rhythmic stress,second,second,10000.0,10000.0,False,1
+arg,Arabic (Gulf),afb,gulf1241,Afro-Asiatic,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,,weight-sensitive,penultimate,10000.0,10000.0,False,1
+tma,Tama,tma,tama1331,Eastern Sudanic,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+tok,Tarok,yer,taro1263,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+kra,Kara (in Papua New Guinea),leu,kara1486,Austronesian,Papunesia,,No fixed stress,Unbounded: Stress can be anywhere,Combined,Undetermined,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+baw,Bawm,bgr,bawm1236,Sino-Tibetan,Eurasia,Simple tone system,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,10000.0,10000.0,False,1
+aym,Aymara (Central),ayr,cent2142,Aymaran,South America,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,2984003.2,False,1
+awt,Awtuw,kmn,awtu1239,Sepik,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+awe,Arrernte (Western),are,west2441,Pama-Nyungan,Australia,,Second,Fixed stress (no weight-sensitivity),No weight,Trochaic,second,second,10000.0,10000.0,False,1
+aro,Arosi,aia,aros1241,Austronesian,Papunesia,,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,10000.0,10000.0,False,1
+koy,Koya,kff,koya1251,Dravidian,Eurasia,No tones,Initial,Fixed stress (no weight-sensitivity),Long vowel or coda consonant,Undetermined,initial,initial,10000.0,10000.0,False,1
+kws,Kawaiisu,xaw,kawa1283,Uto-Aztecan,North America,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,,weight-sensitive,penultimate,10000.0,10000.0,False,1
+kwa,Kwaio,kwd,kwai1243,Austronesian,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+kuu,Kuuku Ya'u,kuy,kuuk1238,Pama-Nyungan,Australia,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,Trochaic,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+ktn,Ketengban,xte,kete1254,Trans-New Guinea,Papunesia,,No fixed stress,Not predictable,Lexical stress,No rhythmic stress,lexically unpredictable,no default (unpredictable),10000.0,10000.0,False,1
+yil,Yil,yll,yill1241,Torricelli,Papunesia,,No fixed stress,Left-edge: First or second,Prominence,,weight-sensitive,initial,10000.0,10000.0,False,1
+yaq,Yaqui,yaq,yaqu1251,Uto-Aztecan,North America,Simple tone system,Initial,Fixed stress (no weight-sensitivity),Combined,Trochaic,initial,initial,10000.0,10000.0,False,1
+ywl,Yawelmani,yok,yoku1256,Penutian,North America,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+yuc,Yuchi,yuc,yuch1247,Yuchi,North America,No tones,No fixed stress,Not predictable,Lexical stress,Undetermined,lexically unpredictable,no default (unpredictable),10000.0,10000.0,False,1
+yny,Yanyuwa,jao,yany1243,Pama-Nyungan,Australia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+yir,Yir Yoront,yyr,jirj1239,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,initial,initial,10000.0,10000.0,False,1
+bgg,Banggai,bgz,bang1368,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,Undetermined,weight-sensitive,penultimate,10000.0,10000.0,False,1
+bai,Bai,bca,cent2004,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+amz,Amuzgo,amu,guer1243,Oto-Manguean,North America,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+aco,Acoma,kjq,west2632,Keresan,North America,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+zqc,Zoque (Copainalá),zoc,copa1236,Mixe-Zoque,North America,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+yan,Yana,ynn,yana1271,Hokan,North America,No tones,No fixed stress,Unbounded: Stress can be anywhere,Long vowel or coda consonant,No rhythmic stress,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+akl,Aklanon,akl,akla1241,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Coda consonant,Iambic,weight-sensitive,final,10000.0,10000.0,False,1
+phl,Phlong,pww,pwon1235,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+orh,Oromo (Harar),hae,east2652,Afro-Asiatic,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+nyi,Nyimang,nyi,amas1236,Eastern Sudanic,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+ccp,Cocopa,coc,coco1261,Hokan,North America,No tones,Ultimate,,,,final,final,10000.0,10000.0,False,1
+cav,Cavineña,cav,cavi1250,Pano-Tacanan,South America,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+car,Carib,car,gali1262,Cariban,South America,No tones,No fixed stress,Combined: Right-edge and unbounded,Long vowel or coda consonant,,weight-sensitive,no default (unpredictable),10000.0,10000.0,True,1
+au,Au,avt,auuu1241,Torricelli,Papunesia,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+sup,Supyire,spp,supy1237,Niger-Congo,Africa,Complex tone system,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,10000.0,10000.0,False,1
+eka,Ekari,ekg,ekar1243,Trans-New Guinea,Papunesia,Simple tone system,No fixed stress,Left-edge: First or second,Lexical stress,No rhythmic stress,lexically unpredictable,initial,10000.0,10000.0,False,1
+sro,Siroi,ssd,siro1249,Trans-New Guinea,Papunesia,,Second,Fixed stress (no weight-sensitivity),No weight,,second,second,10000.0,10000.0,False,1
+srd,Sardinian,sro,camp1261,Indo-European,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,No weight,,weight-sensitive,penultimate,10000.0,10000.0,False,1
+srb,Sorbian,,sorb1249,Indo-European,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+tgk,Tigak,tgc,tiga1245,Austronesian,Papunesia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,initial,initial,10000.0,10000.0,False,1
+teh,Tehuelche,teh,tehu1242,Chonan,South America,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,10000.0,10000.0,False,1
+tbl,Tabla,tnm,tabl1243,Sentanic,Papunesia,,No fixed stress,Right-oriented: One of the last three,Prominence,,weight-sensitive,penultimate,10000.0,10000.0,False,1
+cap,Capanahua,kaq,capa1241,Pano-Tacanan,South America,,No fixed stress,Left-edge: First or second,Combined,Trochaic,weight-sensitive,initial,10000.0,10000.0,False,1
+lug,Lugbara,lgg,lugb1240,Central Sudanic,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+lua,Lua,nie,niel1243,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+lam,Lamé,lme,peve1243,Afro-Asiatic,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+kyl,Kayah Li (Eastern),eky,east2342,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+kpe,Kpelle,xpe,libe1247,Mande,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+kpa,Kpan,kpk,kpan1246,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+bdm,Badimaya,bia,badi1246,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+non,Noni,nhu,noon1243,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+snd,Senadi,sef,ceba1235,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,1289217.4,False,1
+mzc,Mazatec (Chiquihuitlán),maq,chiq1250,Oto-Manguean,North America,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+mya,Ma'ya,slz,maya1282,Austronesian,Papunesia,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+mxc,Mixtec (Chalcatongo),mig,sanm1296,Oto-Manguean,North America,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,2
+mum,Mumuye,mzm,nucl1240,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+mla,Mambila,,,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+mba,Mba,mfc,mbaa1245,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+kaw,Kaiwá,kgk,kaiw1246,Tupian,South America,,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,10000.0,10000.0,False,1
+ter,Tera,ttr,tera1251,Afro-Asiatic,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+ndt,Ndut,ndv,ndut1239,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+gug,Gugada,ktd,koka1244,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+mam,Mam,mam,mamm1241,Mayan,North America,,No fixed stress,Combined: Right-edge and unbounded,Combined,,weight-sensitive,no default (unpredictable),10000.0,839739.2,False,1
+irr,Irarutu,irh,irar1238,Austronesian,Papunesia,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,final,final,10000.0,10000.0,False,1
+iaa,Iaai,iai,iaai1238,Austronesian,Papunesia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+hno,Haida (Northern),hdn,nort2938,Haida,North America,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,Iambic,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+kjo,Konjo,kjc,coas1295,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+kjn,Kunjen,kjn,kunj1245,Pama-Nyungan,Australia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,10000.0,10000.0,False,1
+mwn,Miwok (Northern Sierra),nsq,nort2968,Penutian,North America,,No fixed stress,Left-edge: First or second,Long vowel or coda consonant,Iambic,weight-sensitive,second,10000.0,10000.0,False,1
+kfe,Koromfe,kfz,koro1298,Niger-Congo,Africa,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,initial,initial,10000.0,10000.0,False,1
+kew,Kewa,kew,kewa1250,Trans-New Guinea,Papunesia,Simple tone system,No fixed stress,Not predictable,Lexical stress,No rhythmic stress,lexically unpredictable,no default (unpredictable),10000.0,10000.0,False,1
+ker,Kera,ker,kera1255,Afro-Asiatic,Africa,Complex tone system,No fixed stress,Unbounded: Stress can be anywhere,Combined,No rhythmic stress,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+kon,Kongo,kng,koon1244,Niger-Congo,Africa,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,1731045.0,False,1
+kob,Kobon,kpw,kobo1249,Trans-New Guinea,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,10000.0,10000.0,False,1
+knm,Kunama,kun,kuna1268,Kunama,Africa,Simple tone system,No fixed stress,Right-oriented: One of the last three,Lexical stress,Undetermined,lexically unpredictable,penultimate,10000.0,10000.0,False,1
+klv,Kilivila,kij,kili1267,Austronesian,Papunesia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel or coda consonant,,weight-sensitive,penultimate,10000.0,10000.0,False,1
+klp,Kalapuya,kyl,kala1400,Kalapuyan,North America,,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,10000.0,10000.0,False,1
+kgu,Kalkatungu,ktg,kalk1246,Pama-Nyungan,Australia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+woi,Woisika,woi,kama1365,Greater West Bomberai,Papunesia,No tones,No fixed stress,Not predictable,Lexical stress,No rhythmic stress,lexically unpredictable,no default (unpredictable),10000.0,10000.0,False,1
+wnb,Winnebago,win,hoch1243,Siouan,North America,,Third,Fixed stress (no weight-sensitivity),No weight,Iambic,third,third,10000.0,10000.0,False,1
+wlm,Walmatjari,wmt,walm1241,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+lmp,Lampung,ljp,lamp1243,Austronesian,Papunesia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,10000.0,1942777.7999999998,False,1
+lla,Lamu-Lamu,lby,lamu1254,Pama-Nyungan,Australia,,Second,Fixed stress (no weight-sensitivity),No weight,,second,second,10000.0,10000.0,False,1
+lje,Lauje,law,lauj1238,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+let,Leti,lti,leti1246,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,Trochaic,weight-sensitive,penultimate,10000.0,10000.0,False,1
+hln,Halang,hal,hala1252,Austro-Asiatic,Eurasia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,10000.0,10000.0,False,1
+lat,Latvian,lav,latv1249,Indo-European,Eurasia,Simple tone system,Initial,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,initial,initial,10000.0,10000.0,False,1
+mal,Malagasy,plt,plat1254,Austronesian,Africa,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,10000.0,26507430.0,False,1
+mak,Makah,myh,maka1318,Wakashan,North America,No tones,No fixed stress,Left-edge: First or second,Long vowel,,weight-sensitive,initial,10000.0,10000.0,False,1
+mae,Mae,mmw,emae1237,Austronesian,Papunesia,,Antepenultimate,Fixed stress (no weight-sensitivity),No weight,,antepenultimate,antepenultimate,10000.0,10000.0,False,1
+luv,Luvale,lue,luva1239,Niger-Congo,Africa,Simple tone system,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,311986.5,False,1
+lui,Luiseño,lui,luis1253,Uto-Aztecan,North America,No tones,No fixed stress,Left-edge: First or second,Long vowel,,weight-sensitive,initial,10000.0,10000.0,False,1
+lrk,Larike,alo,lari1255,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Dual: both trochaic and iambic,penultimate,penultimate,10000.0,10000.0,False,1
+hnn,Hanunóo,hnn,hanu1241,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),Lexical stress,Undetermined,penultimate,penultimate,10000.0,18924.32,False,1
+len,Lenakel,tnl,lena1238,Austronesian,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+koh,Kohumono,bcs,kohu1244,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+kla,Klao,klu,klao1243,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+kad,Kadugli,xtc,kadu1257,Kadu,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+hmo,Hmong Njua,hnj,hmon1264,Hmong-Mien,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,815127.602,False,1
+gwa,Gwari,gbr,,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+poa,Po-Ai,fwa,fwai1237,Austronesian,Papunesia,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+spo,Spokane,spo,spok1245,Salishan,North America,,No fixed stress,Not predictable,Lexical stress,,lexically unpredictable,no default (unpredictable),10000.0,10000.0,False,1
+klm,Klamath,kla,klam1254,Penutian,North America,No tones,No fixed stress,Unbounded: Stress can be anywhere,Long vowel or coda consonant,Trochaic,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+snm,Sanuma,xsu,sanu1240,Yanomam,South America,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+sml,Semelai,sza,seme1247,Austro-Asiatic,Eurasia,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,final,final,10000.0,10000.0,False,1
+sly,Selayar,sly,sela1260,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,10000.0,152043.48,False,1
+ame,Amele,aey,amel1241,Trans-New Guinea,Papunesia,No tones,No fixed stress,Unbounded: Stress can be anywhere,Coda consonant,No rhythmic stress,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+aly,Alyawarra,aly,alya1239,Pama-Nyungan,Australia,,Second,Fixed stress (no weight-sensitivity),No weight,Trochaic,second,second,10000.0,10000.0,False,1
+agt,Anguthimri,awg,angu1242,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+bbm,Bambam,ptu,bamb1270,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,10000.0,10000.0,False,1
+bik,Biak,bhw,biak1248,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+snt,Sentani,set,nucl1632,Sentanic,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Coda consonant,Trochaic,weight-sensitive,penultimate,10000.0,10000.0,False,1
+kli,Kaili,lew,ledo1238,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+ksr,Kisar,kje,kisa1266,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+kro,Krongo,kgo,kron1241,Kadu,Africa,Simple tone system,No fixed stress,Unbounded: Stress can be anywhere,Prominence,Undetermined,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+apu,Apurinã,apu,apur1254,Arawakan,South America,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,Trochaic,weight-sensitive,penultimate,10000.0,10000.0,False,1
+cti,Chin (Tiddim),ctd,tedi1235,Sino-Tibetan,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+chq,Chinantec (Quiotepec),chq,quio1240,Oto-Manguean,North America,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+brb,Bariba,bba,baat1238,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+bir,Birom,bom,bero1242,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+tlp,Tlapanec,tcf,acat1239,Oto-Manguean,North America,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+bbf,Bobo Madaré (Northern),bbo,,Mande,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+gla,Gelao,gqu,qaua1234,Tai-Kadai,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+gds,Gadsup,gaj,gads1258,Trans-New Guinea,Papunesia,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+fef,Fe'fe',fmp,fefe1239,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+dum,Dumo,vam,vani1248,Skou,Papunesia,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+diz,Dizi,mdx,dizi1235,Afro-Asiatic,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+din,Dinka,din,dink1262,Eastern Sudanic,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+dan,Dan,dnj,dann1241,Mande,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,1628814.75,False,1
+bet,Bété,bev,dalo1238,Niger-Congo,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,10000.0,10000.0,False,1
+nbo,Nyambo,now,nyam1277,Niger-Congo,Africa,,Initial,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,initial,initial,10000.0,10000.0,False,1
+nbd,Nubian (Dongolese),dgl,dong1288,Eastern Sudanic,Africa,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel or coda consonant,Undetermined,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+nbb,Nambas (Big),nmb,bign1238,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Iambic,penultimate,penultimate,10000.0,10000.0,False,1
+nkb,Ngalkbun,ngk,ngal1292,Gunwinyguan,Australia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+nin,Ningil,niz,ning1273,Torricelli,Papunesia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+obk,Obokuitai,afz,obok1239,Lakes Plain,Papunesia,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,No rhythmic stress,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+nug,Nunggubuyu,nuy,nung1290,Gunwinyguan,Australia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+wrd,Wardaman,wrr,ward1246,Yangmanic,Australia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+npu,Napu,npy,napu1241,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+nor,Norwegian,nor,norw1258,Indo-European,Eurasia,Simple tone system,No fixed stress,Right-oriented: One of the last three,Long vowel or coda consonant,Undetermined,weight-sensitive,penultimate,10000.0,10000.0,False,1
+mbb,Mbabaram,vmb,mbab1239,Pama-Nyungan,Australia,No tones,Second,Fixed stress (no weight-sensitivity),No weight,,second,second,10000.0,10000.0,False,1
+may,Maybrat,ayz,maib1239,Maybrat,Papunesia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+kap,Kela (Apoze),kcl,kela1255,Austronesian,Papunesia,,Antepenultimate,Fixed stress (no weight-sensitivity),No weight,,antepenultimate,antepenultimate,10000.0,10000.0,False,1
+kal,Kalami,gwc,kala1373,Indo-European,Eurasia,Simple tone system,Ultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,final,final,10000.0,10000.0,False,1
+kaj,Kaure,bpp,kaur1271,Kaure,Papunesia,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,Trochaic,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+jum,Júma,jua,juma1249,Tupian,South America,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+nua,Nuaulu,nxl,sout2895,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+pms,Paamese,pma,paam1238,Austronesian,Papunesia,No tones,Antepenultimate,Fixed stress (no weight-sensitivity),No weight,,antepenultimate,antepenultimate,10000.0,10000.0,False,1
+gll,Galela,gbi,gale1259,North Halmaheran,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,10000.0,10000.0,False,1
+gid,Gidabal,gih,cond1242,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),Long vowel,Undetermined,initial,initial,10000.0,10000.0,False,1
+gay,Gayo,gay,gayo1244,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Prominence,Trochaic,weight-sensitive,penultimate,10000.0,337874.4,False,1
+frd,Fordata,frd,ford1242,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+for,Fore,for,fore1270,Trans-New Guinea,Papunesia,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,No rhythmic stress,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+naj,Neo-Aramaic (Arbel Jewish),aij,lish1245,Afro-Asiatic,Eurasia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+myy,Mayi-Yapi,xyj,mayk1239,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+ndy,Ndyuka,djk,ndyu1242,other,South America,Simple tone system,No fixed stress,Unbounded: Stress can be anywhere,Long vowel or coda consonant,,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+bwa,Bandjalang (Waalubal),bdy,band1339,Pama-Nyungan,Australia,,No fixed stress,Left-edge: First or second,Long vowel,Undetermined,weight-sensitive,initial,10000.0,10000.0,False,1
+mta,Mentuh Tapuh,sdo,buka1257,Austronesian,Papunesia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,final,final,10000.0,10000.0,False,1
+mss,Miwok (Southern Sierra),skd,sout2985,Penutian,North America,No tones,No fixed stress,Left-edge: First or second,Long vowel or coda consonant,Trochaic,weight-sensitive,initial,10000.0,10000.0,False,1
+mse,Munsee,umu,muns1251,Algic,North America,,No fixed stress,Right-oriented: One of the last three,Combined,Iambic,weight-sensitive,final,10000.0,10000.0,False,1
+mrw,Muruwari,zmu,muru1266,Pama-Nyungan,Australia,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,Trochaic,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+ngl,Ngalakan,nig,ngal1293,Gunwinyguan,Australia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+ngi,Ngiyambaa,wyb,wang1291,Pama-Nyungan,Australia,No tones,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,Trochaic,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+nep,Nepali,npi,nepa1254,Indo-European,Eurasia,No tones,No fixed stress,Left-edge: First or second,Long vowel,,weight-sensitive,initial,10000.0,21735356.82,False,1
+myi,Mangarrayi,mpc,mang1381,Mangarrayi-Maran,Australia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+tsh,Tümpisa Shoshone,par,pana1305,Uto-Aztecan,North America,,No fixed stress,Left-edge: First or second,Long vowel,Trochaic,weight-sensitive,initial,10000.0,10000.0,False,1
+tse,Timorese,aoz,uabm1237,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,760217.4,False,1
+wah,Wahgi,,wahg1249,Trans-New Guinea,Papunesia,Simple tone system,Ultimate,Fixed stress (no weight-sensitivity),No weight,Iambic,final,final,10000.0,10000.0,False,1
+usa,Usan,wnu,usan1239,Trans-New Guinea,Papunesia,No tones,No fixed stress,Not predictable,Lexical stress,,lexically unpredictable,no default (unpredictable),10000.0,10000.0,False,1
+urk,Urubú-Kaapor,urb,urub1250,Tupian,South America,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,Iambic,final,final,10000.0,10000.0,False,1
+unm,Unami,unm,unam1242,Algic,North America,,No fixed stress,Right-oriented: One of the last three,Combined,Iambic,weight-sensitive,final,10000.0,10000.0,False,1
+ung,Ungarinjin,ung,ngar1284,Worrorran,Australia,No tones,No fixed stress,Left-edge: First or second,Long vowel,Undetermined,weight-sensitive,initial,10000.0,10000.0,False,1
+mlk,Malakmalak,mpb,mull1237,Northern Daly,Australia,No tones,No fixed stress,Left-edge: First or second,Prominence,Trochaic,weight-sensitive,initial,10000.0,10000.0,False,1
+uli,Ulithian,uli,ulit1238,Austronesian,Papunesia,,No fixed stress,Not predictable,No weight,,lexically unpredictable,no default (unpredictable),10000.0,2988.09,False,1
+wet,Wetan,lex,luan1263,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Undetermined,penultimate,penultimate,10000.0,10000.0,False,1
+wer,Weri,wer,weri1253,Trans-New Guinea,Papunesia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,Iambic,final,final,10000.0,10000.0,False,1
+wch,Wichí,mzh,wich1264,Matacoan,South America,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+wbn,Wambon,wms,wamb1259,Trans-New Guinea,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+wan,Wangkumara,xwk,ngur1261,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+wam,Wambaya,wmb,wamb1258,Mirndi,Australia,No tones,No fixed stress,Left-edge: First or second,Long vowel,Trochaic,weight-sensitive,initial,10000.0,10000.0,False,1
+wrg,Warrgamay,wgy,warr1255,Pama-Nyungan,Australia,,No fixed stress,Left-edge: First or second,Combined,Trochaic,weight-sensitive,initial,10000.0,10000.0,False,1
+uma,Uma,ppk,umaa1242,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+mgd,Mongondow,mog,mong1342,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),Long vowel or coda consonant,,penultimate,penultimate,10000.0,10000.0,False,1
+mea,Meyah,mej,meya1236,East Bird's Head,Papunesia,,No fixed stress,Not predictable,No weight,No rhythmic stress,lexically unpredictable,no default (unpredictable),10000.0,10000.0,False,1
+mdm,Madimadi,dmd,west2443,Pama-Nyungan,Australia,,No fixed stress,Left-edge: First or second,Prominence,Trochaic,weight-sensitive,initial,10000.0,10000.0,False,1
+mnt,Mentawai,mwv,ment1249,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,67574.88,False,1
+mnm,Manam,mva,mana1295,Austronesian,Papunesia,,No fixed stress,Right-oriented: One of the last three,Coda consonant,Trochaic,weight-sensitive,penultimate,10000.0,10000.0,False,1
+mnj,Mantjiltjara,mpj,many1256,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+mne,Maidu (Northeast),nmu,nort2952,Penutian,North America,No tones,No fixed stress,Left-edge: First or second,Coda consonant,Trochaic,weight-sensitive,initial,10000.0,10000.0,False,1
+mms,Mamasa,mqj,mama1276,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,10000.0,10000.0,False,1
+tsi,Tsimshian (Coast),tsi,nucl1649,Tsimshianic,North America,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,10000.0,10000.0,False,1
+mrt,Martuthunira,vma,mart1255,Pama-Nyungan,Australia,No tones,Initial,Fixed stress (no weight-sensitivity),Long vowel,Trochaic,initial,initial,10000.0,10000.0,False,1
+mrs,Mairasi,zrs,nucl1594,Mairasic,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,Trochaic,weight-sensitive,penultimate,10000.0,10000.0,False,1
+mrl,Murle,mur,murl1244,Eastern Sudanic,Africa,Simple tone system,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+mrk,Murik,mtf,muri1260,Ramu-Lower Sepik,Papunesia,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,,weight-sensitive,no default (unpredictable),10000.0,10000.0,False,1
+mny,Margany,zmc,marg1253,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,10000.0,10000.0,False,1
+uhi,Uradhi,urf,atam1239,Pama-Nyungan,Australia,,Second,Fixed stress (no weight-sensitivity),No weight,,second,second,10000.0,10000.0,False,1
+tun,Tunica,tun,tuni1252,Tunica,North America,,Initial,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,initial,initial,10000.0,10000.0,False,1
+tuk,Tukang Besi,,tuka1248,Austronesian,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,10000.0,10000.0,False,1
+mly,Malay,zsm,stan1306,Austronesian,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Combined,,weight-sensitive,penultimate,10000.0,40503419.519999996,False,1
+cpa,Campa Pajonal Asheninca,cjo,ashe1273,Arawakan,South America,,No fixed stress,Not predictable,No weight,,lexically unpredictable,no default (unpredictable),9881.0,9881.0,True,1
+zun,Zuni,zun,zuni1245,Zuni,North America,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,9650.0,9650.0,True,1
+mac,Macushi,mbc,macu1259,Cariban,South America,,Ultimate,Fixed stress (no weight-sensitivity),Long vowel or coda consonant,Iambic,final,final,9600.0,9600.0,True,1
+cct,Choctaw,cho,choc1276,Muskogean,North America,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel or coda consonant,Iambic,weight-sensitive,no default (unpredictable),9200.0,11284.778999999999,True,1
+lkk,Lakkia,lbc,lakk1238,Tai-Kadai,Eurasia,Complex tone system,,,,,no lexical stress,no lexical stress,9000.0,9000.0,True,1
+rot,Rotuman,rtm,rotu1241,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,No rhythmic stress,weight-sensitive,penultimate,9000.0,2474.1886,True,1
+nne,Nengone,nen,neng1238,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,8700.0,8700.0,True,1
+tgw,Tarangan (West),txn,west2538,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Coda consonant,Trochaic,weight-sensitive,penultimate,7910.0,7910.0,True,1
+mrd,Marind,mrz,nucl1622,Trans-New Guinea,Papunesia,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,Iambic,final,final,7000.0,7000.0,True,1
+hop,Hopi,hop,hopi1249,Uto-Aztecan,North America,Simple tone system,No fixed stress,Left-edge: First or second,Long vowel or coda consonant,Undetermined,weight-sensitive,initial,6780.0,6780.0,True,1
+cub,Cubeo,cub,cube1242,Tucanoan,South America,Simple tone system,No fixed stress,Unbounded: Stress can be anywhere,Prominence,No rhythmic stress,weight-sensitive,no default (unpredictable),6300.0,6300.0,True,1
+des,Desano,des,desa1247,Tucanoan,South America,,No fixed stress,Not predictable,Lexical stress,,lexically unpredictable,no default (unpredictable),6000.0,6000.0,True,1
+yap,Yapese,yap,yape1248,Austronesian,Papunesia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Combined,Undetermined,weight-sensitive,penultimate,5130.0,6573.797999999999,True,1
+chk,Chukchi,ckt,chuk1273,Chukotko-Kamchatkan,Eurasia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,5100.0,5100.0,True,1
+pir,Piro,pib,yine1238,Arawakan,South America,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,5000.0,5000.0,True,1
+rap,Rapanui,rap,rapa1244,Austronesian,Papunesia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Undetermined,penultimate,penultimate,5000.0,5000.0,True,1
+yel,Yelî Dnye,yle,yele1255,Yele,Papunesia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,5000.0,5000.0,True,1
+crk,Creek,mus,cree1270,Muskogean,North America,,No fixed stress,Right-edge: Ultimate or penultimate,Combined,Iambic,weight-sensitive,final,4300.0,4103.556,True,1
+xoo,!Xóõ,nmn,huaa1248,Tu,Africa,Complex tone system,,,,,no lexical stress,no lexical stress,4200.0,4200.0,True,1
+pit,Pitjantjatjara,pjt,pitj1243,Pama-Nyungan,Australia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,4000.0,4000.0,True,1
+epe,Epena Pedee,sja,epen1239,Choco,South America,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,,weight-sensitive,penultimate,3802.0,3802.0,True,1
+nht,Nahuatl (Tetelcingo),nhg,tete1251,Uto-Aztecan,North America,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,3500.0,3500.0,True,1
+moh,Mohawk,moh,moha1258,Iroquoian,North America,,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,3500.0,1590.5868000000003,True,1
+sah,Sahu,saj,sahu1245,North Halmaheran,Papunesia,,Antepenultimate,Fixed stress (no weight-sensitivity),No weight,,antepenultimate,antepenultimate,3500.0,3500.0,True,1
+koo,Kola,kvv,kola1285,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),Lexical stress,,penultimate,penultimate,2750.0,2750.0,True,1
+bui,Buli (in Indonesia),bzq,buli1255,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,,weight-sensitive,penultimate,2524.0,2524.0,True,1
+wrl,Warlpiri,wbp,warl1254,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,2507.0,2489.4797999999996,True,1
+ara,Lokono,arw,araw1276,Arawakan,South America,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,2500.0,2500.0,True,1
+tiw,Tiwi,tiw,tiwi1244,Tiwian,Australia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,2040.0,2040.0,True,1
+mmo,Mordvin (Moksha),mdf,moks1248,Uralic,Eurasia,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,No rhythmic stress,weight-sensitive,no default (unpredictable),2025.0,295724.1,True,1
+dob,Dobel,kvo,dobe1238,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),Lexical stress,No rhythmic stress,penultimate,penultimate,2000.0,2000.0,True,1
+war,Wari',pav,wari1268,Chapacura-Wanham,South America,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,final,final,1930.0,1930.0,True,1
+sru,Selaru,slu,sela1259,Austronesian,Papunesia,,No fixed stress,Right-edge: Ultimate or penultimate,Coda consonant,Trochaic,weight-sensitive,penultimate,1823.0,1823.0,True,1
+ysl,Yupik (St. Lawrence Island),ess,cent2128,Eskimo-Aleut,Eurasia,,No fixed stress,Not predictable,Long vowel,Iambic,lexically unpredictable,no default (unpredictable),1800.0,1800.0,True,1
+tac,Tacana,tna,taca1256,Pano-Tacanan,South America,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,1800.0,1800.0,True,1
+lav,Lavukaleve,lvk,lavu1241,Solomons East Papuan,Papunesia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,1783.0,1783.0,True,1
+bbw,Bininj Gun-Wok,gup,gunw1252,Gunwinyguan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,initial,initial,1702.0,1702.0,True,1
+wao,Waorani,auc,waor1240,Waorani,South America,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,1650.0,1650.0,True,1
+ala,Alamblak,amp,alam1246,Sepik,Papunesia,No tones,No fixed stress,Combined: Right-edge and unbounded,Prominence,,weight-sensitive,no default (unpredictable),1500.0,1500.0,True,1
+bgv,Bagvalal,kva,bagv1239,Nakh-Daghestanian,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Combined,No rhythmic stress,weight-sensitive,penultimate,1450.0,1450.0,True,1
+kei,Kei,kei,keii1239,Austronesian,Papunesia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,final,final,1360.0,1360.0,True,1
+bna,Banawá,jaa,bana1307,Arauan,South America,,No fixed stress,Right-edge: Ultimate or penultimate,No weight,Trochaic,weight-sensitive,penultimate,1080.0,1080.0,True,1
+bua,Burarra,bvr,bura1267,Mangrida,Australia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,initial,initial,1070.0,1070.0,True,1
+hzb,Hunzib,huz,hunz1247,Nakh-Daghestanian,Eurasia,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,,weight-sensitive,penultimate,1000.0,1000.0,True,1
+arc,Archi,aqc,arch1244,Nakh-Daghestanian,Eurasia,No tones,No fixed stress,Left-edge: First or second,Prominence,No rhythmic stress,weight-sensitive,initial,970.0,970.0,True,1
+mns,Mansi,mns,mans1258,Uralic,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,938.0,938.0,True,1
+cmn,Comanche,com,coma1245,Uto-Aztecan,North America,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,915.0,915.0,True,1
+ser,Seri,sei,seri1257,Hokan,North America,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,Undetermined,weight-sensitive,no default (unpredictable),900.0,915.18,True,1
+mlc,Malacca Creole,mcm,mala1533,other,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Coda consonant,Trochaic,weight-sensitive,penultimate,800.0,800.0,True,1
+guu,Guugu Yimidhirr,kky,gugu1255,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,780.0,780.0,True,1
+ram,Rama,rma,rama1270,Chibchan,North America,No tones,No fixed stress,Not predictable,Long vowel or coda consonant,Trochaic,lexically unpredictable,no default (unpredictable),740.0,740.0,True,1
+nmb,Nambikuára (Southern),nab,sout2994,Nambikuaran,South America,Complex tone system,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,720.0,720.0,True,1
+ese,Ese Ejja,ese,esee1248,Pano-Tacanan,South America,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,700.0,700.0,True,1
+skp,Selkup,sel,selk1253,Uralic,Eurasia,,No fixed stress,Left-edge: First or second,Long vowel,Trochaic,weight-sensitive,initial,600.0,600.0,True,1
+hix,Hixkaryana,hix,hixk1239,Cariban,South America,No tones,No fixed stress,Not predictable,Long vowel or coda consonant,Iambic,lexically unpredictable,no default (unpredictable),600.0,600.0,True,1
+psm,Passamaquoddy-Maliseet,pqm,male1292,Algic,North America,Simple tone system,No fixed stress,Right-oriented: One of the last three,Combined,Iambic,weight-sensitive,final,590.0,814.6908,True,1
+acg,Achagua,aca,acha1250,Arawakan,South America,,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,514.0,514.0,True,1
+tol,Tol,jic,toll1241,Tol,North America,No tones,No fixed stress,Right-edge: Ultimate or penultimate,Coda consonant,,weight-sensitive,penultimate,500.0,500.0,True,1
+kwk,Kwakw'ala,kwk,kwak1269,Wakashan,North America,No tones,No fixed stress,Unbounded: Stress can be anywhere,Combined,,weight-sensitive,no default (unpredictable),500.0,814.6908,True,1
+atq,Alutiiq,ems,paci1278,Eskimo-Aleut,North America,,No fixed stress,Left-edge: First or second,Combined,Undetermined,weight-sensitive,initial,450.0,450.0,True,1
+jaq,Jaqaru,jqr,jaqa1244,Aymaran,South America,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,448.0,448.0,True,1
+prh,Pirahã,myp,pira1253,Mura,South America,Simple tone system,No fixed stress,Right-oriented: One of the last three,Combined,,weight-sensitive,penultimate,389.0,389.0,True,1
+kya,Kuku-Yalanji,gvn,kuku1273,Pama-Nyungan,Australia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,388.0,388.0,True,1
+yin,Yindjibarndi,yij,yind1247,Pama-Nyungan,Australia,,No fixed stress,Left-edge: First or second,Long vowel,Trochaic,weight-sensitive,initial,377.0,377.0,True,1
+mau,Maung,mph,maun1240,Iwaidjan,Australia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,371.0,371.0,True,1
+koa,Koasati,cku,koas1236,Muskogean,North America,Complex tone system,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,,weight-sensitive,penultimate,370.0,370.0,True,1
+ngr,Ngarinyeri,nay,narr1259,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,312.0,312.0,True,1
+glp,Gaalpu,dhg,dhan1270,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Undetermined,initial,initial,310.0,310.0,True,1
+yim,Yimas,yee,yima1243,Ramu-Lower Sepik,Papunesia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,300.0,300.0,True,1
+pau,Paumarí,pad,paum1247,Arauan,South America,No tones,Antepenultimate,Fixed stress (no weight-sensitivity),No weight,,antepenultimate,antepenultimate,290.0,290.0,True,1
+bae,Baré,bae,bare1276,Arawakan,South America,,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,240.0,240.0,True,1
+nju,Nyungar,nys,nyun1247,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,232.0,232.0,True,1
+niv,Nivkh,niv,gily1242,Nivkh,Eurasia,Simple tone system,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,198.0,198.0,True,1
+god,Godoberi,gdo,ghod1238,Nakh-Daghestanian,Eurasia,,No fixed stress,Unbounded: Stress can be anywhere,Prominence,No rhythmic stress,weight-sensitive,no default (unpredictable),130.0,130.0,True,1
+tru,Trumai,tpy,trum1247,Trumai,South America,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,120.0,120.0,True,1
+pkn,Paakantyi,drl,darl1243,Pama-Nyungan,Australia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,110.0,110.0,True,1
+snc,Seneca,see,sene1264,Iroquoian,North America,No tones,No fixed stress,Right-oriented: One of the last three,Prominence,Iambic,weight-sensitive,final,100.0,100.0,True,1
+nez,Nez Perce,nez,nezp1238,Penutian,North America,No tones,No fixed stress,Not predictable,Lexical stress,,lexically unpredictable,no default (unpredictable),100.0,100.0,True,1
+goo,Gooniyandi,gni,goon1238,Bunuban,Australia,No tones,Initial,Fixed stress (no weight-sensitivity),Long vowel or coda consonant,Trochaic,initial,initial,100.0,100.0,True,1
+kut,Kutenai,kut,kute1249,Kutenai,North America,No tones,Penultimate,Fixed stress (no weight-sensitivity),Lexical stress,Trochaic,penultimate,penultimate,100.0,100.0,True,1
+hmu,Huitoto (Muinane),hux,nupo1240,Witotoan,South America,,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,100.0,100.0,True,1
+ana,Araona,aro,arao1248,Pano-Tacanan,South America,No tones,Second,Fixed stress (no weight-sensitivity),No weight,,second,second,81.0,110.80799999999999,True,1
+vot,Votic,vot,voti1245,Uralic,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,62.0,0.0,True,1
+cyg,Cayuga,cay,cayu1261,Iroquoian,North America,,No fixed stress,Right-oriented: One of the last three,Combined,Iambic,weight-sensitive,final,55.0,55.0,True,1
+ond,Oneida,one,onei1249,Iroquoian,North America,Simple tone system,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,55.0,55.0,True,1
+yid,Yidiny,yii,yidi1250,Pama-Nyungan,Australia,No tones,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,Dual: both trochaic and iambic,weight-sensitive,no default (unpredictable),52.0,52.0,True,1
+yko,Yukaghir (Kolyma),yux,sout2750,Yukaghir,Eurasia,No tones,No fixed stress,Unbounded: Stress can be anywhere,Long vowel or coda consonant,,weight-sensitive,no default (unpredictable),50.0,50.0,True,1
+ksh,Kashaya,kju,kash1280,Hokan,North America,,No fixed stress,Left-oriented: One of the first three,Long vowel or coda consonant,,weight-sensitive,initial,45.0,45.0,True,1
+mar,Maricopa,mrc,mari1440,Hokan,North America,No tones,Ultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,final,final,35.0,35.0,True,1
+men,Menomini,mez,meno1252,Algic,North America,,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,Iambic,weight-sensitive,no default (unpredictable),35.0,35.0,True,1
+oto,Oto,iow,iowa1245,Siouan,North America,,No fixed stress,Left-edge: First or second,Long vowel,,weight-sensitive,initial,33.0,33.0,True,1
+ymd,Yamdena,jmd,yamd1240,Austronesian,Papunesia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,No rhythmic stress,penultimate,penultimate,30.0,30.0,True,1
+lar,Laragia,lrg,lara1258,Darwin Region,Australia,,No fixed stress,Left-oriented: One of the first three,Long vowel,Trochaic,weight-sensitive,initial,23.0,23.0,True,1
+mku,Maranungku,zmr,mara1386,Western Daly,Australia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,15.0,15.0,True,1
+mcs,Miwok (Central Sierra),csm,cent2140,Penutian,North America,,No fixed stress,Left-edge: First or second,Long vowel or coda consonant,,weight-sensitive,initial,12.0,12.0,True,1
+alw,Alawa,alh,alaw1244,Mangarrayi-Maran,Australia,No tones,Penultimate,Fixed stress (no weight-sensitivity),No weight,,penultimate,penultimate,12.0,12.0,True,1
+krk,Karok,kyh,karo1304,Hokan,North America,Simple tone system,No fixed stress,Unbounded: Stress can be anywhere,Long vowel,,weight-sensitive,no default (unpredictable),12.0,12.0,True,1
+dyi,Dyirbal,dbl,dyir1250,Pama-Nyungan,Australia,No tones,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,8.0,8.0,True,1
+kay,Kayardild,gyd,kaya1319,Tangkic,Australia,No tones,Initial,Fixed stress (no weight-sensitivity),Combined,Trochaic,initial,initial,8.0,8.0,True,1
+cah,Cahuilla,chl,cahu1264,Uto-Aztecan,North America,No tones,Initial,Fixed stress (no weight-sensitivity),Combined,Trochaic,initial,initial,6.0,6.0,True,1
+squ,Squamish,squ,squa1248,Salishan,North America,No tones,Penultimate,Fixed stress (no weight-sensitivity),Prominence,No rhythmic stress,penultimate,penultimate,1.0,1.0,True,1
+crn,Cornish,cor,corn1251,Indo-European,Eurasia,,Penultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,penultimate,penultimate,0.0,1985.3138999999999,True,1
+cyv,Cayuvava,cyb,cayu1262,Cayuvava,South America,No tones,Antepenultimate,Fixed stress (no weight-sensitivity),No weight,Trochaic,antepenultimate,antepenultimate,0.0,0.0,True,1
+plb,Polabian,pox,pola1255,Indo-European,Eurasia,,No fixed stress,Right-edge: Ultimate or penultimate,Long vowel,,weight-sensitive,penultimate,0.0,0.0,True,1
+orc,Oroch,oac,oroc1248,Altaic,Eurasia,,Ultimate,Fixed stress (no weight-sensitivity),No weight,,final,final,0.0,0.0,True,1
+liv,Liv,liv,livv1244,Uralic,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,Trochaic,initial,initial,0.0,0.0,True,1
+wiy,Wiyot,wiy,wiyo1248,Algic,North America,No tones,No fixed stress,Unbounded: Stress can be anywhere,Lexical stress,No rhythmic stress,lexically unpredictable,no default (unpredictable),0.0,0.0,True,1
+nya,Nyawaygi,nyt,nyaw1247,Pama-Nyungan,Australia,,No fixed stress,Left-edge: First or second,Combined,Trochaic,weight-sensitive,initial,0.0,0.0,True,1
+mnx,Manx,glv,manx1243,Indo-European,Eurasia,,Initial,Fixed stress (no weight-sensitivity),No weight,,initial,initial,0.0,1660.842,True,1
+wic,Wichita,wic,wich1260,Caddoan,North America,No tones,No fixed stress,Unbounded: Stress can be anywhere,Prominence,Dual: both trochaic and iambic,weight-sensitive,no default (unpredictable),0.0,0.0,True,1
+kit,Kitsai,kii,kits1249,Caddoan,North America,,No fixed stress,Not predictable,No weight,,lexically unpredictable,no default (unpredictable),0.0,0.0,True,1

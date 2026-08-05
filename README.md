@@ -24,6 +24,11 @@ questions and next steps in §7.
   [`notes/cost-learning.md`](notes/cost-learning.md) §2.)
 - **Phoneme prevalence study** — done, [`notes/phoneme-prevalence.md`](notes/phoneme-prevalence.md).
 - **Contrast study** — done, [`notes/contrast-study.md`](notes/contrast-study.md).
+- **Word-stress prevalence study** — done,
+  [`notes/stress-prevalence.md`](notes/stress-prevalence.md). WALS 14A–17A weighted by
+  L1 population: fixed **penultimate** stress is the nearest-native rule for 50.4% of
+  covered speakers, against 30.1% for "no lexical stress". Coverage is 66% of world
+  L1 and StressTyp2 could not be obtained, so the decision is SOFT.
 - **Cost learning from WOLD** — done, [`notes/cost-learning.md`](notes/cost-learning.md).
   Substitution + epenthesis costs fitted jointly to 13,595 attested loanword
   adaptations, cross-validated leave-one-recipient-out over all 41 recipients.
@@ -63,10 +68,17 @@ studies were run 2026-07-14 against the versions noted below). Everything joins 
 | `asjp/` | [lexibank/asjp](https://github.com/lexibank/asjp) | v21 (`0127953`) | `git clone --depth 1 https://github.com/lexibank/asjp` |
 | `wold/` | [lexibank/wold](https://github.com/lexibank/wold) | commit `0df955a` | `git clone --depth 1 https://github.com/lexibank/wold` |
 | `glottolog-cldf/` | [glottolog/glottolog-cldf](https://github.com/glottolog/glottolog-cldf) | 5.3 (`072ca0d`) | `git clone --depth 1 https://github.com/glottolog/glottolog-cldf` |
+| `wals/` | [cldf-datasets/wals](https://github.com/cldf-datasets/wals) | 2020.3 (`f97440d`), fetched 2026-08-05 | `git clone --depth 1 https://github.com/cldf-datasets/wals` |
 | `cldr_supplementalData.xml` | [unicode-org/cldr](https://github.com/unicode-org/cldr) | `main`, fetched 2026-07-14 | `curl -sSL -o data/raw/cldr_supplementalData.xml https://raw.githubusercontent.com/unicode-org/cldr/main/common/supplemental/supplementalData.xml` |
 | `wikidata_l1/p1098_raw.json`, `iso639/iso-639-3.tab` | Wikidata SPARQL (P1098), SIL | fetched 2026-07-14 | `uv run python scripts/fetch_l1_speakers.py` (downloads both) |
+| `iso639/language-codes-full.csv` | [datasets/language-codes](https://github.com/datasets/language-codes) | `main`, fetched 2026-08-05 | `curl -sSL --create-dirs -o data/raw/iso639/language-codes-full.csv https://raw.githubusercontent.com/datasets/language-codes/main/data/language-codes-full.csv` |
 
-Clone the four CLDF repos into `data/raw/` under the directory names in the first
+`language-codes-full.csv` is only a **fallback** for the ISO 639-1 ↔ 639-3 map that
+`iso-639-3.tab` normally provides: `iso639-3.sil.org` is not always reachable, and
+`src/interlang/populations.py` accepts either table. Prefer the SIL one when you can
+get it (it also carries the macrolanguage `Scope` column).
+
+Clone the five CLDF repos into `data/raw/` under the directory names in the first
 column. Only their `cldf/*.csv` files are read, so shallow clones suffice (~300 MB
 total). What each dataset is for, its row counts, and its caveats:
 [`notes/data-audit.md`](notes/data-audit.md).
@@ -78,6 +90,7 @@ total). What each dataset is for, its row counts, and its caveats:
 | `l1_speakers.csv` | `scripts/fetch_l1_speakers.py` | 1,858 languages × L1 speaker counts from Wikidata P1098, with the documented statement-selection policy and the phantom-MSA override (`L1_OVERRIDES`) applied |
 | `phoneme_prevalence.csv` | `scripts/phoneme_prevalence.py` | every PHOIBLE segment × prevalence by languages / L1 speakers / total speakers, at `strict` and `lumped` symbol granularity, with top allophones |
 | `contrast_costs.csv` | `scripts/contrast_study.py` | candidate contrasts × share of languages and people whose native phonology distinguishes them, plus attested merger counts — the functional-load penalty matrix |
+| `stress_prevalence.csv`, `stress_by_language.csv` | `scripts/stress_prevalence.py` | broad word-stress rule categories × share of languages / L1 speakers / total speakers, under two classification schemes and three tone-language policies, plus the per-language audit trail |
 
 ## Reproducing
 
@@ -88,6 +101,8 @@ uv run python scripts/fetch_l1_speakers.py     # -> data/processed/l1_speakers.c
                                                #    (--offline rebuilds from cached raw)
 uv run python scripts/phoneme_prevalence.py    # -> data/processed/phoneme_prevalence.csv
 uv run python scripts/contrast_study.py        # -> data/processed/contrast_costs.csv
+uv run python scripts/stress_prevalence.py     # -> data/processed/stress_prevalence.csv
+                                               #    + stress_by_language.csv
 ```
 
 Each script's module docstring documents its inputs, outputs, and the judgment calls
