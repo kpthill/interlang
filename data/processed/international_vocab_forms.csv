@@ -17,23 +17,23 @@ atom,he,Hebrew,אטום,atum,wikipedia,1.0,True,False,atom,
 atom,is,Icelandic,Frumeind,frumeind,wikipedia,0.3684,False,True,atom,0.3621
 atom,hu,Hungarian,Atom,atom,wikipedia,1.0,True,True,atom,1.0
 atom,cs,Czech,Atom,atom,wikipedia,1.0,True,True,atom,1.0
-proton,ja,Japanese,陽子,,wikipedia,0.0,False,True,piroton,
-proton,zh,Mandarin,質子,,unclassified,,,False,piroton,
-proton,ko,Korean,양성자,jaŋsʌŋtʃa,wikipedia,0.1724,False,True,piroton,0.3563
-proton,hi,Hindi,प्रोटॉन,proʈɔn,wikipedia,1.0,True,True,piroton,0.8424
-proton,ar,Arabic,بروتون,brutun,wikipedia,1.0,True,False,piroton,
-proton,sw,Swahili,Protoni,protoni,wikipedia,0.9231,True,True,piroton,0.7143
-proton,id,Indonesian,Proton,proton,wikipedia,1.0,True,True,piroton,0.8571
-proton,tr,Turkish,Proton,proton,wikipedia,1.0,True,True,piroton,0.8571
-proton,ru,Russian,Протон,proton,wikipedia,1.0,True,True,piroton,0.8571
-proton,es,Spanish,Protón,proton,wikipedia,1.0,True,True,piroton,0.8571
-proton,fi,Finnish,Protoni,protoni,wikipedia,0.9231,True,True,piroton,0.7143
-proton,vi,Vietnamese,Proton,pzoton,wikipedia,0.7917,True,True,piroton,0.798
-proton,ta,Tamil,நேர்மின்னி,nerminni,wikipedia,0.3448,False,True,piroton,0.4763
-proton,he,Hebrew,פרוטון,prutun,wikipedia,1.0,True,False,piroton,
-proton,is,Icelandic,Róteind,roteind,wikipedia,0.5385,False,True,piroton,0.4557
-proton,hu,Hungarian,Proton,proton,wikipedia,1.0,True,True,piroton,0.8571
-proton,cs,Czech,Proton,proton,wikipedia,1.0,True,True,piroton,0.8571
+proton,ja,Japanese,陽子,,wikipedia,0.0,False,True,puroton,
+proton,zh,Mandarin,質子,,unclassified,,,False,puroton,
+proton,ko,Korean,양성자,jaŋsʌŋtʃa,wikipedia,0.1724,False,True,puroton,0.3487
+proton,hi,Hindi,प्रोटॉन,proʈɔn,wikipedia,1.0,True,True,puroton,0.8424
+proton,ar,Arabic,بروتون,brutun,wikipedia,1.0,True,False,puroton,
+proton,sw,Swahili,Protoni,protoni,wikipedia,0.9231,True,True,puroton,0.7143
+proton,id,Indonesian,Proton,proton,wikipedia,1.0,True,True,puroton,0.8571
+proton,tr,Turkish,Proton,proton,wikipedia,1.0,True,True,puroton,0.8571
+proton,ru,Russian,Протон,proton,wikipedia,1.0,True,True,puroton,0.8571
+proton,es,Spanish,Protón,proton,wikipedia,1.0,True,True,puroton,0.8571
+proton,fi,Finnish,Protoni,protoni,wikipedia,0.9231,True,True,puroton,0.7143
+proton,vi,Vietnamese,Proton,pzoton,wikipedia,0.7917,True,True,puroton,0.798
+proton,ta,Tamil,நேர்மின்னி,nerminni,wikipedia,0.3448,False,True,puroton,0.4504
+proton,he,Hebrew,פרוטון,prutun,wikipedia,1.0,True,False,puroton,
+proton,is,Icelandic,Róteind,roteind,wikipedia,0.5385,False,True,puroton,0.4655
+proton,hu,Hungarian,Proton,proton,wikipedia,1.0,True,True,puroton,0.8571
+proton,cs,Czech,Proton,proton,wikipedia,1.0,True,True,puroton,0.8571
 electron,ja,Japanese,電子,,wikipedia,0.0,False,True,elekitiron,
 electron,zh,Mandarin,电子,,unclassified,,,False,elekitiron,
 electron,ko,Korean,전자,tʃʌntʃa,wikipedia,0.129,False,True,elekitiron,0.3914
@@ -137,23 +137,23 @@ energy,he,Hebrew,אנרגיה,anrgih,wikipedia,0.6667,True,False,eneriɡia,
 energy,is,Icelandic,Orka,orka,wikipedia,0.3333,False,True,eneriɡia,0.4784
 energy,hu,Hungarian,Energia,energia,wikipedia,0.7826,True,True,eneriɡia,0.875
 energy,cs,Czech,Energie,energie,wikipedia,0.7826,True,True,eneriɡia,0.8578
-plastic,ja,Japanese,プラスチック,purasutʃiku,wikipedia,0.6857,True,True,pilasiti,0.674
-plastic,zh,Mandarin,塑料,,unclassified,,,False,pilasiti,
-plastic,ko,Korean,플라스틱,pɯlrasɯtik,wikipedia,0.7632,True,True,pilasiti,0.7793
-plastic,hi,Hindi,प्लास्टिक,plasʈik,wikipedia,1.0,True,True,pilasiti,0.6164
-plastic,ar,Arabic,لدائن,ldaʔn,wikipedia,0.4,False,False,pilasiti,
-plastic,sw,Swahili,Plastiki,plastiki,wikipedia,0.9355,True,True,pilasiti,0.7134
-plastic,id,Indonesian,Plastik,plastik,wikipedia,1.0,True,True,pilasiti,0.625
-plastic,tr,Turkish,Plastik,plastik,wikipedia,1.0,True,True,pilasiti,0.625
-plastic,ru,Russian,Пластмасса,plastmassa,wikipedia,0.7059,True,True,pilasiti,0.5414
-plastic,es,Spanish,Plástico,plastiko,wikipedia,0.9355,True,True,pilasiti,0.6875
-plastic,fi,Finnish,Muovi,muovi,wikipedia,0.1379,False,True,pilasiti,0.5108
-plastic,vi,Vietnamese,Chất dẻo,tʃət,wikipedia,0.2759,False,True,pilasiti,0.4461
-plastic,ta,Tamil,நெகிழி,nekiɻi,wikipedia,0.069,False,True,pilasiti,0.5409
-plastic,he,Hebrew,פלסטיק,plstik,wikipedia,1.0,True,False,pilasiti,
-plastic,is,Icelandic,Plast,plast,wikipedia,0.7586,True,True,pilasiti,0.625
-plastic,hu,Hungarian,Műanyag,myaɲag,wikipedia,0.3103,False,True,pilasiti,0.5216
-plastic,cs,Czech,Plast,plast,wikipedia,0.7586,True,True,pilasiti,0.625
+plastic,ja,Japanese,プラスチック,purasutʃiku,wikipedia,0.6857,True,True,pulasiti,0.6928
+plastic,zh,Mandarin,塑料,,unclassified,,,False,pulasiti,
+plastic,ko,Korean,플라스틱,pɯlrasɯtik,wikipedia,0.7632,True,True,pulasiti,0.7724
+plastic,hi,Hindi,प्लास्टिक,plasʈik,wikipedia,1.0,True,True,pulasiti,0.6164
+plastic,ar,Arabic,لدائن,ldaʔn,wikipedia,0.4,False,False,pulasiti,
+plastic,sw,Swahili,Plastiki,plastiki,wikipedia,0.9355,True,True,pulasiti,0.7134
+plastic,id,Indonesian,Plastik,plastik,wikipedia,1.0,True,True,pulasiti,0.625
+plastic,tr,Turkish,Plastik,plastik,wikipedia,1.0,True,True,pulasiti,0.625
+plastic,ru,Russian,Пластмасса,plastmassa,wikipedia,0.7059,True,True,pulasiti,0.5414
+plastic,es,Spanish,Plástico,plastiko,wikipedia,0.9355,True,True,pulasiti,0.6875
+plastic,fi,Finnish,Muovi,muovi,wikipedia,0.1379,False,True,pulasiti,0.5366
+plastic,vi,Vietnamese,Chất dẻo,tʃət,wikipedia,0.2759,False,True,pulasiti,0.4461
+plastic,ta,Tamil,நெகிழி,nekiɻi,wikipedia,0.069,False,True,pulasiti,0.5409
+plastic,he,Hebrew,פלסטיק,plstik,wikipedia,1.0,True,False,pulasiti,
+plastic,is,Icelandic,Plast,plast,wikipedia,0.7586,True,True,pulasiti,0.625
+plastic,hu,Hungarian,Műanyag,myaɲag,wikipedia,0.3103,False,True,pulasiti,0.5302
+plastic,cs,Czech,Plast,plast,wikipedia,0.7586,True,True,pulasiti,0.625
 virus,ja,Japanese,ウイルス,uirusu,wikipedia,0.6316,True,True,firu,0.4741
 virus,zh,Mandarin,病毒,,unclassified,,,False,firu,
 virus,ko,Korean,바이러스,pairʌsɯ,wikipedia,0.9048,True,True,firu,0.5222
@@ -223,23 +223,23 @@ vitamin,he,Hebrew,ויטמין,uitmin,wikipedia,0.75,True,False,fitamin,
 vitamin,is,Icelandic,Vítamín,vitamin,wikipedia,1.0,True,True,fitamin,0.9951
 vitamin,hu,Hungarian,Vitamin,vitamin,wikipedia,1.0,True,True,fitamin,0.9951
 vitamin,cs,Czech,Vitamín,vitamin,wikipedia,1.0,True,True,fitamin,0.9951
-protein,ja,Japanese,タンパク質,,wikipedia,0.0,False,True,pirotein,
-protein,zh,Mandarin,蛋白质,,unclassified,,,False,pirotein,
-protein,ko,Korean,단백질,tanpektʃil,wikipedia,0.1111,False,True,pirotein,0.5879
-protein,hi,Hindi,प्रोटीन,proʈin,wikipedia,0.9231,True,True,pirotein,0.7414
-protein,ar,Arabic,بروتين,brutin,wikipedia,1.0,True,False,pirotein,
-protein,sw,Swahili,Protini,protini,wikipedia,0.8462,True,True,pirotein,0.625
-protein,id,Indonesian,Protein,protein,wikipedia,1.0,True,True,pirotein,0.875
-protein,tr,Turkish,Protein,protein,wikipedia,1.0,True,True,pirotein,0.875
-protein,ru,Russian,Белки,belki,wikipedia,0.3846,False,True,pirotein,0.5539
-protein,es,Spanish,Proteína,proteina,wikipedia,0.9286,True,True,pirotein,0.75
-protein,fi,Finnish,Proteiini,proteiini,wikipedia,0.9286,True,True,pirotein,0.6667
-protein,vi,Vietnamese,Protein,pzotein,wikipedia,0.8077,True,True,pirotein,0.8233
-protein,ta,Tamil,புரதம்,puratam,wikipedia,0.8462,True,True,pirotein,0.7953
-protein,he,Hebrew,חלבון,xlbun,wikipedia,0.5,False,False,pirotein,
-protein,is,Icelandic,Prótín,protin,wikipedia,0.9231,True,True,pirotein,0.75
-protein,hu,Hungarian,Fehérje,feherje,wikipedia,0.3077,False,True,pirotein,0.6552
-protein,cs,Czech,Bílkovina,bilkovina,wikipedia,0.5484,False,True,pirotein,0.6034
+protein,ja,Japanese,タンパク質,,wikipedia,0.0,False,True,purotein,
+protein,zh,Mandarin,蛋白质,,unclassified,,,False,purotein,
+protein,ko,Korean,단백질,tanpektʃil,wikipedia,0.1111,False,True,purotein,0.581
+protein,hi,Hindi,प्रोटीन,proʈin,wikipedia,0.9231,True,True,purotein,0.7414
+protein,ar,Arabic,بروتين,brutin,wikipedia,1.0,True,False,purotein,
+protein,sw,Swahili,Protini,protini,wikipedia,0.8462,True,True,purotein,0.625
+protein,id,Indonesian,Protein,protein,wikipedia,1.0,True,True,purotein,0.875
+protein,tr,Turkish,Protein,protein,wikipedia,1.0,True,True,purotein,0.875
+protein,ru,Russian,Белки,belki,wikipedia,0.3846,False,True,purotein,0.528
+protein,es,Spanish,Proteína,proteina,wikipedia,0.9286,True,True,purotein,0.75
+protein,fi,Finnish,Proteiini,proteiini,wikipedia,0.9286,True,True,purotein,0.6667
+protein,vi,Vietnamese,Protein,pzotein,wikipedia,0.8077,True,True,purotein,0.8233
+protein,ta,Tamil,புரதம்,puratam,wikipedia,0.8462,True,True,purotein,0.8211
+protein,he,Hebrew,חלבון,xlbun,wikipedia,0.5,False,False,purotein,
+protein,is,Icelandic,Prótín,protin,wikipedia,0.9231,True,True,purotein,0.75
+protein,hu,Hungarian,Fehérje,feherje,wikipedia,0.3077,False,True,purotein,0.6293
+protein,cs,Czech,Bílkovina,bilkovina,wikipedia,0.5484,False,True,purotein,0.5805
 hormone,ja,Japanese,ホルモン,horumon,wikipedia,0.9048,True,True,horimon,0.9704
 hormone,zh,Mandarin,激素,,unclassified,,,False,horimon,
 hormone,ko,Korean,호르몬,horɯmon,wikipedia,0.9048,True,True,horimon,0.9852
@@ -326,24 +326,24 @@ mathematics,he,Hebrew,מתמטיקה,mtmtikh,wikipedia,1.0,True,False,matematika
 mathematics,is,Icelandic,Stærðfræði,stairðfraiði,wikipedia,0.2667,False,True,matematika,0.4253
 mathematics,hu,Hungarian,Matematika,matematika,wikipedia,1.0,True,True,matematika,1.0
 mathematics,cs,Czech,Matematika,matematika,wikipedia,1.0,True,True,matematika,1.0
-algebra,ja,Japanese,代数学,,wikipedia,0.0,False,True,aliɡebira,
-algebra,zh,Mandarin,代数,,unclassified,,,False,aliɡebira,
-algebra,ko,Korean,대수학,,wikipedia,0.0,False,True,aliɡebira,
-algebra,hi,Hindi,बीजगणित,bidʒagaɳit,wikipedia,0.1818,False,True,aliɡebira,0.4862
-algebra,ar,Arabic,الجبر,aldʒbr,wikipedia,0.75,True,False,aliɡebira,
-algebra,sw,Swahili,Aljebra,aldʒebra,wikipedia,0.8077,True,True,aliɡebira,0.7146
-algebra,id,Indonesian,Aljabar,aldʒabar,wikipedia,0.6538,True,True,aliɡebira,0.6762
-algebra,tr,Turkish,Cebir,dʒebir,wikipedia,0.4762,False,True,aliɡebira,0.569
-algebra,ru,Russian,Алгебра,algebra,wikipedia,0.8077,True,True,aliɡebira,0.7778
-algebra,es,Spanish,Álgebra,algebra,wikipedia,0.8077,True,True,aliɡebira,0.7778
-algebra,fi,Finnish,Algebra,algebra,wikipedia,0.8077,True,True,aliɡebira,0.7778
-algebra,vi,Vietnamese,Đại số,dai so,wikipedia,0.1905,False,True,aliɡebira,0.4425
-algebra,ha,Hausa,Algebra,algebra,wikipedia,0.8077,True,True,aliɡebira,0.7778
-algebra,ta,Tamil,இயற்கணிதம்,ijarkaɳitam,wikipedia,0.275,False,True,aliɡebira,0.6129
-algebra,he,Hebrew,אלגברה,algbrh,wikipedia,0.75,True,False,aliɡebira,
-algebra,is,Icelandic,Algebra,algebra,wikipedia,0.8077,True,True,aliɡebira,0.7778
-algebra,hu,Hungarian,Algebra,algebra,wikipedia,0.8077,True,True,aliɡebira,0.7778
-algebra,cs,Czech,Algebra,algebra,wikipedia,0.8077,True,True,aliɡebira,0.7778
+algebra,ja,Japanese,代数学,,wikipedia,0.0,False,True,aliɡebura,
+algebra,zh,Mandarin,代数,,unclassified,,,False,aliɡebura,
+algebra,ko,Korean,대수학,,wikipedia,0.0,False,True,aliɡebura,
+algebra,hi,Hindi,बीजगणित,bidʒagaɳit,wikipedia,0.1818,False,True,aliɡebura,0.4776
+algebra,ar,Arabic,الجبر,aldʒbr,wikipedia,0.75,True,False,aliɡebura,
+algebra,sw,Swahili,Aljebra,aldʒebra,wikipedia,0.8077,True,True,aliɡebura,0.7146
+algebra,id,Indonesian,Aljabar,aldʒabar,wikipedia,0.6538,True,True,aliɡebura,0.6686
+algebra,tr,Turkish,Cebir,dʒebir,wikipedia,0.4762,False,True,aliɡebura,0.546
+algebra,ru,Russian,Алгебра,algebra,wikipedia,0.8077,True,True,aliɡebura,0.7778
+algebra,es,Spanish,Álgebra,algebra,wikipedia,0.8077,True,True,aliɡebura,0.7778
+algebra,fi,Finnish,Algebra,algebra,wikipedia,0.8077,True,True,aliɡebura,0.7778
+algebra,vi,Vietnamese,Đại số,dai so,wikipedia,0.1905,False,True,aliɡebura,0.4195
+algebra,ha,Hausa,Algebra,algebra,wikipedia,0.8077,True,True,aliɡebura,0.7778
+algebra,ta,Tamil,இயற்கணிதம்,ijarkaɳitam,wikipedia,0.275,False,True,aliɡebura,0.594
+algebra,he,Hebrew,אלגברה,algbrh,wikipedia,0.75,True,False,aliɡebura,
+algebra,is,Icelandic,Algebra,algebra,wikipedia,0.8077,True,True,aliɡebura,0.7778
+algebra,hu,Hungarian,Algebra,algebra,wikipedia,0.8077,True,True,aliɡebura,0.7778
+algebra,cs,Czech,Algebra,algebra,wikipedia,0.8077,True,True,aliɡebura,0.7778
 geometry,ja,Japanese,幾何学,,wikipedia,0.0,False,True,ɡeometiria,
 geometry,zh,Mandarin,几何学,,unclassified,,,False,ɡeometiria,
 geometry,ko,Korean,기하학,kihahak,wikipedia,0.04,False,True,ɡeometiria,0.469
@@ -610,16 +610,16 @@ university,he,Hebrew,אוניברסיטה,aunibrsith,wikipedia,0.8333,True,False
 university,is,Icelandic,Háskóli,haskoli,wikipedia,0.275,False,True,uniferisita,0.4342
 university,hu,Hungarian,Egyetem,eɟetem,wikipedia,0.275,False,True,uniferisita,0.431
 university,cs,Czech,Univerzita,univerzita,wikipedia,0.875,True,True,uniferisita,0.9028
-president,ja,Japanese,プレジデント,puredʒidento,wikipedia,0.9,True,True,piresiden,0.7213
-president,zh,Mandarin,President,,unclassified,,,False,piresiden,
-president,ko,Korean,프레지던트,pɯretʃitʌntɯ,wikipedia,0.9,True,True,piresiden,0.7241
-president,ar,Arabic,رئيس (توضيح),rʔis,wikipedia,0.1667,False,False,piresiden,
-president,ru,Russian,Президент (значения),prezident,wikipedia,1.0,True,True,piresiden,0.7739
-president,es,Spanish,Presidente (desambiguación),presidente,wikipedia,0.9474,True,True,piresiden,0.7
-president,fi,Finnish,Presidentti (täsmennyssivu),presidentti,wikipedia,0.878,True,True,piresiden,0.6364
-president,he,Hebrew,נשיא (פירושונים),nʃia,wikipedia,0.1667,False,False,piresiden,
-president,hu,Hungarian,Elnök (egyértelműsítő lap),elnøk,wikipedia,0.2222,False,True,piresiden,0.4157
-president,cs,Czech,Prezident (rozcestník),prezident,wikipedia,1.0,True,True,piresiden,0.7739
+president,ja,Japanese,プレジデント,puredʒidento,wikipedia,0.9,True,True,puresiden,0.7385
+president,zh,Mandarin,President,,unclassified,,,False,puresiden,
+president,ko,Korean,프레지던트,pɯretʃitʌntɯ,wikipedia,0.9,True,True,puresiden,0.7184
+president,ar,Arabic,رئيس (توضيح),rʔis,wikipedia,0.1667,False,False,puresiden,
+president,ru,Russian,Президент (значения),prezident,wikipedia,1.0,True,True,puresiden,0.7739
+president,es,Spanish,Presidente (desambiguación),presidente,wikipedia,0.9474,True,True,puresiden,0.7
+president,fi,Finnish,Presidentti (täsmennyssivu),presidentti,wikipedia,0.878,True,True,puresiden,0.6364
+president,he,Hebrew,נשיא (פירושונים),nʃia,wikipedia,0.1667,False,False,puresiden,
+president,hu,Hungarian,Elnök (egyértelműsítő lap),elnøk,wikipedia,0.2222,False,True,puresiden,0.3927
+president,cs,Czech,Prezident (rozcestník),prezident,wikipedia,1.0,True,True,puresiden,0.7739
 hospital,ja,Japanese,病院,,wikipedia,0.0,False,True,hosipita,
 hospital,zh,Mandarin,醫院,,unclassified,,,False,hosipita,
 hospital,ko,Korean,병원,pjʌŋwʌn,wikipedia,0.069,False,True,hosipita,0.3233

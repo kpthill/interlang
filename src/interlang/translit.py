@@ -43,9 +43,10 @@ study can price each arm instead of asserting one:
 
   v_target      'f' | 'b' | 'w'          what /v/ becomes (default f, §6.4)
   th_target     't' | 's'                what <th> becomes
-  epen          'i' | 'u' | 'echo'       the epenthetic (repair) vowel
-                | 'labial_u'             ('labial_u' = /u/ after p b f m w,
-                                          /i/ elsewhere - Swahili's rule)
+  epen          'labial_u' (default)    the support (repair) vowel: /u/ after a
+                                         labial p b f m w, /i/ elsewhere - the
+                                         Swahili rule, 3.6 FIRM.  Fixed 'i' /
+                                         'u' / 'echo' are kept as priced arms.
   final_policy  'delete' | 'epenthesize' what happens to an illegal word-final
                                          consonant
   g_soft        False | True             whether <g> before e/i/y softens
@@ -265,7 +266,7 @@ def _epen_vowel(policy: str, prev_v: str, next_v: str, c: str = "") -> str:
     return policy
 
 
-def repair(ph: str, variant: Variant, *, epen: str = "i",
+def repair(ph: str, variant: Variant, *, epen: str = "labial_u",
            final_policy: str = "delete") -> tuple[str, list[str]]:
     """STAGE 2.  Make a phoneme string legal under `variant`.
 
@@ -472,7 +473,7 @@ def syllables(form: str) -> int:
 
 
 def render(intl: str, variant: str | Variant, *, v_target: str = "f",
-           th_target: str = "t", epen: str = "i", final_policy: str = "delete",
+           th_target: str = "t", epen: str = "labial_u", final_policy: str = "delete",
            g_soft: bool = False, hiatus: str = "keep") -> dict:
     """Full pipeline: international spelling -> interlang word under a variant.
 

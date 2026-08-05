@@ -6,7 +6,8 @@ ruleset: [`../src/interlang/translit.py`](../src/interlang/translit.py) ·
 outputs: `data/processed/international_vocab.csv` (52 words × 6 variants × 2 coda
 policies = 624 rows) and `data/processed/international_vocab_forms.csv` (828 attested
 forms). **Resolved [`principles.md`](principles.md) §3.6 — the syllable template is now
-FIRM: (C)V(N) + Cr/Cl onset clusters, support vowel /i/.***
+FIRM: (C)V(N) + Cr/Cl onset clusters, support vowel /u/ after a labial and /i/
+elsewhere.***
 
 **The question.** Internationally shared vocabulary — above all the scientific and
 technical words built from Latin and Greek roots — should be near-instantly
@@ -377,11 +378,15 @@ search over insertion points needs, and under the epenthesis policy it never los
 segment except by a declared coda merge. See §4.4 — this was **not** true of the first
 run.
 
-The support vowel is **/i/** by default. The metric is indifferent between /i/, /u/ and
-an echo of the following vowel (0.8109 / 0.8105 / 0.8110 — a range of 0.0005, i.e.
-nothing), so the choice is made on learnability: a single fixed vowel is one rule instead
-of a conditional one, /i/ is the epenthetic vowel of Swahili (*virusi, filimu, hoteli,
-sukari*) and of Arabic, and it is one of the three maximally prevalent vowels.
+The support vowel is **/u/ after a labial (p b f m w) and /i/ everywhere else**
+(**FIRM**, adopted 2026-08-05; the study first ran with a fixed /i/). The metric is
+indifferent between every candidate — fixed /i/, fixed /u/, an echo of the following
+vowel, and the conditioned rule score 0.8109 / 0.8105 / 0.8110 / 0.8110, a range of
+0.0005 — so the choice was made on articulation and precedent instead: [mu pu bu fu]
+need no lip transition where [mi pi bi fi] do, and Swahili, whose phonotactics are the
+closest of any recipient to ours, splits exactly this way (*atomu, kilogramu, filamu* vs
+*benki, protoni, hoteli, sukari*). /i/ elsewhere keeps the Arabic and Swahili default and
+is one of the three maximally prevalent vowels. Full evidence in §6.7.
 
 ### 4.3 The Latin/Greek ending table
 
@@ -439,6 +444,10 @@ lands on the coda-restricted variants:
 | president | V2, V3, V4 | *piresideniti* (6) | **piresidenti** (5) |
 | president | V3C | *presideniti* (5) | **presidenti** (4) |
 | president | V5 | *piresidenit* | **piresidenti** |
+
+*(Forms in this table are shown under the fixed-/i/ support vowel that was in force when
+the fix was made; under the conditioned rule adopted later the same day they read
+*puresideniti* → **puresidenti**. The syllable counts and the point are unchanged.)*
 | film | V4, V5 | *filim* | **filmi** |
 | electron | V5 | *elekitron* | **elektiron** |
 
@@ -473,25 +482,25 @@ no attested set (§2).
 | word | intl form | V3 (epen) | V3 (del) | V3C (epen) | V5 | syl | sim V3 | sim V5 | ceiling |
 |---|---|---|---|---|---|---|---|---|---|
 | atom | atom | **atom** | atom | atom | atom | 2 → 2 | 0.93 | 0.93 | 0.93 |
-| proton | proton | **piroton** | piroton | proton | piroton | 2 → 3 | 0.82 | 0.82 | 0.96 |
+| proton | proton | **puroton** | puroton | proton | puroton | 2 → 3 | 0.82 | 0.82 | 0.96 |
 | electron | electron | **elekitiron** | elekitiron | elekitron | elektiron | 3 → 5 | 0.77 | 0.85 | 0.96 |
 | molecule | molecula | **molekula** | molekula | molekula | molekula | 4 → 4 | 0.93 | 0.93 | 0.93 |
 | oxygen | oxygen | **okisigen** | okisigen | okisigen | oksigen | 3 → 4 | 0.78 | 0.90 | 0.90 |
 | hydrogen | hydrogen | **hidirogen** | hidirogen | hidrogen | hidrogen | 3 → 4 | 0.77 | 0.85 | 0.85 |
 | carbon | carbon | **karibon** | karibon | karibon | karbon | 2 → 3 | 0.78 | 0.84 | 0.84 |
 | energy | energia | **enerigia** | enerigia | enerigia | energia | 4 → 5 | 0.82 | 0.90 | 0.90 |
-| plastic | plastic | **pilasitiki** | pilasiti | plasitiki | pilastik | 2 → 5 | 0.68 | 0.74 | 0.81 |
+| plastic | plastic | **pulasitiki** | pulasiti | plasitiki | pulastik | 2 → 5 | 0.68 | 0.74 | 0.81 |
 | virus | virus | **firusi** | firu | firusi | firus | 2 → 3 | 0.82 | 0.83 | 0.83 |
 | bacteria | bacteria | **bakiteria** | bakiteria | bakiteria | bakteria | 4 → 5 | 0.78 | 0.88 | 0.88 |
 | antibiotic | antibiotic | **antibiotiki** | antibioti | antibiotiki | antibiotik | 5 → 6 | 0.91 | 0.88 | 0.88 |
 | vitamin | vitamin | **fitamin** | fitamin | fitamin | fitamin | 3 → 3 | 0.94 | 0.94 | 0.95 |
-| protein | protein | **pirotein** | pirotein | protein | pirotein | 3 → 4 | 0.77 | 0.77 | 0.85 |
+| protein | protein | **purotein** | purotein | protein | purotein | 3 → 4 | 0.77 | 0.77 | 0.85 |
 | hormone | hormon | **horimon** | horimon | horimon | hormon | 2 → 3 | 0.81 | 0.89 | 0.89 |
 | malaria | malaria | **malaria** | malaria | malaria | malaria | 4 → 4 | 0.94 | 0.94 | 0.94 |
 | insulin | insulin | **insulin** | insulin | insulin | insulin | 3 → 3 | 0.95 | 0.95 | 0.95 |
 | vaccine | vaccin | **fakisin** | fakisin | fakisin | faksin | 2 → 3 | 0.77 | 0.81 | 0.81 |
 | mathematics | mathematica | **matematika** | matematika | matematika | matematika | 5 → 5 | 0.95 | 0.95 | 0.93 |
-| algebra | algebra | **aligebira** | aligebira | aligebra | algebra | 3 → 5 | 0.76 | 0.94 | 0.94 |
+| algebra | algebra | **aligebura** | aligebura | aligebra | algebra | 3 → 5 | 0.76 | 0.94 | 0.94 |
 | geometry | geometria | **geometiria** | geometiria | geometria | geometria | 5 → 6 | 0.83 | 0.93 | 0.93 |
 | zero | zero | **sero** | sero | sero | sero | 2 → 2 | – | – | – |
 | million | million | **milion** | milion | milion | milion | 3 → 3 | – | – | – |
@@ -505,16 +514,16 @@ no attested set (§2).
 | video | video | **fideo** | fideo | fideo | fideo | 3 → 3 | 0.95 | 0.95 | 0.96 |
 | machine | machina | **makina** | makina | makina | makina | 3 → 3 | 0.91 | 0.91 | 0.80 |
 | motor | motor | **motori** | moto | motori | motor | 2 → 3 | – | – | – |
-| film | film | **filim** | filim | filim | filmi | 1 → 2 | 0.74 | 0.74 | 0.85 |
+| film | film | **filim** | filim | filim | filmu | 1 → 2 | 0.74 | 0.74 | 0.85 |
 | robot | robot | **roboti** | robo | roboti | robot | 2 → 3 | 0.85 | 0.94 | 0.94 |
 | democracy | democratia | **demokiratia** | demokiratia | demokratia | demokratia | 5 → 6 | 0.84 | 0.91 | 0.91 |
 | police | policia | **polisia** | polisia | polisia | polisia | 4 → 4 | 0.81 | 0.81 | 0.81 |
 | university | universitat | **uniferisitati** | uniferisita | uniferisitati | unifersitat | 5 → 7 | 0.80 | 0.95 | 0.95 |
-| president | president | **piresidenti** | piresiden | presidenti | piresidenti | 3 → 5 | 0.85 | 0.85 | 0.86 |
+| president | president | **puresidenti** | puresiden | presidenti | puresidenti | 3 → 5 | 0.85 | 0.85 | 0.86 |
 | hospital | hospital | **hosipitali** | hosipita | hosipitali | hospital | 3 → 5 | 0.76 | 0.78 | 0.78 |
 | bank | bank | **banki** | ban | banki | banki | 1 → 2 | 0.90 | 0.90 | 0.84 |
 | system | system | **sisitem** | sisitem | sisitem | sistem | 2 → 3 | 0.83 | 0.90 | 0.90 |
-| program | program | **pirogiram** | pirogiram | program | pirogram | 2 → 4 | – | – | – |
+| program | program | **purogiram** | purogiram | program | purogram | 2 → 4 | – | – | – |
 | coffee | cafe | **kafe** | kafe | kafe | kafe | 2 → 2 | 0.87 | 0.87 | 0.87 |
 | tea | te | **te** | te | te | te | 1 → 1 | 0.82 | 0.82 | 0.82 |
 | chocolate | chocolate | **kokolate** | kokolate | kokolate | kokolate | 4 → 4 | 0.75 | 0.75 | 0.83 |
@@ -527,8 +536,8 @@ no attested set (§2).
 
 **Reading it.** 20 of the 52 words come out of (C)V(N) with **no change in syllable
 count at all**, and 24 of 52 are *identical* under V3 and V5 — for nearly half the set,
-the template question is moot. The damage is concentrated: *elekitiron*, *pilasitiki*,
-*aligebira*, *uniferisitati*, *interineti*, *geometiria*, *piresidenti*.
+the template question is moot. The damage is concentrated: *elekitiron*, *pulasitiki*,
+*aligebura*, *uniferisitati*, *interineti*, *geometiria*, *puresidenti*.
 
 Note also the words where our form **beats** the international reference: *matematika*,
 *teoria*, *makina*, *antibiotiki*, *banki*. th→t and ch→k are not losses — the recipient
@@ -547,17 +556,17 @@ metric column is biased in favour of the permissive variants (§3.6).
 
 | policy | variant | syl before → after | **syl_infl** | epenth. | deleted | sim v0 | sim learned | retention |
 |---|---|---|---|---|---|---|---|---|
-| delete | V1 (C)V | 2.92 → 3.50 | **1.211** | 0.58 | 0.67 | 0.757 | 0.674 | 0.864 |
+| delete | V1 (C)V | 2.92 → 3.50 | **1.211** | 0.58 | 0.67 | 0.757 | 0.675 | 0.864 |
 | delete | V2 (C)V(n) | 2.92 → 3.44 | **1.207** | 0.52 | 0.27 | 0.809 | 0.745 | 0.922 |
 | delete | **V3 (C)V(N)** | 2.92 → 3.44 | **1.207** | 0.52 | 0.27 | 0.811 | 0.756 | 0.925 |
 | delete | V4 (C)V(N,l,r) | 2.92 → 3.33 | **1.166** | 0.40 | 0.15 | 0.828 | 0.778 | 0.944 |
-| delete | V5 (C)V(C) | 2.92 → 3.10 | **1.093** | 0.17 | 0.00 | 0.862 | 0.818 | 0.982 |
+| delete | V5 (C)V(C) | 2.92 → 3.10 | **1.093** | 0.17 | 0.00 | 0.862 | 0.819 | 0.982 |
 | delete | **V3C** V3+Cr/Cl | 2.92 → 3.21 | **1.122** | 0.29 | 0.27 | **0.828** | 0.770 | 0.943 |
-| epen | V1 | 2.92 → 4.17 | 1.524 | 1.25 | 0 | 0.806 | 0.768 | 0.920 |
-| epen | V2 | 2.92 → 3.71 | 1.327 | 0.79 | 0 | 0.828 | 0.779 | 0.944 |
+| epen | V1 | 2.92 → 4.17 | 1.524 | 1.25 | 0 | 0.807 | 0.770 | 0.921 |
+| epen | V2 | 2.92 → 3.71 | 1.327 | 0.79 | 0 | 0.828 | 0.780 | 0.944 |
 | epen | **V3** | 2.92 → 3.71 | 1.327 | 0.79 | 0 | 0.830 | 0.790 | 0.947 |
-| epen | V4 | 2.92 → 3.48 | 1.235 | 0.56 | 0 | 0.843 | 0.801 | 0.962 |
-| epen | V5 | 2.92 → 3.10 | 1.093 | 0.17 | 0 | 0.869 | 0.823 | 0.990 |
+| epen | V4 | 2.92 → 3.48 | 1.235 | 0.56 | 0 | 0.843 | 0.802 | 0.962 |
+| epen | V5 | 2.92 → 3.10 | 1.093 | 0.17 | 0 | 0.869 | 0.824 | 0.990 |
 | epen | **V3C** | 2.92 → 3.48 | 1.242 | 0.56 | 0 | **0.846** | 0.804 | 0.965 |
 
 Reference points, same scale: the **international form itself** scores **0.878** against
@@ -596,11 +605,11 @@ clusters (ja, ko, sw, ta, ha, vi) versus recipients that need not (the rest):
 
 | variant (epenthesis policy) | vs cluster-**repairing** recipients | vs cluster-**tolerant** recipients | swing |
 |---|---|---|---|
-| V1 | 0.816 | 0.803 | −0.014 |
-| V2 | 0.826 | 0.825 | −0.002 |
+| V1 | 0.818 | 0.802 | −0.016 |
+| V2 | 0.827 | 0.825 | −0.002 |
 | **V3** | 0.829 | 0.827 | −0.002 |
-| V4 | 0.824 | 0.846 | +0.022 |
-| V5 | 0.831 | **0.880** | **+0.050** |
+| V4 | 0.825 | 0.846 | +0.021 |
+| V5 | 0.832 | **0.880** | **+0.049** |
 | **V3C** | **0.836** | 0.847 | +0.011 |
 
 **Against the languages that adapt the way we would have to, V5's advantage very nearly
@@ -654,17 +663,17 @@ except for the +0.013 baseline shift that v → f itself contributes.
 
 | decision | option | mean sim | note |
 |---|---|---|---|
-| /v/ → | **f** | **0.8109** | best, marginally — **adopted 2026-08-05** |
-| | b | 0.8099 | statistically the same |
-| | w | 0.7962 | 0.015 worse; was the placeholder in the first run |
-| th → | **t** | 0.8109 | |
-| | s | 0.8103 | a tie |
-| epenthetic vowel | i / u / echo / labial_u | 0.8109 / 0.8105 / 0.8110 / 0.8110 | a four-way tie — see §6.7 |
-| `<g>` | **hard always** | 0.8109 | |
-| | soft before e/i/y | 0.8050 | worse |
-| hiatus | **keep** | 0.8109 | §6.5 |
-| | glide after any vowel | 0.7952 | |
-| | glide after /i u/ only | 0.8019 | |
+| /v/ → | **f** | **0.8110** | best, marginally — **adopted 2026-08-05** |
+| | b | 0.8100 | statistically the same |
+| | w | 0.7963 | 0.015 worse; was the placeholder in the first run |
+| th → | **t** | 0.8110 | |
+| | s | 0.8104 | a tie |
+| support vowel | **labial_u** / i / u / echo | **0.8110** / 0.8109 / 0.8105 / 0.8110 | a four-way tie; decided on articulation, §6.7 |
+| `<g>` | **hard always** | 0.8110 | |
+| | soft before e/i/y | 0.8051 | worse |
+| hiatus | **keep** | 0.8110 | §6.5 |
+| | glide after any vowel | 0.7953 | |
+| | glide after /i u/ only | 0.8020 | |
 
 ### 6.5 Interaction with the new §3.6 hiatus rule (added after the run)
 
@@ -778,14 +787,23 @@ Swahili's *klabu* and *kitabu* (← Arabic *kitāb*) are exactly this context.
 recognizability and has to be made on articulation and rule cost, as §4.2's choice of /i/
 originally was.
 
-**Recommendation: adopt the conditioning, in its narrow form** — *support vowel is /u/
-after /p b f m w/, /i/ elsewhere*. It is one clause, it is what the nearest-typology
-recipient actually does, it is articulatorily motivated, it costs nothing measurable, and
-it never touches the 52 words already priced. The argument against is the same one that
-retired the glide rule — do not add a rule that rarely fires — but this one differs in
-kind: the glide rule fired only inside words *we* coin, while the support vowel is applied
-productively by anyone deriving the interlang form of a new international word, and here
-the conditioned output is *closer* to what recipients produce, not further.
+**Recommended, and ADOPTED 2026-08-05 by Patrick** — *support vowel is /u/ after
+/p b f m w/, /i/ elsewhere*, now the default in `translit.py` and FIRM in
+`principles.md` §3.6. It is one clause, it is what the nearest-typology recipient
+actually does, it is articulatorily motivated, and it costs nothing measurable. The
+argument against was the same one that retired the glide rule — do not add a rule that
+rarely fires — but this one differs in kind: the glide rule fired only inside words *we*
+coin, while the support vowel is applied productively by anyone deriving the interlang
+form of a new international word, and here the conditioned output is *closer* to what
+recipients produce, not further.
+
+**What changed when it became the default.** Nothing under the locked template: all 52
+words are byte-identical under V3C, as predicted. The *rejected* variants move, because
+they are the ones that strand labials — 6 words under V3 (*piroton → puroton*,
+*pilasitiki → pulasitiki*, *pirotein → purotein*, *aligebira → aligebura*,
+*piresidenti → puresidenti*, *pirogiram → purogiram*), 11 under V1, 7 under V4, 6 under
+V5. Pooled similarities move by at most 0.0012 and no ranking changes. §5's table and
+§6.1–6.2 are regenerated under the new default; §6.4's arms are unchanged.
 
 ---
 
@@ -805,14 +823,14 @@ That is the good half. The full ledger:
 |---|---|---|---|---|
 | 1 | **Which international shape to start from** (*computer* or *komputer*? *coffee* or *kahve*? *universitas* or *university*?) | **No — lexical** | pick the shape shared by the most recipient languages | This is the one genuinely unresolvable point. The learner must know the international *stem*, not their own language's word. Precedent: every IAL has this problem; Interlingua's "prototype" procedure is the same judgment made by hand. |
 | 2 | **/v/ → f, b or w** | Yes, arbitrary but fixable | **f** — decided 2026-08-05 (0.8109, against b 0.8099 and w 0.7962) | Genuine three-way split in the wild: Arabic → f (*fīrūs*), Japanese/Korean/Spanish → b (*bitamin, 바이러스, vacuna*), Mandarin → w (维 *wéi*). No convention is universal; f keeps /w/ free for `<w>` and is the more distinctive of the two tied options against the inventory's /b/. |
-| 3 | **`<th>` → t or s** | Yes | **t** | Dead tie on the metric (0.8109 vs 0.8103). Precedent: t is the majority reflex worldwide (*matematika, teoria*); s is the Greek-modern/French-learned one. Pick t and never revisit. |
+| 3 | **`<th>` → t or s** | Yes | **t** | Dead tie on the metric (0.8110 vs 0.8104). Precedent: t is the majority reflex worldwide (*matematika, teoria*); s is the Greek-modern/French-learned one. Pick t and never revisit. |
 | 4 | **`<ch>` → k or s** | Yes, at a cost | **k** (Latin value, rule A0) | Right for Greek chi (*chemistry, technology, archive*), wrong for the Romance layer (*chocolate → kokolate*). Fires twice in 52 words. |
 | 5 | **`<c>` → k or s** | **Yes, fully** | s before e/i/y, k elsewhere | Not arbitrary at all: this is the Romance rule that all Latin-script recipients already apply. Fires 14 times, always predictably. |
 | 6 | **`<g>` soft before front vowels?** | Yes | **no, always hard** | Hard g is 0.006 better and one rule simpler. Precedent: Latin, German, Slavic, Indonesian, Turkish (*geometri, energi*). |
 | 7 | **`<y>` → i or u** | Yes | i (j before a vowel) | Not close: every recipient renders it i (*hidrogen, sistem, oksigen*). |
 | 8 | **`<x>` → ks** | Yes | always ks | Costly in clusters (*experiment → ekisiperimeniti*) but wholly predictable. |
 | 9 | **Which vowel to epenthesise** | Yes | **/i/**, fixed | Metric is indifferent (spread 0.0006). Fixed beats context-sensitive on learnability. Precedent: Swahili and Arabic use /i/; Japanese uses /u/ with allophonic exceptions (a rule a learner would have to memorise); Turkish uses harmony (context-dependent). |
-| 10 | **Where to epenthesise in an initial cluster** | Yes | after each excess consonant (*plastic → pilasitiki*) | The rival is Spanish prothesis (*estación*), which only covers /sC/ and would need a second rule. |
+| 10 | **Where to epenthesise in an initial cluster** | Yes | after each excess consonant (*plastic → pulasitiki*) | The rival is Spanish prothesis (*estación*), which only covers /sC/ and would need a second rule. |
 | 11 | **Illegal final consonant: delete or support?** | Yes | **support vowel** | §6.3. Deletion is shorter but unrecoverable and hits short Wanderwörter hardest. |
 | 12 | **Coda /n/ vs /m/ (V3)** | Yes | whatever the international spelling has | Fully determined by the source; no choice to make. Under V2 it *would* be a forced merger (m → n), which is one more reason V3 over V2. |
 | 13 | Geminates, `<ae/oe>`, doubled vowels | Yes | collapse | Forced by §3.5 (no length contrast). |

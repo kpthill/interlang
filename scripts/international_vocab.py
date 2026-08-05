@@ -793,7 +793,7 @@ RESTRICTIVE = {"ja", "ko", "sw", "ta", "ha", "vi"}
 
 # Default ruleset settings (the recommendation; each is priced in the
 # sensitivity arms below and audited in notes/international-vocab.md 6).
-DEFAULTS = dict(v_target="f", th_target="t", epen="i", final_policy="delete")
+DEFAULTS = dict(v_target="f", th_target="t", epen="labial_u", final_policy="delete")
 
 
 def learned_params():

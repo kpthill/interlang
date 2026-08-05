@@ -149,8 +149,22 @@ pr  tr  kr  br  dr  ɡr  fr        pl  kl  fl
 That set is **exhaustive and not productive**: it is a list, not a rule, so no cluster
 enters by analogy. An illegal word-final consonant takes a **support vowel** rather than
 being deleted (*bank* → *banki*, *virus* → *firusi*), which keeps the mapping lossless at
-the segment level. *The support vowel is /i/; whether it should be /u/ after a labial is
-a live sub-question, see §7 — it does not affect any word priced here.*
+the segment level.
+
+**The support vowel is /u/ after a labial (p b f m w) and /i/ everywhere else**
+(decided 2026-08-05 by Patrick). *club* → **klubu**, *camp* → **kampu**, but *bank* →
+**banki**, *virus* → **firusi**, *hotel* → **hoteli**. Every candidate — fixed /i/, fixed
+/u/, echo, and this rule — scores identically on recognizability (spread 0.0005 over 52
+words), so the decision rests on articulation and precedent: [mu pu bu fu] need no lip
+transition where [mi pi bi fi] do, and **Swahili splits exactly this way**, 3 of 3 labial
+cases taking -u (*atomu, kilogramu, filamu*) against 19 of 19 non-labial cases taking -i
+(*benki, plastiki, protoni, hoteli, sukari*) — note velars pattern with -i, so this is a
+labial rule, not a backness rule. Evidence: [`international-vocab.md`](international-vocab.md) §6.7.
+
+*Note the interaction with the clusters above: licensing Cr/Cl removed **every** labial
+epenthesis site in the 52-word study set, so this rule changes none of the words priced
+for the template decision. It bites on word-final /p b f/, which that word set happens
+not to contain.*
 
 Evidence: [`international-vocab.md`](international-vocab.md), 52 international words ×
 6 templates × 2 final-coda policies.
@@ -321,12 +335,13 @@ requires a lexical judgment. It loses to the fact that a reader of a Latin ortho
 arrives expecting case regardless of their L1 script, and that proper-noun capitals do
 real disambiguation work in a language whose names are transliterated into 20 letters.
 
-**Compounds are written solid** — `firetruck`, not `fire-truck` or `fire truck` (decided
-2026-08-05 by Patrick). Consistent with §3.6: a compound is one word, concatenated without
-seam repair, and it takes one initial stress like any other word. This keeps the hyphen
-and the apostrophe unused.
+**Compounds are written solid** — `firetruck`, not `fire-truck` or `fire truck`
+(**FIRM**, decided 2026-08-05 by Patrick). Consistent with §3.6: a compound is one word,
+concatenated without seam repair, and it takes one initial stress like any other word.
+This keeps the hyphen and the apostrophe unused.
 
-Two consequences worth having on the record, neither of which changes the decision:
+Two costs come with it. Both are **accepted, and both are logged in §7 to be re-examined
+once a lexicon and a grammar exist** — neither is measurable before then:
 
 - **Segmentation ambiguity is the cost, and it is a lexicon problem, not a spelling
   problem.** With (C)V(N) syllables and no seam marker, a solid compound can in principle
@@ -487,7 +502,8 @@ Standing open questions:
 - ~~**Stress rule**~~ **DECIDED 2026-08-05: first syllable** (§3.5). See [`stress-prevalence.md`](stress-prevalence.md); initial was chosen over the headline penultimate on simplicity, and because the penultimate lead depends on collapsing weight-sensitive systems.
 - ~~**Case or no case**~~ **DECIDED 2026-08-05: keep case** — sentence-initial + narrowly-defined proper nouns (§3.7). Punctuation, quotes and number formats went FIRM with it.
 - ~~**How compounds are written**~~ **DECIDED 2026-08-05: solid** (§3.7). Leaves segmentation ambiguity as a constraint for the lexicon chooser rather than a spelling rule.
-- **Support vowel: fixed /i/, or /u/ after a labial? (OPEN, new, small — raised by Patrick 2026-08-05.)** §3.6 fixes /i/. The rival is Swahili's rule, */u/ after p b f m w, /i/ elsewhere* — attested (*atomu, kilogramu, filamu* vs *benki, protoni, hoteli, sukari*, 3/3 vs 19/19 in our set), articulatorily motivated (no lip transition), and a **dead tie** on recognizability (0.8110 vs 0.8109). It changes **none** of the 52 words already priced, because licensing the Cr/Cl onsets removed every labial epenthesis site — but it does bite on the word-final /p b f/ that our word list happens to lack (*club* → klubi/**klubu**, cf. Swahili *klabu*; *camp*, *tulip*, *syrup*). Recommendation on file: **adopt it.** → [`international-vocab.md`](international-vocab.md) §6.7.
+- ~~**Support vowel: fixed /i/, or /u/ after a labial?**~~ **DECIDED 2026-08-05: /u/ after a labial** (§3.6), on articulation and Swahili's 3/3-vs-19/19 precedent, the metric being indifferent. It is the `translit.py` default and changes no word under the locked template.
+- **Solid compounds: check back in on the two costs (OPEN, new, deferred by Patrick 2026-08-05).** The decision is made (§3.7) and the costs are accepted, but both are worth re-examining once there is a lexicon and a grammar to look at: (a) **segmentation ambiguity** — measure the real rate at which a solid compound admits more than one parse into attested roots, and see whether the geminate and hiatus boundary signals cover enough of it, or whether the lexicon chooser needs an explicit anti-ambiguity term; (b) **the prosodic seam** — §3.5 gives a compound one initial stress, making it prosodically identical to a simple root of the same shape, which is fine on paper and may or may not be fine in speech. Neither is measurable before the lexicon exists.
 - **Loan-mapping homophony (OPEN, deferred to the vocabulary stage by Patrick 2026-08-05):** the adaptation ruleset merges 5 international spellings into /s/, 6 into /k/ and 3 into /f/. Zero collisions over 52 words, but that is far too small a sample to see the birthday-problem effect. The full merge table and the four things to check are recorded with the rule in §3.6; **raise this again when the lexicon exists**. The reversible knob is v→f, which /b/ ties on the metric.
 - ~~**Compounding: keep or drop**~~ **DECIDED 2026-08-05: keep** (§3.6). Compounds are plain concatenation with no seam repair — geminates and hiatus are both legal results. Consequences that are now live rather than hypothetical: **how compounds are written** (solid / hyphen / space) is still open under §3.7, and compounding is one of the two things §3.2's derivation strategy can be built from.
 - **Loss shape details (SOFT):** AE + MSE combination is a proposal, not validated.
