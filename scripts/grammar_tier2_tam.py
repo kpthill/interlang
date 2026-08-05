@@ -66,17 +66,77 @@ from grammar_tier0 import LEXIFIER_OF  # noqa: E402
 
 OUT = ROOT / "data" / "processed" / "grammar_tier2_tam.csv"
 
-# A bias control that turned up while reading the results and applies to EVERY
-# Rule 1 claim, not just this study: the non-European-lexifier subsample is
-# disproportionately PIDGINS rather than creoles.  A pidgin has less grammar by
-# definition, so any feature counted as "creoles converge on not having X" is
-# partly counting "pidgins do not have much of anything".  Rough classification -
-# name contains "Pidgin", plus three known pidgins whose names do not say so.
-PIDGINISH_EXTRA = {"Fanakalo", "Chinuk Wawa", "Singapore Bazaar Malay"}
+# CONTACT-LANGUAGE TYPE.  Revised 2026-08-05 after Patrick pointed out that the
+# first cut had this exactly backwards.  We are designing an AUXILIARY language:
+# nobody's first language, built by adults who share no language.  That is what a
+# PIDGIN is.  A creole is what happens once children nativise a pidgin - a
+# different process with a different learner.  So pidgins are not a contaminant in
+# the creole sample, they are the closest analogue to the use case, and where
+# pidgins and creoles disagree the PIDGIN evidence should win.
+#
+# Three-way, hand-assembled from standard creolistics (`model-recall` provenance
+# per international-vocab.md 3.3 - it is not in the APiCS data):
+#
+#   restricted pidgin  no native speakers, limited domains.  Closest to our case.
+#   expanded pidgin    a community's main language, often nativising.  Adult-built
+#                      in origin, so still strong evidence, but drifting toward
+#                      creole - reported separately rather than merged either way.
+#   creole             nativised.  Still evidence, but one generation removed from
+#                      the process we care about.
+#
+# Boundary calls, all debatable and all logged: Chinuk Wawa is a restricted pidgin
+# but its Grand Ronde variety creolised, so the two lects are typed differently;
+# Tok Pisin, Bislama and Nigerian Pidgin are expanded pidgins with growing L1
+# populations; Kinubi is the nativised descendant of Juba Arabic and is typed
+# creole while Juba Arabic itself is typed expanded.  Mixed languages (Michif,
+# Media Lengua, Ma'a/Mbugu, Gurindji Kriol) arise in BILINGUAL communities, not
+# from a no-shared-language situation, and are excluded from this cut entirely.
+RESTRICTED_PIDGINS = {
+    "Chinese Pidgin English", "Chinese Pidgin English (European)",
+    "Chinese Pidgin Russian", "Chinese Pidgin Russian (depidginized)",
+    "Chinuk Wawa", "Eskimo Pidgin", "Fanakalo", "Pidgin Hawaiian",
+    "Pidgin Hindustani", "Singapore Bazaar Malay", "Yimas-Arafundi Pidgin",
+}
+EXPANDED_PIDGINS = {
+    "Bislama", "Cameroon Pidgin English", "Ghanaian Pidgin English",
+    "Ghanaian Pidgin English (Acrolectal Ghanaian Pidgin English)",
+    "Ghanaian Pidgin English (Student Pidgin)", "Juba Arabic",
+    "Juba Arabic (Arabic interference)", "Juba Arabic (basilectal)",
+    "Kikongo-Kituba", "Lingala", "Nigerian Pidgin", "Sango", "Sango (written)",
+    "Tok Pisin",
+}
+MIXED_LANGUAGES = {"Michif", "Media Lengua",
+                   "Media Lengua (Imbabura Media Lengua (data Gómez Rendón))",
+                   "Mixed Ma\u2019a/Mbugu", "Gurindji Kriol"}
 
 
-def is_pidginish(name: str) -> bool:
-    return "pidgin" in name.lower() or name in PIDGINISH_EXTRA
+def contact_type(name: str) -> str:
+    if name in RESTRICTED_PIDGINS:
+        return "1 restricted pidgin"
+    if name in EXPANDED_PIDGINS:
+        return "2 expanded pidgin"
+    if name in MIXED_LANGUAGES:
+        return "0 mixed (excluded)"
+    return "3 creole"
+
+
+TYPE_ORDER = ["1 restricted pidgin", "2 expanded pidgin", "3 creole"]
+
+# Per-category prevalence: the individual tenses/aspects/moods that were
+# considered for the particle inventory, and where each one's prevalence comes
+# from.  APiCS codes presence indirectly, via a "no overt X marker" option on the
+# feature that otherwise describes X.
+APICS_CATEGORY = {
+    "past":        ("45", "No overt past marker exists"),
+    "progressive": ("46", "No overt progressive marker"),
+    "habitual":    ("48", "No overt habitual marker"),
+}
+WALS_CATEGORY = {
+    "65A": "perfective/imperfective",
+    "66A": "past tense",
+    "67A": "future tense",
+    "68A": "the perfect",
+}
 
 
 APICS_TAM = {
@@ -121,6 +181,26 @@ def gb_binary(vals, langs, feats):
     return pd.DataFrame(out).set_index("feature_id")
 
 
+def weighted_dist_local(fid, l1m, tot):
+    """WALS distribution for one chapter, deduplicated and population-weighted."""
+    langs, _p, vals = load("wals")
+    langs = weight(langs, l1m, tot)
+    codes = pd.read_csv(ROOT / "data/raw/wals/cldf/codes.csv")
+    cm = dict(zip(codes.ID, codes.Name))
+    v = vals[(vals.Parameter_ID == fid) & (vals.Value.astype(str) != "?")].copy()
+    k = langs.set_index("ID")
+    v["gc"] = v.Language_ID.map(k.Glottocode)
+    v["l1"] = v.Language_ID.map(k.l1).fillna(0.0)
+    v["tot"] = v.Language_ID.map(k.total).fillna(0.0)
+    v = v[v.gc.notna()].drop_duplicates("gc")
+    v["label"] = v.Code_ID.map(cm).fillna(v.Value.astype(str))
+    g = v.groupby("label").agg(n=("gc", "size"), l1=("l1", "sum"), t=("tot", "sum"))
+    g["by_lang_pct"] = (100 * g.n / g.n.sum()).round(1)
+    g["by_l1_pct"] = (100 * g.l1 / g.l1.sum()).round(1)
+    g["by_total_pct"] = (100 * g.t / g.t.sum()).round(1)
+    return g.sort_values("by_lang_pct", ascending=False)
+
+
 def main() -> None:
     (l1m, tot, W1, WT) = populations()
     rows = []
@@ -132,22 +212,16 @@ def main() -> None:
                    for n, lx in zip(ap_l.Name, ap_l.Lexifier)]
     ap_codes = pd.read_csv(ROOT / "data/raw/apics/cldf/codes.csv")
     cmap = dict(zip(ap_codes.ID, ap_codes.Name))
-    ap_l["pidginish"] = [is_pidginish(n) for n in ap_l.Name]
-    info = ap_l.set_index("ID")[["Name", "Lexifier", "grp", "pidginish"]]
+    ap_l["ctype"] = [contact_type(n) for n in ap_l.Name]
+    info = ap_l.set_index("ID")[["Name", "Lexifier", "grp", "ctype"]]
 
-    skew = pd.crosstab(ap_l.grp, ap_l.pidginish)
     print("=" * 74)
-    print("PART 0  A BIAS CONTROL ON RULE 1 ITSELF")
+    print("PART 0  THE SAMPLE, STRATIFIED BY CONTACT TYPE")
     print("=" * 74)
-    print("\nHow many of each lexifier group are pidgins rather than creoles?")
-    print(skew.rename(columns={False: "creole", True: "pidgin-ish"}).to_string())
-    ne = ap_l[ap_l.grp == "non-european"]
-    print(f"\n  {ne.pidginish.sum()} of {len(ne)} non-European-lexifier lects "
-          f"({100*ne.pidginish.mean():.0f}%) are pidgins, against "
-          f"{100*ap_l[ap_l.grp=='european'].pidginish.mean():.0f}% of the European group.")
-    print("  A pidgin has less grammar BY DEFINITION, so any Rule 1 finding of the")
-    print("  form 'creoles converge on NOT having X' is partly counting that skew.")
-    print("  Applies to every Rule 1 claim in the project, not just this study.")
+    print("\nPidgins are the closest analogue to an auxiliary language: adults, no")
+    print("shared language, no native speakers.  Creoles are one generation further")
+    print("on.  Where the two disagree, the pidgin evidence should win.\n")
+    print(pd.crosstab(ap_l.ctype, ap_l.grp).to_string())
 
     print("\n" + "=" * 74)
     print("PART 1  WHAT CREOLES DO  (Rule 1: the non-European-lexifier column is")
@@ -172,12 +246,13 @@ def main() -> None:
         print(f"  Rule 1: top option is {ct.index[0]!r} at "
               f"{ct['non-european'].iloc[0]}/{ne} non-European-lexifier "
               f"({top_share:.0f}%)")
-        # robustness: drop the pidgins, which are over-represented in that group
-        cre = v[(v.grp == "non-european") & (~v.pidginish)]
-        if len(cre):
-            vc = cre.label.value_counts()
-            print(f"  ...excluding pidgins (n={len(cre)}): "
-                  + "; ".join(f"{k} {n}" for k, n in vc.items()))
+        # the cut that matters: what do the PIDGINS do, of any lexifier?
+        for t in TYPE_ORDER:
+            sub = v[v.ctype == t]
+            if len(sub):
+                vc = sub.label.value_counts()
+                print(f"    {t:20s} (n={len(sub):2d}): "
+                      + "; ".join(f"{k} {n}" for k, n in vc.head(4).items()))
         for opt, r in ct.iterrows():
             rows.append(dict(part="creole", source="apics", feature_id=pid,
                              feature=label, option=opt,
@@ -270,6 +345,59 @@ def main() -> None:
     print("  " + pd.crosstab(r2[r2.kind == "particle"].feature,
                              r2[r2.kind == "particle"].verdict)
           .to_string().replace("\n", "\n  "))
+
+    # ------------------------------------------------------------------
+    print("\n" + "=" * 74)
+    print("PART 4  THE CANDIDATE CATEGORIES, ONE BY ONE")
+    print("=" * 74)
+    print("\nEvery tense/aspect/mood category considered for the particle")
+    print("inventory, with how common it is in the world and in contact languages.")
+
+    print("\n--- world: WALS chapters, deduplicated and weighted ---")
+    for wid, what in WALS_CATEGORY.items():
+        w = weighted_dist_local(wid, l1m, tot)
+        print(f"\n  WALS {wid} {what} (n={int(w.n.sum())} languages)")
+        print("  " + w[["n", "by_lang_pct", "by_l1_pct", "by_total_pct"]]
+              .head(5).to_string().replace("\n", "\n  "))
+        for opt, r in w.iterrows():
+            rows.append(dict(part="category", source="wals", feature_id=wid,
+                             feature=what, option=opt, n_total=int(r.n),
+                             pct_lang=r.by_lang_pct, pct_l1=r.by_l1_pct,
+                             pct_total=r.by_total_pct))
+
+    print("\n--- world: Grambank, share of languages that mark the category at all ---")
+    print(f"  {'category':34s} {'n':>5s} {'%lang':>6s} {'%L1':>6s} {'%tot':>6s}")
+    for fid, label, kind in GB_TAM:
+        if fid in tab.index and kind in ("morphology", "context"):
+            r = tab.loc[fid]
+            print(f"  {label:34s} {int(r.n):5d} {r.pct_lang:6.1f} {r.pct_l1:6.1f} "
+                  f"{r.pct_total:6.1f}")
+
+    print("\n--- contact languages: does the category have an overt marker at all? ---")
+    print(f"  {'category':13s} {'restricted pidgin':>19s} {'expanded pidgin':>17s} {'creole':>12s}")
+    for cat, (pid, absent_label) in APICS_CATEGORY.items():
+        v = ap_v[ap_v.Parameter_ID.astype(str) == pid].copy()
+        v["label"] = v.Code_ID.map(cmap)
+        v = v.join(info, on="Language_ID")
+        v = v.sort_values("Frequency", ascending=False).drop_duplicates("Language_ID")
+        cells = []
+        for t in TYPE_ORDER:
+            sub = v[v.ctype == t]
+            has = (sub.label != absent_label).sum()
+            cells.append(f"{has}/{len(sub)}" if len(sub) else "-")
+            rows.append(dict(part="category", source="apics", feature_id=pid,
+                             feature=cat, option=t, n_total=len(sub),
+                             pct_lang=round(100 * has / len(sub), 1) if len(sub) else None))
+        print(f"  {cat:13s} {cells[0]:>19s} {cells[1]:>17s} {cells[2]:>12s}")
+    print("\n  (APiCS codes presence indirectly, via the 'no overt X marker' option on")
+    print("   the feature that otherwise describes X.)")
+
+    print("\n--- contact languages: what an UNMARKED verb means (APiCS 51) ---")
+    v = ap_v[ap_v.Parameter_ID.astype(str) == "51"].copy()
+    v["label"] = v.Code_ID.map(cmap)
+    v = v.join(info, on="Language_ID")
+    v = v.sort_values("Frequency", ascending=False).drop_duplicates("Language_ID")
+    print(pd.crosstab(v.label, v.ctype).to_string())
 
     pd.DataFrame(rows).to_csv(OUT, index=False)
     print(f"\nwrote {OUT}")

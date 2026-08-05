@@ -102,24 +102,27 @@ Held SOFT because the *loss* half of the finding does not survive the Rule 1 lex
 
 #### TAM (**SOFT**, 2026-08-05 — recommendation on the table)
 
-Evidence: [`grammar-tier2-tam.md`](grammar-tier2-tam.md). **Three optional preverbal
-particles** — an **imperfective** (covering progressive *and* habitual in one marker), a
-**past/anterior**, and an **irrealis** (future and conditional). A bare verb is unmarked and
-reads from context. Order when they stack is Tense-Mood-Aspect; stacking is expected to be
-rare. **Negation changes nothing about TAM marking.**
+Evidence: [`grammar-tier2-tam.md`](grammar-tier2-tam.md). **Optional preverbal particles**,
+no ordering rule, invariant under negation. A bare verb is unmarked and reads from context:
+stative → present, dynamic → past/perfective, which is the contact-language default (7 of 8
+expanded pidgins) and is what keeps the inventory small.
 
-Why: creoles put TAM preverbally (6 of 8 non-pidgin non-European-lexifier, 83% of the
-European group) and on free particles rather than morphology (Rule 2: particles gained 9,
-lost 2; morphology lost 17, gained 6). Aspect is the backbone and tense the optional layer —
-**no non-European-lexifier creole has a purely temporal system**, and 28.2% of the world's L1
-mass marks past tense neither morphologically nor with a particle, against 18.2% for aspect.
-A dedicated habitual marker is a European-lexifier trait (0 of 9 outside it, 21 of 59 inside).
+| | particle | status |
+|---|---|---|
+| 1 | **imperfective** (progressive *and* habitual in one marker) | strongly supported — 100% of expanded pidgins and creoles |
+| 2 | **past / anterior** | supported — 6 of 9 expanded pidgins, 87% of creoles, 63.9–67.6% of world L1 |
+| 3 | *irrealis (future + conditional)* | **judgment call, not a finding** — mood is the world's most particle-friendly category (51.1% of L1) but future is the weakest tense category (39.5% of L1) and contact languages often express it lexically |
 
-Rejected and recorded: a perfect, remoteness/graded tense (31.8% of languages, no creole
-support), and separate progressive and habitual markers.
+Rejected, each with its number: a **perfect** (the possessive-derived kind is 3.2% of
+languages but 36.6% of total speakers — the most Eurocentric number in the study); a
+**separate habitual** (dedicated habitual marker: 0 of 9 outside the European-lexifier
+group, 21 of 59 inside it); **remoteness grades** (0.9% of L1); a dedicated **present**
+marker (redundant given the unmarked default). **No T-M-A ordering rule**: stacking three
+markers is unattested in pidgins of either kind (0 of 18) and is a creole development.
 
-**Particle bill: 3.** Tier 2 sizes the particle inventory that Tier 4 has to fit into the
-phonology; every Tier 2 answer that costs a particle is counted as it is made.
+**Particle bill: 2, or 3 with irrealis.** Tier 2 sizes the particle inventory that Tier 4
+must fit into the phonology; every Tier 2 answer that costs a particle is counted as it is
+made.
 
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 

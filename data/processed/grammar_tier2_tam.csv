@@ -54,3 +54,24 @@ rule2,grambank,,TAM by particle,GAINED,,,9,,,
 rule2,grambank,,TAM by particle,KEPT,,,3,,,
 rule2,grambank,,TAM by particle,ABSENT,,,3,,,
 rule2,grambank,,TAM by particle,LOST,,,2,,,
+category,wals,65A,perfective/imperfective,No grammatical marking,,,121,55.0,34.7,45.4
+category,wals,65A,perfective/imperfective,Grammatical marking,,,99,45.0,65.3,54.6
+category,wals,66A,past tense,"Present, no remoteness distinctions",,,93,42.3,66.7,70.6
+category,wals,66A,past tense,No past tense,,,87,39.5,32.4,28.7
+category,wals,66A,past tense,"Present, 2-3 remoteness distinctions",,,38,17.3,0.9,0.7
+category,wals,66A,past tense,"Present, 4 or more remoteness distinctions",,,2,0.9,0.0,0.0
+category,wals,67A,future tense,No inflectional future,,,111,50.5,60.5,66.1
+category,wals,67A,future tense,Inflectional future exists,,,109,49.5,39.5,33.9
+category,wals,68A,the perfect,No perfect,,,113,51.4,43.8,32.8
+category,wals,68A,the perfect,Other perfect,,,79,35.9,26.7,24.3
+category,wals,68A,the perfect,"From 'finish', 'already'",,,21,9.5,6.0,6.3
+category,wals,68A,the perfect,From possessive,,,7,3.2,23.4,36.6
+category,apics,45,past,1 restricted pidgin,,,8,25.0,,
+category,apics,45,past,2 expanded pidgin,,,9,66.7,,
+category,apics,45,past,3 creole,,,55,87.3,,
+category,apics,46,progressive,1 restricted pidgin,,,9,44.4,,
+category,apics,46,progressive,2 expanded pidgin,,,9,100.0,,
+category,apics,46,progressive,3 creole,,,53,100.0,,
+category,apics,48,habitual,1 restricted pidgin,,,9,0.0,,
+category,apics,48,habitual,2 expanded pidgin,,,9,100.0,,
+category,apics,48,habitual,3 creole,,,55,83.6,,

@@ -65,12 +65,14 @@ questions and next steps in §7.
   creoles converge above the noun phrase and split 8:7 inside it — and creoles lose
   derivational affixes 35:3 while *gaining* compounding and reduplication 13:2.
 - **Grammar Tier 2 Q6 (TAM)** — done, [`notes/grammar-tier2-tam.md`](notes/grammar-tier2-tam.md).
-  Three optional preverbal particles (imperfective, past, irrealis), invariant under
-  negation. Aspect is the backbone and tense the optional layer: no non-European-lexifier
-  creole has a purely temporal system, and 28.2% of the world's L1 mass marks past tense
-  neither morphologically nor with a particle. Also found a bias in our own Rule 1
-  instrument — the non-European-lexifier sample is 37% pidgins against 11% for the
-  European group — now a standing check on every creole claim.
+  Optional preverbal particles: an imperfective (strongly supported) and a past (supported),
+  with irrealis flagged as a judgment call rather than a finding. No ordering rule — stacking
+  three markers is unattested in pidgins. The method changed mid-study: **pidgins, not
+  creoles, are the closest analogue to an auxiliary language** (adults, no shared language,
+  no native speakers), so contact evidence is now stratified restricted pidgin / expanded
+  pidgin / creole and the pidgin columns are read first. TAM elaboration turns out to grow
+  monotonically along that gradient, which ranks the categories by necessity: imperfective,
+  then past, then nothing else.
 - **Next:** the rest of Tier 2 of the grammar agenda. Phonology and phonotactics are closed (`notes/principles.md`
   §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
   than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are
