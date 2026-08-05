@@ -100,6 +100,27 @@ Held SOFT because the *loss* half of the finding does not survive the Rule 1 lex
 (European-lexifier creoles 27:8, non-European 8:11); only the *no-gain* half does. See
 [`grammar-tier0.md`](grammar-tier0.md) §2.3.
 
+#### TAM (**SOFT**, 2026-08-05 — recommendation on the table)
+
+Evidence: [`grammar-tier2-tam.md`](grammar-tier2-tam.md). **Three optional preverbal
+particles** — an **imperfective** (covering progressive *and* habitual in one marker), a
+**past/anterior**, and an **irrealis** (future and conditional). A bare verb is unmarked and
+reads from context. Order when they stack is Tense-Mood-Aspect; stacking is expected to be
+rare. **Negation changes nothing about TAM marking.**
+
+Why: creoles put TAM preverbally (6 of 8 non-pidgin non-European-lexifier, 83% of the
+European group) and on free particles rather than morphology (Rule 2: particles gained 9,
+lost 2; morphology lost 17, gained 6). Aspect is the backbone and tense the optional layer —
+**no non-European-lexifier creole has a purely temporal system**, and 28.2% of the world's L1
+mass marks past tense neither morphologically nor with a particle, against 18.2% for aspect.
+A dedicated habitual marker is a European-lexifier trait (0 of 9 outside it, 21 of 59 inside).
+
+Rejected and recorded: a perfect, remoteness/graded tense (31.8% of languages, no creole
+support), and separate progressive and habitual markers.
+
+**Particle bill: 3.** Tier 2 sizes the particle inventory that Tier 4 has to fit into the
+phonology; every Tier 2 answer that costs a particle is counted as it is made.
+
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 
 **The inventory is closed. 15 consonants + 5 vowels = 20 phonemes.**

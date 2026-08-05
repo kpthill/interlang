@@ -1,0 +1,56 @@
+part,source,feature_id,feature,option,n_non_european,n_european,n_total,pct_lang,pct_l1,pct_total
+creole,apics,43,position of TAM markers relative to the verb,Immediately preceding the verb,6.0,38.0,45,,,
+creole,apics,43,position of TAM markers relative to the verb,In a leftward position,2.0,11.0,13,,,
+creole,apics,43,position of TAM markers relative to the verb,Immediately following the verb,3.0,8.0,12,,,
+creole,apics,43,position of TAM markers relative to the verb,In a rightward position,1.0,2.0,3,,,
+creole,apics,43,position of TAM markers relative to the verb,No TAM markers,3.0,0.0,3,,,
+creole,apics,44,"internal order of T, A and M markers",The feature does not apply,14.0,40.0,56,,,
+creole,apics,44,"internal order of T, A and M markers",Tense-Mood-Aspect,0.0,12.0,12,,,
+creole,apics,44,"internal order of T, A and M markers",Mood-Tense-Aspect,0.0,3.0,3,,,
+creole,apics,44,"internal order of T, A and M markers",Tense-Aspect-Mood,1.0,1.0,2,,,
+creole,apics,49,tense-aspect system type,Mixed aspectual-temporal system,6.0,48.0,56,,,
+creole,apics,49,tense-aspect system type,Purely aspectual system,3.0,7.0,10,,,
+creole,apics,49,tense-aspect system type,No or only one tense or aspect marker,6.0,3.0,9,,,
+creole,apics,49,tense-aspect system type,Purely temporal system,0.0,1.0,1,,,
+creole,apics,50,TAM marking in negated clauses,Same TAM marking in negated clauses,8.0,38.0,48,,,
+creole,apics,50,TAM marking in negated clauses,Reduced TAM marking in negated clauses,2.0,8.0,10,,,
+creole,apics,50,TAM marking in negated clauses,Different TAM marking in negated clauses,0.0,9.0,9,,,
+creole,apics,50,TAM marking in negated clauses,No TAM marker,3.0,0.0,3,,,
+creole,apics,50,TAM marking in negated clauses,Reduced and different TAM marking in negated clauses,0.0,2.0,2,,,
+creole,apics,47,what the progressive marker also covers,Only progressive function,7.0,24.0,33,,,
+creole,apics,47,what the progressive marker also covers,"Progressive, habitual, and current state",0.0,12.0,12,,,
+creole,apics,47,what the progressive marker also covers,Progressive and habitual,3.0,6.0,9,,,
+creole,apics,47,what the progressive marker also covers,"Progressive, habitual, current state, and future",1.0,7.0,8,,,
+creole,apics,47,what the progressive marker also covers,"Progressive, habitual, and future",1.0,5.0,6,,,
+creole,apics,47,what the progressive marker also covers,No overt progressive marker,3.0,2.0,5,,,
+creole,apics,47,what the progressive marker also covers,Progressive and future,0.0,3.0,3,,,
+creole,apics,47,what the progressive marker also covers,Progressive and current state,0.0,1.0,1,,,
+creole,apics,48,what the habitual marker also covers,Only habitual function,0.0,21.0,23,,,
+creole,apics,48,what the habitual marker also covers,No overt habitual marker,10.0,8.0,18,,,
+creole,apics,48,what the habitual marker also covers,"Habitual, progressive, and current state",0.0,10.0,10,,,
+creole,apics,48,what the habitual marker also covers,"Habitual, progressive, current state, and future",1.0,6.0,7,,,
+creole,apics,48,what the habitual marker also covers,Habitual and progressive,3.0,4.0,7,,,
+creole,apics,48,what the habitual marker also covers,"Habitual, current state, and future",0.0,5.0,5,,,
+creole,apics,48,what the habitual marker also covers,"Habitual, progressive and future",1.0,3.0,4,,,
+creole,apics,48,what the habitual marker also covers,Habitual and future,0.0,2.0,2,,,
+creole,apics,48,what the habitual marker also covers,Habitual and current state,1.0,0.0,1,,,
+world,grambank,GB082,morphology: present tense,yes,,,2189,34.2,48.2,42.8
+world,grambank,GB083,morphology: past tense,yes,,,2199,52.4,63.9,70.4
+world,grambank,GB084,morphology: future tense,yes,,,2204,45.5,48.9,44.0
+world,grambank,GB086,morphology: perfective/imperfective,yes,,,2064,66.8,77.9,65.4
+world,grambank,GB312,morphology: mood,yes,,,1865,69.6,57.4,50.9
+world,grambank,GB521,particle: tense,yes,,,1649,24.4,9.3,6.8
+world,grambank,GB520,particle: aspect,yes,,,1615,38.1,31.9,26.5
+world,grambank,GB519,particle: mood,yes,,,1553,40.0,51.1,58.1
+world,grambank,GB309,context: multiple pasts/futures (remoteness),yes,,,1867,31.8,32.2,32.4
+world,grambank,GB110,context: verb suppletion for tense/aspect,yes,,,1829,10.5,24.2,35.0
+world,grambank,GB083xGB521,past tense: neither morphology nor particle,neither,,,506,31.6,28.2,
+world,grambank,GB086xGB520,perfective/imperfective: neither morphology nor particle,neither,,,192,12.6,18.2,
+rule2,grambank,,TAM by morphology,ABSENT,,,35,,,
+rule2,grambank,,TAM by morphology,LOST,,,17,,,
+rule2,grambank,,TAM by morphology,KEPT,,,7,,,
+rule2,grambank,,TAM by morphology,GAINED,,,6,,,
+rule2,grambank,,TAM by particle,GAINED,,,9,,,
+rule2,grambank,,TAM by particle,KEPT,,,3,,,
+rule2,grambank,,TAM by particle,ABSENT,,,3,,,
+rule2,grambank,,TAM by particle,LOST,,,2,,,

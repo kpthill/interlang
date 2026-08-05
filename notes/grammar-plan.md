@@ -178,7 +178,7 @@ demonstrative and numeral questions compete for the same real estate as NP order
 
 | # | question | sub-questions | evidence to hand |
 |---|---|---|---|
-| **6** | **TAM** | tense at all? which distinctions? aspect set? mood/irrealis? obligatory or optional? pre- or postverbal? fixed order among multiple markers? | APiCS 43 (position rel. to verb), 44 (internal order), 49 (TA systems), 50 (interaction with negation); Grambank GB082–086, GB312 |
+| **6** | ~~**TAM**~~ **DONE** → [`grammar-tier2-tam.md`](grammar-tier2-tam.md): three optional preverbal particles (imperfective, past, irrealis), invariant under negation | tense at all? which distinctions? aspect set? mood/irrealis? obligatory or optional? pre- or postverbal? fixed order among multiple markers? | APiCS 43 (position rel. to verb), 44 (internal order), 49 (TA systems), 50 (interaction with negation); Grambank GB082–086, GB312 |
 | 7 | **nominal categories** | obligatory plural? articles — definite, indefinite, both, neither? classifiers/measure words? what a bare noun means by default | APiCS 28, 29, 9, 10, 31; Grambank GB020–023, GB042, GB044. Articles are Euro-coded → run the Rule 2 contrapositive |
 | 8 | **pronoun system** | person/number; clusivity; gender; politeness; **case forms of pronouns**; total form count | APiCS 13, 15, 18; Grambank GB071, GB090–094. Gender and clusivity already answered in the Tier 0 side-evidence; politeness is genuinely split |
 | 9 | **negation** | one negator or several? position rel. to verb and to TAM? double negation? negative concord? same negator for verbal, locational, existential and nominal predication? | APiCS 50; Grambank GB107, GB140 |
@@ -208,6 +208,11 @@ space cannot be reserved until we know how many short words the grammar demands.
 2. **Report by-language *and* by-speaker counts** where they differ, and say which one the
    decision used. They disagree on the very first Tier 1 question.
 3. **Creole claims cite the non-European-lexifier count** (max 14), not the APiCS total.
+4. **Re-run every Rule 1 claim with pidgins excluded** (added 2026-08-05, on discovering the
+   skew). The non-European-lexifier group is **37% pidgins** against 11% for the European
+   group, and a pidgin has less grammar by definition — so any finding of the form "creoles
+   converge on *not* having X" is partly counting that. Report both numbers.
+   → [`grammar-tier2-tam.md`](grammar-tier2-tam.md) §0.
 4. **Any Euro-coded feature we keep gets the Rule 2 contrapositive run on it** before it
    is tagged FIRM.
 5. **Hand-supplied lexifier values are flagged**, like `model-recall` in the vocabulary

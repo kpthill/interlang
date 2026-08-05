@@ -64,7 +64,14 @@ questions and next steps in §7.
   FIRM. Two findings worth the click: head-directionality is *not* one parameter —
   creoles converge above the noun phrase and split 8:7 inside it — and creoles lose
   derivational affixes 35:3 while *gaining* compounding and reduplication 13:2.
-- **Next:** Tier 1–2 of the grammar agenda. Phonology and phonotactics are closed (`notes/principles.md`
+- **Grammar Tier 2 Q6 (TAM)** — done, [`notes/grammar-tier2-tam.md`](notes/grammar-tier2-tam.md).
+  Three optional preverbal particles (imperfective, past, irrealis), invariant under
+  negation. Aspect is the backbone and tense the optional layer: no non-European-lexifier
+  creole has a purely temporal system, and 28.2% of the world's L1 mass marks past tense
+  neither morphologically nor with a particle. Also found a bias in our own Rule 1
+  instrument — the non-European-lexifier sample is 37% pidgins against 11% for the
+  European group — now a standing check on every creole claim.
+- **Next:** the rest of Tier 2 of the grammar agenda. Phonology and phonotactics are closed (`notes/principles.md`
   §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
   than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are
   ordinal rankings that must become numeric penalties before the lexicon optimizer runs.
@@ -152,6 +159,7 @@ uv run python scripts/grammar_sources.py       # -> data/processed/grammar_sourc
                                                #    + apics_lexifiers.csv
 uv run python scripts/grammar_tier0.py         # -> data/processed/grammar_tier0_order.csv
                                                #    + grammar_tier0_morphology.csv
+uv run python scripts/grammar_tier2_tam.py     # -> data/processed/grammar_tier2_tam.csv
 ```
 
 Each script's module docstring documents its inputs, outputs, and the judgment calls
