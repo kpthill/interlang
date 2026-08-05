@@ -1,6 +1,6 @@
 # Interlang: principles, decisions, and findings
 
-*Last updated 2026-08-04 (§4 and §7.5 revised by the cost-learning study). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
+*Last updated 2026-08-05 (§3.3 inventory closed FIRM; §3.7 orthography resolved). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
 
 Each decision below is tagged:
 
@@ -65,12 +65,53 @@ Grammar mostly can't be optimized from dictionaries — there is no database of 
 
 Grammar's main coupling to phonology: an isolating language needs a stock of **short, mutually distinct particles**, which argues for reserving short-word space in the phonotactics/lexicon design.
 
-### 3.3 Phoneme inventory (SOFT — now data-backed by two studies)
+### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 
-- Roughly **/m n p t k s l w j h/ + /a e i o u/**, ~15–20 phonemes: segments that are cross-linguistically common *and* mutually distinct. (Notation: symbols between slashes are **IPA** — the International Phonetic Alphabet, the standard one-symbol-per-sound notation; /j/ is the "y" sound of *yes*.)
+**The inventory is closed. 15 consonants + 5 vowels = 20 phonemes.**
+
+| | |
+|---|---|
+| **Consonants** | **p t k b d ɡ m n f s h j w l r** |
+| **Vowels** | **a e i o u** (mids are wide: E = {e, ɛ}, O = {o, ɔ}) |
+
+Rules that come with it:
+
+- **One stop series contrast, defined widely (fortis/lenis).** /p t k/ vs /b d ɡ/ may be
+  realized as a voicing difference, an aspiration difference, or both — whichever the
+  speaker's native system provides. Voiceless implies aspirated: [pʰ tʰ kʰ] and [p t k]
+  are both fine for /p t k/, [b d ɡ] and unaspirated [p t k] both fine for /b d ɡ/. This
+  is the §3.4 wide-phoneme mechanism doing its most important work: 93–96% of humanity
+  can hear the contrast under this definition, vs 73–75% if it were strictly voicing.
+- **No other consonant makes a voicing or aspiration distinction.** /f/ and /s/ have no
+  voiced counterparts (so [v] and [z] are acceptable *realizations*, not separate
+  phonemes); /m n l r j w/ likewise. This is what keeps the ruled-out set (v z ʒ dʒ θ)
+  ruled out rather than sneaking back in as allophonic contrasts.
+- **No second sibilant.** The wide CH/SH category was offered by the contrast study and
+  **declined** — at 61.9% audibility against /s/ it was the weakest of the priced add-ons.
+- **/r/ and /h/ are broadly defined**; exact realization sets are delegated to the build
+  agent (§3.4 gives the shape: any rhotic for /r/, h~[x~χ~ħ] for /h/).
+- **Two contrasts are protected by minimal-pair bans** (the §3.3 functional-load
+  mechanism, now concrete):
+  - **/l/ ~ /r/** — never a minimal pair. Japanese and Korean speakers hear one category
+    (81.9% audible, 45 attested mergers).
+  - **/h/ ~ /r/** — never a minimal pair. **New constraint (2026-08-05).** Wide /h/
+    admits [x ~ χ] and wide /r/ admits uvular [ʁ ~ ʀ]; a French or German speaker's
+    rhotic and a Russian or Spanish speaker's /h/ can land on nearly the same sound.
+    The two wide definitions overlap at their edges, so the contrast must not carry
+    lexical weight. *This is a cost of the wide-phoneme approach, not of either segment
+    individually — worth noting as the first case where two wide sets collide.*
+- **Segment discouragement ranking** (a preference for the lexicon optimizer where a
+  choice exists, not a ban): **/r/ and /h/** strongly discouraged; **/l/** moderately;
+  **/b d ɡ/** mildly. Everything else is free. Applies with extra force to particles and
+  basic vocabulary. *This needs to become a numeric penalty before the optimizer runs —
+  currently an ordinal ranking (§7).*
+
+Retained context behind the decision:
+
+- Notation: symbols between slashes are **IPA** — the International Phonetic Alphabet, the standard one-symbol-per-sound notation; /j/ is the "y" sound of *yes*.
 - **Penalize contrasts, not just rare sounds.** A sound can be common while a *distinction* is deadly: /r/ vs /l/ is a single category for Japanese and Korean speakers; Mandarin has no voicing contrast in stops (it uses aspiration — a puff of air — instead, so /b/ vs /p/ as *voicing* is hard). The inventory cost function should charge for contrasts that major populations can't hear.
 - **Empirical status** (see [`phoneme-prevalence.md`](phoneme-prevalence.md) and [`contrast-study.md`](contrast-study.md)): the core **m n p t k s j w r + a i u** is native for ~89–99.9% of humanity per segment; **h** is weakest (55%) but wide-h over [x χ ħ] recovers 83.5%; mid vowels must be wide (E={e,ɛ}, O={o,ɔ}), giving vowel contrasts 80–83% audibility. Priced add-ons: a fortis/lenis second stop series (93–96% audible as voicing-OR-aspiration, vs 73–75% for strictly voiced — but only ~61% of *languages* have any second series), /l/ (r/l audible to 82–85%), /f/ (79%), one wide CH sibilant (~62% vs /s/). Ruled out as phonemes: v z ʒ dʒ θ ŋ ə ɪ ʊ y, and any e/ɛ, o/ɔ, or h/x contrast.
-- **Functional-load pricing (SOFT, proposed):** contrast costs feed the lexicon optimizer as per-pair penalties, not just keep/drop gates — a kept-but-expensive contrast (r/l, f/p, s/CH) is made cheap in practice by forbidding minimal pairs that hinge on it (*lira*/*rira* never both words). The contrast-study table is exactly this penalty matrix.
+- **Functional-load pricing (SOFT → partly FIRM):** contrast costs feed the lexicon optimizer as per-pair penalties, not just keep/drop gates — a kept-but-expensive contrast is made cheap in practice by forbidding minimal pairs that hinge on it (*lira*/*rira* never both words). The contrast-study table is exactly this penalty matrix. Two bans are now FIRM (l/r, h/r, above); **f/p** (77.2% audible) remains a SOFT candidate for low functional load rather than a hard ban.
 
 ### 3.4 Wide phonemes (FIRM as an approach)
 
@@ -98,7 +139,27 @@ Candidates:
 
 To be decided empirically by the **projection-distortion experiment** (§7). Note a known metric bias here: the current metric lacks epenthesis modeling and systematically flatters permissive codas (see §4).
 
-### 3.7 Orthography aspiration (SOFT — explicitly not committed)
+### 3.7 Orthography (**resolved** by the §3.3 inventory decision, 2026-08-05)
+
+**The ASCII orthography is now free, with zero casualties.** The closed inventory maps
+one-to-one onto 20 ASCII letters:
+
+```
+p t k b d g m n f s h j w l r   a e i o u
+```
+
+Every §3.7 problem symbol is gone: **ʃ** and **tʃ** disappeared with the declined CH
+sibilant, and **ŋ** was never in the inventory (it survives as an allophone of /n/, as in
+most languages). The /tʃ/ spelling question ("c" vs digraph) is **moot** — c, q, v, x, y, z
+are simply unused. The wide-phonemes approach did exactly what §3.4 predicted it might:
+the problem symbols never entered the inventory, so the orthography never had to
+compromise. Remaining orthographic decisions are conventions only (capitalization,
+punctuation, how compounds are written).
+
+*Note /j/ is IPA-valued ("y" of yes), not English-valued — the one place where an
+English-reading learner is actively misled by the ASCII choice.*
+
+#### Prior discussion (superseded, kept for the record)
 
 Aspiration: the writing system is simply **IPA restricted to phonemes whose IPA symbols are ASCII a–z** — nearly free given the optimal inventories, since a–z natively covers p b t d k g m n f v s z h l r w j + a e i o u. Real casualties: **ʃ** (the "sh" sound), **tʃ** ("ch"), **ŋ** ("ng"). ŋ is recoverable as an allophone of /n/ (as in most languages). Considered and not committed for /tʃ/:
 
@@ -213,9 +274,11 @@ Standing open questions:
 - **Representation term formulation (OPEN):** string-similarity vs etymology attribution share (§2).
 - **PHOIBLE multi-inventory policy (decided SOFT):** majority vote across a language's inventories (≥50%), chosen in the prevalence study; union and intersection rejected (judgment calls documented there).
 - **Diphthong-mediated contrasts (OPEN, new):** binary "has the phoneme" checks under-credit listeners whose inventories carry a vowel quality only inside diphthongs/allophones (Mandarin 918M, Wu 81M — see contrast-study Addendum). The listener-conditioned metric handles this at the word level; decide whether inventory-level analyses need a correction, or whether all downstream decisions should use the word-level metric.
-- **Second stop series (OPEN, decision ready):** 93–96% of people vs ~61% of languages — the sharpest people-vs-languages fairness split so far; needs an explicit call under the declared weighting.
+- ~~**Second stop series**~~ **DECIDED 2026-08-05: taken** (§3.3), on the people-weighted reading of §2. The ~61%-of-languages figure is the accepted cost.
+- **Segment discouragement weights (OPEN, new):** §3.3 ranks /r/ /h/ > /l/ > /b d ɡ/ as segments to avoid where the lexicon has a choice. This is currently an ordinal ranking and must become a numeric penalty before the lexicon optimizer runs.
+- **Stress rule (OPEN, study running):** non-contrastive (§3.5), but a default placement rule is still needed. Study in flight: stress-rule prevalence weighted by L1 speakers; pick the most common rule, or flat/no-stress as the compromise if there is no clear winner.
 - **Loss shape details (SOFT):** AE + MSE combination is a proposal, not validated.
-- **/tʃ/ orthography (OPEN, possibly moot):** "c" vs digraph vs excluded by wide phonemes.
+- ~~**/tʃ/ orthography**~~ **MOOT** — the §3.3 inventory has no /tʃ/; the ASCII orthography is free (§3.7).
 
 ---
 
