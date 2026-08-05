@@ -42,9 +42,17 @@ questions and next steps in §7.
   top 50 languages and flagged as such. Headline: English-style holds everywhere
   except quotation marks (no locale on earth specifies straight `"`) and case —
   53% of the world's total-speaker weight writes in a script with no capitals.
-- **Next:** projection-distortion experiment across syllable templates, run as a
-  two-arm sensitivity analysis (v0 costs vs learned costs) because the
-  permissive-coda bias is reduced but not eliminated.
+- **International vocabulary vs syllable templates** — done,
+  [`notes/international-vocab.md`](notes/international-vocab.md). 52 Latin/Greek and
+  Wanderwort items rendered under six phonotactic variants by an explicit
+  transliteration ruleset (`src/interlang/translit.py`), scored against attested
+  adaptations in 18 languages. Run as the two-arm sensitivity analysis §7.4 asked for
+  (v0 costs and learned costs agree on the ranking), with syllable inflation reported
+  alongside as the non-metric counterweight.
+- **Next:** projection-distortion experiment over general (non-international)
+  vocabulary across syllable templates, again as a two-arm sensitivity analysis
+  (v0 costs vs learned costs) because the permissive-coda bias is reduced but not
+  eliminated.
 
 ## Layout
 
@@ -81,6 +89,7 @@ studies were run 2026-07-14 against the versions noted below). Everything joins 
 | `cldr_supplementalData.xml` | [unicode-org/cldr](https://github.com/unicode-org/cldr) | `main`, fetched 2026-07-14 | `curl -sSL -o data/raw/cldr_supplementalData.xml https://raw.githubusercontent.com/unicode-org/cldr/main/common/supplemental/supplementalData.xml` |
 | `cldr/` | [unicode-org/cldr](https://github.com/unicode-org/cldr) | `main` (`9fcd511`), fetched 2026-08-05 | `git clone --depth 1 --filter=blob:none --sparse https://github.com/unicode-org/cldr data/raw/cldr && git -C data/raw/cldr sparse-checkout set common/main` |
 | `wikidata_l1/p1098_raw.json`, `iso639/iso-639-3.tab` | Wikidata SPARQL (P1098), SIL | fetched 2026-07-14 | `uv run python scripts/fetch_l1_speakers.py` (downloads both) |
+| `wikipedia_langlinks/*.json` | [en.wikipedia.org langlinks API](https://en.wikipedia.org/w/api.php) — one file per concept, giving that article's title in every language | fetched 2026-08-05 | `uv run python scripts/international_vocab.py` (fetches on first run; `--offline` reuses the cache) |
 | `iso639/language-codes-full.csv` | [datasets/language-codes](https://github.com/datasets/language-codes) | `main`, fetched 2026-08-05 | `curl -sSL --create-dirs -o data/raw/iso639/language-codes-full.csv https://raw.githubusercontent.com/datasets/language-codes/main/data/language-codes-full.csv` |
 
 `language-codes-full.csv` is only a **fallback** for the ISO 639-1 ↔ 639-3 map that
@@ -103,6 +112,7 @@ dataset is for, its row counts, and its caveats:
 | `phoneme_prevalence.csv` | `scripts/phoneme_prevalence.py` | every PHOIBLE segment × prevalence by languages / L1 speakers / total speakers, at `strict` and `lumped` symbol granularity, with top allophones |
 | `contrast_costs.csv` | `scripts/contrast_study.py` | candidate contrasts × share of languages and people whose native phonology distinguishes them, plus attested merger counts — the functional-load penalty matrix |
 | `stress_prevalence.csv`, `stress_by_language.csv` | `scripts/stress_prevalence.py` | broad word-stress rule categories × share of languages / L1 speakers / total speakers, under two classification schemes and three tone-language policies, plus the per-language audit trail |
+| `international_vocab.csv`, `international_vocab_forms.csv` | `scripts/international_vocab.py` | 52 international words × 6 syllable-template variants × 2 final-coda policies — rendered form, syllable counts before/after, length inflation, recognizability against attested adaptations; plus the 828 attested renderings in 18 languages with their loan/calque classification and provenance |
 | `punctuation_survey.csv` | `scripts/punctuation_survey.py` | punctuation / capitalization / spacing / number-format conventions × total-speaker prevalence, each row marked ASCII-available or not and CLDR-derived (`source=cldr`) or knowledge-assembled (`source=knowledge`) |
 
 ## Reproducing
@@ -117,6 +127,10 @@ uv run python scripts/contrast_study.py        # -> data/processed/contrast_cost
 uv run python scripts/stress_prevalence.py     # -> data/processed/stress_prevalence.csv
                                                #    + stress_by_language.csv
 uv run python scripts/punctuation_survey.py    # -> data/processed/punctuation_survey.csv
+uv run python scripts/international_vocab.py   # -> data/processed/international_vocab.csv
+                                               #    + international_vocab_forms.csv
+                                               #    (fetches Wikipedia langlinks on first
+                                               #    run; --offline reuses the cache)
 ```
 
 Each script's module docstring documents its inputs, outputs, and the judgment calls
