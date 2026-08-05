@@ -49,10 +49,12 @@ questions and next steps in §7.
   adaptations in 18 languages. Run as the two-arm sensitivity analysis §7.4 asked for
   (v0 costs and learned costs agree on the ranking), with syllable inflation reported
   alongside as the non-metric counterweight.
-- **Next:** projection-distortion experiment over general (non-international)
-  vocabulary across syllable templates, again as a two-arm sensitivity analysis
-  (v0 costs vs learned costs) because the permissive-coda bias is reduced but not
-  eliminated.
+  **Resolved §3.6:** the syllable template is FIRM as (C)V(N) plus the ten Cr/Cl onset
+  clusters, with a support vowel /i/ for illegal word-final consonants.
+- **Next:** grammar. Phonology and phonotactics are closed (`notes/principles.md`
+  §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
+  than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are
+  ordinal rankings that must become numeric penalties before the lexicon optimizer runs.
 
 ## Layout
 

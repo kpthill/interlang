@@ -5,7 +5,8 @@ decision** (§4.4). Script: [`../scripts/international_vocab.py`](../scripts/int
 ruleset: [`../src/interlang/translit.py`](../src/interlang/translit.py) ·
 outputs: `data/processed/international_vocab.csv` (52 words × 6 variants × 2 coda
 policies = 624 rows) and `data/processed/international_vocab_forms.csv` (828 attested
-forms). Informs [`principles.md`](principles.md) §3.6 (syllable template, OPEN).*
+forms). **Resolved [`principles.md`](principles.md) §3.6 — the syllable template is now
+FIRM: (C)V(N) + Cr/Cl onset clusters, support vowel /i/.***
 
 **The question.** Internationally shared vocabulary — above all the scientific and
 technical words built from Latin and Greek roots — should be near-instantly
@@ -694,6 +695,15 @@ glide insertion to the high vowels /i u/**, where the glide is the vowel's own
 approximant. This also answers §3.6's logged open question about the glide after /a/:
 under the restricted rule it does not arise.
 
+**Outcome (2026-08-05): the rule went further than this recommendation.** Patrick decided
+that compounds concatenate without seam repair, on the principle that a rewrite rule
+people have to learn is worse than the thing it repairs. With the compound seam and
+loanwords both exempt, all that was left for the glide rule was hiatus inside roots we
+coin ourselves — a preference for the lexicon chooser, not a rule a learner needs. So the
+glide-insertion rule is **retired** and hiatus is legal everywhere (`principles.md` §3.6).
+`translit.glide_hiatus()` stays in the code only to keep the counterfactual above
+reproducible.
+
 ### 6.6 By domain (V3, delete)
 
 | domain | n | syl inflation | sim | ceiling |
@@ -837,9 +847,15 @@ were.
 
 ---
 
-## 9. Suggested edit to `principles.md` (not applied — another thread owns that file)
+## 9. Suggested edit to `principles.md` — **APPLIED 2026-08-05**
 
-§3.6 could move from OPEN to **SOFT** with the following text:
+Patrick locked the template in on 2026-08-05 and it went into `principles.md` §3.6 as
+**FIRM**, not SOFT — the draft below is kept for the record. Two things landed differently
+from the proposal: /v/ → f was decided rather than left open, and the hiatus
+recommendation was taken further than suggested (the glide-insertion rule is retired
+outright, not merely exempted for loanwords — see `principles.md` §3.6).
+
+The draft as written at the time:
 
 > ### 3.6 Syllable template (SOFT — informed by the international-vocabulary study, 2026-08-05)
 >

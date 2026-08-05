@@ -39,7 +39,9 @@ about *how* to work here.
 
 ## Where things stand
 
-Phonology is being decided before vocabulary, but vocabulary-aware. Prevalence and
-contrast studies are done; the next experiment is projection distortion across
-syllable templates, which needs the metric's epenthesis gap fixed or bounded first.
+Phonology is being decided before vocabulary, but vocabulary-aware. **Phonology and
+phonotactics are now closed** (`notes/principles.md` §3.3–§3.7): inventory, stress,
+orthography, syllable template ((C)V(N) + Cr/Cl onsets), compounding and hiatus are all
+FIRM. What remains before grammar is lexicon-facing, not phonology-facing — the
+discouragement weights have to become numbers, and root-shape bounds wait on grammar.
 Open questions are listed in `notes/principles.md` §7.

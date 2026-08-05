@@ -1,6 +1,6 @@
 # Interlang: principles, decisions, and findings
 
-*Last updated 2026-08-05 (§3.3 inventory FIRM; §3.5 stress decided; §3.6 phonotactics; §3.7 orthography). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
+*Last updated 2026-08-05 (§3.3 inventory FIRM; §3.5 stress decided; **§3.6 phonotactics now FIRM — syllable template, compounding, hiatus**; §3.7 orthography and punctuation). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
 
 Each decision below is tagged:
 
@@ -103,8 +103,9 @@ Rules that come with it:
 - **Segment discouragement ranking** (a preference for the lexicon optimizer where a
   choice exists, not a ban): **/r/ and /h/** strongly discouraged; **/l/** moderately;
   **/b d ɡ/** mildly. Everything else is free. Applies with extra force to particles and
-  basic vocabulary. *This needs to become a numeric penalty before the optimizer runs —
-  currently an ordinal ranking (§7).*
+  basic vocabulary. **Onset clusters join this list as a structural item** — see §3.6.
+  *This needs to become a numeric penalty before the optimizer runs — currently an
+  ordinal ranking (§7).*
 
 Retained context behind the decision:
 
@@ -131,26 +132,100 @@ No tone, no contrastive vowel length, no contrastive stress. Each of these is a 
 
 Why initial rather than penultimate, given the study ([`stress-prevalence.md`](stress-prevalence.md)) headlined penultimate at 50.4% of covered L1 speakers: that headline collapses weight-sensitive systems onto penult via a trochaic default. Read faithfully, penultimate is a **3.4%** rule and **initial (7.5%) is twice as common** among languages with a genuinely fixed rule. The two also **coincide on one- and two-syllable words**, so they only differ on longer forms. Initial wins on simplicity — "stress the first syllable" is the shortest statable rule, and it never moves under compounding or affixation. Chosen deliberately over the more familiar Esperanto-style penultimate.
 
-### 3.6 Phonotactics (partly decided 2026-08-05)
+### 3.6 Phonotactics (**decided 2026-08-05**; only the lexicon-facing weights remain)
 
 Notation: C = consonant, V = vowel, N = nasal consonant; parentheses mean optional. The **coda** is the consonant material at the *end* of a syllable (the /n/ in "san"); the **onset** is the consonant material at the start.
 
-#### Syllable template (SOFT — baseline chosen, two extensions pending a study)
+#### Syllable template (**FIRM** — decided 2026-08-05 by Patrick)
 
-**Baseline: (C)V(N)** — optional onset, optional nasal coda. Chosen over strict CV (word-length blowup) and permissive CVC (exports coda clusters many speakers can't produce).
+**(C)V(N) with N ∈ {n, m}, plus a closed set of Cr/Cl onset clusters.** Optional onset,
+optional nasal coda, and — only in the onset — one of ten permitted two-consonant
+sequences:
 
-Two extensions are live and **pending the international-vocabulary study** (§7), which prices them against the goal that internationally-shared scientific vocabulary stay near-instantly recognizable:
+```
+pr  tr  kr  br  dr  ɡr  fr        pl  kl  fl
+```
 
-- **Liquid codas** — (C)V(N,l,r). Latin/Greek international vocabulary has disproportionately many /r l s k t/ codas, not nasal ones (`elektron`, `alkohol`, `molekul`).
-- **Onset clusters** — Cr/Cl types (pr tr kr pl kl br dr ɡr fr fl). `proton` survives intact with them and becomes *po-ro-ton* without. **If adopted, the permitted set must be enumerated exhaustively** — no productive cluster rule.
+That set is **exhaustive and not productive**: it is a list, not a rule, so no cluster
+enters by analogy. An illegal word-final consonant takes a **support vowel /i/** rather
+than being deleted (*bank* → *banki*, *virus* → *firusi*), which keeps the mapping
+lossless at the segment level.
 
-Known metric bias affecting this decision: the metric lacks a working epenthesis model and systematically **flatters permissive codas** (§4, cost-learning guardrail 4). Syllable-count inflation must be read alongside any metric score, not instead of it.
+Evidence: [`international-vocab.md`](international-vocab.md), 52 international words ×
+6 templates × 2 final-coda policies.
+
+- **Strict CV is ruled out.** (C)V → (C)V(n) is the single largest step in the table
+  (+0.052 recognizability); the floor is the expensive part, everything after it is cheap.
+- **/m/ is kept alongside /n/** — free, and without it *atom* → *aton*, *film* → *filin*,
+  *system* → *sisiten*, *computer* → *konpute*.
+- **Liquid codas are ruled out.** (C)V(N,l,r) scores the same as the onset clusters
+  (0.828 vs 0.828 under deletion, 0.843 vs 0.846 under epenthesis) while inflating more,
+  and it puts /l/ and /r/ — the segments §3.3 already discourages — in the position where
+  they are hardest to hear.
+- **Onset clusters are taken** because they dominate plain (C)V(N) on *both* axes at once:
+  +0.017 recognizability and −0.085 syllable inflation. Permitting the cluster removes the
+  very epenthetic vowel that was inflating the count, so nothing is traded away. They also
+  target the worst-hit domain (chemistry/physics, 1.40 inflation), and Cr/Cl is the most
+  widespread cluster type in the world's languages.
+- **Scored against recipients that must repair clusters themselves** (ja, ko, sw, ta, ha,
+  vi), (C)V(N)+Cr/Cl ranks **first of six**, ahead of unrestricted (C)V(C). Unrestricted
+  codas only win when the scoring is dominated by European Latin-script recipients: their
+  advantage swings 0.050 across that split, ours 0.011.
+
+Known metric bias accepted in reaching this: the metric lacks a working epenthesis model and systematically **flatters permissive codas** (§4, cost-learning guardrail 4). Syllable-count inflation is arithmetic rather than metric and was read alongside every score; the ranking also survives the learned-cost arm, which is the two-arm condition §7 set.
+
+#### Onset clusters carry a lexicon cost (**FIRM** as a principle, weight OPEN)
+
+The clusters are licensed **for recognizability of borrowed material**, not as free word
+shapes. A cluster is the least widely producible thing in the template — the whole
+cluster-repairing half of the world breaks it up — so where the lexicon has a choice, it
+should not choose one.
+
+**Treat a Cr/Cl onset as a discouraged structure in the lexicon optimizer, on the same
+footing as §3.3's segment discouragement of /r/, /h/, /l/ and /b d ɡ/: a small penalty,
+not a ban.** Concretely: an international word that arrives with a cluster keeps it
+(*proton*, *program*, *demokratia* — that is what the clusters are for); a coined root or
+a grammatical particle should not acquire one where a cluster-free alternative of equal
+quality exists. Applies with extra force to particles and basic vocabulary, exactly as the
+segment ranking does.
+
+The numeric weight is deferred with the rest of the discouragement weights (§7) — it must
+be small enough not to override recognizability on borrowed stems, which is the only
+reason the clusters exist.
 
 #### Decided rules (**FIRM**, 2026-08-05)
 
-- **No geminates within a morpheme**, but **geminates are allowed across a compound boundary** (`kan` + `nomi` → `kannomi`, revised 2026-08-05). This preserves compound transparency, which matters more than the marginal pronunciation cost: degemination would destroy the visible seam and risk collisions with real words. Possibly moot — compounding may be dropped entirely (§7).
-- **Hiatus is avoided by glide insertion**, written into the spelling: `oa` → `owa`. Hiatus is **permitted as a fallback for loanwords** where neither /j/ nor /w/ is the natural glide. *Open sub-case: the exact glide-selection rule, especially after /a/. See §7.*
+- **Compounding is kept** (decided 2026-08-05 by Patrick; was OPEN). Words may be built by
+  joining roots, and the seam is left alone.
+- **Concatenation is the whole rule: a compound is its parts, written in order, unchanged.**
+  Whatever falls out of the join is legal — **geminates** (`kan` + `nomi` → `kannomi`) and
+  **hiatus** (`bao` + `ito` → `baoito`) alike. There is no repair at the seam: no
+  degemination, no glide insertion, no linking vowel, nothing to memorise. This costs a
+  marginal amount of pronunciation ease and buys two things worth more: compound
+  transparency — the seam stays visible, so a compound can always be read back to its parts
+  — and one less rule between a learner and a word they want to build.
+- **Geminates do not occur within a morpheme.** They are a compound-seam phenomenon only,
+  so a geminate in a word is positive evidence of a boundary.
+- **Hiatus is legal** (revised 2026-08-05; supersedes the earlier glide-insertion rule).
+  Vowel + vowel needs no repair anywhere: not at a compound seam, not in borrowed
+  vocabulary (*radio*, *bakteria*, *geometria*, *malaria*), not inside a root. The glide
+  insertion rule (`oa` → `owa`) is **retired** — see the note below.
 - **No sandhi, no alternations, no deviation from "pronounce what is written."** This is a strong constraint and it has a consequence: every repair above is **orthographic**, applied when the word is formed, not a pronunciation rule layered on top. There is never a gap between spelling and speech. (Interacts with §3.7: the ASCII orthography is one letter per phoneme, so "what is written" is unambiguous.)
+
+*Why the glide rule was retired rather than narrowed (2026-08-05).* It was FIRM earlier the
+same day, so the reversal is worth stating. Three things arrived at once. (1) The
+international-vocabulary study measured it: glide insertion costs **0.018** recognizability
+and its damage is systematic, landing on `e_o`, `e_i` and `a_V` — precisely where Greek
+compounding lives. No recipient language produces *gejometrija*. The rule already had a
+loanword exemption, and loanwords are where hiatus mostly occurs. (2) Patrick's compounding
+decision exempts the seam, on the principle that a rewrite rule people have to learn is
+worse than the thing it repairs. (3) What remains after those two exemptions is hiatus
+inside monomorphemic native roots — words *we coin*. **A rule that only ever fires inside
+words we design ourselves is not a rule the learner needs; it is a preference for the
+lexicon chooser.** So the rule goes and the preference stays: if root-internal hiatus turns
+out to hurt, the lexicon optimizer prefers roots without it, and nothing about the language
+a learner must memorise changes. This also dissolves §7's open question about which glide
+follows /a/ — it no longer arises.
 
 #### Loanword adaptation: `<v>` → /f/ (**SOFT** — decided 2026-08-05 by Patrick)
 
@@ -164,10 +239,10 @@ inventory-internal, not metric: /f/ keeps /w/ free to render `<w>`, and §3.3 mi
 discourages /b d ɡ/. Evidence and the full ruleset:
 [`international-vocab.md`](international-vocab.md) §4.1, §6.4, §7.1.
 
-SOFT rather than FIRM because the rest of the adaptation ruleset is still pending §3.6's
-template decision, and because z→s, th→t and now v→f all pile onto the same two
-consonants — homophony pressure the vocabulary optimizer may want re-priced at lexicon
-scale.
+SOFT rather than FIRM for one reason only, now that the template above is settled: z→s,
+th→t and v→f all pile onto the same two consonants. Over 52 words that produced no
+collisions, but it is homophony pressure the vocabulary optimizer may want re-priced at
+lexicon scale.
 
 #### Deferred
 
@@ -183,9 +258,23 @@ means the whole h~[x~χ~ħ] set, `r` any rhotic, `p` fortis [p~pʰ]. IPA values,
 ones: **`j` is the "y" of *yes*, never English "j".** No digraphs, no diacritics, no silent
 letters, and — with §3.6's no-sandhi rule — no gap whatsoever between spelling and speech.
 
-Punctuation and capitalization are **pending a survey** (§7): the policy is "whatever is
-most common among the world's languages weighted by total speakers, with English-style as
-the default."
+#### Punctuation and capitalization (**SOFT**, 2026-08-05)
+
+Surveyed in [`punctuation-survey.md`](punctuation-survey.md), weighted by total (L1+L2)
+speakers. Adopted: `.` `?` `!` `,` as in English; `"` outer and `'` nested quotation,
+understood as the ASCII rendering of the world's typographic pair (no locale in CLDR
+specifies straight quotes); spaces between words; `1,000.50` with 3-digit grouping.
+Rejected: Spanish inverted `¿ ¡` (one language), English `I` capitalization (one language,
+7.6% of L1 weight), German noun capitalization (one language), Indian 2-2-3 grouping (15%
+of the world, but tied to a lakh/crore numeral vocabulary we are not adopting).
+
+**Capitalization is SOFT and worth revisiting**: 53% of the world's total-speaker weight
+(60% of L1) writes in a unicameral script with no capitals at all. Working position is
+sentence-initial + proper nouns, with proper nouns defined narrowly — people, places,
+organizations — and explicitly **not** extended to days, months, nationalities or language
+names. The live alternative is no case at all (§7).
+
+How compounds are written — solid, hyphenated, or spaced — is deferred with the hyphen.
 
 **The ASCII orthography is free, with zero casualties.** The closed inventory maps
 one-to-one onto 20 ASCII letters:
@@ -293,6 +382,8 @@ Deferred to the vocabulary stage:
 7. **The ASCII orthography is nearly free** given the kind of inventory the prevalence data is expected to favor — the losses concentrate in ʃ/tʃ/ŋ, and ŋ is recoverable allophonically.
 8. **A discriminative objective cannot learn repair costs (2026-08-04, new).** Fitting costs so attested loanword pairs outrank shuffled controls buys a large, stable win on substitution structure and **no** improvement on epenthesis — because the negative control shares the recipient word, so a cheap vowel insertion helps the decoy as much as the truth. This is a general lesson for the project's method, not a WOLD quirk: ranking objectives learn what *discriminates*, and repair operations do not discriminate. Anything we want the metric to *predict* (rather than rank) needs a generative term.
 9. **Learning from loanwords teaches orthography as perception (2026-08-04, new).** The fit prices voicing at 3.5× panphon's weight because loanword transcriptions record voicing faithfully on both sides — while the independent contrast study prices voicing as one of the cheapest contrasts for real listeners. The two disagree so sharply that the contrast-study cross-check comes out null overall (ρ = +0.059). Calibration data has to be chosen for the *concept* being calibrated.
+10. **"Every language but Chinese adapts the Latin/Greek roots" is false as stated (2026-08-05, new).** Adaptation rates over a 52-word international set run from 98% (Spanish) to 28% (Tamil) with no outlier structure. There are three groups: the adapters; a **Sinosphere calquing bloc** (Mandarin, Japanese, Korean, Vietnamese — Chinese is its flagship, not its exception, and the split inside those languages is chronological, 19th-century science calqued and 20th-century vocabulary loaned); and an independent purist tradition (Icelandic, Tamil, Hebrew, Finnish's older stratum, Arabic). **The international-vocabulary goal should be priced for roughly half of humanity, not all of it** — for the other half an internationalism is already an arbitrary string, which incidentally means §2's representation objective is in less tension with it than it looked. → [`international-vocab.md`](international-vocab.md) §1.
+11. **Latin and Greek morphology fits a nasal-coda language almost perfectly (2026-08-05, new).** The endings that carry scientific vocabulary — *-on, -in, -um, -ia, -ion, -ate, -ide, -ine* — are already legal under (C)V(N) with no repair at all, because they are open syllables or nasal-final. Only *-us* (and *-s* generally) and the consonant-final adjectival endings *-ic, -al, -ol* cost anything. The damage from a restrictive template lands on **onset clusters**, not on endings, which is why the template decision came out as "add onsets, not codas" (§3.6).
 
 ---
 
@@ -303,7 +394,7 @@ Experiments:
 1. ~~**Phoneme/contrast prevalence study**~~ **DONE** → [`phoneme-prevalence.md`](phoneme-prevalence.md); inventory findings folded into §3.3.
 2. ~~**Contrast study**~~ **DONE** → [`contrast-study.md`](contrast-study.md); contrast prices and functional-load mechanism in §3.3.
 3. ~~**L1 speaker-count sourcing**~~ **DONE** → Wikidata P1098 (1,858 languages, `data/processed/l1_speakers.csv`), with the phantom-MSA override (`L1_OVERRIDES` in `scripts/fetch_l1_speakers.py`; see contrast-study Addendum).
-4. **Projection-distortion experiment** (NEXT) — project source vocabulary through candidate syllable templates (strict CV vs (C)V(N) vs permissive CVC) and measure retained recognizability. → Resolves §3.6. Prerequisite caution, now **bounded rather than open**: the epenthesis gap biases this experiment toward permissive codas. The learned costs (§7.5) reduce the bias but do not remove it, so run the experiment **as a two-arm sensitivity analysis** — once with `params=None` (v0) and once with the learned costs — and report the template ranking only where the two arms agree.
+4. ~~**Projection-distortion experiment**~~ **DONE (2026-08-05)** → [`international-vocab.md`](international-vocab.md); resolved §3.6, which is now FIRM. 52 international words projected through six templates and both final-coda policies, scored against attested adaptations in 18 languages. The two-arm condition was met: v0 and the learned costs give the same ordering (V1 < V2 < V3 < V4 ≈ V3C < V5), so the ranking is reportable despite the epenthesis gap. The deciding evidence was not the pooled ranking but the **recipient split** — permissive codas lead only when scored against European Latin-script recipients — plus syllable inflation, which is arithmetic rather than metric. Deliverable B of that study (predictability) also produced the transliteration ruleset in `src/interlang/translit.py`: 12 of 13 decision points are rule-resolvable, the 13th is lexical (which international shape to start from) and belongs to the vocabulary optimizer.
 5. ~~**Metric calibration**~~ **DONE (2026-08-04)** → [`cost-learning.md`](cost-learning.md), spec in [`cost-learning-spec.md`](cost-learning-spec.md). Summary:
    - The WOLD pipeline is **committed** for the first time (`scripts/wold_pipeline.py`): 16,687 cleaned pairs, 13,595 used.
    - The recorded **AUC 0.923 is retired as a reference point.** It came from a protocol that shuffled negative controls from the *global* source pool, which lets a model win by detecting which donor pool a recipient draws from. Rebuilt under that same loose protocol we get 0.909; under an honest recipient-grouped protocol with within-recipient controls the default-weight baseline is the number to compare against (see `cost-learning.md` §4).
@@ -321,12 +412,12 @@ Standing open questions:
 - **PHOIBLE multi-inventory policy (decided SOFT):** majority vote across a language's inventories (≥50%), chosen in the prevalence study; union and intersection rejected (judgment calls documented there).
 - **Diphthong-mediated contrasts (OPEN, new):** binary "has the phoneme" checks under-credit listeners whose inventories carry a vowel quality only inside diphthongs/allophones (Mandarin 918M, Wu 81M — see contrast-study Addendum). The listener-conditioned metric handles this at the word level; decide whether inventory-level analyses need a correction, or whether all downstream decisions should use the word-level metric.
 - ~~**Second stop series**~~ **DECIDED 2026-08-05: taken** (§3.3), on the people-weighted reading of §2. The ~61%-of-languages figure is the accepted cost.
-- **Glide-selection rule for hiatus (OPEN, new, small):** §3.6 fixes *that* hiatus is repaired by glide insertion but not *which* glide. Patrick's example `oa`→`owa` implies the **preceding** vowel selects it (o is round → w). The unresolved case is /a/, which is neither front nor round and is our most common vowel: `ai ao au ae` have no preceding-vowel answer. Candidate rule: pick the glide from whichever vowel of the pair is high/peripheral (j if either is i/e, w if either is u/o, preceding wins ties), leaving only `aa` unresolved.
-- **Onset-cluster inventory (OPEN, conditional):** if the international-vocabulary study says onset clusters pay for themselves, the permitted set must be enumerated exhaustively rather than left to a productive rule.
-- **Segment discouragement weights (OPEN, new):** §3.3 ranks /r/ /h/ > /l/ > /b d ɡ/ as segments to avoid where the lexicon has a choice. This is currently an ordinal ranking and must become a numeric penalty before the lexicon optimizer runs.
+- ~~**Glide-selection rule for hiatus**~~ **MOOT 2026-08-05** — the glide-insertion rule is retired and hiatus is legal everywhere (§3.6), so there is no glide to select. The measurement that prompted it: glide insertion cost 0.018 recognizability on international vocabulary and mangled exactly the Greek compounding cases (*geometria* → *gejometrija*).
+- ~~**Onset-cluster inventory (OPEN, conditional)**~~ **CLOSED 2026-08-05** — clusters were adopted and the set is enumerated in §3.6: `pr tr kr br dr ɡr fr pl kl fl`. Exhaustive, not productive.
+- **Discouragement weights (OPEN, was "segment discouragement"):** §3.3 ranks /r/ /h/ > /l/ > /b d ɡ/ as segments to avoid where the lexicon has a choice, and §3.6 adds **Cr/Cl onset clusters** as a structural item on the same footing. All of it is currently ordinal and must become numeric before the lexicon optimizer runs. Two constraints on the numbers: the cluster penalty must stay small enough never to override recognizability on a borrowed stem (clusters exist for exactly that), and the whole set applies with extra force to particles and basic vocabulary.
 - ~~**Stress rule**~~ **DECIDED 2026-08-05: first syllable** (§3.5). See [`stress-prevalence.md`](stress-prevalence.md); initial was chosen over the headline penultimate on simplicity, and because the penultimate lead depends on collapsing weight-sensitive systems.
-- **Punctuation & capitalization (OPEN, survey running):** policy is "most common among the world's languages, weighted by total speakers; English-style as default." Note a majority of humanity writes in a **caseless** script, so "capital letters at all?" is a real question.
-- **Compounding: keep or drop (OPEN, new):** §3.6 now permits geminates across compound boundaries to protect compound transparency, but Patrick may eschew compounding entirely, which would moot it. Bears on derivation (§3.2) and on root-shape bounds.
+- **Case or no case (OPEN, narrowed 2026-08-05):** the punctuation survey settled every other convention (§3.7); this one it only framed. 53% of total-speaker weight (60% by L1) writes caselessly. Working position: sentence-initial + narrow proper nouns. The live alternative is all-lowercase, which matches the majority, halves the glyph inventory and deletes the one orthographic rule requiring a lexical judgment. → [`punctuation-survey.md`](punctuation-survey.md) §6.
+- ~~**Compounding: keep or drop**~~ **DECIDED 2026-08-05: keep** (§3.6). Compounds are plain concatenation with no seam repair — geminates and hiatus are both legal results. Consequences that are now live rather than hypothetical: **how compounds are written** (solid / hyphen / space) is still open under §3.7, and compounding is one of the two things §3.2's derivation strategy can be built from.
 - **Loss shape details (SOFT):** AE + MSE combination is a proposal, not validated.
 - ~~**/tʃ/ orthography**~~ **MOOT** — the §3.3 inventory has no /tʃ/; the ASCII orthography is free (§3.7).
 

@@ -415,10 +415,12 @@ def is_legal(form: str, variant: Variant) -> bool:
 def glide_hiatus(form: str, policy: str = "glide") -> tuple[str, list[str]]:
     """Repair vowel-vowel sequences by inserting a glide (principles.md 3.6).
 
-    3.6 (FIRM, 2026-08-05) says hiatus is avoided by glide insertion written
-    into the spelling (oa -> owa), with hiatus PERMITTED as a loanword
-    fallback.  International vocabulary is loanword material, so this is off by
-    default in `render`; the study measures both arms.
+    RETIRED AS A LANGUAGE RULE (2026-08-05).  principles.md 3.6 now makes
+    hiatus legal everywhere - at compound seams, in loanwords, and inside
+    roots - so `render` never calls this by default.  It is kept because the
+    international-vocabulary study prices the counterfactual (glide insertion
+    costs 0.018 recognizability and mangles Greek compounds), and that
+    measurement is the evidence behind the retirement.
 
     `policy='glide'`: the glide is chosen by the FIRST vowel - /j/ after the
     front vowels i, e; /w/ after the round vowels u, o.  After /a/ (3.6's

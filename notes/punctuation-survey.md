@@ -395,7 +395,11 @@ available, so there is nothing to trade off.
 
 ---
 
-## 11. Suggested change to `principles.md` (not applied — another thread owns that file)
+## 11. Suggested change to `principles.md` — **APPLIED 2026-08-05**
+
+Both edits below are now in `principles.md`: the subsection under §3.7, and the narrowed
+§7 entry ("Case or no case"). Text kept here for the record.
+
 
 §3.7 currently says punctuation and capitalization are "pending a survey (§7): the
 policy is *whatever is most common among the world's languages weighted by total
