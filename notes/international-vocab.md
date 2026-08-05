@@ -659,7 +659,7 @@ except for the +0.013 baseline shift that v → f itself contributes.
 | | w | 0.7962 | 0.015 worse; was the placeholder in the first run |
 | th → | **t** | 0.8109 | |
 | | s | 0.8103 | a tie |
-| epenthetic vowel | i / u / echo | 0.8109 / 0.8105 / 0.8110 | a tie |
+| epenthetic vowel | i / u / echo / labial_u | 0.8109 / 0.8105 / 0.8110 / 0.8110 | a four-way tie — see §6.7 |
 | `<g>` | **hard always** | 0.8109 | |
 | | soft before e/i/y | 0.8050 | worse |
 | hiatus | **keep** | 0.8109 | §6.5 |
@@ -721,6 +721,71 @@ the worst-hit domain** (1.40), which is unfortunate given that it is the domain 
 was written for: Greek compounds are cluster-dense (*electron*, *plastic*, *hydrogen*,
 *oxygen*). This is the strongest word-level argument for the onset clusters, which target
 exactly this material.
+
+### 6.7 Should the support vowel depend on the consonant? (added 2026-08-05)
+
+Patrick asked whether a fixed /i/ is right or whether the repair vowel should be
+conditioned — specifically whether /u/ is easier after some consonants. Three findings,
+in order of how much they should count.
+
+**1. The languages that do this conditionalise it, and the rule is "labial → u".** Taking
+every attested loan in the set whose form ends in a vowel the international form does not
+have, Swahili splits cleanly:
+
+| after | Swahili does | examples |
+|---|---|---|
+| a labial (/m/) | **-u**, 3 of 3 | *atomu*, *kilogramu*, *filamu* |
+| anything else | **-i**, 19 of 19 | *benki*, *protoni*, *plastiki*, *hoteli*, *sukari*, *roboti*, *hospitali*, *oksidʒeni* |
+
+Note it is **labials only, not back consonants generally**: velar-final *benki*,
+*plastiki*, *antibiotiki* all take -i. Finnish is the counter-example — always -i
+(*atomi*, *pankki*, *hormoni*) — and Japanese runs its own default (-u everywhere, with
+/o/ after coronal stops: *roboto*). So the conditioning is attested but not universal,
+and where it exists it is the labial rule, which is also the articulatorily motivated one:
+[mu pu bu fu] need no lip transition, [mi pi bi fi] do.
+
+**2. On our 52 words the choice is inert — and the reason is interesting.** Under the
+locked ruleset (V3C + support vowel) the 52 words produce **29 epenthesis sites, and not
+one of them follows a labial**:
+
+| consonant before the support vowel | r | k | s | l | t |
+|---|---|---|---|---|---|
+| sites | 9 | 8 | 4 | 4 | 4 |
+
+Under plain V3 there were 6 labial sites out of 41 (*pilasitiki, piroton, pirotein,
+pirogiram, piresidenti, aligebira*). **Licensing the Cr/Cl onset clusters removed every
+one of them** — those words are now *plasitiki, proton, protein, program, presidenti,
+aligebra*. The cluster set and the labial-epenthesis context are the same phenomenon seen
+from two sides, so adopting the clusters already collected most of what a conditioned
+vowel would have bought.
+
+**3. The context is real in general; our word list just misses it.** Word-final /p b f/
+takes a support vowel and is common in international vocabulary — none of our 52 words
+happens to end in one:
+
+| international | fixed /i/ | labial → /u/ | attested |
+|---|---|---|---|
+| club | klubi | **klubu** | Swahili *klabu* |
+| camp | kampi | **kampu** | Swahili *kambi* |
+| tulip | tulipi | **tulipu** | |
+| syrup | sirupi | **sirupu** | |
+| map | mapi | **mapu** | |
+
+Swahili's *klabu* and *kitabu* (← Arabic *kitāb*) are exactly this context.
+
+**On the metric it is a dead tie**: at V3, i / u / echo / labial_u score 0.8109 / 0.8105 /
+0.8110 / 0.8110 — a spread of 0.0005, which is nothing. So the decision cannot be made on
+recognizability and has to be made on articulation and rule cost, as §4.2's choice of /i/
+originally was.
+
+**Recommendation: adopt the conditioning, in its narrow form** — *support vowel is /u/
+after /p b f m w/, /i/ elsewhere*. It is one clause, it is what the nearest-typology
+recipient actually does, it is articulatorily motivated, it costs nothing measurable, and
+it never touches the 52 words already priced. The argument against is the same one that
+retired the glide rule — do not add a rule that rarely fires — but this one differs in
+kind: the glide rule fired only inside words *we* coin, while the support vowel is applied
+productively by anyone deriving the interlang form of a new international word, and here
+the conditioned output is *closer* to what recipients produce, not further.
 
 ---
 

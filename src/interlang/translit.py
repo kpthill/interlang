@@ -44,6 +44,8 @@ study can price each arm instead of asserting one:
   v_target      'f' | 'b' | 'w'          what /v/ becomes (default f, §6.4)
   th_target     't' | 's'                what <th> becomes
   epen          'i' | 'u' | 'echo'       the epenthetic (repair) vowel
+                | 'labial_u'             ('labial_u' = /u/ after p b f m w,
+                                          /i/ elsewhere - Swahili's rule)
   final_policy  'delete' | 'epenthesize' what happens to an illegal word-final
                                          consonant
   g_soft        False | True             whether <g> before e/i/y softens
@@ -245,9 +247,21 @@ def _split(ph: str) -> tuple[str, list[tuple[str, str]], str]:
     return c0, runs, cur_c
 
 
-def _epen_vowel(policy: str, prev_v: str, next_v: str) -> str:
+LABIAL = set("pbfmw")
+
+
+def _epen_vowel(policy: str, prev_v: str, next_v: str, c: str = "") -> str:
+    """The support vowel.  `c` is the consonant it is being inserted after.
+
+    'i' | 'u'   a fixed vowel, no conditioning
+    'echo'      copy the following vowel (the Japanese sutoraiku pattern)
+    'labial_u'  /u/ after a labial (p b f m w), /i/ elsewhere - Swahili's rule
+                (atomu, kilogramu, filamu vs benki, protoni, hoteli, sukari)
+    """
     if policy == "echo":
         return next_v or prev_v or "i"
+    if policy == "labial_u":
+        return "u" if c and c[-1] in LABIAL else "i"
     return policy
 
 
@@ -335,12 +349,12 @@ def repair(ph: str, variant: Variant, *, epen: str = "i",
                 trace.append(f"LOSSY:B2 coda merge {c}->{variant.coda_merge[c]}")
                 j += 1
             elif len(pair) == 2 and pair in variant.onset_clusters:
-                nv = _epen_vowel(epen, prev_v, next_v)
+                nv = _epen_vowel(epen, prev_v, next_v, pair)
                 out.append(pair + nv)              # B4 with a cluster onset
                 trace.append(f"B4 epenthesis ({where}) {pair}->{pair}{nv}")
                 j += 2
             else:
-                nv = _epen_vowel(epen, prev_v, next_v)
+                nv = _epen_vowel(epen, prev_v, next_v, c)
                 out.append(c + nv)
                 trace.append(f"B4 epenthesis ({where}) {c}->{c}{nv}")
                 j += 1

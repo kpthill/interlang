@@ -919,7 +919,7 @@ def sensitivity(forms: pd.DataFrame) -> pd.DataFrame:
     arms = []
     for key, options in [("v_target", ["w", "b", "f"]),
                          ("th_target", ["t", "s"]),
-                         ("epen", ["i", "u", "echo"]),
+                         ("epen", ["i", "u", "echo", "labial_u"]),
                          ("final_policy", ["delete", "epenthesize"]),
                          ("g_soft", [False, True]),
                          ("hiatus", ["keep", "glide", "glide_high"])]:

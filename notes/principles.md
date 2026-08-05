@@ -1,6 +1,6 @@
 # Interlang: principles, decisions, and findings
 
-*Last updated 2026-08-05 (§3.3 inventory FIRM; §3.5 stress decided; **§3.6 phonotactics now FIRM — syllable template, compounding, hiatus**; §3.7 orthography and punctuation). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
+*Last updated 2026-08-05 (§3.3 inventory FIRM; §3.5 stress decided; **§3.6 phonotactics now FIRM — syllable template, compounding, hiatus**; §3.7 orthography, punctuation, case and solid compounds all FIRM). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
 
 Each decision below is tagged:
 
@@ -147,9 +147,10 @@ pr  tr  kr  br  dr  ɡr  fr        pl  kl  fl
 ```
 
 That set is **exhaustive and not productive**: it is a list, not a rule, so no cluster
-enters by analogy. An illegal word-final consonant takes a **support vowel /i/** rather
-than being deleted (*bank* → *banki*, *virus* → *firusi*), which keeps the mapping
-lossless at the segment level.
+enters by analogy. An illegal word-final consonant takes a **support vowel** rather than
+being deleted (*bank* → *banki*, *virus* → *firusi*), which keeps the mapping lossless at
+the segment level. *The support vowel is /i/; whether it should be /u/ after a labial is
+a live sub-question, see §7 — it does not affect any word priced here.*
 
 Evidence: [`international-vocab.md`](international-vocab.md), 52 international words ×
 6 templates × 2 final-coda policies.
@@ -244,6 +245,47 @@ th→t and v→f all pile onto the same two consonants. Over 52 words that produ
 collisions, but it is homophony pressure the vocabulary optimizer may want re-priced at
 lexicon scale.
 
+##### The merge table — carry this to the vocabulary stage
+
+**Every many-to-one mapping in the adaptation ruleset, with its fan-in.** Written down so
+the homophony question can be asked properly when the lexicon exists rather than
+re-derived from the code. `n×` is how often the rule fired over the 52-word study set.
+
+| our phoneme | international spellings that collapse into it | fan-in | fired |
+|---|---|---|---|
+| **/s/** | `s`, `c` before e/i/y, `z`, `sh`, `ss` | **5** | c→s 2×, z→s 1× |
+| **/k/** | `k`, `c` elsewhere, `ch`, `ck`, `q`, `sch`(→sk) | **6** | c→k 12×, ch→k 2× |
+| **/f/** | `f`, `ph`, **`v`** | **3** | v→f 6×, ph→f 1× |
+| **/t/** | `t`, `th` | 2 | th→t 2× |
+| **/e/** | `e`, `ae`, `oe` | 3 | — |
+| **/i/** | `i`, `y` not before a vowel | 2 | y→i |
+| **/j/** | `j`, `y` before a vowel | 2 | y→j |
+| **/r/** | `r`, `rh` | 2 | — |
+| **/g/** | `g`, `gh` | 2 | — |
+| **/w/** | `w`, `wh` | 2 | — |
+| **/d/** | `d`, `ð` | 2 | — |
+| (single) | any geminate, any doubled vowel | — | 1× |
+| /ks/, /kw/ | `x`, `qu` — expansions, not merges | — | x→ks |
+
+**Status over the 52-word set:** 198 of 358 phonemes (**55.3%**) in the rendered forms
+could have come from more than one international grapheme, a mean of 3.81 ambiguous
+phonemes per word — and **zero collisions**: no two of the 52 words render to the same
+form. Spelling information is destroyed, word identity is not.
+
+**What to check when the vocabulary optimizer runs**, and the reason this table exists:
+
+1. **Collision rate** among adapted internationalisms at real lexicon scale — 52 words is
+   far too few to see the birthday-problem effect.
+2. **/k/ and /s/ are the overloaded targets** (fan-in 6 and 5), and /k/ is fed by the
+   single most frequent rule in the set (c→k, 12×). If anything breaks it will be there,
+   not at /f/.
+3. **v→f is the one reversible knob.** /b/ was tied with it on recognizability (§6.4), so
+   if /f/ turns out overloaded, moving `v` to `b` costs nothing measurable and relieves
+   fan-in on /f/ immediately. That is why this decision is held SOFT.
+4. Interaction with §3.3's minimal-pair bans: those protect l~r and h~r, which no
+   adaptation rule feeds. The merges land elsewhere, so the two mechanisms do not
+   currently conflict — worth re-confirming rather than assuming.
+
 #### Deferred
 
 - **Root shape bounds** (min/max syllables) — deferred until after grammar. Patrick is leaning **analytic**, in which case there may be no root-vs-inflected-word distinction to bound separately.
@@ -258,7 +300,7 @@ means the whole h~[x~χ~ħ] set, `r` any rhotic, `p` fortis [p~pʰ]. IPA values,
 ones: **`j` is the "y" of *yes*, never English "j".** No digraphs, no diacritics, no silent
 letters, and — with §3.6's no-sandhi rule — no gap whatsoever between spelling and speech.
 
-#### Punctuation and capitalization (**SOFT**, 2026-08-05)
+#### Punctuation and capitalization (**FIRM**, 2026-08-05 — Patrick: "not central to the project, let's just go with those")
 
 Surveyed in [`punctuation-survey.md`](punctuation-survey.md), weighted by total (L1+L2)
 speakers. Adopted: `.` `?` `!` `,` as in English; `"` outer and `'` nested quotation,
@@ -268,13 +310,40 @@ Rejected: Spanish inverted `¿ ¡` (one language), English `I` capitalization (o
 7.6% of L1 weight), German noun capitalization (one language), Indian 2-2-3 grouping (15%
 of the world, but tied to a lakh/crore numeral vocabulary we are not adopting).
 
-**Capitalization is SOFT and worth revisiting**: 53% of the world's total-speaker weight
-(60% of L1) writes in a unicameral script with no capitals at all. Working position is
-sentence-initial + proper nouns, with proper nouns defined narrowly — people, places,
-organizations — and explicitly **not** extended to days, months, nationalities or language
-names. The live alternative is no case at all (§7).
+**Case is kept: sentence-initial capitals + proper nouns** (decided 2026-08-05 by Patrick,
+closing the one question the survey left open — *"since we're using latin orthography"*).
+Proper nouns are defined narrowly — people, places, organizations — and explicitly **not**
+extended to days, months, nationalities or language names, which is an English quirk that
+Spanish, French and Russian all decline. The rejected alternative, on the record: 53% of
+the world's total-speaker weight (60% by L1) writes in a unicameral script, and
+all-lowercase would have matched that majority and deleted the one orthographic rule that
+requires a lexical judgment. It loses to the fact that a reader of a Latin orthography
+arrives expecting case regardless of their L1 script, and that proper-noun capitals do
+real disambiguation work in a language whose names are transliterated into 20 letters.
 
-How compounds are written — solid, hyphenated, or spaced — is deferred with the hyphen.
+**Compounds are written solid** — `firetruck`, not `fire-truck` or `fire truck` (decided
+2026-08-05 by Patrick). Consistent with §3.6: a compound is one word, concatenated without
+seam repair, and it takes one initial stress like any other word. This keeps the hyphen
+and the apostrophe unused.
+
+Two consequences worth having on the record, neither of which changes the decision:
+
+- **Segmentation ambiguity is the cost, and it is a lexicon problem, not a spelling
+  problem.** With (C)V(N) syllables and no seam marker, a solid compound can in principle
+  be parsed more than one way — a form like *banana* could be *ban+ana* or *ba+nana* if
+  both splits happen to be real roots. Two signals already work against this: **geminates
+  occur only at a seam** (§3.6), so a geminate is positive evidence of a boundary, and if
+  the lexicon chooser also disfavours root-internal hiatus, **hiatus becomes weak evidence
+  of one**. Neither covers the common V+C join. The right place to manage the residue is
+  the lexicon chooser — avoid coining roots that make frequent compounds ambiguous — which
+  is one more constraint to hand it alongside the discouragement weights (§7).
+- **Solid writing plus §3.5's single initial stress makes a compound prosodically
+  identical to a simple root of the same shape.** Spaced or hyphenated writing would have
+  preserved two stresses and kept the seam audible. This is the real thing being traded
+  away, and it is traded knowingly: the seam stays visible *in the spelling*, which is
+  where a learner decomposes words, and §3.5's rule stays exception-free. Precedent is
+  strong — Esperanto, German, Dutch, Swedish, Finnish and Turkish all write compounds
+  solid, and the whole Sinosphere writes without word spaces at all.
 
 **The ASCII orthography is free, with zero casualties.** The closed inventory maps
 one-to-one onto 20 ASCII letters:
@@ -414,9 +483,12 @@ Standing open questions:
 - ~~**Second stop series**~~ **DECIDED 2026-08-05: taken** (§3.3), on the people-weighted reading of §2. The ~61%-of-languages figure is the accepted cost.
 - ~~**Glide-selection rule for hiatus**~~ **MOOT 2026-08-05** — the glide-insertion rule is retired and hiatus is legal everywhere (§3.6), so there is no glide to select. The measurement that prompted it: glide insertion cost 0.018 recognizability on international vocabulary and mangled exactly the Greek compounding cases (*geometria* → *gejometrija*).
 - ~~**Onset-cluster inventory (OPEN, conditional)**~~ **CLOSED 2026-08-05** — clusters were adopted and the set is enumerated in §3.6: `pr tr kr br dr ɡr fr pl kl fl`. Exhaustive, not productive.
-- **Discouragement weights (OPEN, was "segment discouragement"):** §3.3 ranks /r/ /h/ > /l/ > /b d ɡ/ as segments to avoid where the lexicon has a choice, and §3.6 adds **Cr/Cl onset clusters** as a structural item on the same footing. All of it is currently ordinal and must become numeric before the lexicon optimizer runs. Two constraints on the numbers: the cluster penalty must stay small enough never to override recognizability on a borrowed stem (clusters exist for exactly that), and the whole set applies with extra force to particles and basic vocabulary.
+- **Discouragement weights (OPEN — explicitly postponed to lexicon construction by Patrick 2026-08-05):** §3.3 ranks /r/ /h/ > /l/ > /b d ɡ/ as segments to avoid where the lexicon has a choice, and §3.6 adds **Cr/Cl onset clusters** as a structural item on the same footing. All of it is currently ordinal and must become numeric **before the lexicon optimizer runs, and not before then** — the weights are meaningless without the thing they weight. Three constraints on the eventual numbers: the cluster penalty must stay small enough never to override recognizability on a borrowed stem (clusters exist for exactly that); the whole set applies with extra force to particles and basic vocabulary; and a preference against root-internal hiatus and root-internal geminates belongs here too, since both then work as compound-boundary signals (§3.7).
 - ~~**Stress rule**~~ **DECIDED 2026-08-05: first syllable** (§3.5). See [`stress-prevalence.md`](stress-prevalence.md); initial was chosen over the headline penultimate on simplicity, and because the penultimate lead depends on collapsing weight-sensitive systems.
-- **Case or no case (OPEN, narrowed 2026-08-05):** the punctuation survey settled every other convention (§3.7); this one it only framed. 53% of total-speaker weight (60% by L1) writes caselessly. Working position: sentence-initial + narrow proper nouns. The live alternative is all-lowercase, which matches the majority, halves the glyph inventory and deletes the one orthographic rule requiring a lexical judgment. → [`punctuation-survey.md`](punctuation-survey.md) §6.
+- ~~**Case or no case**~~ **DECIDED 2026-08-05: keep case** — sentence-initial + narrowly-defined proper nouns (§3.7). Punctuation, quotes and number formats went FIRM with it.
+- ~~**How compounds are written**~~ **DECIDED 2026-08-05: solid** (§3.7). Leaves segmentation ambiguity as a constraint for the lexicon chooser rather than a spelling rule.
+- **Support vowel: fixed /i/, or /u/ after a labial? (OPEN, new, small — raised by Patrick 2026-08-05.)** §3.6 fixes /i/. The rival is Swahili's rule, */u/ after p b f m w, /i/ elsewhere* — attested (*atomu, kilogramu, filamu* vs *benki, protoni, hoteli, sukari*, 3/3 vs 19/19 in our set), articulatorily motivated (no lip transition), and a **dead tie** on recognizability (0.8110 vs 0.8109). It changes **none** of the 52 words already priced, because licensing the Cr/Cl onsets removed every labial epenthesis site — but it does bite on the word-final /p b f/ that our word list happens to lack (*club* → klubi/**klubu**, cf. Swahili *klabu*; *camp*, *tulip*, *syrup*). Recommendation on file: **adopt it.** → [`international-vocab.md`](international-vocab.md) §6.7.
+- **Loan-mapping homophony (OPEN, deferred to the vocabulary stage by Patrick 2026-08-05):** the adaptation ruleset merges 5 international spellings into /s/, 6 into /k/ and 3 into /f/. Zero collisions over 52 words, but that is far too small a sample to see the birthday-problem effect. The full merge table and the four things to check are recorded with the rule in §3.6; **raise this again when the lexicon exists**. The reversible knob is v→f, which /b/ ties on the metric.
 - ~~**Compounding: keep or drop**~~ **DECIDED 2026-08-05: keep** (§3.6). Compounds are plain concatenation with no seam repair — geminates and hiatus are both legal results. Consequences that are now live rather than hypothetical: **how compounds are written** (solid / hyphen / space) is still open under §3.7, and compounding is one of the two things §3.2's derivation strategy can be built from.
 - **Loss shape details (SOFT):** AE + MSE combination is a proposal, not validated.
 - ~~**/tʃ/ orthography**~~ **MOOT** — the §3.3 inventory has no /tʃ/; the ASCII orthography is free (§3.7).
