@@ -1,6 +1,6 @@
 # Interlang: principles, decisions, and findings
 
-*Last updated 2026-08-05 (§3.2 grammar Tier 0 decided: SVO, prepositions, no case; §3.3 inventory FIRM; §3.5 stress decided; **§3.6 phonotactics now FIRM — syllable template, compounding, hiatus**; §3.7 orthography, punctuation, case and solid compounds all FIRM). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
+*Last updated 2026-08-05 (§3.2 grammar: Tier 0 SVO/prepositions/no case FIRM, modifier order and nominal categories FIRM, TAM lexical; §3.3 inventory FIRM; §3.5 stress decided; **§3.6 phonotactics now FIRM — syllable template, compounding, hiatus**; §3.7 orthography, punctuation, case and solid compounds all FIRM). Companion documents: [`data-audit.md`](data-audit.md) (dataset details, metric validation), [`cost-learning.md`](cost-learning.md) (learned substitution/epenthesis costs), [`../src/interlang/metric.py`](../src/interlang/metric.py) (recognizability metric v0).*
 
 Each decision below is tagged:
 
@@ -134,7 +134,7 @@ vocabulary optimizer, not a rule. Monosyllabic space is not a constraint: ~180 c
 (C)V(N) forms avoiding /r h l/, so this is ~8% of it. A **recommended default usage** should
 ship with the lexicon so the permissive grammar does not fragment in practice.
 
-#### Noun phrase and modifier order (**SOFT**, 2026-08-05)
+#### Noun phrase and modifier order (**FIRM**, 2026-08-05 by Patrick)
 
 Evidence: [`grammar-tier2-np.md`](grammar-tier2-np.md).
 
@@ -166,7 +166,7 @@ preverbal modifiers is itself the cue.
 *Weakest link:* the possessor. Expanded pidgins and creoles prefer head-first; only
 restricted pidgins and a slim world majority support possessor-first. Adopted for uniformity.
 
-#### Nominal categories (**SOFT**, 2026-08-05)
+#### Nominal categories (**FIRM**, 2026-08-05 by Patrick)
 
 **The noun carries almost nothing.**
 
@@ -186,6 +186,40 @@ restricted pidgins and a slim world majority support possessor-first. Adopted fo
   ([`grammar-plan.md`](grammar-plan.md) §1) rather than buried.
 
 **Particle bill: still 0.** Grammar rules added by Q11 + Q7: **one.**
+
+#### Negation (**SOFT**, 2026-08-05)
+
+Evidence: [`grammar-tier2-negation.md`](grammar-tier2-negation.md).
+
+**One negator, a free word, immediately before the verb, used for everything.** Verbal,
+locational, existential and nominal predication, and commands. No bipartite negation, no
+negative pronouns, no effect on anything else in the clause.
+
+- **Position falls out of §3.2's modifier rule** rather than being decided separately — a
+  negator modifies the verb, so it precedes it. The rule made a prediction and it held:
+  preverbal in 6 of 9 restricted pidgins, 6 of 9 expanded pidgins, 46 of 54 creoles, and
+  68.7% of world L1 (WALS 143A).
+- **A free word is also the world's majority strategy here** (84.2% of L1, Grambank GB299;
+  Rule 2 KEPT 13 / LOST 0) — unlike the plural marker, where the no-affix constraint forced
+  us onto a 5.2% minority option. The isolating decision is not always a sacrifice.
+- **One negator for all predication types**: 71.6% of L1 already do this (GB140). One rule
+  instead of four.
+- **The same negator for the prohibitive** — the weakest call. Contact languages agree (7 of
+  8 restricted pidgins) but a slim population majority does not (54.7% of L1 use a special
+  negator, by WALS 71A's finer coding; Grambank GB139's coarser 83.5% conflates a special
+  negator with a special imperative construction).
+- **Rejected:** bipartite *ne…pas* negation (0 of 18 pidgins, 2.6% of world L1) and dedicated
+  negative pronouns (where they exist, 66.3% of L1 negate the predicate *as well* — we negate
+  once and say "not … any").
+
+**Scope: linear order, leftmost modifier widest.** This pays the debt the TAM decision
+created — *not past run* is "it is not the case that I ran", *past not run* is "in the past I
+did not run". It uses the modifier position already fixed, generalises to any stacked
+modifiers, and turns an ambiguity into an expressible distinction. **A design decision, not a
+finding** — no source codes the relative order of negation and TAM adverbs.
+
+**Word bill: 1** — the first grammatical word the grammar has required; Q6 and Q7 cost zero.
+**Grammar rules added: zero.**
 
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 

@@ -1,0 +1,151 @@
+part,feature,source,option,restricted,expanded,creole,n,by_lang,by_L1,by_total
+contact,position of standard negation,apics,After verb plus postverbal object,0.0,3.0,3,,,,
+contact,position of standard negation,apics,Before the verb,6.0,6.0,46,,,,
+contact,position of standard negation,apics,"Bipartite, before verb and after object",0.0,0.0,3,,,,
+contact,position of standard negation,apics,"Bipartite, before verb and immediately after",0.0,0.0,0,,,,
+contact,position of standard negation,apics,"Bipartite, other possibilities",0.0,0.0,1,,,,
+contact,position of standard negation,apics,Immediately after the verb,3.0,0.0,2,,,,
+contact,negative morpheme type,apics,Bipartite negative marker,0.0,0.0,3,,,,
+contact,negative morpheme type,apics,Negative affix,0.0,0.0,2,,,,
+contact,negative morpheme type,apics,Negative auxiliary verb,1.0,0.0,1,,,,
+contact,negative morpheme type,apics,Negative particle,8.0,9.0,48,,,,
+contact,the prohibitive,apics,Normal imperative construction and normal negator,7.0,6.0,38,,,,
+contact,the prohibitive,apics,Normal imperative construction and special negator,1.0,2.0,10,,,,
+contact,the prohibitive,apics,Special imperative construction and normal negator,0.0,1.0,8,,,,
+contact,the prohibitive,apics,Special imperative construction and special negator,0.0,0.0,0,,,,
+contact,negation and indefinite pronouns,apics,Co-occurrence with predicate negation,7.0,5.0,44,,,,
+contact,negation and indefinite pronouns,apics,Negative existential construction,0.0,1.0,3,,,,
+contact,negation and indefinite pronouns,apics,Preclusion possible under other conditions,0.0,0.0,3,,,,
+contact,negation and indefinite pronouns,apics,Preclusion possible with preverbal indefinites,0.0,3.0,3,,,,
+contact,TAM marking in negated clauses,apics,Different TAM marking in negated clauses,0.0,3.0,6,,,,
+contact,TAM marking in negated clauses,apics,No TAM marker,3.0,0.0,0,,,,
+contact,TAM marking in negated clauses,apics,Reduced TAM marking in negated clauses,2.0,0.0,8,,,,
+contact,TAM marking in negated clauses,apics,Reduced and different TAM marking in negated clauses,0.0,0.0,2,,,,
+contact,TAM marking in negated clauses,apics,Same TAM marking in negated clauses,4.0,6.0,35,,,,
+world,standard negation by a non-inflecting word (particle),grambank,yes,,,,1998.0,65.4,84.2,87.0
+world,standard negation by an inflecting word (auxiliary),grambank,yes,,,,1982.0,11.4,9.0,7.2
+world,standard negation by an affix/clitic on the verb,grambank,yes,,,,2235.0,46.9,36.8,47.0
+world,standard negation can be clause-initial,grambank,yes,,,,2145.0,41.4,37.5,48.4
+world,standard negation can be clause-final,grambank,yes,,,,2154.0,39.0,24.1,18.6
+world,"SAME negator for verbal, locational, existential and nominal predication",grambank,yes,,,,1531.0,50.0,71.6,71.5
+world,prohibitive differs from declarative negation,grambank,yes,,,,1974.0,74.4,83.5,86.9
+world,negative morphemes,wals,Negative particle,,,,490.0,43.2,76.4,79.1
+world,negative morphemes,wals,Negative affix,,,,387.0,34.2,15.8,13.2
+world,negative morphemes,wals,Double negation,,,,116.0,10.2,2.6,2.1
+world,negative morphemes,wals,"Negative word, unclear if verb or particle",,,,72.0,6.4,4.3,4.6
+world,negative morphemes,wals,Negative auxiliary verb,,,,47.0,4.1,0.6,0.8
+world,negative morphemes,wals,Variation between negative word and affix,,,,21.0,1.9,0.3,0.2
+world,order of negative morpheme and verb,wals,NegV,,,,512.0,39.4,68.7,74.3
+world,order of negative morpheme and verb,wals,[V-Neg],,,,198.0,15.3,10.3,6.6
+world,order of negative morpheme and verb,wals,VNeg,,,,171.0,13.2,7.7,4.4
+world,order of negative morpheme and verb,wals,[Neg-V],,,,157.0,12.1,4.3,4.9
+world,order of negative morpheme and verb,wals,ObligDoubleNeg,,,,111.0,8.6,2.5,1.8
+world,order of negative morpheme and verb,wals,OptDoubleNeg,,,,79.0,6.1,3.9,5.4
+world,order of negative morpheme and verb,wals,Type 1 / Type 2,,,,21.0,1.6,2.2,2.2
+world,order of negative morpheme and verb,wals,Type 1 / Type 4,,,,12.0,0.9,0.1,0.1
+world,order of negative morpheme and verb,wals,Type 1 / Type 3,,,,9.0,0.7,0.3,0.2
+world,order of negative morpheme and verb,wals,Type 2 / Type 4,,,,9.0,0.7,0.0,0.0
+world,order of negative morpheme and verb,wals,Type 3 / Type 4,,,,8.0,0.6,0.0,0.0
+world,order of negative morpheme and verb,wals,OptTripleNeg&ObligDoubleNeg,,,,5.0,0.4,0.0,0.0
+world,order of negative morpheme and verb,wals,Type 2 / Type 3,,,,2.0,0.2,0.0,0.0
+world,order of negative morpheme and verb,wals,OptTripleNeg&OptDoubleNeg,,,,1.0,0.1,0.0,0.0
+world,order of negative morpheme and verb,wals,OptSingleNeg,,,,1.0,0.1,0.0,0.0
+world,order of negative morpheme and verb,wals,Negative Tone,,,,1.0,0.1,0.0,0.0
+world,order of negative morpheme and verb,wals,Type 3 / Negative Infix,,,,1.0,0.1,0.0,0.0
+world,the prohibitive,wals,Normal imperative + special negative,,,,181.0,36.8,46.2,41.1
+world,the prohibitive,wals,Special imperative + special negative,,,,145.0,29.5,8.5,8.6
+world,the prohibitive,wals,Normal imperative + normal negative,,,,112.0,22.8,23.3,36.8
+world,the prohibitive,wals,Special imperative + normal negative,,,,54.0,11.0,22.1,13.4
+world,negative indefinites and predicate negation,wals,Predicate negation also present,,,,168.0,82.4,66.3,56.1
+world,negative indefinites and predicate negation,wals,Mixed behaviour,,,,13.0,6.4,31.1,41.4
+world,negative indefinites and predicate negation,wals,Negative existential construction,,,,12.0,5.9,0.1,0.1
+world,negative indefinites and predicate negation,wals,No predicate negation,,,,11.0,5.4,2.4,2.5
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,San Andres Creole English,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,San Andres Creole English,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,LOST,,,San Andres Creole English,,,,
+rule2,standard negation can be clause-initial,grambank,LOST,,,San Andres Creole English,,,,
+rule2,standard negation can be clause-final,grambank,ABSENT,,,San Andres Creole English,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,KEPT,,,San Andres Creole English,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,Bahamas Creole English,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,GAINED,,,Bahamas Creole English,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,LOST,,,Bahamas Creole English,,,,
+rule2,standard negation can be clause-initial,grambank,LOST,,,Bahamas Creole English,,,,
+rule2,standard negation can be clause-final,grambank,ABSENT,,,Bahamas Creole English,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,KEPT,,,Bahamas Creole English,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,Tok Pisin,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,Tok Pisin,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,LOST,,,Tok Pisin,,,,
+rule2,standard negation can be clause-initial,grambank,LOST,,,Tok Pisin,,,,
+rule2,standard negation can be clause-final,grambank,ABSENT,,,Tok Pisin,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,KEPT,,,Tok Pisin,,,,
+rule2,prohibitive differs from declarative negation,grambank,KEPT,,,Tok Pisin,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,Bislama,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,Bislama,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,LOST,,,Bislama,,,,
+rule2,standard negation can be clause-initial,grambank,LOST,,,Bislama,,,,
+rule2,standard negation can be clause-final,grambank,ABSENT,,,Bislama,,,,
+rule2,prohibitive differs from declarative negation,grambank,LOST,,,Bislama,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,Saramaccan,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,Saramaccan,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,KEPT,,,Saramaccan,,,,
+rule2,standard negation can be clause-initial,grambank,LOST,,,Saramaccan,,,,
+rule2,standard negation can be clause-final,grambank,ABSENT,,,Saramaccan,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,LOST,,,Saramaccan,,,,
+rule2,prohibitive differs from declarative negation,grambank,KEPT,,,Saramaccan,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,Jamaican Creole English,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,Jamaican Creole English,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,LOST,,,Jamaican Creole English,,,,
+rule2,standard negation can be clause-initial,grambank,LOST,,,Jamaican Creole English,,,,
+rule2,standard negation can be clause-final,grambank,ABSENT,,,Jamaican Creole English,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,LOST,,,Jamaican Creole English,,,,
+rule2,prohibitive differs from declarative negation,grambank,LOST,,,Jamaican Creole English,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,Haitian,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,Haitian,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,LOST,,,Haitian,,,,
+rule2,standard negation can be clause-initial,grambank,ABSENT,,,Haitian,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,KEPT,,,Haitian,,,,
+rule2,prohibitive differs from declarative negation,grambank,ABSENT,,,Haitian,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,Berbice Creole Dutch,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,Berbice Creole Dutch,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,ABSENT,,,Berbice Creole Dutch,,,,
+rule2,standard negation can be clause-initial,grambank,ABSENT,,,Berbice Creole Dutch,,,,
+rule2,standard negation can be clause-final,grambank,KEPT,,,Berbice Creole Dutch,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,LOST,,,Berbice Creole Dutch,,,,
+rule2,prohibitive differs from declarative negation,grambank,LOST,,,Berbice Creole Dutch,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,ABSENT,,,Kinshasa Lingala,,,,
+rule2,standard negation can be clause-initial,grambank,LOST,,,Kinshasa Lingala,,,,
+rule2,standard negation can be clause-final,grambank,KEPT,,,Kinshasa Lingala,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,GAINED,,,Kinshasa Lingala,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,Nubi,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,Nubi,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,ABSENT,,,Nubi,,,,
+rule2,standard negation can be clause-initial,grambank,KEPT,,,Nubi,,,,
+rule2,standard negation can be clause-final,grambank,GAINED,,,Nubi,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,GAINED,,,Nubi,,,,
+rule2,prohibitive differs from declarative negation,grambank,LOST,,,Nubi,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,South Sudanese Creole Arabic,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,South Sudanese Creole Arabic,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,ABSENT,,,South Sudanese Creole Arabic,,,,
+rule2,standard negation can be clause-initial,grambank,KEPT,,,South Sudanese Creole Arabic,,,,
+rule2,standard negation can be clause-final,grambank,GAINED,,,South Sudanese Creole Arabic,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,GAINED,,,South Sudanese Creole Arabic,,,,
+rule2,prohibitive differs from declarative negation,grambank,KEPT,,,South Sudanese Creole Arabic,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,Sri Lanka Malay,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,Sri Lanka Malay,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,GAINED,,,Sri Lanka Malay,,,,
+rule2,standard negation can be clause-final,grambank,GAINED,,,Sri Lanka Malay,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,ABSENT,,,Sri Lanka Malay,,,,
+rule2,prohibitive differs from declarative negation,grambank,GAINED,,,Sri Lanka Malay,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,Baba Malay,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,Baba Malay,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,ABSENT,,,Baba Malay,,,,
+rule2,standard negation can be clause-initial,grambank,KEPT,,,Baba Malay,,,,
+rule2,standard negation can be clause-final,grambank,ABSENT,,,Baba Malay,,,,
+rule2,prohibitive differs from declarative negation,grambank,GAINED,,,Baba Malay,,,,
+rule2,standard negation by a non-inflecting word (particle),grambank,KEPT,,,Ambonese Malay,,,,
+rule2,standard negation by an inflecting word (auxiliary),grambank,ABSENT,,,Ambonese Malay,,,,
+rule2,standard negation by an affix/clitic on the verb,grambank,ABSENT,,,Ambonese Malay,,,,
+rule2,standard negation can be clause-initial,grambank,KEPT,,,Ambonese Malay,,,,
+rule2,standard negation can be clause-final,grambank,ABSENT,,,Ambonese Malay,,,,
+rule2,"SAME negator for verbal, locational, existential and nominal predication",grambank,GAINED,,,Ambonese Malay,,,,
+rule2,prohibitive differs from declarative negation,grambank,GAINED,,,Ambonese Malay,,,,

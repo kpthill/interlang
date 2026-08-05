@@ -82,6 +82,13 @@ questions and next steps in §7.
   numeral and demonstrative on the same side — **91% of the L1 mass**. The noun itself
   carries almost nothing: no articles (demonstrative and 'one' do the work), optional
   number, no classifiers.
+- **Grammar Tier 2 Q9 (negation)** — done,
+  [`notes/grammar-tier2-negation.md`](notes/grammar-tier2-negation.md). **One negator, a
+  free word, immediately before the verb, used for everything** — including commands. No
+  bipartite negation, no negative pronouns. Position wasn't decided separately: the Q11
+  modifier rule *predicted* it and the prediction held (68.7% of world L1, and every
+  contact stratum). Pays the scope debt Q6 created — **scope is linear order, leftmost
+  modifier widest** — which turns the ambiguity into an expressible distinction.
 - **Next:** the rest of Tier 2 of the grammar agenda. Phonology and phonotactics are closed (`notes/principles.md`
   §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
   than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are
@@ -171,6 +178,8 @@ uv run python scripts/grammar_sources.py       # -> data/processed/grammar_sourc
 uv run python scripts/grammar_tier0.py         # -> data/processed/grammar_tier0_order.csv
                                                #    + grammar_tier0_morphology.csv
 uv run python scripts/grammar_tier2_tam.py     # -> data/processed/grammar_tier2_tam.csv
+uv run python scripts/grammar_tier2_np.py      # -> data/processed/grammar_tier2_np.csv
+uv run python scripts/grammar_tier2_negation.py  # -> data/processed/grammar_tier2_negation.csv
 ```
 
 Each script's module docstring documents its inputs, outputs, and the judgment calls
