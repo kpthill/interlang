@@ -33,6 +33,15 @@ questions and next steps in §7.
   Substitution + epenthesis costs fitted jointly to 13,595 attested loanword
   adaptations, cross-validated leave-one-recipient-out over all 41 recipients.
   Learned costs are opt-in (`metric.similarity(..., params=...)`), not the default.
+- **Punctuation and capitalization survey** — done,
+  [`notes/punctuation-survey.md`](notes/punctuation-survey.md). What the world's
+  writing systems do with sentence-final marks, `? !`, commas, quotes, case, word
+  spacing and number separators, weighted by total (L1+L2) speakers, with each option
+  marked available/unavailable to an ASCII Latin orthography. Quotes and number
+  formats come from CLDR per-locale data; the rest is knowledge-assembled over the
+  top 50 languages and flagged as such. Headline: English-style holds everywhere
+  except quotation marks (no locale on earth specifies straight `"`) and case —
+  53% of the world's total-speaker weight writes in a script with no capitals.
 - **Next:** projection-distortion experiment across syllable templates, run as a
   two-arm sensitivity analysis (v0 costs vs learned costs) because the
   permissive-coda bias is reduced but not eliminated.
@@ -70,6 +79,7 @@ studies were run 2026-07-14 against the versions noted below). Everything joins 
 | `glottolog-cldf/` | [glottolog/glottolog-cldf](https://github.com/glottolog/glottolog-cldf) | 5.3 (`072ca0d`) | `git clone --depth 1 https://github.com/glottolog/glottolog-cldf` |
 | `wals/` | [cldf-datasets/wals](https://github.com/cldf-datasets/wals) | 2020.3 (`f97440d`), fetched 2026-08-05 | `git clone --depth 1 https://github.com/cldf-datasets/wals` |
 | `cldr_supplementalData.xml` | [unicode-org/cldr](https://github.com/unicode-org/cldr) | `main`, fetched 2026-07-14 | `curl -sSL -o data/raw/cldr_supplementalData.xml https://raw.githubusercontent.com/unicode-org/cldr/main/common/supplemental/supplementalData.xml` |
+| `cldr/` | [unicode-org/cldr](https://github.com/unicode-org/cldr) | `main` (`9fcd511`), fetched 2026-08-05 | `git clone --depth 1 --filter=blob:none --sparse https://github.com/unicode-org/cldr data/raw/cldr && git -C data/raw/cldr sparse-checkout set common/main` |
 | `wikidata_l1/p1098_raw.json`, `iso639/iso-639-3.tab` | Wikidata SPARQL (P1098), SIL | fetched 2026-07-14 | `uv run python scripts/fetch_l1_speakers.py` (downloads both) |
 | `iso639/language-codes-full.csv` | [datasets/language-codes](https://github.com/datasets/language-codes) | `main`, fetched 2026-08-05 | `curl -sSL --create-dirs -o data/raw/iso639/language-codes-full.csv https://raw.githubusercontent.com/datasets/language-codes/main/data/language-codes-full.csv` |
 
@@ -80,7 +90,9 @@ get it (it also carries the macrolanguage `Scope` column).
 
 Clone the five CLDF repos into `data/raw/` under the directory names in the first
 column. Only their `cldf/*.csv` files are read, so shallow clones suffice (~300 MB
-total). What each dataset is for, its row counts, and its caveats:
+total). The `cldr/` clone is separate and only `common/main/*.xml` is read
+(per-locale quotation marks and number formats), hence the sparse checkout. What each
+dataset is for, its row counts, and its caveats:
 [`notes/data-audit.md`](notes/data-audit.md).
 
 ### What we constructed (committed, in `data/processed/`)
@@ -91,6 +103,7 @@ total). What each dataset is for, its row counts, and its caveats:
 | `phoneme_prevalence.csv` | `scripts/phoneme_prevalence.py` | every PHOIBLE segment × prevalence by languages / L1 speakers / total speakers, at `strict` and `lumped` symbol granularity, with top allophones |
 | `contrast_costs.csv` | `scripts/contrast_study.py` | candidate contrasts × share of languages and people whose native phonology distinguishes them, plus attested merger counts — the functional-load penalty matrix |
 | `stress_prevalence.csv`, `stress_by_language.csv` | `scripts/stress_prevalence.py` | broad word-stress rule categories × share of languages / L1 speakers / total speakers, under two classification schemes and three tone-language policies, plus the per-language audit trail |
+| `punctuation_survey.csv` | `scripts/punctuation_survey.py` | punctuation / capitalization / spacing / number-format conventions × total-speaker prevalence, each row marked ASCII-available or not and CLDR-derived (`source=cldr`) or knowledge-assembled (`source=knowledge`) |
 
 ## Reproducing
 
@@ -103,6 +116,7 @@ uv run python scripts/phoneme_prevalence.py    # -> data/processed/phoneme_preva
 uv run python scripts/contrast_study.py        # -> data/processed/contrast_costs.csv
 uv run python scripts/stress_prevalence.py     # -> data/processed/stress_prevalence.csv
                                                #    + stress_by_language.csv
+uv run python scripts/punctuation_survey.py    # -> data/processed/punctuation_survey.csv
 ```
 
 Each script's module docstring documents its inputs, outputs, and the judgment calls

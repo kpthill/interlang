@@ -1,0 +1,143 @@
+area,option,example,ascii_available,source,unit,n_units,pct_total_weighted,pct_l1_weighted,pct_world_total_weighted,pct_stated_only,top_examples
+1_sentence_final,.,.,True,knowledge,languages,31,59.251,51.436,49.0,,"English, Spanish, Standard Arabic, French, Portuguese"
+1_sentence_final,。,。,False,knowledge,languages,7,20.025,26.735,16.56,,"Mandarin Chinese, Yue Chinese, Japanese, Wu Chinese, Xiang Chinese"
+1_sentence_final,।,।,False,knowledge,languages,5,13.514,18.035,11.176,,"Hindi, Bengali, Eastern Panjabi, Marathi, Bhojpuri"
+1_sentence_final,۔,۔,False,knowledge,languages,4,5.737,2.283,4.745,,"Urdu, pnb, Northern Pashto, Sindhi"
+1_sentence_final,(space),(space),True,knowledge,languages,1,0.623,0.414,0.515,,Thai
+1_sentence_final,።,።,False,knowledge,languages,1,0.436,0.438,0.36,,Amharic
+1_sentence_final,။,။,False,knowledge,languages,1,0.414,0.658,0.342,,Burmese
+1_sentence_final,.,.,True,"knowledge (context, excluded from %)",languages,1,,,0.113,,Modern Greek
+1_sentence_final,։,։,False,"knowledge (context, excluded from %)",languages,1,,,0.05,,Eastern Armenian
+1_sentence_final,។,។,False,"knowledge (context, excluded from %)",languages,1,,,0.14,,Central Khmer
+1_sentence_final,(space),(space),True,"knowledge (context, excluded from %)",languages,1,,,0.05,,Lao
+1_sentence_final,.,.,True,"knowledge (context, excluded from %)",languages,1,,,0.087,,Modern Hebrew
+1_sentence_final,.,.,True,"knowledge (context, excluded from %)",languages,1,,,0.041,,Georgian
+2_exclamation_mark,!,!,True,knowledge,languages,42,74.274,63.56,61.423,,"English, Hindi, Standard Arabic, French, Urdu"
+2_exclamation_mark,！,！,False,knowledge,languages,7,20.025,26.735,16.56,,"Mandarin Chinese, Yue Chinese, Japanese, Wu Chinese, Xiang Chinese"
+2_exclamation_mark,¡!,¡!,False,knowledge,languages,1,5.701,9.705,4.715,,Spanish
+2_exclamation_mark,!,!,True,"knowledge (context, excluded from %)",languages,1,,,0.113,,Modern Greek
+2_exclamation_mark,՜,՜,False,"knowledge (context, excluded from %)",languages,1,,,0.05,,Eastern Armenian
+2_exclamation_mark,!,!,True,"knowledge (context, excluded from %)",languages,1,,,0.14,,Central Khmer
+2_exclamation_mark,!,!,True,"knowledge (context, excluded from %)",languages,1,,,0.05,,Lao
+2_exclamation_mark,!,!,True,"knowledge (context, excluded from %)",languages,1,,,0.087,,Modern Hebrew
+2_exclamation_mark,!,!,True,"knowledge (context, excluded from %)",languages,1,,,0.041,,Georgian
+2_question_mark,?,?,True,knowledge,languages,31,60.558,56.738,50.08,,"English, Hindi, French, Bengali, Portuguese"
+2_question_mark,？,？,False,knowledge,languages,7,20.025,26.735,16.56,,"Mandarin Chinese, Yue Chinese, Japanese, Wu Chinese, Xiang Chinese"
+2_question_mark,؟,؟,False,knowledge,languages,9,12.657,5.97,10.467,,"Standard Arabic, Urdu, pnb, Western Farsi, Egyptian Arabic"
+2_question_mark,¿?,¿?,False,knowledge,languages,1,5.701,9.705,4.715,,Spanish
+2_question_mark,(none),(none),True,knowledge,languages,1,0.623,0.414,0.515,,Thai
+2_question_mark,፧,፧,False,knowledge,languages,1,0.436,0.438,0.36,,Amharic
+2_question_mark,;,;,True,"knowledge (context, excluded from %)",languages,1,,,0.113,,Modern Greek
+2_question_mark,՞,՞,False,"knowledge (context, excluded from %)",languages,1,,,0.05,,Eastern Armenian
+2_question_mark,?,?,True,"knowledge (context, excluded from %)",languages,1,,,0.14,,Central Khmer
+2_question_mark,?,?,True,"knowledge (context, excluded from %)",languages,1,,,0.05,,Lao
+2_question_mark,?,?,True,"knowledge (context, excluded from %)",languages,1,,,0.087,,Modern Hebrew
+2_question_mark,?,?,True,"knowledge (context, excluded from %)",languages,1,,,0.041,,Georgian
+3_comma,",",",",True,knowledge,languages,31,65.846,65.784,54.453,,"English, Hindi, Spanish, French, Bengali"
+3_comma,、,、,False,knowledge,languages,7,20.025,26.735,16.56,,"Mandarin Chinese, Yue Chinese, Japanese, Wu Chinese, Xiang Chinese"
+3_comma,،,،,False,knowledge,languages,9,12.657,5.97,10.467,,"Standard Arabic, Urdu, pnb, Western Farsi, Egyptian Arabic"
+3_comma,(space),(space),True,knowledge,languages,1,0.623,0.414,0.515,,Thai
+3_comma,፣,፣,False,knowledge,languages,1,0.436,0.438,0.36,,Amharic
+3_comma,၊,၊,False,knowledge,languages,1,0.414,0.658,0.342,,Burmese
+3_comma,",",",",True,"knowledge (context, excluded from %)",languages,1,,,0.113,,Modern Greek
+3_comma,",",",",True,"knowledge (context, excluded from %)",languages,1,,,0.05,,Eastern Armenian
+3_comma,(space),(space),True,"knowledge (context, excluded from %)",languages,1,,,0.14,,Central Khmer
+3_comma,(space),(space),True,"knowledge (context, excluded from %)",languages,1,,,0.05,,Lao
+3_comma,",",",",True,"knowledge (context, excluded from %)",languages,1,,,0.087,,Modern Hebrew
+3_comma,",",",",True,"knowledge (context, excluded from %)",languages,1,,,0.041,,Georgian
+4_quotation_alternate,‘ ’,‘’,False,cldr,language x territory locales,1099,78.641,,78.641,75.535,"Abaza (RU), Abaza (TR), Abron (GH), Acehnese (ID), Acoli (UG)"
+4_quotation_alternate,’ ‘,’‘,False,cldr,language x territory locales,53,6.693,,6.693,7.666,"Ladin (IT), Northern Uzbek (RU), Northern Uzbek (TM), Northern Uzbek (TR), Northern Uzbek (UZ)"
+4_quotation_alternate,« »,«»,False,cldr,language x territory locales,97,3.693,,3.693,4.231,"Corsican (FR), Eastern Armenian (AM), Eastern Armenian (CY), Eastern Armenian (GE), Eastern Armenian (IR)"
+4_quotation_alternate,“ ”,“”,False,cldr,language x territory locales,87,2.556,,2.556,2.928,"Asturian-Leonese-Cantabrian (ES), Bambara (ML), Basque (ES), Basque (FR), Breton (FR)"
+4_quotation_alternate,„ “,„“,False,cldr,language x territory locales,62,2.323,,2.323,2.661,"Abkhaz (GE), Abkhaz (TR), Basa (Cameroon) (CM), Belarusian (BY), Belarusian (PL)"
+4_quotation_alternate,‚ ‘,‚‘,False,cldr,language x territory locales,61,1.818,,1.818,2.082,"Bosnian Standard (BA), Croatian Standard (AT), Croatian Standard (BA), Croatian Standard (CA), Croatian Standard (DE)"
+4_quotation_alternate,‹ ›,‹›,False,cldr,language x territory locales,30,1.614,,1.614,1.849,"Amharic (ET), Amharic (IL), Bakhtiari (IR), Central Alemannic (CH), Central Alemannic (DE)"
+4_quotation_alternate,『 』,『』,False,cldr,language x territory locales,23,1.516,,1.516,1.736,"Japanese (BR), Japanese (CA), Japanese (JP), Japanese (SG), Mandarin Chinese (AU)"
+4_quotation_alternate,’ ’,’’,False,cldr,language x territory locales,27,0.621,,0.621,0.711,"Finnish (EE), Finnish (FI), Finnish (RU), Finnish (SE), Modern Hebrew (IL)"
+4_quotation_alternate,„ ”,„”,False,cldr,language x territory locales,2,0.136,,0.136,0.155,"Standard Moroccan Tamazight (MA), Tachelhit (MA)"
+4_quotation_alternate,» «,»«,False,cldr,language x territory locales,10,0.118,,0.118,0.135,"Hungarian (AT), Hungarian (CA), Hungarian (HU), Hungarian (IL), Hungarian (RO)"
+4_quotation_alternate,” “,”“,False,cldr,language x territory locales,1,0.104,,0.104,0.119,French (CA)
+4_quotation_alternate,› ‹,›‹,False,cldr,language x territory locales,8,0.085,,0.085,0.098,"Kalaallisut (DK), Kalaallisut (GL), Kazakh (AF), Kazakh (CN), Kazakh (IR)"
+4_quotation_alternate,‚ ’,‚’,False,cldr,language x territory locales,5,0.083,,0.083,0.095,"Hausa States Fulfulde (CM), Hausa States Fulfulde (GN), Hausa States Fulfulde (MR), Hausa States Fulfulde (SN), agq (CM)"
+4_quotation_alternate,” ”,””,False,cldr,language x territory locales,1,0.0,,0.0,0.0,Aragonese (ES)
+4_quotation_primary,“ ”,“”,False,cldr,language x territory locales,1085,78.481,,78.481,75.351,"Abaza (RU), Abaza (TR), Abron (GH), Acehnese (ID), Acoli (UG)"
+4_quotation_primary,« »,«»,False,cldr,language x territory locales,240,9.649,,9.649,11.052,"Abkhaz (GE), Abkhaz (TR), Amharic (ET), Amharic (IL), Aragonese (ES)"
+4_quotation_primary,” “,”“,False,cldr,language x territory locales,49,6.4,,6.4,7.331,"Ladin (IT), Standard Arabic (AE), Standard Arabic (BH), Standard Arabic (CA), Standard Arabic (CM)"
+4_quotation_primary,„ “,„“,False,cldr,language x territory locales,75,1.951,,1.951,2.235,"Bosnian Standard (BA), Bulgarian (BG), Bulgarian (GR), Bulgarian (MD), Bulgarian (RO)"
+4_quotation_primary,「 」,「」,False,cldr,language x territory locales,23,1.516,,1.516,1.736,"Japanese (BR), Japanese (CA), Japanese (JP), Japanese (SG), Mandarin Chinese (AU)"
+4_quotation_primary,„ ”,„”,False,cldr,language x territory locales,42,0.939,,0.939,1.075,"Bosnian Standard (BA), Hausa States Fulfulde (CM), Hausa States Fulfulde (GN), Hausa States Fulfulde (MR), Hausa States Fulfulde (SN)"
+4_quotation_primary,” ”,””,False,cldr,language x territory locales,19,0.483,,0.483,0.554,"Finnish (EE), Finnish (FI), Finnish (RU), Finnish (SE), Modern Hebrew (IL)"
+4_quotation_primary,‘ ’,‘’,False,cldr,language x territory locales,22,0.431,,0.431,0.494,"Dutch (AW), Dutch (BE), Dutch (BQ), Dutch (CA), Dutch (CW)"
+4_quotation_primary,» «,»«,False,cldr,language x territory locales,8,0.085,,0.085,0.098,"Kalaallisut (DK), Kalaallisut (GL), Kazakh (AF), Kazakh (CN), Kazakh (IR)"
+4_quotation_primary,“ ’,“’,False,cldr,language x territory locales,2,0.064,,0.064,0.073,"Southern Sotho (LS), Southern Sotho (ZA)"
+5_capitalization_rule,n/a (no case),n/a (no case),,knowledge,languages,31,53.013,60.372,43.84,,"Mandarin Chinese, Hindi, Standard Arabic, Urdu, Bengali"
+5_capitalization_rule,sentence-initial + proper nouns,sentence-initial + proper nouns,,knowledge,languages,17,26.114,30.512,21.595,,"Spanish, French, Portuguese, Russian, Swahili"
+5_capitalization_rule,sentence-initial + proper nouns + `I`,sentence-initial + proper nouns + `I`,,knowledge,languages,1,19.283,7.584,15.947,,English
+5_capitalization_rule,sentence-initial + ALL nouns,sentence-initial + ALL nouns,,knowledge,languages,1,1.591,1.532,1.316,,German
+5_capitalization_rule,sentence-initial + proper nouns,sentence-initial + proper nouns,True,"knowledge (context, excluded from %)",languages,1,,,0.113,,Modern Greek
+5_capitalization_rule,sentence-initial + proper nouns,sentence-initial + proper nouns,True,"knowledge (context, excluded from %)",languages,1,,,0.05,,Eastern Armenian
+5_capitalization_rule,n/a (no case),n/a (no case),True,"knowledge (context, excluded from %)",languages,1,,,0.14,,Central Khmer
+5_capitalization_rule,n/a (no case),n/a (no case),True,"knowledge (context, excluded from %)",languages,1,,,0.05,,Lao
+5_capitalization_rule,n/a (no case),n/a (no case),True,"knowledge (context, excluded from %)",languages,1,,,0.087,,Modern Hebrew
+5_capitalization_rule,n/a (Mkhedruli is caseless in modern use),n/a (Mkhedruli is caseless in modern use),True,"knowledge (context, excluded from %)",languages,1,,,0.041,,Georgian
+5_case_system,unicameral,unicameral,,knowledge,languages,31,53.013,60.372,43.84,,"Mandarin Chinese, Hindi, Standard Arabic, Urdu, Bengali"
+5_case_system,bicameral,bicameral,,knowledge,languages,19,46.987,39.628,38.858,,"English, Spanish, French, Portuguese, Russian"
+5_case_system,bicameral,bicameral,True,"knowledge (context, excluded from %)",languages,1,,,0.113,,Modern Greek
+5_case_system,bicameral,bicameral,True,"knowledge (context, excluded from %)",languages,1,,,0.05,,Eastern Armenian
+5_case_system,unicameral,unicameral,True,"knowledge (context, excluded from %)",languages,1,,,0.14,,Central Khmer
+5_case_system,unicameral,unicameral,True,"knowledge (context, excluded from %)",languages,1,,,0.05,,Lao
+5_case_system,unicameral,unicameral,True,"knowledge (context, excluded from %)",languages,1,,,0.087,,Modern Hebrew
+5_case_system,unicameral,unicameral,True,"knowledge (context, excluded from %)",languages,1,,,0.041,,Georgian
+6_word_spacing,spaces,spaces,,knowledge,languages,40,77.911,70.672,64.431,,"English, Hindi, Spanish, Standard Arabic, French"
+6_word_spacing,none,none,,knowledge,languages,9,21.061,27.808,17.417,,"Mandarin Chinese, Yue Chinese, Japanese, Wu Chinese, Thai"
+6_word_spacing,syllables,syllables,,knowledge,languages,1,1.028,1.521,0.85,,Vietnamese
+6_word_spacing,spaces,spaces,True,"knowledge (context, excluded from %)",languages,1,,,0.113,,Modern Greek
+6_word_spacing,spaces,spaces,True,"knowledge (context, excluded from %)",languages,1,,,0.05,,Eastern Armenian
+6_word_spacing,none,none,True,"knowledge (context, excluded from %)",languages,1,,,0.14,,Central Khmer
+6_word_spacing,none,none,True,"knowledge (context, excluded from %)",languages,1,,,0.05,,Lao
+6_word_spacing,spaces,spaces,True,"knowledge (context, excluded from %)",languages,1,,,0.087,,Modern Hebrew
+6_word_spacing,spaces,spaces,True,"knowledge (context, excluded from %)",languages,1,,,0.041,,Georgian
+7_grouping_pattern,"3-digit (1,000,000)",,,cldr,language x territory locales,1505,84.646,,84.646,82.274,"Abaza (RU), Abaza (TR), Abkhaz (GE), Abkhaz (TR), Abron (GH)"
+7_grouping_pattern,"Indian 2-2-3 (10,00,000)",,,cldr,language x territory locales,53,15.354,,15.354,17.726,"Assamese (IN), Bengali (BD), Bengali (CA), Bengali (GB), Bengali (IN)"
+7_number_default_digits,"decimal . / group ,  [latn digits]",".,",True,cldr,language x territory locales,925,64.167,,64.167,60.904,"Abaza (RU), Abaza (TR), Abron (GH), Acehnese (ID), Acoli (UG)"
+7_number_default_digits,"decimal , / group .  [latn digits]",",.",True,cldr,language x territory locales,235,15.56,,15.56,17.969,"Aragonese (ES), Asturian-Leonese-Cantabrian (ES), Basque (ES), Basque (FR), Betawi (ID)"
+7_number_default_digits,"decimal , / group NBSP (U+00A0)  [latn digits]",", ",False,cldr,language x territory locales,210,5.92,,5.92,6.836,"Abkhaz (GE), Abkhaz (TR), Afrikaans (BW), Afrikaans (NA), Afrikaans (ZA)"
+7_number_default_digits,decimal ٫ / group ٬  [arabext digits],٫٬,False,cldr,language x territory locales,27,3.988,,3.988,2.443,"Eastern Panjabi (PK), Kashmiri (IN), Kashmiri (PK), Mazanderani (IR), North Azerbaijani (IQ)"
+7_number_default_digits,"decimal , / group NNBSP (U+202F)  [latn digits]",", ",False,cldr,language x territory locales,69,3.051,,3.051,3.523,"English (FR), Esperanto (SM), French (AD), French (AT), French (BE)"
+7_number_default_digits,decimal ٫ / group ٬  [arab digits],٫٬,False,cldr,language x territory locales,24,2.776,,2.776,3.164,"Central Kurdish (IQ), Central Kurdish (IR), Southern Kurdish (IR), Standard Arabic (BH), Standard Arabic (DJ)"
+7_number_default_digits,"decimal . / group ,  [beng digits]",".,",True,cldr,language x territory locales,8,1.709,,1.709,1.973,"Assamese (IN), Bengali (BD), Bengali (CA), Bengali (GB), Bengali (NP)"
+7_number_default_digits,"decimal . / group ,  [deva digits]",".,",True,cldr,language x territory locales,10,1.595,,1.595,1.842,"Bhojpuri (IN), Bhojpuri (MU), Bhojpuri (NP), Haryanvi (IN), Marathi (IN)"
+7_number_default_digits,decimal . / group ٬  [arab digits],.٬,False,cldr,language x territory locales,2,0.382,,0.382,0.441,"Sindhi (IN), Sindhi (PK)"
+7_number_default_digits,"decimal . / group ,  [mymr digits]",".,",True,cldr,language x territory locales,2,0.342,,0.342,0.395,"Burmese (BD), Burmese (MM)"
+7_number_default_digits,decimal . / group NBSP (U+00A0)  [latn digits],. ,False,cldr,language x territory locales,13,0.179,,0.179,0.183,"Kazakh (AF), Kazakh (CN), Kazakh (IR), Kazakh (MN), Morisyen (MU)"
+7_number_default_digits,decimal . / group '  [latn digits],.',True,cldr,language x territory locales,8,0.147,,0.147,0.147,"Central Alemannic (CH), Central Alemannic (DE), Central Alemannic (FR), Central Alemannic (LI), English (CH)"
+7_number_default_digits,"decimal . / group ,  [olck digits]",".,",True,cldr,language x territory locales,1,0.071,,0.071,0.082,Santali (IN)
+7_number_default_digits,"decimal , / group '  [latn digits]",",'",True,cldr,language x territory locales,5,0.067,,0.067,0.078,"French (CH), Lombard (CH), Lombard (IT), Walser (CH), Walser (LI)"
+7_number_default_digits,"decimal . / group ,  [hmnp digits]",".,",True,cldr,language x territory locales,16,0.028,,0.028,0.0,"hnj (AU), hnj (CN), hnj (FR), hnj (GF), hnj (LA)"
+7_number_default_digits,"decimal . / group ,  [cakm digits]",".,",True,cldr,language x territory locales,2,0.007,,0.007,0.008,"Chakma (BD), Chakma (IN)"
+7_number_default_digits,decimal . / group ،  [nkoo digits],.،,False,cldr,language x territory locales,1,0.006,,0.006,0.007,N'Ko (GN)
+7_number_default_digits,"decimal . / group ,  [tibt digits]",".,",True,cldr,language x territory locales,2,0.004,,0.004,0.004,"Dzongkha (BT), Dzongkha (IN)"
+7_number_example,"1,000.50","1,000.50",True,cldr,language x territory locales,1006,74.367,,74.367,70.446,"Abaza (RU), Abaza (TR), Abron (GH), Acehnese (ID), Acoli (UG)"
+7_number_example,"1.000,50","1.000,50",True,cldr,language x territory locales,242,16.188,,16.188,18.694,"Aragonese (ES), Asturian-Leonese-Cantabrian (ES), Basque (ES), Basque (FR), Betawi (ID)"
+7_number_example,"1NBSP (U+00A0)000,50","1 000,50",False,cldr,language x territory locales,210,5.92,,5.92,6.836,"Abkhaz (GE), Abkhaz (TR), Afrikaans (BW), Afrikaans (NA), Afrikaans (ZA)"
+7_number_example,"1NNBSP (U+202F)000,50","1 000,50",False,cldr,language x territory locales,69,3.051,,3.051,3.523,"English (FR), Esperanto (SM), French (AD), French (AT), French (BE)"
+7_number_example,1NBSP (U+00A0)000.50,1 000.50,False,cldr,language x territory locales,13,0.179,,0.179,0.183,"Kazakh (AF), Kazakh (CN), Kazakh (IR), Kazakh (MN), Morisyen (MU)"
+7_number_example,1'000.50,1'000.50,True,cldr,language x territory locales,8,0.147,,0.147,0.147,"Central Alemannic (CH), Central Alemannic (DE), Central Alemannic (FR), Central Alemannic (LI), English (CH)"
+7_number_example,"1'000,50","1'000,50",True,cldr,language x territory locales,5,0.067,,0.067,0.078,"French (CH), Lombard (CH), Lombard (IT), Walser (CH), Walser (LI)"
+7_number_example,1،000.50,1،000.50,False,cldr,language x territory locales,3,0.061,,0.061,0.071,"Kashmiri (IN), Kashmiri (PK), N'Ko (GN)"
+7_number_example,1،000٫50,1،000٫50,False,cldr,language x territory locales,3,0.02,,0.02,0.023,"bgn (AF), bgn (IR), bgn (PK)"
+7_number_latin_digits,"decimal . / group ,",".,",True,cldr,language x territory locales,1006,74.367,,74.367,70.446,"Abaza (RU), Abaza (TR), Abron (GH), Acehnese (ID), Acoli (UG)"
+7_number_latin_digits,"decimal , / group .",",.",True,cldr,language x territory locales,242,16.188,,16.188,18.694,"Aragonese (ES), Asturian-Leonese-Cantabrian (ES), Basque (ES), Basque (FR), Betawi (ID)"
+7_number_latin_digits,"decimal , / group NBSP (U+00A0)",", ",False,cldr,language x territory locales,210,5.92,,5.92,6.836,"Abkhaz (GE), Abkhaz (TR), Afrikaans (BW), Afrikaans (NA), Afrikaans (ZA)"
+7_number_latin_digits,"decimal , / group NNBSP (U+202F)",", ",False,cldr,language x territory locales,69,3.051,,3.051,3.523,"English (FR), Esperanto (SM), French (AD), French (AT), French (BE)"
+7_number_latin_digits,decimal . / group NBSP (U+00A0),. ,False,cldr,language x territory locales,13,0.179,,0.179,0.183,"Kazakh (AF), Kazakh (CN), Kazakh (IR), Kazakh (MN), Morisyen (MU)"
+7_number_latin_digits,decimal . / group ',.',True,cldr,language x territory locales,8,0.147,,0.147,0.147,"Central Alemannic (CH), Central Alemannic (DE), Central Alemannic (FR), Central Alemannic (LI), English (CH)"
+7_number_latin_digits,"decimal , / group '",",'",True,cldr,language x territory locales,5,0.067,,0.067,0.078,"French (CH), Lombard (CH), Lombard (IT), Walser (CH), Walser (LI)"
+7_number_latin_digits,decimal . / group ،,.،,False,cldr,language x territory locales,3,0.061,,0.061,0.071,"Kashmiri (IN), Kashmiri (PK), N'Ko (GN)"
+7_number_latin_digits,decimal ٫ / group ،,٫،,False,cldr,language x territory locales,3,0.02,,0.02,0.023,"bgn (AF), bgn (IR), bgn (PK)"
+8_apostrophe,"elision / possessive marker (`don't`, `l'eau`, `John's`)",',True,knowledge (note only),-,,,,,,"English, French, Italian, Catalan, Dutch, Afrikaans"
+8_apostrophe,letter of the alphabet - glottal stop or ejective,',True,knowledge (note only),-,,,,,,"Hawaiian okina, Guarani, many Latin-script African orthographies"
+8_apostrophe,not used at all,,True,knowledge (note only),-,,,,,,"Han, Japanese, Korean, Thai, Devanagari, Arabic (native text)"
+8_hyphen,compound joiner and end-of-line word break,-,True,knowledge (note only),-,,,,,,most Latin-script and Cyrillic orthographies
+8_hyphen,reduplication and affix marker,-,True,knowledge (note only),-,,,,,,"Indonesian/Malay `orang-orang`, Swahili, Tagalog"
+8_hyphen,not used at all,,True,knowledge (note only),-,,,,,,"Han, Japanese, Thai (CJK uses U+30FB / U+FF1D-style marks instead)"
