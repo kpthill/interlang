@@ -112,8 +112,19 @@ questions and next steps in §7.
   **two new rules** total: modifiers precede their head, and a question begins with the
   question particle. Everything else was decided by removing a distinction rather than
   adding machinery.
-- **Next:** Tier 3 — how clauses combine (relative, complement and adverbial clauses,
-  coordination, comparatives, copula/possession/existentials). Phonology and phonotactics are closed (`notes/principles.md`
+- **Grammar Tier 3, predication/possession/existentials** — done,
+  [`notes/grammar-tier3-predication.md`](notes/grammar-tier3-predication.md). **One
+  invariant copula for every non-verbal predicate; the same copula with nothing following
+  it is the existential; possession is a plain transitive "have."** The copula is the first
+  decision in the project forced by a **collision between our own earlier choices** rather
+  than by a distribution: Q11 put the possessor first and Q8 declined possessive pronouns,
+  so `I house` = "my house" — which would have made zero-copula `I teacher` ambiguous. No
+  source could flag that, because the evidence base codes features one at a time.
+  *Decided without a committed study script* — a logged deviation from the
+  one-study-per-script convention.
+- **Next:** the rest of Tier 3 — coordination, comparatives, and the
+  relative/complement/adverbial clause cluster (which is really one question: does joining
+  a clause cost a word, and is it the same word each time?). Phonology and phonotactics are closed (`notes/principles.md`
   §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
   than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are
   ordinal rankings that must become numeric penalties before the lexicon optimizer runs.

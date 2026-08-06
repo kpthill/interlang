@@ -196,8 +196,23 @@ Tier 4 has to find phonological room for, under §3.3's segment discouragement a
 cluster cost. Each Tier 2 write-up should therefore end with a running count: *how many
 particles does this decision cost?*
 
-**Tier 3 — combination.** relative clauses · complement clauses · adverbial clauses ·
-coordination · comparatives · copula, possession and existentials.
+**Tier 3 — combination.** Started 2026-08-05, taken *lightest question last* rather than in
+the listed order, and from here on **decided with lighter analysis than Tiers 0–2** — these
+are less consequential, and some will be settled without a committed study script (the
+deviation from one-study-per-script gets logged in the note that takes it).
+
+| # | question | status |
+|---|---|---|
+| **12** | **copula, possession, existentials** | ~~open~~ **DONE** → [`grammar-tier3-predication.md`](grammar-tier3-predication.md): one invariant copula for all non-verbal predication; the same copula with nothing after it is the existential; possession is a plain transitive 'have'. Word bill 1 |
+| 13 | **coordination** — one word for "and" or several? noun-and-noun vs clause-and-clause the same word? "or", "but" | open. WALS 63A; APiCS 89–92 |
+| 14 | **comparatives** — particle, "exceed"-verb, or locational? | open. WALS 121A/122A; APiCS 87. Interacts with §3.2's no-affix rule: no *-er* available |
+| 15 | **relative clauses** — already positioned (Tier 0: after the noun); open is *how they are introduced* — relativizer, gap, or resumptive pronoun | open. WALS 122A/123A; APiCS 80–83 |
+| 16 | **complement clauses** — a complementizer ("that") or bare juxtaposition? | open. APiCS 84–86 |
+| 17 | **adverbial clauses** — one general subordinator plus adverbs, or a set? | open. Likely falls out of 15+16 |
+
+The last four are all versions of the same question — *does joining a clause to something
+cost a word, and is it the same word each time?* — so 15/16/17 should be taken together and
+may collapse into one decision.
 
 **Tier 4 — the lexicon interface, deliberately last.** word classes and how rigid they
 are · derivational machinery · **the particle inventory**, which is the coupling back to

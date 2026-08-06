@@ -326,6 +326,58 @@ with the rest built by compounding.**
 under 6% of the short-word space. **Grammar rules added: one** — *a question begins with the
 question particle*.
 
+#### Predication, possession and existentials (**SOFT**, 2026-08-05 by Patrick — Tier 3)
+
+Evidence: [`grammar-tier3-predication.md`](grammar-tier3-predication.md). **Decided without a
+committed study script** — a deliberate deviation from the one-study-per-script convention,
+logged in that note's header.
+
+**One invariant copula for every non-verbal predicate — nominal, adjectival and locative
+alike. The same copula with nothing following it is the existential. Possession is an
+ordinary transitive verb "have."**
+
+| | |
+|---|---|
+| `I COP teacher` · `I COP tall` · `book COP on table` | predication |
+| `one book COP` · `book no COP` | existence |
+| `I have book` | possession |
+
+- **The copula is forced by a collision between our own earlier decisions**, not by a
+  distribution. Q11 put the possessor before the noun and Q8 declined special possessive
+  pronouns, so `I house` = "my house" — which makes zero-copula `I teacher` ambiguous between
+  "I am a teacher" and "my teacher". No source could have flagged this, because the evidence
+  base codes features one at a time. **Worth remembering as a class of risk.**
+- **It covers adjectives too, overriding 8 of 9 restricted pidgins** — the strongest single
+  pidgin signal in the study — because the alternative (adjectives as stative verbs) breaks
+  *attributive* order: if "big" is a verb then `big house` is a relative clause, and Tier 0
+  puts those after the noun. Mandarin and Japanese pay for that with a linker; we would be
+  buying a word to save a word and losing the modifier rule's uniformity.
+- **Invariant** — no agreement (Tier 0) and no tense, since TAM is adverbial (Q6).
+- **The existential is the copula used intransitively**, subject-first: `book COP`. A
+  "have"-existential (`have book`) was recommended first and rejected on structure — it would
+  be the only subjectless, predicate-first clause in the language, in the one place we have
+  allowed no exceptions. **This runs against real Rule 2 evidence**: English says *there is*,
+  yet English-lexifier contact languages innovate a have-existential 16 to 7. Precedent for
+  the choice: Russian *есть* is one word for both, and Turkish *kitap var* / Japanese *hon ga
+  aru* are subject-first existentials.
+- **No expletive subject** — 8 of 9 restricted pidgins and 39 of 54 creoles use none.
+  English's *there* and French's *il* are meaningless dummies taught as an arbitrary
+  requirement.
+- **Possession is 'have', an ordinary transitive verb** — lexicon, not grammar, so it costs
+  no grammatical word and needs no rule. WALS 117A has **no majority strategy at all** for
+  predicative possession, which is itself unusual; the conjunctional strategy ("I am with a
+  book") is 24.7% of languages but **3.3% of L1**, one of the sharpest gaps in the project.
+- **No alienable/inalienable split** (47.4% of languages, **13.6% of L1**) and **no
+  possessive classifiers** (9.8% / 5.0%) — consistent with Q7's numeral classifiers.
+
+**Word bill: 1.** **Grammar rules added: one** — *a non-verbal predicate takes the copula*.
+
+*Standing policy, stated by Patrick here:* departures from the contact record are fine where
+they make the language simpler — **the goal is ease of learning, so we copy pidgins only
+where they point at that objective.** This is now the fourth consecutive question decided
+against the contact record (Q6, Q8 politeness, Q10 particle, and the adjectival copula), and
+the **pattern** belongs in the final bias audit, not just the four entries.
+
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 
 **The inventory is closed. 15 consonants + 5 vowels = 20 phonemes.**
