@@ -204,15 +204,19 @@ deviation from one-study-per-script gets logged in the note that takes it).
 | # | question | status |
 |---|---|---|
 | **12** | **copula, possession, existentials** | ~~open~~ **DONE** → [`grammar-tier3-predication.md`](grammar-tier3-predication.md): one invariant copula for all non-verbal predication; the same copula with nothing after it is the existential; possession is a plain transitive 'have'. Word bill 1 |
-| 13 | **coordination** — one word for "and" or several? noun-and-noun vs clause-and-clause the same word? "or", "but" | open. WALS 63A; APiCS 89–92 |
-| 14 | **comparatives** — particle, "exceed"-verb, or locational? | open. WALS 121A/122A; APiCS 87. Interacts with §3.2's no-affix rule: no *-er* available |
-| 15 | **relative clauses** — already positioned (Tier 0: after the noun); open is *how they are introduced* — relativizer, gap, or resumptive pronoun | open. WALS 122A/123A; APiCS 80–83 |
-| 16 | **complement clauses** — a complementizer ("that") or bare juxtaposition? | open. APiCS 84–86 |
-| 17 | **adverbial clauses** — one general subordinator plus adverbs, or a set? | open. Likely falls out of 15+16 |
+| 13–17 | **coordination · comparatives · relative, complement and adverbial clauses** | ~~open~~ **DONE** → [`grammar-tier3-combination.md`](grammar-tier3-combination.md): four words — *and*, *or*, *than*, and one **relativizer** that doubles as the optional complementizer. Adjective unmarked in comparatives; adverbial clauses cost nothing |
 
-The last four are all versions of the same question — *does joining a clause to something
-cost a word, and is it the same word each time?* — so 15/16/17 should be taken together and
-may collapse into one decision.
+The prediction that 15/16/17 were one question held: they collapsed into a single
+relativizer, reused for complements and unneeded for adverbials.
+
+**Tier 3 is COMPLETE.** **5 words** (copula, *and*, *or*, *than*, relativizer) and **2 rules**
+(a non-verbal predicate takes the copula; the relative clause follows its noun, begins with the
+relativizer, and omits the shared element). **Running grammar total: 15 words, 4 rules.**
+
+Both Tier 3 notes were decided **without committed study scripts** — a deliberate deviation
+from the one-study-per-script convention in [`../CLAUDE.md`](../CLAUDE.md), taken on time
+pressure for the least consequential tier and logged in each note's header and honest-limits
+section. **If the grammar is ever published as a reproducible artifact, these two are the gap.**
 
 **Tier 4 — the lexicon interface, deliberately last.** word classes and how rigid they
 are · derivational machinery · **the particle inventory**, which is the coupling back to

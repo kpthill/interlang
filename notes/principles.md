@@ -378,6 +378,51 @@ where they point at that objective.** This is now the fourth consecutive questio
 against the contact record (Q6, Q8 politeness, Q10 particle, and the adjectival copula), and
 the **pattern** belongs in the final bias audit, not just the four entries.
 
+#### Coordination, comparatives and subordination (**SOFT**, 2026-08-06 by Patrick — Tier 3)
+
+Evidence: [`grammar-tier3-combination.md`](grammar-tier3-combination.md). **Also decided
+without a committed study script**, logged there.
+
+**Four words: *and*, *or*, *than*, and one invariant relativizer that doubles as the optional
+complementizer.**
+
+| English | interlang |
+|---|---|
+| salt **and** pepper · he came **and** he sat | `salt and pepper` · `he come and he sit` |
+| I am tall**er than** you · the tall**est** | `I COP tall than you` · `I COP tall than all` |
+| the man **who** saw me · the book **that** I read | `man REL COP see me` · `book REL I read` |
+| I know (**that**) he came | `I know (REL) he come` |
+| **when** he arrived, we ate | `when he arrive, we eat` |
+
+- **"and" ≠ "with"** (81.5% of L1, GB027) — conflating them would make *I and you went* and
+  *I went with you* the same string. **One "and" for both nouns and clauses** (60.7% of L1).
+  **"but" is free** — *and* plus a contrast adverb. **No inclusory pronouns**: `I and you`,
+  not `we with you` (plain conjunction in 5 of 9 restricted pidgins, 47 of 54 creoles).
+- **Comparative: the particle "than", adjective unmarked.** A dedicated standard marker is
+  **73.5% of L1** (GB273); leaving the adjective unmarked follows 6 of 9 restricted pidgins
+  and saves the word "more". Superlative is *than all*. **Conjoined comparatives are the only
+  feature in the project at a clean 0.0% of L1.**
+  *Rejecting the "exceed" comparative is downstream of the copula* — expanded pidgins prefer
+  it 7 of 9, but with adjectives taking the copula, *I COP tall exceed you* puts two
+  predicates in one clause, which is serial-verb machinery we have not adopted. **If the
+  copula is ever revisited, revisit this with it.**
+- **Relative clauses: an invariant relativizer plus a gap**, following the noun (Tier 0). The
+  **relative pronoun is rejected** — 40.6% of *total speakers* have one, but 0 of 9 restricted
+  and 0 of 9 expanded pidgins do, and an inflecting relative pronoun needs case, which Q8
+  refused. The bare gap is the world majority (65.4% of L1) and is declined because those
+  languages have case, agreement or verb morphology to mark the clause edge and we have none.
+- **Complement clauses reuse the relativizer, optionally** — *I know he come* and *I know REL
+  he come* are both well-formed. Restricted pidgins use no complementizer (7 of 9, 8 of 9);
+  56.6% of L1 has one; optional takes both. Safe in a way optional TAM was not, since omitting
+  it implicates nothing. WALS 128A confirms complements are ordinary finite clauses for 75.3%
+  of L1 — fortunate, since Tier 0 leaves no way to build a non-finite form.
+- **Adverbial clauses cost nothing** — lexical *when / because / if*, clause-initial (78.4% of
+  L1), constituent order unchanged. **GB134 puts same-order-in-subordinate-clauses at 96.4% of
+  L1**, the most one-sided figure in the tier.
+
+**Word bill: 4. Tier 3 closes at 5 words and 2 rules. Running grammar total: 15 words** —
+under 9% of the short-word space.
+
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 
 **The inventory is closed. 15 consonants + 5 vowels = 20 phonemes.**

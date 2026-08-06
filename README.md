@@ -122,9 +122,18 @@ questions and next steps in §7.
   source could flag that, because the evidence base codes features one at a time.
   *Decided without a committed study script* — a logged deviation from the
   one-study-per-script convention.
-- **Next:** the rest of Tier 3 — coordination, comparatives, and the
-  relative/complement/adverbial clause cluster (which is really one question: does joining
-  a clause cost a word, and is it the same word each time?). Phonology and phonotactics are closed (`notes/principles.md`
+- **Grammar Tier 3, coordination/comparatives/subordination** — done,
+  [`notes/grammar-tier3-combination.md`](notes/grammar-tier3-combination.md). **Four words:
+  *and*, *or*, *than*, and one invariant relativizer that doubles as the optional
+  complementizer.** Comparatives leave the adjective unmarked (`I COP tall than you`);
+  adverbial clauses cost nothing. The relative pronoun is rejected — 40.6% of *total
+  speakers* have one, but it needs case, which the pronoun decision refused.
+  *Also decided without a committed study script.*
+- **Tier 3 is complete.** **5 words, 2 rules.** Running grammar total: **15 words, 4 rules**
+  — under 9% of the short-word space.
+- **Next:** Tier 4, the lexicon interface — word classes and how rigid they are,
+  derivational machinery, and the final root-shape bounds that couple grammar back to
+  phonology (`notes/principles.md` §3.6). Phonology and phonotactics are closed (`notes/principles.md`
   §3.3–§3.7). The one piece of unfinished phonology business is lexicon-facing rather
   than sound-facing: §3.3's segment discouragement and §3.6's onset-cluster cost are
   ordinal rankings that must become numeric penalties before the lexicon optimizer runs.
