@@ -453,12 +453,19 @@ true only in the sense that nobody had adopted *or rejected* it. **All four cost
   they do is available from coordination, prepositions and §4 below. **Not a Euro-default
   rejection** — serials are West African and South-East Asian, and the pidgin columns are
   what decide it; flagged for the bias audit rather than left to pass unnoticed.
-- **No passive** — against **77.9% of world L1** (GB086), the second-largest population
-  override in the project. Structural rather than preferential: a passive needs verb
-  morphology (forbidden) or a participle (we have no non-finite form), so it would cost a
-  word, a rule *and* a verb form. Use an indefinite subject: `someone steal the book`.
-  **What is genuinely lost is information structure** — with rigid SVO and no topicalization,
-  a speaker cannot put the patient in topic position. Accepted, and the sharpest cost here.
+- **A passive: preverbal `self`.** `window self break` = "the window was broken";
+  `window self break by man` names the agent. **Zero words** (it reuses the Q8 reflexive) and
+  **zero rules** (it uses the preverbal modifier zone that already holds negation and TAM
+  adverbs). Disambiguation is positional and free: Q8 put the reflexive in *object* position,
+  so `I see self` is "I see myself" and `I self see` is "I am seen".
+  **This reverses a rejection that rested on a false premise** — "a passive needs verb
+  morphology or a participle and we have neither" — which **GB302 refutes: a phonologically
+  free passive particle is 10.5% of languages but 64.6% of L1**, Mandarin 被 *bèi* being the
+  model. Had the rejection stood it would have been a **95%-of-L1 override** (WALS 107A), the
+  largest in the project. *Note the sourcing caveat:* the strategy is not Euro (its flagship
+  is Mandarin), but APiCS's unmarked-passive type is **30 European to 1 non-European**, and
+  the reflexive→passive path is Europe-heavy **[recall, unverified — no source we hold codes
+  it]**. Adopting a passive at all is a rule 6 departure: 5 of 9 restricted pidgins have none.
 - **No pro-drop — the subject is obligatory** — against 66.9% of L1 (GB522). Languages that
   drop subjects have agreement to recover them from and we have none; decisively, **it would
   collide with the imperative**, since Q9 makes a command a bare subjectless verb phrase, so
@@ -472,10 +479,12 @@ true only in the sense that nobody had adopted *or rejected* it. **All four cost
   could do the job, and position already carries the entire argument-role load, take the
   marker.
 
-**Consequence: the alignment deferral is closed on both routes.** §7 named pronoun case
-(closed by Q8) and a passive; both are now shut.
+**Consequence: the alignment deferral holds, now for a stated reason.** §7 named pronoun case
+and a passive as the two routes back. Q8 closed the first; we now *have* the second — but it
+carries no case, no agreement and no argument marking, so there is still no morphology anywhere
+that could express an alignment contrast.
 
-**Word bill: 0. Rule added: 1** — *every clause has an overt subject; a subjectless verb
+**Word bill: 0** (the passive reuses `self`, the ditransitive a preposition). **Rule added: 1** — *every clause has an overt subject; a subjectless verb
 phrase is an imperative.* **Running grammar total: 16 words, 6 rules.**
 
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)

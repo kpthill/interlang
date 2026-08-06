@@ -133,8 +133,8 @@ questions and next steps in §7.
   the pronoun decision refused. *Also decided without a committed study script.*
 - **Grammar Tier 3 cleanup** — done,
   [`notes/grammar-tier3-cleanup.md`](notes/grammar-tier3-cleanup.md). Four decisions that
-  were being silently assumed: **no serial verbs, no passive, no pro-drop, and the
-  indirect-object ditransitive** (`I give book to he`). Three were visible only because
+  were being silently assumed: **no serial verbs, no pro-drop, a preverbal-`self` passive, and
+  the indirect-object ditransitive** (`I give book to he`). Three were visible only because
   earlier write-ups invoked them as premises — the exceed-comparative had been rejected as
   "serial-verb machinery we have not adopted", which nobody had adopted *or rejected*. The
   no-pro-drop decision is the second in Tier 3 forced by an **interaction between our own

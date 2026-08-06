@@ -15,7 +15,7 @@ grammar to acquire a feature, so they are settled here explicitly.
 | | decision |
 |---|---|
 | serial verb constructions | **none** |
-| passive | **none** — use an indefinite subject |
+| passive | **yes** — preverbal `self` (§2 reversed a wrong rejection) |
 | pro-drop | **none** — the subject is obligatory |
 | ditransitives | **indirect-object construction** — the recipient takes a preposition |
 
@@ -52,31 +52,94 @@ audit can weigh it rather than have it pass unnoticed.
 [`grammar-tier3-combination.md`](grammar-tier3-combination.md) §2 now rests on a stated
 premise instead of an assumed one.
 
-## 2. No passive
+## 2. The passive — REVERSED 2026-08-06, on a false premise
+
+> **The decision recorded in this section was wrong and has been reversed.** The original
+> text is preserved below the rule, because the error is instructive. §2a is what replaced it.
+
+**Original decision: no passive**, on the grounds that *a passive needs either verb morphology
+(Tier 0 forbids affixes) or a participle (we have no non-finite verb form), so it would cost a
+word, a rule and a verb form the grammar otherwise lacks.* Use an indefinite subject instead —
+`someone steal the book`. Quoted GB086 at 66.8% of languages / 77.9% of L1, and accepted the
+loss of patient-topicalization as "the sharpest cost in this note".
+
+**The premise is false.** Grambank codes the third option the argument never considered:
 
 | | %lang | **%L1** | %total |
 |---|---|---|---|
-| GB086 — passive construction | 66.8 | **77.9** | 65.4 |
-| GB110 — antipassive | 10.5 | 24.2 | 35.0 |
+| **GB302 — phonologically FREE passive marker (particle or auxiliary)** | 10.5 | **64.6** | 67.3 |
+| GB147 — morphological passive on the lexical verb | 42.6 | 36.5 | 35.3 |
+| GB304 — the agent can be expressed overtly in a passive clause | 40.5 | **91.8** | 89.8 |
 
-**77.9% of world L1 has a passive**, and this rejects it. The reason is structural rather
-than preferential: a passive needs either **verb morphology** (Tier 0 forbids affixes) or a
-**participle** in a periphrastic construction (we have no non-finite verb form — see
-[`grammar-tier3-combination.md`](grammar-tier3-combination.md) §5 on balanced clauses). So a
-passive would cost a new word *and* a new rule *and* a verb form the grammar otherwise lacks.
+**A free passive particle needs no morphology at all** — Mandarin 被 *bèi* is the model — and
+it is what **64.6% of world L1** has. The passive was never structurally foreclosed.
 
-**Decision: no passive. Use an indefinite subject** — `someone steal the book` for "the book
-was stolen". The passive's real work is demoting an unknown or unimportant agent, and an
-indefinite subject does that with vocabulary we need anyway.
+**The population cost was also understated.** WALS 107A is worse than the GB086 figure quoted:
 
-**What is genuinely lost:** the passive's *other* job is information structure — putting the
-patient in topic position — and with rigid SVO and no topicalization we cannot do that. A
-speaker who wants "the book" as the topic has no way to get it there. **This is an accepted
-cost and it is the sharpest one in this note.**
+| WALS 107A | %lang | **%L1** | %total |
+|---|---|---|---|
+| passive **present** | 43.0 | **95.2** | 97.5 |
+| passive **absent** | 57.0 | **4.8** | 2.5 |
 
-**Consequence: the alignment deferral is now closed on both routes.**
-[`principles.md`](principles.md) §7 named two things that would reopen alignment — pronoun
-case (closed by Q8) and *a passive*. Both are now shut.
+Rejecting the passive would have been a **95%-of-L1 override**, comfortably the largest in the
+project — larger than Q8's politeness distinction at 85% — resting on a claim about our own
+grammar that one Grambank feature refutes.
+
+**Failure mode, named:** the argument reasoned from *our* constraints straight to "therefore
+impossible", without checking whether the world had a strategy that fits inside them. Same
+shape as the `"it's ordinary vocabulary"` error in
+[`grammar-tier3-combination.md`](grammar-tier3-combination.md) §5 — a conclusion reached by
+introspecting about the design instead of looking.
+
+## 2a. The passive, as adopted: a preverbal `self`
+
+**Decision (Patrick, 2026-08-06): the reflexive pronoun in the preverbal modifier slot marks
+the passive.** `window self break` = "the window was broken".
+
+- **Zero words** — it reuses the Q8 reflexive. **Zero rules** — it uses the preverbal modifier
+  zone that already holds negation (Q9) and TAM adverbs (Q6).
+- **Disambiguation is positional and free.** Q8 put the reflexive in *object* position
+  (`I see self` = "I see myself"), so preverbal `self` is an unused combination:
+  `I self see` = "I am seen".
+- **The agent can still be expressed** — `window self break by man` — which matters, since
+  GB304 puts agent expression at **91.8% of L1**. "By" is ordinary vocabulary.
+- **It recovers the information-structure loss** the original decision accepted: the patient
+  is now the grammatical subject and sits in topic position.
+
+**A correction to the proposal as first framed.** Putting `self` in *subject* position —
+`self break window` — yields an **impersonal**, not a passive: the patient stays an object, so
+the agent is defocused but not demoted, and it buys nothing over `someone break window`. The
+Spanish model actually points the other way: in *se dejaron caer las llaves*, `se` is a
+**preverbal clitic** and *las llaves* is the **subject** — the verb agrees with it, plural
+*dejaron*. The preverbal slot is what makes it a passive rather than an impersonal.
+
+**Eurocentrism check, as requested — mixed, and the parts have to be separated.**
+
+| APiCS 90, by lexifier group | European | non-European |
+|---|---|---|
+| typical passive construction | 30 | 7 |
+| **passive without verbal coding** | **30** | **1** |
+| absence of passive | 17 | 6 |
+| other atypical passive | 3 | 3 |
+
+- **The passive itself is not a European import**: non-European-lexifier creoles have some
+  passive **11 to 6**.
+- **The unmarked type specifically is Euro-concentrated, 30 to 1** — and that is the type
+  nearest a bare reflexive construction, so the concern was well placed.
+- **Pidgins do lack passives**: absent in **5 of 9 restricted** and 6 of 9 expanded. That half
+  of the original argument survives, and adopting one is a standing rule 6 departure.
+- **No source we hold codes the reflexive→passive path.** **[recall, unverified]** it is well
+  attested in Romance, Slavic and Scandinavian and is Europe-heavy. **But that is about where
+  the *word* comes from, not about the *strategy*.** We are adopting a free preverbal marker —
+  a 64.6%-of-L1 strategy whose flagship is Mandarin, not Romance — and which existing word
+  fills the slot is a costless lexical choice. Reusing `self` costs nothing; a dedicated
+  particle would cost one word and buy no structural difference.
+
+**Consequence: the alignment deferral is reopened and immediately re-closed.**
+[`principles.md`](principles.md) §7 named a passive as one of the two routes back to alignment.
+We now have one — but it carries no case, no agreement and no argument marking of any kind, so
+there is still no morphology anywhere that could express an alignment contrast. **The deferral
+holds, now for a stated reason rather than by absence of the construction.**
 
 ## 3. No pro-drop — the subject is obligatory
 
@@ -141,17 +204,25 @@ in Tier 0 that has been sitting open unnoticed. Three strategies:
 
 ## 5. Totals
 
-**Word bill: 0.** **Rules added: 1** (obligatory subject).
+**Word bill: 0** — the passive reuses `self`, the ditransitive reuses a preposition.
+**Rules added: 1** (obligatory subject).
 
 **Running grammar total: 16 words, 6 rules.**
 
 ## 6. Honest limits
 
 - **No committed script**, as with the other two Tier 3 notes.
-- **The passive rejection overrides 77.9% of world L1**, the second-largest population
-  override in the project after Q8's politeness distinction (85%). The structural argument is
-  strong — we genuinely have no morphology to build one from — but the *information-structure*
-  loss in §2 is real and unmitigated, and belongs in the final bias audit.
+- **§2 was wrong and is reversed in place.** The rejection rested on "we have no morphology
+  to build a passive from", which GB302 refutes: a free passive particle is 64.6% of L1. Had
+  it stood, it would have been a 95%-of-L1 override (WALS 107A) — the largest in the project —
+  on a false premise. The failure mode is named in §2 and it is the same one as the
+  "ordinary vocabulary" error in the combination note: **reasoning from our constraints to
+  "impossible" without checking what strategies fit inside them.** Both errors were caught by
+  Patrick pushing back, not by the process.
+- **Adopting a passive is still a rule 6 departure** — 5 of 9 restricted pidgins have none —
+  and reusing `self` for it sits near a Euro-concentrated pattern (APiCS 90's unmarked
+  passive is 30 European to 1 non-European). The *strategy* is not Euro; the sourcing might
+  look it. Belongs in the bias audit.
 - **The pro-drop rejection overrides 66.9% of world L1.** The imperative-collision argument
   is decisive given our other choices, but it is an argument about our design, not a finding.
 - **Three of these four were being silently assumed**, which is the actual finding here. The
