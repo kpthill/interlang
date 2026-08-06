@@ -712,3 +712,36 @@ reproducible only against a *pinned* raw corpus, which nothing currently pins. T
 milestone-1 freeze assertion added here catches the symptom; it does not fix the cause.
 This belongs next to known problem 7.7, and it is the second independent argument for
 replacing greedy with a global assignment.
+
+## What actually shipped, and two defects to fix before the lexicon is built
+
+[measured] Final run: **244 entries** in `data/processed/speech_vocab.csv`, **no duplicate
+forms anywhere**, no l~r or h~r minimal pairs, every form legal under (C)V(N).
+**Monosyllable budget: 114 of 174 assigned, 60 free (34.5%) — inside `lexicon-plan.md`
+§1's one-third-to-one-half band.**
+
+Two things are visibly wrong and are logged rather than tolerated silently (CLAUDE.md):
+
+1. **Eleven of the coined disyllables came out REDUPLICATED** — *fafa* "different", *fifi*
+   "check", *fofo* "group", *fefe* "guide", *famfam* "together", *fanfan* "instead of",
+   *femfem* "source", *fenfen* "avoid", *fimfim* "common", *finfin* "simple", *fomfom*
+   "set". The syllable-freshness rule of judgment call 15(b) forbids *reusing another
+   root's* syllable but says nothing about a root reusing its own, and a+a is then the
+   cheapest pair available. They are at least pairwise two segments apart, so nothing is
+   confusable, and reduplication is a transparent and widely attested shape — but eleven
+   of them is an artefact of the cost function, not a design decision. **Fix: forbid
+   a == b in the coined disyllable pool, or price a seam reduplication the way §3.7 prices
+   a root-internal geminate.** Cheap; not done here for time.
+
+2. **`translit.is_legal` does not terminate on a capital letter.** [measured] The run hung
+   for 26 minutes on the proper names of judgment call 18 before this was found. The
+   integrity checks now lowercase before calling it, which is the right normalisation
+   (the capital is orthography, §3.7, not phonology) — but `translit.py` should reject an
+   out-of-alphabet symbol rather than spin, and that is a bug in `src/`, not here.
+
+Also worth recording: this run reports **65 of the 138 milestone-1 forms moved** against
+the previously committed CSV. That is not this extension's doing — the extension is a
+second greedy pass that starts from the first pass's state and cannot reach back — it is
+the raw-corpus reproducibility problem described above. Anyone comparing the two CSVs
+should read that number as "the donor corpus changed", not "the speech words displaced the
+core words".

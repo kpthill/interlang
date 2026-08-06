@@ -1,140 +1,220 @@
 english_gloss,interlang_form,group,derivation
 I (speaker),jo,grammar,asjp:SPANISH (Indo-European) <yo>
-and,pi,grammar,ids:Puinave (Puinave) <pəi>
+and,ku,grammar,Hausa (Afro-Asiatic) <kúmáa>
 comparative standard marker,jum,grammar,coined from the free monosyllable pool (no donor)
-copula; alone = existential,wan,grammar,Qeqchi (Mayan) <wank>
-he/she/it,ta,grammar,MandarinChinese (Sino-Tibetan) <ta1>
-if; conditional,mo,grammar,Japanese (Japonic) <moshi>
-"negator, immediately before the verb",we,grammar,asjp:AFAR_3 (Afro-Asiatic) <we>
-"no - answers the fact, not the polarity",nem,grammar,ids:Hungarian (Uralic) <nem>
-or,wa,grammar,ids:Finnish (Uralic) <wai>
-ordinal marker (ORD + numeral),tun,grammar,coined from the free monosyllable pool (no donor)
-"question particle, clause-initial",fin,grammar,coined from the free monosyllable pool (no donor)
+copula; alone = existential,be,grammar,English (Indo-European) <be>
+he/she/it,ka,grammar,Japanese (Japonic) <kare>
+if; conditional,sim,grammar,Ket (Yeniseian) <sīm>
+"negator, immediately before the verb",pi,grammar,asjp:KALMYK_2 (Mongolic-Khitan) <piSE>
+"no - answers the fact, not the polarity",pa,grammar,ids:Central Thai (Tai-Kadai) <pa.1-ti.1-set.2>
+or,kam,grammar,Mapudungun (Araucanian) <kam>
+ordinal marker (ORD + numeral),pun,grammar,coined from the free monosyllable pool (no donor)
+"question particle, clause-initial",jen,grammar,coined from the free monosyllable pool (no donor)
 "reflexive, invariant; also the passive marker",fem,grammar,coined from the free monosyllable pool (no donor)
-relativizer / complementizer,mim,grammar,coined from the free monosyllable pool (no donor)
-that (distal demonstrative; `this` is the G2 core root),sun,grammar,asjp:AWA_PIT (Barbacoan) <sun>
-the one interrogative root; who = WHAT+person,jen,grammar,asjp:KURUKH_2 (Dravidian) <yendra>
-they,fu,grammar,ids:Central Thai (Tai-Kadai) <phuak.3 khaw.5>
-we,pon,grammar,asjp:SURIN (Austroasiatic) <ph~oN y3N>
-"yes - answers the fact, not the polarity",pin,grammar,ids:Tai Lü (Tai-Kadai) <pin.1>
-you (more than one),som,grammar,ids:Persian (Indo-European) <šomɑ>
-you (one addressee),kam,grammar,asjp:KARO_BATAK (Austronesian) <kam>
+relativizer / complementizer,fon,grammar,coined from the free monosyllable pool (no donor)
+that (distal demonstrative; `this` is the G2 core root),wan,grammar,Qeqchi (Mayan) <wan_le'>
+the one interrogative root; who = WHAT+person,mom,grammar,ids:Mari (Uralic) <'mom>
+they,tan,grammar,Kanuri (Saharan) <tàndí>
+we,nam,grammar,asjp:TAMIL_2 (Dravidian) <nam>
+"yes - answers the fact, not the polarity",ja,grammar,Indonesian (Austronesian) <ya>
+you (more than one),fu,grammar,ids:Central Thai (Tai-Kadai) <phuak.3 thə:.1>
+you (one addressee),nin,grammar,asjp:MANDARIN_JINZHOU_2 (Sino-Tibetan) <5in>
 0,pam,numeral,Iraqw (Afro-Asiatic) <pampoo>
 1,jem,numeral,asjp:MOORE (Atlantic-Congo) <yembo>
-10,mu,numeral,Vietnamese (Austroasiatic) <mười>
+10,fo,numeral,Malagasy (Austronesian) <fòlo>
 2,fi,numeral,asjp:BAMBARA_4 (Mande) <filo>
 3,bo,numeral,ids:Guaraní (Tupian) <ᵐbohapɨ>
-4,di,numeral,Kanuri (Saharan) <dìyáù>
-5,fun,numeral,ids:German (Indo-European) <fünf>
+4,bon,numeral,Vietnamese (Austroasiatic) <bốn>
+5,sin,numeral,ids:Toba (Guaicuruan) <šiinko>
 6,tim,numeral,ids:Puinave (Puinave) <tə̃m dabata bat>
 7,tom,numeral,ids:Seri (Seri) <tomkox -īʔ>
 8,kin,numeral,ids:Chipaya (Uru-Chipaya) <kinsaḳalku>
-9,be,numeral,ids:Basque (Basque) <bede'rac̷ü>
+9,sa,numeral,ids:Macushi (Cariban) <saakɨrɨrɨ miaʔ pona tɨɨmoʔtai>
 action (X-action),num,generic,WhiteHmong (Hmong-Mien) <num>
-manner (how: WHAT-manner),nim,generic,ids:Aguaruna (Chicham) <ni'mɨ>
+manner (how: WHAT-manner),mu,generic,ids:Basque (Basque) <'mulde>
 person (agent nouns: X-person),kim,generic,asjp:TURKISH (Turkic) <kimse>
-place (where: WHAT-place),tem,generic,Indonesian (Austronesian) <tempat>
-quality (abstract nouns: X-quality),fim,generic,coined from the free monosyllable pool (no donor)
-reason (why: WHAT-reason),nu,generic,ids:Aguaruna (Chicham) <nunik-bau ah-amu>
-thing (object nouns: X-thing),sem,generic,ids:Mapudungun (Araucanian) <čemrume>
-time (when: WHAT-time),pen,generic,ids:Macushi (Cariban) <pensa>
+place (where: WHAT-place),pe,generic,ids:Cayapa (Barbacoan) <'pela>
+quality (abstract nouns: X-quality),fam,generic,coined from the free monosyllable pool (no donor)
+reason (why: WHAT-reason),pom,generic,ids:Komi (Uralic) <pomka>
+thing (object nouns: X-thing),wa,generic,ids:Aguaruna (Chicham) <wa'hi>
+time (when: WHAT-time),tem,generic,ids:French (Indo-European) <temps>
 tool (instrument nouns: X-tool),kom,generic,Swahili (Atlantic-Congo) <chombo>
-arm/hand,mom,core,coined from the free monosyllable pool (no donor)
+about (topic),pum,core,coined from the free monosyllable pool (no donor)
+again,ko,core,ids:Yanomámi (Yanomamic) <kõ->
+all,sem,core,asjp:KHALKHA_MONGOLIAN (Mongolic-Khitan) <ch~3m>
+"also, too",wim,core,coined from the free monosyllable pool (no donor)
+arm/hand,fum,core,coined from the free monosyllable pool (no donor)
 back,gi,core,ids:Ayoreo (Zamucoan) <giido'booi>
-big,man,core,asjp:BURIAT_RUSSIA_2 (Mongolic-Khitan) <mandagar>
-bitter,sim,core,ids:Toba (Guaicuruan) <čim>
-black,ko,core,asjp:KOREAN (Koreanic) <komun>
-blood,jam,core,asjp:AMPALE (Angan) <ya7mpaza>
+bad,kem,core,ids:Karok (Karok) <-ké̄m>
+big,sam,core,asjp:MARIND (Anim) <sam>
+bitter,kun,core,Swahili (Atlantic-Congo) <-chungu>
+black,je,core,asjp:CUBEO (Tucanoan) <yebido>
+blood,kan,core,asjp:TURKISH (Turkic) <kan>
 bone,jun,core,asjp:WARLPIRI_2 (Pama-Nyungan) <yuNkunu>
-breast,sam,core,asjp:KHOEKHOEGOWAB (Khoe-Kwadi) <sams>
-ear,kun,core,asjp:GUNWINGGU_KUNINJKU (Gunwinyguan) <kunkanem>
-far,sin,core,Kanuri (Saharan) <cíndə̀>
+breast,tin,core,asjp:SHILLUK_2 (Nilotic) <8i4>
+but (contrast; combines with AND per grammar-tier3-combination 1),wam,core,coined from the free monosyllable pool (no donor)
+by (passive agent marker),pem,core,coined from the free monosyllable pool (no donor)
+"can, to be able",wom,core,coined from the free monosyllable pool (no donor)
+ear,nun,core,asjp:LAKOTA (Siouan) <nuNge>
+far,we,core,Hup (Naduhup) <w’ěh>
 fire,tam,core,asjp:BENCHO (Ta-Ne-Omotic) <tam>
-fish,pu,core,asjp:ADYGHE_2 (Abkhaz-Adyge) <pcaZ3y>
-flesh/meat,mem,core,coined from the free monosyllable pool (no donor)
-fly,wi,core,ids:Tuyuca (Tucanoan) <wĩ'yã pa'ka-ra>
-hair,pem,core,coined from the free monosyllable pool (no donor)
-horn,gom,core,asjp:KIBET (Maban) <gomdi>
-house,je,core,ids:Páez (Páez) <yet>
-leg/foot,pim,core,coined from the free monosyllable pool (no donor)
-louse,jom,core,coined from the free monosyllable pool (no donor)
-mouth,su,core,MandarinChinese (Sino-Tibetan) <zui3>
-name,nam,core,asjp:BURUSHASKI_2 (Burushaski) <nam>
-navel,tan,core,ids:Tlingit (Athabaskan-Eyak-Tlingit) <-taanwú>
-neck,fo,core,asjp:CHECHEN_2 (Nakh-Daghestanian) <vort3>
-night,pun,core,Mapudungun (Araucanian) <puṉ>
-nose,nun,core,asjp:TERNATE (North Halmahera) <Nun>
-rain,ku,core,ids:Embera (Chocoan) <kue>
-root,din,core,asjp:FUR_2 (Furan) <diN>
+fish,som,core,asjp:SANDAWE (Sandawe) <somba>
+flesh/meat,fin,core,coined from the free monosyllable pool (no donor)
+fly,ga,core,ids:Epena (Chocoan) <ɨ̃'gana>
+for (benefactive / purpose),pim,core,coined from the free monosyllable pool (no donor)
+from (source),mum,core,coined from the free monosyllable pool (no donor)
+good,man,core,asjp:TELUGU_3 (Dravidian) <manCi>
+hair,jom,core,coined from the free monosyllable pool (no donor)
+horn,tun,core,asjp:LUO_2 (Nilotic) <tuN>
+house,wi,core,ids:Yagua (Peba-Yagua) <wiča-ho>
+in / at (locative),na,core,Japanese (Japonic) <naka>
+leg/foot,mam,core,coined from the free monosyllable pool (no donor)
+louse,fim,core,coined from the free monosyllable pool (no donor)
+many,so,core,asjp:FUR_2 (Furan) <soNa>
+more,du,core,ids:Aguaruna (Chicham) <'dukap>
+mouth,pan,core,asjp:MON (Austroasiatic) <paN>
+name,nim,core,asjp:PILA (Nuclear Trans New Guinea) <nim>
+navel,pu,core,ids:Guaraní (Tupian) <puruʔã>
+neck,mo,core,asjp:KOREAN (Koreanic) <mok>
+new,sun,core,asjp:TERNATE (North Halmahera) <suN>
+night,bi,core,asjp:CHECHEN_2 (Nakh-Daghestanian) <bis3>
+nose,pen,core,"asjp:ABAZA (Abkhaz-Adyge) <p3nc""a>"
+now,jan,core,Hausa (Afro-Asiatic) <yànzú>
+other,ki,core,Vietnamese (Austroasiatic) <khác>
+"past, previously (the tense-carrying adverb; Q6 made tense lexical, so this is what narrates a past-tense talk)",si,core,SeliceRomani (Indo-European) <čilla>
+rain,nu,core,ids:Páez (Páez) <nus>
+root,ken,core,asjp:MANDARIN_JINZHOU_2 (Sino-Tibetan) <k3n>
+same,ju,core,Qeqchi (Mayan) <junaj>
 smoke,jon,core,asjp:KOREAN (Koreanic) <yongi>
-stone/rock,pa,core,ids:Pacaas Novos (Chapacuran) <pakun>
-this,nen,core,asjp:TETELCINGO_NAHUATL (Uto-Aztecan) <n3nka>
-to bite,sa,core,asjp:XAVANTE (Nuclear-Macro-Je) <cari>
-to come,ge,core,asjp:TURKISH (Turkic) <gel>
-to do/make,mum,core,coined from the free monosyllable pool (no donor)
+stone/rock,di,core,ids:Waorani (Waorani) <di-ka>
+this,mem,core,asjp:SUKI (Suki-Gogodala) <mem>
+to (goal; also the recipient of a ditransitive),mim,core,coined from the free monosyllable pool (no donor)
+to bite,da,core,asjp:NARA (Nara) <dEs>
+to come,min,core,asjp:SOTEAPAN_ZOQUE (Mixe-Zoque) <mi5>
+to do/make,fun,core,coined from the free monosyllable pool (no donor)
 to drink,sum,core,asjp:LAZ (Kartvelian) <Sum>
+to give,non,core,asjp:BANGERI_ME_2 (Bangime) <nondowoy>
 to go,po,core,ids:Tacana (Pano-Tacanan) <poti->
 to hit/beat,mun,core,Oroqen (Tungusic) <mʊnda:->
-to say,ma,core,asjp:KOREAN (Koreanic) <mal ha>
+to know,go,core,ids:Tlingit (Athabaskan-Eyak-Tlingit) <gook>
+to say,pin,core,Mapudungun (Araucanian) <pin>
 to stand,dan,core,asjp:MURSI_2 (Surmic) <dant3no>
-tongue,mam,core,asjp:NAKAME (Nuclear Trans New Guinea) <mEmb3N>
-tooth,gan,core,asjp:CHEROKEE (Iroquoian) <gandohka>
+to take,su,core,Archi (Nakh-Daghestanian) <šːubus>
+to think,dam,core,ids:Central Thai (Tai-Kadai) <dam.1-ri.2>
+to use,kum,core,coined from the free monosyllable pool (no donor)
+to want,to,core,ids:Yuwana (Hoti) <-toba>
+tongue,nem,core,asjp:MOSETEN (Mosetén-Chimané) <nem>
+tooth,gu,core,asjp:KHOEKHOEGOWAB (Khoe-Kwadi) <!gub>
+"very, much (degree)",wem,core,coined from the free monosyllable pool (no donor)
 water,win,core,ids:Goajiro (Arawakan) <wɨin>
 wind,fen,core,MandarinChinese (Sino-Tibetan) <feng1>
-wing,pe,core,ids:Yanomámi (Yanomamic) <pei hako>
-yesterday,ki,core,Japanese (Japonic) <kinō>
-adjective,fimlekisi,compound,fim+lekisi = quality-word; already in the lexicon as a shipped compound
-adverb,nimlekisi,compound,nim+lekisi = manner-word; already in the lexicon as a shipped compound
-conlang / constructed language,mumlingua,compound,mum+lingua = make-language; the head is `language`; the modifier is the verb root `fum` 'do/make'
-how,jennim,compound,jen+nim = what-manner; principles.md 3.2 Q10
+wing,fe,core,Kanuri (Saharan) <féfétò>
+with (COMITATIVE - accompaniment),den,core,Indonesian (Austronesian) <dengan>
+with (INSTRUMENTAL - means); deliberately NOT the same word as WITH,ma,core,Kalina (Cariban) <malo>
+"work, to work",fa,core,ids:Erzya Mordvin (Uralic) <važodʸems>
+yesterday,jam,core,Hup (Naduhup) <j’ám>
+"common, shared",fimfim,core-poly,coined from the free monosyllable pool (no donor)
+different,fafa,core-poly,coined from the free monosyllable pool (no donor)
+easy,jasa,core-poly,Japanese (Japonic) <yasashii>
+group,fofo,core-poly,coined from the free monosyllable pool (no donor)
+instead of,fanfan,core-poly,coined from the free monosyllable pool (no donor)
+long,taki,core-poly,asjp:KALAALLISUT (Eskimo-Aleut) <takisoq>
+narrow,tika,core-poly,ids:Trumai (Trumai) <ɨtkatla>
+"part, piece",seke,core-poly,ids:Cofán (Cofán) <šekeʔčo>
+"set, collection",fomfom,core-poly,coined from the free monosyllable pool (no donor)
+"similar, like",nuti,core-poly,ids:Yagua (Peba-Yagua) <nũtyu>
+simple,finfin,core-poly,coined from the free monosyllable pool (no donor)
+"source, origin",femfem,core-poly,coined from the free monosyllable pool (no donor)
+to avoid,fenfen,core-poly,coined from the free monosyllable pool (no donor)
+to begin,pibu,core-poly,WhiteHmong (Hmong-Mien) <pib>
+to borrow,nawa,core-poly,ids:Toba (Guaicuruan) <n-ʔawat>
+"to check, to verify",fifi,core-poly,coined from the free monosyllable pool (no donor)
+to finish,kisa,core-poly,ids:Páez (Páez) <xʸãʔh->
+"to guide, a guide",fefe,core-poly,coined from the free monosyllable pool (no donor)
+to hear,kamsi,core-poly,"asjp:ARI (South Omotic) <k""amska>"
+to help,taja,core-poly,ids:Chatino (Zacatepec variety) (Otomanguean) <ta yaʔ ʔĩ->
+to learn,jani,core-poly,ids:Zuni (Zuni) <yanikʷati->
+to remember,soto,core-poly,ids:Goajiro (Arawakan) <soto aʔin>
+"to speak, to talk",tomi,core-poly,ids:Pacaas Novos (Chapacuran) <tomiʔ>
+"to spread, spread out",wasa,core-poly,ids:Shipibo-Conibo (Pano-Tacanan) <wasãti>
+together,famfam,core-poly,coined from the free monosyllable pool (no donor)
+world,mudu,core-poly,ids:Basque (Basque) <'mü̃dü>
+conlang / constructed language,funlingua,compound,fun+lingua = make-language; the head is `language`; the modifier is the verb root `fum` 'do/make'
+dataset,datafomfom,compound,data+fomfom = data-set; judgment call C3
+how,mommu,compound,mom+mu = what-manner; principles.md 3.2 Q10
 language family,lingua familia,compound,"lingua+familia = language family; written as two words: a head-final noun-noun phrase, not a root"
-mother tongue / first language,tunjem lingua,compound,"tun+jem+lingua = ordinal-one language; ORD+numeral is the ordinal of 3.2; `mimmo` = 'first', then the head"
-question,jensem,compound,jen+sem = what-thing; already in the lexicon as a shipped compound
+learnability,janifam,compound,jani+fam = learn-quality; the generic-noun derivation of 3.2 Tiers 4-5: X-quality = the abstract noun of X
+loanword,nawalekisi,compound,nawa+lekisi = borrow-word; a word that was borrowed
+mother tongue / first language,punjem lingua,compound,"pun+jem+lingua = ordinal-one language; ORD+numeral is the ordinal of 3.2; `mimmo` = 'first', then the head"
+recognizability,rekoginitionefam,compound,"rekoginitione+fam = recognize-quality; same pattern, on the borrowed stem"
+researcher,situdiakim,compound,"situdia+kim = study-person; same pattern, on the borrowed stem `studia`"
 sound system,fonosisitema,compound,fono+sisitema = sound-system; head-final
-syntax,frasenim,compound,frase+nim = sentence-manner; already in the lexicon as a shipped compound
-when,jenpen,compound,jen+pen = what-time; principles.md 3.2 Q10
-where,jentem,compound,jen+tem = what-place; principles.md 3.2 Q10
-who,jenkim,compound,jen+kim = what-person; principles.md 3.2 Q10
-why,jennu,compound,jen+nu = what-reason; principles.md 3.2 Q10
+speaker (agent noun),tomikim,compound,tomi+kim = speak-person; the agent-noun pattern of 3.2 Tiers 4-5
+when,momtem,compound,mom+tem = what-time; principles.md 3.2 Q10
+where,mompe,compound,mom+pe = what-place; principles.md 3.2 Q10
+who,momkim,compound,mom+kim = what-person; principles.md 3.2 Q10
+why,mompom,compound,mom+pom = what-reason; principles.md 3.2 Q10
 word class,lekisikategoria,compound,lekisi+kategoria = word-category; head-final
 wordlist,lekisilisita,compound,lekisi+lisita = word-list; head-final
 because,fo,construction,judgment call C2: the generic noun `fo` 'reason' in 3.2's adverbial-clause construction; no new root
-adjective,fimlekisi,technical,native compound fim+lekisi (quality-word)
-adverb,nimlekisi,technical,native compound nim+lekisi (manner-word)
+adjective,famlekisi,technical,native compound fam+lekisi (quality-word)
+adult,adulito,technical,international <adulto>
+adverb,mulekisi,technical,native compound mu+lekisi (manner-word)
 alphabet,alifabeto,technical,international <alphabeto>
 analysis,analisisi,technical,international <analysis>
+automatic,automatiko,technical,international <automatico>
+auxiliary,aukisiliare,technical,international <auxiliare>
+bias,biasi,technical,international <bias>
 category,kategoria,technical,international <categoria>
+communicate,komunika,technical,international <communica>
 compound,komposito,technical,international <composito>
 computer,komputeri,technical,international <computer>
 consonant,konsonanta,technical,international <consonanta>
+construct,konsitrukita,technical,international <constructa>
 corpus,koripusi,technical,international <corpus>
+creole,kreolo,technical,international <creolo>
 data,data,technical,international <data>
+describe,desikriba,technical,international <describa>
 dialect,dialekito,technical,international <dialecto>
 dictionary,dikitionario,technical,international <dictionario>
+discussion,disikusione,technical,international <discussione>
+evolve,efolua,technical,international <evolua>
 example,ekisemplo,technical,international <exemplo>
 family (of languages),familia,technical,international <familia>
+famous,famoso,technical,international <famoso>
 form,forima,technical,international <forma>
 frequency,frekiwentia,technical,international <frequentia>
 grammar,gramatika,technical,international <grammatica>
+idea,idea,technical,international <idea>
+international,interinationale,technical,international <internationale>
 language,lingua,technical,international <lingua>
 letter,litera,technical,international <litera>
 lexicon,lekisikon,technical,international <lexicon>
 linguistics,linguisitika,technical,international <linguistica>
 list,lisita,technical,international <lista>
+maximize,makisimisa,technical,international <maximisa>
 meaning,sensu,technical,international <sensu>
 method,metodo,technical,international <methodo>
 model,modelo,technical,international <modello>
 morpheme,morifema,technical,international <morphema>
+natural,naturale,technical,international <naturale>
 note,nota,technical,international <nota>
 noun,nomen,technical,international <nomen>
 number,numero,technical,international <numero>
+objective,obujekitifo,technical,international <objectivo>
+optimization,oputimisatione,technical,international <optimisatione>
 phoneme,fonema,technical,international <phonema>
 phonetics,fonetika,technical,international <phonetica>
 phonology,fonologia,technical,international <phonologia>
+pidgin,pidigin,technical,international <pidgin>
 population,populatione,technical,international <populatione>
+presentation,presentatione,technical,international <presentatione>
 program,programa,technical,international <programa>
 project,projekito,technical,international <projecto>
-question,jensem,technical,native compound jen+sem (what-thing)
+question,momwa,technical,native compound mom+wa (what-thing)
+questionnaire,kiwesitionario,technical,international <questionario>
+recognize,rekoginitione,technical,international <recognitione>
+represent,representa,technical,international <representa>
 root (of a word),radika,technical,international <radika>
 rule,regula,technical,international <regula>
 semantics,semantika,technical,international <semantica>
@@ -142,10 +222,12 @@ sentence,frase,technical,international <frase>
 sound,fono,technical,international <phono>
 statistics,sitatisitika,technical,international <statistica>
 structure,sitrukitura,technical,international <structura>
+study,situdia,technical,international <studia>
 syllable,silaba,technical,international <syllaba>
-syntax,frasenim,technical,native compound frase+nim (sentence-manner)
+syntax,frasemu,technical,native compound frase+mu (sentence-manner)
 system,sisitema,technical,international <systema>
 table,tabela,technical,international <tabella>
+technical,tekiniko,technical,international <technico>
 text,tekisito,technical,international <texto>
 translation,tradukitione,technical,international <traductione>
 typology,tipologia,technical,international <typologia>
@@ -153,3 +235,11 @@ verb,feribum,technical,international <verbum>
 version,ferisione,technical,international <versione>
 vowel,fokala,technical,international <vocala>
 word,lekisi,technical,international <lexi>
+Comrie,Komrie,name,proper name <comrie>
+Dothraki,Dotraki,name,proper name <dothraki>
+English (the language),Engilisi,name,proper name <english>
+Esperanto,Esiperanto,name,proper name <esperanto>
+Europe,Europa,name,proper name <europa>
+PHOIBLE,Foibule,name,proper name <phoible>
+Quenya,Kiwenja,name,proper name <quenya>
+Smith,Simiti,name,proper name <smith>
