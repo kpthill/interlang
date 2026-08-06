@@ -186,35 +186,41 @@ repeated in notes/lexicon-milestone1.md.
 
 10. SEPARATION IS PERCEPTUAL, NOT A HAMMING CODE (revised 2026-08-06, Patrick).
    The earlier arm treated a monosyllable as a 3-symbol codeword (onset, vowel,
-   coda) and penalised distance-1 neighbours.  That is the wrong instrument:
-   a Singleton bound caps a distance-2 code at 15 words and the closed class
-   needs 20, and adding consonants provably does not help (see main()'s
-   printout).  The rule now is: MAXIMISE PERCEPTUAL SEPARATION using the
-   feature-distance metric of src/interlang/metric.py.
+   coda) and asked for a minimum Hamming distance of 2.  That framing is dead:
+   a Singleton bound caps such a code at 15 words and the closed class needs 20,
+   and adding consonants provably does not help (main() prints the bound).  The
+   rule now is: MAXIMISE PERCEPTUAL SEPARATION with the feature-distance metric
+   of src/interlang/metric.py.
 
-   IT IS A BAN, NOT A PENALTY: no monosyllabic root may score >= SEP_BAN = 0.95
-   metric-v0 similarity against a root already assigned.  That is the direct
-   generalisation of 3.3's two FIRM minimal-pair bans (l~r, h~r) from "these
-   two segments" to "any pair one feature apart", and it is Patrick's own
-   formulation - `mi` vs `ti` (0.733) is fine, `di` vs `ti` (0.983) is not.
-   [measured] over the 174-syllable pool, 0.95 bans exactly the voicing-only
-   pairs (0.983) and the i~e pairs (0.966); 184 of the 15,051 pairs, a mean of
-   2.1 forbidden neighbours per syllable, so 84 roots fit comfortably.
+   SHIPPED FORM: a BAN inside the closed class and the numerals - no word there
+   may score >= SEP_BAN = 0.95 metric-v0 similarity against a root already
+   assigned.  That is the direct generalisation of 3.3's two FIRM minimal-pair
+   bans (l~r, h~r) from "these two segments" to "any pair one feature apart",
+   and it is Patrick's own formulation: `mi` vs `ti` (0.733) is fine, `di` vs
+   `ti` (0.983) is not.  [measured] over the 174-syllable pool, 0.95 bans
+   exactly the voicing-only pairs (0.983) and the i~e pairs (0.966): 184 of
+   15,051 pairs, a mean of 2.1 forbidden neighbours per syllable.
 
    The metric disagrees with the Hamming rule in BOTH directions, which is the
-   point: `di`~`ti` is now illegal while `na`~`nan` (a whole extra segment,
-   s=0.667) is free and `mi`~`ti` never was a problem.
+   point: `di`~`ti` is now illegal, while `na`~`nan` (a whole extra segment,
+   s=0.667) and `ka`~`ja` (s=0.603) are free - the code rule called both of
+   those distance-1 and charged for them.
 
-   A GRADED PENALTY WAS TRIED FIRST AND REJECTED [measured].  Scoring
-   W_SEP*(freq/3)*max(0,(s-floor)/(1-floor)) instead of banning rewrote 65 of
-   the 84 roots - not because any of them was badly separated, but because the
-   greedy assignment (call 6) is chaotic: change any score term slightly and
-   one early re-ranking cascades through every later concept.  It cost `ten`,
-   `san` and `mo` - three of the few recognisable numerals - for no measured
-   gain.  A hard filter does not reorder the survivors, so it changes a form
-   only when that form is actually too close.  THE CHAOS IS ITSELF A FINDING:
-   it is the strongest argument yet for replacing greedy with a global
-   assignment (known problem 7.7).
+   THREE THINGS WERE MEASURED AND NOT ADOPTED, all printed by main():
+     - ARM D, replacing the graded code-distance tie-breaker with a graded
+       perceptual penalty: 56 of 84 forms change, 12 coined and 24 families
+       either way.  A wholesale reshuffle with no measured gain, so the graded
+       tie-breaker stays as it was and only the NORMATIVE rule changes.  (The
+       assignment is not numerically chaotic - [measured], moving W_DIST from
+       0.89 to 0.95 changes nothing - it is the instrument that disagrees.)
+     - ARM E, extending the ban from the closed class to all 84 roots: 27
+       coined roots instead of 12 and 22 donor families instead of 24.  It buys
+       separation by deleting representation, i.e. by spending objective 2.
+       COST OF THE SCOPE, LOGGED: the core roots therefore still contain
+       voicing-only pairs (`tu`~`du`, `to`~`do`, `ti`~`di`), which is exactly
+       what the ban forbids in the closed class.
+     - HARD DISTANCE-2 (--hard-distance2), the old alternative arm, kept only
+       because the write-up prices it.
 
 11. FALSE FRIENDS ARE PRICED, WEAKLY (new 2026-08-06, Patrick).  Review of the
    first run found five forms that read as a DIFFERENT high-frequency word in a
@@ -225,18 +231,33 @@ repeated in notes/lexicon-milestone1.md.
 
        W_FF * sum over colliding languages of  L1share(lang) * mult
 
-   with W_FF = 0.50 and mult = 3.0 when the colliding meaning is itself a
+   with W_FF = 0.75 and mult = 3.0 when the colliding meaning is itself a
    concept in our word list, else 1.0.  Only the strongest collision per
    language counts.  A collision is: our form equals the reference word's
    written form, OR metric v0 similarity >= 0.90 (near-homophony).  Meanings
    identical to our own concept do not count - that is a donor, not a friend.
 
-   IT IS DELIBERATELY THE WEAKEST TERM IN THE SCORE ("some of this is
-   inevitable" - Patrick).  Its largest attainable value is ~0.40 (a Mandarin-
-   sized language colliding with a concept we have), against ease in [0,1],
-   W_REP 0.35 per family root already spent, and segment costs up to ~3.  It
-   breaks ties and steers away from the worst collisions; it does not drive the
-   assignment.  The three-arm before/after is printed by main().
+   IT IS THE WEAKEST TERM IN THE SCORE ("some of this is inevitable" -
+   Patrick).  Realized maximum on the shipped list is 0.59, against a
+   separation term up to 0.90, ease in [0,1], W_REP 0.35 per family root
+   already spent, and segment costs up to ~3.  It breaks ties and steers away
+   from the worst collisions; it does not drive the assignment.
+
+   THE WEIGHT WAS CHOSEN FROM A MEASURED SWEEP, not picked (main() prints it).
+   The honest result is uncomfortable and is reported rather than smoothed:
+   at 0.10 and 0.30 - the literal reading of "deliberately weaker" - the term
+   is measurably WORSE THAN SWITCHING IT OFF.  Summed false-friend load over
+   the 84 roots is 10.41 at W_FF=0, 10.83 at 0.10 and 10.65 at 0.30, because a
+   term too weak to steer still reshuffles ~38 forms through the greedy chain
+   and lands on fresh collisions.  0.75 is the smallest weight that beats 0.00
+   (load 8.48, -19%) at the same 12 coined roots and 24 donor families.
+   Clearing ALL FIVE of the review's collisions needs W_FF ~ 3.0 (load 4.44),
+   at which point the term is the strongest in the score - explicitly against
+   instructions, so it is not done.  `si` "they" and `je` "3sg" survive at the
+   shipped weight: French (77M) and Dutch are simply too small under L1
+   weighting to outrank their donors' ease.  THIS IS THE SECOND FINDING
+   POINTING AT GREEDY (call 6): a global assignment would let a weak term
+   express itself as a small improvement instead of a large reshuffle.
 
    THE REFERENCE SET IS TWO-PART, AND THE HALVES HAVE DIFFERENT PROVENANCE:
      (a) [measured] every WOLD form whose parameter has
@@ -408,6 +429,10 @@ FF_SIM = 1.00                       # "phonetically very close" = IDENTICAL.
                                     # weakest (measured: at 0.90 it rewrote 72
                                     # of 84 roots).
 FF_OWN_MULT = 3.0                   # colliding meaning is a concept we have
+FF_MIN_L1 = 10_000_000              # "a high-population language", for the
+                                    # ASJP/IDS half of the reference set
+                                    # (judgment call 11c): 102 languages,
+                                    # 87.5% of world L1 [measured]
 
 RECOG_THRESHOLD = 0.60              # headline arm: similarity = "recognized"
 RECOG_THRESHOLD_STRICT = 0.70       # strict arm, reported as a band
@@ -1006,6 +1031,302 @@ def populations() -> tuple[dict, dict, float]:
 
 
 # ---------------------------------------------------------------------------
+# ASJP + IDS: the widened donor pool and the measured false-friend reference
+# (judgment calls 4b and 11c, added 2026-08-06)
+#
+# WOLD alone is 41 languages and 24.6% of world L1, and it contains no Spanish,
+# Hindi, Arabic, Russian, Bengali, Portuguese, Korean or Turkish - so both the
+# donor pool and the false-friend term were blind to exactly the languages that
+# matter most.  ASJP (11,540 doculects x 100 concepts, PHONETIC) and IDS (319
+# varieties x 1,310 concepts) fix that; the three sources are complementary and
+# every root records which one supplied it.
+#
+# JOIN KEY: Concepticon_ID, mapped onto the WOLD parameter ID the rest of this
+# script already keys on, so nothing downstream had to change shape.  A concept
+# WOLD does not carry cannot be reached from ASJP/IDS either - logged as a
+# limitation rather than worked around.
+#
+# TRANSCRIPTION.  ASJP's `Segments` column is IPA, so ASJP donors go through a
+# PHONEMIC path: strip modifier letters, nasalisation, length and
+# prenasalisation, fold each base segment to its nearest interlang phoneme
+# (IPA_FOLD), then translit.repair.  That is the fix for milestone 1's logged
+# problem 7.2 ("score donors from a phonemic source").  IDS has no segments, so
+# IDS forms take the same ORTHOGRAPHIC path as WOLD (strip diacritics, read
+# with Latin values).  IDS's `Representations` column says which varieties are
+# StandardOrth and which Phonemic; both are read the same way, which is rough
+# and is why IDS is used only where ASJP has no concept.
+# ---------------------------------------------------------------------------
+IPA_FOLD = {
+    # labials
+    "p": "p", "b": "b", "ɓ": "b", "ʙ": "b", "f": "f", "v": "f", "ɸ": "f",
+    "β": "f", "ʋ": "f", "m": "m", "ɱ": "m", "w": "w", "ʍ": "w", "pf": "f",
+    "kp": "k", "gb": "g", "ɡb": "g",
+    # coronals
+    "t": "t", "d": "d", "ɗ": "d", "ʈ": "t", "ɖ": "d", "θ": "t", "ð": "d",
+    "s": "s", "z": "s", "ʃ": "s", "ʒ": "s", "ʂ": "s", "ʐ": "s", "ɕ": "s",
+    "ʑ": "s", "ɬ": "s", "ɮ": "l", "ts": "s", "dz": "s", "tʃ": "t", "dʒ": "d",
+    "tɕ": "t", "dʑ": "d", "tθ": "t", "cʃ": "t",
+    "n": "n", "ɳ": "n", "ɲ": "n", "n̪": "n",
+    "r": "r", "ɾ": "r", "ɽ": "r", "ɹ": "r", "ɻ": "r", "ʀ": "r", "ɺ": "l",
+    "l": "l", "ɭ": "l", "ɫ": "l", "ʎ": "l",
+    # palatals / velars / uvulars / laryngeals
+    "c": "k", "ɟ": "g", "ç": "s", "ʝ": "j", "j": "j", "ɥ": "j",
+    "k": "k", "g": "g", "ɡ": "g", "ŋ": "n", "x": "h", "ɣ": "h", "ɰ": "w",
+    "q": "k", "ɢ": "g", "χ": "h", "ʁ": "r", "ɴ": "n", "qχ": "h",
+    "h": "h", "ɦ": "h", "ħ": "h", "ʕ": "h", "ʜ": "h", "ʢ": "h",
+    "ʔ": "",                      # glottal stop has no interlang phoneme
+    # vowels
+    "i": "i", "ɪ": "i", "y": "i", "ʏ": "i", "ɨ": "i",
+    "e": "e", "ɛ": "e", "ə": "e", "ɘ": "e", "ɜ": "e", "æ": "a", "ø": "o",
+    "œ": "o", "ɶ": "a",
+    "a": "a", "ɐ": "a", "ɑ": "a", "ɒ": "o", "ʌ": "a",
+    "u": "u", "ʊ": "u", "ʉ": "u", "ɯ": "u", "ɤ": "o",
+    "o": "o", "ɔ": "o",
+}
+# Clicks have no sensible interlang image; a form containing one is dropped
+# rather than mangled.
+IPA_REJECT = set("ǀǁǂǃʘ")
+
+
+def base_segment(seg: str) -> str:
+    """An IPA segment stripped of every modifier, for IPA_FOLD lookup."""
+    s = unicodedata.normalize("NFD", seg)
+    s = "".join(c for c in s
+                if unicodedata.category(c) not in ("Mn", "Lm", "Sk"))
+    return s.replace("ː", "").replace("ˀ", "").replace("’", "").replace("'", "")
+
+
+def fold_ipa(segments: list[str]) -> str | None:
+    """IPA segments -> an interlang phoneme string (the PHONEMIC path)."""
+    out = []
+    for seg in segments:
+        b = base_segment(seg)
+        if not b:
+            continue
+        if any(c in IPA_REJECT for c in b):
+            return None
+        if b in IPA_FOLD:
+            out.append(IPA_FOLD[b])
+            continue
+        # prenasalised or otherwise complex: fall back to the LAST base
+        # character, which is the one carrying place of articulation
+        hit = None
+        for c in reversed(b):
+            if c in IPA_FOLD:
+                hit = IPA_FOLD[c]
+                break
+        if hit is None:
+            return None
+        out.append(hit)
+    return "".join(out)
+
+
+def adapt_phonemic(segments: str) -> str | None:
+    """ASJP `Segments` (IPA) -> a legal interlang word under the FIRM template."""
+    first = segments.split("+")[0].strip()      # '+' is ASJP's word boundary
+    if not first:
+        return None
+    ph = fold_ipa(first.split())
+    if not ph or not any(c in VOWELS for c in ph):
+        return None
+    try:
+        form, _ = translit.repair(ph, translit.VARIANTS["V3C"],
+                                  epen="labial_u", final_policy="epenthesize")
+    except Exception:
+        return None
+    return form or None
+
+
+def _cid_map(path: Path) -> dict:
+    """A CLDF parameters.csv -> {Parameter_ID: Concepticon_ID}."""
+    p = read_csv(path)
+    p = p[p["Concepticon_ID"].astype(str) != ""]
+    return {str(i): int(float(c))
+            for i, c in zip(p["ID"], p["Concepticon_ID"])}
+
+
+def load_asjp(cid_to_param: dict, by_iso: dict) -> pd.DataFrame:
+    """ASJP donors, one doculect per ISO, on the phonemic path.
+
+    Deduplication policy: keep the doculect with the most forms over the
+    concepts we need, then the shortest ID, then alphabetical - which picks
+    MANDARIN over MANDARIN_ANQING and HINDI over HINDI_2.  A donor language must
+    have an L1 estimate in l1_speakers.csv, because both objectives of
+    principles.md 2 are population-weighted and a language with no population
+    contributes measurably to neither.
+    """
+    d = RAW / "asjp" / "cldf"
+    langs = read_csv(d / "languages.csv", low_memory=False)
+    langs = langs[langs["ISO639P3code"].astype(str).isin(by_iso)].copy()
+    cids = _cid_map(d / "parameters.csv")
+    keep = {p for p, c in cids.items() if c in cid_to_param}
+    forms = read_csv(d / "forms.csv", low_memory=False,
+                     usecols=["Language_ID", "Parameter_ID", "Form",
+                              "Segments", "Loan"])
+    forms["Parameter_ID"] = forms["Parameter_ID"].astype(str)
+    forms = forms[forms["Language_ID"].isin(set(langs["ID"]))]
+    forms = forms[forms["Loan"].astype(str).str.lower() != "true"]
+    forms = forms[forms["Parameter_ID"].isin(keep)]
+
+    n = forms.groupby("Language_ID").size()
+    langs["_n"] = langs["ID"].map(n).fillna(0).astype(int)
+    langs = langs[langs["_n"] > 0]
+    langs = langs.assign(_len=langs["ID"].astype(str).str.len())
+    langs = langs.sort_values(["ISO639P3code", "_n", "_len", "ID"],
+                              ascending=[True, False, True, True])
+    langs = langs.drop_duplicates("ISO639P3code", keep="first")
+
+    key = langs.set_index("ID")
+    f = forms[forms["Language_ID"].isin(set(langs["ID"]))].copy()
+    f["Parameter_ID"] = f["Parameter_ID"].map(lambda p: cid_to_param[cids[p]])
+    f["iso"] = f["Language_ID"].map(key["ISO639P3code"])
+    f["family"] = f["Language_ID"].map(key["Family"]).replace("", "(unknown)")
+    f["macroarea"] = f["Language_ID"].map(key["Macroarea"]).replace("", "(unknown)")
+    f["adapted"] = f["Segments"].map(lambda s: adapt_phonemic(str(s)))
+    f["dsource"] = "asjp"
+    f["Language_ID"] = "asjp:" + f["Language_ID"].astype(str)
+    return f[["Language_ID", "Parameter_ID", "Form", "family", "macroarea",
+              "iso", "adapted", "dsource"]]
+
+
+def load_ids(cid_to_param: dict, by_iso: dict) -> pd.DataFrame:
+    """IDS donors, on the orthographic path."""
+    d = RAW / "ids" / "cldf"
+    langs = read_csv(d / "languages.csv")
+    langs["ID"] = langs["ID"].astype(str)
+    langs = langs[langs["ISO639P3code"].astype(str).isin(by_iso)]
+    langs = langs.drop_duplicates("ISO639P3code", keep="first")
+    cids = _cid_map(d / "parameters.csv")
+    keep = {p for p, c in cids.items() if c in cid_to_param}
+    forms = read_csv(d / "forms.csv", low_memory=False,
+                     usecols=["Language_ID", "Parameter_ID", "Form", "Loan"])
+    forms["Parameter_ID"] = forms["Parameter_ID"].astype(str)
+    forms["Language_ID"] = forms["Language_ID"].astype(str)
+    forms = forms[forms["Language_ID"].isin(set(langs["ID"]))]
+    forms = forms[forms["Loan"].astype(str).str.lower() != "true"]
+    f = forms[forms["Parameter_ID"].isin(keep)].copy()
+    key = langs.set_index("ID")
+    f["Parameter_ID"] = f["Parameter_ID"].map(lambda p: cid_to_param[cids[p]])
+    f["iso"] = f["Language_ID"].map(key["ISO639P3code"])
+    f["family"] = f["Language_ID"].map(key["Family"]).replace("", "(unknown)")
+    f["macroarea"] = f["Language_ID"].map(key["Macroarea"]).replace("", "(unknown)")
+    f["adapted"] = ""
+    f["dsource"] = "ids"
+    f["Language_ID"] = "ids:" + f["Language_ID"].map(key["Name"]).astype(str)
+    return f[["Language_ID", "Parameter_ID", "Form", "family", "macroarea",
+              "iso", "adapted", "dsource"]]
+
+
+def asjp_ids_false_friends(cid_to_param: dict, by_iso: dict, world_l1: float,
+                           min_l1: int) -> list[dict]:
+    """Judgment call 11(c) [measured]: the false-friend reference, widened.
+
+    Every language with >= `min_l1` L1 speakers that ASJP or IDS covers
+    contributes its words for the concepts our own list contains, in TWO
+    readings, because a false friend can be either:
+
+      SOUNDS-LIKE  ASJP `Segments`, folded to interlang phonemes - what the
+                   word actually sounds like.
+      LOOKS-LIKE   IDS's written form read with Latin values - and that is not
+                   a mistake.  Our language is written in ASCII Latin, so a
+                   French reader really does see `je` and read "I", even though
+                   French /Z@/ and interlang /je/ are far apart as sounds.  The
+                   milestone-1 review's `je` collision is a LOOKS-LIKE one.
+
+    This REPLACES most of the [recall] HAND_FUNCTION_WORDS table with measured
+    data: ASJP alone supplies Spanish, Hindi, Bengali, Russian, Turkish, Korean,
+    Japanese, Arabic and Mandarin, and IDS supplies the yes/no/and/or/if words
+    ASJP's 100-concept list does not carry.  The hand table is kept only for
+    meanings NEITHER source codes (possessive and object pronouns, articles,
+    prepositions), and those rows are still marked [recall].
+    """
+    ref: list[dict] = []
+    big = {i: p for i, p in by_iso.items() if p >= min_l1}
+    param_name = {}
+
+    # ASJP: sounds-like
+    d = RAW / "asjp" / "cldf"
+    langs = read_csv(d / "languages.csv", low_memory=False)
+    langs = langs[langs["ISO639P3code"].astype(str).isin(big)]
+    cids = _cid_map(d / "parameters.csv")
+    pnames = read_csv(d / "parameters.csv")
+    param_name.update({str(i): str(n) for i, n in
+                       zip(pnames["ID"], pnames["Name"])})
+    keep = {p for p, c in cids.items() if c in cid_to_param}
+    forms = read_csv(d / "forms.csv", low_memory=False,
+                     usecols=["Language_ID", "Parameter_ID", "Form", "Segments"])
+    forms["Parameter_ID"] = forms["Parameter_ID"].astype(str)
+    forms = forms[forms["Language_ID"].isin(set(langs["ID"]))]
+    forms = forms[forms["Parameter_ID"].isin(keep)]
+    key = langs.set_index("ID")
+    seen_asjp = set()
+    for r in forms.itertuples():
+        iso = str(key["ISO639P3code"].get(r.Language_ID, ""))
+        pop = float(big.get(iso, 0.0))
+        if pop <= 0:
+            continue
+        for chunk in str(r.Segments).split("+"):
+            folded = fold_ipa(chunk.split())
+            if not folded or len(folded) > 4:
+                continue
+            try:
+                approx, _ = translit.repair(folded, translit.VARIANTS["V3C"],
+                                            epen="labial_u",
+                                            final_policy="epenthesize")
+            except Exception:
+                continue
+            if not approx or len(approx) > 4:
+                continue
+            k = (iso, r.Parameter_ID, approx)
+            if k in seen_asjp:
+                continue
+            seen_asjp.add(k)
+            ref.append({"lang": f"asjp:{iso}", "iso": iso,
+                        "share": pop / world_l1,
+                        "meaning": cid_to_param[cids[r.Parameter_ID]],
+                        "gloss": param_name.get(r.Parameter_ID, ""),
+                        "written": approx, "approx": approx,
+                        "source": "asjp"})
+
+    # IDS: looks-like
+    d = RAW / "ids" / "cldf"
+    langs = read_csv(d / "languages.csv")
+    langs["ID"] = langs["ID"].astype(str)
+    langs = langs[langs["ISO639P3code"].astype(str).isin(big)]
+    langs = langs.drop_duplicates("ISO639P3code", keep="first")
+    cids = _cid_map(d / "parameters.csv")
+    pnames = read_csv(d / "parameters.csv")
+    gloss = {str(i): str(n) for i, n in zip(pnames["ID"], pnames["Name"])}
+    keep = {p for p, c in cids.items() if c in cid_to_param}
+    forms = read_csv(d / "forms.csv", low_memory=False,
+                     usecols=["Language_ID", "Parameter_ID", "Form"])
+    forms["Parameter_ID"] = forms["Parameter_ID"].astype(str)
+    forms["Language_ID"] = forms["Language_ID"].astype(str)
+    forms = forms[forms["Language_ID"].isin(set(langs["ID"]))]
+    forms = forms[forms["Parameter_ID"].isin(keep)]
+    key = langs.set_index("ID")
+    seen_ids = set()
+    for r in forms.itertuples():
+        iso = str(key["ISO639P3code"].get(r.Language_ID, ""))
+        pop = float(big.get(iso, 0.0))
+        if pop <= 0:
+            continue
+        written = strip_marks(str(r.Form))
+        approx = adapt(str(r.Form))
+        if not approx or len(approx) > 4:
+            continue
+        k = (iso, r.Parameter_ID, approx)
+        if k in seen_ids:
+            continue
+        seen_ids.add(k)
+        ref.append({"lang": f"ids:{iso}", "iso": iso, "share": pop / world_l1,
+                    "meaning": cid_to_param[cids[r.Parameter_ID]],
+                    "gloss": gloss.get(r.Parameter_ID, ""),
+                    "written": written, "approx": approx, "source": "ids"})
+    return ref
+
+
+# ---------------------------------------------------------------------------
 # false friends  (judgment call 11)
 # ---------------------------------------------------------------------------
 def false_friend_reference(params: pd.DataFrame, forms: pd.DataFrame,
@@ -1165,7 +1486,10 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
             if c["wold"]:
                 sub = donors[donors["Parameter_ID"] == c["wold"]]
                 for _, d in sub.iterrows():
-                    form = adapt(d["Form"])
+                    # ASJP rows arrive pre-adapted on the PHONEMIC path
+                    # (judgment call 4b); IDS and WOLD take the orthographic
+                    # one here.
+                    form = d.get("adapted") or adapt(d["Form"])
                     if not form:
                         continue
                     syl = first_syllable(form)
@@ -1191,11 +1515,12 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
                              - sep(syl, fw)
                              - w_ff * ff)
                     cands.append((score, d["Language_ID"], d["family"],
-                                  d["macroarea"], d["Form"], form, syl))
+                                  d["macroarea"], d["Form"], form, syl,
+                                  d.get("dsource", "wold")))
             cands.sort(key=lambda x: (-x[0], x[1]))
             if cands:
-                score, lid, fam, area, raw, full, syl = cands[0]
-                chosen = (score, lid, fam, area, raw, full, syl, "wold", len(cands))
+                score, lid, fam, area, raw, full, syl, dsrc = cands[0]
+                chosen = (score, lid, fam, area, raw, full, syl, dsrc, len(cands))
                 break
             # Coined: cheapest free syllable, under the same separation and
             # false-friend terms.  Without them the coined particles come out as
@@ -1510,13 +1835,41 @@ def main() -> None:
     for g, why in skipped:
         print(f"      overlap: {g:18s} -> {why}")
 
+    # ---- widen the donor pool: ASJP + IDS (judgment call 4b) -------------
+    # Restricted to the WOLD parameter IDs the concept list actually uses, so
+    # the phonemic adaptation runs over thousands of forms rather than 150k.
+    used = {c["wold"] for c in concepts if c["wold"]}
+    used_cids = {c: p for c, p in cid_to_param.items() if p in used}
+    print("\n=== donor pool (judgment call 4 + 4b) ===")
+    wold_only = donors
+    parts = [wold_only.assign(adapted="", dsource="wold"),
+             load_asjp(used_cids, by_iso),
+             load_ids(used_cids, by_iso)]
+    donors = pd.concat(parts, ignore_index=True)
+    donors["adapted"] = donors["adapted"].fillna("")
+    for nm, p in zip(("WOLD", "ASJP", "IDS"), parts):
+        cov = sum(by_iso.get(str(i), 0.0) for i in set(p["iso"]))
+        print(f"  {nm:5s} {len(p):7,} forms  {p['iso'].nunique():5,} languages  "
+              f"{p['family'].nunique():4d} families  "
+              f"{100*cov/world_l1:5.1f}% of world L1")
+    cov = sum(by_iso.get(str(i), 0.0) for i in set(donors["iso"]))
+    print(f"  {'ALL':5s} {len(donors):7,} forms  {donors['iso'].nunique():5,} "
+          f"languages  {donors['family'].nunique():4d} families  "
+          f"{100*cov/world_l1:5.1f}% of world L1   "
+          f"(milestone 1 ran on WOLD alone: 24.6%)")
+
     # ---- false-friend reference (judgment call 11) ------------------------
     print("\n=== false-friend reference set ===")
     ref = false_friend_reference(params, forms, langs, by_iso, world_l1)
-    n_wold = sum(1 for e in ref if e["source"] == "wold")
-    print(f"  {n_wold} WOLD function-word forms [measured] + "
-          f"{len(ref)-n_wold} hand-listed function words [recall], "
-          f"{len({e['lang'] for e in ref})} languages, "
+    ref += asjp_ids_false_friends(used_cids, by_iso, world_l1, FF_MIN_L1)
+    by_src = {}
+    for e in ref:
+        by_src[e["source"]] = by_src.get(e["source"], 0) + 1
+    print("  reference forms by source: "
+          + ", ".join(f"{k} {v:,}" for k, v in sorted(by_src.items())))
+    print(f"  [measured] asjp+ids+wold {sum(v for k, v in by_src.items() if k != 'hand'):,}"
+          f" forms; [recall] hand table {by_src.get('hand', 0)} forms")
+    print(f"  {len({e['lang'] for e in ref})} language-source entries, "
           f"{100*sum({e['iso']: e['share'] for e in ref}.values()):.1f}% of world L1")
     param_to_concept = {c["wold"]: c["concept"] for c in concepts if c["wold"]}
     pool = monosyllable_pool()
@@ -1550,6 +1903,18 @@ def main() -> None:
                    w_ff=0.0, separation="metric",
                    hard_distance2=args.hard_distance2)
     n_d = sum(1 for x, y in zip(arms[names[0]], arm_d) if x["form"] != y["form"])
+    # Arm E: the same ban extended to every root, not just the closed class.
+    taken_e: dict[str, str] = {}
+    fam_e: dict[str, int] = {}
+    arm_e = assign(concepts, donors, by_iso, tot, taken_e, fam_e, ffidx=ffidx,
+                   w_ff=W_FF, ban_scope=("grammar", "numeral", "generic", "core"),
+                   hard_distance2=args.hard_distance2)
+    print(f"  arm E (the perceptual ban extended from the closed class to ALL "
+          f"84 roots, NOT adopted): "
+          f"{sum(1 for r in arm_e if r['source'] == 'coined')} coined roots and "
+          f"{len({r['donor_family'] for r in arm_e}) - 1} donor families, against "
+          f"12 and 24 - it buys separation by deleting representation, which is "
+          f"why BAN_SCOPE is {BAN_SCOPE}")
     print(f"  arm D (graded perceptual penalty replacing the code-distance "
           f"tie-breaker, NOT adopted): {n_d} of {len(concepts)} forms change, "
           f"{sum(1 for r in arm_d if r['source'] == 'coined')} coined vs "
