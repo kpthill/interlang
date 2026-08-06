@@ -204,14 +204,16 @@ deviation from one-study-per-script gets logged in the note that takes it).
 | # | question | status |
 |---|---|---|
 | **12** | **copula, possession, existentials** | ~~open~~ **DONE** → [`grammar-tier3-predication.md`](grammar-tier3-predication.md): one invariant copula for all non-verbal predication; the same copula with nothing after it is the existential; possession is a plain transitive 'have'. Word bill 1 |
-| 13–17 | **coordination · comparatives · relative, complement and adverbial clauses** | ~~open~~ **DONE** → [`grammar-tier3-combination.md`](grammar-tier3-combination.md): four words — *and*, *or*, *than*, and one **relativizer** that doubles as the optional complementizer. Adjective unmarked in comparatives; adverbial clauses cost nothing |
+| 13–17 | **coordination · comparatives · relative, complement and adverbial clauses** | ~~open~~ **DONE** → [`grammar-tier3-combination.md`](grammar-tier3-combination.md): five words — *and*, *or*, *than*, *if*, and one **relativizer** that doubles as the optional complementizer. Adjective unmarked in comparatives; adverbial clauses reuse Q10's interrogative compounds |
 
 The prediction that 15/16/17 were one question held: they collapsed into a single
 relativizer, reused for complements and unneeded for adverbials.
 
-**Tier 3 is COMPLETE.** **5 words** (copula, *and*, *or*, *than*, relativizer) and **2 rules**
-(a non-verbal predicate takes the copula; the relative clause follows its noun, begins with the
-relativizer, and omits the shared element). **Running grammar total: 15 words, 4 rules.**
+**Tier 3 is COMPLETE.** **6 words** (copula, *and*, *or*, *than*, *if*, relativizer) and
+**3 rules** (a non-verbal predicate takes the copula; the relative clause follows its noun,
+begins with the relativizer, and omits the shared element; an interrogative compound with no
+question particle, followed by a main clause, is an adverbial clause).
+**Running grammar total: 16 words, 5 rules.**
 
 Both Tier 3 notes were decided **without committed study scripts** — a deliberate deviation
 from the one-study-per-script convention in [`../CLAUDE.md`](../CLAUDE.md), taken on time

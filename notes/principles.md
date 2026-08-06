@@ -383,8 +383,8 @@ the **pattern** belongs in the final bias audit, not just the four entries.
 Evidence: [`grammar-tier3-combination.md`](grammar-tier3-combination.md). **Also decided
 without a committed study script**, logged there.
 
-**Four words: *and*, *or*, *than*, and one invariant relativizer that doubles as the optional
-complementizer.**
+**Five words: *and*, *or*, *than*, *if*, and one invariant relativizer that doubles as the
+optional complementizer.**
 
 | English | interlang |
 |---|---|
@@ -392,7 +392,8 @@ complementizer.**
 | I am tall**er than** you · the tall**est** | `I COP tall than you` · `I COP tall than all` |
 | the man **who** saw me · the book **that** I read | `man REL COP see me` · `book REL I read` |
 | I know (**that**) he came | `I know (REL) he come` |
-| **when** he arrived, we ate | `when he arrive, we eat` |
+| **when** he arrived, we ate | `what-time he arrive, we eat` |
+| **if** you go, I go | `if you go, I go` |
 
 - **"and" ≠ "with"** (81.5% of L1, GB027) — conflating them would make *I and you went* and
   *I went with you* the same string. **One "and" for both nouns and clauses** (60.7% of L1).
@@ -416,12 +417,22 @@ complementizer.**
   56.6% of L1 has one; optional takes both. Safe in a way optional TAM was not, since omitting
   it implicates nothing. WALS 128A confirms complements are ordinary finite clauses for 75.3%
   of L1 — fortunate, since Tier 0 leaves no way to build a non-finite form.
-- **Adverbial clauses cost nothing** — lexical *when / because / if*, clause-initial (78.4% of
-  L1), constituent order unchanged. **GB134 puts same-order-in-subordinate-clauses at 96.4% of
-  L1**, the most one-sided figure in the tier.
+- **Adverbial clauses reuse the Q10 interrogative compounds**: `what-time he arrive, we eat`.
+  A *dedicated* subordinator set (when, while, until, after, before, because, if, although)
+  would have been **8–10 words, the most expensive decision in the grammar** — so the zero
+  has to be earned, and this is how. The alternative, a noun plus the relativizer
+  (`time REL you arrive`), adds no rule but silently requires **relativization on an oblique**,
+  which is the hard case: gap strategy 48.6% of languages / 42.7% of L1 against 75.2% / 65.4%
+  for subjects, and the modal contact strategy is a resumptive pronoun, not a gap.
+  **Conditional *if* is irreducible** (+1 word); concessives use contrastive coordination
+  (`it rain, but we go`). Clause-initial, 78.4% of L1, and **GB134 puts
+  same-order-in-subordinate-clauses at 96.4% of L1**, the most one-sided figure in the tier.
+  *Cost:* this inherits Q10's residual ambiguity — the question particle is what separates
+  `Q what-time you arrive?` from `what-time you arrive, we eat`, and Q10 tolerates dropping
+  it. Recoverable from the following main clause and from `?` in writing, but real.
 
-**Word bill: 4. Tier 3 closes at 5 words and 2 rules. Running grammar total: 15 words** —
-under 9% of the short-word space.
+**Word bill: 5. Tier 3 closes at 6 words and 3 rules. Running grammar total: 16 words,
+5 rules** — under 9% of the short-word space.
 
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 

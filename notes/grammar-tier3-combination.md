@@ -11,9 +11,16 @@ convention**, taken deliberately on time pressure for the least consequential ti
 reproducible from those parameter IDs; they are not reproducible by running anything in
 `scripts/`.
 
-**Bottom line up front.** **Four words** — *and*, *or*, *than*, and one invariant
+**Bottom line up front.** **Five words** — *and*, *or*, *than*, *if*, and one invariant
 **relativizer** that also serves as the optional complementizer. Comparatives leave the
-adjective unmarked. Adverbial clauses cost nothing. **Tier 3 closes at 5 words and 2 rules.**
+adjective unmarked. Adverbial clauses of time, place, reason and manner reuse the Q10
+interrogative compounds and cost nothing. **Tier 3 closes at 6 words and 3 rules.**
+
+*§5 was revised after first publication:* it originally claimed adverbial clauses cost zero
+words because subordinators are "ordinary vocabulary". That was under-argued — a dedicated
+subordinator set would have been 8–10 words — and the zero is now earned by deriving them
+from the interrogative compounds instead, at the cost of one rule and one irreducible word
+(*if*). The word bill in §6 and the running totals were corrected with it.
 
 | English | interlang shape |
 |---|---|
@@ -24,7 +31,8 @@ adjective unmarked. Adverbial clauses cost nothing. **Tier 3 closes at 5 words a
 | the man **who** saw me | `man REL COP see me` |
 | the book **that** I read | `book REL I read` |
 | I know (**that**) he came | `I know (REL) he come` |
-| **when** he arrived, we ate | `when he arrive, we eat` |
+| **when** he arrived, we ate | `what-time he arrive, we eat` |
+| **if** you go, I go | `if you go, I go` |
 
 ---
 
@@ -201,7 +209,11 @@ argument of the verb — it fills the object slot. English allows the *that* to 
 ## 5. Adverbial clauses (Q17)
 
 English: ***when** he arrived*, we ate · *we left **because** it rained* · ***if** you go*, I
-go. These modify the main clause rather than filling an argument slot.
+go. An adverbial clause is a whole clause acting as a **modifier of another clause** — it
+fills the slot a single adverb would fill (*we ate **yesterday*** → *we ate **when he
+arrived***). The **subordinator** marks the clause as subordinate and names the relation it
+bears to the main clause. Without one, `he arrive, we eat` is two clauses in sequence with
+the relation left to guess.
 
 | | %lang | **%L1** | %total |
 |---|---|---|---|
@@ -210,15 +222,62 @@ go. These modify the main clause rather than filling an argument slot.
 | WALS 94A — subordinating **suffix** | 9.5 | 5.4 | 3.4 |
 | GB134 — **same constituent order** in main and subordinate clauses | 94.0 | **96.4** | 89.6 |
 
-**Decision: adverbial clauses are introduced by ordinary vocabulary — *when*, *because*, *if*
-— in clause-initial position, with constituent order unchanged.**
+**A correction to this note's first version, which claimed adverbial clauses cost zero words
+because subordinators are "ordinary vocabulary".** That was under-argued. A subordinator is a
+closed-class function word, not lexicon like *dog*, and **a dedicated set — when, while,
+until, after, before, because, if, although — would have been 8–10 grammatical words, the
+single most expensive decision in the grammar.** The zero is real, but it has to be earned by
+deriving the subordinators from something, and there are two ways to do that.
 
-- **Word bill: 0.** These subordinators are lexicon, not grammar.
-- Initial position is 78.4% of L1 and **86.4% of total speakers**, and it follows §3.2's
-  modifier rule directly: the subordinator introduces the clause it marks.
-- **GB134 at 96.4% of L1 is the most one-sided number in this note.** Almost every language
-  keeps main-clause word order in subordinate clauses, so the German-style verb-final
-  subordinate clause is the exception, not a thing we need to consider. Nothing to decide.
+**Route A — a noun plus the relativizer:** `time REL you arrive, we eat`, "the time that you
+arrive, we eat". Attractive because it adds *no rule* — it is a relative clause on a noun,
+using §3 machinery already bought. **But it silently requires the hard case:**
+
+| WALS 123A, relativization on **obliques** | %lang | **%L1** |
+|---|---|---|
+| gap | 48.6 | 42.7 |
+| pronoun-retention | 18.0 | 6.1 |
+| relative pronoun | 11.7 | 39.3 |
+| **not possible at all** | 9.0 | 1.3 |
+
+Against subject relativization at 75.2% / 65.4% (§3), the oblique gap is markedly weaker —
+and `time REL you arrive` is exactly an oblique, since "time" inside the clause is an adjunct
+(*you arrive [at __]*), not subject or object. Contact languages agree it is hard: on
+instrument relatives (APiCS 94) the modal strategy is **relative particle + resumptive
+pronoun** (7 of 9 expanded pidgins), not a bare gap, and 5 languages cannot do it at all.
+§3's rule licensed subject and object gaps only.
+
+**Route B — reuse the interrogative compounds:** `what-time you arrive, we eat`. **Adopted.**
+No gap, no relativization — the clause is complete and the compound names the relation. It is
+what English does (*when*, *where*, *why*, *how* are each interrogative and subordinator at
+once) and what many languages do, and it reuses words Q10 already coined.
+
+**Q10 pays for itself here.** Putting the question particle on *every* question — argued in
+that note on late-signal grounds — is what keeps the two readings apart:
+
+| | |
+|---|---|
+| `Q what-time you arrive?` | when did you arrive? |
+| `what-time you arrive, we eat` | when you arrived, we ate |
+
+**The wrinkle is Q10's tolerated-dropping concession.** If speakers drop the particle in
+casual content questions the two converge. The parse stays recoverable — a subordinate clause
+is followed by a main clause, a bare question is not, and in writing the `?` settles it — but
+this is a **residual ambiguity that is a direct cost of that concession**, and it belongs in
+the record rather than in a footnote to Q10.
+
+**Decision:**
+
+| | |
+|---|---|
+| time, place, reason, manner | **0 words** — `what-time`, `what-place`, `what-reason`, `what-manner` |
+| **conditional "if"** | **1 word, irreducible** — conditionals are irrealis, they do not decompose into noun-plus-clause, and with mood adverbial (Q6) there is nothing else to build them from |
+| concessive "although" | **0** — contrastive coordination: `it rain, but we go` |
+| position | **clause-initial** — 78.4% of L1, 86.4% of total speakers, and it follows §3.2's modifier rule |
+| constituent order | **unchanged** — GB134 at **96.4% of L1** is the most one-sided figure in this note; the German-style verb-final subordinate clause is the exception, not something to consider |
+
+**Word bill: 1** (*if*). **Rule added: 1** — *an interrogative compound with no question
+particle, followed by a main clause, is an adverbial clause.*
 
 ---
 
@@ -237,14 +296,16 @@ go. These modify the main clause rather than filling an argument slot.
 | relative clauses | **invariant relativizer + gap**, following the noun | 1 |
 | relative pronoun | **rejected** — needs case, which Q8 refused | — |
 | complement clauses | **the relativizer, optional** | 0 |
-| adverbial clauses | **lexical subordinator, clause-initial**, order unchanged | 0 |
+| adverbial clauses (time/place/reason/manner) | **the interrogative compounds**, clause-initial | 0 |
+| conditional | **"if"** — irreducible | 1 |
+| concessive | contrastive coordination (`it rain, but we go`) | 0 |
 
-**Word bill: 4.** **Tier 3 total: 5** (copula 1, here 4). **Running grammar total: 15**
-(Tier 2 ten, Tier 3 five) — still under 9% of the ~180 cluster-free monosyllables that avoid
+**Word bill: 5.** **Tier 3 total: 6** (copula 1, here 5). **Running grammar total: 16**
+(Tier 2 ten, Tier 3 six) — still under 9% of the ~180 cluster-free monosyllables that avoid
 the discouraged onsets.
 
-**Grammar rules added: 1** (the relative-clause rule). **Tier 3 total: 2**, with the copula
-rule.
+**Grammar rules added: 2** (the relative-clause rule; the adverbial-clause rule). **Tier 3
+total: 3**, with the copula rule. **Running grammar total: 5 rules.**
 
 ## 7. Honest limits
 
@@ -261,3 +322,11 @@ rule.
 - **APiCS's restricted-pidgin cells are thin here** — several of the relative-clause and
   complementizer rows rest on one or two languages, thinner than the nine-language columns
   used in Tier 2.
+- **§5's first version was wrong about the cost of subordinators** and is corrected in place
+  with a note at the head of this file. The failure mode is worth naming: *"it's ordinary
+  vocabulary" is the easiest way to make a word bill come out to zero, and it needs an
+  argument every time it is used.* Nothing else in the grammar currently rests on that move,
+  but Tier 4 will be full of opportunities to make it again.
+- **Reusing the interrogative compounds as subordinators inherits Q10's residual ambiguity.**
+  It is resolvable from the following main clause and from the `?` in writing, but it exists,
+  and it is a downstream cost of a concession made two questions earlier.

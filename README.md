@@ -123,13 +123,14 @@ questions and next steps in §7.
   *Decided without a committed study script* — a logged deviation from the
   one-study-per-script convention.
 - **Grammar Tier 3, coordination/comparatives/subordination** — done,
-  [`notes/grammar-tier3-combination.md`](notes/grammar-tier3-combination.md). **Four words:
-  *and*, *or*, *than*, and one invariant relativizer that doubles as the optional
+  [`notes/grammar-tier3-combination.md`](notes/grammar-tier3-combination.md). **Five words:
+  *and*, *or*, *than*, *if*, and one invariant relativizer that doubles as the optional
   complementizer.** Comparatives leave the adjective unmarked (`I COP tall than you`);
-  adverbial clauses cost nothing. The relative pronoun is rejected — 40.6% of *total
-  speakers* have one, but it needs case, which the pronoun decision refused.
-  *Also decided without a committed study script.*
-- **Tier 3 is complete.** **5 words, 2 rules.** Running grammar total: **15 words, 4 rules**
+  adverbial clauses reuse the interrogative compounds (`what-time he arrive, we eat`), which
+  is how they cost nothing — a dedicated subordinator set would have been 8–10 words. The
+  relative pronoun is rejected — 40.6% of *total speakers* have one, but it needs case, which
+  the pronoun decision refused. *Also decided without a committed study script.*
+- **Tier 3 is complete.** **6 words, 3 rules.** Running grammar total: **16 words, 5 rules**
   — under 9% of the short-word space.
 - **Next:** Tier 4, the lexicon interface — word classes and how rigid they are,
   derivational machinery, and the final root-shape bounds that couple grammar back to
