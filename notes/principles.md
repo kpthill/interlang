@@ -591,10 +591,25 @@ audit found the grammar was **not** complete when declared so. Eight gaps closed
   confound Rule 1 exists to catch; restricted pidgins differentiate **5 to 3**, and WALS 52A
   gives differentiation **59.3% of L1**.
 
-**GRAMMAR TOTAL: 20 words, 7 rules.** **Still open** (see that note §10): fragment answers,
-direct vs indirect speech, stacked modifier order, reflexive domain, labile verbs,
-distributive/fractional numerals. **The claim "the grammar is complete" has now been wrong
-twice**; §10 exists to keep the third claim honest.
+**Three more closed 2026-08-06, all at zero cost and none coded by any source:**
+
+- **Fragment answers.** A bare constituent may answer a content question — *Who came? —
+  John.* The question supplies the frame, so the answer is recoverable: the third member of
+  the ellipsis family, alongside coordination and control complements.
+- **Direct speech only.** Reported speech is always a quotation and pronouns never shift:
+  `he say "I COP tired"`. Indirect speech would impose an obligatory pronoun-shifting
+  computation, the class of thing rejected in Q6 and Q8. **6 of 9 expanded pidgins
+  grammaticalise 'say' as a quotative** (APiCS 95) — suggestive, not decisive.
+- **Stacked modifiers scope leftmost-widest** — reusing Q9's rule for a third construction.
+  `three big house` = three [big houses]; `big three house` = a big [group of three]. The
+  alternative was an English-style memorised semantic sequence, which is the worst kind of
+  rule for a learner.
+
+**GRAMMAR TOTAL: 20 words, 7 rules — complete except where explicitly deferred**, which is
+the strongest version of that claim this project should make. Still open, all minor:
+reflexive domain, labile verbs, distributive/fractional numerals, evidentiality, ideophones.
+**The unqualified claim "the grammar is complete" has now been wrong twice**, which is why
+this one carries the qualifier.
 
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 

@@ -242,28 +242,85 @@ regardless, having no serial verbs and no case.
 
 **GRAMMAR TOTAL: 20 words, 7 rules.**
 
-## 10. What is still open
+## 10. Three more, closed 2026-08-06
 
-**The grammar is not finished, and saying otherwise would repeat the mistake this note
-exists to correct.** Remaining, ranked:
+**None of these is coded by any source we hold** — parameter lists checked for all three,
+stated plainly given that this project has twice asserted an absence of evidence and been
+wrong. All three cost **zero words and zero new rules**.
 
-1. **Fragment answers.** *Who came? — John.* Currently ill-formed: only *yes* and *no* are
-   licensed as standalone fragments. Not coded by any source.
-2. **Direct vs indirect speech.** *He said "I am tired"* vs *he said he was tired* — whether
-   pronouns shift under reporting. With no tense marking the tense half is moot, but the
-   **pronoun** half is real and undecided.
-3. **Stacked prenominal modifier order.** *big red house* — the order among multiple
-   modifiers before a noun. The modifier rule fixes the side, not the sequence.
-4. **Reflexive domain** — how far `self` may look for its antecedent, now that it also marks
+### 10.1 Fragment answers
+
+*Who came? — John.* Currently ill-formed: only *yes* and *no* were licensed as standalone
+fragments, so an answer had to be a full clause.
+
+| option | |
+|---|---|
+| ban fragments, require `John come` | safest, most verbose |
+| **allow a bare constituent as the answer to a content question** | **adopted** |
+| allow fragments generally in conversation | loosest, least recoverable |
+
+**Decision: a bare constituent may answer a content question.** The question supplies the
+frame, so the answer is recoverable — the same licensing logic as coordination ellipsis and
+control complements, and the third member of that family. Arguably a discourse convention
+rather than a grammar rule. **No contact data.**
+
+### 10.2 Direct vs indirect speech
+
+*He said "I am tired"* versus *he said he was tired.* With no tense marking the tense half is
+moot; **the pronoun half is real** — in `he say REL I COP tired`, is *I* the original speaker
+or the reporter?
+
+**Decision: direct speech only. Reported speech is always a quotation and pronouns never
+shift.** `he say "I COP tired"`.
+
+- §3.7 already supplies quotation marks, so writing is covered.
+- Indirect speech would require an **obligatory pronoun-shifting computation** on every
+  report — exactly the class of thing rejected in Q8 (politeness) and Q6 (TAM): a calculation
+  the speaker must perform correctly before opening their mouth.
+- **Indirect contact evidence, the closest available:** APiCS 95 shows **6 of 9 expanded
+  pidgins use a complementizer identical to bare 'say'** — grammaticalising the verb *say*
+  into a quotative, which is the classic direct-speech pattern. Suggestive, not decisive, and
+  labelled as such.
+
+### 10.3 Stacked modifier order
+
+*big red house*, *three big houses*. §3.2's modifier rule fixes which **side** modifiers go
+on, not their **sequence** among themselves.
+
+| option | |
+|---|---|
+| free order, no constraint | ambiguous, wastes a distinction |
+| English-style fixed semantic sequence (opinion > size > age > colour > origin) | a memorised list with no principle behind it — the worst kind of rule for a learner |
+| **scope-based: leftmost modifier is widest** | **adopted** |
+
+**Decision: reuse Q9's scope rule.** *Leftmost is widest* was established for negation and TAM
+adverbs; applying it to stacked noun modifiers costs **zero new rules** and converts free
+order into an expressible distinction:
+
+| | |
+|---|---|
+| `three big house` | three [big houses] |
+| `big three house` | a big [group of three houses] |
+
+This is the third construction that rule now covers (negation scope, TAM scope, modifier
+stacking), which is a good sign it was the right rule to buy.
+
+**No contact data.** WALS 87A and APiCS 3 code adjective-versus-noun order, not the ordering
+among multiple adjectives.
+
+## 11. What is still open
+
+**The grammar is now complete except where explicitly deferred**, which is the strongest
+version of that claim this project should make. Remaining, all minor:
+
+1. **Reflexive domain** — how far `self` may look for its antecedent, now that it also marks
    the passive.
-5. **Valency and labile verbs** — *the window broke* vs *he broke the window*. Interacts
-   directly with the `self` passive and may be redundant with it.
-6. **Distributive, multiplicative and fractional numerals** — *each two*, *twice*, *half*
-   (WALS 54A, APiCS 34).
-7. **Non-subject ellipsis**, **evidentiality**, **ideophones and interjections**,
+2. **Valency and labile verbs** — *the window broke* vs *he broke the window*. Interacts with
+   the `self` passive and may be redundant with it.
+3. **Distributive, multiplicative and fractional numerals** — *each two*, *twice*, *half*
+   (WALS 54A, APiCS 34 both code this — it is measurable when we want it).
+4. **Non-subject ellipsis**, **evidentiality**, **ideophones and interjections**,
    **extraposed relatives** — minor or lexicon-facing.
-
-Items 1–3 are the ones a user would hit in a first conversation.
 
 ## 11. Honest limits
 
