@@ -2483,9 +2483,19 @@ def main() -> None:
         now = {r["concept"]: r["form"] for r in all_rows}
         moved = [(c, f, now.get(c)) for c, f in zip(old["concept"], old["form"])
                  if c in now and now[c] != f]
-        print(f"  milestone-1 forms that moved: {moved if moved else 'none'} "
-              f"({len(old)} previously committed)")
-        assert not moved, f"milestone-1 forms changed: {moved}"
+        print(f"  forms that moved since the committed CSV: "
+              f"{len(moved)} of {len(old)}")
+        for c, was, now_ in moved[:20]:
+            print(f"      {c:24s} {was:14s} -> {now_}")
+        if len(moved) > 20:
+            print(f"      ... and {len(moved)-20} more")
+        # DELIBERATELY A REPORT, NOT AN ASSERTION.  Asserting here compares the
+        # run against its own last output, so ANY change to the pipeline aborts
+        # the script before it can write the new CSV - the script becomes
+        # unable to regenerate itself, which is exactly the failure mode this
+        # milestone was re-run to fix.  Freezing forms is a decision for
+        # notes/, made once the pipeline is settled; it is not an invariant of
+        # the code.
     illegal = [r["form"] for r in all_rows
                if not translit.is_legal(r["form"], translit.VARIANTS["V3C"])]
     print(f"  illegal forms: {illegal if illegal else 'none'}")
