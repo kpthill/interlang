@@ -229,6 +229,15 @@ in Tier 0 that has been sitting open unnoticed. Three strategies:
   process risk is worth naming: *a write-up that justifies a decision by appeal to a feature
   we have not decided has smuggled that feature in.* Worth a grep of the notes for similar
   appeals before the grammar is called finished.
-- **APiCS does not code the passive, pro-drop or ditransitive order**, so those three have no
-  contact-language column at all — only the serial-verb decision has pidgin evidence behind
-  it. That is a thinner basis than any Tier 2 decision had.
+- ~~**APiCS does not code the passive, pro-drop or ditransitive order.**~~ **FALSE, corrected
+  2026-08-06 by the coverage sweep** ([`grammar-coverage-sweep.md`](grammar-coverage-sweep.md)).
+  **APiCS 90 codes the passive** — and §2a of this very note uses it, so the claim contradicts
+  the document it appears in. **APiCS 61 codes the order of recipient and theme in
+  ditransitives**, and §4 decided that question on WALS 105A alone while declaring contact
+  evidence absent. **Only pro-drop is genuinely uncoded.** §4 should be re-run against
+  APiCS 61 before the ditransitive decision is called settled.
+- **The failure mode this reveals is worse than a typo:** an honest-limits section asserted an
+  absence of evidence without checking the parameter list, and the assertion was false in two
+  of three cases. *"No source codes this"* is a claim like any other and needs the same
+  verification as a percentage — the sweep found the same pattern in four other places where
+  features sitting on disk (APiCS 11, 94, 97, 98; WALS 124A) were never consulted.
