@@ -610,3 +610,105 @@ natural next study — and it is the curve the README says this project exists t
   difficulty.
 - **Support vowel (epenthetic vowel)** — a vowel inserted purely to make a word
   pronounceable under the syllable rules, carrying no meaning: *bank* → *banki*.
+
+---
+
+# Addendum: the speech extension (2026-08-06)
+
+Patrick needs to deliver part of a talk *in the language*, so the lexicon had to grow by
+the words that talk uses. This is an EXTENSION, not a re-derivation: the 138 words
+milestone 1 shipped are frozen, and `main()` asserts that against the committed CSV
+rather than claiming it. Everything below is produced by the same script
+(`scripts/lexicon_milestone1.py`), plus one flattening script
+(`scripts/speech_vocab.py`) that writes the lookup Patrick actually translates from.
+
+## What was added
+
+| block | n | how |
+|---|---|---|
+| core, monosyllabic | 30 | donor pool (WOLD + IDS + ASJP), or coined where no donor concept exists |
+| core, **disyllabic** | 26 | same, but the root is the donor's first TWO syllables |
+| technical | 24 | international spelling through `translit.py`, judgment call 14 |
+| proper names | 8 | endonym-preferred, `translit.py`, initial capital per §3.7 |
+| compounds | 21 | no new roots; built in `scripts/speech_vocab.py` |
+
+The monosyllabic block is deliberately front-loaded with the **adpositions** (IN, TO, FROM,
+WITH-comitative, USING-instrumental, BY-agent, FOR, ABOUT) and the **clause adverbs**
+(BUT, VERY, ALSO, NOW, PAST, AGAIN). Two of those are load-bearing beyond their frequency:
+
+- **The comitative and the instrumental are different words**, per
+  `grammar-gap-closure.md` §8. They are the only pair in the lexicon that draws from the
+  *same* donor concept (WOLD 24-04 "with") and is required to land on different forms.
+- **PAST is the tense.** Q6 made tense lexical, so a past-tense narration is carried
+  entirely by this adverb. It is the single highest-value word in the extension.
+
+## Judgment calls (new; also in the script docstring)
+
+**15. DISYLLABIC ROOTS, AND WHY.** The monosyllable budget is 174 usable syllables and
+milestone 1 spent 84. Fifty-six more monosyllabic roots would leave ~34 free — about 20%,
+well outside `lexicon-plan.md` §1's "leave a third to a half free". So the extension
+splits: the 30 highest-frequency concepts take monosyllables, the other 26 take
+disyllables, which cost nothing from the budget. A disyllabic root is the donor's first
+*two* syllables under the same rules as judgment call 5, and every syllable in it must be
+a legal G2 syllable on its own — an onset that is not /r h l/ and is not empty — so calls
+1 and 2 hold unchanged and no root-internal hiatus is created.
+
+**15(b). THE COINED DISYLLABLES NEEDED THEIR OWN SEPARATION RULE, and the first run proved
+it.** [measured] Coining ranks candidates by segment cost, and the cheap syllables all sit
+in one corner of the space, so the first run produced *bafa, bafam, bafan, bafe, bafem,
+bafen, bafi, bafim, bafin, bafo, bafom* — eleven words differing only in the last segment.
+Judgment call 10's perceptual ban could not see them: it only compares forms of four
+segments or fewer, and running the metric over the 30,276-candidate disyllable pool is too
+slow for a greedy loop. The rule adopted is stated at the syllable level instead: **a
+coined disyllable may not reuse a syllable that another multisyllabic root already uses.**
+That forces distance 2 *in syllables*, which is strictly stronger than what the metric ban
+would have bought, and it costs nothing to compute. This is the same failure the write-up
+recorded for the coined monosyllables in §5 — cost-ranked coining always clusters — and it
+is more evidence for known problem 7.7 (replace greedy with a global assignment).
+
+**16. SYNTHETIC PARAMETER IDS FOR IDS/ASJP-ONLY CONCEPTS.** The donor machinery is keyed on
+WOLD parameter IDs, and WOLD has no parameter for *think*, *work* or *part*. Where the
+concept has a Concepticon ID that IDS or ASJP codes, a synthetic parameter `X-<concept>` is
+minted for it so those forms become visible; where WOLD *does* have a matching parameter
+via Concepticon, that one is used instead. Twenty of the fifty-six concepts have no donor
+concept anywhere (*to, from, by, for, about, but, very, also, use, can*, and ten of the
+disyllables) and are coined from the free pool, exactly as milestone 1's five donorless
+particles were. **This is the extension's weakest point**: a coined preposition buys no
+recognizability at all, and the eight adpositions are among the most frequent words in the
+language. If any part of this is revisited before the lexicon is built, it should be this.
+
+**17. THE TECHNICAL BLOCK IS NOT RECOGNITION-MEASURED.** The 24 new borrowings run offline
+and the Wikipedia langlinks cache does not hold their articles, so `wiki_title` is `None`
+and recognition is recorded as *not measured* rather than as zero. Judgment call 12's
+fallback rule therefore cannot fire for them on the recognition escape, and several
+(*internationale* → `interinationale`, 8 syllables; *questionario* → `kiwesitionario`, 8)
+are flagged as damaged-and-kept because no transparent compound exists. They are long. For
+a talk delivered to linguists that is the right trade — but the flag is real and these are
+the first words to re-price when the panel is available.
+
+**18. PROPER NAMES.** §3.7 gives a proper noun an initial capital and nothing else, so
+these are the only capitalised words in the lexicon. The source spelling is the endonym
+where the name has one written in Latin script, and it is [recall] — no source was checked
+— exactly like judgment call 14.
+
+## Compounds preferred over new roots
+
+Six of the concepts the speech needs were already expressible and got no root:
+*question* (`WHAT+THING`), *adjective* (`QUALITY+WORD`), *adverb* (`MANNER+WORD`) and
+*syntax* (`SENTENCE+MANNER`) were already shipped as compounds in milestone 1;
+*dataset* is `DATA+SET` and *loanword* is `BORROW+WORD`. **`because` is not a word at
+all** — the generic noun `fo`… (see below) already carries §3.2's adverbial-clause
+construction, so "because X" is that noun plus the clause, and the checked answer to "do we
+need a word for *because*?" is no. All compounds are head-final (modifier first) per §3.7
+and are built in `scripts/speech_vocab.py`, not in the lexicon, because they are not roots.
+
+## Known problem this extension exposes
+
+`data/raw/` is gitignored and re-fetchable (CLAUDE.md: "raw data is disposable"), but the
+greedy assignment of judgment call 6 is **chaotic in the donor pool**: re-fetching IDS or
+ASJP changes which doculect wins the per-ISO deduplication, which re-ranks one early
+concept, which cascades through every later one. That makes `lexicon_milestone1.csv`
+reproducible only against a *pinned* raw corpus, which nothing currently pins. The
+milestone-1 freeze assertion added here catches the symptom; it does not fix the cause.
+This belongs next to known problem 7.7, and it is the second independent argument for
+replacing greedy with a global assignment.

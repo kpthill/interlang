@@ -1736,6 +1736,27 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
                     and not breaks_minimal_pair_ban(s, set(taken))
                     and not banned(s, c["group"])
                     and (nsyl > 1 or distinctiveness(s, taken) >= min_dist)]
+            if nsyl > 1:
+                # Judgment call 15, separation half.  WITHOUT this the coined
+                # disyllables come out as one minimal-pair family - the first
+                # measured run produced bafa/bafam/bafan/bafe/bafem/bafen/bafi/
+                # bafim/bafin/bafo/bafom, eleven words differing only in the
+                # last segment - because `coined_key` ranks on cost alone and
+                # the cheap syllables are all in one neighbourhood.  The metric
+                # ban of judgment call 10 cannot see them (it only compares
+                # forms of <= 4 segments), and running it over a 30k pool would
+                # be too slow, so the rule is stated at the SYLLABLE level: a
+                # coined disyllable may not reuse a syllable that another
+                # multisyllabic root already uses.  That forces distance 2 in
+                # syllables, which is strictly stronger than what the metric
+                # ban would have bought.
+                used_syls = set()
+                for w in taken:
+                    ss = syllabify(w)
+                    if len(ss) >= 2:
+                        used_syls.update(ss)
+                free = [s for s in free
+                        if not (set(syllabify(s)) & used_syls)]
 
             def coined_key(s):
                 ff, _t = (ff_score(s, c["concept"], None, ffidx)
