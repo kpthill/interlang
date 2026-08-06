@@ -388,7 +388,7 @@ GEMINATE_COST = 0.30
 NO_ONSET_COST = 0.30
 
 FREQ_WEIGHT = {"grammar": 3.0, "numeral": 2.0, "generic": 2.0,
-               "core": 1.5, "technical": 0.0}
+               "core": 1.5, "core-poly": 1.0, "technical": 0.0, "name": 0.0}
 
 BANNED_ONSETS = set("rhl")          # in monosyllabic roots only (call 2)
 BANNED_SYLLABLES = {"ji", "jin", "jim", "wu", "wun", "wum"}
@@ -507,6 +507,89 @@ GENERIC = [
     ("TOOL", "tool (instrument nouns: X-tool)", "9-422"),
 ]
 
+# ---------------------------------------------------------------------------
+# GROUP 2b: THE SPEECH EXTENSION (added 2026-08-06, judgment calls 15-18).
+# Concepts Patrick's talk needs that milestone 1 did not issue.  Columns:
+#   (concept-id, gloss, WOLD parameter ID or None, Concepticon ID or None)
+# The Concepticon column is judgment call 16: where WOLD has no parameter but
+# IDS/ASJP do, a SYNTHETIC parameter ID `X-<concept>` is minted for that
+# Concepticon ID so the existing donor machinery can see those forms.  Where
+# both columns are None the word is coined from the free pool, exactly as the
+# five donorless closed-class particles of milestone 1 were.
+#
+# SPEECH_MONO gets monosyllables; SPEECH_POLY gets DISYLLABLES (judgment call
+# 15) because the monosyllable budget cannot pay for 56 more roots and stay
+# inside lexicon-plan 1's "leave a third to a half free".
+# ---------------------------------------------------------------------------
+SPEECH_MONO = [
+    # --- adpositions (principles.md 3.2: prepositions, invariant) ----------
+    ("IN", "in / at (locative)", "12-012", None),
+    ("TO", "to (goal; also the recipient of a ditransitive)", None, None),
+    ("FROM", "from (source)", None, None),
+    ("WITH", "with (COMITATIVE - accompaniment)", "24-04", None),
+    ("USING", "with (INSTRUMENTAL - means); "
+               "deliberately NOT the same word as WITH", "24-04", None),
+    ("BY", "by (passive agent marker)", None, None),
+    ("FOR", "for (benefactive / purpose)", None, None),
+    ("ABOUT", "about (topic)", None, None),
+    # --- clause-level adverbs ---------------------------------------------
+    ("BUT", "but (contrast; combines with AND per grammar-tier3-combination 1)",
+     None, None),
+    ("VERY", "very, much (degree)", None, None),
+    ("ALSO", "also, too", None, None),
+    ("NOW", "now", "14-18", None),
+    ("PAST", "past, previously (the tense-carrying adverb; Q6 made tense "
+              "lexical, so this is what narrates a past-tense talk)",
+     "14-99902", None),
+    ("AGAIN", "again", "14-35", None),
+    # --- high-frequency core ----------------------------------------------
+    ("GOOD", "good", "16-71", None),
+    ("BAD", "bad", "16-72", None),
+    ("ALL", "all", "13-14", None),
+    ("KNOW", "to know", "17-17", None),
+    ("THINK", "to think", None, 1415),
+    ("SAME", "same", "24-13", None),
+    ("NEW", "new", "14-13", None),
+    ("MANY", "many", "13-15", None),
+    ("MORE", "more", "13-16", None),
+    ("OTHER", "other", "24-11", None),
+    ("GIVE", "to give", "11-21", None),
+    ("TAKE", "to take", "11-13", None),
+    ("WANT", "to want", "16-62", None),
+    ("CAN", "can, to be able", "24-99902", None),
+    ("USE", "to use", None, None),
+    ("WORK", "work, to work", None, 984),
+]
+
+SPEECH_POLY = [
+    ("LEARN", "to learn", "17-24", None),
+    ("HEAR", "to hear", "15-41", None),
+    ("HELP", "to help", "19-58", None),
+    ("SPEAK", "to speak, to talk", "18-21", None),
+    ("PART", "part, piece", None, 779),
+    ("LONG", "long", "12-57", None),
+    ("DIFFERENT", "different", None, None),
+    ("EASY", "easy", "17-46", None),
+    ("BEGIN", "to begin", "14-25", None),
+    ("FINISH", "to finish", "14-27", None),
+    ("REMEMBER", "to remember", "17-31", None),
+    ("WORLD", "world", "1-1", None),
+    ("TOGETHER", "together", None, None),
+    ("INSTEAD", "instead of", None, None),
+    ("SIMILAR", "similar, like", "12-92", None),
+    ("GUIDE", "to guide, a guide", None, None),
+    ("SPREAD", "to spread, spread out", "9-34", None),
+    ("NARROW", "narrow", "12-62", None),
+    ("SOURCE", "source, origin", None, None),
+    ("BORROW", "to borrow", "11-62", None),
+    ("AVOID", "to avoid", None, None),
+    ("CHECK", "to check, to verify", None, None),
+    ("COMMON", "common, shared", None, None),
+    ("SIMPLE", "simple", None, None),
+    ("GROUP", "group", None, None),
+    ("SET", "set, collection", None, None),
+]
+
 # Concepts G1/G2 already cover, so they must not be re-issued from the core
 # list.  WHO is excluded for a different reason: 3.2's Q10 builds it by
 # compounding (WHAT+PERSON), so it is not a root at all.
@@ -576,6 +659,59 @@ TECH = [
     ("list", "lista", "List"),
     ("table", "tabella", "Table (information)"),
     ("note", "nota", None),
+    # --- speech extension, 2026-08-06 (judgment call 17).  These are the
+    # technical register of a linguistics talk; the international form is kept
+    # by default (judgment call 12's "a technical community that already uses
+    # the Latin term must be able to pick this up with almost no learning").
+    # `wiki_title` is None for all of them ON PURPOSE: the langlinks cache does
+    # not hold these articles and this run is offline, so recognition is not
+    # measured rather than measured as zero.
+    ("international", "internationale", None),
+    ("auxiliary", "auxiliare", None),
+    ("automatic", "automatico", None),
+    ("optimization", "optimisatione", None),
+    ("objective", "objectivo", None),
+    ("maximize", "maximisa", None),
+    ("technical", "technico", None),
+    ("communicate", "communica", None),
+    ("idea", "idea", None),
+    ("natural", "naturale", None),
+    ("famous", "famoso", None),
+    ("evolve", "evolua", None),
+    ("construct", "constructa", None),
+    ("represent", "representa", None),
+    ("recognize", "recognitione", None),
+    ("bias", "bias", None),
+    ("discussion", "discussione", None),
+    ("presentation", "presentatione", None),
+    ("describe", "describa", None),
+    ("study", "studia", None),
+    ("adult", "adulto", None),
+    ("pidgin", "pidgin", None),
+    ("creole", "creolo", None),
+    ("questionnaire", "questionario", None),
+]
+
+# ---------------------------------------------------------------------------
+# GROUP 4: PROPER NAMES (new 2026-08-06, judgment call 18).  principles.md 3.7
+# keeps an initial capital on a proper noun and nothing else, so these are the
+# only capitalised words in the lexicon.  The spelling fed to translit is the
+# ENDONYM where the name has one that is written in Latin script; the source
+# spelling and that choice are [recall], like judgment call 14.
+# (gloss, source spelling, why that spelling)
+# ---------------------------------------------------------------------------
+NAMES = [
+    ("English (the language)", "english",
+     "endonym: English calls itself *English*"),
+    ("Europe", "europa",
+     "the Latin/pan-European form, which is also the endonym in most of the "
+     "languages spoken there"),
+    ("Esperanto", "esperanto", "endonym, already Latin-script"),
+    ("PHOIBLE", "phoible", "the database's own name, lowercased for translit"),
+    ("Quenya", "quenya", "endonym of the constructed language"),
+    ("Dothraki", "dothraki", "endonym as published"),
+    ("Comrie", "comrie", "surname, as written"),
+    ("Smith", "smith", "surname, as written"),
 ]
 
 # Judgment call 12(c).  A G3 concept that (a) and (b) select falls back to a
@@ -866,6 +1002,28 @@ def first_syllable(form: str) -> str | None:
         return None
     s = syls[0]
     return s if s and any(c in VOWELS for c in s) else None
+
+
+def first_n_syllables(form: str, n: int) -> str | None:
+    """Judgment call 15: a DISYLLABIC root is the donor's first two syllables.
+
+    The same rule as call 5, just cut one syllable later.  Every syllable kept
+    must be a legal G2 syllable in its own right - an onset that is not r/h/l
+    and not empty - so a disyllabic root obeys judgment calls 1 and 2 exactly
+    as a monosyllabic one does, and no root-internal hiatus is created.
+    """
+    syls = syllabify(form)
+    if len(syls) < n:
+        return None
+    out = syls[:n]
+    for s in out:
+        if not s or s[0] in VOWELS:
+            return None                      # judgment call 1 (onsetless ban)
+        if any(ch in BANNED_ONSETS for ch in s):
+            return None                      # judgment call 2
+        if s in BANNED_SYLLABLES:
+            return None
+    return "".join(out)
 
 
 def form_cost(form: str, freq_w: float) -> float:
@@ -1217,6 +1375,29 @@ def load_ids(cid_to_param: dict, by_iso: dict) -> pd.DataFrame:
               "iso", "adapted", "dsource"]]
 
 
+# The meanings the ASJP/IDS half of the false-friend reference is drawn from,
+# as Concepticon IDs.  IT IS DELIBERATELY NOT ALL OF THEM.  The existing
+# judgment call 11 restricts the WOLD half to WOLD's own "Function word"
+# category, on the argument that the false-friend effect lives in function
+# words because they are what a listener cannot help hearing; content-word
+# collisions (`ki` "person" also being Japanese *ki* "wood") are inevitable and
+# are deliberately not priced.  ASJP's 100 concepts are overwhelmingly CONTENT
+# words, so drawing on all of them makes the term the STRONGEST in the score
+# instead of the weakest - measured: it billed `pi` for colliding with Mandarin
+# *nose* and Hindi *drink*, at a penalty of 0.765, more than twice one step of
+# the representation term.  Restricted to the closed class, it is a tie-breaker
+# again, and it is exactly the class all five reviewed collisions live in.
+FF_FUNCTION_CIDS = {
+    1209: "I", 1215: "thou", 1212: "we", 1213: "you (pl)", 817: "they",
+    262: "he/she/it", 1214: "this", 78: "that", 1235: "who", 1236: "what",
+    1240: "not", 1268: "yes", 1269: "no", 1577: "and", 1014: "or",
+    1459: "if", 1579: "be", 98: "all", 1198: "many",
+    1294: "zero", 1493: "one", 1498: "two", 492: "three", 1500: "four",
+    493: "five", 1703: "six", 1704: "seven", 1705: "eight", 1483: "nine",
+    1515: "ten",
+}
+
+
 def asjp_ids_false_friends(cid_to_param: dict, by_iso: dict, world_l1: float,
                            min_l1: int) -> list[dict]:
     """Judgment call 11(c) [measured]: the false-friend reference, widened.
@@ -1252,7 +1433,7 @@ def asjp_ids_false_friends(cid_to_param: dict, by_iso: dict, world_l1: float,
     pnames = read_csv(d / "parameters.csv")
     param_name.update({str(i): str(n) for i, n in
                        zip(pnames["ID"], pnames["Name"])})
-    keep = {p for p, c in cids.items() if c in cid_to_param}
+    keep = {p for p, c in cids.items() if c in FF_FUNCTION_CIDS}
     forms = read_csv(d / "forms.csv", low_memory=False,
                      usecols=["Language_ID", "Parameter_ID", "Form", "Segments"])
     forms["Parameter_ID"] = forms["Parameter_ID"].astype(str)
@@ -1283,7 +1464,8 @@ def asjp_ids_false_friends(cid_to_param: dict, by_iso: dict, world_l1: float,
             seen_asjp.add(k)
             ref.append({"lang": f"asjp:{iso}", "iso": iso,
                         "share": pop / world_l1,
-                        "meaning": cid_to_param[cids[r.Parameter_ID]],
+                        "meaning": cid_to_param.get(cids[r.Parameter_ID],
+                                                   f"cid:{cids[r.Parameter_ID]}"),
                         "gloss": param_name.get(r.Parameter_ID, ""),
                         "written": approx, "approx": approx,
                         "source": "asjp"})
@@ -1297,7 +1479,7 @@ def asjp_ids_false_friends(cid_to_param: dict, by_iso: dict, world_l1: float,
     cids = _cid_map(d / "parameters.csv")
     pnames = read_csv(d / "parameters.csv")
     gloss = {str(i): str(n) for i, n in zip(pnames["ID"], pnames["Name"])}
-    keep = {p for p, c in cids.items() if c in cid_to_param}
+    keep = {p for p, c in cids.items() if c in FF_FUNCTION_CIDS}
     forms = read_csv(d / "forms.csv", low_memory=False,
                      usecols=["Language_ID", "Parameter_ID", "Form"])
     forms["Parameter_ID"] = forms["Parameter_ID"].astype(str)
@@ -1320,7 +1502,8 @@ def asjp_ids_false_friends(cid_to_param: dict, by_iso: dict, world_l1: float,
             continue
         seen_ids.add(k)
         ref.append({"lang": f"ids:{iso}", "iso": iso, "share": pop / world_l1,
-                    "meaning": cid_to_param[cids[r.Parameter_ID]],
+                    "meaning": cid_to_param.get(cids[r.Parameter_ID],
+                                               f"cid:{cids[r.Parameter_ID]}"),
                     "gloss": gloss.get(r.Parameter_ID, ""),
                     "written": written, "approx": approx, "source": "ids"})
     return ref
@@ -1476,9 +1659,15 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
     def banned(syl, group):
         return group in ban_scope and too_close(syl, taken) is not None
 
+    # Judgment call 15: the disyllabic coined pool.  Two legal G2 syllables
+    # concatenated; both start with a consonant, so the result is always legal
+    # under (C)V(N) and never introduces root-internal hiatus.
+    poly_pool = [a + b for a in pool for b in pool]
+
     rows = []
     for c in concepts:
         fw = FREQ_WEIGHT[c["group"]]
+        nsyl = int(c.get("nsyl", 1) or 1)
         want = 2 if (hard_distance2 and c["group"] in ("grammar", "numeral")) else 1
         chosen = None
         for min_dist in (want, 1):     # graceful fallback: see the bound below
@@ -1491,6 +1680,22 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
                     # one here.
                     form = d.get("adapted") or adapt(d["Form"])
                     if not form:
+                        continue
+                    if nsyl > 1:
+                        syl = first_n_syllables(form, nsyl)
+                        if syl is None or syl in taken:
+                            continue
+                        if breaks_minimal_pair_ban(syl, set(taken)):
+                            continue
+                        ff, _top = (ff_score(syl, c["concept"], c["wold"], ffidx)
+                                    if (ffidx and w_ff) else (0.0, ""))
+                        score = (W_EASE * ease.get(d["Language_ID"], 0.0)
+                                 - form_cost(syl, fw)
+                                 - W_REP * family_count.get(d["family"], 0)
+                                 - w_ff * ff)
+                        cands.append((score, d["Language_ID"], d["family"],
+                                      d["macroarea"], d["Form"], form, syl,
+                                      d.get("dsource", "wold")))
                         continue
                     syl = first_syllable(form)
                     if syl is None or syl in BANNED_SYLLABLES:
@@ -1526,10 +1731,11 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
             # false-friend terms.  Without them the coined particles come out as
             # a minimal-pair set, which is the worst possible outcome for the
             # most frequent words in the language.
-            free = [s for s in pool if s not in taken
+            src_pool = poly_pool if nsyl > 1 else pool
+            free = [s for s in src_pool if s not in taken
                     and not breaks_minimal_pair_ban(s, set(taken))
                     and not banned(s, c["group"])
-                    and distinctiveness(s, taken) >= min_dist]
+                    and (nsyl > 1 or distinctiveness(s, taken) >= min_dist)]
 
             def coined_key(s):
                 ff, _t = (ff_score(s, c["concept"], None, ffidx)
@@ -1550,7 +1756,8 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
         taken[syl] = c["concept"]
         if fam != "(none)":
             family_count[fam] = family_count.get(fam, 0) + 1
-        rows.append({**c, "form": syl, "syllables": 1, "donor": lid,
+        rows.append({**c, "form": syl, "syllables": len(syllabify(syl)),
+                     "donor": lid,
                      "donor_family": fam, "donor_macroarea": area,
                      "donor_form": raw, "donor_adapted": full,
                      "source": src, "score": round(score, 4),
@@ -1942,6 +2149,53 @@ def main() -> None:
         if r["donor_family"] != "(none)":
             family_count[r["donor_family"]] = family_count.get(r["donor_family"], 0) + 1
 
+    # ---- the speech extension (judgment calls 15-18) ----------------------
+    # Everything above this line is milestone 1 UNCHANGED, and deliberately so:
+    # the m1 concept list, donor pool and false-friend index are all built from
+    # m1's own inputs, so the greedy assignment (judgment call 6) reproduces the
+    # 84 shipped roots bit-for-bit.  The extension is a SECOND greedy pass that
+    # starts from m1's `taken` and `family_count`, which is what makes judgment
+    # call 15's "every milestone-1 form stays unchanged" true by construction
+    # rather than by luck.  main() asserts it against the committed CSV.
+    print("\n=== speech extension: new roots (judgment calls 15-16) ===")
+    speech: list[dict] = []
+    extra_cid: dict[int, str] = {}
+    for grp, nsyl, table in (("core", 1, SPEECH_MONO),
+                             ("core-poly", 2, SPEECH_POLY)):
+        for cid, gloss, w, ccid in table:
+            param = w
+            if not param and ccid:
+                param = cid_to_param.get(int(ccid))
+                if not param:                      # judgment call 16
+                    param = f"X-{cid}"
+                    extra_cid[int(ccid)] = param
+            speech.append({"group": grp, "concept": cid, "gloss": gloss,
+                           "wold": param, "rank": "",
+                           "concepticon": int(ccid) if ccid else "",
+                           "nsyl": nsyl})
+    cid_to_param2 = {**cid_to_param, **extra_cid}
+    used2 = {c["wold"] for c in speech if c["wold"]}
+    used_cids2 = {c: p for c, p in cid_to_param2.items() if p in used2}
+    parts2 = [wold_only.assign(adapted="", dsource="wold"),
+              load_asjp(used_cids2, by_iso), load_ids(used_cids2, by_iso)]
+    donors2 = pd.concat(parts2, ignore_index=True)
+    donors2["adapted"] = donors2["adapted"].fillna("")
+    n_don = {p: int((donors2["Parameter_ID"] == p).sum()) for p in used2}
+    print(f"  {len(speech)} concepts ({sum(1 for c in speech if c['nsyl'] == 1)} "
+          f"monosyllabic, {sum(1 for c in speech if c['nsyl'] > 1)} disyllabic); "
+          f"{len(used2)} have a donor concept, "
+          f"{sum(1 for c in speech if not c['wold'])} are coined from the free pool")
+    print(f"  synthetic parameters minted for IDS/ASJP-only concepts "
+          f"(judgment call 16): {sorted(extra_cid.values()) or 'none'}")
+    speech_rows = assign(speech, donors2, by_iso, tot, taken, family_count,
+                         ffidx=ffidx, w_ff=W_FF)
+    for r in speech_rows:
+        print(f"    {r['group']:10s} {r['concept']:10s} {r['form']:9s} "
+              f"{r['syllables']}syl  {r['donor']:22s} "
+              f"{str(r['donor_form'])[:14]:15s} cost={r['seg_cost']:.2f} "
+              f"cand={r['n_donor_candidates']}")
+    rows = rows + speech_rows
+
     # ---- the false-friend weight sweep (judgment call 11) ----------------
     print("\n  W_FF sweep - what the term buys, measured.  `load` is the summed "
           "false-friend\n  score of the 84 chosen roots (lower is better); "
@@ -1977,9 +2231,19 @@ def main() -> None:
               f"(penalty {W_FF*r['false_friend_score']:.3f})  {r['false_friend_top']}")
 
     pool = monosyllable_pool()
+    mono_used = sorted(s for s in taken if s in set(pool))
+    n_free = len(pool) - len(mono_used)
     print(f"\n  monosyllable budget: {len(pool)} usable (policy in docstring); "
-          f"{len(taken)} assigned; {len(pool)-len(taken)} free "
-          f"({100*(len(pool)-len(taken))/len(pool):.0f}% left unassigned)")
+          f"{len(mono_used)} assigned; {n_free} free "
+          f"({100*n_free/len(pool):.1f}% left unassigned)")
+    print(f"    lexicon-plan 1 wants a third to a half of the pool free: "
+          f"{100*n_free/len(pool):.1f}% is "
+          f"{'INSIDE' if 1/3 <= n_free/len(pool) <= 1/2 else 'OUTSIDE'} that band")
+    print(f"    (milestone 1 spent 84; the speech extension spends "
+          f"{len(mono_used)-84} more, and puts "
+          f"{sum(1 for r in speech_rows if r['syllables'] > 1)} roots on "
+          f"disyllables instead - judgment call 15)")
+    print(f"    free monosyllables: {' '.join(s for s in pool if s not in taken)}")
     n_ons, n_vow, n_cod = 12, 5, 3
     bound = n_ons * n_vow * n_cod // max(n_ons, n_vow, n_cod)
     near = sum(1 for r in rows if r["nearest_word_distance"] < 2)
@@ -2070,6 +2334,33 @@ def main() -> None:
                        panel_languages=0, panel_share_world_l1=float("nan"),
                        n_recognizing=0, top_recognizers="")
         tech_rows.append(row)
+
+    # ---- GROUP 4: proper names (judgment call 18) -------------------------
+    print("\n=== proper names (judgment call 18) ===")
+    name_rows = []
+    for gloss, src, why in NAMES:
+        res = translit.render(src, "V3C", epen="labial_u",
+                              final_policy="epenthesize")
+        form = res["form"][:1].upper() + res["form"][1:]   # 3.7: initial capital
+        name_rows.append({
+            "group": "name", "concept": gloss.upper(), "gloss": gloss,
+            "wold": None, "rank": "", "concepticon": "",
+            "form": form, "syllables": res["syl_after"],
+            "donor": "endonym / as written", "donor_family": "(none)",
+            "donor_macroarea": "(none)", "donor_form": src,
+            "donor_adapted": form, "source": "translit", "score": "",
+            "seg_cost": round(form_cost(res["form"], 1.0), 3),
+            "seg_cost_weighted": 0.0, "n_donor_candidates": 1,
+            "recog_instrument": "(not measured)", "wiki_title": "",
+            "syllable_inflation": res["syl_after"] - res["syl_before"],
+            "fallback_flag": "", "compound_gloss": why,
+            "recog_share_world_l1": float("nan"),
+            "recog_share_world_l1_strict": float("nan"),
+            "recog_share_panel": float("nan"), "panel_languages": 0,
+            "panel_share_world_l1": float("nan"), "n_recognizing": 0,
+            "top_recognizers": "", "threshold": ""})
+        print(f"    {gloss:24s} {src:11s} -> {form:14s} "
+              f"({res['syl_after']} syl)  {why}")
 
     # ---- judgment call 12: the tier-3 fallback ---------------------------
     print("\n=== G3 fallback rule (judgment call 12) ===")
@@ -2169,11 +2460,12 @@ def main() -> None:
         r["panel_share_world_l1"] = wold_panel_pop / world_l1
 
     # ---- integrity checks ------------------------------------------------
-    all_rows = rows + tech_rows
+    all_rows = rows + tech_rows + name_rows
     print("\n=== integrity checks ===")
     forms_all = [r["form"] for r in all_rows]
     dupes = {f for f in forms_all if forms_all.count(f) > 1}
     print(f"  homophones: {sorted(dupes) if dupes else 'none'}")
+    assert not dupes, f"duplicate forms in the lexicon: {sorted(dupes)}"
     bans = []
     for i, a in enumerate(forms_all):
         for b in forms_all[i + 1:]:
@@ -2183,6 +2475,17 @@ def main() -> None:
             if len(diffs) == 1 and set(diffs[0]) in ({"l", "r"}, {"h", "r"}):
                 bans.append((a, b))
     print(f"  l~r / h~r minimal pairs: {bans if bans else 'none'}")
+    assert not bans, f"l~r / h~r minimal pairs: {bans}"
+    # Judgment call 15: the milestone-1 forms are FROZEN.  Checked against the
+    # committed CSV, not asserted in prose.
+    if OUT_CSV.exists():
+        old = read_csv(OUT_CSV)
+        now = {r["concept"]: r["form"] for r in all_rows}
+        moved = [(c, f, now.get(c)) for c, f in zip(old["concept"], old["form"])
+                 if c in now and now[c] != f]
+        print(f"  milestone-1 forms that moved: {moved if moved else 'none'} "
+              f"({len(old)} previously committed)")
+        assert not moved, f"milestone-1 forms changed: {moved}"
     illegal = [r["form"] for r in all_rows
                if not translit.is_legal(r["form"], translit.VARIANTS["V3C"])]
     print(f"  illegal forms: {illegal if illegal else 'none'}")
@@ -2277,12 +2580,12 @@ def main() -> None:
     print(df.groupby("group").agg(n=("form", "size"),
                                   syl=("syllables", "mean")).round(2).to_string())
     print("\n=== donor family breakdown (G1+G2 roots) ===")
-    fam = (df[df.group != "technical"].groupby("donor_family")
+    fam = (df[~df.group.isin(["technical", "name"])].groupby("donor_family")
            .agg(n=("form", "size")).sort_values("n", ascending=False))
     fam["pct"] = (100 * fam.n / fam.n.sum()).round(1)
     print(fam.to_string())
     print("\n=== donor macroarea breakdown (G1+G2 roots) ===")
-    area = (df[df.group != "technical"].groupby("donor_macroarea")
+    area = (df[~df.group.isin(["technical", "name"])].groupby("donor_macroarea")
             .agg(n=("form", "size")).sort_values("n", ascending=False))
     area["pct"] = (100 * area.n / area.n.sum()).round(1)
     print(area.to_string())
