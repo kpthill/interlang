@@ -215,6 +215,14 @@ begins with the relativizer, and omits the shared element; the relativizer joins
 noun, and where the noun has no argument role in the clause the relation is pragmatic).
 **Running grammar total: 16 words, 5 rules.**
 
+**Tier 3 cleanup** → [`grammar-tier3-cleanup.md`](grammar-tier3-cleanup.md): four decisions
+that were never on the agenda and were being silently assumed — **no serial verbs, no
+passive, no pro-drop (subject obligatory), and the indirect-object ditransitive**. Zero words,
+one rule. Three of the four were visible only because earlier write-ups invoked them as
+premises; **the process risk is worth naming — a write-up that justifies a decision by appeal
+to a feature we have not decided has smuggled that feature in.** Final totals: **16 words,
+6 rules.**
+
 Both Tier 3 notes were decided **without committed study scripts** — a deliberate deviation
 from the one-study-per-script convention in [`../CLAUDE.md`](../CLAUDE.md), taken on time
 pressure for the least consequential tier and logged in each note's header and honest-limits

@@ -440,6 +440,44 @@ optional complementizer.**
 **Word bill: 5. Tier 3 closes at 6 words and 3 rules. Running grammar total: 16 words,
 5 rules** — under 9% of the short-word space.
 
+#### Four things that were being assumed (**SOFT**, 2026-08-06 by Patrick — Tier 3 cleanup)
+
+Evidence: [`grammar-tier3-cleanup.md`](grammar-tier3-cleanup.md). Three of these were never
+on the agenda and are visible only because earlier write-ups **invoked them as premises** —
+the exceed-comparative was rejected as "serial-verb machinery we have not adopted", which was
+true only in the sense that nobody had adopted *or rejected* it. **All four cost zero words.**
+
+- **No serial verb constructions** (two verbs sharing arguments with no marker: *I take knife
+  cut bread*). Restricted pidgins lack 'give' serials 7 of 9 and 'take' serials 5 of 9;
+  GB118 is 53.0% of languages and **48.4% of L1** — a plurality, not a majority. Everything
+  they do is available from coordination, prepositions and §4 below. **Not a Euro-default
+  rejection** — serials are West African and South-East Asian, and the pidgin columns are
+  what decide it; flagged for the bias audit rather than left to pass unnoticed.
+- **No passive** — against **77.9% of world L1** (GB086), the second-largest population
+  override in the project. Structural rather than preferential: a passive needs verb
+  morphology (forbidden) or a participle (we have no non-finite form), so it would cost a
+  word, a rule *and* a verb form. Use an indefinite subject: `someone steal the book`.
+  **What is genuinely lost is information structure** — with rigid SVO and no topicalization,
+  a speaker cannot put the patient in topic position. Accepted, and the sharpest cost here.
+- **No pro-drop — the subject is obligatory** — against 66.9% of L1 (GB522). Languages that
+  drop subjects have agreement to recover them from and we have none; decisively, **it would
+  collide with the imperative**, since Q9 makes a command a bare subjectless verb phrase, so
+  `eat food` would be both "eat the food!" and "(he) eats food". **The second decision in
+  Tier 3 forced by an interaction between our own choices** rather than a distribution — the
+  copula was the first, and both were invisible to sources that code features one at a time.
+- **Ditransitives use the indirect-object construction**: `I give book to he`. SVO never said
+  what order two objects take — a gap open since Tier 0. The recipient takes a preposition
+  (49.9% of languages, **51.3% of L1**), which **costs nothing and removes any rule about
+  object order**. Same move as the serial-verb rejection: where position or an overt marker
+  could do the job, and position already carries the entire argument-role load, take the
+  marker.
+
+**Consequence: the alignment deferral is closed on both routes.** §7 named pronoun case
+(closed by Q8) and a passive; both are now shut.
+
+**Word bill: 0. Rule added: 1** — *every clause has an overt subject; a subjectless verb
+phrase is an imperative.* **Running grammar total: 16 words, 6 rules.**
+
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 
 **The inventory is closed. 15 consonants + 5 vowels = 20 phonemes.**

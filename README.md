@@ -131,8 +131,17 @@ questions and next steps in §7.
   subordinator set would have been 8–10 words. The
   relative pronoun is rejected — 40.6% of *total speakers* have one, but it needs case, which
   the pronoun decision refused. *Also decided without a committed study script.*
-- **Tier 3 is complete.** **6 words, 3 rules.** Running grammar total: **16 words, 5 rules**
-  — under 9% of the short-word space.
+- **Grammar Tier 3 cleanup** — done,
+  [`notes/grammar-tier3-cleanup.md`](notes/grammar-tier3-cleanup.md). Four decisions that
+  were being silently assumed: **no serial verbs, no passive, no pro-drop, and the
+  indirect-object ditransitive** (`I give book to he`). Three were visible only because
+  earlier write-ups invoked them as premises — the exceed-comparative had been rejected as
+  "serial-verb machinery we have not adopted", which nobody had adopted *or rejected*. The
+  no-pro-drop decision is the second in Tier 3 forced by an **interaction between our own
+  choices**: Q9 makes a command a bare subjectless verb phrase, so droppable subjects would
+  make `eat food` both "eat the food!" and "(he) eats food".
+- **Tier 3 is complete, and so is the grammar through Tier 3.** Running total: **16 words,
+  6 rules** — under 9% of the short-word space.
 - **Next:** Tier 4, the lexicon interface — word classes and how rigid they are,
   derivational machinery, and the final root-shape bounds that couple grammar back to
   phonology (`notes/principles.md` §3.6). Phonology and phonotactics are closed (`notes/principles.md`
