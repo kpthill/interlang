@@ -190,17 +190,31 @@ repeated in notes/lexicon-milestone1.md.
    a Singleton bound caps a distance-2 code at 15 words and the closed class
    needs 20, and adding consonants provably does not help (see main()'s
    printout).  The rule now is: MAXIMISE PERCEPTUAL SEPARATION using the
-   feature-distance metric of src/interlang/metric.py.  A candidate pays
+   feature-distance metric of src/interlang/metric.py.
 
-       W_SEP * (freq/3) * max(0, (s - SEP_FLOOR) / (1 - SEP_FLOOR))
+   IT IS A BAN, NOT A PENALTY: no monosyllabic root may score >= SEP_BAN = 0.95
+   metric-v0 similarity against a root already assigned.  That is the direct
+   generalisation of 3.3's two FIRM minimal-pair bans (l~r, h~r) from "these
+   two segments" to "any pair one feature apart", and it is Patrick's own
+   formulation - `mi` vs `ti` (0.733) is fine, `di` vs `ti` (0.983) is not.
+   [measured] over the 174-syllable pool, 0.95 bans exactly the voicing-only
+   pairs (0.983) and the i~e pairs (0.966); 184 of the 15,051 pairs, a mean of
+   2.1 forbidden neighbours per syllable, so 84 roots fit comfortably.
 
-   where `s` is its highest metric-v0 similarity to any monosyllable already
-   assigned, W_SEP = 0.90 and SEP_FLOOR = 0.70.  This generalises 3.3's two
-   FIRM minimal-pair bans (l~r, h~r) from "these two segments" to "any pair the
-   metric says is too close", and it disagrees with the Hamming rule in both
-   directions, which is the point: `di`~`ti` (voicing only, s=0.983) is now
-   expensive while `na`~`nan` (a whole extra segment, s=0.667) is free, and
-   `mi`~`ti` (s=0.733) never was a problem.
+   The metric disagrees with the Hamming rule in BOTH directions, which is the
+   point: `di`~`ti` is now illegal while `na`~`nan` (a whole extra segment,
+   s=0.667) is free and `mi`~`ti` never was a problem.
+
+   A GRADED PENALTY WAS TRIED FIRST AND REJECTED [measured].  Scoring
+   W_SEP*(freq/3)*max(0,(s-floor)/(1-floor)) instead of banning rewrote 65 of
+   the 84 roots - not because any of them was badly separated, but because the
+   greedy assignment (call 6) is chaotic: change any score term slightly and
+   one early re-ranking cascades through every later concept.  It cost `ten`,
+   `san` and `mo` - three of the few recognisable numerals - for no measured
+   gain.  A hard filter does not reorder the survivors, so it changes a form
+   only when that form is actually too close.  THE CHAOS IS ITSELF A FINDING:
+   it is the strongest argument yet for replacing greedy with a global
+   assignment (known problem 7.7).
 
 11. FALSE FRIENDS ARE PRICED, WEAKLY (new 2026-08-06, Patrick).  Review of the
    first run found five forms that read as a DIFFERENT high-frequency word in a
@@ -360,8 +374,15 @@ BANNED_SYLLABLES = {"ji", "jin", "jim", "wu", "wun", "wum"}
 
 W_EASE = 1.00
 W_REP = 0.35
-W_SEP = 0.90                        # perceptual separation (judgment call 10)
+W_SEP = 0.90                        # perceptual separation, graded half
 SEP_FLOOR = 0.85                    # similarity below which separation is free
+BAN_SCOPE = ("grammar", "numeral")  # where the hard half applies (call 10)
+SEP_BAN = 0.95                      # perceptual separation, hard half:
+                                    # no two monosyllabic roots may be this
+                                    # similar.  At 0.95 the banned pairs are
+                                    # exactly the voicing-only ones (ti~di,
+                                    # 0.983) and the i~e ones (si~se, 0.966);
+                                    # ka~kan (0.667) and mi~ti (0.733) are free.
 W_DIST_HAMMING = 0.90               # the RETIRED code-distance term, kept only
                                     # so main() can print the before/after arm
 W_FF = 0.30                         # false friends (judgment call 11)
@@ -877,10 +898,23 @@ def nearest_sim(syl: str, assigned) -> float:
 
 
 def separation_penalty(syl: str, assigned, freq_w: float) -> float:
-    """Judgment call 10: pay for landing perceptually close to an existing word."""
+    """Judgment call 10, graded half: pay for landing perceptually close."""
     s = nearest_sim(syl, assigned)
     return (W_SEP * (freq_w / 3.0)
             * max(0.0, (s - SEP_FLOOR) / (1.0 - SEP_FLOOR)))
+
+
+def too_close(syl: str, assigned) -> str | None:
+    """Judgment call 10: the word `syl` is perceptually indistinguishable from.
+
+    A BAN, not a penalty - the generalisation of 3.3's two FIRM minimal-pair
+    bans from "these two segments" to "any pair the metric says is one feature
+    apart".  Returns the offending word or None.
+    """
+    for o in assigned:
+        if len(o) <= 4 and o != syl and sim(syl, o) >= SEP_BAN:
+            return o
+    return None
 
 
 def hamming_penalty(syl: str, assigned, freq_w: float) -> float:
@@ -1068,6 +1102,7 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
            tot: dict, taken: dict, family_count: dict,
            ffidx: dict[str, list[dict]] | None = None,
            w_ff: float = W_FF, separation: str = "metric",
+           ban_scope: tuple[str, ...] = BAN_SCOPE,
            hard_distance2: bool = False) -> list[dict]:
     """Greedy form assignment (judgment call 6).
 
@@ -1098,6 +1133,10 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
             return hamming_penalty(syl, taken, fw)
         return 0.0
 
+    def banned(syl, group):
+        return (separation == "metric" and group in ban_scope
+                and too_close(syl, taken) is not None)
+
     rows = []
     for c in concepts:
         fw = FREQ_WEIGHT[c["group"]]
@@ -1122,6 +1161,8 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
                         continue
                     if breaks_minimal_pair_ban(syl, set(taken)):
                         continue
+                    if banned(syl, c["group"]):
+                        continue          # judgment call 10
                     if distinctiveness(syl, taken) < min_dist:
                         continue
                     ff, _top = (ff_score(syl, c["concept"], c["wold"], ffidx)
@@ -1144,6 +1185,7 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
             # most frequent words in the language.
             free = [s for s in pool if s not in taken
                     and not breaks_minimal_pair_ban(s, set(taken))
+                    and not banned(s, c["group"])
                     and distinctiveness(s, taken) >= min_dist]
 
             def coined_key(s):
@@ -1468,11 +1510,11 @@ def main() -> None:
     # ---- assign monosyllables, three arms --------------------------------
     print("\n=== assigning monosyllabic roots (G1 + G2) ===")
     arms = {}
-    for name, kw in (("A: hamming separation, no false friends",
-                      dict(separation="hamming", w_ff=0.0)),
-                     ("B: metric separation, no false friends",
+    for name, kw in (("A: milestone-1 code-distance rule, no false friends",
+                      dict(separation="hamming", w_ff=0.0, ban_scope=())),
+                     ("B: perceptual separation, no false friends",
                       dict(separation="metric", w_ff=0.0)),
-                     ("C: metric separation + false friends (DEFAULT)",
+                     ("C: perceptual separation + false friends (DEFAULT)",
                       dict(separation="metric", w_ff=W_FF))):
         taken_a: dict[str, str] = {}
         fam_a: dict[str, int] = {}
@@ -1480,12 +1522,28 @@ def main() -> None:
                             ffidx=ffidx, hard_distance2=args.hard_distance2,
                             **kw)
     names = list(arms)
-    print(f"  arm A = the milestone-1 rule (retired), arm B = judgment call 10, "
-          f"arm C = 10 + 11")
+    print("  arm A = the milestone-1 rule (retired), arm B = judgment call 10, "
+          "arm C = 10 + 11")
+    # The ban alone, bolted onto arm A, is a separate and informative arm.
+    taken_x: dict[str, str] = {}
+    fam_x: dict[str, int] = {}
+    a_plus_ban = assign(concepts, donors, by_iso, tot, taken_x, fam_x,
+                        ffidx=ffidx, w_ff=0.0, separation="hamming",
+                        ban_scope=BAN_SCOPE, hard_distance2=args.hard_distance2)
+    n_ban_only = sum(1 for x, y in zip(arms[names[0]], a_plus_ban)
+                     if x["form"] != y["form"])
+    print(f"  the perceptual BAN on its own changes {n_ban_only} forms: "
+          f"milestone 1's closed class already satisfies it, because the "
+          f"code-distance rule it was built under is strictly stronger than "
+          f"the metric asks for")
     changed = [(a["concept"], a["form"], b["form"], c["form"])
                for a, b, c in zip(*(arms[n] for n in names))
                if not (a["form"] == b["form"] == c["form"])]
-    print(f"  {len(changed)} of {len(concepts)} forms differ across the arms:")
+    n_bc = sum(1 for b, c in zip(arms[names[1]], arms[names[2]])
+               if b["form"] != c["form"])
+    print(f"  {len(changed)} of {len(concepts)} forms differ across the arms "
+          f"(A->B {sum(1 for a, b in zip(arms[names[0]], arms[names[1]]) if a['form'] != b['form'])} "
+          f"= the separation instrument; B->C {n_bc} = false friends):")
     print(f"    {'concept':22s} {'A(old)':>8s} {'B(sep)':>8s} {'C(sep+ff)':>10s}")
     for cid, fa, fb, fc in changed:
         mark = "  <- false friends" if fb != fc else ""
@@ -1521,11 +1579,14 @@ def main() -> None:
           f"{len(GRAMMAR)}, so the code framing is dead and "
           f"{near} of {len(rows)} roots sit one feature from another word")
     g1 = [r["form"] for r in rows if r["group"] == "grammar"]
-    worst = max(((sim(a, b), a, b) for i, a in enumerate(g1) for b in g1[i+1:]),
-                default=(0, "", ""))
-    print(f"  closed-class perceptual separation: worst pair is "
-          f"{worst[1]}~{worst[2]} at similarity {worst[0]:.3f} "
-          f"(the term charges above {SEP_FLOOR})")
+    allf = [r["form"] for r in rows]
+    for label, fs in (("closed class", g1), ("all G1+G2 roots", allf)):
+        pairs = sorted(((sim(a, b), a, b) for i, a in enumerate(fs)
+                        for b in fs[i + 1:]), reverse=True)
+        print(f"  {label}: worst perceptual pair {pairs[0][1]}~{pairs[0][2]} at "
+              f"{pairs[0][0]:.3f}; next {pairs[1][1]}~{pairs[1][2]} "
+              f"{pairs[1][0]:.3f}, {pairs[2][1]}~{pairs[2][2]} {pairs[2][0]:.3f} "
+              f"(ban at {SEP_BAN})")
 
     # ---- G2 recognition against the WOLD panel ---------------------------
     wold_pop = {}
