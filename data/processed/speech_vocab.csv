@@ -1,0 +1,155 @@
+english_gloss,interlang_form,group,derivation
+I (speaker),jo,grammar,asjp:SPANISH (Indo-European) <yo>
+and,pi,grammar,ids:Puinave (Puinave) <pəi>
+comparative standard marker,jum,grammar,coined from the free monosyllable pool (no donor)
+copula; alone = existential,wan,grammar,Qeqchi (Mayan) <wank>
+he/she/it,ta,grammar,MandarinChinese (Sino-Tibetan) <ta1>
+if; conditional,mo,grammar,Japanese (Japonic) <moshi>
+"negator, immediately before the verb",we,grammar,asjp:AFAR_3 (Afro-Asiatic) <we>
+"no - answers the fact, not the polarity",nem,grammar,ids:Hungarian (Uralic) <nem>
+or,wa,grammar,ids:Finnish (Uralic) <wai>
+ordinal marker (ORD + numeral),tun,grammar,coined from the free monosyllable pool (no donor)
+"question particle, clause-initial",fin,grammar,coined from the free monosyllable pool (no donor)
+"reflexive, invariant; also the passive marker",fem,grammar,coined from the free monosyllable pool (no donor)
+relativizer / complementizer,mim,grammar,coined from the free monosyllable pool (no donor)
+that (distal demonstrative; `this` is the G2 core root),sun,grammar,asjp:AWA_PIT (Barbacoan) <sun>
+the one interrogative root; who = WHAT+person,jen,grammar,asjp:KURUKH_2 (Dravidian) <yendra>
+they,fu,grammar,ids:Central Thai (Tai-Kadai) <phuak.3 khaw.5>
+we,pon,grammar,asjp:SURIN (Austroasiatic) <ph~oN y3N>
+"yes - answers the fact, not the polarity",pin,grammar,ids:Tai Lü (Tai-Kadai) <pin.1>
+you (more than one),som,grammar,ids:Persian (Indo-European) <šomɑ>
+you (one addressee),kam,grammar,asjp:KARO_BATAK (Austronesian) <kam>
+0,pam,numeral,Iraqw (Afro-Asiatic) <pampoo>
+1,jem,numeral,asjp:MOORE (Atlantic-Congo) <yembo>
+10,mu,numeral,Vietnamese (Austroasiatic) <mười>
+2,fi,numeral,asjp:BAMBARA_4 (Mande) <filo>
+3,bo,numeral,ids:Guaraní (Tupian) <ᵐbohapɨ>
+4,di,numeral,Kanuri (Saharan) <dìyáù>
+5,fun,numeral,ids:German (Indo-European) <fünf>
+6,tim,numeral,ids:Puinave (Puinave) <tə̃m dabata bat>
+7,tom,numeral,ids:Seri (Seri) <tomkox -īʔ>
+8,kin,numeral,ids:Chipaya (Uru-Chipaya) <kinsaḳalku>
+9,be,numeral,ids:Basque (Basque) <bede'rac̷ü>
+action (X-action),num,generic,WhiteHmong (Hmong-Mien) <num>
+manner (how: WHAT-manner),nim,generic,ids:Aguaruna (Chicham) <ni'mɨ>
+person (agent nouns: X-person),kim,generic,asjp:TURKISH (Turkic) <kimse>
+place (where: WHAT-place),tem,generic,Indonesian (Austronesian) <tempat>
+quality (abstract nouns: X-quality),fim,generic,coined from the free monosyllable pool (no donor)
+reason (why: WHAT-reason),nu,generic,ids:Aguaruna (Chicham) <nunik-bau ah-amu>
+thing (object nouns: X-thing),sem,generic,ids:Mapudungun (Araucanian) <čemrume>
+time (when: WHAT-time),pen,generic,ids:Macushi (Cariban) <pensa>
+tool (instrument nouns: X-tool),kom,generic,Swahili (Atlantic-Congo) <chombo>
+arm/hand,mom,core,coined from the free monosyllable pool (no donor)
+back,gi,core,ids:Ayoreo (Zamucoan) <giido'booi>
+big,man,core,asjp:BURIAT_RUSSIA_2 (Mongolic-Khitan) <mandagar>
+bitter,sim,core,ids:Toba (Guaicuruan) <čim>
+black,ko,core,asjp:KOREAN (Koreanic) <komun>
+blood,jam,core,asjp:AMPALE (Angan) <ya7mpaza>
+bone,jun,core,asjp:WARLPIRI_2 (Pama-Nyungan) <yuNkunu>
+breast,sam,core,asjp:KHOEKHOEGOWAB (Khoe-Kwadi) <sams>
+ear,kun,core,asjp:GUNWINGGU_KUNINJKU (Gunwinyguan) <kunkanem>
+far,sin,core,Kanuri (Saharan) <cíndə̀>
+fire,tam,core,asjp:BENCHO (Ta-Ne-Omotic) <tam>
+fish,pu,core,asjp:ADYGHE_2 (Abkhaz-Adyge) <pcaZ3y>
+flesh/meat,mem,core,coined from the free monosyllable pool (no donor)
+fly,wi,core,ids:Tuyuca (Tucanoan) <wĩ'yã pa'ka-ra>
+hair,pem,core,coined from the free monosyllable pool (no donor)
+horn,gom,core,asjp:KIBET (Maban) <gomdi>
+house,je,core,ids:Páez (Páez) <yet>
+leg/foot,pim,core,coined from the free monosyllable pool (no donor)
+louse,jom,core,coined from the free monosyllable pool (no donor)
+mouth,su,core,MandarinChinese (Sino-Tibetan) <zui3>
+name,nam,core,asjp:BURUSHASKI_2 (Burushaski) <nam>
+navel,tan,core,ids:Tlingit (Athabaskan-Eyak-Tlingit) <-taanwú>
+neck,fo,core,asjp:CHECHEN_2 (Nakh-Daghestanian) <vort3>
+night,pun,core,Mapudungun (Araucanian) <puṉ>
+nose,nun,core,asjp:TERNATE (North Halmahera) <Nun>
+rain,ku,core,ids:Embera (Chocoan) <kue>
+root,din,core,asjp:FUR_2 (Furan) <diN>
+smoke,jon,core,asjp:KOREAN (Koreanic) <yongi>
+stone/rock,pa,core,ids:Pacaas Novos (Chapacuran) <pakun>
+this,nen,core,asjp:TETELCINGO_NAHUATL (Uto-Aztecan) <n3nka>
+to bite,sa,core,asjp:XAVANTE (Nuclear-Macro-Je) <cari>
+to come,ge,core,asjp:TURKISH (Turkic) <gel>
+to do/make,mum,core,coined from the free monosyllable pool (no donor)
+to drink,sum,core,asjp:LAZ (Kartvelian) <Sum>
+to go,po,core,ids:Tacana (Pano-Tacanan) <poti->
+to hit/beat,mun,core,Oroqen (Tungusic) <mʊnda:->
+to say,ma,core,asjp:KOREAN (Koreanic) <mal ha>
+to stand,dan,core,asjp:MURSI_2 (Surmic) <dant3no>
+tongue,mam,core,asjp:NAKAME (Nuclear Trans New Guinea) <mEmb3N>
+tooth,gan,core,asjp:CHEROKEE (Iroquoian) <gandohka>
+water,win,core,ids:Goajiro (Arawakan) <wɨin>
+wind,fen,core,MandarinChinese (Sino-Tibetan) <feng1>
+wing,pe,core,ids:Yanomámi (Yanomamic) <pei hako>
+yesterday,ki,core,Japanese (Japonic) <kinō>
+adjective,fimlekisi,compound,fim+lekisi = quality-word; already in the lexicon as a shipped compound
+adverb,nimlekisi,compound,nim+lekisi = manner-word; already in the lexicon as a shipped compound
+conlang / constructed language,mumlingua,compound,mum+lingua = make-language; the head is `language`; the modifier is the verb root `fum` 'do/make'
+how,jennim,compound,jen+nim = what-manner; principles.md 3.2 Q10
+language family,lingua familia,compound,"lingua+familia = language family; written as two words: a head-final noun-noun phrase, not a root"
+mother tongue / first language,tunjem lingua,compound,"tun+jem+lingua = ordinal-one language; ORD+numeral is the ordinal of 3.2; `mimmo` = 'first', then the head"
+question,jensem,compound,jen+sem = what-thing; already in the lexicon as a shipped compound
+sound system,fonosisitema,compound,fono+sisitema = sound-system; head-final
+syntax,frasenim,compound,frase+nim = sentence-manner; already in the lexicon as a shipped compound
+when,jenpen,compound,jen+pen = what-time; principles.md 3.2 Q10
+where,jentem,compound,jen+tem = what-place; principles.md 3.2 Q10
+who,jenkim,compound,jen+kim = what-person; principles.md 3.2 Q10
+why,jennu,compound,jen+nu = what-reason; principles.md 3.2 Q10
+word class,lekisikategoria,compound,lekisi+kategoria = word-category; head-final
+wordlist,lekisilisita,compound,lekisi+lisita = word-list; head-final
+because,fo,construction,judgment call C2: the generic noun `fo` 'reason' in 3.2's adverbial-clause construction; no new root
+adjective,fimlekisi,technical,native compound fim+lekisi (quality-word)
+adverb,nimlekisi,technical,native compound nim+lekisi (manner-word)
+alphabet,alifabeto,technical,international <alphabeto>
+analysis,analisisi,technical,international <analysis>
+category,kategoria,technical,international <categoria>
+compound,komposito,technical,international <composito>
+computer,komputeri,technical,international <computer>
+consonant,konsonanta,technical,international <consonanta>
+corpus,koripusi,technical,international <corpus>
+data,data,technical,international <data>
+dialect,dialekito,technical,international <dialecto>
+dictionary,dikitionario,technical,international <dictionario>
+example,ekisemplo,technical,international <exemplo>
+family (of languages),familia,technical,international <familia>
+form,forima,technical,international <forma>
+frequency,frekiwentia,technical,international <frequentia>
+grammar,gramatika,technical,international <grammatica>
+language,lingua,technical,international <lingua>
+letter,litera,technical,international <litera>
+lexicon,lekisikon,technical,international <lexicon>
+linguistics,linguisitika,technical,international <linguistica>
+list,lisita,technical,international <lista>
+meaning,sensu,technical,international <sensu>
+method,metodo,technical,international <methodo>
+model,modelo,technical,international <modello>
+morpheme,morifema,technical,international <morphema>
+note,nota,technical,international <nota>
+noun,nomen,technical,international <nomen>
+number,numero,technical,international <numero>
+phoneme,fonema,technical,international <phonema>
+phonetics,fonetika,technical,international <phonetica>
+phonology,fonologia,technical,international <phonologia>
+population,populatione,technical,international <populatione>
+program,programa,technical,international <programa>
+project,projekito,technical,international <projecto>
+question,jensem,technical,native compound jen+sem (what-thing)
+root (of a word),radika,technical,international <radika>
+rule,regula,technical,international <regula>
+semantics,semantika,technical,international <semantica>
+sentence,frase,technical,international <frase>
+sound,fono,technical,international <phono>
+statistics,sitatisitika,technical,international <statistica>
+structure,sitrukitura,technical,international <structura>
+syllable,silaba,technical,international <syllaba>
+syntax,frasenim,technical,native compound frase+nim (sentence-manner)
+system,sisitema,technical,international <systema>
+table,tabela,technical,international <tabella>
+text,tekisito,technical,international <texto>
+translation,tradukitione,technical,international <traductione>
+typology,tipologia,technical,international <typologia>
+verb,feribum,technical,international <verbum>
+version,ferisione,technical,international <versione>
+vowel,fokala,technical,international <vocala>
+word,lekisi,technical,international <lexi>

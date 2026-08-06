@@ -119,3 +119,53 @@ Arabic        ██████████            .556   ← 4th percentil
 
 > **dunia** is the thesis in one word — Arabic, but already at home in Hausa, Swahili,
 > Indonesian, Turkish, Hindi and Persian.
+
+
+---
+
+## SLIDE: The benchmark text — UDHR Article 1
+
+*Every conlang gets measured against this. Here is ours.*
+
+> **ote kim salia; fu wan asadi pi sama sai karama pi haki.**
+>
+> **fu punja akili pi damiri, pi lasima mum ke jembasika sai sudara roho.**
+
+Word by word:
+
+| | |
+|---|---|
+| ote kim salia | all person born |
+| fu wan asadi pi sama | they ARE free and equal |
+| sai karama pi haki | in dignity and rights |
+| fu punja akili pi damiri | they have reason and conscience |
+| pi lasima mum ke jembasika | and should act toward one-another |
+| sai sudara roho | in sibling spirit |
+
+English original: *All human beings are born free and equal in dignity and rights. They are
+endowed with reason and conscience and should act towards one another in a spirit of
+brotherhood.*
+
+### Why this passage is the best advertisement for the method
+
+**Five of its key words are already shared across four language families** — Arabic-origin,
+long since at home in Swahili, Indonesian, Turkish, Hindi and Persian. We did not have to
+choose between them:
+
+| interlang | meaning | Arabic | Swahili | Indonesian | Turkish | Hindi/Urdu |
+|---|---|---|---|---|---|---|
+| **haki** | rights | *ḥaqq* | *haki* | *hak* | *hak* | *haq* |
+| **akili** | reason | *ʿaql* | *akili* | *akal* | *akıl* | *aql* |
+| **damiri** | conscience | *ḍamīr* | *dhamiri* | — | — | *zamīr* |
+| **lasima** | should | *lāzim* | *lazima* | — | *lâzım* | *lāzim* |
+| **roho** | spirit | *rūḥ* | *roho* | *roh* | *ruh* | *rūh* |
+
+> A Swahili, Indonesian, Turkish or Urdu speaker can read most of the content words in this
+> passage without being taught them.
+
+Two grammar points visible in the text: **`jembasika`** is the reciprocal, literally
+*one-other* — the same construction English uses in *one another*. And the second clause drops
+its repeated subject after *pi* "and", which is the one place the grammar permits it.
+
+*(Vocabulary marked provisional — the Arabic-origin set above is real and measured, the rest
+are placeholders at the frozen snapshot.)*

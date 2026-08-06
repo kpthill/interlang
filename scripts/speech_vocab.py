@@ -87,14 +87,9 @@ COMPOUNDS = [
     ("conlang / constructed language", ["DO OR MAKE", "LANGUAGE"],
      "make-language", "the head is `language`; the modifier is the verb root "
      "`fum` 'do/make'"),
-    ("question", ["WHAT", "THING"], "what-thing",
-     "already in the lexicon as a shipped compound"),
-    ("adjective", ["QUALITY", "WORD"], "quality-word",
-     "already in the lexicon as a shipped compound"),
-    ("adverb", ["MANNER", "WORD"], "manner-word",
-     "already in the lexicon as a shipped compound"),
-    ("syntax", ["SENTENCE", "MANNER"], "sentence-manner",
-     "already in the lexicon as a shipped compound"),
+    # question / adjective / adverb / syntax are NOT listed here: milestone 1
+    # already ships them as compound rows in the lexicon, so they arrive above
+    # with their own derivation and listing them again would duplicate a form.
     ("who", ["WHAT", "PERSON"], "what-person", "principles.md 3.2 Q10"),
     ("where", ["WHAT", "PLACE"], "what-place", "principles.md 3.2 Q10"),
     ("when", ["WHAT", "TIME"], "what-time", "principles.md 3.2 Q10"),
@@ -153,6 +148,10 @@ def main() -> None:
             print(f"  ! skipping compound {gloss}: no root for {missing}")
             continue
         pieces = [by_concept[p] for p in parts]
+        if "".join(pieces) in {r["interlang_form"] for r in out}:
+            print(f"  ! {gloss}: {''.join(pieces)} is already a lexicon row; "
+                  f"not duplicated")
+            continue
         joiner = " " if gloss in SPACED else ""
         if gloss in SPACED and len(pieces) == 3:      # ORD+ONE, then the head
             form = pieces[0] + pieces[1] + " " + pieces[2]
@@ -178,7 +177,10 @@ def main() -> None:
     PROC.mkdir(parents=True, exist_ok=True)
     df.to_csv(OUT, index=False)
 
-    forms = [f for f in df["interlang_form"] if " " not in f]
+    # `construction` rows are deliberate aliases of an existing root (a word
+    # the grammar already supplies), so they are exempt from the dupe check.
+    forms = [f for f, g in zip(df["interlang_form"], df["group"])
+             if " " not in f and g != "construction"]
     dupes = sorted({f for f in forms if forms.count(f) > 1})
     print(f"  wrote {OUT} - {len(df)} entries")
     print(f"  duplicate single-word forms: {dupes if dupes else 'none'}")
