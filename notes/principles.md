@@ -487,6 +487,68 @@ that could express an alignment contrast.
 **Word bill: 0** (the passive reuses `self`, the ditransitive a preposition). **Rule added: 1** — *every clause has an overt subject; a subjectless verb
 phrase is an imperative.* **Running grammar total: 16 words, 6 rules.**
 
+#### Word formation and the discourse residue (**SOFT**, 2026-08-06 by Patrick — Tiers 4–5)
+
+Evidence: [`grammar-tier45.md`](grammar-tier45.md). Third and last light-analysis note,
+**no committed study script**. **The grammar closes here: 19 words, 7 rules.**
+
+- **Word classes are semi-rigid, not fluid.** Each root carries a **default class in the
+  lexicon**; conversion uses the compounding elements below (`water-do`, `run-thing`). The
+  working lean was *fluid*, and it does not survive our own decisions: with no articles (Q7),
+  no case, no agreement, no affixes and exactly one verb per clause, **nothing tells a parser
+  which word is the verb** — `I water plant` is both "I water the plant" and "I plant,
+  water-ly". **Toki pona is the proof by example and argues the other way**: it is radically
+  fluid and pays for that with `li` and `e`, the two disambiguators we lack. We had also
+  **already chosen rigid once** — GB068 (adjectives behave as verbs predicatively, 43.7% of
+  L1) was declined when adjectives were given the copula. *Alternative recorded:* an object
+  marker on the toki pona model, **+1 word**, would restore full fluidity and let word order
+  relax. Declined.
+- **Derivation is a semi-open class of generic-noun compounding elements** — person, thing,
+  place, quality, action, tool — blessed as a published default that speakers imitate, on the
+  toki pona *jan / ma / toki* model. GB048 puts productive agent-noun derivation at 65.4% of
+  languages and **62.5% of L1**, so we need one, and Tier 0 left compounding as the only
+  option. **Design principle worth naming: the same handful of generic nouns now serves four
+  constructions** — interrogatives (Q10), adverbial clauses (Tier 3), indefinites, and
+  derivation. *Where a construction needs a semantic category, use the generic noun for it
+  rather than coining grammar.*
+- **Compounds are head-final** — forced by the modifier rule, recorded rather than assumed.
+- **Numerals: decimal, transparent, fully regular.** `two-ten-three` for 23; ordinals derived
+  from cardinals with no suppletion. Decimal is **91.1% of L1** (GB333) and 97.7% by WALS
+  131A. Suppletive *first* is inherited, never invented — **2 of 54 creoles are fully regular
+  against 2 of 9 restricted pidgins**. *Handoff to the lexicon: numerals should be
+  monosyllabic*, since transparent formation makes 23 three morphemes.
+- **Quantifiers: both 'all' and 'every'**, meeting the **83.3% of L1** that distinguishes them
+  (GB204) — affordable because quantifiers are lexicon, not grammar. A deliberate exception to
+  this project's usual instinct to collapse a distinction.
+- **Indefinites are generic-noun-based** — `some person`, `any place` — 4 of 9 restricted
+  pidgins and 39 of 73 contact languages, and the fourth reuse of the same element set.
+- **Yes and no answer the FACT, never the question's polarity.** Stated explicitly in the
+  grammar because *"Didn't you eat?" — "yes"* is a known collision that bites L2 speakers
+  hardest. Not coded by any source.
+- **No hortative** (*let's eat* = `we eat` + a mood adverb); **no imperative particle** — a
+  special imperative construction appears in **0 of 9 restricted pidgins** (APiCS 56), which
+  is what settled the obligatory-subject rule on Patrick's stated test.
+- **Focus is vocabulary, not grammar** — an ordinary adverb (*specifically*), not a particle.
+  **This dissolves a conflict rather than resolving it**: a focus particle would have to
+  follow its host (contradicting the modifier rule) or precede it (contradicting **6 of 9
+  restricted pidgins**, APiCS 106). Declining the construction avoids both. Clefts rejected —
+  0 of 9 restricted pidgins.
+- **No vocative marker** (restricted pidgins split 3/3/1, so nothing forces it).
+- **Ellipsis under coordination is allowed, and only there**: `I eat and leave`. A direct
+  consequence of the no-pro-drop rule, and it cannot collide with the imperative because that
+  is clause-initial and this is post-conjunction. **+1 rule.**
+- **Equality comparison is lexical** — `I COP tall same you`.
+- **No grammatical politeness anywhere**, system-wide, confirming Q8. *Recorded prediction:
+  users will resurrect politeness via titles, and that is a success, not a failure* — the goal
+  was never to prevent politeness but to keep it out of the obligatory grammar.
+- **Proper names take no obligatory classifier**, though optional use is free
+  (`lake Titicaca`). **Not codable — no source we hold codes proper-name classification**, and
+  no proxy was substituted. **Endonyms preferred**, inherited by
+  [`lexicon-plan.md`](lexicon-plan.md).
+
+**Word bill: 3** (ordinal marker, *yes*, *no*). **Rules added: 1.**
+**THE GRAMMAR IS COMPLETE: 19 words, 7 rules** — under 11% of the short-word space.
+
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 
 **The inventory is closed. 15 consonants + 5 vowels = 20 phonemes.**

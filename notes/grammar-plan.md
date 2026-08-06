@@ -228,6 +228,32 @@ from the one-study-per-script convention in [`../CLAUDE.md`](../CLAUDE.md), take
 pressure for the least consequential tier and logged in each note's header and honest-limits
 section. **If the grammar is ever published as a reproducible artifact, these two are the gap.**
 
+**Tiers 4 and 5 — DONE 2026-08-06** → [`grammar-tier45.md`](grammar-tier45.md).
+Word classes are **semi-rigid** (default class in the lexicon, conversion by compounding —
+the *fluid* lean was reversed because our own decisions removed every cue a parser could use);
+derivation is a **semi-open class of generic-noun compounding elements**; numerals are
+**decimal, transparent and fully regular**; quantifiers take both *all* and *every*;
+indefinites are generic-noun-based; **yes/no answer the fact, not the polarity**; focus is
+**vocabulary rather than a particle**, which dissolves a conflict with the modifier rule;
+no vocative, no hortative, no imperative particle, no proper-name classifier; **ellipsis is
+allowed under coordination only**. Word bill 3, rules 1.
+
+**THE GRAMMAR IS COMPLETE: 19 words, 7 rules.**
+
+What remains is not a decision but a deliverable and a check:
+
+1. **The final bias audit** that §1 of this document promised — where the chosen feature
+   bundle lands genealogically and areally, plus the accumulated population overrides
+   (politeness 85% of L1, pronoun gender ~78%, pro-drop 66.9%, the prohibitive, serial verbs,
+   clefts) and the two commitments made without being chosen (**satellite-framing**, flagged
+   in [`lexicon-plan.md`](lexicon-plan.md); **no topicalization**). This is what makes the
+   project's claim — bias *chosen, explicit and measured* — true rather than aspirational.
+2. **A sweep against the Lingua Descriptive Studies Questionnaire** to confirm nothing is
+   undecided. The Tier 3 cleanup found four features being silently assumed; that is reason
+   enough to check the rest systematically rather than trust that the tiers covered it.
+3. **Three notes have no committed study script** (both Tier 3 notes and the Tier 4/5 note).
+   If the grammar is published as a reproducible artifact, those are the gap.
+
 **Tier 4 — the lexicon interface, deliberately last.** word classes and how rigid they
 are · derivational machinery · **the particle inventory**, which is the coupling back to
 phonology (§3.2) and what finally closes the deferred root-shape bounds (§3.6): short-word
