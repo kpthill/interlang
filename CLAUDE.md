@@ -25,6 +25,12 @@ about *how* to work here.
   states its inputs, outputs, and the policies baked into it (inventory selection,
   fallbacks, exclusions); the matching write-up in `notes/` interprets the results.
   If you make a new judgment call, write it in both places, not just in code.
+- **"No source codes this" is a claim, and needs checking like any other.** Twice now a
+  write-up asserted an absence of evidence without opening
+  `data/raw/*/cldf/parameters.csv`, and was wrong both times (APiCS 90 and 61 in
+  `grammar-tier3-cleanup.md`; APiCS 11 in `grammar-tier2-np.md`). Before writing that a
+  question is unmeasurable, grep the parameter lists. Neither error changed a decision, but
+  both overstated how thin the evidence was.
 - **Known problems get logged, not silently tolerated.** The metric's characterized
   failure modes (place-of-articulation weights, no epenthesis, ~0.46 random floor)
   live in `notes/data-audit.md` with concrete fix paths, and callers are warned where

@@ -836,6 +836,15 @@ Every one of these was known before the run and none is fixed by it.
   decisions rather than in the individually-argued overrides. The worst single feature is the
   **free plural word (10.8% of L1)**, a consequence nobody debated.
 
+> **Framing note (Patrick, 2026-08-06).** The free plural word should be
+> **de-emphasised** in how this result is presented. We were never going to add a grammar
+> rule purely for plurals, so some cost here was unavoidable — and the language already
+> expresses number perfectly well with `one cat`, `two cat`, `many cat`. The gap is therefore
+> **something missing rather than something unfamiliar imposed**, which is a materially easier
+> thing for a learner to absorb than an alien obligatory category. Report it, but not as the
+> headline cost.
+
+
 **OPEN (§3 — decisions the grammar needs and has never taken):**
 
 1. **Reciprocals**, and the `self` overload they collide with — the sharpest of these.
