@@ -624,6 +624,71 @@ output is the table that makes the tier conversation concrete.
 
 ---
 
+## 6a. Answers to §7's three questions (Patrick, 2026-08-06)
+
+The three open questions below were put to Patrick and all three are answered. Recorded here
+because they change the plan rather than merely confirming it; §7 is kept as written so the
+questions and answers can be read together.
+
+**1. How many roots? — WRONG QUESTION, and the reframing matters (SOFT).**
+There is no target count. **The target is a *complete* lexicon: the negaverse of toki pona —
+as simple as possible subject to being as expressive as any natural language.** A
+proliferation of roots is acceptable where the concepts genuinely resist compounding.
+Spitball scale: **1–2k roots that participate in compounds, plus thousands of one-off loans**
+for country names, and for foods, plants and animals local to one part of the globe.
+
+This kills the framing in §1 that treated the ~180 monosyllables as the binding constraint.
+At 1–2k roots **most roots are polysyllabic by necessity**, the short-word budget is a
+*ranking* problem (which concepts earn the short forms) rather than a *feasibility* one, and
+§2.6's discouragement weights matter more, not less, because they will be applied thousands
+of times. **The frequency axis (B) is therefore more load-bearing than §2.2 assumed** — it is
+what allocates the short forms — and its "proxy only, weak" status is now the plan's second
+methodological gap alongside axis C.
+
+**Loanwords are a third regime the plan did not model.** One-off loans for endonyms and local
+biota are neither roots-to-be-compounded nor descriptions: they are borrowed whole, adapted
+by §3.6's mapping, and never enter the compounding system. They should be scoped out of the
+axis A/B/C/D scoring entirely and handled by the transliteration pipeline
+(`src/interlang/translit.py`) plus the deferred homophony check. **Endonyms are preferred**
+(Patrick) — *Deutschland*, not *Germany* — which is also a representation decision under §2
+of [`principles.md`](principles.md) and should be reported in the bias audit as one.
+
+**2. Does CLICS override intuition, given New Guinea? — YES, but population-weight it (SOFT).**
+**The project weights by *people*, not by families** ([`principles.md`](principles.md) §2),
+and §4.4's problem is precisely that family-weighting cannot see population. Patrick's
+instruction: **if New Guinean languages cannot be weighted properly by population, partially
+exclude them.** So the merge rate should be computed **population-weighted where speaker
+counts exist**, with the New-Guinea-excluded column promoted from a robustness check to a
+**primary output** rather than a footnote.
+
+This is consistent with every other decision in the project — the by-language/by-people
+reversal has decided most of the grammar — and it is worth stating that colexification is the
+first place where the two weightings were about to diverge silently.
+
+**3. Reduplication — ADOPTED as optional and emphatic (SOFT).** Not declined, contrary to
+§2.7's recommendation. The data supports Patrick's reading: **APiCS 26 puts "only iconic
+functions" at 4 of 9 restricted pidgins, 5 of 9 expanded and 31 of 54 creoles — 40 of 73**,
+cross-lexifier (32 European : 10 non-European, so Rule 1 is satisfied), and Tier 0 found
+reduplication **gained 13:2** (verbs 7:0). *Iconic* means plurality, intensity, repetition and
+distribution — i.e. emphasis.
+
+- **Nothing depends on it.** Plurality is already handled by the optional plural word and by
+  numerals (`three item`), and aspect by Q6's adverbs. Reduplication is **documented as
+  available for emphasis and never required** — the same shape as optional number.
+- **It is documented because speakers would reinvent it otherwise** (Patrick's reasoning, and
+  the 13:2 gain rate is the evidence for it). Documenting an optional device is cheaper than
+  having it re-emerge unstandardised.
+- **In a compound, the final element reduplicates.** *Not codable* — no source codes partial
+  reduplication inside compounds — but it follows from the modifier rule: modifiers precede
+  heads, so **the final element of a compound is its head**, and reduplicating the head is
+  both semantically apt and keeps initial stress (§3.5) on the original first syllable.
+  `firetruck` → `firetrucktruck`.
+- **Cost to watch:** reduplication interacts with §3.7's solid compounds and with the geminate
+  boundary signal. A reduplicated final element creates a seam that looks like a compound
+  seam. Logged in §5.
+
+---
+
 ## 7. Open questions for Patrick
 
 Ordered by how much depends on the answer.
