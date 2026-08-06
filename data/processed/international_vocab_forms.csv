@@ -137,40 +137,40 @@ energy,he,Hebrew,אנרגיה,anrgih,wikipedia,0.6667,True,False,eneriɡia,
 energy,is,Icelandic,Orka,orka,wikipedia,0.3333,False,True,eneriɡia,0.4784
 energy,hu,Hungarian,Energia,energia,wikipedia,0.7826,True,True,eneriɡia,0.875
 energy,cs,Czech,Energie,energie,wikipedia,0.7826,True,True,eneriɡia,0.8578
-plastic,ja,Japanese,プラスチック,purasutʃiku,wikipedia,0.6857,True,True,pulasiti,0.6928
-plastic,zh,Mandarin,塑料,,unclassified,,,False,pulasiti,
-plastic,ko,Korean,플라스틱,pɯlrasɯtik,wikipedia,0.7632,True,True,pulasiti,0.7724
-plastic,hi,Hindi,प्लास्टिक,plasʈik,wikipedia,1.0,True,True,pulasiti,0.6164
-plastic,ar,Arabic,لدائن,ldaʔn,wikipedia,0.4,False,False,pulasiti,
-plastic,sw,Swahili,Plastiki,plastiki,wikipedia,0.9355,True,True,pulasiti,0.7134
-plastic,id,Indonesian,Plastik,plastik,wikipedia,1.0,True,True,pulasiti,0.625
-plastic,tr,Turkish,Plastik,plastik,wikipedia,1.0,True,True,pulasiti,0.625
-plastic,ru,Russian,Пластмасса,plastmassa,wikipedia,0.7059,True,True,pulasiti,0.5414
-plastic,es,Spanish,Plástico,plastiko,wikipedia,0.9355,True,True,pulasiti,0.6875
-plastic,fi,Finnish,Muovi,muovi,wikipedia,0.1379,False,True,pulasiti,0.5366
-plastic,vi,Vietnamese,Chất dẻo,tʃət,wikipedia,0.2759,False,True,pulasiti,0.4461
-plastic,ta,Tamil,நெகிழி,nekiɻi,wikipedia,0.069,False,True,pulasiti,0.5409
-plastic,he,Hebrew,פלסטיק,plstik,wikipedia,1.0,True,False,pulasiti,
-plastic,is,Icelandic,Plast,plast,wikipedia,0.7586,True,True,pulasiti,0.625
-plastic,hu,Hungarian,Műanyag,myaɲag,wikipedia,0.3103,False,True,pulasiti,0.5302
-plastic,cs,Czech,Plast,plast,wikipedia,0.7586,True,True,pulasiti,0.625
-virus,ja,Japanese,ウイルス,uirusu,wikipedia,0.6316,True,True,firu,0.4741
-virus,zh,Mandarin,病毒,,unclassified,,,False,firu,
-virus,ko,Korean,바이러스,pairʌsɯ,wikipedia,0.9048,True,True,firu,0.5222
-virus,hi,Hindi,विषाणु,viʃaɳu,wikipedia,0.4286,False,True,firu,0.5948
-virus,ar,Arabic,فيروس,firus,wikipedia,1.0,True,False,firu,
-virus,sw,Swahili,Virusi,virusi,wikipedia,0.9048,True,True,firu,0.6609
-virus,id,Indonesian,Virus,virus,wikipedia,1.0,True,True,firu,0.7931
-virus,tr,Turkish,Virüs,virys,wikipedia,1.0,True,True,firu,0.7793
-virus,ru,Russian,Вирусы,virusɨ,wikipedia,0.9048,True,True,firu,0.6609
-virus,es,Spanish,Virus,birus,wikipedia,1.0,True,True,firu,0.7586
-virus,fi,Finnish,Virukset,virukset,wikipedia,0.7917,True,True,firu,0.4957
-virus,vi,Vietnamese,Virus,vizus,wikipedia,0.7368,True,True,firu,0.7103
-virus,ta,Tamil,தீநுண்மி,tinuɳmi,wikipedia,0.1667,False,True,firu,0.4803
-virus,he,Hebrew,נגיף,,wikipedia,0.0,False,False,firu,
-virus,is,Icelandic,Veira,veira,wikipedia,0.6316,True,True,firu,0.7379
-virus,hu,Hungarian,Vírus,viruʃ,wikipedia,1.0,True,True,firu,0.7931
-virus,cs,Czech,Virus,virus,wikipedia,1.0,True,True,firu,0.7931
+plastic,ja,Japanese,プラスチック,purasutʃiku,wikipedia,0.6857,True,True,pulasitiki,0.8558
+plastic,zh,Mandarin,塑料,,unclassified,,,False,pulasitiki,
+plastic,ko,Korean,플라스틱,pɯlrasɯtik,wikipedia,0.7632,True,True,pulasitiki,0.7724
+plastic,hi,Hindi,प्लास्टिक,plasʈik,wikipedia,1.0,True,True,pulasitiki,0.6931
+plastic,ar,Arabic,لدائن,ldaʔn,wikipedia,0.4,False,False,pulasitiki,
+plastic,sw,Swahili,Plastiki,plastiki,wikipedia,0.9355,True,True,pulasitiki,0.8
+plastic,id,Indonesian,Plastik,plastik,wikipedia,1.0,True,True,pulasitiki,0.7
+plastic,tr,Turkish,Plastik,plastik,wikipedia,1.0,True,True,pulasitiki,0.7
+plastic,ru,Russian,Пластмасса,plastmassa,wikipedia,0.7059,True,True,pulasitiki,0.5379
+plastic,es,Spanish,Plástico,plastiko,wikipedia,0.9355,True,True,pulasitiki,0.7793
+plastic,fi,Finnish,Muovi,muovi,wikipedia,0.1379,False,True,pulasitiki,0.4293
+plastic,vi,Vietnamese,Chất dẻo,tʃət,wikipedia,0.2759,False,True,pulasitiki,0.3569
+plastic,ta,Tamil,நெகிழி,nekiɻi,wikipedia,0.069,False,True,pulasitiki,0.4638
+plastic,he,Hebrew,פלסטיק,plstik,wikipedia,1.0,True,False,pulasitiki,
+plastic,is,Icelandic,Plast,plast,wikipedia,0.7586,True,True,pulasitiki,0.5
+plastic,hu,Hungarian,Műanyag,myaɲag,wikipedia,0.3103,False,True,pulasitiki,0.4707
+plastic,cs,Czech,Plast,plast,wikipedia,0.7586,True,True,pulasitiki,0.5
+virus,ja,Japanese,ウイルス,uirusu,wikipedia,0.6316,True,True,firusi,0.773
+virus,zh,Mandarin,病毒,,unclassified,,,False,firusi,
+virus,ko,Korean,바이러스,pairʌsɯ,wikipedia,0.9048,True,True,firusi,0.7882
+virus,hi,Hindi,विषाणु,viʃaɳu,wikipedia,0.4286,False,True,firusi,0.7155
+virus,ar,Arabic,فيروس,firus,wikipedia,1.0,True,False,firusi,
+virus,sw,Swahili,Virusi,virusi,wikipedia,0.9048,True,True,firusi,0.9943
+virus,id,Indonesian,Virus,virus,wikipedia,1.0,True,True,firusi,0.8276
+virus,tr,Turkish,Virüs,virys,wikipedia,1.0,True,True,firusi,0.8161
+virus,ru,Russian,Вирусы,virusɨ,wikipedia,0.9048,True,True,firusi,0.9828
+virus,es,Spanish,Virus,birus,wikipedia,1.0,True,True,firusi,0.7989
+virus,fi,Finnish,Virukset,virukset,wikipedia,0.7917,True,True,firusi,0.7371
+virus,vi,Vietnamese,Virus,vizus,wikipedia,0.7368,True,True,firusi,0.7586
+virus,ta,Tamil,தீநுண்மி,tinuɳmi,wikipedia,0.1667,False,True,firusi,0.6749
+virus,he,Hebrew,נגיף,,wikipedia,0.0,False,False,firusi,
+virus,is,Icelandic,Veira,veira,wikipedia,0.6316,True,True,firusi,0.6724
+virus,hu,Hungarian,Vírus,viruʃ,wikipedia,1.0,True,True,firusi,0.8103
+virus,cs,Czech,Virus,virus,wikipedia,1.0,True,True,firusi,0.8276
 bacteria,ja,Japanese,細菌,,wikipedia,0.0,False,True,bakiteria,
 bacteria,zh,Mandarin,细菌,,unclassified,,,False,bakiteria,
 bacteria,ko,Korean,세균,sekjun,wikipedia,0.3214,False,True,bakiteria,0.5096
@@ -189,23 +189,23 @@ bacteria,he,Hebrew,חיידקים,xiidkim,wikipedia,0.25,False,False,bakiteria,
 bacteria,is,Icelandic,Gerlar,gerlar,wikipedia,0.3214,False,True,bakiteria,0.4617
 bacteria,hu,Hungarian,Baktériumok,bakteriumok,wikipedia,0.8485,True,True,bakiteria,0.6238
 bacteria,cs,Czech,Bakterie,bakterie,wikipedia,1.0,True,True,bakiteria,0.8736
-antibiotic,ja,Japanese,抗生物質,,wikipedia,0.0,False,True,antibioti,
-antibiotic,zh,Mandarin,抗生素,,unclassified,,,False,antibioti,
-antibiotic,ko,Korean,항생제,haŋseŋtʃe,wikipedia,0.3143,False,True,antibioti,0.477
-antibiotic,hi,Hindi,प्रतिजैविक,pratidʒɛvik,wikipedia,0.3684,False,True,antibioti,0.5157
-antibiotic,ar,Arabic,مضاد حيوي,mdadhiui,wikipedia,0.6,False,False,antibioti,
-antibiotic,sw,Swahili,Antibiotiki,antibiotiki,wikipedia,0.9459,True,True,antibioti,0.8182
-antibiotic,id,Indonesian,Antibiotik,antibiotik,wikipedia,1.0,True,True,antibioti,0.9
-antibiotic,tr,Turkish,Antibiyotik,antibijotik,wikipedia,0.875,True,True,antibioti,0.8182
-antibiotic,ru,Russian,Антибиотики,antibiotiki,wikipedia,0.9459,True,True,antibioti,0.8182
-antibiotic,es,Spanish,Antibiótico,antibiotiko,wikipedia,0.9459,True,True,antibioti,0.8182
-antibiotic,fi,Finnish,Antibiootti,antibiootti,wikipedia,0.7027,True,True,antibioti,0.8182
-antibiotic,vi,Vietnamese,Kháng sinh,xaŋ siɲ,wikipedia,0.1143,False,True,antibioti,0.3314
-antibiotic,ta,Tamil,நுண்ணுயிர் எதிர்ப்பி,nuɳɳujiretirppi,wikipedia,0.375,False,True,antibioti,0.4713
-antibiotic,he,Hebrew,אנטיביוטיקה,antibiutikh,wikipedia,1.0,True,False,antibioti,
-antibiotic,is,Icelandic,Sýklalyf,siklalif,wikipedia,0.0857,False,True,antibioti,0.4483
-antibiotic,hu,Hungarian,Antibiotikum,antibiotikum,wikipedia,0.9459,True,True,antibioti,0.75
-antibiotic,cs,Czech,Antibiotikum,antibiotikum,wikipedia,0.9459,True,True,antibioti,0.75
+antibiotic,ja,Japanese,抗生物質,,wikipedia,0.0,False,True,antibiotiki,
+antibiotic,zh,Mandarin,抗生素,,unclassified,,,False,antibiotiki,
+antibiotic,ko,Korean,항생제,haŋseŋtʃe,wikipedia,0.3143,False,True,antibiotiki,0.489
+antibiotic,hi,Hindi,प्रतिजैविक,pratidʒɛvik,wikipedia,0.3684,False,True,antibiotiki,0.5157
+antibiotic,ar,Arabic,مضاد حيوي,mdadhiui,wikipedia,0.6,False,False,antibiotiki,
+antibiotic,sw,Swahili,Antibiotiki,antibiotiki,wikipedia,0.9459,True,True,antibiotiki,1.0
+antibiotic,id,Indonesian,Antibiotik,antibiotik,wikipedia,1.0,True,True,antibiotiki,0.9091
+antibiotic,tr,Turkish,Antibiyotik,antibijotik,wikipedia,0.875,True,True,antibiotiki,0.8182
+antibiotic,ru,Russian,Антибиотики,antibiotiki,wikipedia,0.9459,True,True,antibiotiki,1.0
+antibiotic,es,Spanish,Antibiótico,antibiotiko,wikipedia,0.9459,True,True,antibiotiki,0.9812
+antibiotic,fi,Finnish,Antibiootti,antibiootti,wikipedia,0.7027,True,True,antibiotiki,0.7915
+antibiotic,vi,Vietnamese,Kháng sinh,xaŋ siɲ,wikipedia,0.1143,False,True,antibiotiki,0.3746
+antibiotic,ta,Tamil,நுண்ணுயிர் எதிர்ப்பி,nuɳɳujiretirppi,wikipedia,0.375,False,True,antibiotiki,0.577
+antibiotic,he,Hebrew,אנטיביוטיקה,antibiutikh,wikipedia,1.0,True,False,antibiotiki,
+antibiotic,is,Icelandic,Sýklalyf,siklalif,wikipedia,0.0857,False,True,antibiotiki,0.5078
+antibiotic,hu,Hungarian,Antibiotikum,antibiotikum,wikipedia,0.9459,True,True,antibiotiki,0.8994
+antibiotic,cs,Czech,Antibiotikum,antibiotikum,wikipedia,0.9459,True,True,antibiotiki,0.8994
 vitamin,ja,Japanese,ビタミン,bitamin,wikipedia,1.0,True,True,fitamin,0.9704
 vitamin,zh,Mandarin,维生素,weitaming,model-recall,,True,False,fitamin,
 vitamin,ko,Korean,비타민,pitamin,wikipedia,1.0,True,True,fitamin,0.9754
@@ -361,24 +361,24 @@ geometry,he,Hebrew,גאומטריה,gaumtrih,wikipedia,0.75,True,False,ɡeometir
 geometry,is,Icelandic,Rúmfræði,rumfraiði,wikipedia,0.4242,False,True,ɡeometiria,0.431
 geometry,hu,Hungarian,Geometria,geometria,wikipedia,0.8333,True,True,ɡeometiria,0.9
 geometry,cs,Czech,Geometrie,geometrie,wikipedia,0.8333,True,True,ɡeometiria,0.8862
-meter,ja,Japanese,メートル,metoru,wikipedia,0.9048,True,True,mete,0.6437
-meter,zh,Mandarin,米 (单位),mi,model-recall,,True,False,mete,
-meter,ko,Korean,미터,mitʌ,wikipedia,0.7368,True,True,mete,0.9655
-meter,hi,Hindi,मीटर,miʈar,wikipedia,1.0,True,True,mete,0.7448
-meter,ar,Arabic,متر,mtr,wikipedia,1.0,True,False,mete,
-meter,sw,Swahili,Mita,mita,wikipedia,0.7368,True,True,mete,0.9483
-meter,id,Indonesian,Meter,meter,wikipedia,1.0,True,True,mete,0.8
-meter,tr,Turkish,Metre,metre,wikipedia,0.7895,True,True,mete,0.8
-meter,ru,Russian,Метр,metr,wikipedia,0.8947,True,True,mete,0.8017
-meter,es,Spanish,Metro,metro,wikipedia,0.7895,True,True,mete,0.7724
-meter,fi,Finnish,Metri,metri,wikipedia,0.7895,True,True,mete,0.7862
-meter,vi,Vietnamese,Mét,met,wikipedia,0.6316,True,True,mete,0.75
-meter,ha,Hausa,Mita,mita,wikipedia,0.7368,True,True,mete,0.9483
-meter,ta,Tamil,மீட்டர்,miʈʈar,wikipedia,0.7917,True,True,mete,0.6207
-meter,he,Hebrew,מטר,mtr,wikipedia,1.0,True,False,mete,
-meter,is,Icelandic,Metri,metri,wikipedia,0.7895,True,True,mete,0.7862
-meter,hu,Hungarian,Méter,meter,wikipedia,1.0,True,True,mete,0.8
-meter,cs,Czech,Metr,metr,wikipedia,0.8947,True,True,mete,0.8017
+meter,ja,Japanese,メートル,metoru,wikipedia,0.9048,True,True,meteri,0.9425
+meter,zh,Mandarin,米 (单位),mi,model-recall,,True,False,meteri,
+meter,ko,Korean,미터,mitʌ,wikipedia,0.7368,True,True,meteri,0.6437
+meter,hi,Hindi,मीटर,miʈar,wikipedia,1.0,True,True,meteri,0.7874
+meter,ar,Arabic,متر,mtr,wikipedia,1.0,True,False,meteri,
+meter,sw,Swahili,Mita,mita,wikipedia,0.7368,True,True,meteri,0.6322
+meter,id,Indonesian,Meter,meter,wikipedia,1.0,True,True,meteri,0.8333
+meter,tr,Turkish,Metre,metre,wikipedia,0.7895,True,True,meteri,0.8218
+meter,ru,Russian,Метр,metr,wikipedia,0.8947,True,True,meteri,0.6667
+meter,es,Spanish,Metro,metro,wikipedia,0.7895,True,True,meteri,0.7989
+meter,fi,Finnish,Metri,metri,wikipedia,0.7895,True,True,meteri,0.8333
+meter,vi,Vietnamese,Mét,met,wikipedia,0.6316,True,True,meteri,0.5
+meter,ha,Hausa,Mita,mita,wikipedia,0.7368,True,True,meteri,0.6322
+meter,ta,Tamil,மீட்டர்,miʈʈar,wikipedia,0.7917,True,True,meteri,0.6207
+meter,he,Hebrew,מטר,mtr,wikipedia,1.0,True,False,meteri,
+meter,is,Icelandic,Metri,metri,wikipedia,0.7895,True,True,meteri,0.8333
+meter,hu,Hungarian,Méter,meter,wikipedia,1.0,True,True,meteri,0.8333
+meter,cs,Czech,Metr,metr,wikipedia,0.8947,True,True,meteri,0.6667
 kilogram,ja,Japanese,キログラム,kiroguramu,wikipedia,0.7879,True,True,kiloɡiram,0.8621
 kilogram,zh,Mandarin,千克,,unclassified,,,False,kiloɡiram,
 kilogram,ko,Korean,킬로그램,kilrokɯrem,wikipedia,0.6842,True,True,kiloɡiram,0.8724
@@ -414,24 +414,24 @@ telephone,he,Hebrew,טלפון,tlpun,wikipedia,1.0,True,False,telefon,
 telephone,is,Icelandic,Sími,simi,wikipedia,0.1923,False,True,telefon,0.4655
 telephone,hu,Hungarian,Telefonkészülék,telefonkesylek,wikipedia,0.8387,True,True,telefon,0.5
 telephone,cs,Czech,Telefon,telefon,wikipedia,1.0,True,True,telefon,1.0
-computer,ja,Japanese,コンピュータ,konpjuta,wikipedia,0.6774,True,True,kompute,0.8384
-computer,zh,Mandarin,电子计算机,,unclassified,,,False,kompute,
-computer,ko,Korean,컴퓨터,kʌmpjutʌ,wikipedia,0.6774,True,True,kompute,0.8578
-computer,hi,Hindi,संगणक,sangaɳak,wikipedia,0.3548,False,True,kompute,0.6315
-computer,ar,Arabic,حاسوب,hasub,wikipedia,0.2,False,False,kompute,
-computer,sw,Swahili,Tarakilishi,tarakiliʃi,wikipedia,0.1818,False,True,kompute,0.5276
-computer,id,Indonesian,Komputer,komputer,wikipedia,1.0,True,True,kompute,0.875
-computer,tr,Turkish,Bilgisayar,bilgisajar,wikipedia,0.2895,False,True,kompute,0.5224
-computer,ru,Russian,Компьютер,kompjuter,wikipedia,0.8611,True,True,kompute,0.7778
-computer,es,Spanish,Computadora,komputadora,wikipedia,0.7879,True,True,kompute,0.6238
-computer,fi,Finnish,Tietokone,tietokone,wikipedia,0.129,False,True,kompute,0.5824
-computer,vi,Vietnamese,Máy tính,mai tiɲ,wikipedia,0.4516,False,True,kompute,0.4704
-computer,ha,Hausa,Komfuta,komfuta,wikipedia,0.8387,True,True,kompute,0.9557
-computer,ta,Tamil,கணினி,kaɳini,wikipedia,0.5161,False,True,kompute,0.7143
-computer,he,Hebrew,מחשב,mxʃb,wikipedia,0.2,False,False,kompute,
-computer,is,Icelandic,Tölva,tølva,wikipedia,0.2903,False,True,kompute,0.5517
-computer,hu,Hungarian,Számítógép,samitogep,wikipedia,0.3333,False,True,kompute,0.6418
-computer,cs,Czech,Počítač,potʃitatʃ,wikipedia,0.3548,False,True,kompute,0.6054
+computer,ja,Japanese,コンピュータ,konpjuta,wikipedia,0.6774,True,True,komputeri,0.6973
+computer,zh,Mandarin,电子计算机,,unclassified,,,False,komputeri,
+computer,ko,Korean,컴퓨터,kʌmpjutʌ,wikipedia,0.6774,True,True,komputeri,0.7146
+computer,hi,Hindi,संगणक,sangaɳak,wikipedia,0.3548,False,True,komputeri,0.5862
+computer,ar,Arabic,حاسوب,hasub,wikipedia,0.2,False,False,komputeri,
+computer,sw,Swahili,Tarakilishi,tarakiliʃi,wikipedia,0.1818,False,True,komputeri,0.6483
+computer,id,Indonesian,Komputer,komputer,wikipedia,1.0,True,True,komputeri,0.8889
+computer,tr,Turkish,Bilgisayar,bilgisajar,wikipedia,0.2895,False,True,komputeri,0.6483
+computer,ru,Russian,Компьютер,kompjuter,wikipedia,0.8611,True,True,komputeri,0.7778
+computer,es,Spanish,Computadora,komputadora,wikipedia,0.7879,True,True,komputeri,0.7868
+computer,fi,Finnish,Tietokone,tietokone,wikipedia,0.129,False,True,komputeri,0.7241
+computer,vi,Vietnamese,Máy tính,mai tiɲ,wikipedia,0.4516,False,True,komputeri,0.4962
+computer,ha,Hausa,Komfuta,komfuta,wikipedia,0.8387,True,True,komputeri,0.7433
+computer,ta,Tamil,கணினி,kaɳini,wikipedia,0.5161,False,True,komputeri,0.5862
+computer,he,Hebrew,מחשב,mxʃb,wikipedia,0.2,False,False,komputeri,
+computer,is,Icelandic,Tölva,tølva,wikipedia,0.2903,False,True,komputeri,0.4291
+computer,hu,Hungarian,Számítógép,samitogep,wikipedia,0.3333,False,True,komputeri,0.5824
+computer,cs,Czech,Počítač,potʃitatʃ,wikipedia,0.3548,False,True,komputeri,0.6437
 radio,ja,Japanese,ラジオ,radʒio,wikipedia,0.6875,True,True,radio,0.8333
 radio,zh,Mandarin,无线电,,unclassified,,,False,radio,
 radio,ko,Korean,라디오,ratio,wikipedia,1.0,True,True,radio,0.9931
@@ -450,24 +450,24 @@ radio,he,Hebrew,רדיו,rdiu,wikipedia,1.0,True,False,radio,
 radio,is,Icelandic,Útvarp,utvarp,wikipedia,0.1667,False,True,radio,0.2586
 radio,hu,Hungarian,Rádiózás,radiozaʃ,wikipedia,0.7619,True,True,radio,0.625
 radio,cs,Czech,Radiokomunikace,radiokomunikatse,wikipedia,0.7619,True,True,radio,0.3125
-internet,ja,Japanese,インターネット,intaneto,wikipedia,0.7742,True,True,interine,0.8707
-internet,zh,Mandarin,互联网,,unclassified,,,False,interine,
-internet,ko,Korean,인터넷,intʌnet,wikipedia,0.8387,True,True,interine,0.7716
-internet,hi,Hindi,अंतरजाल,antaradʒal,wikipedia,0.6364,True,True,interine,0.6966
-internet,ar,Arabic,إنترنت,intrnt,wikipedia,1.0,True,False,interine,
-internet,sw,Swahili,Intaneti,intaneti,wikipedia,0.7742,True,True,interine,0.8793
-internet,id,Indonesian,Internet,internet,wikipedia,1.0,True,True,interine,0.75
-internet,tr,Turkish,İnternet,internet,wikipedia,1.0,True,True,interine,0.75
-internet,ru,Russian,Интернет,internet,wikipedia,1.0,True,True,interine,0.75
-internet,es,Spanish,Internet,internet,wikipedia,1.0,True,True,interine,0.75
-internet,fi,Finnish,Internet,internet,wikipedia,1.0,True,True,interine,0.75
-internet,vi,Vietnamese,Internet,inteznet,wikipedia,0.8387,True,True,interine,0.6983
-internet,ha,Hausa,Yanar gizo,janar gizo,wikipedia,0.3548,False,True,interine,0.6073
-internet,ta,Tamil,இணையம்,iɳaijam,wikipedia,0.3871,False,True,interine,0.5841
-internet,he,Hebrew,אינטרנט,aintrnt,wikipedia,1.0,True,False,interine,
-internet,is,Icelandic,Internetið,internetið,wikipedia,0.9394,True,True,interine,0.7483
-internet,hu,Hungarian,Internet,internet,wikipedia,1.0,True,True,interine,0.75
-internet,cs,Czech,Internet,internet,wikipedia,1.0,True,True,interine,0.75
+internet,ja,Japanese,インターネット,intaneto,wikipedia,0.7742,True,True,interineti,0.7655
+internet,zh,Mandarin,互联网,,unclassified,,,False,interineti,
+internet,ko,Korean,인터넷,intʌnet,wikipedia,0.8387,True,True,interineti,0.6931
+internet,hi,Hindi,अंतरजाल,antaradʒal,wikipedia,0.6364,True,True,interineti,0.6586
+internet,ar,Arabic,إنترنت,intrnt,wikipedia,1.0,True,False,interineti,
+internet,sw,Swahili,Intaneti,intaneti,wikipedia,0.7742,True,True,interineti,0.7862
+internet,id,Indonesian,Internet,internet,wikipedia,1.0,True,True,interineti,0.8
+internet,tr,Turkish,İnternet,internet,wikipedia,1.0,True,True,interineti,0.8
+internet,ru,Russian,Интернет,internet,wikipedia,1.0,True,True,interineti,0.8
+internet,es,Spanish,Internet,internet,wikipedia,1.0,True,True,interineti,0.8
+internet,fi,Finnish,Internet,internet,wikipedia,1.0,True,True,interineti,0.8
+internet,vi,Vietnamese,Internet,inteznet,wikipedia,0.8387,True,True,interineti,0.7586
+internet,ha,Hausa,Yanar gizo,janar gizo,wikipedia,0.3548,False,True,interineti,0.6
+internet,ta,Tamil,இணையம்,iɳaijam,wikipedia,0.3871,False,True,interineti,0.5397
+internet,he,Hebrew,אינטרנט,aintrnt,wikipedia,1.0,True,False,interineti,
+internet,is,Icelandic,Internetið,internetið,wikipedia,0.9394,True,True,interineti,0.8
+internet,hu,Hungarian,Internet,internet,wikipedia,1.0,True,True,interineti,0.8
+internet,cs,Czech,Internet,internet,wikipedia,1.0,True,True,interineti,0.8
 television,ja,Japanese,テレビ,terebi,wikipedia,0.6,False,True,telefision,0.5621
 television,zh,Mandarin,电视,,unclassified,,,False,telefision,
 television,ko,Korean,텔레비전,telrepitʃʌn,wikipedia,0.8158,True,True,telefision,0.7712
@@ -538,24 +538,24 @@ film,he,Hebrew,סרט קולנוע,kulnu,wikipedia,0.6667,True,False,filim,
 film,is,Icelandic,Kvikmynd,kvikmind,wikipedia,0.5455,False,True,filim,0.5474
 film,hu,Hungarian,Film,film,wikipedia,1.0,True,True,filim,0.8
 film,cs,Czech,Film,film,wikipedia,1.0,True,True,filim,0.8
-robot,ja,Japanese,ロボット,roboto,wikipedia,0.9048,True,True,robo,0.6667
-robot,zh,Mandarin,机器人,,unclassified,,,False,robo,
-robot,ko,Korean,로봇,ropot,wikipedia,1.0,True,True,robo,0.7931
-robot,hi,Hindi,रोबोट,roboʈ,wikipedia,1.0,True,True,robo,0.8
-robot,ar,Arabic,روبوت,rubut,wikipedia,1.0,True,False,robo,
-robot,sw,Swahili,Roboti,roboti,wikipedia,0.9048,True,True,robo,0.6667
-robot,id,Indonesian,Robot,robot,wikipedia,1.0,True,True,robo,0.8
-robot,tr,Turkish,Robot,robot,wikipedia,1.0,True,True,robo,0.8
-robot,ru,Russian,Робот,robot,wikipedia,1.0,True,True,robo,0.8
-robot,es,Spanish,Robot,robot,wikipedia,1.0,True,True,robo,0.8
-robot,fi,Finnish,Robotti,robotti,wikipedia,0.7917,True,True,robo,0.5714
-robot,vi,Vietnamese,Robot,zobot,wikipedia,0.7368,True,True,robo,0.7172
-robot,ha,Hausa,Saƙago,sakago,wikipedia,0.1905,False,True,robo,0.523
-robot,ta,Tamil,தானியங்கி,tanijaŋki,wikipedia,0.1905,False,True,robo,0.3372
-robot,he,Hebrew,רובוט,rubut,wikipedia,1.0,True,False,robo,
-robot,is,Icelandic,Þjarkur (tækni),θjarkur,wikipedia,0.1724,False,True,robo,0.4236
-robot,hu,Hungarian,Robot (automatizálás),robot,wikipedia,1.0,True,True,robo,0.8
-robot,cs,Czech,Robot,robot,wikipedia,1.0,True,True,robo,0.8
+robot,ja,Japanese,ロボット,roboto,wikipedia,0.9048,True,True,roboti,0.9655
+robot,zh,Mandarin,机器人,,unclassified,,,False,roboti,
+robot,ko,Korean,로봇,ropot,wikipedia,1.0,True,True,roboti,0.8276
+robot,hi,Hindi,रोबोट,roboʈ,wikipedia,1.0,True,True,roboti,0.8218
+robot,ar,Arabic,روبوت,rubut,wikipedia,1.0,True,False,roboti,
+robot,sw,Swahili,Roboti,roboti,wikipedia,0.9048,True,True,roboti,1.0
+robot,id,Indonesian,Robot,robot,wikipedia,1.0,True,True,roboti,0.8333
+robot,tr,Turkish,Robot,robot,wikipedia,1.0,True,True,roboti,0.8333
+robot,ru,Russian,Робот,robot,wikipedia,1.0,True,True,roboti,0.8333
+robot,es,Spanish,Robot,robot,wikipedia,1.0,True,True,roboti,0.8333
+robot,fi,Finnish,Robotti,robotti,wikipedia,0.7917,True,True,roboti,0.8571
+robot,vi,Vietnamese,Robot,zobot,wikipedia,0.7368,True,True,roboti,0.7644
+robot,ha,Hausa,Saƙago,sakago,wikipedia,0.1905,False,True,roboti,0.7385
+robot,ta,Tamil,தானியங்கி,tanijaŋki,wikipedia,0.1905,False,True,roboti,0.4866
+robot,he,Hebrew,רובוט,rubut,wikipedia,1.0,True,False,roboti,
+robot,is,Icelandic,Þjarkur (tækni),θjarkur,wikipedia,0.1724,False,True,roboti,0.3448
+robot,hu,Hungarian,Robot (automatizálás),robot,wikipedia,1.0,True,True,roboti,0.8333
+robot,cs,Czech,Robot,robot,wikipedia,1.0,True,True,roboti,0.8333
 democracy,ja,Japanese,民主主義,,wikipedia,0.0,False,True,demokiratia,
 democracy,zh,Mandarin,民主,,unclassified,,,False,demokiratia,
 democracy,ko,Korean,민주주의,mintʃutʃuɯi,wikipedia,0.3143,False,True,demokiratia,0.4781
@@ -592,70 +592,70 @@ police,he,Hebrew,משטרה,,wikipedia,0.0,False,False,polisia,
 police,is,Icelandic,Lögregla,løgregla,wikipedia,0.3548,False,True,polisia,0.5862
 police,hu,Hungarian,Rendőrség,rendørʃeg,wikipedia,0.3333,False,True,polisia,0.4904
 police,cs,Czech,Policie,politsie,wikipedia,1.0,True,True,polisia,0.8578
-university,ja,Japanese,大学,,wikipedia,0.0,False,True,uniferisita,
-university,zh,Mandarin,大學,,unclassified,,,False,uniferisita,
-university,ko,Korean,대학,tehak,wikipedia,0.125,False,True,uniferisita,0.3464
-university,hi,Hindi,विश्वविद्यालय,viʃvavidjalaj,wikipedia,0.3,False,True,uniferisita,0.5119
-university,ar,Arabic,جامعة,dʒamʕa,wikipedia,0.1667,False,False,uniferisita,
-university,sw,Swahili,Chuo Kikuu,tʃuo,wikipedia,0.225,False,True,uniferisita,0.2931
-university,id,Indonesian,Universitas,universitas,wikipedia,0.875,True,True,uniferisita,0.815
-university,tr,Turkish,Üniversite,yniversite,wikipedia,0.875,True,True,uniferisita,0.8871
-university,ru,Russian,Университет,universitet,wikipedia,1.0,True,True,uniferisita,0.8025
-university,es,Spanish,Universidad,unibersidad,wikipedia,1.0,True,True,uniferisita,0.7962
-university,fi,Finnish,Yliopisto,yliopisto,wikipedia,0.525,False,True,uniferisita,0.6975
-university,vi,Vietnamese,Viện đại học,vien dai hok,wikipedia,0.25,False,True,uniferisita,0.3997
-university,ha,Hausa,Jami'a,dʒami'a,wikipedia,0.225,False,True,uniferisita,0.4357
-university,ta,Tamil,பல்கலைக்கழகம்,palkalaikkaɻakam,wikipedia,0.1864,False,True,uniferisita,0.4644
-university,he,Hebrew,אוניברסיטה,aunibrsith,wikipedia,0.8333,True,False,uniferisita,
-university,is,Icelandic,Háskóli,haskoli,wikipedia,0.275,False,True,uniferisita,0.4342
-university,hu,Hungarian,Egyetem,eɟetem,wikipedia,0.275,False,True,uniferisita,0.431
-university,cs,Czech,Univerzita,univerzita,wikipedia,0.875,True,True,uniferisita,0.9028
-president,ja,Japanese,プレジデント,puredʒidento,wikipedia,0.9,True,True,puresiden,0.7385
-president,zh,Mandarin,President,,unclassified,,,False,puresiden,
-president,ko,Korean,프레지던트,pɯretʃitʌntɯ,wikipedia,0.9,True,True,puresiden,0.7184
-president,ar,Arabic,رئيس (توضيح),rʔis,wikipedia,0.1667,False,False,puresiden,
-president,ru,Russian,Президент (значения),prezident,wikipedia,1.0,True,True,puresiden,0.7739
-president,es,Spanish,Presidente (desambiguación),presidente,wikipedia,0.9474,True,True,puresiden,0.7
-president,fi,Finnish,Presidentti (täsmennyssivu),presidentti,wikipedia,0.878,True,True,puresiden,0.6364
-president,he,Hebrew,נשיא (פירושונים),nʃia,wikipedia,0.1667,False,False,puresiden,
-president,hu,Hungarian,Elnök (egyértelműsítő lap),elnøk,wikipedia,0.2222,False,True,puresiden,0.3927
-president,cs,Czech,Prezident (rozcestník),prezident,wikipedia,1.0,True,True,puresiden,0.7739
-hospital,ja,Japanese,病院,,wikipedia,0.0,False,True,hosipita,
-hospital,zh,Mandarin,醫院,,unclassified,,,False,hosipita,
-hospital,ko,Korean,병원,pjʌŋwʌn,wikipedia,0.069,False,True,hosipita,0.3233
-hospital,hi,Hindi,चिकित्सालय,tʃikitsalaj,wikipedia,0.4615,False,True,hosipita,0.5439
-hospital,ar,Arabic,مستشفى,,wikipedia,0.0,False,False,hosipita,
-hospital,sw,Swahili,Hospitali,hospitali,wikipedia,0.9286,True,True,hosipita,0.7682
-hospital,id,Indonesian,Rumah sakit,sakit,wikipedia,0.3846,False,True,hosipita,0.5647
-hospital,tr,Turkish,Hastane,hastane,wikipedia,0.4615,False,True,hosipita,0.7478
-hospital,ru,Russian,Больница,bolnitsa,wikipedia,0.0769,False,True,hosipita,0.5754
-hospital,es,Spanish,Hospital,ospital,wikipedia,1.0,True,True,hosipita,0.625
-hospital,fi,Finnish,Sairaala,sairaala,wikipedia,0.3846,False,True,hosipita,0.4935
-hospital,vi,Vietnamese,Bệnh viện,vien,wikipedia,0.3462,False,True,hosipita,0.4203
-hospital,ha,Hausa,Asibiti,asibiti,wikipedia,0.7308,True,True,hosipita,0.8276
-hospital,ta,Tamil,மருத்துவமனை,maruttuvamanai,wikipedia,0.2245,False,True,hosipita,0.452
-hospital,he,Hebrew,בית חולים,bit,wikipedia,0.5,False,False,hosipita,
-hospital,is,Icelandic,Sjúkrahús,sjukrahus,wikipedia,0.2581,False,True,hosipita,0.4176
-hospital,hu,Hungarian,Kórház,korhaz,wikipedia,0.1538,False,True,hosipita,0.5043
-hospital,cs,Czech,Nemocnice,nemotsnitse,wikipedia,0.2258,False,True,hosipita,0.5627
-bank,ja,Japanese,銀行,,wikipedia,0.0,False,True,ban,
-bank,zh,Mandarin,銀行,,model-recall,,False,False,ban,
-bank,ko,Korean,은행,ɯnheŋ,wikipedia,0.2941,False,True,ban,0.4138
-bank,hi,Hindi,बैंक,bɛnk,wikipedia,1.0,True,True,ban,0.7069
-bank,ar,Arabic,مصرف,,wikipedia,0.0,False,False,ban,
-bank,sw,Swahili,Benki,benki,wikipedia,0.8947,True,True,ban,0.5724
-bank,id,Indonesian,Bank,bank,wikipedia,1.0,True,True,ban,0.75
-bank,tr,Turkish,Banka,banka,wikipedia,0.8947,True,True,ban,0.6
-bank,ru,Russian,Банк,bank,wikipedia,1.0,True,True,ban,0.75
-bank,es,Spanish,Banco,banko,wikipedia,0.8947,True,True,ban,0.6
-bank,fi,Finnish,Pankki,pankki,wikipedia,0.7727,True,True,ban,0.4943
-bank,vi,Vietnamese,Ngân hàng,ŋən haŋ,wikipedia,0.4118,False,True,ban,0.3793
-bank,ha,Hausa,Banki,banki,wikipedia,0.8947,True,True,ban,0.6
-bank,ta,Tamil,வங்கி,vaŋki,wikipedia,0.8947,True,True,ban,0.5069
-bank,he,Hebrew,בנק,bnk,wikipedia,1.0,True,False,ban,
-bank,is,Icelandic,Banki,banki,wikipedia,0.8947,True,True,ban,0.6
-bank,hu,Hungarian,Bank,bank,wikipedia,1.0,True,True,ban,0.75
-bank,cs,Czech,Banka,banka,wikipedia,0.8947,True,True,ban,0.6
+university,ja,Japanese,大学,,wikipedia,0.0,False,True,uniferisitati,
+university,zh,Mandarin,大學,,unclassified,,,False,uniferisitati,
+university,ko,Korean,대학,tehak,wikipedia,0.125,False,True,uniferisitati,0.309
+university,hi,Hindi,विश्वविद्यालय,viʃvavidjalaj,wikipedia,0.3,False,True,uniferisitati,0.4907
+university,ar,Arabic,جامعة,dʒamʕa,wikipedia,0.1667,False,False,uniferisitati,
+university,sw,Swahili,Chuo Kikuu,tʃuo,wikipedia,0.225,False,True,uniferisitati,0.248
+university,id,Indonesian,Universitas,universitas,wikipedia,0.875,True,True,uniferisitati,0.8302
+university,tr,Turkish,Üniversite,yniversite,wikipedia,0.875,True,True,uniferisitati,0.756
+university,ru,Russian,Университет,universitet,wikipedia,1.0,True,True,uniferisitati,0.8329
+university,es,Spanish,Universidad,unibersidad,wikipedia,1.0,True,True,uniferisitati,0.8249
+university,fi,Finnish,Yliopisto,yliopisto,wikipedia,0.525,False,True,uniferisitati,0.6008
+university,vi,Vietnamese,Viện đại học,vien dai hok,wikipedia,0.25,False,True,uniferisitati,0.4416
+university,ha,Hausa,Jami'a,dʒami'a,wikipedia,0.225,False,True,uniferisitati,0.3687
+university,ta,Tamil,பல்கலைக்கழகம்,palkalaikkaɻakam,wikipedia,0.1864,False,True,uniferisitati,0.4828
+university,he,Hebrew,אוניברסיטה,aunibrsith,wikipedia,0.8333,True,False,uniferisitati,
+university,is,Icelandic,Háskóli,haskoli,wikipedia,0.275,False,True,uniferisitati,0.4218
+university,hu,Hungarian,Egyetem,eɟetem,wikipedia,0.275,False,True,uniferisitati,0.3727
+university,cs,Czech,Univerzita,univerzita,wikipedia,0.875,True,True,uniferisitati,0.7639
+president,ja,Japanese,プレジデント,puredʒidento,wikipedia,0.9,True,True,puresidenti,0.8879
+president,zh,Mandarin,President,,unclassified,,,False,puresidenti,
+president,ko,Korean,프레지던트,pɯretʃitʌntɯ,wikipedia,0.9,True,True,puresidenti,0.8764
+president,ar,Arabic,رئيس (توضيح),rʔis,wikipedia,0.1667,False,False,puresidenti,
+president,ru,Russian,Президент (значения),prezident,wikipedia,1.0,True,True,puresidenti,0.815
+president,es,Spanish,Presidente (desambiguación),presidente,wikipedia,0.9474,True,True,puresidenti,0.9028
+president,fi,Finnish,Presidentti (täsmennyssivu),presidentti,wikipedia,0.878,True,True,puresidenti,0.8182
+president,he,Hebrew,נשיא (פירושונים),nʃia,wikipedia,0.1667,False,False,puresidenti,
+president,hu,Hungarian,Elnök (egyértelműsítő lap),elnøk,wikipedia,0.2222,False,True,puresidenti,0.3527
+president,cs,Czech,Prezident (rozcestník),prezident,wikipedia,1.0,True,True,puresidenti,0.815
+hospital,ja,Japanese,病院,,wikipedia,0.0,False,True,hosipitali,
+hospital,zh,Mandarin,醫院,,unclassified,,,False,hosipitali,
+hospital,ko,Korean,병원,pjʌŋwʌn,wikipedia,0.069,False,True,hosipitali,0.4172
+hospital,hi,Hindi,चिकित्सालय,tʃikitsalaj,wikipedia,0.4615,False,True,hosipitali,0.616
+hospital,ar,Arabic,مستشفى,,wikipedia,0.0,False,False,hosipitali,
+hospital,sw,Swahili,Hospitali,hospitali,wikipedia,0.9286,True,True,hosipitali,0.9
+hospital,id,Indonesian,Rumah sakit,sakit,wikipedia,0.3846,False,True,hosipitali,0.4517
+hospital,tr,Turkish,Hastane,hastane,wikipedia,0.4615,False,True,hosipitali,0.6517
+hospital,ru,Russian,Больница,bolnitsa,wikipedia,0.0769,False,True,hosipitali,0.5776
+hospital,es,Spanish,Hospital,ospital,wikipedia,1.0,True,True,hosipitali,0.7
+hospital,fi,Finnish,Sairaala,sairaala,wikipedia,0.3846,False,True,hosipitali,0.6207
+hospital,vi,Vietnamese,Bệnh viện,vien,wikipedia,0.3462,False,True,hosipitali,0.3466
+hospital,ha,Hausa,Asibiti,asibiti,wikipedia,0.7308,True,True,hosipitali,0.6828
+hospital,ta,Tamil,மருத்துவமனை,maruttuvamanai,wikipedia,0.2245,False,True,hosipitali,0.564
+hospital,he,Hebrew,בית חולים,bit,wikipedia,0.5,False,False,hosipitali,
+hospital,is,Icelandic,Sjúkrahús,sjukrahus,wikipedia,0.2581,False,True,hosipitali,0.4362
+hospital,hu,Hungarian,Kórház,korhaz,wikipedia,0.1538,False,True,hosipitali,0.4069
+hospital,cs,Czech,Nemocnice,nemotsnitse,wikipedia,0.2258,False,True,hosipitali,0.5596
+bank,ja,Japanese,銀行,,wikipedia,0.0,False,True,banki,
+bank,zh,Mandarin,銀行,,model-recall,,False,False,banki,
+bank,ko,Korean,은행,ɯnheŋ,wikipedia,0.2941,False,True,banki,0.4552
+bank,hi,Hindi,बैंक,bɛnk,wikipedia,1.0,True,True,banki,0.7655
+bank,ar,Arabic,مصرف,,wikipedia,0.0,False,False,banki,
+bank,sw,Swahili,Benki,benki,wikipedia,0.8947,True,True,banki,0.9724
+bank,id,Indonesian,Bank,bank,wikipedia,1.0,True,True,banki,0.8
+bank,tr,Turkish,Banka,banka,wikipedia,0.8947,True,True,banki,0.9586
+bank,ru,Russian,Банк,bank,wikipedia,1.0,True,True,banki,0.8
+bank,es,Spanish,Banco,banko,wikipedia,0.8947,True,True,banki,0.9586
+bank,fi,Finnish,Pankki,pankki,wikipedia,0.7727,True,True,banki,0.8276
+bank,vi,Vietnamese,Ngân hàng,ŋən haŋ,wikipedia,0.4118,False,True,banki,0.5977
+bank,ha,Hausa,Banki,banki,wikipedia,0.8947,True,True,banki,1.0
+bank,ta,Tamil,வங்கி,vaŋki,wikipedia,0.8947,True,True,banki,0.9069
+bank,he,Hebrew,בנק,bnk,wikipedia,1.0,True,False,banki,
+bank,is,Icelandic,Banki,banki,wikipedia,0.8947,True,True,banki,1.0
+bank,hu,Hungarian,Bank,bank,wikipedia,1.0,True,True,banki,0.8
+bank,cs,Czech,Banka,banka,wikipedia,0.8947,True,True,banki,0.9586
 system,ja,Japanese,システム,ʃisutemu,wikipedia,0.9231,True,True,sisitem,0.8362
 system,zh,Mandarin,系統,,unclassified,,,False,sisitem,
 system,ko,Korean,시스템,sisɯtem,wikipedia,0.9231,True,True,sisitem,0.9852
@@ -723,24 +723,24 @@ chocolate,he,Hebrew,שוקולד,ʃukuld,wikipedia,1.0,True,False,kokolate,
 chocolate,is,Icelandic,Súkkulaði,sukkulaði,wikipedia,0.8485,True,True,kokolate,0.7759
 chocolate,hu,Hungarian,Csokoládé,tʃokolade,wikipedia,1.0,True,True,kokolate,0.8525
 chocolate,cs,Czech,Čokoláda,tʃokolada,wikipedia,1.0,True,True,kokolate,0.8372
-sugar,ja,Japanese,砂糖,,wikipedia,0.0,False,True,suka,
-sugar,zh,Mandarin,糖,,model-recall,,False,False,suka,
-sugar,ko,Korean,설탕,sʌltaŋ,wikipedia,0.375,False,True,suka,0.5833
-sugar,hi,Hindi,शर्करा,ʃarkara,wikipedia,0.7917,True,True,suka,0.5172
-sugar,ar,Arabic,سكر,skr,wikipedia,1.0,True,False,suka,
-sugar,sw,Swahili,Sukari,sukari,wikipedia,0.9048,True,True,suka,0.6667
-sugar,id,Indonesian,Gula,gula,wikipedia,0.5263,False,True,suka,0.6724
-sugar,tr,Turkish,Şeker,ʃeker,wikipedia,1.0,True,True,suka,0.6966
-sugar,ru,Russian,Сахар,saxar,wikipedia,1.0,True,True,suka,0.7172
-sugar,es,Spanish,Azúcar,asukar,wikipedia,0.9048,True,True,suka,0.6667
-sugar,fi,Finnish,Sokerit,sokerit,wikipedia,0.9048,True,True,suka,0.532
-sugar,vi,Vietnamese,Đường (thực phẩm),dɯəŋ,wikipedia,0.2105,False,True,suka,0.3879
-sugar,ha,Hausa,Sukari,sukari,wikipedia,0.9048,True,True,suka,0.6667
-sugar,ta,Tamil,சீனி,sini,wikipedia,0.4737,False,True,suka,0.7284
-sugar,he,Hebrew,סוכר,sukr,wikipedia,1.0,True,False,suka,
-sugar,is,Icelandic,Sykur,sikur,wikipedia,1.0,True,True,suka,0.7034
-sugar,hu,Hungarian,Cukor,tsukor,wikipedia,1.0,True,True,suka,0.6437
-sugar,cs,Czech,Cukr,tsukr,wikipedia,0.8947,True,True,suka,0.6276
+sugar,ja,Japanese,砂糖,,wikipedia,0.0,False,True,sukari,
+sugar,zh,Mandarin,糖,,model-recall,,False,False,sukari,
+sugar,ko,Korean,설탕,sʌltaŋ,wikipedia,0.375,False,True,sukari,0.4943
+sugar,hi,Hindi,शर्करा,ʃarkara,wikipedia,0.7917,True,True,sukari,0.7734
+sugar,ar,Arabic,سكر,skr,wikipedia,1.0,True,False,sukari,
+sugar,sw,Swahili,Sukari,sukari,wikipedia,0.9048,True,True,sukari,1.0
+sugar,id,Indonesian,Gula,gula,wikipedia,0.5263,False,True,sukari,0.5517
+sugar,tr,Turkish,Şeker,ʃeker,wikipedia,1.0,True,True,sukari,0.7471
+sugar,ru,Russian,Сахар,saxar,wikipedia,1.0,True,True,sukari,0.7644
+sugar,es,Spanish,Azúcar,asukar,wikipedia,0.9048,True,True,sukari,0.6667
+sugar,fi,Finnish,Sokerit,sokerit,wikipedia,0.9048,True,True,sukari,0.8177
+sugar,vi,Vietnamese,Đường (thực phẩm),dɯəŋ,wikipedia,0.2105,False,True,sukari,0.4971
+sugar,ha,Hausa,Sukari,sukari,wikipedia,0.9048,True,True,sukari,1.0
+sugar,ta,Tamil,சீனி,sini,wikipedia,0.4737,False,True,sukari,0.5805
+sugar,he,Hebrew,סוכר,sukr,wikipedia,1.0,True,False,sukari,
+sugar,is,Icelandic,Sykur,sikur,wikipedia,1.0,True,True,sukari,0.7529
+sugar,hu,Hungarian,Cukor,tsukor,wikipedia,1.0,True,True,sukari,0.6437
+sugar,cs,Czech,Cukr,tsukr,wikipedia,0.8947,True,True,sukari,0.5
 banana,ja,Japanese,バナナ,banana,wikipedia,1.0,True,True,banana,1.0
 banana,zh,Mandarin,蕉,,model-recall,,False,False,banana,
 banana,ko,Korean,바나나,panana,wikipedia,1.0,True,True,banana,0.9943
@@ -776,23 +776,23 @@ taxi,he,Hebrew,מונית,,wikipedia,0.0,False,False,takisi,
 taxi,is,Icelandic,Leigubíll,leigubitl,wikipedia,0.2727,False,True,takisi,0.5268
 taxi,hu,Hungarian,Taxi,taksi,wikipedia,1.0,True,True,takisi,0.8333
 taxi,cs,Czech,Taxi,taksi,wikipedia,1.0,True,True,takisi,0.8333
-hotel,ja,Japanese,ホテル,hoteru,wikipedia,0.875,True,True,hote,0.6667
-hotel,zh,Mandarin,酒店,,model-recall,,False,False,hote,
-hotel,ko,Korean,호텔,hotel,wikipedia,1.0,True,True,hote,0.8
-hotel,hi,Hindi,होटल,hoʈal,wikipedia,1.0,True,True,hote,0.7586
-hotel,ar,Arabic,فندق,fndq,wikipedia,0.25,False,False,hote,
-hotel,sw,Swahili,Hoteli,hoteli,wikipedia,0.875,True,True,hote,0.6667
-hotel,id,Indonesian,Hotel,hotel,wikipedia,1.0,True,True,hote,0.8
-hotel,tr,Turkish,Otel,otel,wikipedia,1.0,True,True,hote,0.5
-hotel,ru,Russian,Гостиница,gostinitsa,wikipedia,0.375,False,True,hote,0.3414
-hotel,es,Spanish,Hotel,otel,wikipedia,1.0,True,True,hote,0.5
-hotel,fi,Finnish,Hotelli,hotelli,wikipedia,0.7368,True,True,hote,0.5714
-hotel,vi,Vietnamese,Khách sạn,xatʃ san,wikipedia,0.1667,False,True,hote,0.4828
-hotel,ta,Tamil,விடுதி,viʈuti,wikipedia,0.4286,False,True,hote,0.5402
-hotel,he,Hebrew,בית מלון,bitmlun,wikipedia,0.5,False,False,hote,
-hotel,is,Icelandic,Hótel,hotel,wikipedia,1.0,True,True,hote,0.8
-hotel,hu,Hungarian,Szálloda,salloda,wikipedia,0.2083,False,True,hote,0.5
-hotel,cs,Czech,Hotel,hotel,wikipedia,1.0,True,True,hote,0.8
+hotel,ja,Japanese,ホテル,hoteru,wikipedia,0.875,True,True,hoteli,0.9368
+hotel,zh,Mandarin,酒店,,model-recall,,False,False,hoteli,
+hotel,ko,Korean,호텔,hotel,wikipedia,1.0,True,True,hoteli,0.8333
+hotel,hi,Hindi,होटल,hoʈal,wikipedia,1.0,True,True,hoteli,0.7989
+hotel,ar,Arabic,فندق,fndq,wikipedia,0.25,False,False,hoteli,
+hotel,sw,Swahili,Hoteli,hoteli,wikipedia,0.875,True,True,hoteli,1.0
+hotel,id,Indonesian,Hotel,hotel,wikipedia,1.0,True,True,hoteli,0.8333
+hotel,tr,Turkish,Otel,otel,wikipedia,1.0,True,True,hoteli,0.6667
+hotel,ru,Russian,Гостиница,gostinitsa,wikipedia,0.375,False,True,hoteli,0.5138
+hotel,es,Spanish,Hotel,otel,wikipedia,1.0,True,True,hoteli,0.6667
+hotel,fi,Finnish,Hotelli,hotelli,wikipedia,0.7368,True,True,hoteli,0.8571
+hotel,vi,Vietnamese,Khách sạn,xatʃ san,wikipedia,0.1667,False,True,hoteli,0.5517
+hotel,ta,Tamil,விடுதி,viʈuti,wikipedia,0.4286,False,True,hoteli,0.7299
+hotel,he,Hebrew,בית מלון,bitmlun,wikipedia,0.5,False,False,hoteli,
+hotel,is,Icelandic,Hótel,hotel,wikipedia,1.0,True,True,hoteli,0.8333
+hotel,hu,Hungarian,Szálloda,salloda,wikipedia,0.2083,False,True,hoteli,0.569
+hotel,cs,Czech,Hotel,hotel,wikipedia,1.0,True,True,hoteli,0.8333
 tomato,ja,Japanese,トマト,tomato,wikipedia,1.0,True,True,tomate,0.977
 tomato,zh,Mandarin,番茄,,model-recall,,False,False,tomate,
 tomato,ko,Korean,토마토,tomato,wikipedia,1.0,True,True,tomate,0.977

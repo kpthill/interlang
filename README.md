@@ -142,6 +142,18 @@ questions and next steps in §7.
   make `eat food` both "eat the food!" and "(he) eats food".
 - **Tier 3 is complete, and so is the grammar through Tier 3.** Running total: **16 words,
   6 rules** — under 9% of the short-word space.
+- **Lexicon milestone 1** - done, [`notes/lexicon-milestone1.md`](notes/lexicon-milestone1.md).
+  **137 actual words**: the 19 grammatical words, the Leipzig-Jakarta top-50 core roots
+  (44 after removing what the grammar already covers), numerals 0-10, nine generic nouns,
+  and 54 international borrowings for talking about the project. Sanity check, not the
+  lexicon. It turns §7's ordinal discouragement ranking into **provisional numbers** for the
+  first time, spends **83 of 174 monosyllables (52% of the budget left free)**, and spreads
+  the 71 donor-sourced roots over **24 language families with no family above 7.2%**.
+  Two findings worth the click: **the closed class provably cannot be a distance-2 code** -
+  the Singleton bound allows 15 mutually two-features-apart monosyllables and the grammar needs
+  19, so *na* "not" and *nan* "you (pl)" are unavoidable in some form - and **no word clears
+  Patrick's >50% recognition threshold** under a deliberately conservative instrument, with
+  7 clearing >30%.
 - **Next:** Tier 4, the lexicon interface — word classes and how rigid they are,
   derivational machinery, and the final root-shape bounds that couple grammar back to
   phonology (`notes/principles.md` §3.6). Phonology and phonotactics are closed (`notes/principles.md`
@@ -187,6 +199,7 @@ studies were run 2026-07-14 against the versions noted below). Everything joins 
 | `wikipedia_langlinks/*.json` | [en.wikipedia.org langlinks API](https://en.wikipedia.org/w/api.php) — one file per concept, giving that article's title in every language | fetched 2026-08-05 | `uv run python scripts/international_vocab.py` (fetches on first run; `--offline` reuses the cache) |
 | `grambank/` | [grambank/grambank](https://github.com/grambank/grambank) | `main`, fetched 2026-08-05 | `git clone --depth 1 https://github.com/grambank/grambank data/raw/grambank` |
 | `apics/` | [cldf-datasets/apics](https://github.com/cldf-datasets/apics) | `main`, fetched 2026-08-05 | `git clone --depth 1 https://github.com/cldf-datasets/apics data/raw/apics` |
+| `concepticon/*.tsv` | [concepticon/concepticon-data](https://github.com/concepticon/concepticon-data) conceptlists | `master`, fetched 2026-08-06 | `uv run python scripts/lexicon_milestone1.py` (fetches `Tadmor-2009-100`, `Swadesh-1955-100`, `Swadesh-1952-200` on first run; `--offline` reuses the cache) |
 | `iso639/language-codes-full.csv` | [datasets/language-codes](https://github.com/datasets/language-codes) | `main`, fetched 2026-08-05 | `curl -sSL --create-dirs -o data/raw/iso639/language-codes-full.csv https://raw.githubusercontent.com/datasets/language-codes/main/data/language-codes-full.csv` |
 
 `language-codes-full.csv` is only a **fallback** for the ISO 639-1 ↔ 639-3 map that
@@ -210,6 +223,7 @@ dataset is for, its row counts, and its caveats:
 | `contrast_costs.csv` | `scripts/contrast_study.py` | candidate contrasts × share of languages and people whose native phonology distinguishes them, plus attested merger counts — the functional-load penalty matrix |
 | `stress_prevalence.csv`, `stress_by_language.csv` | `scripts/stress_prevalence.py` | broad word-stress rule categories × share of languages / L1 speakers / total speakers, under two classification schemes and three tone-language policies, plus the per-language audit trail |
 | `international_vocab.csv`, `international_vocab_forms.csv` | `scripts/international_vocab.py` | 52 international words × 6 syllable-template variants × 2 final-coda policies — rendered form, syllable counts before/after, length inflation, recognizability against attested adaptations; plus the 828 attested renderings in 18 languages with their loan/calque classification and provenance |
+| `lexicon_milestone1.csv` | `scripts/lexicon_milestone1.py` | 137 words - the 19 grammatical words, the Leipzig-Jakarta top-50 core roots, numerals 0-10, nine generic nouns and 54 international borrowings - with form, syllable count, donor language + family, segment cost under the provisional discouragement weights, and the recognition estimate against a Wikipedia-langlinks panel |
 | `punctuation_survey.csv` | `scripts/punctuation_survey.py` | punctuation / capitalization / spacing / number-format conventions × total-speaker prevalence, each row marked ASCII-available or not and CLDR-derived (`source=cldr`) or knowledge-assembled (`source=knowledge`) |
 
 ## Reproducing
@@ -237,6 +251,10 @@ uv run python scripts/grammar_tier2_np.py      # -> data/processed/grammar_tier2
 uv run python scripts/grammar_tier2_negation.py  # -> data/processed/grammar_tier2_negation.csv
 uv run python scripts/grammar_tier2_pronouns.py  # -> data/processed/grammar_tier2_pronouns.csv
 uv run python scripts/grammar_tier2_questions.py # -> data/processed/grammar_tier2_questions.csv
+uv run python scripts/lexicon_milestone1.py    # -> data/processed/lexicon_milestone1.csv
+                                               #    (fetches Concepticon lists and
+                                               #    Wikipedia langlinks on first run;
+                                               #    --offline reuses the cache)
 ```
 
 Each script's module docstring documents its inputs, outputs, and the judgment calls

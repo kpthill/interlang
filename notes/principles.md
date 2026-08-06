@@ -549,6 +549,53 @@ Evidence: [`grammar-tier45.md`](grammar-tier45.md). Third and last light-analysi
 **Word bill: 3** (ordinal marker, *yes*, *no*). **Rules added: 1.**
 **THE GRAMMAR IS COMPLETE: 19 words, 7 rules** — under 11% of the short-word space.
 
+#### Gaps closed after the coverage sweep (**SOFT**, 2026-08-06 by Patrick)
+
+Evidence: [`grammar-gap-closure.md`](grammar-gap-closure.md). The coverage sweep and bias
+audit found the grammar was **not** complete when declared so. Eight gaps closed for
+**one word** and **no new rules**; two existing rules amended.
+
+- **Demonstratives: a two-way `this`/`that` contrast (+1 word).** Patrick's lean was a single
+  demonstrative, with a pre-registered test — adopt a contrast only if ≥50% of creoles and
+  pidgins make one. **6 of 8 restricted pidgins, 6 of 9 expanded, 36 of 54 creoles** (APiCS
+  33), and WALS 41A puts *no distance contrast* at **4.4% of L1**. Test met, lean reversed.
+  Not three-way (0 of 9 restricted pidgins).
+- **Reciprocals: `one-other`, a compound.** Reusing `self` is what **1.2% of L1** does
+  (WALS 106A) and would be its third job; a bare `other` is ambiguous with "the other one".
+  Every 'other'-based reciprocal in the world is a compound (*each other*, *einander*,
+  *el uno al otro*), and *reciprocal based on 'other'* is **25 of 54 creoles**.
+- **Control complements: omit the subject when it matches the matrix subject.** `I want go`.
+  **66 of 70 contact languages** (APiCS 97), **89.4% of L1** (WALS 124A). *Extends* the
+  coordination-ellipsis rule rather than adding one — omission is licensed in the second
+  conjunct of a coordination and in the complement of a control verb, neither clause-initial,
+  so neither collides with the imperative. Where the subject **differs**, the optional
+  complementizer stops being optional in practice: `I want you go` is ambiguous, `I want REL
+  you go` is not.
+- **Oblique relativization: a resumptive pronoun** — the ordinary 3sg/3pl.
+  `knife REL I cut bread with it`. **Preposition stranding is 27 European to 1
+  non-European** (APiCS 94) — a Germanic quirk that fails Rule 1 badly — while resumptive is
+  26:8 and leads the pidgin columns. *Amends* the relative-clause rule: omit the shared
+  element where it is subject or object; where oblique, a resumptive pronoun holds the slot.
+- **Causatives: periphrastic, identical in shape to control complements.**
+  `I make REL John go`. Affixes are foreclosed and **APiCS codes no causative feature at all**
+  (parameter list checked). Zero words, zero rules.
+- **Intensifiers: the focus adverb — forced, not chosen.** *Intensifier = reflexive* is
+  **70.5% of L1** (WALS 47A), but **the preverbal slot is already the passive**, so
+  `I self do it` means "I am done". The slot is occupied; `specifically I do it` is what
+  remains. **The first decision in the project with no live alternative.**
+- **Light verbs: already present as `X-do`, relabelled not added.** The bias audit's
+  71.4%-of-L1 cost is a labelling artefact — `telefon-do` *is* a light-verb construction.
+  Handed to the lexicon: solid compounding makes it `telefondo`, unwieldy for long borrowings.
+- **Comitative ≠ instrumental: two prepositions.** The creole identity (41 of 45) is
+  **inheritance** — English *with*, French *avec*, Spanish *con* all conflate — exactly the
+  confound Rule 1 exists to catch; restricted pidgins differentiate **5 to 3**, and WALS 52A
+  gives differentiation **59.3% of L1**.
+
+**GRAMMAR TOTAL: 20 words, 7 rules.** **Still open** (see that note §10): fragment answers,
+direct vs indirect speech, stacked modifier order, reflexive domain, labile verbs,
+distributive/fractional numerals. **The claim "the grammar is complete" has now been wrong
+twice**; §10 exists to keep the third claim honest.
+
 ### 3.3 Phoneme inventory (**FIRM** — decided 2026-08-05 by Patrick)
 
 **The inventory is closed. 15 consonants + 5 vowels = 20 phonemes.**

@@ -201,3 +201,36 @@ Everything joins on **Glottocode** (and usually ISO 639-3).
    clicks (`velaric`) and length all learn ≈ 0, which means "no evidence in
    WOLD's recipient set", not "does not matter". These are the weights not to
    trust; see [`cost-learning.md`](cost-learning.md) §7.
+
+
+## `translit.py` default contradicted FIRM §3.6 (found and fixed 2026-08-06)
+
+**`final_policy` defaulted to `"delete"` while §3.6 FIRM specifies a support vowel.** Every
+worked example in the §3.6 prose was wrong under the code default:
+
+| | §3.6 says | code default gave |
+|---|---|---|
+| bank | **banki** | ban |
+| virus | **firusi** | firu |
+| hotel | **hoteli** | hote |
+| club | **klubu** | klu |
+| camp | **kampu** | kam |
+
+Deletion is also **lossy**, which contradicts §3.6's stated rationale that the support vowel
+"keeps the mapping lossless at the segment level". Found by the lexicon milestone-1 agent.
+
+**Fixed**: the default is now `"epenthesize"` in `src/interlang/translit.py` (both `repair`
+and `render`) and in `scripts/international_vocab.py`'s `DEFAULTS`.
+
+**Impact — bounded, and the decision survives.** The study always swept *both* policies, so
+the comparison data existed; only the headline arm was wrong. **The variant ranking is
+identical under both**: V5 > V3C > V4 > V3 > V2 > V1. And epenthesize scores *higher* on
+every variant (0.8317 vs 0.8110 mean similarity), at the cost of syllable inflation
+(1.327 vs 1.207). So the FIRM choice of V3C is unaffected and the corrected default is also
+the better one on the metric. **`international_vocab_forms.csv` was regenerated**; word forms
+change, the decision does not.
+
+**Lesson worth keeping:** a FIRM decision's prose and the code that implements it drifted
+apart without anything catching it, and the drift survived a session in which the artifact
+table was deliberately regenerated. Worked examples in the notes should be **generated from
+the code**, not written by hand alongside it.

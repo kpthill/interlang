@@ -267,7 +267,7 @@ def _epen_vowel(policy: str, prev_v: str, next_v: str, c: str = "") -> str:
 
 
 def repair(ph: str, variant: Variant, *, epen: str = "labial_u",
-           final_policy: str = "delete") -> tuple[str, list[str]]:
+           final_policy: str = "epenthesize") -> tuple[str, list[str]]:
     """STAGE 2.  Make a phoneme string legal under `variant`.
 
     Rules, applied left to right:
@@ -473,7 +473,7 @@ def syllables(form: str) -> int:
 
 
 def render(intl: str, variant: str | Variant, *, v_target: str = "f",
-           th_target: str = "t", epen: str = "labial_u", final_policy: str = "delete",
+           th_target: str = "t", epen: str = "labial_u", final_policy: str = "epenthesize",
            g_soft: bool = False, hiatus: str = "keep") -> dict:
     """Full pipeline: international spelling -> interlang word under a variant.
 

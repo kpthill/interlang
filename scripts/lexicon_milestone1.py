@@ -36,7 +36,13 @@ Output
       syllable count, donor language + family, the segment cost it paid, and
       the recognition estimate with the threshold it met.
 
-Usage: uv run python scripts/lexicon_milestone1.py [--offline]
+Usage: uv run python scripts/lexicon_milestone1.py [--offline] [--hard-distance2]
+  --offline         never hit the network; use the cached lists and langlinks
+  --hard-distance2  the priced alternative arm of judgment call 10 (see below)
+
+NOTE ON READING THE OUTPUT CSV: the 2PL pronoun is the string `nan`, which
+pandas parses as a float NaN.  Read it with `keep_default_na=False`, the same
+trap `interlang.populations.read_l1_speakers` documents for ISO code `nan`.
 
 ===========================================================================
 JUDGMENT CALLS BAKED INTO THIS SCRIPT.  All of them are PROVISIONAL and are
@@ -62,7 +68,12 @@ repeated in notes/lexicon-milestone1.md.
                                    function has a degenerate optimum: the five
                                    bare vowels are the cheapest forms in the
                                    language, so the first five coined
-                                   particles took a/e/i/o/u.)
+                                   particles took a/e/i/o/u.  In G1/G2 it is
+                                   escalated to a ban, with r/h/l, for the same
+                                   reason - at cost 0.30 a big-donor bid still
+                                   won it, and *i* "stone" is not a root this
+                                   language should spend.  Borrowed G3 stems
+                                   may be vowel-initial and pay nothing.)
 
    Frequency multiplier (lexicon-plan.md 2.6 - "penalty = base x frequency"):
        G1 grammar x3.0 · numerals/generic nouns x2.0 · G2 core x1.5 · G3 x0.0
@@ -79,11 +90,12 @@ repeated in notes/lexicon-milestone1.md.
    clean; and it keeps the segments free for the borrowed stems that cannot
    avoid them.  /b d g/ are allowed and pay.
 
-3. THE MONOSYLLABLE BUDGET is computed, not assumed.  Onsets {none + 12 C}
-   (15 minus r, h, l) x 5 vowels x codas {none, n, m} = 195, minus the six
-   homorganic glide+high-vowel syllables ji/jin/jim/wu/wun/wum, which no
-   inventory of this shape should spend = 189 usable.  lexicon-plan.md 1 says
-   "~180"; this is the same number computed under a stated policy.
+3. THE MONOSYLLABLE BUDGET is computed, not assumed.  Onsets {12 C} (15 minus
+   r, h, l; no onsetless syllables, per call 1) x 5 vowels x codas {none, n, m}
+   = 180, minus the six homorganic glide+high-vowel syllables
+   ji/jin/jim/wu/wun/wum, which no inventory of this shape should spend
+   = 174 usable.  lexicon-plan.md 1 says "~180"; this is the same number
+   computed under a stated policy.
 
 4. DONOR FORMS COME FROM WOLD (41 languages, 25 families, 6 macroareas),
    filtered to `unanalyzable` forms with Borrowed_score <= 0.25 - i.e. the
@@ -434,7 +446,7 @@ def form_cost(form: str, freq_w: float) -> float:
 def monosyllable_pool() -> list[str]:
     """The budget (judgment call 3): usable monosyllabic roots for G1/G2."""
     pool = []
-    for o in [""] + [c for c in "ptkbdgmnfshjwlr" if c not in BANNED_ONSETS]:
+    for o in [c for c in "ptkbdgmnfshjwlr" if c not in BANNED_ONSETS]:
         for v in VOWELS:
             for coda in CODAS:
                 s = o + v + coda
@@ -588,6 +600,8 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
                         continue
                     if any(ch in BANNED_ONSETS for ch in syl):
                         continue          # judgment call 2
+                    if syl[0] in VOWELS:
+                        continue          # judgment call 1 (onsetless ban)
                     if syl in taken:
                         continue
                     if breaks_minimal_pair_ban(syl, set(taken)):
@@ -839,7 +853,7 @@ def main() -> None:
     # The distance-2 result.  A monosyllable is a 3-symbol word over alphabets
     # of size (onsets, vowels, codas); the Singleton bound caps a code with
     # minimum Hamming distance 2 at product/max(alphabet).
-    n_ons, n_vow, n_cod = 13, 5, 3
+    n_ons, n_vow, n_cod = 12, 5, 3
     bound = n_ons * n_vow * n_cod // max(n_ons, n_vow, n_cod)
     near = sum(1 for r in rows if r["nearest_word_distance"] < 2)
     print(f"  arm: {'HARD distance-2 in G1+numerals' if args.hard_distance2 else 'soft distinctiveness only (default)'}")
