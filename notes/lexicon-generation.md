@@ -198,7 +198,8 @@ merely embarrassing:
 | provenance | crowd-sourced, uneven | **published, citable, versioned** |
 | fetch | thousands of API calls | **one `git clone`** |
 
-**Proposed sources**, all fetched the same way as the existing five:
+**Fetched 2026-08-06** (approved by Patrick: *"if there's a public repo that's meant to be
+cloned we won't be overloading their bandwidth"*), the same way as the existing five:
 
 | source | size | what it adds |
 |---|---|---|
@@ -207,10 +208,33 @@ merely embarrassing:
 | **Concepticon** | small | the catalogue that joins all of the above |
 | **CLICS³** | ~12 MB | colexification, for Stage 2 |
 
-**Coverage after WOLD + IDS**, measured on the test clone: the seven languages above become
-available; **Hindi, Arabic, Bengali, Korean and Turkish remain missing** and are what ASJP is
-for. That matters most for the false-friend term, which can only see languages we hold forms
-for.
+### Coverage, measured after the clones **[measured]**
+
+| donor panel | codes | **% of world L1** |
+|---|---|---|
+| **WOLD alone** — the milestone-1 instrument | 38 | **24.6%** |
+| IDS | 211 | 27.8% |
+| **ASJP** | **6,134** | **96.0%** |
+| **combined** | **6,200+** | **96.0%** |
+
+**The donor pool went from 24.6% to 96.0% of world L1 for one afternoon's cloning.** ASJP
+carries only 100 concepts, but across **11,540 doculects** — and it has all twenty of the
+largest languages, including every one WOLD lacked: Hindi, Arabic (54 doculects), Bengali,
+Korean, Turkish, plus Telugu, Marathi, Tamil, Urdu, Punjabi and Javanese.
+
+**The three instruments are complementary, not redundant:**
+
+- **ASJP** — universal language coverage, 100 concepts, phonetic transcription. The
+  false-friend term and the recognition panel live here.
+- **IDS** — 1,310 concepts × 319 varieties, the deep donor pool for concepts beyond ASJP's 100.
+- **WOLD** — 41 languages but the **only** source that says a word *is* a loan and names its
+  donor. Irreplaceable for the internationalism thresholds, and for `Analyzability` (Stage 1
+  axis A).
+
+**CLICS³ ships prebuilt artefacts** — `clics3-network.gml.zip`, `clics3-infomap.gml.zip` and
+the full `clics3.sqlite.zip` — so Stage 2 needs no pipeline run, and the SQLite gives the
+*exact* colexification denominators rather than the GML's `min()` lower bound that
+[`lexicon-plan.md`](lexicon-plan.md) §4.4 had to settle for.
 
 **The Wiktionary trap, recorded because it is a real hazard for anyone who tries this later:**
 translations are grouped by sense inside `{{trans-top|gloss}}` blocks, so a naive regex mixes
