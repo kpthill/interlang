@@ -161,6 +161,34 @@ exhaustive, and flagged as such.
 - **Round-trip test on compounds** — can a naive reader recover the meaning from the parts,
   and the parts from the meaning? This is axis C, and it is procedural by necessity.
 
+### Stage 5b — Representation: the target curve (**OPEN**, Patrick 2026-08-06)
+
+**The representation objective drifted during execution and this records the intent.** What
+milestone 1 optimised was **donor spread across language families**, flat — which produces
+24 families with none above 7.2%, and a measured **4.5% of world L1 whose own language donated
+at least one word**. Patrick's actual intention was population-based:
+
+> *A language with approximately an **x** fraction of L1 speakers should coin approximately an
+> **x^(1−ε)** fraction of the words, renormalised, with **ε small and > 0**.*
+
+The exponent is the whole design. **ε = 0** would be pure proportional representation —
+Mandarin and Spanish would dominate and the result would look much like the Eurocentric
+lexicon the project exists to avoid. **ε = 1** is flat family spread, which is what we did, and
+which hands most words to languages with a few thousand speakers. **Small ε > 0** sits between:
+larger languages get more words, smallish languages still get some, and truly tiny languages
+get none.
+
+**This matters because the two objectives are partly opposed**, which is not obvious until it
+is measured: picking Bezhta (a few thousand speakers) covers a whole family and almost no
+people; picking Spanish covers 485M people and a family already covered. Flat family spread
+and population coverage pull in opposite directions, and ε is the dial between them.
+
+**Not changed for the presentation build** (Patrick: *"let's not change that now"*) — the
+language used in the talk is explicitly not the final language. **To do at Stage 3a:** replace
+the flat family-spread term with the x^(1−ε) curve, sweep ε, and report the resulting tradeoff
+curve. That sweep **is** the "measured tradeoff curve" the README promises as the project's
+headline output, so this is not a refinement — it is the deliverable.
+
 ### Stage 6 — The lexicon bias audit
 
 Same shape as [`grammar-bias-audit.md`](grammar-bias-audit.md), which is the model: report

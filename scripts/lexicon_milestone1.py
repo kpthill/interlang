@@ -385,7 +385,20 @@ SEP_BAN = 0.95                      # perceptual separation, hard half:
                                     # ka~kan (0.667) and mi~ti (0.733) are free.
 W_DIST_HAMMING = 0.90               # the RETIRED code-distance term, kept only
                                     # so main() can print the before/after arm
-W_FF = 0.30                         # false friends (judgment call 11)
+W_FF = 0.75                         # false friends (judgment call 11).  Chosen
+                                    # from the measured sweep main() prints:
+                                    # the smallest weight that actually LOWERS
+                                    # the list's aggregate false-friend load
+                                    # rather than merely reshuffling it.
+# Meanings that must not count as false friends of each other: our NEG and the
+# reference sets' "no" are the same thing pointing the same way.
+FF_ALIASES = [{"NEG", "NO"}]
+# The five collisions Patrick's review of milestone 1 found, as (concept, form).
+# main() reports, per weight, how many of them survive - the term exists to
+# remove these, so "did it" is the honest test of it.
+FLAGGED_COLLISIONS = {"DRINK": "mi", "THIS": "bu", "3PL": "si",
+                      "STRIKE OR BEAT": "da", "3SG": "je"}
+FF_SWEEP = (0.0, 0.1, 0.3, 0.5, 0.75, 1.0, 1.5, 3.0)
 FF_SIM = 1.00                       # "phonetically very close" = IDENTICAL.
                                     # Near-neighbours (di~ti at 0.983) are
                                     # deliberately NOT counted: all five
@@ -1055,6 +1068,12 @@ def ff_index(pool: list[str], ref: list[dict],
     return idx
 
 
+def _same_meaning(a: str, b: str) -> bool:
+    if a == b:
+        return True
+    return any(a in g and b in g for g in FF_ALIASES)
+
+
 def ff_score(syl: str, concept: str, our_param: str | None,
              idx: dict[str, list[dict]]) -> tuple[float, str]:
     """Judgment call 11.  Population-weighted false-friend load of `syl`.
@@ -1065,7 +1084,7 @@ def ff_score(syl: str, concept: str, our_param: str | None,
     """
     best: dict[str, tuple[float, dict]] = {}
     for h in idx.get(syl, ()):
-        if h["concept"] and h["concept"] == concept:
+        if h["concept"] and _same_meaning(h["concept"], concept):
             continue
         if our_param and h["meaning"] == our_param:
             continue
@@ -1101,7 +1120,7 @@ def adapt(raw_form: str) -> str | None:
 def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
            tot: dict, taken: dict, family_count: dict,
            ffidx: dict[str, list[dict]] | None = None,
-           w_ff: float = W_FF, separation: str = "metric",
+           w_ff: float = W_FF, separation: str = "hamming",
            ban_scope: tuple[str, ...] = BAN_SCOPE,
            hard_distance2: bool = False) -> list[dict]:
     """Greedy form assignment (judgment call 6).
@@ -1134,8 +1153,7 @@ def assign(concepts: list[dict], donors: pd.DataFrame, by_iso: dict,
         return 0.0
 
     def banned(syl, group):
-        return (separation == "metric" and group in ban_scope
-                and too_close(syl, taken) is not None)
+        return group in ban_scope and too_close(syl, taken) is not None
 
     rows = []
     for c in concepts:
@@ -1510,12 +1528,12 @@ def main() -> None:
     # ---- assign monosyllables, three arms --------------------------------
     print("\n=== assigning monosyllabic roots (G1 + G2) ===")
     arms = {}
-    for name, kw in (("A: milestone-1 code-distance rule, no false friends",
+    for name, kw in (("A: milestone-1 rule, no ban, no false friends",
                       dict(separation="hamming", w_ff=0.0, ban_scope=())),
-                     ("B: perceptual separation, no false friends",
-                      dict(separation="metric", w_ff=0.0)),
-                     ("C: perceptual separation + false friends (DEFAULT)",
-                      dict(separation="metric", w_ff=W_FF))):
+                     ("B: + the perceptual ban (judgment call 10)",
+                      dict(separation="hamming", w_ff=0.0)),
+                     ("C: + false friends (judgment call 11) - DEFAULT",
+                      dict(separation="hamming", w_ff=W_FF))):
         taken_a: dict[str, str] = {}
         fam_a: dict[str, int] = {}
         arms[name] = assign(concepts, donors, by_iso, tot, taken_a, fam_a,
@@ -1524,18 +1542,21 @@ def main() -> None:
     names = list(arms)
     print("  arm A = the milestone-1 rule (retired), arm B = judgment call 10, "
           "arm C = 10 + 11")
-    # The ban alone, bolted onto arm A, is a separate and informative arm.
-    taken_x: dict[str, str] = {}
-    fam_x: dict[str, int] = {}
-    a_plus_ban = assign(concepts, donors, by_iso, tot, taken_x, fam_x,
-                        ffidx=ffidx, w_ff=0.0, separation="hamming",
-                        ban_scope=BAN_SCOPE, hard_distance2=args.hard_distance2)
-    n_ban_only = sum(1 for x, y in zip(arms[names[0]], a_plus_ban)
-                     if x["form"] != y["form"])
-    print(f"  the perceptual BAN on its own changes {n_ban_only} forms: "
-          f"milestone 1's closed class already satisfies it, because the "
-          f"code-distance rule it was built under is strictly stronger than "
-          f"the metric asks for")
+    # Arm D: the graded perceptual penalty REPLACING the code-distance
+    # tie-breaker.  Measured, and not adopted - see judgment call 10.
+    taken_d: dict[str, str] = {}
+    fam_d: dict[str, int] = {}
+    arm_d = assign(concepts, donors, by_iso, tot, taken_d, fam_d, ffidx=ffidx,
+                   w_ff=0.0, separation="metric",
+                   hard_distance2=args.hard_distance2)
+    n_d = sum(1 for x, y in zip(arms[names[0]], arm_d) if x["form"] != y["form"])
+    print(f"  arm D (graded perceptual penalty replacing the code-distance "
+          f"tie-breaker, NOT adopted): {n_d} of {len(concepts)} forms change, "
+          f"{sum(1 for r in arm_d if r['source'] == 'coined')} coined vs "
+          f"{sum(1 for r in arms[names[0]] if r['source'] == 'coined')}, "
+          f"{len({r['donor_family'] for r in arm_d}) - 1} donor families vs "
+          f"{len({r['donor_family'] for r in arms[names[0]]}) - 1} - a wholesale "
+          f"reshuffle with no measured gain")
     changed = [(a["concept"], a["form"], b["form"], c["form"])
                for a, b, c in zip(*(arms[n] for n in names))
                if not (a["form"] == b["form"] == c["form"])]
@@ -1555,6 +1576,31 @@ def main() -> None:
     for r in rows:
         if r["donor_family"] != "(none)":
             family_count[r["donor_family"]] = family_count.get(r["donor_family"], 0) + 1
+
+    # ---- the false-friend weight sweep (judgment call 11) ----------------
+    print("\n  W_FF sweep - what the term buys, measured.  `load` is the summed "
+          "false-friend\n  score of the 84 chosen roots (lower is better); "
+          "`flagged` counts how many of\n  the five collisions the review found "
+          "survive at that weight.")
+    print(f"    {'W_FF':>5s} {'load':>6s} {'flagged':>7s} {'changed':>7s} "
+          f"{'coined':>6s} {'families':>8s}  surviving")
+    sweep_base = None
+    for w in FF_SWEEP:
+        t_s: dict[str, str] = {}
+        f_s: dict[str, int] = {}
+        rs = assign(concepts, donors, by_iso, tot, t_s, f_s, ffidx=ffidx,
+                    w_ff=w, hard_distance2=args.hard_distance2)
+        d = {r["concept"]: r["form"] for r in rs}
+        if sweep_base is None:
+            sweep_base = d
+        alive = [k for k, v in FLAGGED_COLLISIONS.items() if d.get(k) == v]
+        print(f"    {w:5.2f} {sum(r['false_friend_score'] for r in rs):6.2f} "
+              f"{len(alive):7d} "
+              f"{sum(1 for k in sweep_base if sweep_base[k] != d[k]):7d} "
+              f"{sum(1 for r in rs if r['source'] == 'coined'):6d} "
+              f"{len({r['donor_family'] for r in rs}) - 1:8d}  "
+              + ", ".join(f"{k}={d[k]}" for k in alive))
+    print(f"    shipped: W_FF = {W_FF}")
 
     ff_paid = [r for r in rows if r["false_friend_score"] > 0]
     ff_paid.sort(key=lambda r: -r["false_friend_score"])
@@ -1777,6 +1823,17 @@ def main() -> None:
     print(f"  illegal forms: {illegal if illegal else 'none'}")
     print(f"  'nan' is in the legal monosyllable pool: {'nan' in monosyllable_pool()}"
           f"; assigned to: {taken.get('nan', '(free)')}")
+    # A compound must not land near an existing word either (judgment call 10
+    # applies to what the language ends up saying, not only to its roots).
+    comp_near = []
+    for r in fell_back:
+        for other in all_rows:
+            if other is r or len(other["form"]) > 4:
+                continue
+            if sim(r["form"], other["form"]) >= SEP_BAN:
+                comp_near.append((r["form"], other["form"]))
+    print(f"  compounds within {SEP_BAN} of another word: "
+          f"{comp_near if comp_near else 'none'}")
 
     # ---- worked examples -------------------------------------------------
     print("\n=== worked examples (source -> form, every rule that fired) ===")
