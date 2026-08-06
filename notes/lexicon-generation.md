@@ -29,7 +29,7 @@ Four things the 137-word run taught us, all of which alter the pipeline below:
 4. **The donor pool was the instrument, not a choice.** WOLD's 41 languages exclude Spanish,
    Hindi, Arabic, Russian, Bengali, Portuguese, Korean and Turkish — so those could not donate
    and the false-friend term would have been blind to exactly the languages that matter. Hence
-   the Wiktionary corpus (§3 below).
+   the wider donor pool in §3 below.
 
 ---
 
@@ -92,7 +92,7 @@ MEAT~FLESH 0.70 and TREE~WOOD 0.66 are the strong ones nobody flags.
 
 | term | what it does | state |
 |---|---|---|
-| **recognizability** | population-weighted similarity to attested forms, via the Wiktionary panel | instrument being rebuilt (§3) |
+| **recognizability** | population-weighted similarity to attested forms, over the widened donor panel | instrument being rebuilt (§3) |
 | **representation** | donor spread — **per root, not per word**, and realistically **by family**, not by language | works |
 | **phonotactic cost** | discouraged segments /r h/ > /l/ > /b d ɡ/, plus a cluster penalty | **ordinal — must become numeric before this runs** (§7 OPEN) |
 | **distinguishability** | maximise minimum *perceptual* distance (feature metric), not Hamming | revised spec, §4 |
