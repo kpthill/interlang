@@ -126,8 +126,9 @@ questions and next steps in §7.
   [`notes/grammar-tier3-combination.md`](notes/grammar-tier3-combination.md). **Five words:
   *and*, *or*, *than*, *if*, and one invariant relativizer that doubles as the optional
   complementizer.** Comparatives leave the adjective unmarked (`I COP tall than you`);
-  adverbial clauses reuse the interrogative compounds (`what-time he arrive, we eat`), which
-  is how they cost nothing — a dedicated subordinator set would have been 8–10 words. The
+  adverbial clauses are a preposition, a noun, the relativizer and a clause, placed after the
+  main clause (`we eat at time REL he arrive`), which is how they cost nothing — a dedicated
+  subordinator set would have been 8–10 words. The
   relative pronoun is rejected — 40.6% of *total speakers* have one, but it needs case, which
   the pronoun decision refused. *Also decided without a committed study script.*
 - **Tier 3 is complete.** **6 words, 3 rules.** Running grammar total: **16 words, 5 rules**

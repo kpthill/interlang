@@ -13,14 +13,21 @@ reproducible from those parameter IDs; they are not reproducible by running anyt
 
 **Bottom line up front.** **Five words** — *and*, *or*, *than*, *if*, and one invariant
 **relativizer** that also serves as the optional complementizer. Comparatives leave the
-adjective unmarked. Adverbial clauses of time, place, reason and manner reuse the Q10
-interrogative compounds and cost nothing. **Tier 3 closes at 6 words and 3 rules.**
+adjective unmarked. Adverbial clauses are a preposition, a noun, the relativizer and a
+clause, placed after the main clause — every piece already bought, so they cost nothing.
+**Tier 3 closes at 6 words and 3 rules.**
 
-*§5 was revised after first publication:* it originally claimed adverbial clauses cost zero
-words because subordinators are "ordinary vocabulary". That was under-argued — a dedicated
-subordinator set would have been 8–10 words — and the zero is now earned by deriving them
-from the interrogative compounds instead, at the cost of one rule and one irreducible word
-(*if*). The word bill in §6 and the running totals were corrected with it.
+*§5 has been revised twice and the history is kept deliberately.* **(1)** It originally claimed
+adverbial clauses cost zero words because subordinators are "ordinary vocabulary" — under-argued,
+since a dedicated set would have been 8–10 words. **(2)** The first correction earned the zero
+by reusing the interrogative compounds (`what-time you arrive`), and rejected the
+preposition-plus-noun-plus-relativizer route on a **mis-analysis**: that route was said to
+require relativization on an oblique, when in fact the head noun has no argument role in the
+clause at all, so there is no gap and WALS 123A does not apply. **(3)** The current decision is
+Patrick's proposal — `we eat at time REL you arrive` — which additionally avoids the ambiguity
+Route B inherited from Q10, and places the clause *after* the main clause rather than before,
+correcting a second error in which WALS 94A (position of the subordinator *within* its clause)
+was cited for the position of the clause *within the sentence*.
 
 | English | interlang shape |
 |---|---|
@@ -31,7 +38,7 @@ from the interrogative compounds instead, at the cost of one rule and one irredu
 | the man **who** saw me | `man REL COP see me` |
 | the book **that** I read | `book REL I read` |
 | I know (**that**) he came | `I know (REL) he come` |
-| **when** he arrived, we ate | `what-time he arrive, we eat` |
+| we ate **when he arrived** | `we eat at time REL he arrive` |
 | **if** you go, I go | `if you go, I go` |
 
 ---
@@ -229,55 +236,93 @@ until, after, before, because, if, although — would have been 8–10 grammatic
 single most expensive decision in the grammar.** The zero is real, but it has to be earned by
 deriving the subordinators from something, and there are two ways to do that.
 
-**Route A — a noun plus the relativizer:** `time REL you arrive, we eat`, "the time that you
-arrive, we eat". Attractive because it adds *no rule* — it is a relative clause on a noun,
-using §3 machinery already bought. **But it silently requires the hard case:**
+**Route A — a preposition, a noun, and the relativizer:** `we eat at time REL you arrive`,
+"we eat at the time that you arrive". **Adopted** (Patrick's proposal). Every piece already
+exists: prepositions (Tier 0), the relativizer (§3), and an ordinary noun.
 
-| WALS 123A, relativization on **obliques** | %lang | **%L1** |
-|---|---|---|
-| gap | 48.6 | 42.7 |
-| pronoun-retention | 18.0 | 6.1 |
-| relative pronoun | 11.7 | 39.3 |
-| **not possible at all** | 9.0 | 1.3 |
+**Route B — reuse the interrogative compounds:** `what-time you arrive, we eat`, which is what
+English does with *when / where / why / how*. Shorter by two words. **Rejected**, see below.
 
-Against subject relativization at 75.2% / 65.4% (§3), the oblique gap is markedly weaker —
-and `time REL you arrive` is exactly an oblique, since "time" inside the clause is an adjunct
-(*you arrive [at __]*), not subject or object. Contact languages agree it is hard: on
-instrument relatives (APiCS 94) the modal strategy is **relative particle + resumptive
-pronoun** (7 of 9 expanded pidgins), not a bare gap, and 5 languages cannot do it at all.
-§3's rule licensed subject and object gaps only.
+### Why Route A survives an objection that first looked fatal
 
-**Route B — reuse the interrogative compounds:** `what-time you arrive, we eat`. **Adopted.**
-No gap, no relativization — the clause is complete and the compound names the relation. It is
-what English does (*when*, *where*, *why*, *how* are each interrogative and subordinator at
-once) and what many languages do, and it reuses words Q10 already coined.
+The first version of this section rejected Route A on the grounds that `time REL you arrive`
+requires **relativization on an oblique**, the hard case — WALS 123A puts the gap strategy
+there at 48.6% of languages and 42.7% of L1 against 75.2% / 65.4% for subjects, with 9% of
+languages unable to do it at all.
 
-**Q10 pays for itself here.** Putting the question particle on *every* question — argued in
-that note on late-signal grounds — is what keeps the two readings apart:
+**That analysis was wrong.** "Time" plays *no argument role at all* inside the clause; there
+is no gap to license. This is a **gapless (associative) relative clause**, the type Japanese
+and Chinese use freely (*the smell that fish burns*), and it calls for a **loosening** of §3's
+rule rather than an extension into difficult territory:
+
+> **REL joins a clause to a noun. If the noun has an argument role in the clause, that role is
+> gapped; otherwise the relation is pragmatic.**
+
+For *time*, *place* and *reason* the pragmatic inference is about as cheap as inference gets.
+WALS 123A was measuring something this construction does not do.
+
+**The preposition is load-bearing, not decoration.** Creoles drop it and we cannot: a bare NP
+in `we eat time REL you arrive` reads as the **object of "eat"**, because word order is our
+only marker of argument role (Tier 0). The preposition is what marks the phrase as an adjunct.
+
+### Position: a bad citation corrected
+
+The first version claimed the adverbial clause is **clause-initial**, citing WALS 94A at 78.4%
+of L1. **WALS 94A measures where the subordinator sits inside its own clause**, not where the
+adverbial clause sits relative to the main clause. Two different questions, conflated.
+
+The answer comes from our own rules instead: **§3.2's modifier rule puts single-word modifiers
+before their head and clausal modifiers after it.** An adverbial clause is clausal, so it
+**follows the main clause** — the same heavy-constituent-last logic that put relative clauses
+after the noun. `we eat at time REL you arrive`. No new rule required.
+
+### Why not Route B
+
+Reusing the interrogative compounds is two words shorter and needs no gapless relatives. It
+was adopted briefly and then dropped, because **it inherits Q10's tolerated-dropping
+concession as a live ambiguity**: the question particle is the only thing separating
+`Q what-time you arrive?` from `what-time you arrive, we eat`, and Q10 explicitly tolerates
+dropping that particle before an in-situ question word. Route A has no such collision, and it
+**generalises to any noun** rather than only the interrogative set.
+
+### What contact languages do — mostly not codable here
+
+**APiCS does not code adverbial clauses.** The only relevant feature is 99, verb doubling in
+temporal clauses: *not possible* in **9 of 9 restricted pidgins**, 8 of 9 expanded, 46 of 54
+creoles — which tells us only that no exotic device is in use. Stated plainly rather than
+substituting an adjacent number.
+
+| WALS | balanced only | deranked only | either | **balanced available to** |
+|---|---|---|---|---|
+| 126A 'when' clauses | 36.3% L1 | 7.0% | 56.8% | **93.1% of L1** |
+| 127A reason clauses | 42.9% | 4.5% | 52.6% | **95.5% of L1** |
+| 125A purpose clauses | 36.4% | 39.9% | 23.8% | 60.2% of L1 |
+
+"Balanced" means an ordinary finite clause rather than a special non-finite form. It is
+available to nearly everyone for time and reason clauses — fortunate, since Tier 0 leaves us
+no way to build a non-finite verb. **Purpose clauses are the exception** (deranked-only for
+39.9% of L1, English *to go*), and we take the balanced option there by necessity.
+
+**From general knowledge rather than from any dataset in this repo — flagged as such —
+creoles independently grammaticalise the noun 'time' into exactly this construction**:
+Tok Pisin *taim yu kam* ("time you come"), Haitian *lè m rive* ("hour I arrive", from French
+*l'heure*). They drop the preposition and the relativizer, which they can afford and we
+cannot. This is convergent support for Route A, but it is not evidence drawn from the sources
+this project audits.
+
+### Decision
 
 | | |
 |---|---|
-| `Q what-time you arrive?` | when did you arrive? |
-| `what-time you arrive, we eat` | when you arrived, we ate |
-
-**The wrinkle is Q10's tolerated-dropping concession.** If speakers drop the particle in
-casual content questions the two converge. The parse stays recoverable — a subordinate clause
-is followed by a main clause, a bare question is not, and in writing the `?` settles it — but
-this is a **residual ambiguity that is a direct cost of that concession**, and it belongs in
-the record rather than in a footnote to Q10.
-
-**Decision:**
-
-| | |
-|---|---|
-| time, place, reason, manner | **0 words** — `what-time`, `what-place`, `what-reason`, `what-manner` |
-| **conditional "if"** | **1 word, irreducible** — conditionals are irrealis, they do not decompose into noun-plus-clause, and with mood adverbial (Q6) there is nothing else to build them from |
+| time, place, reason, manner, purpose | **0 words** — preposition + noun + REL + clause |
+| **conditional "if"** | **1 word, irreducible** — conditionals are irrealis, they do not decompose into a noun plus a clause, and with mood adverbial (Q6) there is nothing else to build them from |
 | concessive "although" | **0** — contrastive coordination: `it rain, but we go` |
-| position | **clause-initial** — 78.4% of L1, 86.4% of total speakers, and it follows §3.2's modifier rule |
-| constituent order | **unchanged** — GB134 at **96.4% of L1** is the most one-sided figure in this note; the German-style verb-final subordinate clause is the exception, not something to consider |
+| position | **after the main clause**, from §3.2's clausal-modifiers-follow rule |
+| constituent order | **unchanged** — GB134 at **96.4% of L1**, the most one-sided figure in this note; the German-style verb-final subordinate clause is not something to consider |
 
-**Word bill: 1** (*if*). **Rule added: 1** — *an interrogative compound with no question
-particle, followed by a main clause, is an adverbial clause.*
+**Word bill: 1** (*if*). **Rule added: 1** — and it is a *loosening*: *the relativizer joins a
+clause to a noun; where the noun has no argument role in the clause, the relation is
+pragmatic.*
 
 ---
 
@@ -296,7 +341,7 @@ particle, followed by a main clause, is an adverbial clause.*
 | relative clauses | **invariant relativizer + gap**, following the noun | 1 |
 | relative pronoun | **rejected** — needs case, which Q8 refused | — |
 | complement clauses | **the relativizer, optional** | 0 |
-| adverbial clauses (time/place/reason/manner) | **the interrogative compounds**, clause-initial | 0 |
+| adverbial clauses (time/place/reason/manner/purpose) | **preposition + noun + REL + clause**, after the main clause | 0 |
 | conditional | **"if"** — irreducible | 1 |
 | concessive | contrastive coordination (`it rain, but we go`) | 0 |
 
@@ -322,11 +367,17 @@ total: 3**, with the copula rule. **Running grammar total: 5 rules.**
 - **APiCS's restricted-pidgin cells are thin here** — several of the relative-clause and
   complementizer rows rest on one or two languages, thinner than the nine-language columns
   used in Tier 2.
-- **§5's first version was wrong about the cost of subordinators** and is corrected in place
-  with a note at the head of this file. The failure mode is worth naming: *"it's ordinary
-  vocabulary" is the easiest way to make a word bill come out to zero, and it needs an
-  argument every time it is used.* Nothing else in the grammar currently rests on that move,
-  but Tier 4 will be full of opportunities to make it again.
-- **Reusing the interrogative compounds as subordinators inherits Q10's residual ambiguity.**
-  It is resolvable from the following main clause and from the `?` in writing, but it exists,
-  and it is a downstream cost of a concession made two questions earlier.
+- **§5 was wrong twice** (see the head of this file) and both failure modes are worth naming.
+  *"It's ordinary vocabulary" is the easiest way to make a word bill come out to zero, and it
+  needs an argument every time it is used* — Tier 4 will invite that move repeatedly. And
+  *a feature name is not a feature definition*: WALS 123A was applied to a construction with
+  no gap in it, and WALS 94A was read as answering a question about a different constituent.
+  Both errors ran in the direction of rejecting the simpler option.
+- **Gapless relatives are now licensed**, which is a loosening of §3's rule. The cost is that
+  the head-to-clause relation becomes pragmatic rather than syntactic in those cases. For
+  *time*, *place* and *reason* that is cheap; **it should be re-examined if the lexicon ever
+  wants this construction with a less inferable head noun.**
+- **The strongest support for the adopted construction is not from this project's sources.**
+  Tok Pisin *taim* and Haitian *lè* are general knowledge, not APiCS values — APiCS does not
+  code adverbial clauses at all. The decision rests on internal consistency plus permissive
+  WALS numbers, with the creole parallel as corroboration that was not independently verified.
