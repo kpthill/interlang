@@ -1,0 +1,188 @@
+feature,interlang,contested,rationale,n,pct_lang,pct_L1,popular_value,costs_population
+GB130,1,False,SVO: S precedes V in intransitives,2251,79.0,93.2,1,False
+GB131,0,False,SVO: not verb-initial,2278,80.2,93.5,0,False
+GB132,1,False,SVO: verb-medial,2257,48.0,61.3,1,False
+GB133,0,False,SVO: not verb-final,2266,56.9,62.9,0,False
+GB136,1,False,argument order is fixed - it is the ONLY marker of role,1969,61.9,46.2,0,True
+GB134,1,True,"same order in subordinate clauses; no rule says otherwise (GB134 is 96.4% of L1) - entailed, never explicitly decided",1697,94.0,96.4,1,False
+GB135,1,True,"complement clauses fill the object slot (Tier 3), so clausal and nominal objects sit in the same place",1553,88.7,90.2,1,False
+GB074,1,False,prepositions (Tier 0),2196,55.5,68.5,1,False
+GB075,0,False,no postpositions (Tier 0),2090,51.5,61.1,0,False
+GB193,1,False,modifier rule: property word precedes noun,2062,23.7,70.8,1,False
+GB024,1,False,modifier rule: numeral precedes noun,2131,39.7,84.2,1,False
+GB025,1,False,modifier rule: demonstrative precedes noun,2200,40.3,78.7,1,False
+GB065,1,False,modifier rule: possessor precedes possessed,2253,44.7,69.8,1,False
+GB203,1,False,modifier rule: 'all' precedes noun,1519,37.5,34.7,2,True
+GB026,0,False,"no discontinuous NPs - fixed order, no movement",1720,93.8,92.6,0,False
+GB327,1,False,relative clause follows the noun (Tier 0 / Tier 3),1682,82.6,57.1,1,False
+GB328,0,False,relative clause never precedes,1541,70.0,41.6,1,True
+GB329,0,False,no internally-headed relatives,1378,86.8,82.3,0,False
+GB330,0,False,no correlatives,1355,87.9,74.1,0,False
+GB020,0,False,no definite article - the demonstrative does the work,2130,62.0,63.9,0,False
+GB021,0,False,no indefinite article - 'one' does the work,2153,86.2,76.0,0,False
+GB022,0,False,"no articles at all, so none prenominal",2139,74.2,63.9,0,False
+GB023,0,False,"no articles at all, so none postnominal",2137,76.0,92.8,0,False
+GB042,0,False,no morphology: no singular marking,2280,81.4,72.7,0,False
+GB043,0,False,no dual,2234,92.3,97.1,0,False
+GB044,0,False,no plural MORPHOLOGY (we use a free word - see GB318),2234,44.1,38.9,1,True
+GB046,0,False,no associative plural,1432,78.4,84.2,0,False
+GB039,0,False,"no morphology, so no allomorphy of number markers",2080,75.9,67.4,0,False
+GB041,0,False,no suppletive nouns for number,1690,91.8,94.7,0,False
+GB316,0,False,no dedicated singular word,1958,94.7,95.6,0,False
+GB317,0,False,no dual,1949,96.2,98.2,0,False
+GB318,1,True,"optional plural WORD (Q7). Grambank says 'regularly marked'; ours is optional, so a coder might say 0",1986,18.2,10.8,0,True
+GB319,0,False,no trial,1968,99.5,100.0,0,False
+GB320,0,False,no paucal,1954,99.1,100.0,0,False
+GB165,0,False,no trial marking on nouns,2071,99.6,100.0,0,False
+GB166,0,False,no paucal marking on nouns,2062,98.8,99.3,0,False
+GB057,0,False,"no numeral classifiers (Q7) - a deliberate override, see PART 2",2110,76.4,63.6,0,False
+GB058,0,False,no possessive classifiers (Tier 3 predication),2165,90.2,95.0,0,False
+GB059,0,False,no alienable/inalienable split (Tier 3 predication),1965,52.6,86.4,0,False
+GB038,0,False,no demonstrative classifiers,2136,94.6,76.0,0,False
+GB036,0,False,no elevation deixis,2117,92.2,99.9,0,False
+GB037,0,False,no visible/non-visible deixis,2080,90.0,97.1,0,False
+GB051,0,False,no gender/noun class,2139,81.6,59.2,0,False
+GB052,0,False,no gender/noun class,2160,92.9,96.9,0,False
+GB053,0,False,no gender/noun class,2113,76.8,78.5,0,False
+GB054,0,False,no gender/noun class,2123,93.2,96.8,0,False
+GB192,0,False,no gender/noun class,2028,93.6,72.2,0,False
+GB321,0,False,no gender/noun class,1900,88.8,86.4,0,False
+GB170,0,False,no agreement of any kind,2073,78.0,61.1,0,False
+GB171,0,False,no agreement of any kind,2075,75.9,71.2,0,False
+GB172,0,False,no articles and no agreement,2056,91.1,86.4,0,False
+GB184,0,False,no number agreement,1874,62.0,50.1,0,False
+GB185,0,False,no number agreement,1907,56.3,42.8,1,True
+GB186,0,False,no articles and no agreement,1925,84.7,86.6,0,False
+GB198,0,False,no numeral agreement,1998,80.7,77.3,0,False
+GB314,0,False,"no gender, so no augmentative by class shift",1751,95.2,93.7,0,False
+GB315,0,False,"no gender, so no diminutive by class shift",1789,91.4,87.2,0,False
+GB070,0,False,no case on nouns (Tier 0),2200,66.2,60.7,0,False
+GB071,0,False,no case on pronouns (Q8) - this is what killed alignment,2173,54.8,38.9,1,True
+GB072,0,False,no oblique case - prepositions instead,2162,53.6,62.3,0,False
+GB073,0,False,no oblique case on pronouns,2042,54.9,60.4,0,False
+GB408,0,False,"no flagging at all, so no accusative alignment",1726,56.0,33.6,1,True
+GB409,0,False,"no flagging at all, so no ergative alignment",1722,78.3,84.3,0,False
+GB410,1,True,"neutral alignment: S, A and P are all unflagged. A coder might read GB410 as requiring a flagging system to exist",1696,70.7,69.8,1,False
+GB079,0,False,no affixes (Tier 0),2104,32.0,60.9,0,False
+GB080,0,False,no affixes (Tier 0),2196,16.7,30.8,1,True
+GB081,0,False,no affixes (Tier 0),2080,85.0,81.9,0,False
+GB089,0,False,no person indexing on the verb,2247,59.5,53.3,0,False
+GB090,0,False,no person indexing on the verb,2254,57.8,90.9,0,False
+GB091,0,False,no person indexing on the verb,2241,63.4,52.4,0,False
+GB092,0,False,no person indexing on the verb,2256,61.2,91.1,0,False
+GB093,0,False,no person indexing on the verb,2237,65.6,79.8,0,False
+GB094,0,False,no person indexing on the verb,2234,77.4,95.6,0,False
+GB095,0,False,no marking to vary,1976,88.1,72.6,0,False
+GB096,0,False,no marking to vary,1981,88.1,94.6,0,False
+GB098,0,False,no marking to vary,1992,81.3,80.7,0,False
+GB099,0,False,no stem alternation - invariant word forms,1883,92.5,85.4,0,False
+GB400,0,False,no person marking anywhere to neutralise,1461,93.0,87.7,0,False
+GB111,0,False,no conjugation classes - nothing inflects,2041,63.0,59.7,0,False
+GB109,0,False,no verb suppletion for participant number,1831,87.0,86.4,0,False
+GB110,0,False,no verb suppletion for tense/aspect,1829,89.5,75.8,0,False
+GB300,0,False,no suppletion; regularity is a stated design goal,1251,88.8,75.7,0,False
+GB402,0,False,no suppletion,1095,94.2,87.2,0,False
+GB403,0,False,no suppletion,1124,83.3,66.6,0,False
+GB082,0,False,no tense morphology (Q6),2189,65.8,51.8,0,False
+GB083,0,False,no tense morphology (Q6),2199,47.6,36.1,1,True
+GB084,0,False,no tense morphology (Q6),2204,54.5,51.1,0,False
+GB086,0,False,no aspect morphology (Q6),2064,33.2,22.1,1,True
+GB312,0,False,no mood morphology (Q6),1865,30.4,42.6,1,True
+GB309,0,False,no graded remoteness tenses (Q6 context feature),1867,68.2,67.8,0,False
+GB119,0,False,no inflecting words at all,1833,72.0,47.3,1,True
+GB120,0,False,no inflecting words at all,1870,67.8,49.1,1,True
+GB121,0,False,no inflecting words at all,1896,78.4,53.8,0,False
+GB519,0,True,"Q6: mood is an OPEN-CLASS ADVERB, not an auxiliary particle. A coder who reads 'non-inflecting word' loosely would say 1",1553,60.0,48.9,1,True
+GB520,0,True,"Q6: aspect is an open-class adverb, not a particle",1615,61.9,68.1,0,False
+GB521,0,True,"Q6: tense is an open-class adverb, not a particle",1649,75.6,90.7,0,False
+GB322,0,False,"no grammatical evidentiality (entailed by Q6, never stated)",1377,85.0,95.4,0,False
+GB323,0,False,"no grammatical evidentiality (entailed by Q6, never stated)",1384,70.2,79.4,0,False
+GB103,0,False,no applicatives - no affixes,1982,66.2,90.8,0,False
+GB104,0,False,no applicatives - no affixes,1923,84.0,95.6,0,False
+GB105,0,False,"indirect-object ditransitive: the recipient takes a preposition, so it is NOT marked like a monotransitive patient",1830,42.5,40.1,1,True
+GB113,0,False,no transitivising affixes,1816,30.2,42.8,1,True
+GB114,0,False,"reflexive is a free word, not bound",1909,55.8,69.5,0,False
+GB115,0,False,no bound reciprocal,1901,42.2,67.8,0,False
+GB147,0,False,no morphological passive - Tier 3 cleanup 2a,1874,57.4,63.5,0,False
+GB148,0,False,no antipassive,1754,90.9,99.0,0,False
+GB149,0,False,no inverse marking,1904,95.2,98.5,0,False
+GB155,0,False,no causative affixes (Tier 0),1993,27.5,51.8,0,False
+GB156,0,False,no 'say'-causative,1746,96.6,74.2,0,False
+GB302,1,False,preverbal `self` IS a phonologically free passive marker (Tier 3 cleanup 2a; the 64.6%-of-L1 strategy),1557,10.5,64.6,1,False
+GB303,0,False,no antipassive,1480,99.7,99.7,0,False
+GB304,1,False,the agent is expressible: `window self break by man`,1293,40.5,91.8,1,False
+GB305,1,False,one invariant free reflexive pronoun (Q8),1657,49.8,89.7,1,False
+GB116,0,False,no shape-classifying verbs,1876,95.4,99.0,0,False
+GB124,0,False,no noun incorporation,1607,83.8,91.5,0,False
+GB127,0,False,no obligatory posture verbs,1280,83.8,96.7,0,False
+GB146,0,False,no controlled/uncontrolled distinction,1327,65.9,72.4,0,False
+GB401,0,True,patient-labile verbs ('the window broke') were NEVER DECIDED; coded 0 because the passive was adopted to do that job,817,72.0,58.8,0,False
+GB107,0,False,"negation is a free word, not an affix (Q9)",2235,53.1,63.2,0,False
+GB298,0,False,the negator does not inflect,1982,88.6,91.0,0,False
+GB299,1,False,one free negative particle (Q9),1998,65.4,84.2,1,False
+GB137,0,False,"negation is preverbal, never clause-final",2154,61.0,75.9,0,False
+GB138,0,False,negation is preverbal; with an obligatory subject it is never clause-initial,2145,58.6,62.5,0,False
+GB139,0,False,"the prohibitive uses the same negator (Q9) - a population override, see PART 2",1974,25.6,16.5,1,True
+GB140,1,False,"one negator for verbal, locational, existential and nominal predication (Q9)",1531,50.0,71.6,1,False
+GB117,1,False,one invariant copula for predicate nominals,1971,56.6,83.1,1,False
+GB068,0,False,adjectives take the copula; they are not verbs,1892,51.4,56.3,0,False
+GB069,0,False,attributive adjectives are not treated like verbs,1806,78.5,86.7,0,False
+GB126,1,True,the copula used intransitively IS the existential. A coder wanting a DEDICATED existential verb would say 0,1733,66.7,80.5,1,False
+GB250,1,False,predicative possession is a transitive 'have' (Tier 3),1462,43.6,59.6,1,False
+GB252,0,False,no locational possession,1316,82.1,64.4,0,False
+GB253,0,False,no dative possession - no case,1308,87.8,80.8,0,False
+GB254,0,False,no adnominal-style predicative possession,1366,61.4,81.5,0,False
+GB256,0,False,no comitative possession,1322,81.5,98.6,0,False
+GB430,0,False,no possessive affixes,1805,92.5,94.6,0,False
+GB431,0,False,no possessive affixes,1817,78.9,99.7,0,False
+GB432,0,False,no possessive affixes,1804,72.6,56.9,0,False
+GB433,0,False,no possessive affixes,1824,63.8,88.5,0,False
+GB313,0,False,no special possessive pronouns - the plain pronoun in the possessor slot is the possessive (Q8),1876,63.3,59.1,0,False
+GB028,0,False,no clusivity (Q8),2289,47.4,62.7,0,False
+GB030,0,False,"no gender in 3rd person pronouns (Q8) - override, PART 2",2306,75.9,59.1,0,False
+GB031,0,False,no dual (Q8),2264,73.7,98.6,0,False
+GB196,0,False,no gender in 2nd person pronouns,2112,94.5,92.4,0,False
+GB197,0,False,no gender in 1st person pronouns,2117,98.6,95.2,0,False
+GB167,0,False,no logophoric pronoun (Q8),1541,93.3,98.7,0,False
+GB415,0,False,"no politeness distinction (Q8, Tier 5 13) - the largest override in the project, PART 2",1694,86.1,37.3,1,True
+GB522,0,False,"no pro-drop; the subject is obligatory (Tier 3 cleanup) - override, PART 2",1492,26.4,33.1,1,True
+GB257,1,True,"intonation remains available, never required (Q10). Grambank asks 'can', so 1; a coder reading it as 'is it the strategy' would say 0",1581,51.0,77.4,1,False
+GB260,0,False,inversion rejected - Rule 2 LOST 8 / KEPT 0 (Q10),1704,97.1,85.0,0,False
+GB262,1,False,one clause-initial polar question particle (Q10),1720,14.6,27.8,0,True
+GB263,0,False,not clause-final,1708,60.5,54.3,0,False
+GB264,0,False,not second-position,1708,88.9,89.0,0,False
+GB285,0,False,no verbal morphology,1667,98.0,98.0,0,False
+GB286,0,False,no verbal morphology,1718,82.4,88.3,0,False
+GB291,0,False,"no tone (phonology, 3.3)",1661,95.2,97.8,0,False
+GB297,0,False,"no V-not-V (Q10, considered and declined)",1574,93.1,60.1,0,False
+GB324,0,False,no interrogative verb (Q10),1776,88.7,93.3,0,False
+GB325,0,False,no count/mass distinction in interrogative quantifiers (Q10),1296,81.7,40.9,1,True
+GB326,1,False,content interrogatives stay in situ (Q10),1698,53.3,62.4,1,False
+GB027,1,False,'and' and 'with' are different words (Tier 3),1725,59.5,81.5,1,False
+GB301,0,False,no inclusory construction (Tier 3),1092,76.6,91.4,0,False
+GB265,0,False,no 'exceed' comparative (Tier 3),1241,67.9,58.5,0,False
+GB266,0,False,no locational standard marker (Tier 3),1210,68.5,70.6,0,False
+GB270,0,False,no conjoined comparative (0.0% of L1),1177,85.0,93.7,0,False
+GB273,1,False,dedicated standard marker 'than' (Tier 3),1199,41.7,73.5,1,False
+GB275,0,False,no bound degree marker - no affixes,1286,79.5,77.7,0,False
+GB276,0,False,"adjective left unmarked; no free 'more' either (Tier 3) - override, PART 2",1258,66.8,43.3,1,True
+GB421,1,False,the relativizer doubles as an optional PREPOSED complementizer,1076,40.2,56.6,1,False
+GB422,0,False,never postposed,1085,87.8,87.9,0,False
+GB150,0,False,no clause chaining - coordination and subordination only,1468,71.0,43.2,1,True
+GB151,0,False,no switch reference,1737,83.0,98.4,0,False
+GB152,0,False,no simultaneous/sequential marking,1663,66.1,86.7,0,False
+GB047,0,True,"'run-thing' is a COMPOUND, not a derivational morpheme (Tier 4 2). A coder counting compounding as morphology says 1",1611,28.7,28.8,1,True
+GB048,0,True,'teach-person' is a compound (Tier 4 2),1611,34.6,37.5,1,True
+GB049,0,True,'X-thing' is a compound (Tier 4 2),1538,36.0,33.0,1,True
+GB187,0,True,"diminutive is 'small X', an ordinary modifier",1427,55.1,19.3,1,True
+GB188,0,True,"augmentative is 'big X', an ordinary modifier",1284,81.3,40.1,1,True
+GB122,1,False,"verb compounding is regular - it is our only word-formation device (Tier 0, Tier 4 2)",1569,32.0,48.5,0,True
+GB123,0,True,verb-adjunct/light-verb constructions were never decided; coded 0 because `water-do` is analysed as a compound,1211,65.3,28.6,1,True
+GB158,1,True,"reduplication ADOPTED as optional and emphatic - but by lexicon-plan.md 6, AFTER the grammar closed, and it is SOFT",1837,73.3,59.3,1,False
+GB159,1,True,as GB158,1657,51.0,39.3,0,True
+GB333,1,False,decimal numerals (Tier 4 4),1688,70.7,91.1,1,False
+GB334,0,False,no quinary element,1724,77.9,99.0,0,False
+GB335,0,False,no vigesimal element,1619,83.7,93.0,0,False
+GB336,0,False,no body-part tallying,1640,97.3,100.0,0,False
+GB204,1,False,'all' and 'every' differ (Tier 4 5),1094,55.7,83.3,1,False
+GB118,0,False,"no serial verbs (Tier 3 cleanup 1) - override, PART 2",1543,47.0,51.6,0,False

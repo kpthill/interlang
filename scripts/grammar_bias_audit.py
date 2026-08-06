@@ -111,7 +111,7 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from grammar_sources import load, populations, weight  # noqa: E402
-from grammar_tier2_np import apics_table, wals_dist  # noqa: E402
+from grammar_tier2_np import wals_dist  # noqa: E402
 from grammar_tier2_tam import contact_type  # noqa: E402
 
 OUT = ROOT / "data" / "processed" / "grammar_bias_audit.csv"
@@ -387,8 +387,15 @@ GB_DELIBERATELY_UNMAPPED = {
 
 
 # ===========================================================================
-# THE APiCS VECTOR.  (parameter_id, code_number, contested, rationale)
-# APiCS codes are per-parameter integers; see data/raw/apics/cldf/codes.csv.
+# THE APiCS VECTOR.  (parameter_id, code NUMBER, contested, rationale)
+#
+# CAREFUL: APiCS `codes.csv` has BOTH an `ID` (e.g. "1-2") and a `Number` (the
+# display order).  values.csv stores the ID's suffix, NOT the Number, and for
+# many parameters the two disagree - parameter 1's SVO is Number 1 but suffix 2.
+# The values below are NUMBERs, because that is what the published feature tables
+# in the write-ups quote, and `apics_number_to_value()` converts them.  Getting
+# this backwards silently scores every language at zero, which is how it was
+# caught.
 # ===========================================================================
 INTERLANG_APICS: list[tuple[str, str, bool, str]] = [
     ("1",   "1", False, "SVO"),
@@ -509,7 +516,15 @@ SAE_WIDE = dict(SAE_NUCLEUS, **{
     "nort2671": "Northern Tosk Albanian", "west2354": "Western Frisian",
 })
 
-# The 14 APiCS contact languages that Grambank also codes (grammar-tier0.md 2.1).
+# Contact languages that Grambank codes.  Glottolog - and therefore Grambank -
+# classifies a creole INSIDE its lexifier's family (Haitian is Indo-European,
+# Tok Pisin is Indo-European), so they have to be pulled out by hand or they
+# inflate whichever family lent them their words.  The first 14 are the APiCS
+# overlap grammar-tier0.md 2.1 used; the last 5 are contact languages Grambank
+# codes that APiCS does not.  Tetun Dili is deliberately EXCLUDED: it is a
+# contact-influenced Austronesian variety, not a creole, and including it would
+# be the kind of "a feature name is not a feature definition" error this project
+# has made twice already.
 CONTACT_IN_GB = {
     "ambo1250": "Ambonese Malay", "baba1267": "Baba Malay",
     "baha1260": "Bahamas Creole English", "berb1259": "Berbice Creole Dutch",
@@ -518,7 +533,13 @@ CONTACT_IN_GB = {
     "nubi1253": "Nubi", "sana1297": "San Andres Creole English",
     "sara1340": "Saramaccan", "sril1245": "Sri Lanka Malay",
     "suda1237": "South Sudanese Creole Arabic", "tokp1240": "Tok Pisin",
+    "beli1260": "Belize Kriol English", "nica1252": "Nicaragua Creole English",
+    "limo1249": "Limonese Creole", "piji1239": "Pijin",
+    "torr1261": "Torres Strait-Lockhart River Creole",
 }
+CONTACT_IN_APICS_TOO = {"ambo1250", "baba1267", "baha1260", "berb1259", "bisl1239",
+                        "hait1244", "jama1262", "ling1263", "nubi1253", "sana1297",
+                        "sara1340", "sril1245", "suda1237", "tokp1240"}
 
 
 # ===========================================================================
@@ -539,10 +560,9 @@ OVERRIDES = [
                 "obligatory category. Stays expressible lexically (titles)."),
     dict(decision="No gender in pronouns",
          note="grammar-tier2-pronouns.md 2", quoted=77.9, source="wals", feature="44A",
-         against=["Gender distinctions in 3rd person singular only",
-                  "Gender distinctions in 3rd person and 1st and/or 2nd person",
-                  "Gender distinctions in 1st or 2nd person but not 3rd person",
-                  "Gender distinctions in 3rd person non-singular only"],
+         against=["3rd person singular only", "3rd person only, but also non-singular",
+                  "In 3rd person + 1st and/or 2nd person",
+                  "1st or 2nd person but not 3rd", "3rd person non-singular only"],
          reason="the learning burden is one-directional: a gendered-system speaker "
                 "loses a nuance, a genderless-system speaker acquires an obligatory "
                 "judgment. Rule 2 LOST 9 / KEPT 2 / GAINED 1."),
@@ -554,7 +574,8 @@ OVERRIDES = [
                 "verb phrase."),
     dict(decision="The prohibitive uses the ordinary negator",
          note="grammar-tier2-negation.md 3", quoted=54.7, source="wals", feature="71A",
-         against=["NormImp-SpecNeg", "SpecImp-SpecNeg"],
+         against=["Normal imperative + special negative",
+                  "Special imperative + special negative"],
          reason="7 of 8 restricted pidgins use the ordinary negator; saves a word and "
                 "a rule. The weakest call in Q9."),
     dict(decision="No numeral classifiers",
@@ -635,7 +656,7 @@ def gb_frame(l1m, tot) -> tuple[pd.DataFrame, pd.DataFrame]:
             .set_index("Glottocode")[["Name", "Family_name", "Macroarea", "l1", "total"]])
     meta = meta.reindex(mat.index)
     # creoles sit inside their lexifier's family in Glottolog; pull them out
-    meta["group"] = [CONTACT_IN_GB.get(g) and "contact language" or f
+    meta["group"] = ["contact language" if g in CONTACT_IN_GB else f
                      for g, f in zip(meta.index, meta.Family_name.fillna("(isolate)"))]
     return mat, meta
 
@@ -680,6 +701,14 @@ def pair_baseline(mat: pd.DataFrame, cols: list[str], n_pairs: int,
     return r[n >= min_shared]
 
 
+def apics_number_to_value(codes: pd.DataFrame) -> dict[tuple[str, str], str]:
+    """(parameter, display Number) -> the string that appears in values.csv."""
+    out = {}
+    for r in codes.itertuples():
+        out[(str(r.Parameter_ID), str(r.Number))] = str(r.ID).split("-")[-1]
+    return out
+
+
 def banner(s: str) -> None:
     print("\n" + "=" * 78 + f"\n{s}\n" + "=" * 78)
 
@@ -710,10 +739,24 @@ def main() -> None:
     banner("PART 1a  CALIBRATION - what does an agreement number mean here?")
     zero_vec = {c: "0" for c in cols}
     mode_vec = {c: mat[c].mode().iloc[0] for c in cols if mat[c].notna().any()}
+    # the population-optimal fixed vector: per feature, the value the most PEOPLE
+    # have.  This is the ceiling any single designed grammar could reach on the
+    # by-L1 column, and it is the number interlang should be judged against,
+    # because principles.md 2 counts people.
+    l1mode_vec = {}
+    for c in cols:
+        col = mat[c].dropna()
+        if not len(col):
+            continue
+        w = meta.l1.reindex(col.index).fillna(0.0)
+        l1mode_vec[c] = w.groupby(col).sum().idxmax()
     z = score(mat, zero_vec).join(meta)
     z = z[z.n_shared >= MIN_SHARED]
     m = score(mat, mode_vec).join(meta)
     m = m[m.n_shared >= MIN_SHARED]
+    lm = score(mat, l1mode_vec).join(meta)
+    lm = lm[lm.n_shared >= MIN_SHARED]
+    n_diff = sum(1 for c in l1mode_vec if vec.get(c) != l1mode_vec[c])
     pairs = pair_baseline(mat, cols, N_PAIRS, MIN_SHARED)
 
     cal = pd.DataFrame([
@@ -722,14 +765,20 @@ def main() -> None:
         dict(vector="all-zero (a language with none of these features)",
              by_language=z.agreement.mean(), by_L1=weighted_mean(z, "l1"),
              by_total=weighted_mean(z, "total")),
-        dict(vector="all-mode (the majority value of every feature)",
+        dict(vector="all-mode (the majority value of every feature, by LANGUAGE)",
              by_language=m.agreement.mean(), by_L1=weighted_mean(m, "l1"),
              by_total=weighted_mean(m, "total")),
+        dict(vector="all-mode by L1 (the population-OPTIMAL fixed vector = ceiling)",
+             by_language=lm.agreement.mean(), by_L1=weighted_mean(lm, "l1"),
+             by_total=weighted_mean(lm, "total")),
         dict(vector=f"random real language pair (n={len(pairs)})",
              by_language=float(np.nanmean(pairs)), by_L1=float("nan"),
              by_total=float("nan")),
     ])
     print(cal.round(3).to_string(index=False))
+    print(f"\ninterlang differs from the population-optimal vector on {n_diff} of "
+          f"{len(l1mode_vec)} features. Those {n_diff} are the whole of the "
+          f"population cost of the grammar; they are listed in PART 1f and PART 2.")
     print(f"\nlanguage-pair baseline: median {np.nanmedian(pairs):.3f}, "
           f"90th pct {np.nanpercentile(pairs, 90):.3f}, "
           f"99th pct {np.nanpercentile(pairs, 99):.3f}, max {np.nanmax(pairs):.3f}")
@@ -783,8 +832,13 @@ def main() -> None:
     banner("PART 1d  THE LANGUAGES A READER WILL ASK ABOUT")
     spot = ranked.loc[[g for g in SPOTLIGHT if g in ranked.index]].copy()
     spot["label"] = [SPOTLIGHT[g] for g in spot.index]
+    spot["pctile"] = [round(100 * (ranked.agreement < a).mean())
+                      for a in spot.agreement]
     print(spot.sort_values("agreement", ascending=False)
-          [["label", "group", "n_shared", "agreement", "l1M"]].to_string(index=False))
+          [["label", "group", "n_shared", "agreement", "pctile", "l1M"]]
+          .to_string(index=False))
+    print("`pctile` = where that language sits in the distribution of all 2,299 "
+          "Grambank languages' agreement with interlang.")
     print(f"\nNOT IN GRAMBANK AT ALL: {', '.join(MISSING_FROM_GRAMBANK)}")
     for gc, r in spot.iterrows():
         rows.append(dict(part="spotlight", database="grambank", entity=r.label,
@@ -796,7 +850,9 @@ def main() -> None:
                      ("SAE wide (western + central Europe)", SAE_WIDE)):
         got = ranked.loc[[g for g in st if g in ranked.index]]
         miss = [st[g] for g in st if g not in ranked.index]
-        print(f"{name}: n={len(got)}, mean agreement {got.agreement.mean():.3f}, "
+        pct = 100 * (ranked.agreement < got.agreement.mean()).mean()
+        print(f"{name}: n={len(got)}, mean agreement {got.agreement.mean():.3f} "
+              f"(the {pct:.0f}th percentile of all Grambank languages), "
               f"L1-weighted {weighted_mean(got, 'l1'):.3f}"
               + (f"  [missing: {', '.join(miss)}]" if miss else ""))
         print("   " + "; ".join(f"{st[g]} {got.loc[g].agreement:.3f}"
@@ -809,17 +865,19 @@ def main() -> None:
     banner("PART 1e  DID WE LAND NEAR THE CONTACT LANGUAGES? (Grambank half)")
     con = ranked.loc[[g for g in CONTACT_IN_GB if g in ranked.index]].copy()
     con["label"] = [CONTACT_IN_GB[g] for g in con.index]
+    con["in_apics"] = [g in CONTACT_IN_APICS_TOO for g in con.index]
     print(con.sort_values("agreement", ascending=False)
-          [["label", "n_shared", "agreement"]].to_string(index=False))
+          [["label", "in_apics", "n_shared", "agreement"]].to_string(index=False))
     print(f"\ncontact-language mean {con.agreement.mean():.3f} vs "
           f"world by-language mean {ranked.agreement.mean():.3f} "
           f"(difference {con.agreement.mean() - ranked.agreement.mean():+.3f})")
     print(f"contact languages occupy percentile "
           f"{100 * (ranked.agreement < con.agreement.mean()).mean():.0f} of the "
           f"world agreement distribution.")
-    print("NOTE: n=14, and Grambank codes creoles inside their lexifier's family, so "
-          "these are the same 14 pairs grammar-tier0.md 2.1 used. The APiCS run below "
-          "is the real contact test.")
+    print(f"NOTE: n={len(con)}, of which {int(con.in_apics.sum())} are the APiCS "
+          "overlap grammar-tier0.md 2.1 used. Grambank codes creoles inside their "
+          "lexifier's family, so this group had to be pulled out by hand. The APiCS "
+          "run below is the larger contact test.")
     for gc, r in con.iterrows():
         rows.append(dict(part="contact-grambank", database="grambank", entity=r.label,
                          glottocode=gc, n_shared=int(r.n_shared),
@@ -840,7 +898,14 @@ def main() -> None:
             pct_lang=round(100 * hit.mean(), 1),
             pct_L1=round(100 * w[hit].sum() / w.sum(), 1) if w.sum() else None))
     fdf = pd.DataFrame(feat_rows)
+    fdf["popular_value"] = [l1mode_vec.get(f) for f in fdf.feature]
+    fdf["costs_population"] = fdf.interlang != fdf.popular_value
     banner("PART 1f  PER-FEATURE: how many people already have OUR value?")
+    cost = fdf[fdf.costs_population].sort_values("pct_L1")
+    print(f"\n--- the {len(cost)} features where interlang differs from the value the "
+          f"most PEOPLE have ---")
+    print(cost[["feature", "interlang", "popular_value", "pct_L1", "rationale"]]
+          .to_string(index=False, max_colwidth=60))
     print("\n--- the 20 features where we agree with the FEWEST people ---")
     print(fdf.dropna(subset=["pct_L1"]).nsmallest(20, "pct_L1")
           [["feature", "interlang", "n", "pct_lang", "pct_L1", "rationale"]]
@@ -865,6 +930,12 @@ def main() -> None:
     print(f"  top-10 nearest languages, overlap {len(set(top1) & set(top2))}/10")
     print(f"    baseline: {', '.join(top1[:6])}")
     print(f"    flipped : {', '.join(top2[:6])}")
+    for label, keys in (("SAE wide", SAE_WIDE), ("contact languages", CONTACT_IN_GB),
+                        ("Mandarin", {"mand1415": ""}), ("Hindi", {"hind1269": ""}),
+                        ("English", {"stan1293": ""})):
+        ks = [g for g in keys if g in ranked.index and g in r2.index]
+        print(f"  {label:20s} {ranked.loc[ks].agreement.mean():.3f} -> "
+              f"{r2.loc[ks].agreement.mean():.3f}")
     rows.append(dict(part="sensitivity", database="grambank",
                      entity="all contested flipped",
                      agreement=round(r2.agreement.mean(), 4),
@@ -876,14 +947,26 @@ def main() -> None:
     ap_l = ap_l.copy()
     ap_l["ctype"] = [contact_type(n) for n in ap_l.Name]
     ap_l["grp"] = ""
-    cmap = dict(zip(*pd.read_csv(ROOT / "data/raw/apics/cldf/codes.csv")
-                    [["ID", "Name"]].values.T))
-    avec = {p: v for p, v, _c, _r in INTERLANG_APICS}
+    acodes = pd.read_csv(ROOT / "data/raw/apics/cldf/codes.csv")
+    cmap = dict(zip(acodes.ID, acodes.Name))
+    n2v = apics_number_to_value(acodes)
+    avec, alabel = {}, {}
+    for p, num, _c, _r in INTERLANG_APICS:
+        val = n2v.get((p, num))
+        if val is None:
+            print(f"  ! APiCS {p}: no code with Number {num}; dropped")
+            continue
+        avec[p] = val
+        alabel[p] = cmap.get(f"{p}-{val}", "?")
     av = ap_v[ap_v.Parameter_ID.astype(str).isin(avec)].copy()
     av["pid"] = av.Parameter_ID.astype(str)
+    # APiCS Value is int64; cast BEFORE the pivot, or the NaN-widened float column
+    # stringifies to "2.0" and never matches "2".  (This scored every language at
+    # zero the first time it was run.)
+    av["val"] = av.Value.astype(str)
     av = (av.sort_values("Frequency", ascending=False)
           .drop_duplicates(["Language_ID", "pid"]))
-    amat = av.pivot(index="Language_ID", columns="pid", values="Value").astype("string")
+    amat = av.pivot(index="Language_ID", columns="pid", values="val").astype("string")
     ameta = ap_l.set_index("ID")[["Name", "ctype", "Lexifier", "Region"]].reindex(amat.index)
     amat = amat[~ameta.ctype.eq("0 mixed (excluded)")]
     ameta = ameta.reindex(amat.index)
@@ -894,7 +977,8 @@ def main() -> None:
     asc = score(amat, avec).join(ameta)
     ask = asc[asc.n_shared >= MIN_SHARED_APICS].copy()
     apairs = pair_baseline(amat, acols, N_PAIRS, MIN_SHARED_APICS)
-    azero = None  # APiCS has no natural "all-zero"; the pair baseline is the null
+    # APiCS has no natural "all-zero" vector (its codes are alternatives, not
+    # presence/absence), so the contact-language pair distribution is the only null.
 
     print(f"\nrankable lects: {len(ask)} (median {int(ask.n_shared.median())} shared)")
     print(f"\nINTERLANG mean agreement with contact languages: {ask.agreement.mean():.3f}")
@@ -908,7 +992,18 @@ def main() -> None:
     strat = (ask.groupby("ctype")
              .agg(n=("agreement", "size"), mean=("agreement", "mean"),
                   median=("agreement", "median"), best=("agreement", "max")))
+    # within-stratum null: how similar is a restricted pidgin to another restricted
+    # pidgin?  This is the fair comparison for "did we land where a pidgin lands".
+    nulls = {}
+    for ct in strat.index:
+        ids = ameta.index[ameta.ctype == ct]
+        p = pair_baseline(amat.loc[ids], acols, 4000, MIN_SHARED_APICS)
+        nulls[ct] = float(np.nanmean(p)) if len(p) else float("nan")
+    strat["within_stratum_null"] = [nulls[i] for i in strat.index]
     print(strat.round(3).to_string())
+    print("`within_stratum_null` = mean agreement of two languages of that stratum "
+          "with EACH OTHER,\non the same 65 parameters. It is the score interlang "
+          "would get if it were an ordinary\nmember of that stratum.")
     print("\n--- by lexifier ---")
     lex = (ask.groupby("Lexifier")
            .agg(n=("agreement", "size"), mean=("agreement", "mean"))
@@ -930,12 +1025,12 @@ def main() -> None:
 
     print("\n--- the APiCS parameters where we agree with the FEWEST contact lects ---")
     ar = []
-    for p, v, c, why in INTERLANG_APICS:
+    for p, _num, c, why in INTERLANG_APICS:
         if p not in amat.columns:
             continue
+        v = avec[p]
         col = amat[p].dropna()
-        ar.append(dict(param=p, interlang=v,
-                       label=cmap.get(f"{p}-{v}", "?"), n=len(col),
+        ar.append(dict(param=p, interlang=v, label=alabel[p], n=len(col),
                        pct=round(100 * (col == v).mean(), 1),
                        restricted=int(((col == v) & ameta.ctype.eq(
                            "1 restricted pidgin").reindex(col.index).fillna(False)).sum()),
@@ -949,6 +1044,37 @@ def main() -> None:
     print(f"\nmean over encoded APiCS parameters: {adf.pct.mean():.1f}% of contact "
           f"lects share our value")
     adf.to_csv(ROOT / "data/processed/grammar_bias_audit_apics_features.csv", index=False)
+
+    # =======================================================================
+    banner("PART 1  HEADLINE")
+    fam = (ranked.groupby("group").agg(n=("agreement", "size"),
+                                       a=("agreement", "mean")))
+    fam = fam[fam.n >= 8].sort_values("a", ascending=False)
+    print("nearest family/group (n>=8):  " +
+          "; ".join(f"{i} {r.a:.3f} (n={int(r.n)})" for i, r in fam.head(4).iterrows()))
+    print("furthest family/group (n>=8): " +
+          "; ".join(f"{i} {r.a:.3f} (n={int(r.n)})" for i, r in fam.tail(3).iterrows()))
+    print(f"\nby LANGUAGE  interlang agrees with the average Grambank language on "
+          f"{ranked.agreement.mean():.3f} of shared features")
+    print(f"by PEOPLE    ... with the average person's native language on "
+          f"{weighted_mean(ranked, 'l1'):.3f}, against a ceiling of "
+          f"{weighted_mean(lm, 'l1'):.3f} and a floor of {weighted_mean(z, 'l1'):.3f}")
+    floor, ceil = weighted_mean(z, "l1"), weighted_mean(lm, "l1")
+    got = weighted_mean(ranked, "l1")
+    print(f"             i.e. {100 * (got - floor) / (ceil - floor):.0f}% of the way from "
+          f"'a language with no features' to the population optimum")
+    sae = ranked.loc[[g for g in SAE_WIDE if g in ranked.index]]
+    print(f"\nSAE (wide, n={len(sae)})                {sae.agreement.mean():.3f}")
+    print(f"Mandarin                        {ranked.loc['mand1415'].agreement:.3f}")
+    print(f"contact languages in Grambank   {con.agreement.mean():.3f}  (n={len(con)})")
+    print(f"restricted pidgins in APiCS     {strat.loc['1 restricted pidgin', 'mean']:.3f}"
+          f"  (n={int(strat.loc['1 restricted pidgin', 'n'])}, on a different feature set, "
+          f"against a contact-to-contact null of {np.nanmean(apairs):.3f})")
+    print("\nSo: by language count interlang is a MAINLAND-SOUTHEAST-ASIAN-shaped isolating\n"
+          "language and is NOT close to Standard Average European; by population it lands\n"
+          "well above the featureless floor but short of the population optimum; and within\n"
+          "the contact record it is nearest to exactly the stratum the project said to\n"
+          "weight most - restricted pidgins.")
 
     # =======================================================================
     banner("PART 2  THE POPULATION OVERRIDES, RE-MEASURED")
@@ -1022,6 +1148,19 @@ def main() -> None:
         rows.append(dict(part="unmapped", database="grambank", entity=f,
                          group=names.get(f, ""), agreement=round(100 * pos.mean(), 1),
                          by_L1=round(100 * w[pos].sum() / w.sum(), 1) if w.sum() else None))
+    print("\n--- MAPPED, but by ENTAILMENT rather than by a decision anyone took ---")
+    print("(rationale contains 'never decided' or 'entailed'; these are commitments "
+          "the grammar has\nwithout a write-up behind them, which is exactly the class "
+          "the Tier 3 cleanup found)")
+    for f, v, _c, why in INTERLANG_GB:
+        if "never" in why.lower() or "entailed" in why.lower():
+            row = fdf[fdf.feature == f].iloc[0]
+            print(f"  {f} = {v}  ({row.pct_lang}% lang / {row.pct_L1}% L1)  "
+                  f"{names.get(f, '?')[:62]}\n        -> {why}")
+            rows.append(dict(part="unchosen", database="grambank", entity=f,
+                             group=names.get(f, ""), agreement=row.pct_lang,
+                             by_L1=row.pct_L1))
+
     print("\n--- APiCS parameters deliberately unmapped ---")
     for p, why in APICS_DELIBERATELY_UNMAPPED.items():
         print(f"  APiCS {p}: {why}")

@@ -229,5 +229,22 @@ what would have been four NP-order facts plus a separate adverb-placement rule.
   against Num-N 89.5% and Dem-N 86.1%), so the harmonic rule is carrying it more than its own
   numbers are.
 - **"Modifier" is doing work that needs defining.** Q11a extends the rule from noun modifiers
-  to verb modifiers on a principle, not a measurement — no source codes "adverb position" the
-  way it codes adjective position, so the parallel is an argument rather than a finding.
+  to verb modifiers on a principle rather than a measurement, so the parallel is an argument.
+- ~~**No source codes "adverb position" the way it codes adjective position.**~~ **FALSE,
+  corrected 2026-08-06** by the bias audit ([`grammar-bias-audit.md`](grammar-bias-audit.md))
+  and the coverage sweep ([`grammar-coverage-sweep.md`](grammar-coverage-sweep.md)).
+  **APiCS 11 codes the order of frequency adverb, verb and object**, and it was never
+  consulted. Re-run:
+
+  | APiCS 11 | restricted | expanded | creole |
+  |---|---|---|---|
+  | **adverb – verb – object** | **4 of 7** | 2 of 9 | **25 of 51** |
+  | verb – object – adverb | 1 | **7 of 9** | 18 |
+  | verb – adverb – object | 0 | 0 | 5 |
+
+  **The decision stands but the evidence is mixed, not absent**: restricted pidgins support
+  adverb-first 4:1 and creoles 25:18, while **expanded pidgins contradict it 2:7**. That is a
+  real split the write-up should have reported, and it is the second false
+  absence-of-evidence claim found in these notes (see
+  [`grammar-tier3-cleanup.md`](grammar-tier3-cleanup.md) §6). **"No source codes this" is a
+  claim like any other and requires checking the parameter list**, which neither case did.
